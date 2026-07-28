@@ -40,6 +40,8 @@ test("server-renders the 42 Weeks planner", async () => {
   );
   assert.match(plannerSource, /Portugal.s Algarve & Alentejo Family Multi-Adventure/);
   assert.match(plannerSource, /Basque Country Family Multi-Adventure/);
+  assert.match(plannerSource, /Alps hiking trip/);
+  assert.match(plannerSource, /Normandy and World War history trip/);
   assert.match(
     plannerSource,
     /https:\/\/www\.backroads\.com\/trips\/MPGIF\/portugals-algarve-alentejo-family-multi-adventure-tour/,

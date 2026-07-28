@@ -24,7 +24,7 @@ type Stop = {
   resources?: {
     title: string;
     detail: string;
-    href: string;
+    href?: string;
   }[];
 };
 
@@ -175,6 +175,14 @@ const stops: Stop[] = [
         title: "Basque Country Family Multi-Adventure",
         detail: "May 2028 candidate · 6 days · best for ages 8+ · 2028 schedule TBD",
         href: "https://www.backroads.com/trips/MBIIF/basque-country-family-multi-adventure-tour",
+      },
+      {
+        title: "Alps hiking trip",
+        detail: "Spring 2028 side-trip idea · route and dates TBD",
+      },
+      {
+        title: "Normandy and World War history trip",
+        detail: "Spring 2028 side-trip idea · itinerary and dates TBD",
       },
     ],
   },
@@ -616,20 +624,30 @@ export function Planner() {
                 <p>Using the 2026–27 schedule as a planning proxy. Confirm 2028 dates when released.</p>
               </div>
               <div className="trip-idea-list">
-                {activeStop.resources.map((resource) => (
-                  <a
-                    href={resource.href}
-                    key={resource.href}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <span>
-                      <strong>{resource.title}</strong>
-                      <small>{resource.detail}</small>
-                    </span>
-                    <span aria-hidden="true">↗</span>
-                  </a>
-                ))}
+                {activeStop.resources.map((resource) =>
+                  resource.href ? (
+                    <a
+                      className="trip-idea"
+                      href={resource.href}
+                      key={resource.title}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <span>
+                        <strong>{resource.title}</strong>
+                        <small>{resource.detail}</small>
+                      </span>
+                      <span aria-hidden="true">↗</span>
+                    </a>
+                  ) : (
+                    <div className="trip-idea" key={resource.title}>
+                      <span>
+                        <strong>{resource.title}</strong>
+                        <small>{resource.detail}</small>
+                      </span>
+                    </div>
+                  ),
+                )}
               </div>
             </div>
           ) : null}

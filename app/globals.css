@@ -660,7 +660,7 @@ button.itinerary-row:hover {
   display: grid;
 }
 
-.trip-idea-list a {
+.trip-idea {
   align-items: center;
   display: flex;
   gap: 1rem;
@@ -668,11 +668,11 @@ button.itinerary-row:hover {
   padding: 0.9rem 1rem;
 }
 
-.trip-idea-list a + a {
+.trip-idea + .trip-idea {
   border-top: 1px solid var(--border);
 }
 
-.trip-idea-list a:hover {
+.trip-idea-list a.trip-idea:hover {
   background: #fafbfb;
 }
 
