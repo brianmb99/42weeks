@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 async function render() {
@@ -32,5 +33,20 @@ test("server-renders the 42 Weeks planner", async () => {
   assert.match(html, /Trip timeline/i);
   assert.match(html, /Melbourne/);
   assert.match(html, /Copenhagen/);
+
+  const plannerSource = await readFile(
+    new URL("../app/planner.tsx", import.meta.url),
+    "utf8",
+  );
+  assert.match(plannerSource, /Portugal.s Algarve & Alentejo Family Multi-Adventure/);
+  assert.match(plannerSource, /Basque Country Family Multi-Adventure/);
+  assert.match(
+    plannerSource,
+    /https:\/\/www\.backroads\.com\/trips\/MPGIF\/portugals-algarve-alentejo-family-multi-adventure-tour/,
+  );
+  assert.match(
+    plannerSource,
+    /https:\/\/www\.backroads\.com\/trips\/MBIIF\/basque-country-family-multi-adventure-tour/,
+  );
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
 });

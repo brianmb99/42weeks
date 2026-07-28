@@ -21,6 +21,11 @@ type Stop = {
   purpose: string;
   highlights: string[];
   questions: string[];
+  resources?: {
+    title: string;
+    detail: string;
+    href: string;
+  }[];
 };
 
 type Note = {
@@ -160,6 +165,18 @@ const stops: Stop[] = [
     purpose: "Settle into Danish spring with bikes, ordinary routines, and room for regional exploration.",
     highlights: ["Neighborhood life", "Youth sports", "Bikes", "Nordic spring"],
     questions: ["Which neighborhood best supports family rhythm?", "What travel is lawful after the first Schengen period?"],
+    resources: [
+      {
+        title: "Portugal’s Algarve & Alentejo Family Multi-Adventure",
+        detail: "May 2028 candidate · 6 days · best for ages 9+ · 2028 schedule TBD",
+        href: "https://www.backroads.com/trips/MPGIF/portugals-algarve-alentejo-family-multi-adventure-tour",
+      },
+      {
+        title: "Basque Country Family Multi-Adventure",
+        detail: "May 2028 candidate · 6 days · best for ages 8+ · 2028 schedule TBD",
+        href: "https://www.backroads.com/trips/MBIIF/basque-country-family-multi-adventure-tour",
+      },
+    ],
   },
 ];
 
@@ -587,6 +604,31 @@ export function Planner() {
                       </a>
                     ) : null}
                   </article>
+                ))}
+              </div>
+            </div>
+          ) : null}
+
+          {activeStop.resources?.length ? (
+            <div className="trip-ideas">
+              <div className="trip-ideas-heading">
+                <h4>Saved trip ideas</h4>
+                <p>Using the 2026–27 schedule as a planning proxy. Confirm 2028 dates when released.</p>
+              </div>
+              <div className="trip-idea-list">
+                {activeStop.resources.map((resource) => (
+                  <a
+                    href={resource.href}
+                    key={resource.href}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <span>
+                      <strong>{resource.title}</strong>
+                      <small>{resource.detail}</small>
+                    </span>
+                    <span aria-hidden="true">↗</span>
+                  </a>
                 ))}
               </div>
             </div>
