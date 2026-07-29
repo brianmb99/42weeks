@@ -31,6 +31,8 @@ test("server-renders the 42 Weeks planner", async () => {
   const html = await response.text();
   assert.match(html, /<title>42 Weeks/);
   assert.match(html, /Trip timeline/i);
+  assert.match(html, /All 42 weeks/);
+  assert.match(html, /Focused segment/);
   assert.match(html, /Melbourne/);
   assert.match(html, /Copenhagen/);
 
@@ -42,6 +44,9 @@ test("server-renders the 42 Weeks planner", async () => {
   assert.match(plannerSource, /Basque Country Family Multi-Adventure/);
   assert.match(plannerSource, /Alps hiking trip/);
   assert.match(plannerSource, /Normandy and World War history trip/);
+  assert.match(plannerSource, /Paris and the Eiffel Tower/);
+  assert.match(plannerSource, /title: "Berlin"/);
+  assert.match(plannerSource, /title: "Italy"/);
   assert.match(
     plannerSource,
     /https:\/\/www\.backroads\.com\/trips\/MPGIF\/portugals-algarve-alentejo-family-multi-adventure-tour/,

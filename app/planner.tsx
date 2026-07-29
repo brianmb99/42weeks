@@ -167,6 +167,18 @@ const stops: Stop[] = [
     questions: ["Which neighborhood best supports family rhythm?", "What travel is lawful after the first Schengen period?"],
     resources: [
       {
+        title: "Paris and the Eiffel Tower",
+        detail: "Spring 2028 side trip · must do · dates TBD",
+      },
+      {
+        title: "Berlin",
+        detail: "Spring 2028 side trip · likely · dates TBD",
+      },
+      {
+        title: "Italy",
+        detail: "Keep on the list, but it may deserve a separate trip",
+      },
+      {
         title: "Portugal’s Algarve & Alentejo Family Multi-Adventure",
         detail: "May 2028 candidate · 6 days · best for ages 9+ · 2028 schedule TBD",
         href: "https://www.backroads.com/trips/MPGIF/portugals-algarve-alentejo-family-multi-adventure-tour",
@@ -261,6 +273,9 @@ function stopStyle(stop: Stop) {
 
 export function Planner() {
   const [activeStopId, setActiveStopId] = useState("melbourne");
+  const [timelineView, setTimelineView] = useState<"overview" | "focus">(
+    "overview",
+  );
   const [notes, setNotes] = useState<Note[]>(starterNotes);
   const [noteText, setNoteText] = useState("");
   const [notePlace, setNotePlace] = useState("general");
@@ -279,6 +294,7 @@ export function Planner() {
     () => keyDates.filter((item) => item.stop === activeStopId),
     [activeStopId],
   );
+  const activeStopIndex = stops.findIndex((stop) => stop.id === activeStopId);
 
   useEffect(() => {
     const saved = window.localStorage.getItem("42-weeks-draft-notes");
@@ -304,6 +320,18 @@ export function Planner() {
       behavior: "smooth",
       block: "center",
     });
+  }
+
+  function focusTimelineStop(id: string) {
+    setActiveStopId(id);
+    setTimelineView("focus");
+  }
+
+  function moveTimelineFocus(direction: -1 | 1) {
+    const nextIndex =
+      (activeStopIndex + direction + stops.length) % stops.length;
+    setActiveStopId(stops[nextIndex].id);
+    setTimelineView("focus");
   }
 
   function focusNote() {
@@ -465,9 +493,29 @@ export function Planner() {
             <h2>Trip timeline</h2>
           </div>
           <p className="section-note">
-            Dates are the current working plan. Segment widths show the allocation.
-            Select a destination for details.
+            Keep the whole trip in view, or select a segment to expand its
+            dates, ideas, and decisions without leaving the timeline.
           </p>
+        </div>
+
+        <div className="timeline-toolbar" aria-label="Timeline view">
+          <div>
+            <button
+              className={timelineView === "overview" ? "active" : ""}
+              onClick={() => setTimelineView("overview")}
+              type="button"
+            >
+              All 42 weeks
+            </button>
+            <button
+              className={timelineView === "focus" ? "active" : ""}
+              onClick={() => setTimelineView("focus")}
+              type="button"
+            >
+              Focused segment
+            </button>
+          </div>
+          <span>Select a block to expand it</span>
         </div>
 
         <div className="timeline" aria-label="42 week trip timeline">
@@ -488,8 +536,11 @@ export function Planner() {
                   className={`timeline-stop ${activeStopId === stop.id ? "active" : ""}`}
                   key={stop.id}
                   style={stopStyle(stop)}
-                  onClick={() => selectStop(stop.id)}
+                  onClick={() => focusTimelineStop(stop.id)}
                   aria-label={`${stop.name}, ${stop.window}, ${stop.days} days`}
+                  aria-expanded={
+                    timelineView === "focus" && activeStopId === stop.id
+                  }
                   title={`${stop.name}: ${stop.window} (${stop.days} days)`}
                 >
                   <span className="timeline-name">{stop.shortName}</span>
@@ -500,30 +551,153 @@ export function Planner() {
           </div>
         </div>
 
-        <div className="itinerary-table" role="table" aria-label="Exact itinerary dates">
-          <div className="itinerary-row itinerary-header" role="row">
-            <span role="columnheader">Stop</span>
-            <span role="columnheader">Exact dates</span>
-            <span role="columnheader">Duration</span>
+        {timelineView === "overview" ? (
+          <div
+            className="itinerary-table"
+            role="table"
+            aria-label="Exact itinerary dates"
+          >
+            <div className="itinerary-row itinerary-header" role="row">
+              <span role="columnheader">Stop</span>
+              <span role="columnheader">Exact dates</span>
+              <span role="columnheader">Duration</span>
+            </div>
+            {stops.map((stop) => (
+              <button
+                className="itinerary-row"
+                role="row"
+                key={stop.id}
+                onClick={() => focusTimelineStop(stop.id)}
+              >
+                <span role="cell">
+                  <i style={{ background: stop.color }} />
+                  {stop.name}
+                </span>
+                <span role="cell">{stop.window}</span>
+                <span role="cell">
+                  {stop.days} {stop.days === 1 ? "day" : "days"}
+                </span>
+              </button>
+            ))}
           </div>
-          {stops.map((stop) => (
+        ) : (
+          <article
+            className="timeline-focus"
+            id="timeline-focus"
+            style={stopStyle(activeStop)}
+          >
+            <div className="timeline-focus-header">
+              <div>
+                <p className="eyebrow">Focused segment · {activeStop.eyebrow}</p>
+                <h3>{activeStop.name}</h3>
+                <p>
+                  {activeStop.window} · {activeStop.days} days
+                </p>
+              </div>
+              <div className="timeline-focus-actions">
+                <button
+                  type="button"
+                  onClick={() => moveTimelineFocus(-1)}
+                  aria-label="Focus previous trip segment"
+                >
+                  ← Previous
+                </button>
+                <button
+                  type="button"
+                  onClick={() => moveTimelineFocus(1)}
+                  aria-label="Focus next trip segment"
+                >
+                  Next →
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setTimelineView("overview")}
+                >
+                  Collapse
+                </button>
+              </div>
+            </div>
+
+            <p className="timeline-focus-purpose">{activeStop.purpose}</p>
+
+            <div className="timeline-focus-grid">
+              <section>
+                <h4>Key dates</h4>
+                {activeKeyDates.length ? (
+                  <ul className="timeline-focus-list">
+                    {activeKeyDates.map((item) => (
+                      <li key={item.title}>
+                        <time>{item.date}</time>
+                        <strong>{item.title}</strong>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="timeline-empty">No fixed events yet.</p>
+                )}
+              </section>
+
+              <section>
+                <h4>Working ingredients</h4>
+                <ul className="timeline-focus-list compact">
+                  {activeStop.highlights.map((highlight) => (
+                    <li key={highlight}>{highlight}</li>
+                  ))}
+                </ul>
+              </section>
+
+              <section>
+                <h4>Questions</h4>
+                <ul className="timeline-focus-list compact">
+                  {activeStop.questions.map((question) => (
+                    <li key={question}>{question}</li>
+                  ))}
+                </ul>
+              </section>
+            </div>
+
+            {activeStop.resources?.length ? (
+              <section className="timeline-focus-ideas">
+                <div>
+                  <h4>Ideas inside this segment</h4>
+                  <p>
+                    These can become dated sub-trips as the plan gets more
+                    specific.
+                  </p>
+                </div>
+                <div>
+                  {activeStop.resources.map((resource) =>
+                    resource.href ? (
+                      <a
+                        href={resource.href}
+                        key={resource.title}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <strong>{resource.title}</strong>
+                        <span>{resource.detail}</span>
+                        <i aria-hidden="true">↗</i>
+                      </a>
+                    ) : (
+                      <article key={resource.title}>
+                        <strong>{resource.title}</strong>
+                        <span>{resource.detail}</span>
+                      </article>
+                    ),
+                  )}
+                </div>
+              </section>
+            ) : null}
+
             <button
-              className="itinerary-row"
-              role="row"
-              key={stop.id}
-              onClick={() => selectStop(stop.id)}
+              className="timeline-open-chapter"
+              type="button"
+              onClick={() => selectStop(activeStop.id)}
             >
-              <span role="cell">
-                <i style={{ background: stop.color }} />
-                {stop.name}
-              </span>
-              <span role="cell">{stop.window}</span>
-              <span role="cell">
-                {stop.days} {stop.days === 1 ? "day" : "days"}
-              </span>
+              Open full {activeStop.name} chapter ↓
             </button>
-          ))}
-        </div>
+          </article>
+        )}
       </section>
 
       <section className="dates section-shell">
