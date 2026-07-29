@@ -2,6 +2,14 @@ import Link from "next/link";
 import tripPlan from "../../data/trip-plan.json";
 
 type TimelineEntry = (typeof tripPlan.timeline)[number];
+type DateCluster = {
+  date: string;
+  entries: TimelineEntry[];
+};
+
+const DAY = 24 * 60 * 60 * 1000;
+const LONG_GAP_DAYS = 28;
+const PIXELS_PER_DAY = 4;
 
 const locationNames = Object.fromEntries(
   tripPlan.timeline
@@ -9,8 +17,22 @@ const locationNames = Object.fromEntries(
     .map((entry) => [entry.locationId, entry.title]),
 );
 
+const clusters = tripPlan.timeline.reduce<DateCluster[]>((result, entry) => {
+  const current = result[result.length - 1];
+  if (current?.date === entry.start) {
+    current.entries.push(entry);
+  } else {
+    result.push({ date: entry.start, entries: [entry] });
+  }
+  return result;
+}, []);
+
 function localDate(value: string) {
   return new Date(`${value}T00:00:00`);
+}
+
+function daysBetween(start: string, end: string) {
+  return Math.round((localDate(end).getTime() - localDate(start).getTime()) / DAY);
 }
 
 function dateParts(value: string) {
@@ -25,80 +47,90 @@ function dateParts(value: string) {
   };
 }
 
-function compactDate(value: string) {
+function compactDate(value: string, year = true) {
   return new Intl.DateTimeFormat("en-US", {
     month: "short",
     day: "numeric",
-    year: "numeric",
+    ...(year ? { year: "numeric" } : {}),
   }).format(localDate(value));
 }
 
 function typeLabel(type: TimelineEntry["type"]) {
   if (type === "location") return "Location";
   if (type === "travel") return "Travel";
-  return "Anchor";
+  return "Event";
 }
 
-function TimelineDate({ entry }: { entry: TimelineEntry }) {
-  const start = dateParts(entry.start);
-
-  if (entry.end) {
-    return (
-      <div className="entry-date entry-date-range">
-        <time dateTime={entry.start}>
-          <span>{start.weekday}</span>
-          <strong>{start.monthDay}</strong>
-          <small>{start.year}</small>
-        </time>
-        <span className="date-through">to</span>
-        <time dateTime={entry.end}>
-          <strong>{dateParts(entry.end).monthDay}</strong>
-          <small>{dateParts(entry.end).year}</small>
-        </time>
-      </div>
-    );
-  }
-
+function ClusterDate({ value }: { value: string }) {
+  const date = dateParts(value);
   return (
-    <time className="entry-date" dateTime={entry.start}>
-      <span>{start.weekday}</span>
-      <strong>{start.monthDay}</strong>
-      <small>{start.year}</small>
+    <time className="cluster-date" dateTime={value}>
+      <span>{date.weekday}</span>
+      <strong>{date.monthDay}</strong>
+      <small>{date.year}</small>
     </time>
   );
 }
 
-function TimelineRow({ entry }: { entry: TimelineEntry }) {
+function EventEntry({ entry }: { entry: TimelineEntry }) {
   const location = locationNames[entry.locationId];
+  const showContext =
+    entry.context &&
+    (entry.type === "event" || entry.id === "travel-to-melbourne");
+  const fixed = entry.type === "event" && entry.fixed;
 
   return (
-    <article
-      className={`timeline-row event-${entry.type}`}
+    <div
+      className={`event-entry event-${entry.type} ${fixed ? "is-fixed" : ""}`}
       style={
         entry.color
           ? ({ "--location-color": entry.color } as React.CSSProperties)
           : undefined
       }
     >
-      <TimelineDate entry={entry} />
-      <div className="timeline-marker" aria-hidden="true">
-        <span />
-      </div>
-      <div className="entry-content">
-        <div className="entry-meta">
-          <span className="event-type">{typeLabel(entry.type)}</span>
-          {entry.type === "location" && entry.days && <span>{entry.days} days</span>}
-          {entry.type === "anchor" && location && <span>{location}</span>}
-        </div>
-        <h2>{entry.title}</h2>
+      <div className="event-meta">
+        <span className="event-type">{typeLabel(entry.type)}</span>
         {entry.type === "location" && entry.end && (
-          <p className="date-summary">
-            {compactDate(entry.start)} – {compactDate(entry.end)}
-          </p>
+          <>
+            <span>through {compactDate(entry.end, false)}</span>
+            <span>{entry.days} days</span>
+          </>
         )}
-        {entry.context && <p>{entry.context}</p>}
+        {entry.type === "event" && location && <span>{location}</span>}
+        {fixed && <span className="fixed-label">Fixed</span>}
       </div>
-    </article>
+      <h2>{entry.title}</h2>
+      {showContext && <p>{entry.context}</p>}
+    </div>
+  );
+}
+
+function ElapsedGap({ from, to }: { from: string; to: string }) {
+  const elapsedDays = daysBetween(from, to);
+  if (elapsedDays <= 0) return null;
+
+  const emptyDays = Math.max(0, elapsedDays - 1);
+  const compressed = emptyDays > LONG_GAP_DAYS;
+  const representedDays = compressed ? LONG_GAP_DAYS : emptyDays;
+  const height = Math.max(12, representedDays * PIXELS_PER_DAY);
+
+  return (
+    <div
+      className={`elapsed-gap ${compressed ? "is-compressed" : ""}`}
+      style={{ "--gap-height": `${height}px` } as React.CSSProperties}
+      aria-label={
+        compressed
+          ? `${emptyDays} days without a separate dated event, compressed`
+          : `${emptyDays} days until the next dated event`
+      }
+    >
+      {compressed && (
+        <span className="gap-label">
+          <i aria-hidden="true">∕ ∕</i>
+          {emptyDays} days
+        </span>
+      )}
+    </div>
   );
 }
 
@@ -121,7 +153,9 @@ export default function CalendarPlanner() {
       <section className="timeline-key" aria-label="Timeline key">
         <div><span className="key-mark key-location" />Location stay</div>
         <div><span className="key-mark key-travel" />Travel day</div>
-        <div><span className="key-mark key-anchor" />Anchor date</div>
+        <div><span className="key-mark key-event" />Dated event</div>
+        <div><span className="key-mark key-fixed" />Fixed date</div>
+        <p>Spacing reflects elapsed time; long empty periods are compressed.</p>
       </section>
 
       <div className="source-line">
@@ -129,14 +163,45 @@ export default function CalendarPlanner() {
       </div>
 
       <section className="timeline" aria-label="Chronological trip timeline">
-        {tripPlan.timeline.map((entry) => (
-          <TimelineRow entry={entry} key={entry.id} />
-        ))}
-      </section>
+        {clusters.map((cluster, index) => {
+          const nextDate =
+            clusters[index + 1]?.date ??
+            (cluster.date < tripPlan.trip.end ? tripPlan.trip.end : null);
 
-      <footer className="page-footer">
-        End of working timeline · {compactDate(tripPlan.trip.end)}
-      </footer>
+          return (
+            <div className="cluster-block" key={cluster.date}>
+              <section className="date-cluster">
+                <ClusterDate value={cluster.date} />
+                <div
+                  className={`cluster-marker ${
+                    cluster.entries.length > 1
+                      ? "marker-mixed"
+                      : cluster.entries[0].type === "event" &&
+                          cluster.entries[0].fixed
+                        ? "marker-fixed"
+                        : `marker-${cluster.entries[0].type}`
+                  }`}
+                  aria-hidden="true"
+                >
+                  <span />
+                </div>
+                <div className="cluster-events">
+                  {cluster.entries.map((entry) => (
+                    <EventEntry entry={entry} key={entry.id} />
+                  ))}
+                </div>
+              </section>
+              {nextDate && <ElapsedGap from={cluster.date} to={nextDate} />}
+            </div>
+          );
+        })}
+
+        <div className="timeline-end">
+          <time dateTime={tripPlan.trip.end}>{compactDate(tripPlan.trip.end)}</time>
+          <span aria-hidden="true" />
+          <p>End of working timeline</p>
+        </div>
+      </section>
     </main>
   );
 }

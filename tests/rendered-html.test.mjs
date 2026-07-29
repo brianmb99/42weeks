@@ -73,10 +73,21 @@ test("server-renders the single chronological working timeline", async () => {
   assert.match(html, /data\/trip-plan\.json/);
   assert.match(html, /Location stay/);
   assert.match(html, /Travel day/);
-  assert.match(html, /Anchor date/);
+  assert.match(html, /Dated event/);
+  assert.match(html, /Fixed date/);
   assert.match(html, /Travel to Melbourne/);
   assert.match(html, /Melbourne → Brisbane area/);
   assert.match(html, /AFL Grand Final/);
   assert.doesNotMatch(html, /Things under consideration/);
+  assert.doesNotMatch(html, /Anchor|Maximum 90-day|max 90-day/i);
   assert.doesNotMatch(html, />Overview<|>Weeks<|Dates run top to bottom/);
+
+  const tripPlan = JSON.parse(
+    await readFile(new URL("../data/trip-plan.json", import.meta.url), "utf8"),
+  );
+  const datedEvents = tripPlan.timeline.filter((entry) => entry.type === "event");
+  assert.equal(datedEvents.length, 5);
+  assert.ok(datedEvents.every((entry) => typeof entry.fixed === "boolean"));
+  assert.equal(datedEvents.filter((entry) => entry.fixed).length, 3);
+  assert.equal(tripPlan.rules.length, 2);
 });

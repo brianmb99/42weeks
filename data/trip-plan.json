@@ -2,11 +2,23 @@
   "schemaVersion": 2,
   "lastReviewed": "2026-07-28",
   "title": "42 Weeks",
-  "datePolicy": "This ordered timeline is the definitive source for exact working dates. Location start and end dates are inclusive. Travel days and anchor dates are explicit events.",
+  "datePolicy": "This ordered timeline is the definitive source for exact working dates. Location start and end dates are inclusive. Dated events use fixed=true only when their dates must not move as the working plan is rebalanced.",
   "trip": {
     "start": "2027-09-09",
     "end": "2028-06-28"
   },
+  "rules": [
+    {
+      "id": "alps-stay-limit",
+      "appliesTo": "alps",
+      "note": "The Alps stay must not exceed 90 days."
+    },
+    {
+      "id": "copenhagen-stay-limit",
+      "appliesTo": "copenhagen",
+      "note": "The Copenhagen stay must not exceed 90 days."
+    }
+  ],
   "timeline": [
     {
       "id": "travel-to-melbourne",
@@ -31,8 +43,9 @@
       "color": "#b65543"
     },
     {
-      "id": "anchor-afl-semi",
-      "type": "anchor",
+      "id": "event-afl-semi",
+      "type": "event",
+      "fixed": false,
       "start": "2027-09-10",
       "end": null,
       "days": null,
@@ -42,14 +55,15 @@
       "color": null
     },
     {
-      "id": "anchor-afl-final",
-      "type": "anchor",
+      "id": "event-afl-final",
+      "type": "event",
+      "fixed": true,
       "start": "2027-09-25",
       "end": null,
       "days": null,
       "title": "AFL Grand Final",
       "locationId": "melbourne",
-      "context": "Melbourne anchor date; tickets are expected to be difficult.",
+      "context": "Tickets are expected to be difficult.",
       "color": null
     },
     {
@@ -60,7 +74,7 @@
       "days": null,
       "title": "Melbourne → Brisbane area",
       "locationId": "brisbane",
-      "context": "Travel day",
+      "context": null,
       "color": null
     },
     {
@@ -82,7 +96,7 @@
       "days": null,
       "title": "Brisbane area → India",
       "locationId": "india",
-      "context": "Travel day",
+      "context": null,
       "color": null
     },
     {
@@ -97,14 +111,15 @@
       "color": "#a8547c"
     },
     {
-      "id": "anchor-diwali",
-      "type": "anchor",
+      "id": "event-diwali",
+      "type": "event",
+      "fixed": true,
       "start": "2027-10-29",
       "end": null,
       "days": null,
       "title": "Diwali",
       "locationId": "india",
-      "context": "India anchor date",
+      "context": null,
       "color": null
     },
     {
@@ -115,7 +130,7 @@
       "days": null,
       "title": "India → Singapore",
       "locationId": "singapore",
-      "context": "Travel day",
+      "context": null,
       "color": null
     },
     {
@@ -137,7 +152,7 @@
       "days": null,
       "title": "Singapore → Hong Kong",
       "locationId": "hong-kong",
-      "context": "Travel day",
+      "context": null,
       "color": null
     },
     {
@@ -159,7 +174,7 @@
       "days": null,
       "title": "Hong Kong → Japan",
       "locationId": "japan",
-      "context": "Travel day",
+      "context": null,
       "color": null
     },
     {
@@ -181,7 +196,7 @@
       "days": null,
       "title": "Japan → New Hampshire",
       "locationId": "new-hampshire",
-      "context": "Travel day",
+      "context": null,
       "color": null
     },
     {
@@ -203,7 +218,7 @@
       "days": null,
       "title": "New Hampshire → Snowbird",
       "locationId": "snowbird",
-      "context": "Travel day",
+      "context": null,
       "color": null
     },
     {
@@ -218,14 +233,15 @@
       "color": "#566b89"
     },
     {
-      "id": "anchor-christmas",
-      "type": "anchor",
+      "id": "event-christmas",
+      "type": "event",
+      "fixed": true,
       "start": "2027-12-25",
       "end": null,
       "days": null,
       "title": "Christmas",
       "locationId": "snowbird",
-      "context": "Snowbird",
+      "context": null,
       "color": null
     },
     {
@@ -236,7 +252,7 @@
       "days": null,
       "title": "Snowbird → The Alps",
       "locationId": "alps",
-      "context": "Travel day",
+      "context": null,
       "color": null
     },
     {
@@ -247,7 +263,7 @@
       "days": 90,
       "title": "The Alps",
       "locationId": "alps",
-      "context": "Maximum 90-day stay",
+      "context": null,
       "color": "#365f78"
     },
     {
@@ -258,7 +274,7 @@
       "days": null,
       "title": "The Alps → Copenhagen",
       "locationId": "copenhagen",
-      "context": "Travel day",
+      "context": null,
       "color": null
     },
     {
@@ -269,18 +285,19 @@
       "days": 90,
       "title": "Copenhagen",
       "locationId": "copenhagen",
-      "context": "Maximum 90-day stay",
+      "context": null,
       "color": "#2f725f"
     },
     {
-      "id": "anchor-copenhagen-arrival",
-      "type": "anchor",
+      "id": "event-copenhagen-arrival",
+      "type": "event",
+      "fixed": false,
       "start": "2028-03-31",
       "end": null,
       "days": null,
       "title": "Copenhagen arrival",
       "locationId": "copenhagen",
-      "context": "Begins the 90-day Copenhagen stay",
+      "context": null,
       "color": null
     }
   ],
