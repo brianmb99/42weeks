@@ -274,6 +274,18 @@
       "color": "#4f9eb3"
     },
     {
+      "id": "event-charlie-birthday-2027",
+      "type": "event",
+      "fixed": true,
+      "start": "2027-10-12",
+      "end": null,
+      "days": null,
+      "title": "Charlie's birthday",
+      "locationId": "hamilton-island",
+      "context": "Family birthday.",
+      "color": null
+    },
+    {
       "id": "event-hamilton-work-block",
       "type": "event",
       "fixed": false,
@@ -436,6 +448,18 @@
       "locationId": "india",
       "context": null,
       "color": "#a95f27"
+    },
+    {
+      "id": "event-kate-birthday-2027",
+      "type": "event",
+      "fixed": true,
+      "start": "2027-10-26",
+      "end": null,
+      "days": null,
+      "title": "Kate's birthday",
+      "locationId": "india",
+      "context": "Family birthday.",
+      "color": null
     },
     {
       "id": "event-diwali",
@@ -620,6 +644,30 @@
       "locationId": "alps",
       "context": null,
       "color": "#3f7b62"
+    },
+    {
+      "id": "event-allie-birthday-2028",
+      "type": "event",
+      "fixed": true,
+      "start": "2028-01-18",
+      "end": null,
+      "days": null,
+      "title": "Allie's birthday",
+      "locationId": "alps",
+      "context": "Family birthday.",
+      "color": null
+    },
+    {
+      "id": "event-brian-birthday-2028",
+      "type": "event",
+      "fixed": true,
+      "start": "2028-03-12",
+      "end": null,
+      "days": null,
+      "title": "Brian's birthday",
+      "locationId": "alps",
+      "context": "Family birthday.",
+      "color": null
     },
     {
       "id": "travel-alps-copenhagen",

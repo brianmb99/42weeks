@@ -129,6 +129,10 @@ test("server-renders the expandable weekly calendar", async () => {
   assert.match(html, /Hamilton Island vacation days/);
   assert.match(html, /Fly Brisbane → Longreach/);
   assert.match(html, /Outback vacation days/);
+  assert.match(html, /Charlie&#x27;s birthday/);
+  assert.match(html, /Kate&#x27;s birthday/);
+  assert.match(html, /Allie&#x27;s birthday/);
+  assert.match(html, /Brian&#x27;s birthday/);
   assert.match(html, /Location = where we sleep that night/);
   assert.match(html, /Fly home; unpack and repack for Europe/);
   assert.doesNotMatch(html, /Japan/);
@@ -148,9 +152,20 @@ test("server-renders the expandable weekly calendar", async () => {
     await readFile(new URL("../data/trip-plan.json", import.meta.url), "utf8"),
   );
   const datedEvents = tripPlan.timeline.filter((entry) => entry.type === "event");
-  assert.equal(datedEvents.length, 9);
+  assert.equal(datedEvents.length, 13);
   assert.ok(datedEvents.every((entry) => typeof entry.fixed === "boolean"));
-  assert.equal(datedEvents.filter((entry) => entry.fixed).length, 2);
+  assert.equal(datedEvents.filter((entry) => entry.fixed).length, 6);
+  assert.deepEqual(
+    datedEvents
+      .filter((entry) => entry.id.includes("-birthday-"))
+      .map((entry) => [entry.title, entry.start]),
+    [
+      ["Charlie's birthday", "2027-10-12"],
+      ["Kate's birthday", "2027-10-26"],
+      ["Allie's birthday", "2028-01-18"],
+      ["Brian's birthday", "2028-03-12"],
+    ],
+  );
   assert.equal(tripPlan.rules.length, 2);
   assert.equal(tripPlan.dayPlanning.weekdayDefault, "work");
   assert.equal(tripPlan.dayPlanning.weekendDefault, "off");
