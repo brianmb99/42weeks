@@ -23,39 +23,44 @@ async function render(path = "/") {
   );
 }
 
-test("server-renders the 42 Weeks planner", async () => {
+test("server-renders the 42 Weeks overview", async () => {
   const response = await render();
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
   assert.match(html, /<title>42 Weeks/);
-  assert.match(html, /Trip timeline/i);
-  assert.match(html, /Full trip/);
-  assert.match(html, /Click a location to zoom into it/);
-  assert.match(html, /Melbourne/);
-  assert.match(html, /Copenhagen/);
-
-  const plannerSource = await readFile(
-    new URL("../app/planner.tsx", import.meta.url),
-    "utf8",
-  );
-  assert.match(plannerSource, /Portugal.s Algarve & Alentejo Family Multi-Adventure/);
-  assert.match(plannerSource, /Basque Country Family Multi-Adventure/);
-  assert.match(plannerSource, /Alps hiking trip/);
-  assert.match(plannerSource, /Normandy and World War history trip/);
-  assert.match(plannerSource, /Paris and the Eiffel Tower/);
-  assert.match(plannerSource, /title: "Berlin"/);
-  assert.match(plannerSource, /title: "Italy"/);
-  assert.match(plannerSource, /Speculative work and non-work days/);
-  assert.match(plannerSource, /"six-weeks"/);
-  assert.match(plannerSource, /"two-weeks"/);
+  assert.match(html, /Broad route/);
+  assert.match(html, /Where the 42 weeks go/);
+  assert.match(html, /View the exact calendar/);
+  assert.match(html, /Great Southern Touring Route/);
+  assert.match(html, /Open the 9-day plan/);
   assert.match(
-    plannerSource,
+    html,
+    /\/trips\/great-southern-touring-route/,
+  );
+  assert.match(
+    html,
+    /images\.unsplash\.com\/photo-1736893474760-759d20e84f58/,
+  );
+  assert.match(html, /\/og\.png/);
+  assert.match(html, /summary_large_image/);
+  assert.match(html, /Geelong/);
+  assert.match(html, /Melbourne/);
+  assert.match(html, /Brisbane/);
+  assert.match(html, /Diwali/);
+  assert.match(html, /Singapore/);
+  assert.match(html, /Hong Kong/);
+  assert.match(html, /Snowbird/);
+  assert.match(html, /Still open/);
+  assert.match(html, /Copenhagen/);
+  assert.doesNotMatch(html, /Japan|AFL Grand Final/);
+  assert.match(
+    html,
     /https:\/\/www\.backroads\.com\/trips\/MPGIF\/portugals-algarve-alentejo-family-multi-adventure-tour/,
   );
   assert.match(
-    plannerSource,
+    html,
     /https:\/\/www\.backroads\.com\/trips\/MBIIF\/basque-country-family-multi-adventure-tour/,
   );
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
