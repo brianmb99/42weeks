@@ -40,6 +40,10 @@ const locationDetailPages: Record<string, string> = {
   "location-longreach": "/trips/longreach-outback-working-week",
 };
 
+const overviewLocationTitles: Record<string, string> = {
+  "location-melbourne": "Melbourne or Sydney",
+};
+
 function getLocation(id: string) {
   const location = locations.find((entry) => entry.id === id);
   if (!location) throw new Error(`Missing location: ${id}`);
@@ -306,9 +310,11 @@ export default function Home() {
           <ol className="home-route-list">
             {overviewLocations.map((location) => {
               const detailPage = locationDetailPages[location.id];
+              const displayTitle =
+                overviewLocationTitles[location.id] ?? location.title;
               const content = (
                 <>
-                  <span>{location.title}</span>
+                  <span>{displayTitle}</span>
                   <time>
                     {formatDate(location.start)}–{formatDate(location.end)}
                   </time>
@@ -324,7 +330,7 @@ export default function Home() {
                     <a
                       className="home-route-item home-route-link"
                       href={sitePath(detailPage)}
-                      aria-label={`Open ${location.title} plan`}
+                      aria-label={`Open ${displayTitle} plan`}
                     >
                       {content}
                     </a>
