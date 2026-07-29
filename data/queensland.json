@@ -146,11 +146,11 @@
     },
     "departure": {
       "date": "2027-10-23",
-      "title": "Return to Brisbane Airport",
+      "title": "Begin the trip to India",
       "items": [
-        "Fly to Brisbane and sleep at or beside the airport.",
-        "Protect the international connection by avoiding a same-day Longreach → India itinerary.",
-        "Depart for India the following day."
+        "Fly Longreach → Brisbane and connect to the international itinerary the same day.",
+        "Use a protected through-ticket or leave a generous connection in Brisbane.",
+        "Travel overnight and arrive in India on Sunday, October 24."
       ]
     },
     "base": {
@@ -201,9 +201,8 @@
     "bookFirst": [
       "Two-bedroom Longreach accommodation with a credible work setup",
       "Brisbane → Longreach flight",
-      "Longreach → Brisbane flight",
+      "Longreach → Brisbane → India itinerary",
       "Rental car",
-      "Brisbane airport hotel for October 23",
       "Major museum tours",
       "Chosen Winton or Longreach full-day experience"
     ],

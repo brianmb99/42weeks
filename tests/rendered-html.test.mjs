@@ -135,6 +135,8 @@ test("server-renders the expandable weekly calendar", async () => {
   );
   assert.match(html, /Fly Hamilton Island → Brisbane → Longreach/);
   assert.match(html, /Outback vacation days/);
+  assert.match(html, /Fly Longreach → Brisbane → India/);
+  assert.doesNotMatch(html, /Fly Longreach → Brisbane<\/|Fly Brisbane → India/);
   assert.match(html, /Charlie&#x27;s birthday/);
   assert.match(html, /Kate&#x27;s birthday/);
   assert.match(html, /Allie&#x27;s birthday/);
@@ -250,19 +252,27 @@ test("server-renders the expandable weekly calendar", async () => {
     [geelong.start, geelong.end, roadTrip.start, roadTrip.end],
     ["2027-09-19", "2027-09-24", "2027-09-25", "2027-09-30"],
   );
-  const oct23Airport = tripPlan.timeline.find(
-    (entry) => entry.id === "location-brisbane-airport-oct-23",
-  );
-  assert.equal(oct23Airport.railGroupId, "location-longreach");
-  assert.equal(oct23Airport.title, "Brisbane Airport");
   assert.equal(longreach.railLabel, "Outback");
   assert.equal(longreach.color, "#4f7fa2");
-  assert.equal(oct23Airport.railColor, longreach.color);
   assert.equal(
     tripPlan.timeline.some(
-      (entry) => entry.id === "location-brisbane-airport-oct-16",
+      (entry) => entry.id.startsWith("location-brisbane-airport"),
     ),
     false,
+  );
+  const indiaTransit = tripPlan.timeline.find(
+    (entry) => entry.id === "location-in-transit-india",
+  );
+  const longreachToIndia = tripPlan.timeline.find(
+    (entry) => entry.id === "travel-longreach-india",
+  );
+  assert.deepEqual(
+    [indiaTransit.start, indiaTransit.end, indiaTransit.railGroupId],
+    ["2027-10-23", "2027-10-23", "location-india"],
+  );
+  assert.deepEqual(
+    [longreachToIndia.start, longreachToIndia.end, longreachToIndia.days],
+    ["2027-10-23", "2027-10-24", 2],
   );
   const hamiltonToLongreach = tripPlan.timeline.find(
     (entry) => entry.id === "travel-hamilton-island-longreach",
@@ -351,7 +361,7 @@ test("server-renders the expandable weekly calendar", async () => {
   );
   assert.deepEqual(
     [india.start, india.end, hongKong.start, hongKong.end],
-    ["2027-10-25", "2027-11-13", "2027-11-28", "2027-12-17"],
+    ["2027-10-24", "2027-11-13", "2027-11-28", "2027-12-17"],
   );
   assert.deepEqual(
     [repack.start, repack.end, alps.start, alps.end, copenhagen.start],
@@ -419,6 +429,9 @@ test("server-renders the Outback Queensland plan", async () => {
   assert.match(html, /Saltbush Retreat/);
   assert.match(html, /Work Mon–Wed/);
   assert.match(html, /Vacation Thu–Fri/);
+  assert.match(html, /Begin the trip to India/);
+  assert.match(html, /arrive in India on Sunday, October 24/i);
+  assert.doesNotMatch(html, /Brisbane airport hotel for October 23/);
   assert.match(html, />Hamilton Island</);
   assert.match(html, /Queensland Working Notes\.md/);
 });

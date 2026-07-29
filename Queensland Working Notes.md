@@ -9,9 +9,9 @@
 Use two compact Queensland bases:
 
 1. **Hamilton Island, Sunday, October 10 through Saturday, October 16**
-2. **Longreach, Sunday, October 17 through Friday, October 22**, followed by the Brisbane airport buffer on Saturday
+2. **Longreach, Sunday, October 17 through Friday, October 22**, followed by one continuous trip to India on Saturday
 
-Use Brisbane only as a same-day airport connection on October 17 and for the airport buffer night on October 23.
+Use Brisbane only as a same-day airport connection on October 17 and October 23.
 
 At each principal base:
 
@@ -25,11 +25,11 @@ This produces:
 
 - 7 nights on Hamilton Island
 - 6 nights in Longreach
-- 1 Brisbane airport night
+- 0 Brisbane airport nights
 - 6 full workdays
 - 4 vacation days
 - 2 weekend days that extend the Hamilton Island mini-vacation
-- 14 Queensland nights before the October 24 India flight
+- 13 Queensland nights before the October 23 international departure
 
 The concept depends on early-shift work rather than U.S. market hours. A working target is **4:30 a.m.–12:30 p.m. AEST**, with family lunch around 12:30 and activities from approximately 1:30 onward. Exact hours can flex around tours and calls.
 
@@ -40,20 +40,14 @@ The concept depends on early-shift work rather than U.S. market hours. A working
 - Longreach is a real town with groceries, services, museums, restaurants, a pool, airport access, and outback experiences. It is a more credible work base than a remote station.
 - Three work/homeschool days followed by two vacation days creates a repeatable weekly rhythm.
 - Starlink reduces dependence on accommodation Wi-Fi, while existing Wi-Fi and mobile coverage remain essential backups.
-- Brisbane is only an airport connection between Hamilton Island and Longreach; the single Brisbane overnight remains October 23 before the India flight.
-- India still begins on Sunday, October 24, preserving arrival before Diwali on Friday, October 29.
+- Brisbane is only an airport connection: between Hamilton Island and Longreach, then between Longreach and India.
+- India begins on arrival Sunday, October 24, preserving five days before Diwali on Friday, October 29.
 
 ## Calendar implementation specification
 
 ### Existing entries to replace or reinterpret
 
-The current primary calendar contains:
-
-- `travel-sydney-hamilton-island` on October 10
-- Hamilton Island, Outback, and the October 23 Brisbane airport buffer
-- `travel-brisbane-india` on October 24
-
-Replace the first two with the entries below. Retain the October 24 India travel date, but change its context to reflect the Brisbane airport overnight following Longreach.
+The primary calendar uses the entries below. The October 23–24 move is one continuous itinerary, not a Brisbane hotel stay plus a second departure day.
 
 ### Proposed location and travel entries
 
@@ -67,15 +61,14 @@ Replace the first two with the entries below. Retain the October 24 India travel
 | `location-longreach` | location | 2027-10-17 | 2027-10-22 | Longreach | Longreach | Six-night outback living week: three work/homeschool mornings, afternoon and sunset experiences, and two full vacation days. | `/trips/longreach-outback-working-week` |
 | `event-longreach-work-block` | event | 2027-10-18 | 2027-10-20 | Work & homeschool — Longreach | Longreach | Brian works approximately 4:30 a.m.–12:30 p.m.; children homeschool during the morning; use afternoons and evenings for town, heritage, swimming, station, and sunset activities. | `/trips/longreach-outback-working-week#work-days` |
 | `event-longreach-vacation-block` | event | 2027-10-21 | 2027-10-22 | Longreach outback vacation days | Longreach | Use the two full days for the major Longreach museums and either a Winton dinosaur day or the best available station/stagecoach program. | `/trips/longreach-outback-working-week#vacation-days` |
-| `travel-longreach-brisbane` | travel | 2027-10-23 |  | Fly Longreach → Brisbane | Brisbane Airport | Return to Brisbane and sleep at or beside the airport before the India flight. Do not plan a fragile same-day international connection from Longreach. | `/trips/longreach-outback-working-week#departure` |
-| `location-brisbane-airport-oct-23` | location | 2027-10-23 | 2027-10-23 | Brisbane Airport | Brisbane Airport | One-night connection stay before India. |  |
-| `travel-brisbane-india` | travel | 2027-10-24 |  | Fly Brisbane → India | India | Depart after the Brisbane airport buffer night; preserve arrival by October 26 or 27 and a buffer before Diwali. |  |
-| `location-in-transit-india` | location | 2027-10-24 | 2027-10-24 | In transit | In transit | Overnight travel toward India; exact routing remains to be confirmed. |  |
+| `travel-longreach-india` | travel | 2027-10-23 | 2027-10-24 | Fly Longreach → Brisbane → India | India | Connect onward from Brisbane the same day and arrive in India Sunday. Require a protected through-ticket or a generous connection. | `/trips/longreach-outback-working-week#departure` |
+| `location-in-transit-india` | location | 2027-10-23 | 2027-10-23 | In transit | In transit | Overnight travel toward India after the Brisbane connection. |  |
+| `location-india` | location | 2027-10-24 | 2027-11-13 | India | India | Arrive Sunday and begin the India stay. |  |
 
 ### Calendar display guidance
 
 - Location bars should emphasize Hamilton Island and Longreach, not Brisbane.
-- On the simplified left rail, label the Longreach / October 23 Brisbane connection sequence **Outback**. Brisbane on October 17 is an airport connection within the Hamilton Island → Longreach travel day, not an overnight location.
+- Do not create a Brisbane location bar. Brisbane is an airport connection within the October 17 and October 23 travel days.
 - The work and vacation blocks should be visually distinguishable, with the Hamilton Island vacation label continuing through Saturday.
 - The calendar card for each location should link to its dedicated page.
 - Do not present any flight as nonstop or any attraction as operating until the 2027 timetable is published.
@@ -276,11 +269,11 @@ Keep formal school to approximately three morning hours. Use the reef and island
 - **Proposed route:** `/trips/longreach-outback-working-week`
 - **Eyebrow:** Outback Queensland
 - **Title:** Longreach Outback Working Week
-- **Dates:** October 17–23, 2027
+- **Dates:** October 17–22, 2027
 - **Stay:** 6 nights
 - **Workdays:** Monday–Wednesday, October 18–20
 - **Vacation days:** Thursday–Friday, October 21–22
-- **Departure:** Saturday, October 23 to Brisbane Airport
+- **Departure:** Saturday, October 23 to India via Brisbane
 
 ## Hero summary
 
@@ -371,10 +364,10 @@ Remote-station visits remain excellent afternoon or vacation-day activities.
 
 ### Saturday, October 23
 
-- Fly Longreach to Brisbane.
-- Stay at or beside Brisbane Airport.
-- Fly to India on Sunday, October 24.
-- Do not attempt Longreach → Brisbane → India on one ticketing day unless a future schedule provides a very large protected margin. The current concept intentionally includes the Brisbane buffer night.
+- Fly Longreach → Brisbane and connect to the international itinerary that evening.
+- Use a protected through-ticket or leave a generous connection in Brisbane.
+- Travel overnight and arrive in India on Sunday, October 24.
+- Retain a Brisbane hotel only as a fallback if the published 2027 schedule does not support a sensible same-day connection.
 
 Current route context, not a 2027 promise:
 
@@ -499,14 +492,13 @@ The children should not be expected to complete a full conventional school day a
 
 ## Longreach booking priorities
 
-1. Brisbane → Longreach and Longreach → Brisbane flights
+1. Brisbane → Longreach and Longreach → Brisbane → India flights
 2. Six-night family accommodation with written Starlink permission
 3. Rental car
-4. Brisbane airport hotel for October 23
-5. Qantas Founders Museum and aircraft tour
-6. Australian Stockman's Hall of Fame
-7. Best available sunset/river/station experience
-8. Winton tour slot if Option A is chosen
+4. Qantas Founders Museum and aircraft tour
+5. Australian Stockman's Hall of Fame
+6. Best available sunset/river/station experience
+7. Winton tour slot if Option A is chosen
 
 ---
 
@@ -611,8 +603,7 @@ Airline battery limits and carry-on rules must be checked for every carrier. Do 
 
 - Confirm Sydney → Hamilton Island on October 10, 2027.
 - Confirm Hamilton Island → Brisbane → Longreach on October 17.
-- Confirm Longreach → Brisbane on October 23.
-- Confirm Brisbane → India on October 24.
+- Confirm a protected or generously timed Longreach → Brisbane → India itinerary beginning October 23.
 - Prefer protected, sensible timings over nominally possible tight connections.
 
 ## Hamilton Island
