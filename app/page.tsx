@@ -32,6 +32,13 @@ const overviewLocations = locations.filter(
     !entry.locationId.startsWith("brisbane-airport"),
 );
 
+const locationDetailPages: Record<string, string> = {
+  "location-great-southern-touring-route":
+    "/trips/great-southern-touring-route",
+  "location-hamilton-island": "/trips/hamilton-island-working-week",
+  "location-longreach": "/trips/longreach-outback-working-week",
+};
+
 function getLocation(id: string) {
   const location = locations.find((entry) => entry.id === id);
   if (!location) throw new Error(`Missing location: ${id}`);
@@ -302,22 +309,41 @@ export default function Home() {
               <h2>Where the 42 weeks go</h2>
             </div>
             <p>
-              Each stop below comes directly from the current calendar. Click
-              the calendar for travel days, work assumptions, and exact anchors.
+              Each stop below comes directly from the current calendar. Linked
+              stops open their detail plans; the calendar has exact dates.
             </p>
           </div>
           <ol className="home-route-list">
-            {overviewLocations.map((location) => (
-              <li
-                style={{ "--place-color": location.color } as CSSProperties}
-                key={location.id}
-              >
-                <span>{location.title}</span>
-                <time>
-                  {formatDate(location.start)}–{formatDate(location.end)}
-                </time>
-              </li>
-            ))}
+            {overviewLocations.map((location) => {
+              const detailPage = locationDetailPages[location.id];
+              const content = (
+                <>
+                  <span>{location.title}</span>
+                  <time>
+                    {formatDate(location.start)}–{formatDate(location.end)}
+                  </time>
+                </>
+              );
+
+              return (
+                <li
+                  style={{ "--place-color": location.color } as CSSProperties}
+                  key={location.id}
+                >
+                  {detailPage ? (
+                    <a
+                      className="home-route-item home-route-link"
+                      href={sitePath(detailPage)}
+                      aria-label={`Open ${location.title} plan`}
+                    >
+                      {content}
+                    </a>
+                  ) : (
+                    <div className="home-route-item">{content}</div>
+                  )}
+                </li>
+              );
+            })}
           </ol>
         </section>
 

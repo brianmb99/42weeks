@@ -35,6 +35,13 @@ test("server-renders the 42 Weeks overview", async () => {
   assert.match(html, /View the exact calendar/);
   assert.match(html, /Great Ocean Road Loop/);
   assert.match(html, /Open the 9-day plan/);
+  assert.match(html, /aria-label="Open Great Ocean Road Loop plan"/);
+  assert.match(html, /aria-label="Open Hamilton Island plan"/);
+  assert.match(html, /aria-label="Open Outback plan"/);
+  assert.equal(
+    (html.match(/<a class="home-route-item home-route-link"/g) ?? []).length,
+    3,
+  );
   assert.match(
     html,
     /\/trips\/great-southern-touring-route/,
