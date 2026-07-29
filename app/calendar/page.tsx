@@ -3,8 +3,8 @@ import "./calendar.css";
 import CalendarPlanner from "./calendar-planner";
 
 export const metadata: Metadata = {
-  title: "Working calendar",
-  description: "The expandable week-by-week working calendar for the 42 Weeks trip.",
+  title: "Calendar",
+  description: "The expandable week-by-week calendar for the 42 Weeks trip.",
 };
 
 export default function CalendarPage() {

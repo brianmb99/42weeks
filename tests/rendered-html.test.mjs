@@ -61,13 +61,14 @@ test("server-renders the 42 Weeks planner", async () => {
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
 });
 
-test("server-renders the expandable weekly working calendar", async () => {
+test("server-renders the expandable weekly calendar", async () => {
   const response = await render("/calendar");
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /Working calendar/);
+  assert.match(html, /<title>Calendar/);
+  assert.match(html, />Calendar</);
   assert.match(html, /40<!-- --> weeks/);
   assert.match(html, /\+ 5 days/);
   assert.match(html, /285<!-- --> days/);
@@ -89,7 +90,12 @@ test("server-renders the expandable weekly working calendar", async () => {
   assert.match(html, /Great Southern Touring Route/);
   assert.match(html, /Expand all weeks in GSTR/);
   assert.match(html, /Melbourne/);
-  assert.match(html, /Brisbane area/);
+  assert.match(html, /Brisbane/);
+  assert.match(html, />Description</);
+  assert.match(html, /Arrive in Melbourne; stay for the week/);
+  assert.match(html, /Melbourne weekend; fly to Brisbane/);
+  assert.match(html, /Fly home; unpack and repack for Europe/);
+  assert.doesNotMatch(html, /Japan/);
   assert.doesNotMatch(html, /AFL (semifinal|Grand Final)/);
   assert.match(html, /NYSE closed — Thanksgiving Day/);
   assert.match(html, /NYSE closes 1:00 p\.m\. — Day after Thanksgiving/);
@@ -170,7 +176,80 @@ test("server-renders the expandable weekly working calendar", async () => {
   );
   assert.deepEqual(
     [melbourne.start, melbourne.end, brisbane.start, brisbane.end],
-    ["2027-10-04", "2027-10-10", "2027-10-11", "2027-10-26"],
+    ["2027-10-04", "2027-10-10", "2027-10-11", "2027-10-24"],
+  );
+
+  const locations = tripPlan.timeline.filter(
+    (entry) => entry.type === "location",
+  );
+  const dateValue = (value) => new Date(`${value}T00:00:00Z`);
+  const inclusiveDays = (start, end) =>
+    Math.round((dateValue(end) - dateValue(start)) / 86_400_000) + 1;
+
+  assert.ok(
+    locations.every(
+      (location) =>
+        location.days === inclusiveDays(location.start, location.end),
+    ),
+  );
+  for (
+    let date = dateValue(tripPlan.trip.start);
+    date <= dateValue(tripPlan.trip.end);
+    date = new Date(date.getTime() + 86_400_000)
+  ) {
+    const iso = date.toISOString().slice(0, 10);
+    assert.equal(
+      locations.filter(
+        (location) => location.start <= iso && location.end >= iso,
+      ).length,
+      1,
+      `Expected exactly one location on ${iso}`,
+    );
+  }
+  assert.ok(
+    locations
+      .filter((location) => ["alps", "copenhagen"].includes(location.locationId))
+      .every((location) => location.days <= 90),
+  );
+  assert.equal(
+    tripPlan.timeline.some(
+      (entry) => entry.id.includes("japan") || entry.locationId === "japan",
+    ),
+    false,
+  );
+
+  const india = locations.find((entry) => entry.id === "location-india");
+  const hongKong = locations.find(
+    (entry) => entry.id === "location-hong-kong",
+  );
+  const repack = locations.find(
+    (entry) => entry.id === "location-new-hampshire-repack",
+  );
+  const alps = locations.find((entry) => entry.id === "location-alps");
+  const copenhagen = locations.find(
+    (entry) => entry.id === "location-copenhagen",
+  );
+  assert.deepEqual(
+    [india.start, india.end, hongKong.start, hongKong.end],
+    ["2027-10-25", "2027-11-14", "2027-11-29", "2027-12-17"],
+  );
+  assert.deepEqual(
+    [repack.start, repack.end, alps.start, alps.end, copenhagen.start],
+    ["2028-01-01", "2028-01-05", "2028-01-06", "2028-04-01", "2028-04-02"],
+  );
+
+  const weekendTravel = tripPlan.timeline.filter(
+    (entry) =>
+      entry.type === "travel" &&
+      ![
+        "travel-new-hampshire-snowbird",
+        "travel-new-hampshire-alps",
+      ].includes(entry.id),
+  );
+  assert.ok(
+    weekendTravel.every((entry) =>
+      [0, 6].includes(dateValue(entry.start).getUTCDay()),
+    ),
   );
 });
 

@@ -493,7 +493,7 @@ export default function CalendarPlanner() {
       <header className="page-header">
         <div>
           <p className="eyebrow">{tripPlan.title}</p>
-          <h1>Working calendar</h1>
+          <h1>Calendar</h1>
           <p className="trip-range">
             {compactDate(tripPlan.trip.start)} – {compactDate(tripPlan.trip.end)}
             <span>
@@ -528,7 +528,7 @@ export default function CalendarPlanner() {
           <span>Week</span>
           <span>Dates</span>
           <span>Pattern</span>
-          <span>Key dates / travel</span>
+          <span>Description</span>
         </div>
       </div>
 
