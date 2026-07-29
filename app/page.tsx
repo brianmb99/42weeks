@@ -92,7 +92,7 @@ const australiaCards: PlaceCard[] = [
   },
   {
     locationId: "location-melbourne",
-    title: "Melbourne and/or Sydney",
+    title: "Melbourne or Sydney",
     category: "Work base",
     summary:
       "Current assumption: a full Melbourne week. Alternative: stay a couple of days, then hop to Sydney before Hamilton Island—but the extra move could put work time at risk.",

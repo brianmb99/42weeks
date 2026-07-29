@@ -56,7 +56,7 @@ test("server-renders the 42 Weeks overview", async () => {
   assert.match(html, /summary_large_image/);
   assert.match(html, /Geelong/);
   assert.match(html, /Melbourne/);
-  assert.match(html, /<h3>Melbourne and\/or Sydney<\/h3>/);
+  assert.match(html, /<h3>Melbourne or Sydney<\/h3>/);
   assert.match(html, /Possible Sydney hop/);
   assert.match(html, /Melbourne \+ Sydney split/);
   assert.match(html, /Hamilton Island/);
