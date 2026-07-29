@@ -92,9 +92,9 @@ const australiaCards: PlaceCard[] = [
     locationId: "location-melbourne",
     category: "Work base",
     summary:
-      "A week in Melbourne after the road trip: work during the day and use the evenings and weekend for the city.",
-    highlights: ["St Kilda Pier penguins", "Neighborhood life", "Melbourne weekend"],
-    open: "Neighborhood and the rest of the evening plan",
+      "Current assumption: a full Melbourne week. Alternative: stay a couple of days, then hop to Sydney before Hamilton Island—but the extra move could put work time at risk.",
+    highlights: ["St Kilda Pier penguins", "Possible Sydney hop", "Protect work time"],
+    open: "Full Melbourne week vs. Melbourne + Sydney split",
   },
   {
     locationId: "location-hamilton-island",
