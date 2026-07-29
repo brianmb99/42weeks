@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "lastReviewed": "2026-07-28",
   "title": "42 Weeks",
   "datePolicy": "This ordered timeline is the definitive source for exact working dates. Location start and end dates are inclusive. Dated events use fixed=true only when their dates must not move as the working plan is rebalanced.",
@@ -22,8 +22,74 @@
   "dayPlanning": {
     "weekdayDefault": "work",
     "weekendDefault": "off",
+    "marketHolidayDefault": "off",
+    "marketEarlyCloseDefault": "work",
     "travelSource": "timeline events with type=travel",
     "overrides": []
+  },
+  "marketCalendar": {
+    "name": "NYSE",
+    "source": "NYSE Holidays & Trading Hours",
+    "sourceUrl": "https://www.nyse.com/trade/hours-calendars",
+    "timezone": "America/New_York",
+    "dates": [
+      {
+        "id": "nyse-thanksgiving-2027",
+        "date": "2027-11-25",
+        "status": "closed",
+        "title": "Thanksgiving Day",
+        "note": "NYSE closed."
+      },
+      {
+        "id": "nyse-thanksgiving-early-close-2027",
+        "date": "2027-11-26",
+        "status": "early-close",
+        "title": "Day after Thanksgiving",
+        "note": "NYSE core trading closes at 1:00 p.m. Eastern Time."
+      },
+      {
+        "id": "nyse-christmas-2027",
+        "date": "2027-12-24",
+        "status": "closed",
+        "title": "Christmas Day observed",
+        "note": "NYSE closed."
+      },
+      {
+        "id": "nyse-mlk-2028",
+        "date": "2028-01-17",
+        "status": "closed",
+        "title": "Martin Luther King, Jr. Day",
+        "note": "NYSE closed."
+      },
+      {
+        "id": "nyse-washington-birthday-2028",
+        "date": "2028-02-21",
+        "status": "closed",
+        "title": "Washington's Birthday",
+        "note": "NYSE closed."
+      },
+      {
+        "id": "nyse-good-friday-2028",
+        "date": "2028-04-14",
+        "status": "closed",
+        "title": "Good Friday",
+        "note": "NYSE closed."
+      },
+      {
+        "id": "nyse-memorial-day-2028",
+        "date": "2028-05-29",
+        "status": "closed",
+        "title": "Memorial Day",
+        "note": "NYSE closed."
+      },
+      {
+        "id": "nyse-juneteenth-2028",
+        "date": "2028-06-19",
+        "status": "closed",
+        "title": "Juneteenth National Independence Day",
+        "note": "NYSE closed."
+      }
+    ]
   },
   "timeline": [
     {
@@ -46,7 +112,7 @@
       "title": "Melbourne",
       "locationId": "melbourne",
       "context": null,
-      "color": "#b65543"
+      "color": "#397ca6"
     },
     {
       "id": "event-afl-semi",
@@ -92,7 +158,7 @@
       "title": "Brisbane area",
       "locationId": "brisbane",
       "context": null,
-      "color": "#c1832d"
+      "color": "#76abc8"
     },
     {
       "id": "travel-brisbane-india",
@@ -114,7 +180,7 @@
       "title": "India",
       "locationId": "india",
       "context": null,
-      "color": "#a8547c"
+      "color": "#a95f27"
     },
     {
       "id": "event-diwali",
@@ -148,7 +214,7 @@
       "title": "Singapore",
       "locationId": "singapore",
       "context": null,
-      "color": "#287f75"
+      "color": "#c8752e"
     },
     {
       "id": "travel-singapore-hong-kong",
@@ -170,7 +236,7 @@
       "title": "Hong Kong",
       "locationId": "hong-kong",
       "context": null,
-      "color": "#3c7298"
+      "color": "#d68b43"
     },
     {
       "id": "travel-hong-kong-japan",
@@ -192,7 +258,7 @@
       "title": "Japan",
       "locationId": "japan",
       "context": null,
-      "color": "#87495b"
+      "color": "#e2a35f"
     },
     {
       "id": "travel-japan-new-hampshire",
@@ -214,7 +280,7 @@
       "title": "New Hampshire",
       "locationId": "new-hampshire",
       "context": null,
-      "color": "#6a748d"
+      "color": "#737b86"
     },
     {
       "id": "travel-new-hampshire-snowbird",
@@ -236,7 +302,7 @@
       "title": "Snowbird",
       "locationId": "snowbird",
       "context": null,
-      "color": "#566b89"
+      "color": "#a1a7ae"
     },
     {
       "id": "event-christmas",
@@ -270,7 +336,7 @@
       "title": "The Alps",
       "locationId": "alps",
       "context": null,
-      "color": "#365f78"
+      "color": "#3f7b62"
     },
     {
       "id": "travel-alps-copenhagen",
@@ -292,7 +358,7 @@
       "title": "Copenhagen",
       "locationId": "copenhagen",
       "context": null,
-      "color": "#2f725f"
+      "color": "#76aa91"
     },
     {
       "id": "event-copenhagen-arrival",

@@ -86,6 +86,10 @@ test("server-renders the expandable weekly working calendar", async () => {
   assert.match(html, /Travel to Melbourne/);
   assert.match(html, /Melbourne → Brisbane area/);
   assert.match(html, /AFL Grand Final/);
+  assert.match(html, /NYSE closed — Thanksgiving Day/);
+  assert.match(html, /NYSE closes 1:00 p\.m\. — Day after Thanksgiving/);
+  assert.match(html, /NYSE holiday calendar/);
+  assert.doesNotMatch(html, />Location</);
   assert.doesNotMatch(html, /Things under consideration/);
   assert.doesNotMatch(html, />Anchor<|Maximum 90-day|max 90-day/i);
   assert.doesNotMatch(html, />Overview<|>Weeks<|Dates run top to bottom|Spacing reflects elapsed time/);
@@ -100,6 +104,19 @@ test("server-renders the expandable weekly working calendar", async () => {
   assert.equal(tripPlan.rules.length, 2);
   assert.equal(tripPlan.dayPlanning.weekdayDefault, "work");
   assert.equal(tripPlan.dayPlanning.weekendDefault, "off");
+  assert.equal(tripPlan.dayPlanning.marketHolidayDefault, "off");
+  assert.equal(tripPlan.dayPlanning.marketEarlyCloseDefault, "work");
+  assert.equal(tripPlan.marketCalendar.dates.length, 8);
+  assert.equal(
+    tripPlan.marketCalendar.dates.filter((entry) => entry.status === "closed").length,
+    7,
+  );
+  assert.equal(
+    tripPlan.marketCalendar.dates.filter(
+      (entry) => entry.status === "early-close",
+    ).length,
+    1,
+  );
   assert.equal(tripPlan.trip.start, "2027-09-18");
   const melbourneTravel = tripPlan.timeline.find(
     (entry) => entry.id === "travel-to-melbourne",

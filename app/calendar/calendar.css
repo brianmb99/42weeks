@@ -197,12 +197,13 @@ button {
 .week-headings,
 .week-summary {
   display: grid;
-  grid-template-columns: 34px 46px 104px 94px 174px minmax(0, 1fr);
+  grid-template-columns: 34px 46px 104px 94px minmax(0, 1fr);
   align-items: center;
 }
 
 .week-headings {
   height: 25px;
+  padding-left: 54px;
   border-bottom: 1px solid #aeb6b9;
   color: #7a8387;
   font-size: 8px;
@@ -212,7 +213,57 @@ button {
 }
 
 .week-calendar {
+  position: relative;
   width: 100%;
+  padding-left: 54px;
+}
+
+.location-rail {
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 43px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.location-rail-segment {
+  position: absolute;
+  right: 0;
+  left: 0;
+  min-height: 2px;
+  border-bottom: 1px solid rgb(255 255 255 / 38%);
+  overflow: hidden;
+  color: var(--rail-text);
+  background: var(--rail-color);
+}
+
+.location-rail-segment span {
+  position: absolute;
+  inset: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-size: 8px;
+  font-weight: 750;
+  letter-spacing: 0.045em;
+  line-height: 1.05;
+  text-align: center;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.location-rail-segment.is-short span {
+  font-size: 7px;
+  letter-spacing: 0.015em;
+  line-height: 1;
+  white-space: normal;
+  writing-mode: horizontal-tb;
+  transform: none;
 }
 
 .week-block {
@@ -304,7 +355,6 @@ button {
   display: inline-block;
 }
 
-.week-locations,
 .week-event-summary {
   min-width: 0;
   overflow: hidden;
@@ -313,26 +363,6 @@ button {
   white-space: nowrap;
 }
 
-.week-locations {
-  color: #303a3e;
-  font-size: 10px;
-  font-weight: 650;
-}
-
-.week-locations > span {
-  white-space: nowrap;
-}
-
-.week-locations b {
-  width: 7px;
-  height: 7px;
-  margin-right: 5px;
-  border-radius: 50%;
-  display: inline-block;
-  background: var(--dot-color);
-}
-
-.week-locations i,
 .week-event-summary i {
   color: #a0a7a9;
   font-style: normal;
@@ -516,6 +546,16 @@ button {
   font-weight: 750;
 }
 
+.day-event.event-market-holiday {
+  color: #315f40;
+  font-weight: 750;
+}
+
+.day-event.event-market-early-close {
+  color: #596367;
+  font-weight: 650;
+}
+
 .fixed-mark {
   color: #111;
   font-size: 7px;
@@ -530,6 +570,11 @@ button {
 
 .calendar-footer code {
   font-family: var(--font-mono), monospace;
+}
+
+.calendar-footer a {
+  color: #516a62;
+  text-underline-offset: 2px;
 }
 
 @media (max-width: 760px) {
@@ -571,12 +616,23 @@ button {
 
   .week-headings,
   .week-summary {
-    grid-template-columns: 32px 40px 88px 82px minmax(0, 1fr);
+    grid-template-columns: 30px 38px 82px 70px minmax(0, 1fr);
   }
 
-  .week-headings span:last-child,
-  .week-event-summary {
-    display: none;
+  .week-headings {
+    padding-left: 40px;
+  }
+
+  .week-calendar {
+    padding-left: 40px;
+  }
+
+  .location-rail {
+    width: 31px;
+  }
+
+  .location-rail-segment span {
+    font-size: 7px;
   }
 
   .week-summary {

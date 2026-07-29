@@ -1,10 +1,18 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import tripPlan from "../../data/trip-plan.json";
 
 type TimelineEntry = (typeof tripPlan.timeline)[number];
+type MarketEntry = {
+  id: string;
+  type: "market-holiday" | "market-early-close";
+  start: string;
+  title: string;
+  context: string;
+};
+type CalendarEntry = TimelineEntry | MarketEntry;
 type LocationEntry = TimelineEntry & {
   type: "location";
   end: string;
@@ -20,7 +28,7 @@ type DayOverride = {
 type DayModel = {
   date: Date;
   iso: string;
-  entries: TimelineEntry[];
+  entries: CalendarEntry[];
   location: LocationEntry;
   status: DayStatus;
 };
@@ -30,6 +38,15 @@ type WeekModel = {
   start: string;
   end: string;
 };
+type RailSegment = {
+  id: string;
+  title: string;
+  color: string;
+  textColor: string;
+  shortLabel: boolean;
+  top: number;
+  height: number;
+};
 
 const locations = tripPlan.timeline.filter(
   (entry): entry is LocationEntry =>
@@ -38,7 +55,23 @@ const locations = tripPlan.timeline.filter(
     typeof entry.days === "number" &&
     typeof entry.color === "string",
 );
-const datedEntries = tripPlan.timeline.filter((entry) => entry.type !== "location");
+const marketEntries: MarketEntry[] = tripPlan.marketCalendar.dates.map((entry) => ({
+  id: entry.id,
+  type:
+    entry.status === "closed"
+      ? "market-holiday"
+      : "market-early-close",
+  start: entry.date,
+  title:
+    entry.status === "closed"
+      ? `NYSE closed — ${entry.title}`
+      : `NYSE closes 1:00 p.m. — ${entry.title}`,
+  context: entry.note,
+}));
+const datedEntries: CalendarEntry[] = [
+  ...tripPlan.timeline.filter((entry) => entry.type !== "location"),
+  ...marketEntries,
+];
 const dayOverrides = tripPlan.dayPlanning.overrides as DayOverride[];
 
 function localDate(value: string) {
@@ -110,11 +143,14 @@ function locationForDate(date: string) {
   return location;
 }
 
-function statusForDate(date: Date, entries: TimelineEntry[]): DayStatus {
+function statusForDate(date: Date, entries: CalendarEntry[]): DayStatus {
   if (entries.some((entry) => entry.type === "travel")) return "travel";
 
   const override = dayOverrides.find((entry) => entry.date === isoDate(date));
   if (override) return override.status;
+  if (entries.some((entry) => entry.type === "market-holiday")) {
+    return tripPlan.dayPlanning.marketHolidayDefault as DayStatus;
+  }
 
   const weekend = date.getDay() === 0 || date.getDay() === 6;
   return weekend
@@ -159,7 +195,23 @@ const monthLinks = allTripDays.reduce<Array<{ id: string; label: string }>>(
   [],
 );
 
-function EventLine({ entries }: { entries: TimelineEntry[] }) {
+function dayTooltip(day: DayModel) {
+  const date = new Intl.DateTimeFormat("en-US", {
+    weekday: "long",
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+  }).format(day.date);
+  const status =
+    day.status === "travel"
+      ? "Travel"
+      : day.status === "work"
+        ? "Work"
+        : "Not working";
+  return [date, status, ...day.entries.map((entry) => entry.title)].join("\n");
+}
+
+function EventLine({ entries }: { entries: CalendarEntry[] }) {
   if (entries.length === 0) return <span className="empty-event">—</span>;
 
   return (
@@ -190,16 +242,11 @@ function DayRow({ day }: { day: DayModel }) {
   return (
     <div
       className={`day-row status-${day.status} ${day.date.getDay() === 1 ? "is-monday" : ""} ${monthStart ? "is-month-start" : ""}`}
+      data-date={day.iso}
     >
       <span
         className="status-box"
-        title={
-          day.status === "travel"
-            ? "Travel"
-            : day.status === "work"
-              ? "Speculative workday"
-              : "Speculative non-work day"
-        }
+        title={dayTooltip(day)}
       />
       <span className="weekday">{parts.weekday}</span>
       <time dateTime={day.iso}>
@@ -256,7 +303,11 @@ function StatusPattern({ days }: { days: DayModel[] }) {
   return (
     <span className="week-pattern" aria-label={label}>
       {days.map((day) => (
-        <i className={`pattern-box status-${day.status}`} key={day.iso} />
+        <i
+          className={`pattern-box status-${day.status}`}
+          title={dayTooltip(day)}
+          key={day.iso}
+        />
       ))}
     </span>
   );
@@ -292,8 +343,95 @@ function monthAnchors(week: WeekModel) {
     );
 }
 
+function railTextColor(color: string) {
+  const value = color.replace("#", "");
+  const red = Number.parseInt(value.slice(0, 2), 16);
+  const green = Number.parseInt(value.slice(2, 4), 16);
+  const blue = Number.parseInt(value.slice(4, 6), 16);
+  const luminance = (red * 299 + green * 587 + blue * 114) / 1000;
+  return luminance > 154 ? "#1c2528" : "#ffffff";
+}
+
+function collapsedDatePosition(date: string, endEdge = false) {
+  const dayIndex = dayModels.findIndex((day) => day.iso === date);
+  const weekIndex = Math.floor(dayIndex / 7);
+  const week = weeks[weekIndex];
+  const indexInWeek = dayIndex - weekIndex * 7;
+  return weekIndex * 34 + ((indexInWeek + (endEdge ? 1 : 0)) / week.days.length) * 34;
+}
+
+function initialRailSegments(): RailSegment[] {
+  return locations.map((location) => {
+    const top = collapsedDatePosition(location.start);
+    const bottom = collapsedDatePosition(location.end, true);
+    return {
+      id: location.id,
+      title: location.title,
+      color: location.color,
+      textColor: railTextColor(location.color),
+      shortLabel: location.days <= 8,
+      top,
+      height: bottom - top,
+    };
+  });
+}
+
 export default function CalendarPlanner() {
   const [expandedWeeks, setExpandedWeeks] = useState<Set<number>>(new Set());
+  const [railSegments, setRailSegments] =
+    useState<RailSegment[]>(initialRailSegments);
+  const calendarRef = useRef<HTMLElement>(null);
+
+  useLayoutEffect(() => {
+    const calendar = calendarRef.current;
+    if (!calendar) return;
+
+    function measureDate(date: string, endEdge = false) {
+      if (!calendar) return 0;
+      const rootRect = calendar.getBoundingClientRect();
+      const dayIndex = dayModels.findIndex((day) => day.iso === date);
+      const weekIndex = Math.floor(dayIndex / 7);
+      const week = weeks[weekIndex];
+      const indexInWeek = dayIndex - weekIndex * 7;
+      const row = calendar.querySelector<HTMLElement>(`[data-date="${date}"]`);
+
+      if (row) {
+        const rect = row.getBoundingClientRect();
+        return (endEdge ? rect.bottom : rect.top) - rootRect.top;
+      }
+
+      const summary = calendar.querySelector<HTMLElement>(
+        `[data-week="${week.number}"] .week-summary`,
+      );
+      if (!summary) return 0;
+      const rect = summary.getBoundingClientRect();
+      const fraction =
+        (indexInWeek + (endEdge ? 1 : 0)) / week.days.length;
+      return rect.top - rootRect.top + rect.height * fraction;
+    }
+
+    function measureRail() {
+      setRailSegments(
+        locations.map((location) => {
+          const top = measureDate(location.start);
+          const bottom = measureDate(location.end, true);
+          return {
+            id: location.id,
+            title: location.title,
+            color: location.color,
+            textColor: railTextColor(location.color),
+            shortLabel: location.days <= 8,
+            top,
+            height: Math.max(2, bottom - top),
+          };
+        }),
+      );
+    }
+
+    measureRail();
+    window.addEventListener("resize", measureRail);
+    return () => window.removeEventListener("resize", measureRail);
+  }, [expandedWeeks]);
 
   function toggleWeek(number: number) {
     setExpandedWeeks((current) => {
@@ -351,16 +489,42 @@ export default function CalendarPlanner() {
           <span>Week</span>
           <span>Dates</span>
           <span>Pattern</span>
-          <span>Location</span>
           <span>Key dates / travel</span>
         </div>
       </div>
 
-      <section className="week-calendar" aria-label={`${weeks.length} planning weeks`}>
+      <section
+        className="week-calendar"
+        aria-label={`${weeks.length} planning weeks`}
+        ref={calendarRef}
+      >
+        <aside className="location-rail" aria-label="Trip locations">
+          {railSegments.map((segment) => (
+            <div
+              className={`location-rail-segment ${segment.shortLabel ? "is-short" : ""}`}
+              style={
+                {
+                  "--rail-color": segment.color,
+                  "--rail-text": segment.textColor,
+                  top: segment.top,
+                  height: segment.height,
+                } as React.CSSProperties
+              }
+              title={segment.title}
+              key={segment.id}
+            >
+              <span>{segment.title}</span>
+            </div>
+          ))}
+        </aside>
         {weeks.map((week) => {
           const expanded = expandedWeeks.has(week.number);
           const weekLocations = uniqueWeekLocations(week);
-          const events = weekEvents(week);
+          const events = weekEvents(week).filter(
+            (entry) =>
+              entry.type !== "market-holiday" &&
+              entry.type !== "market-early-close",
+          );
 
           return (
             <section
@@ -371,6 +535,7 @@ export default function CalendarPlanner() {
                     weekLocations.length === 1 ? weekLocations[0].color : "#58666b",
                 } as React.CSSProperties
               }
+              data-week={week.number}
               key={week.number}
             >
               {monthAnchors(week).map((id) => (
@@ -390,15 +555,6 @@ export default function CalendarPlanner() {
                   {compactDate(week.start, false)}–{compactDate(week.end, false)}
                 </span>
                 <StatusPattern days={week.days} />
-                <span className="week-locations">
-                  {weekLocations.map((location, index) => (
-                    <span key={location.id}>
-                      {index > 0 && <i aria-hidden="true"> → </i>}
-                      <b style={{ "--dot-color": location.color } as React.CSSProperties} />
-                      {location.title}
-                    </span>
-                  ))}
-                </span>
                 <span className="week-event-summary">
                   {events.length ? (
                     events.map((entry, index) => (
@@ -420,7 +576,8 @@ export default function CalendarPlanner() {
       </section>
 
       <footer className="calendar-footer">
-        Exact working dates · <code>data/trip-plan.json</code>
+        Exact working dates · <code>data/trip-plan.json</code> ·{" "}
+        <a href={tripPlan.marketCalendar.sourceUrl}>NYSE holiday calendar</a>
       </footer>
     </main>
   );
