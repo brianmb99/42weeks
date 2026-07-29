@@ -61,25 +61,33 @@ test("server-renders the 42 Weeks planner", async () => {
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
 });
 
-test("server-renders the day-by-day working calendar", async () => {
+test("server-renders the expandable weekly working calendar", async () => {
   const response = await render("/calendar");
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
   assert.match(html, /Working calendar/);
-  assert.match(html, /294<!-- --> days/);
+  assert.match(html, /40<!-- --> weeks/);
+  assert.match(html, /\+ 5 days/);
+  assert.match(html, /285<!-- --> days/);
   assert.match(html, /Current planner/);
   assert.match(html, /data\/trip-plan\.json/);
   assert.match(html, />Work</);
   assert.match(html, />Travel</);
   assert.match(html, />Not working</);
   assert.match(html, />Fixed event</);
+  assert.match(html, />\+ all</);
+  assert.match(html, />− all</);
+  assert.match(html, /W<!-- -->01/);
+  assert.match(html, /W<!-- -->41/);
+  assert.match(html, /Expand week 8, Nov 6 to Nov 12/);
+  assert.match(html, /2028-03-12: not working/);
   assert.match(html, /Travel to Melbourne/);
   assert.match(html, /Melbourne → Brisbane area/);
   assert.match(html, /AFL Grand Final/);
   assert.doesNotMatch(html, /Things under consideration/);
-  assert.doesNotMatch(html, /Anchor|Maximum 90-day|max 90-day/i);
+  assert.doesNotMatch(html, />Anchor<|Maximum 90-day|max 90-day/i);
   assert.doesNotMatch(html, />Overview<|>Weeks<|Dates run top to bottom|Spacing reflects elapsed time/);
 
   const tripPlan = JSON.parse(
@@ -92,4 +100,10 @@ test("server-renders the day-by-day working calendar", async () => {
   assert.equal(tripPlan.rules.length, 2);
   assert.equal(tripPlan.dayPlanning.weekdayDefault, "work");
   assert.equal(tripPlan.dayPlanning.weekendDefault, "off");
+  assert.equal(tripPlan.trip.start, "2027-09-18");
+  const melbourneTravel = tripPlan.timeline.find(
+    (entry) => entry.id === "travel-to-melbourne",
+  );
+  assert.equal(melbourneTravel.end, "2027-09-19");
+  assert.equal(melbourneTravel.days, 2);
 });

@@ -4,7 +4,7 @@
   "title": "42 Weeks",
   "datePolicy": "This ordered timeline is the definitive source for exact working dates. Location start and end dates are inclusive. Dated events use fixed=true only when their dates must not move as the working plan is rebalanced.",
   "trip": {
-    "start": "2027-09-09",
+    "start": "2027-09-18",
     "end": "2028-06-28"
   },
   "rules": [
@@ -29,20 +29,20 @@
     {
       "id": "travel-to-melbourne",
       "type": "travel",
-      "start": "2027-09-09",
-      "end": null,
-      "days": null,
+      "start": "2027-09-18",
+      "end": "2027-09-19",
+      "days": 2,
       "title": "Travel to Melbourne",
       "locationId": "melbourne",
-      "context": "Arrival details to be determined",
+      "context": "Two travel days from New Hampshire; arrive in Melbourne September 20.",
       "color": null
     },
     {
       "id": "location-melbourne",
       "type": "location",
-      "start": "2027-09-09",
-      "end": "2027-10-03",
-      "days": 25,
+      "start": "2027-09-18",
+      "end": "2027-10-07",
+      "days": 20,
       "title": "Melbourne",
       "locationId": "melbourne",
       "context": null,
@@ -75,7 +75,7 @@
     {
       "id": "travel-melbourne-brisbane",
       "type": "travel",
-      "start": "2027-10-04",
+      "start": "2027-10-08",
       "end": null,
       "days": null,
       "title": "Melbourne → Brisbane area",
@@ -86,9 +86,9 @@
     {
       "id": "location-brisbane",
       "type": "location",
-      "start": "2027-10-04",
+      "start": "2027-10-08",
       "end": "2027-10-26",
-      "days": 23,
+      "days": 19,
       "title": "Brisbane area",
       "locationId": "brisbane",
       "context": null,
