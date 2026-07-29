@@ -87,6 +87,7 @@ test("server-renders the expandable weekly working calendar", async () => {
   assert.match(html, /New Hampshire/);
   assert.match(html, /Geelong/);
   assert.match(html, /Great Southern Touring Route/);
+  assert.match(html, /Expand all weeks in GSTR/);
   assert.match(html, /Melbourne/);
   assert.match(html, /Brisbane area/);
   assert.doesNotMatch(html, /AFL (semifinal|Grand Final)/);
