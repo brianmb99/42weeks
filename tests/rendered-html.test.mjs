@@ -32,8 +32,16 @@ test("server-renders the 42 Weeks overview", async () => {
   assert.match(html, /<title>42 Weeks/);
   assert.match(html, /class="site-nav"/);
   assert.match(html, /aria-current="page">Home/);
-  assert.match(html, /Broad route/);
+  assert.match(html, />Overview</);
+  assert.doesNotMatch(html, /Broad route/);
   assert.match(html, /Where the 42 weeks go/);
+  assert.match(
+    html,
+    /aria-label="Time-scaled trip overview; each row represents 90 days"/,
+  );
+  assert.equal((html.match(/data-overview-row=/g) ?? []).length, 5);
+  assert.equal((html.match(/data-overview-block=/g) ?? []).length, 11);
+  assert.match(html, /90-day scale/);
   assert.match(html, /View the exact calendar/);
   assert.match(html, /Great Ocean Road Loop/);
   assert.match(html, /Open the 7-day plan/);
@@ -41,7 +49,8 @@ test("server-renders the 42 Weeks overview", async () => {
   assert.match(html, /aria-label="Open Hamilton Island plan"/);
   assert.match(html, /aria-label="Open Outback plan"/);
   assert.equal(
-    (html.match(/<a class="home-route-item home-route-link"/g) ?? []).length,
+    (html.match(/<a class="home-overview-item home-overview-link"/g) ?? [])
+      .length,
     3,
   );
   assert.match(
@@ -56,8 +65,7 @@ test("server-renders the 42 Weeks overview", async () => {
   assert.match(html, /summary_large_image/);
   assert.match(html, /Geelong/);
   assert.match(html, /Melbourne/);
-  assert.match(html, /<span>Melbourne<\/span>/);
-  assert.match(html, /<span>Sydney<\/span>/);
+  assert.match(html, /<span>Melbourne \+ Sydney<\/span>/);
   assert.match(html, /<h3>Melbourne \+ Sydney<\/h3>/);
   assert.match(html, /Sydney work week/);
   assert.match(html, /Opera House evening/);
@@ -72,6 +80,8 @@ test("server-renders the 42 Weeks overview", async () => {
   assert.match(html, /Singapore/);
   assert.match(html, /Hong Kong/);
   assert.match(html, /Snowbird/);
+  assert.match(html, /<span>Home \+ Snowbird \+ Home<\/span>/);
+  assert.match(html, /<h3>Home \+ Snowbird \+ Home<\/h3>/);
   assert.match(html, /Still open/);
   assert.match(html, /Copenhagen/);
   assert.doesNotMatch(html, /Japan|AFL Grand Final/);

@@ -27,11 +27,6 @@ const locations = tripPlan.timeline.filter(
     typeof entry.days === "number" &&
     typeof entry.color === "string",
 );
-const overviewLocations = locations.filter(
-  (entry) =>
-    !entry.locationId.startsWith("in-transit") &&
-    !entry.locationId.startsWith("brisbane-airport"),
-);
 
 const locationDetailPages: Record<string, string> = {
   "location-great-southern-touring-route":
@@ -58,6 +53,106 @@ function formatDate(value: string, includeYear = false) {
 function rangeLabel(location: LocationEntry, endLocation = location) {
   return `${formatDate(location.start)}–${formatDate(endLocation.end, true)}`;
 }
+
+type OverviewBlock = {
+  id: string;
+  title: string;
+  start: string;
+  end: string;
+  days: number;
+  color: string;
+  href?: string;
+};
+
+type OverviewRow = {
+  id: string;
+  title: string;
+  blocks: OverviewBlock[];
+};
+
+function inclusiveDays(start: string, end: string) {
+  const millisecondsPerDay = 86_400_000;
+  return (
+    Math.round(
+      (new Date(`${end}T00:00:00Z`).getTime() -
+        new Date(`${start}T00:00:00Z`).getTime()) /
+        millisecondsPerDay,
+    ) + 1
+  );
+}
+
+function makeOverviewBlock(
+  locationId: string,
+  options: {
+    endLocationId?: string;
+    title?: string;
+    color?: string;
+  } = {},
+): OverviewBlock {
+  const location = getLocation(locationId);
+  const endLocation = options.endLocationId
+    ? getLocation(options.endLocationId)
+    : location;
+
+  return {
+    id: options.endLocationId
+      ? `${location.id}-${endLocation.id}`
+      : location.id,
+    title: options.title ?? location.title,
+    start: location.start,
+    end: endLocation.end,
+    days: inclusiveDays(location.start, endLocation.end),
+    color: options.color ?? location.color,
+    href: locationDetailPages[location.id],
+  };
+}
+
+const overviewRows: OverviewRow[] = [
+  {
+    id: "australia",
+    title: "Australia",
+    blocks: [
+      makeOverviewBlock("location-geelong"),
+      makeOverviewBlock("location-great-southern-touring-route"),
+      makeOverviewBlock("location-melbourne", {
+        endLocationId: "location-sydney",
+        title: "Melbourne + Sydney",
+      }),
+      makeOverviewBlock("location-hamilton-island"),
+      makeOverviewBlock("location-longreach"),
+    ],
+  },
+  {
+    id: "asia",
+    title: "Asia",
+    blocks: [
+      makeOverviewBlock("location-india"),
+      makeOverviewBlock("location-singapore"),
+      makeOverviewBlock("location-hong-kong"),
+    ],
+  },
+  {
+    id: "home-snowbird-home",
+    title: "Home + Snowbird + Home",
+    blocks: [
+      makeOverviewBlock("location-new-hampshire", {
+        endLocationId: "location-new-hampshire-repack",
+        title: "Home + Snowbird + Home",
+        color: getLocation("location-snowbird").color,
+      }),
+    ],
+  },
+  {
+    id: "alps",
+    title: "Alps",
+    blocks: [makeOverviewBlock("location-alps")],
+  },
+  {
+    id: "copenhagen",
+    title: "Copenhagen",
+    blocks: [makeOverviewBlock("location-copenhagen")],
+  },
+];
 
 type PlaceCard = {
   locationId: string;
@@ -154,35 +249,21 @@ const asiaCards: PlaceCard[] = [
 const winterCards: PlaceCard[] = [
   {
     locationId: "location-new-hampshire",
-    category: "Home stop",
+    endLocationId: "location-new-hampshire-repack",
+    title: "Home + Snowbird + Home",
+    category: "Reset + Christmas ski week",
     summary:
-      "Come home from Asia for several days before Christmas and reset before the Snowbird week.",
-    highlights: ["Home", "Laundry and reset", "Christmas transition"],
-    open: "Only the practical details",
-  },
-  {
-    locationId: "location-snowbird",
-    category: "Christmas ski week",
-    summary:
-      "Christmas at Snowbird, with December 27–31 currently marked as vacation days.",
-    highlights: ["Christmas", "Family ski week", "Five vacation days"],
-    open: "Lodging, flights, and mountain plan",
+      "Come home from Asia to reset, spend Christmas week at Snowbird, then return home briefly to repack for Europe.",
+    highlights: ["Home reset", "Snowbird ski week", "Repack for Europe"],
+    open: "Flights, Snowbird lodging, and the Europe packing list",
     anchor: "Christmas · Dec 25",
-  },
-  {
-    locationId: "location-new-hampshire-repack",
-    category: "Repacking stop",
-    summary:
-      "Return home briefly after Snowbird to unpack, reorganize, and repack for the long European stay.",
-    highlights: ["Repack for Europe", "Home logistics", "Short reset"],
-    open: "Flight timing and the Europe packing list",
   },
 ];
 
 const europeCards: PlaceCard[] = [
   {
     locationId: "location-alps",
-    category: "87-day base",
+    category: `${getLocation("location-alps").days}-day base`,
     summary:
       "The winter long stay: ski, work, and live in one Alpine base rather than moving from resort to resort.",
     highlights: ["Ski season", "Village routine", "Weekend exploration"],
@@ -190,7 +271,7 @@ const europeCards: PlaceCard[] = [
   },
   {
     locationId: "location-copenhagen",
-    category: "88-day base",
+    category: `${getLocation("location-copenhagen").days}-day base`,
     summary:
       "A spring long stay centered on everyday Copenhagen life, with room for Denmark and nearby European trips.",
     highlights: ["Cycling city", "Neighborhood life", "Regional weekends"],
@@ -269,8 +350,8 @@ export default function Home() {
               <a className="home-primary-action" href={sitePath("/calendar")}>
                 View the exact calendar
               </a>
-              <a className="home-text-action" href="#route">
-                See the broad route ↓
+              <a className="home-text-action" href="#overview">
+                See the overview ↓
               </a>
             </div>
           </div>
@@ -297,50 +378,86 @@ export default function Home() {
           </dl>
         </section>
 
-        <section className="home-route-section" id="route">
+        <section className="home-route-section" id="overview">
           <div className="home-section-heading">
             <div>
-              <p className="home-kicker">Broad route</p>
+              <p className="home-kicker">Overview</p>
               <h2>Where the 42 weeks go</h2>
             </div>
             <p>
-              Each stop below comes directly from the current calendar. Linked
-              stops open their detail plans; the calendar has exact dates.
+              Each row uses the same 90-day scale. Linked stops open their
+              detail plans; the calendar remains the source of exact dates.
             </p>
           </div>
-          <ol className="home-route-list">
-            {overviewLocations.map((location) => {
-              const detailPage = locationDetailPages[location.id];
-              const displayTitle = location.title;
-              const content = (
-                <>
-                  <span>{displayTitle}</span>
-                  <time>
-                    {formatDate(location.start)}–{formatDate(location.end)}
-                  </time>
-                </>
+          <div
+            className="home-overview-rows"
+            aria-label="Time-scaled trip overview; each row represents 90 days"
+          >
+            {overviewRows.map((row) => {
+              const firstBlock = row.blocks[0];
+              const lastBlock = row.blocks[row.blocks.length - 1];
+              const rowDays = row.blocks.reduce(
+                (total, block) => total + block.days,
+                0,
               );
 
               return (
-                <li
-                  style={{ "--place-color": location.color } as CSSProperties}
-                  key={location.id}
+                <section
+                  className="home-overview-row"
+                  data-overview-row={row.id}
+                  key={row.id}
                 >
-                  {detailPage ? (
-                    <a
-                      className="home-route-item home-route-link"
-                      href={sitePath(detailPage)}
-                      aria-label={`Open ${displayTitle} plan`}
-                    >
-                      {content}
-                    </a>
-                  ) : (
-                    <div className="home-route-item">{content}</div>
-                  )}
-                </li>
+                  <header>
+                    <div>
+                      <h3>{row.title}</h3>
+                      <time>
+                        {formatDate(firstBlock.start)}–
+                        {formatDate(lastBlock.end, true)}
+                      </time>
+                    </div>
+                    <span>{rowDays} days · 90-day scale</span>
+                  </header>
+                  <ol className="home-overview-track">
+                    {row.blocks.map((block) => {
+                      const content = (
+                        <>
+                          <span>{block.title}</span>
+                          <time>
+                            {formatDate(block.start)}–{formatDate(block.end)}
+                          </time>
+                        </>
+                      );
+                      const style = {
+                        "--place-color": block.color,
+                        "--block-width": `${(block.days / 90) * 100}%`,
+                      } as CSSProperties;
+
+                      return (
+                        <li
+                          data-overview-block={block.id}
+                          key={block.id}
+                          style={style}
+                          title={`${block.title}: ${formatDate(block.start)}–${formatDate(block.end, true)}`}
+                        >
+                          {block.href ? (
+                            <a
+                              className="home-overview-item home-overview-link"
+                              href={sitePath(block.href)}
+                              aria-label={`Open ${block.title} plan`}
+                            >
+                              {content}
+                            </a>
+                          ) : (
+                            <div className="home-overview-item">{content}</div>
+                          )}
+                        </li>
+                      );
+                    })}
+                  </ol>
+                </section>
               );
             })}
-          </ol>
+          </div>
         </section>
 
         <section className="home-feature" aria-labelledby="gstr-title">
