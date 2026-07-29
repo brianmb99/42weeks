@@ -106,7 +106,7 @@ export default function QueenslandWorkingWeek({ trip }: { trip: Trip }) {
           <span>{dateLabel(trip.start)}–{dateLabel(trip.end)}</span>
           <span>{trip.nights} nights</span>
           <span>Work Mon–Wed</span>
-          <span>Vacation Thu–Fri</span>
+          <span>{isHamilton ? "Vacation Thu–Sat" : "Vacation Thu–Fri"}</span>
         </div>
         <p className="qld-summary">{trip.summary}</p>
         <p className="qld-status">{queensland.status}</p>
@@ -158,8 +158,8 @@ export default function QueenslandWorkingWeek({ trip }: { trip: Trip }) {
         </article>
 
         <article className="qld-sequence-item is-vacation" id="vacation-days">
-          <time>Thu–Fri · vacation</time>
-          <h2>Two full excursion days</h2>
+          <time>{isHamilton ? "Thu–Sat · vacation block" : "Thu–Fri · vacation"}</time>
+          <h2>{isHamilton ? "Two excursion days + island Saturday" : "Two full excursion days"}</h2>
           <div className="qld-vacation-days">
             {trip.vacationDays.map((day) => (
               <div key={day.date}>

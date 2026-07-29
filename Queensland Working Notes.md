@@ -6,12 +6,12 @@
 
 ## Decision summary
 
-Replace the current concept of spending October 11–24 in Brisbane with two six-night Queensland bases:
+Use two compact Queensland bases:
 
 1. **Hamilton Island, Sunday, October 10 through Saturday, October 16**
-2. **Longreach, Sunday, October 17 through Saturday, October 23**
+2. **Longreach, Sunday, October 17 through Friday, October 22**, followed by the Brisbane airport buffer on Saturday
 
-Use Brisbane only for airport connection nights on October 16 and October 23.
+Use Brisbane only as a same-day airport connection on October 17 and for the airport buffer night on October 23.
 
 At each principal base:
 
@@ -23,11 +23,12 @@ At each principal base:
 
 This produces:
 
-- 6 nights on Hamilton Island
+- 7 nights on Hamilton Island
 - 6 nights in Longreach
-- 2 Brisbane airport nights
+- 1 Brisbane airport night
 - 6 full workdays
 - 4 vacation days
+- 2 weekend days that extend the Hamilton Island mini-vacation
 - 14 Queensland nights before the October 24 India flight
 
 The concept depends on early-shift work rather than U.S. market hours. A working target is **4:30 a.m.–12:30 p.m. AEST**, with family lunch around 12:30 and activities from approximately 1:30 onward. Exact hours can flex around tours and calls.
@@ -48,8 +49,8 @@ The concept depends on early-shift work rather than U.S. market hours. A working
 
 The current primary calendar contains:
 
-- `travel-melbourne-brisbane` on October 10
-- `location-brisbane` from October 11 through October 24
+- `travel-sydney-hamilton-island` on October 10
+- Hamilton Island, Outback, and the October 23 Brisbane airport buffer
 - `travel-brisbane-india` on October 24
 
 Replace the first two with the entries below. Retain the October 24 India travel date, but change its context to reflect the Brisbane airport overnight following Longreach.
@@ -58,10 +59,10 @@ Replace the first two with the entries below. Retain the October 24 India travel
 
 | Proposed ID | Type | Start | End | Title | Location | Context / calendar copy | Proposed page |
 |---|---|---:|---:|---|---|---|---|
-| `travel-melbourne-hamilton-island` | travel | 2027-10-10 |  | Fly Melbourne → Hamilton Island | Hamilton Island | Fly from Melbourne to Hamilton Island, directly if the 2027 schedule permits; otherwise connect through Brisbane. Settle into a family holiday home and test all work connections. | `/trips/hamilton-island-working-week` |
+| `travel-sydney-hamilton-island` | travel | 2027-10-10 |  | Fly Sydney → Hamilton Island | Hamilton Island | Fly from Sydney to Hamilton Island, directly if the 2027 schedule permits; otherwise connect through Brisbane. Settle into a family holiday home and test all work connections. | `/trips/hamilton-island-working-week` |
 | `location-hamilton-island` | location | 2027-10-10 | 2027-10-16 | Hamilton Island | Hamilton Island | Seven-night Whitsundays living week: three work/homeschool mornings, two full vacation days, and a final Saturday on Hamilton Island. | `/trips/hamilton-island-working-week` |
 | `event-hamilton-work-block` | event | 2027-10-11 | 2027-10-13 | Work & homeschool — Hamilton Island | Hamilton Island | Brian works approximately 4:30 a.m.–12:30 p.m.; children homeschool during the morning; family activities begin after lunch. | `/trips/hamilton-island-working-week#work-days` |
-| `event-hamilton-vacation-block` | event | 2027-10-14 | 2027-10-15 | Hamilton Island vacation days | Hamilton Island | Reserve the two full days for Whitehaven Beach and Great Barrier Reef excursions; swap days according to marine weather and operator advice. | `/trips/hamilton-island-working-week#vacation-days` |
+| `event-hamilton-vacation-block` | event | 2027-10-14 | 2027-10-16 | Hamilton Island vacation days | Hamilton Island | Reserve Thursday and Friday for Whitehaven Beach and Great Barrier Reef excursions, then keep Saturday as a full island day. | `/trips/hamilton-island-working-week#vacation-days` |
 | `travel-hamilton-island-longreach` | travel | 2027-10-17 |  | Fly Hamilton Island → Brisbane → Longreach | Longreach | Use Sunday morning on Hamilton Island if timing allows, then connect through Brisbane without an overnight. Confirm this against the 2027 flight schedule. | `/trips/hamilton-island-working-week#departure` |
 | `location-longreach` | location | 2027-10-17 | 2027-10-22 | Longreach | Longreach | Six-night outback living week: three work/homeschool mornings, afternoon and sunset experiences, and two full vacation days. | `/trips/longreach-outback-working-week` |
 | `event-longreach-work-block` | event | 2027-10-18 | 2027-10-20 | Work & homeschool — Longreach | Longreach | Brian works approximately 4:30 a.m.–12:30 p.m.; children homeschool during the morning; use afternoons and evenings for town, heritage, swimming, station, and sunset activities. | `/trips/longreach-outback-working-week#work-days` |
@@ -75,7 +76,7 @@ Replace the first two with the entries below. Retain the October 24 India travel
 
 - Location bars should emphasize Hamilton Island and Longreach, not Brisbane.
 - On the simplified left rail, label the Longreach / October 23 Brisbane connection sequence **Outback**. Brisbane on October 17 is an airport connection within the Hamilton Island → Longreach travel day, not an overnight location.
-- The two work blocks and two vacation blocks should be visually distinguishable.
+- The work and vacation blocks should be visually distinguishable, with the Hamilton Island vacation label continuing through Saturday.
 - The calendar card for each location should link to its dedicated page.
 - Do not present any flight as nonstop or any attraction as operating until the 2027 timetable is published.
 - The location dates are inclusive calendar dates and mean where the family expects to sleep at the end of that date.
@@ -92,14 +93,14 @@ Replace the first two with the entries below. Retain the October 24 India travel
 - **Eyebrow:** Whitsundays · Queensland
 - **Title:** Hamilton Island Working Week
 - **Dates:** October 10–16, 2027
-- **Stay:** 6 nights
+- **Stay:** 7 nights
 - **Workdays:** Monday–Wednesday, October 11–13
 - **Vacation days:** Thursday–Friday, October 14–15
-- **Departure:** Saturday, October 16 to Brisbane Airport
+- **Departure:** Sunday, October 17 to Longreach via Brisbane
 
 ## Hero summary
 
-Live on Hamilton Island for six nights rather than treating the Whitsundays as a rushed excursion from Brisbane. The first half of the stay follows an early work-and-homeschool rhythm, leaving afternoons open for beaches, watersports, wildlife, walking trails, and island life. Thursday and Friday become full vacation days for the two experiences that justify the trip: Whitehaven Beach and the outer Great Barrier Reef.
+Live on Hamilton Island for seven nights rather than treating the Whitsundays as a rushed excursion from Brisbane. The first half of the stay follows an early work-and-homeschool rhythm, leaving afternoons open for beaches, watersports, wildlife, walking trails, and island life. Thursday and Friday become full vacation days for Whitehaven Beach and the outer Great Barrier Reef, and Saturday extends the mini-vacation without using another workday.
 
 Hamilton Island is one of the Whitsunday Islands, so “Hamilton Island” and “the Whitsundays” are not competing destinations. Hamilton is the practical family base within the broader Whitsundays: it has its own airport, groceries, restaurants, family accommodation, resort facilities, and direct access to marine excursions.
 
@@ -205,7 +206,7 @@ Starting points:
 
 ### Sunday, October 10
 
-- Fly Melbourne to Hamilton Island directly if the 2027 schedule permits.
+- Fly Sydney to Hamilton Island directly if the 2027 schedule permits.
 - If no sensible nonstop exists, connect through Brisbane.
 - Keep the arrival day deliberately light.
 - Buy groceries, learn the buggy and shuttle system, inspect the Starlink location, test the corporate VPN, test a real video call, and establish the school/work zones.
@@ -213,14 +214,17 @@ Starting points:
 
 ### Saturday, October 16
 
-- Preserve an easy final morning.
-- Fly Hamilton Island to Brisbane.
-- Stay at or beside Brisbane Airport.
-- Do not attempt to connect onward to Longreach unless the published 2027 schedule provides a genuinely comfortable protected connection.
+- Keep the entire day on Hamilton Island: beach, pool, buggy exploration, and a relaxed final evening.
+
+### Sunday, October 17
+
+- Use the morning on Hamilton Island if flight timing allows.
+- Fly Hamilton Island → Brisbane → Longreach as a same-day connection.
+- Do not add a Brisbane overnight unless the published 2027 schedule makes the connection impractical.
 
 Current route context, not a 2027 promise:
 
-- Hamilton Island currently receives direct service from Melbourne and Brisbane.
+- Hamilton Island currently receives direct service from Sydney and Brisbane.
 - [Hamilton Island Airport](https://www.hamiltonisland.com.au/community-and-development/transport/airport)
 
 ## Weather and water safety
@@ -256,13 +260,12 @@ Keep formal school to approximately three morning hours. Use the reef and island
 ## Hamilton booking priorities
 
 1. Holiday home with a separate work room and written Starlink permission
-2. Melbourne → Hamilton Island flight
-3. Hamilton Island → Brisbane flight
+2. Sydney → Hamilton Island flight
+3. Hamilton Island → Brisbane → Longreach same-day flights
 4. Whitehaven excursion
 5. Outer-reef excursion
-6. Brisbane airport hotel for October 16
-7. Buggy if not included
-8. Travel insurance covering marine-tour weather disruption
+6. Buggy if not included
+7. Travel insurance covering marine-tour weather disruption
 
 ---
 
@@ -606,9 +609,8 @@ Airline battery limits and carry-on rules must be checked for every carrier. Do 
 
 ## Flights
 
-- Confirm Melbourne → Hamilton Island on October 10, 2027.
-- Confirm Hamilton Island → Brisbane on October 16.
-- Confirm Brisbane → Longreach on October 17.
+- Confirm Sydney → Hamilton Island on October 10, 2027.
+- Confirm Hamilton Island → Brisbane → Longreach on October 17.
 - Confirm Longreach → Brisbane on October 23.
 - Confirm Brisbane → India on October 24.
 - Prefer protected, sensible timings over nominally possible tight connections.

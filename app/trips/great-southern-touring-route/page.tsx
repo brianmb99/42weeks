@@ -9,12 +9,13 @@ import "./route.css";
 export const metadata: Metadata = {
   title: "Great Ocean Road Loop",
   description:
-    "The nine-day vacation loop from Geelong to Melbourne via the Great Ocean Road, Gariwerd, and Ballarat.",
+    "The seven-day vacation loop from Geelong to Melbourne via the Great Ocean Road, the Otways, Gariwerd, and Sovereign Hill.",
 };
 
 const roadTrip = australiaPlan.segments.roadTrip;
 const geelong = australiaPlan.segments.geelong;
 const melbourne = australiaPlan.segments.melbourne;
+const sydney = australiaPlan.segments.sydney;
 const roadPhotos: DestinationPhoto[] = [
   {
     src: "https://images.unsplash.com/photo-1736893474760-759d20e84f58?auto=format&fit=crop&fm=jpg&q=82&w=2200",
@@ -94,11 +95,13 @@ export default function GreatSouthernTouringRoutePage() {
           </p>
         </article>
         <article>
-          <span>After · {dateLabel(melbourne.start)}–{dateLabel(melbourne.end)}</span>
-          <h2>Melbourne work week</h2>
+          <span>After · {dateLabel(melbourne.start)}–{dateLabel(sydney.end)}</span>
+          <h2>Melbourne weekend, then Sydney work week</h2>
           <p>
-            Work October 4–8, with Melbourne activities in the evenings,
-            including the fairy penguins at St Kilda Pier.
+            Arrive in Melbourne late October 1, use Saturday and most of Sunday
+            in the city—including the St Kilda Pier penguins—then fly to Sydney
+            Sunday evening. Work October 4–8, keep Saturday for Sydney, and
+            continue to Hamilton Island Sunday.
           </p>
         </article>
       </section>

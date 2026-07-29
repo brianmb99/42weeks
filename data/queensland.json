@@ -22,14 +22,14 @@
     "eyebrow": "Whitsundays · Queensland",
     "title": "Hamilton Island: Work & Play",
     "start": "2027-10-10",
-    "end": "2027-10-17",
+    "end": "2027-10-16",
     "nights": 7,
     "summary": "Live on Hamilton Island for seven nights rather than treating the Whitsundays as a rushed Brisbane excursion. Work and homeschool Monday through Wednesday mornings, use Thursday and Friday for Whitehaven Beach and the outer Great Barrier Reef, and keep Saturday on the island.",
     "arrival": {
       "date": "2027-10-10",
       "title": "Arrive and establish the base",
       "items": [
-        "Fly from Melbourne directly if the 2027 schedule permits; otherwise connect through Brisbane.",
+        "Fly from Sydney directly if the 2027 schedule permits; otherwise connect through Brisbane.",
         "Buy groceries, learn the buggy and shuttle system, and keep the day deliberately light.",
         "Test property Wi-Fi, mobile backup, Starlink placement, the corporate VPN, and work / school zones."
       ]
@@ -74,6 +74,11 @@
         "date": "2027-10-15",
         "title": "Outer Great Barrier Reef",
         "plan": "Reserve a full day for a family-appropriate reef trip with snorkeling and interpretation. Treat this as weather-dependent and swap the two vacation days if operator advice favors it."
+      },
+      {
+        "date": "2027-10-16",
+        "title": "Hamilton Island Saturday",
+        "plan": "Keep the whole day on Hamilton Island for beach, pool, buggy exploration, and an easy final island evening. This is a weekend day, so it extends the mini-vacation without using another workday."
       }
     ],
     "cautions": [
@@ -89,7 +94,7 @@
     ],
     "bookFirst": [
       "Holiday home with a separate work room and written Starlink permission",
-      "Melbourne → Hamilton Island flight",
+      "Sydney → Hamilton Island flight",
       "Hamilton Island → Brisbane → Longreach same-day flights",
       "Whitehaven excursion",
       "Outer-reef excursion",
@@ -127,7 +132,7 @@
     "eyebrow": "Outback Queensland",
     "title": "Outback Queensland: Work & Play",
     "start": "2027-10-17",
-    "end": "2027-10-23",
+    "end": "2027-10-22",
     "nights": 6,
     "summary": "Spend six nights in a functioning outback town rather than attempting a high-speed road loop. Longreach offers the airport, groceries, accommodation, museums, restaurants, pool, and tour operators needed for a credible work and homeschool base.",
     "arrival": {

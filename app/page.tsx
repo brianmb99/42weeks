@@ -40,10 +40,6 @@ const locationDetailPages: Record<string, string> = {
   "location-longreach": "/trips/longreach-outback-working-week",
 };
 
-const overviewLocationTitles: Record<string, string> = {
-  "location-melbourne": "Melbourne or Sydney",
-};
-
 function getLocation(id: string) {
   const location = locations.find((entry) => entry.id === id);
   if (!location) throw new Error(`Missing location: ${id}`);
@@ -59,12 +55,13 @@ function formatDate(value: string, includeYear = false) {
   }).format(new Date(`${value}T00:00:00Z`));
 }
 
-function rangeLabel(location: LocationEntry) {
-  return `${formatDate(location.start)}–${formatDate(location.end, true)}`;
+function rangeLabel(location: LocationEntry, endLocation = location) {
+  return `${formatDate(location.start)}–${formatDate(endLocation.end, true)}`;
 }
 
 type PlaceCard = {
   locationId: string;
+  endLocationId?: string;
   title?: string;
   category: string;
   summary: string;
@@ -92,16 +89,17 @@ const australiaCards: PlaceCard[] = [
     highlights: ["Great Ocean Road", "Otways rainforest", "Grampians"],
     open: "Lodging, wildlife stops, and the final activity mix",
     href: "/trips/great-southern-touring-route",
-    linkLabel: "Open the 9-day plan",
+    linkLabel: "Open the 7-day plan",
   },
   {
     locationId: "location-melbourne",
-    title: "Melbourne or Sydney",
-    category: "Work base",
+    endLocationId: "location-sydney",
+    title: "Melbourne + Sydney",
+    category: "Weekend + work base",
     summary:
-      "Current assumption: a full Melbourne week. Alternative: stay a couple of days, then hop to Sydney before Hamilton Island—but the extra move could put work time at risk.",
-    highlights: ["St Kilda Pier penguins", "Possible Sydney hop", "Protect work time"],
-    open: "Full Melbourne week vs. Melbourne + Sydney split",
+      "A full Melbourne weekend followed by a Sunday-evening flight and a protected Monday–Friday work week in Sydney.",
+    highlights: ["Melbourne weekend", "Sydney work week", "St Kilda + Sydney Saturday"],
+    open: "Sydney neighborhood, lodging, and exact flight timing",
   },
   {
     locationId: "location-hamilton-island",
@@ -211,6 +209,9 @@ function PlaceGrid({
     <div className="home-place-grid" aria-label={ariaLabel}>
       {cards.map((card) => {
         const location = getLocation(card.locationId);
+        const endLocation = card.endLocationId
+          ? getLocation(card.endLocationId)
+          : location;
         return (
           <article
             className="home-place-card"
@@ -222,7 +223,7 @@ function PlaceGrid({
                 <p>{card.category}</p>
                 <h3>{card.title ?? location.title}</h3>
               </div>
-              <time>{rangeLabel(location)}</time>
+              <time>{rangeLabel(location, endLocation)}</time>
             </div>
             {card.anchor && <strong className="home-anchor">{card.anchor}</strong>}
             <p className="home-place-summary">{card.summary}</p>
@@ -310,8 +311,7 @@ export default function Home() {
           <ol className="home-route-list">
             {overviewLocations.map((location) => {
               const detailPage = locationDetailPages[location.id];
-              const displayTitle =
-                overviewLocationTitles[location.id] ?? location.title;
+              const displayTitle = location.title;
               const content = (
                 <>
                   <span>{displayTitle}</span>
@@ -362,7 +362,7 @@ export default function Home() {
             </figcaption>
           </figure>
           <div className="home-feature-copy">
-            <p className="home-kicker">Australia highlight · 9-day vacation</p>
+            <p className="home-kicker">Australia highlight · 7-day vacation</p>
             <h2 id="gstr-title">{roadTrip.title}</h2>
             <p>{roadTrip.summary}</p>
             <div className="home-feature-route">
@@ -382,7 +382,7 @@ export default function Home() {
                 className="home-primary-action"
                 href={sitePath("/trips/great-southern-touring-route")}
               >
-                Open the 9-day plan
+                Open the 7-day plan
               </a>
               <a
                 className="home-text-action"

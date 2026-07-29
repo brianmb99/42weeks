@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "lastReviewed": "2026-07-29",
   "title": "Australia, part I",
   "datePolicy": "data/trip-plan.json is authoritative for calendar dates. These dated segments mirror it and preserve the planning detail behind the calendar.",
@@ -24,8 +24,8 @@
     "roadTrip": {
       "title": "Great Ocean Road Loop",
       "start": "2027-09-25",
-      "end": "2027-10-03",
-      "durationDays": 9,
+      "end": "2027-10-01",
+      "durationDays": 7,
       "vacationDates": {
         "start": "2027-09-27",
         "end": "2027-10-01"
@@ -34,97 +34,86 @@
         "title": "Visit Victoria — Great Southern Touring Route",
         "url": "https://www.visitvictoria.com/See-and-do/Road-trips-and-itineraries/The-Great-Southern-Touring-Route"
       },
-      "summary": "Leave Geelong Saturday morning, take Monday through Friday as vacation, and reach Melbourne the following Sunday evening. Keep the pace deliberate: ocean, rainforest, wildlife, volcanic landscape, mountains, one adventure activity, and a child-friendly historical finish.",
+      "summary": "A compact seven-day loop with only three lodging bases: one night in Fairhaven, one in Apollo Bay, and four in Halls Gap. Keep the Pole House, Otways ziplining, Shipwreck Coast, Tower Hill, mountain biking, and Sovereign Hill; accept two purposeful long driving days to avoid repeated packing.",
       "overnights": [
         {
-          "place": "Apollo Bay",
-          "nights": 2
-        },
-        {
-          "place": "Port Campbell",
+          "place": "Fairhaven",
           "nights": 1
         },
         {
-          "place": "Port Fairy",
+          "place": "Apollo Bay",
           "nights": 1
         },
         {
           "place": "Halls Gap",
-          "nights": 3
-        },
-        {
-          "place": "Ballarat",
-          "nights": 1
+          "nights": 4
         },
         {
           "place": "Melbourne",
           "nights": 0,
-          "note": "Arrive after Day 9."
+          "note": "Arrive after Day 7."
         }
       ],
       "days": [
         {
           "day": 1,
           "date": "2027-09-25",
-          "route": "Geelong → Apollo Bay",
-          "drive": "About 2½ hours without stops",
-          "overnight": "Apollo Bay",
+          "route": "Geelong → Pole House / Fairhaven",
+          "drive": "About 1½ hours direct, plus coastal stops",
+          "overnight": "Fairhaven family house",
           "plan": [
-            "Follow the Great Ocean Road slowly and choose only two or three stops.",
-            "Reach Apollo Bay by late afternoon; explore the beach and have a simple dinner."
+            "Leave Geelong after breakfast and begin the Great Ocean Road at an unhurried pace.",
+            "Stop at the Pole House and spend time on Fairhaven Beach.",
+            "Choose one additional coast stop, then settle into the Fairhaven base."
           ],
           "options": [
             "Bells Beach or Point Addis",
-            "Fairhaven Beach and the Pole House exterior",
             "Split Point Lighthouse at Aireys Inlet",
-            "Lunch and beach time in Lorne",
-            "Teddy’s Lookout or a short waterfall walk"
+            "Aireys Inlet cliff walk"
+          ],
+          "links": [
+            {
+              "title": "The Pole House",
+              "url": "https://greatoceanroadholidays.com.au/accommodation/greatoceanroad-the-pole-house/"
+            }
           ]
         },
         {
           "day": 2,
           "date": "2027-09-26",
-          "route": "Apollo Bay and the coastal Otways",
-          "drive": "Light local driving",
+          "route": "Fairhaven → Otway Fly → Apollo Bay",
+          "drive": "About 2½ hours across the day, plus the activity",
           "overnight": "Apollo Bay",
           "plan": [
-            "Choose one morning anchor: Wildlife Wonders, a surf lesson, or Marengo seal kayaking if ages and conditions permit.",
-            "Preferred combination: Wildlife Wonders and the easy 1 km Maits Rest rainforest circuit."
+            "Make the Otway Fly zipline tour the day's anchor and allow roughly half a day for check-in, briefing, and the guided course.",
+            "Continue to Apollo Bay for the loop's only night there.",
+            "Keep the evening simple: beach, groceries, and an early dinner."
           ],
           "options": [
-            "Cape Otway Lightstation",
-            "Return early for beach time"
+            "Short rainforest stop if energy and daylight allow",
+            "Apollo Bay beach walk"
+          ],
+          "links": [
+            {
+              "title": "Otway Fly — plan your day",
+              "url": "https://otwayfly.com.au/plan-your-day/"
+            }
           ]
         },
         {
           "day": 3,
           "date": "2027-09-27",
-          "route": "Deep Otways → Port Campbell",
-          "drive": "About 2½–3 hours across the day",
-          "overnight": "Port Campbell",
+          "route": "Apollo Bay → Shipwreck Coast → Tower Hill → Halls Gap",
+          "drive": "About 5–5½ hours without sightseeing; deliberately the longest day",
+          "overnight": "Halls Gap",
           "plan": [
-            "Choose one main activity: Otway Fly Treetop Walk, with ziplining if eligible, or Forrest mountain-bike hire.",
-            "Add only one or two short nature stops.",
-            "See the Twelve Apostles near sunset if weather and energy cooperate; otherwise save them for morning."
+            "Leave early and make the Twelve Apostles and Loch Ard Gorge the essential coast stops.",
+            "Continue to Tower Hill Wildlife Reserve for a short wildlife and cultural stop.",
+            "Skip a Port Fairy overnight and continue directly to Halls Gap, arriving in the evening."
           ],
           "options": [
-            "Californian Redwoods",
-            "Triplet Falls",
-            "Hopetoun Falls viewpoint",
-            "Melba Gully"
-          ]
-        },
-        {
-          "day": 4,
-          "date": "2027-09-28",
-          "route": "Shipwreck Coast → Port Fairy",
-          "drive": "About 2 hours plus stops",
-          "overnight": "Port Fairy",
-          "plan": [
-            "Start early for the Twelve Apostles, Gibson Steps if open and safe, and Loch Ard Gorge.",
-            "Choose London Bridge or the Bay of Islands, not every lookout.",
-            "At Tower Hill Wildlife Reserve, prefer the one-hour Aboriginal-guided wildlife and cultural walk; otherwise use an easy family loop.",
-            "Finish with dinner and a Port Fairy harbour walk."
+            "Gibson Steps if open and safe",
+            "London Bridge or Bay of Islands, but not every lookout"
           ],
           "links": [
             {
@@ -134,27 +123,37 @@
           ]
         },
         {
-          "day": 5,
-          "date": "2027-09-29",
-          "route": "Port Fairy → Dunkeld → Halls Gap",
-          "drive": "About 2½ hours",
+          "day": 4,
+          "date": "2027-09-28",
+          "route": "Grampians mountain-bike day",
+          "drive": "Local riding and short transfers",
           "overnight": "Halls Gap",
           "plan": [
-            "Choose the Griffiths Island lighthouse circuit or a shorter harbour, beach, and historic-town wander.",
-            "Stop in Dunkeld for lunch, the arboretum, and Mount Sturgeon and Mount Abrupt views.",
-            "Take the scenic southern Gariwerd road to a family cabin or glamping-style stay in Halls Gap.",
-            "Look for kangaroos and emus around dusk without feeding or approaching them."
+            "Reserve a half-day family mountain-bike or e-bike outing on age-appropriate trails.",
+            "Keep the second half deliberately light after the long transfer day."
+          ],
+          "options": [
+            "Lake Bellfield",
+            "Venus Baths",
+            "Halls Gap Botanic Gardens",
+            "Pool and downtime"
+          ],
+          "links": [
+            {
+              "title": "Visit Grampians adventure guide",
+              "url": "https://www.visitgrampians.com.au/adventure-experience-guide"
+            }
           ]
         },
         {
-          "day": 6,
-          "date": "2027-09-30",
+          "day": 5,
+          "date": "2027-09-29",
           "route": "The Pinnacle and central Gariwerd",
           "drive": "Local scenic driving",
           "overnight": "Halls Gap",
           "plan": [
             "Morning anchor: The Pinnacle from Sundial Carpark, 4.2 km return; allow about 2½ hours with children.",
-            "After lunch choose one low-key addition. The Pinnacle is the day’s accomplishment."
+            "After lunch choose one low-key addition. The Pinnacle is the day's accomplishment."
           ],
           "options": [
             "Boroka Lookout",
@@ -170,81 +169,74 @@
           ]
         },
         {
-          "day": 7,
-          "date": "2027-10-01",
+          "day": 6,
+          "date": "2027-09-30",
           "route": "Grampians adventure day",
           "drive": "Local driving",
           "overnight": "Halls Gap",
           "plan": [
-            "Book one half-day guided activity: beginner rock climbing, abseiling, canoeing, or a guided family hike; confirm minimum ages.",
-            "Use the other half for something gentle."
+            "Book one half-day guided activity: beginner rock climbing, abseiling, or a guided family hike; confirm minimum ages.",
+            "Use the other half for something gentle and keep the final Halls Gap evening relaxed."
           ],
           "options": [
-            "Venus Baths",
             "Brambuk and nearby walks, subject to reopening",
-            "Halls Gap Botanic Gardens",
             "Halls Gap Zoo in bad weather",
             "Return to a favourite lookout for sunset"
           ]
         },
         {
-          "day": 8,
-          "date": "2027-10-02",
-          "route": "Halls Gap → Ballarat",
-          "drive": "About 2 hours directly",
-          "overnight": "Ballarat",
-          "plan": [
-            "Keep the Halls Gap morning unhurried.",
-            "Reach Ballarat by mid-afternoon and keep the rest of the day light ahead of Sovereign Hill."
-          ],
-          "options": [
-            "Bunjil’s Shelter near Stawell",
-            "Ararat for lunch",
-            "A final wildflower or lookout stop",
-            "Lake Wendouree",
-            "Ballarat Botanical Gardens",
-            "Historic centre walk"
-          ]
-        },
-        {
-          "day": 9,
-          "date": "2027-10-03",
-          "route": "Sovereign Hill → Melbourne",
-          "drive": "About 1½ hours after Sovereign Hill",
+          "day": 7,
+          "date": "2027-10-01",
+          "route": "Halls Gap → Sovereign Hill → Melbourne",
+          "drive": "About 3½ hours total, split by the Sovereign Hill day",
           "overnight": "Melbourne",
           "plan": [
-            "Spend the full opening day at Sovereign Hill.",
-            "Prioritize gold panning, the gold-pour demonstration, costumed performances, rare trades, Red Hill Mine, and a prebooked underground mine tour if wanted.",
-            "Leave near closing, drive to Melbourne, and return the rental car that evening or the next morning."
+            "Leave Halls Gap early enough to reach Sovereign Hill for opening.",
+            "Spend the full opening day at Sovereign Hill, prioritizing gold panning, demonstrations, rare trades, Red Hill Mine, and a prebooked mine tour if wanted.",
+            "Leave near closing, drive to Melbourne, and return the rental car that evening or Saturday morning."
           ],
           "links": [
             {
               "title": "Sovereign Hill visitor information",
-              "url": "https://www.sovereignhill.com.au/visit/faq/"
+              "url": "https://www.sovereignhill.com.au/visit/visitor-information/"
             }
           ]
         }
       ],
       "bookFirst": [
-        "Apollo Bay and Halls Gap accommodation",
+        "Family-size Fairhaven house near the Pole House",
+        "Apollo Bay accommodation",
+        "Halls Gap accommodation for four nights",
+        "Otway Fly zipline",
+        "Grampians mountain-bike or e-bike outing",
         "Grampians guided climbing or abseiling",
-        "Wildlife Wonders or the chosen Apollo Bay activity",
-        "Tower Hill guided tour",
         "Sovereign Hill and its mine tour",
         "One-way rental car: Geelong pickup, Melbourne return"
       ]
     },
     "melbourne": {
-      "start": "2027-10-04",
-      "end": "2027-10-10",
+      "start": "2027-10-01",
+      "end": "2027-10-02",
       "base": "Melbourne",
+      "notes": [
+        "Arrive late Friday after Sovereign Hill.",
+        "Use all of Saturday and most of Sunday for Melbourne.",
+        "See the fairy penguins at St Kilda Pier on Friday or Saturday evening.",
+        "Fly to Sydney Sunday evening."
+      ]
+    },
+    "sydney": {
+      "start": "2027-10-03",
+      "end": "2027-10-09",
+      "base": "Sydney",
       "workDates": {
         "start": "2027-10-04",
         "end": "2027-10-08"
       },
       "notes": [
-        "Use afternoons and evenings for Melbourne activities.",
-        "See the fairy penguins at St Kilda Pier."
+        "Settle in Sunday evening and protect a normal Monday-through-Friday work and homeschool week.",
+        "Use afternoons and evenings for nearby Sydney activities.",
+        "Keep Saturday for a full Sydney day, then fly to Hamilton Island on Sunday."
       ]
     }
   }
