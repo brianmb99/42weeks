@@ -16,6 +16,8 @@ type Stop = {
   eyebrow: string;
   window: string;
   startLabel: string;
+  startISO: string;
+  endISO: string;
   days: number;
   color: string;
   purpose: string;
@@ -43,6 +45,8 @@ const stops: Stop[] = [
     eyebrow: "Victoria · Australia",
     window: "Sep 9–Oct 3, 2027",
     startLabel: "Sep 9",
+    startISO: "2027-09-09",
+    endISO: "2027-10-03",
     days: 25,
     color: "#d3523e",
     purpose: "Land softly, live in a neighborhood, and make footy the opening ritual.",
@@ -56,6 +60,8 @@ const stops: Stop[] = [
     eyebrow: "Queensland · Australia",
     window: "Oct 4–26, 2027",
     startLabel: "Oct 4",
+    startISO: "2027-10-04",
+    endISO: "2027-10-26",
     days: 23,
     color: "#e49b39",
     purpose: "Trade city spring for warmth, water, and a stable Queensland base.",
@@ -69,6 +75,8 @@ const stops: Stop[] = [
     eyebrow: "Delhi · Dehradun · beyond",
     window: "Oct 27–Nov 9, 2027",
     startLabel: "Oct 27",
+    startISO: "2027-10-27",
+    endISO: "2027-11-09",
     days: 14,
     color: "#bd5f8b",
     purpose: "Arrive for Diwali, spend meaningful family time, and choose a deliberately selective route.",
@@ -82,6 +90,8 @@ const stops: Stop[] = [
     eyebrow: "Singapore",
     window: "Nov 10–23, 2027",
     startLabel: "Nov 10",
+    startISO: "2027-11-10",
+    endISO: "2027-11-23",
     days: 14,
     color: "#258c82",
     purpose: "Use a compact, easy-to-navigate city as a reset and learning-rich base.",
@@ -95,6 +105,8 @@ const stops: Stop[] = [
     eyebrow: "Hong Kong",
     window: "Nov 24–Dec 7, 2027",
     startLabel: "Nov 24",
+    startISO: "2027-11-24",
+    endISO: "2027-12-07",
     days: 14,
     color: "#2d6e9f",
     purpose: "Pair dense city life with hiking, ferries, and strong work-hour overlap.",
@@ -108,6 +120,8 @@ const stops: Stop[] = [
     eyebrow: "Tokyo · Kyoto",
     window: "Dec 8–16, 2027",
     startLabel: "Dec 8",
+    startISO: "2027-12-08",
+    endISO: "2027-12-16",
     days: 9,
     color: "#9b4e62",
     purpose: "Use nine days for an independent Japan trip before returning to New Hampshire for one week.",
@@ -121,6 +135,8 @@ const stops: Stop[] = [
     eyebrow: "Hanover · USA",
     window: "Dec 17–23, 2027",
     startLabel: "Dec 17",
+    startISO: "2027-12-17",
+    endISO: "2027-12-23",
     days: 7,
     color: "#7c88a8",
     purpose: "A one-week home reset for family, mail, winter gear, and a familiar bed.",
@@ -134,6 +150,8 @@ const stops: Stop[] = [
     eyebrow: "Utah · USA",
     window: "Dec 24–31, 2027",
     startLabel: "Dec 24",
+    startISO: "2027-12-24",
+    endISO: "2027-12-31",
     days: 8,
     color: "#667b9b",
     purpose: "Shift into winter mode with a compact family ski week before Europe.",
@@ -147,6 +165,8 @@ const stops: Stop[] = [
     eyebrow: "Base to be chosen",
     window: "Jan 1–Mar 30, 2028",
     startLabel: "Jan 1",
+    startISO: "2028-01-01",
+    endISO: "2028-03-30",
     days: 90,
     color: "#3c6380",
     purpose: "Build an ordinary winter life around serious children’s skiing and dependable work.",
@@ -160,6 +180,8 @@ const stops: Stop[] = [
     eyebrow: "Denmark",
     window: "Mar 31–Jun 28, 2028",
     startLabel: "Mar 31",
+    startISO: "2028-03-31",
+    endISO: "2028-06-28",
     days: 90,
     color: "#2f7c65",
     purpose: "Settle into Danish spring with bikes, ordinary routines, and room for regional exploration.",
@@ -200,21 +222,9 @@ const stops: Stop[] = [
   },
 ];
 
-const monthSegments = [
-  { label: "SEP ’27", days: 22 },
-  { label: "OCT", days: 31 },
-  { label: "NOV", days: 30 },
-  { label: "DEC", days: 31 },
-  { label: "JAN ’28", days: 31 },
-  { label: "FEB", days: 29 },
-  { label: "MAR", days: 31 },
-  { label: "APR", days: 30 },
-  { label: "MAY", days: 31 },
-  { label: "JUN", days: 28 },
-];
-
 const keyDates = [
   {
+    iso: "2027-09-10",
     date: "SEP 10–11, 2027",
     title: "AFL semifinals · estimated",
     detail: "Arrive September 9. This is an estimate based on the 2026 Grand Final date and the usual week-two finals cadence.",
@@ -222,6 +232,7 @@ const keyDates = [
     href: "https://resources.afl.com.au/afl/document/2026/04/24/9dbb254f-eb90-4b55-9a09-f7a39a4d7210/2026-AFL-Grand-Final-Ticketing-Scheme-12032026-.pdf",
   },
   {
+    iso: "2027-09-25",
     date: "SEP 25, 2027",
     title: "AFL Grand Final",
     detail: "Working date: Saturday at the MCG. The 2:30 pm AEST start is confirmed; final calendar date is still pending.",
@@ -229,6 +240,7 @@ const keyDates = [
     href: "https://www.afl.com.au/news/1486947/afl-locks-in-toyota-afl-grand-final-start-time-for-next-two-years-230pm-aest",
   },
   {
+    iso: "2027-10-29",
     date: "OCT 29, 2027",
     title: "Diwali",
     detail: "Friday · principal Lakshmi Puja date. The working plan arrives in India on October 27.",
@@ -236,12 +248,14 @@ const keyDates = [
     href: "https://www.drikpanchang.com/hindu-festivals/diwali/diwali.html",
   },
   {
+    iso: "2027-12-25",
     date: "DEC 25, 2027",
     title: "Christmas",
     detail: "Snowbird stay runs Friday, December 24 through Friday, December 31.",
     stop: "snowbird",
   },
   {
+    iso: "2028-03-31",
     date: "MAR 31, 2028",
     title: "Copenhagen arrival",
     detail: "The working handoff after exactly 90 days in the Alps.",
@@ -271,11 +285,56 @@ function stopStyle(stop: Stop) {
   } as CSSProperties;
 }
 
+type ZoomLevel = "trip" | "six-weeks" | "two-weeks";
+
+const DAY_MS = 86_400_000;
+const TRIP_START = "2027-09-09";
+const TRIP_END = "2028-06-28";
+const zoomOrder: ZoomLevel[] = ["trip", "six-weeks", "two-weeks"];
+const zoomDays: Record<ZoomLevel, number> = {
+  trip: 294,
+  "six-weeks": 42,
+  "two-weeks": 14,
+};
+
+function parseISO(value: string) {
+  return new Date(`${value}T00:00:00Z`);
+}
+
+function toISO(date: Date) {
+  return date.toISOString().slice(0, 10);
+}
+
+function addDays(value: string, days: number) {
+  const date = parseISO(value);
+  date.setUTCDate(date.getUTCDate() + days);
+  return toISO(date);
+}
+
+function dayDifference(start: string, end: string) {
+  return Math.round((parseISO(end).getTime() - parseISO(start).getTime()) / DAY_MS);
+}
+
+function formatAxisDate(value: string, includeYear = false) {
+  return new Intl.DateTimeFormat("en-US", {
+    month: "short",
+    day: "numeric",
+    ...(includeYear ? { year: "numeric" } : {}),
+    timeZone: "UTC",
+  }).format(parseISO(value));
+}
+
+function clampWindowStart(value: string, days: number) {
+  const latestStart = addDays(TRIP_END, -(days - 1));
+  if (value < TRIP_START) return TRIP_START;
+  if (value > latestStart) return latestStart;
+  return value;
+}
+
 export function Planner() {
   const [activeStopId, setActiveStopId] = useState("melbourne");
-  const [timelineView, setTimelineView] = useState<"overview" | "focus">(
-    "overview",
-  );
+  const [zoomLevel, setZoomLevel] = useState<ZoomLevel>("trip");
+  const [focusDate, setFocusDate] = useState(TRIP_START);
   const [notes, setNotes] = useState<Note[]>(starterNotes);
   const [noteText, setNoteText] = useState("");
   const [notePlace, setNotePlace] = useState("general");
@@ -294,7 +353,55 @@ export function Planner() {
     () => keyDates.filter((item) => item.stop === activeStopId),
     [activeStopId],
   );
-  const activeStopIndex = stops.findIndex((stop) => stop.id === activeStopId);
+  const viewDays = zoomDays[zoomLevel];
+  const viewStart =
+    zoomLevel === "trip"
+      ? TRIP_START
+      : clampWindowStart(focusDate, viewDays);
+  const viewEnd = addDays(viewStart, viewDays - 1);
+  const visibleStops = stops.filter(
+    (stop) => stop.endISO >= viewStart && stop.startISO <= viewEnd,
+  );
+  const visibleKeyDates = keyDates.filter(
+    (item) => item.iso >= viewStart && item.iso <= viewEnd,
+  );
+  const visibleDays =
+    zoomLevel === "two-weeks"
+      ? Array.from({ length: viewDays }, (_, index) =>
+          addDays(viewStart, index),
+        )
+      : [];
+  const axisTicks =
+    zoomLevel === "trip"
+      ? [
+          { date: "2027-09-09", label: "SEP ’27" },
+          { date: "2027-10-01", label: "OCT" },
+          { date: "2027-11-01", label: "NOV" },
+          { date: "2027-12-01", label: "DEC" },
+          { date: "2028-01-01", label: "JAN ’28" },
+          { date: "2028-02-01", label: "FEB" },
+          { date: "2028-03-01", label: "MAR" },
+          { date: "2028-04-01", label: "APR" },
+          { date: "2028-05-01", label: "MAY" },
+          { date: "2028-06-01", label: "JUN" },
+        ]
+      : zoomLevel === "six-weeks"
+        ? Array.from({ length: 6 }, (_, index) => {
+            const date = addDays(viewStart, index * 7);
+            return {
+              date,
+              label: formatAxisDate(date, index === 0),
+            };
+          })
+        : [];
+  const zoomLabel =
+    zoomLevel === "trip"
+      ? "Full trip"
+      : zoomLevel === "six-weeks"
+        ? "Six weeks"
+        : "Two weeks";
+  const canMovePrevious = viewStart > TRIP_START;
+  const canMoveNext = viewEnd < TRIP_END;
 
   useEffect(() => {
     const saved = window.localStorage.getItem("42-weeks-draft-notes");
@@ -322,16 +429,40 @@ export function Planner() {
     });
   }
 
-  function focusTimelineStop(id: string) {
+  function zoomToStop(id: string) {
+    const stop = stops.find((item) => item.id === id);
+    if (!stop) return;
     setActiveStopId(id);
-    setTimelineView("focus");
+    setFocusDate(stop.startISO);
+    if (zoomLevel === "trip") {
+      setZoomLevel("six-weeks");
+    }
   }
 
-  function moveTimelineFocus(direction: -1 | 1) {
-    const nextIndex =
-      (activeStopIndex + direction + stops.length) % stops.length;
-    setActiveStopId(stops[nextIndex].id);
-    setTimelineView("focus");
+  function changeZoom(direction: -1 | 1) {
+    const currentIndex = zoomOrder.indexOf(zoomLevel);
+    const nextIndex = Math.min(
+      zoomOrder.length - 1,
+      Math.max(0, currentIndex + direction),
+    );
+    const nextZoom = zoomOrder[nextIndex];
+    if (nextZoom === zoomLevel) return;
+    if (zoomLevel === "trip" && nextZoom !== "trip") {
+      setFocusDate(activeStop.startISO);
+    }
+    setZoomLevel(nextZoom);
+  }
+
+  function moveTimelineWindow(direction: -1 | 1) {
+    const nextStart = clampWindowStart(
+      addDays(viewStart, direction * viewDays),
+      viewDays,
+    );
+    setFocusDate(nextStart);
+    const nextStop = stops.find(
+      (stop) => stop.startISO <= nextStart && stop.endISO >= nextStart,
+    );
+    if (nextStop) setActiveStopId(nextStop.id);
   }
 
   function focusNote() {
@@ -493,65 +624,198 @@ export function Planner() {
             <h2>Trip timeline</h2>
           </div>
           <p className="section-note">
-            Keep the whole trip in view, or select a segment to expand its
-            dates, ideas, and decisions without leaving the timeline.
+            Zoom from the full route into six-week and two-week windows. The
+            closest view begins to show speculative workdays and weekends.
           </p>
         </div>
 
-        <div className="timeline-toolbar" aria-label="Timeline view">
-          <div>
+        <div className="timeline-zoom-toolbar">
+          <div className="zoom-control" aria-label="Timeline zoom">
             <button
-              className={timelineView === "overview" ? "active" : ""}
-              onClick={() => setTimelineView("overview")}
               type="button"
+              onClick={() => changeZoom(-1)}
+              disabled={zoomLevel === "trip"}
+              aria-label="Zoom timeline out"
             >
-              All 42 weeks
+              −
             </button>
+            <span>
+              <small>Scale</small>
+              <strong>{zoomLabel}</strong>
+            </span>
             <button
-              className={timelineView === "focus" ? "active" : ""}
-              onClick={() => setTimelineView("focus")}
               type="button"
+              onClick={() => changeZoom(1)}
+              disabled={zoomLevel === "two-weeks"}
+              aria-label="Zoom timeline in"
             >
-              Focused segment
+              +
             </button>
           </div>
-          <span>Select a block to expand it</span>
+
+          {zoomLevel !== "trip" ? (
+            <div className="window-control" aria-label="Timeline window">
+              <button
+                type="button"
+                onClick={() => moveTimelineWindow(-1)}
+                disabled={!canMovePrevious}
+              >
+                ← Earlier
+              </button>
+              <span>
+                {formatAxisDate(viewStart, true)}–{formatAxisDate(viewEnd, true)}
+              </span>
+              <button
+                type="button"
+                onClick={() => moveTimelineWindow(1)}
+                disabled={!canMoveNext}
+              >
+                Later →
+              </button>
+            </div>
+          ) : (
+            <p>Click a location to zoom into it.</p>
+          )}
         </div>
 
-        <div className="timeline" aria-label="42 week trip timeline">
-          <div className="timeline-canvas">
-            <div className="month-axis" aria-hidden="true">
-              {monthSegments.map((month) => (
+        <div
+          className={`zoom-timeline zoom-${zoomLevel}`}
+          aria-label={`${zoomLabel} trip timeline, ${formatAxisDate(viewStart, true)} through ${formatAxisDate(viewEnd, true)}`}
+        >
+          {axisTicks.length ? (
+            <div className="zoom-axis" aria-hidden="true">
+              {axisTicks.map((tick) => (
                 <span
-                  key={month.label}
-                  style={{ "--month-days": month.days } as CSSProperties}
+                  key={tick.date}
+                  style={{
+                    left: `${(dayDifference(viewStart, tick.date) / viewDays) * 100}%`,
+                  }}
                 >
-                  {month.label}
+                  {tick.label}
                 </span>
               ))}
             </div>
-            <div className="timeline-blocks">
-              {stops.map((stop) => (
+          ) : null}
+
+          <div className="location-lane">
+            {visibleStops.map((stop) => {
+              const clippedStart =
+                stop.startISO < viewStart ? viewStart : stop.startISO;
+              const clippedEnd = stop.endISO > viewEnd ? viewEnd : stop.endISO;
+              const left =
+                (dayDifference(viewStart, clippedStart) / viewDays) * 100;
+              const width =
+                ((dayDifference(clippedStart, clippedEnd) + 1) / viewDays) *
+                100;
+              return (
                 <button
-                  className={`timeline-stop ${activeStopId === stop.id ? "active" : ""}`}
+                  className={`zoom-location ${activeStopId === stop.id ? "active" : ""}`}
                   key={stop.id}
-                  style={stopStyle(stop)}
-                  onClick={() => focusTimelineStop(stop.id)}
-                  aria-label={`${stop.name}, ${stop.window}, ${stop.days} days`}
-                  aria-expanded={
-                    timelineView === "focus" && activeStopId === stop.id
+                  style={
+                    {
+                      "--stop-color": stop.color,
+                      left: `${left}%`,
+                      width: `${width}%`,
+                    } as CSSProperties
                   }
+                  onClick={() => zoomToStop(stop.id)}
+                  aria-label={`${stop.name}, ${stop.window}, ${stop.days} days`}
                   title={`${stop.name}: ${stop.window} (${stop.days} days)`}
                 >
-                  <span className="timeline-name">{stop.shortName}</span>
-                  <span className="timeline-date">{stop.startLabel}</span>
+                  <strong>
+                    {zoomLevel === "trip" ? stop.shortName : stop.name}
+                  </strong>
+                  <span>
+                    {zoomLevel === "trip" ? stop.startLabel : stop.window}
+                  </span>
                 </button>
-              ))}
-            </div>
+              );
+            })}
           </div>
+
+          <div className="anchor-lane" aria-label="Key anchor dates">
+            {visibleKeyDates.map((item, index) => (
+              <button
+                className={`anchor-marker offset-${index % 2}`}
+                key={item.title}
+                style={{
+                  left: `${Math.max(
+                    1.5,
+                    Math.min(
+                      98.5,
+                      ((dayDifference(viewStart, item.iso) + 0.5) /
+                        viewDays) *
+                        100,
+                    ),
+                  )}%`,
+                }}
+                onClick={() => {
+                  setActiveStopId(item.stop);
+                  setFocusDate(item.iso);
+                }}
+                title={`${item.title}: ${item.date}`}
+              >
+                <i />
+                <span>
+                  <strong>{item.title}</strong>
+                  <small>{item.date}</small>
+                </span>
+              </button>
+            ))}
+          </div>
+
+          {zoomLevel === "two-weeks" ? (
+            <div
+              className="day-grid"
+              style={{ "--visible-days": viewDays } as CSSProperties}
+              aria-label="Speculative work and non-work days"
+            >
+              {visibleDays.map((day) => {
+                const date = parseISO(day);
+                const weekday = date.getUTCDay();
+                const isWeekend = weekday === 0 || weekday === 6;
+                const anchor = keyDates.find((item) => item.iso === day);
+                const dayStop = stops.find(
+                  (stop) => stop.startISO <= day && stop.endISO >= day,
+                );
+                const status =
+                  anchor?.title === "Christmas"
+                    ? "Holiday"
+                    : isWeekend
+                      ? "Weekend"
+                      : "Work?";
+                return (
+                  <div
+                    className={`day-cell ${isWeekend ? "weekend" : "weekday"} ${status === "Holiday" ? "holiday" : ""}`}
+                    key={day}
+                    title={`${formatAxisDate(day, true)} · ${status}${dayStop ? ` · ${dayStop.name}` : ""}`}
+                  >
+                    <time>
+                      <span>
+                        {new Intl.DateTimeFormat("en-US", {
+                          weekday: "short",
+                          timeZone: "UTC",
+                        }).format(date)}
+                      </span>
+                      <strong>{date.getUTCDate()}</strong>
+                    </time>
+                    <small>{status}</small>
+                  </div>
+                );
+              })}
+            </div>
+          ) : null}
         </div>
 
-        {timelineView === "overview" ? (
+        {zoomLevel === "two-weeks" ? (
+          <div className="workday-legend">
+            <span><i className="work" /> Weekday · speculative work</span>
+            <span><i className="weekend" /> Weekend</span>
+            <span><i className="holiday" /> Holiday</span>
+          </div>
+        ) : null}
+
+        {zoomLevel === "trip" ? (
           <div
             className="itinerary-table"
             role="table"
@@ -567,7 +831,7 @@ export function Planner() {
                 className="itinerary-row"
                 role="row"
                 key={stop.id}
-                onClick={() => focusTimelineStop(stop.id)}
+                onClick={() => zoomToStop(stop.id)}
               >
                 <span role="cell">
                   <i style={{ background: stop.color }} />
@@ -580,124 +844,30 @@ export function Planner() {
               </button>
             ))}
           </div>
-        ) : (
-          <article
-            className="timeline-focus"
-            id="timeline-focus"
-            style={stopStyle(activeStop)}
-          >
-            <div className="timeline-focus-header">
-              <div>
-                <p className="eyebrow">Focused segment · {activeStop.eyebrow}</p>
-                <h3>{activeStop.name}</h3>
-                <p>
-                  {activeStop.window} · {activeStop.days} days
-                </p>
-              </div>
-              <div className="timeline-focus-actions">
-                <button
-                  type="button"
-                  onClick={() => moveTimelineFocus(-1)}
-                  aria-label="Focus previous trip segment"
-                >
-                  ← Previous
-                </button>
-                <button
-                  type="button"
-                  onClick={() => moveTimelineFocus(1)}
-                  aria-label="Focus next trip segment"
-                >
-                  Next →
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setTimelineView("overview")}
-                >
-                  Collapse
-                </button>
-              </div>
+        ) : activeStop.resources?.length ? (
+          <div className="unplaced-trips">
+            <div>
+              <span>Unscheduled ideas in {activeStop.name}</span>
+              <small>Drag-and-date comes later; these are waiting to be placed.</small>
             </div>
-
-            <p className="timeline-focus-purpose">{activeStop.purpose}</p>
-
-            <div className="timeline-focus-grid">
-              <section>
-                <h4>Key dates</h4>
-                {activeKeyDates.length ? (
-                  <ul className="timeline-focus-list">
-                    {activeKeyDates.map((item) => (
-                      <li key={item.title}>
-                        <time>{item.date}</time>
-                        <strong>{item.title}</strong>
-                      </li>
-                    ))}
-                  </ul>
+            <div>
+              {activeStop.resources.map((resource) =>
+                resource.href ? (
+                  <a
+                    href={resource.href}
+                    key={resource.title}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {resource.title} ↗
+                  </a>
                 ) : (
-                  <p className="timeline-empty">No fixed events yet.</p>
-                )}
-              </section>
-
-              <section>
-                <h4>Working ingredients</h4>
-                <ul className="timeline-focus-list compact">
-                  {activeStop.highlights.map((highlight) => (
-                    <li key={highlight}>{highlight}</li>
-                  ))}
-                </ul>
-              </section>
-
-              <section>
-                <h4>Questions</h4>
-                <ul className="timeline-focus-list compact">
-                  {activeStop.questions.map((question) => (
-                    <li key={question}>{question}</li>
-                  ))}
-                </ul>
-              </section>
+                  <span key={resource.title}>{resource.title}</span>
+                ),
+              )}
             </div>
-
-            {activeStop.resources?.length ? (
-              <section className="timeline-focus-ideas">
-                <div>
-                  <h4>Ideas inside this segment</h4>
-                  <p>
-                    These can become dated sub-trips as the plan gets more
-                    specific.
-                  </p>
-                </div>
-                <div>
-                  {activeStop.resources.map((resource) =>
-                    resource.href ? (
-                      <a
-                        href={resource.href}
-                        key={resource.title}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <strong>{resource.title}</strong>
-                        <span>{resource.detail}</span>
-                        <i aria-hidden="true">↗</i>
-                      </a>
-                    ) : (
-                      <article key={resource.title}>
-                        <strong>{resource.title}</strong>
-                        <span>{resource.detail}</span>
-                      </article>
-                    ),
-                  )}
-                </div>
-              </section>
-            ) : null}
-
-            <button
-              className="timeline-open-chapter"
-              type="button"
-              onClick={() => selectStop(activeStop.id)}
-            >
-              Open full {activeStop.name} chapter ↓
-            </button>
-          </article>
-        )}
+          </div>
+        ) : null}
       </section>
 
       <section className="dates section-shell">

@@ -654,6 +654,378 @@ button.itinerary-row:hover {
   margin-top: 1rem;
 }
 
+.timeline-zoom-toolbar {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  margin-bottom: 0.65rem;
+}
+
+.timeline-zoom-toolbar button {
+  cursor: pointer;
+}
+
+.timeline-zoom-toolbar button:disabled {
+  cursor: default;
+  opacity: 0.35;
+}
+
+.zoom-control {
+  align-items: stretch;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  display: inline-flex;
+}
+
+.zoom-control button {
+  background: rgba(255, 255, 255, 0.06);
+  border: 0;
+  color: white;
+  font-size: 1rem;
+  min-width: 2.4rem;
+}
+
+.zoom-control > span {
+  align-items: center;
+  border-left: 1px solid rgba(255, 255, 255, 0.24);
+  border-right: 1px solid rgba(255, 255, 255, 0.24);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 7rem;
+  padding: 0.35rem 0.8rem;
+}
+
+.zoom-control small {
+  color: rgba(255, 255, 255, 0.5);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.48rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.zoom-control strong {
+  font-size: 0.68rem;
+  margin-top: 0.12rem;
+}
+
+.window-control {
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.window-control button {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.62rem;
+  padding: 0.52rem 0.65rem;
+}
+
+.window-control > span {
+  color: rgba(255, 255, 255, 0.64);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.56rem;
+  min-width: 12rem;
+  text-align: center;
+}
+
+.timeline-zoom-toolbar > p {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.62rem;
+  margin: 0;
+}
+
+.zoom-timeline {
+  background: #1d2422;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  overflow: hidden;
+  position: relative;
+}
+
+.zoom-axis {
+  background: rgba(255, 255, 255, 0.04);
+  height: 34px;
+  position: relative;
+}
+
+.zoom-axis > span {
+  border-left: 1px solid rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.62);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.52rem;
+  height: 100%;
+  padding: 0.65rem 0 0 0.45rem;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+}
+
+.location-lane {
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.025),
+      rgba(255, 255, 255, 0)
+    );
+  height: 88px;
+  position: relative;
+}
+
+.zoom-location {
+  background: color-mix(in srgb, var(--stop-color) 78%, #202724);
+  border: 0;
+  border-right: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: inset 0 5px 0 var(--stop-color);
+  color: white;
+  cursor: pointer;
+  height: 100%;
+  min-width: 0;
+  overflow: hidden;
+  padding: 0.8rem 0.5rem 0.6rem;
+  position: absolute;
+  text-align: left;
+  top: 0;
+}
+
+.zoom-location:hover,
+.zoom-location.active {
+  filter: brightness(1.12);
+}
+
+.zoom-location.active {
+  outline: 2px solid rgba(255, 255, 255, 0.82);
+  outline-offset: -2px;
+}
+
+.zoom-location strong,
+.zoom-location span {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.zoom-location strong {
+  font-size: 0.68rem;
+}
+
+.zoom-location span {
+  color: rgba(255, 255, 255, 0.68);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.5rem;
+  margin-top: 0.4rem;
+}
+
+.zoom-six-weeks .zoom-location strong,
+.zoom-two-weeks .zoom-location strong {
+  font-size: 0.82rem;
+}
+
+.zoom-six-weeks .zoom-location span,
+.zoom-two-weeks .zoom-location span {
+  font-size: 0.56rem;
+}
+
+.anchor-lane {
+  background: rgba(255, 255, 255, 0.025);
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  height: 74px;
+  position: relative;
+}
+
+.anchor-marker {
+  background: transparent;
+  border: 0;
+  color: white;
+  cursor: pointer;
+  padding: 0;
+  position: absolute;
+  top: 0.6rem;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.anchor-marker.offset-1 {
+  top: 2.25rem;
+}
+
+.anchor-marker > i {
+  background: #f3ce5c;
+  border: 2px solid #1d2422;
+  border-radius: 50%;
+  display: block;
+  height: 0.65rem;
+  margin: 0 auto 0.25rem;
+  width: 0.65rem;
+}
+
+.anchor-marker > span {
+  background: #343c39;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  display: block;
+  max-width: 11rem;
+  min-width: 5.5rem;
+  overflow: hidden;
+  padding: 0.28rem 0.38rem;
+  text-align: left;
+}
+
+.anchor-marker strong,
+.anchor-marker small {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.anchor-marker strong {
+  font-size: 0.56rem;
+}
+
+.anchor-marker small {
+  color: rgba(255, 255, 255, 0.58);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.45rem;
+  margin-top: 0.15rem;
+}
+
+.day-grid {
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  display: grid;
+  grid-template-columns: repeat(var(--visible-days), minmax(0, 1fr));
+}
+
+.day-cell {
+  background: #f4f6f5;
+  color: var(--text);
+  min-width: 0;
+  padding: 0.5rem 0.2rem;
+  text-align: center;
+}
+
+.day-cell + .day-cell {
+  border-left: 1px solid #d4dad7;
+}
+
+.day-cell.weekend {
+  background: #dfe5e2;
+}
+
+.day-cell.holiday {
+  background: #f4df9b;
+}
+
+.day-cell time span,
+.day-cell time strong,
+.day-cell > small {
+  display: block;
+}
+
+.day-cell time span {
+  color: var(--text-muted);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.46rem;
+  text-transform: uppercase;
+}
+
+.day-cell time strong {
+  font-size: 0.76rem;
+  margin-top: 0.12rem;
+}
+
+.day-cell > small {
+  color: var(--text-muted);
+  font-size: 0.46rem;
+  margin-top: 0.35rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.workday-legend {
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0.6rem 0.75rem;
+}
+
+.workday-legend span {
+  align-items: center;
+  color: rgba(255, 255, 255, 0.62);
+  display: inline-flex;
+  font-size: 0.56rem;
+  gap: 0.35rem;
+}
+
+.workday-legend i {
+  background: #f4f6f5;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: inline-block;
+  height: 0.55rem;
+  width: 0.55rem;
+}
+
+.workday-legend i.weekend {
+  background: #dfe5e2;
+}
+
+.workday-legend i.holiday {
+  background: #f4df9b;
+}
+
+.unplaced-trips {
+  align-items: start;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: 0;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(12rem, 0.7fr) 2fr;
+  padding: 0.8rem;
+}
+
+.unplaced-trips > div:first-child span,
+.unplaced-trips > div:first-child small {
+  display: block;
+}
+
+.unplaced-trips > div:first-child span {
+  font-size: 0.68rem;
+  font-weight: 650;
+}
+
+.unplaced-trips > div:first-child small {
+  color: rgba(255, 255, 255, 0.52);
+  font-size: 0.56rem;
+  line-height: 1.4;
+  margin-top: 0.2rem;
+}
+
+.unplaced-trips > div:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.unplaced-trips > div:last-child a,
+.unplaced-trips > div:last-child span {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.58rem;
+  padding: 0.38rem 0.48rem;
+}
+
+.unplaced-trips > div:last-child a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 .dates {
   padding-bottom: 1rem;
 }
@@ -1236,6 +1608,10 @@ footer > a {
     grid-column: 1 / -1;
   }
 
+  .unplaced-trips {
+    grid-template-columns: 1fr;
+  }
+
   .prompt-panel {
     position: static;
   }
@@ -1282,6 +1658,45 @@ footer > a {
 
   .timeline-toolbar > span {
     display: none;
+  }
+
+  .timeline-zoom-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .zoom-control {
+    align-self: flex-start;
+  }
+
+  .window-control {
+    justify-content: space-between;
+  }
+
+  .window-control > span {
+    min-width: 0;
+  }
+
+  .zoom-trip .anchor-marker > span {
+    display: none;
+  }
+
+  .zoom-trip .anchor-marker {
+    transform: translateX(-50%);
+  }
+
+  .day-cell {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .day-cell time span,
+  .day-cell > small {
+    display: none;
+  }
+
+  .day-cell time strong {
+    font-size: 0.62rem;
   }
 
   .itinerary-header {
