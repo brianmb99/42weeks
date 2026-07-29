@@ -60,6 +60,7 @@ function rangeLabel(location: LocationEntry) {
 
 type PlaceCard = {
   locationId: string;
+  title?: string;
   category: string;
   summary: string;
   highlights: string[];
@@ -90,6 +91,7 @@ const australiaCards: PlaceCard[] = [
   },
   {
     locationId: "location-melbourne",
+    title: "Melbourne and/or Sydney",
     category: "Work base",
     summary:
       "Current assumption: a full Melbourne week. Alternative: stay a couple of days, then hop to Sydney before Hamilton Island—but the extra move could put work time at risk.",
@@ -213,7 +215,7 @@ function PlaceGrid({
             <div className="home-place-card-head">
               <div>
                 <p>{card.category}</p>
-                <h3>{location.title}</h3>
+                <h3>{card.title ?? location.title}</h3>
               </div>
               <time>{rangeLabel(location)}</time>
             </div>
