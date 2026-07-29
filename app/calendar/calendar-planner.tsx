@@ -19,7 +19,7 @@ type LocationEntry = TimelineEntry & {
   days: number;
   color: string;
 };
-type DayStatus = "work" | "off" | "travel";
+type DayStatus = "work" | "off" | "travel" | "vacation";
 type DayOverride = {
   date: string;
   status: Exclude<DayStatus, "travel">;
@@ -31,6 +31,7 @@ type DayModel = {
   entries: CalendarEntry[];
   location: LocationEntry;
   status: DayStatus;
+  note: string | null;
 };
 type WeekModel = {
   number: number;
@@ -162,12 +163,14 @@ const allTripDays = datesBetween(tripPlan.trip.start, tripPlan.trip.end);
 const dayModels: DayModel[] = allTripDays.map((date) => {
   const iso = isoDate(date);
   const entries = entriesForDate(iso);
+  const override = dayOverrides.find((entry) => entry.date === iso);
   return {
     date,
     iso,
     entries,
     location: locationForDate(iso),
     status: statusForDate(date, entries),
+    note: override?.note ?? null,
   };
 });
 const weeks: WeekModel[] = Array.from(
@@ -205,10 +208,17 @@ function dayTooltip(day: DayModel) {
   const status =
     day.status === "travel"
       ? "Travel"
+      : day.status === "vacation"
+        ? "Vacation"
       : day.status === "work"
         ? "Work"
         : "Not working";
-  return [date, status, ...day.entries.map((entry) => entry.title)].join("\n");
+  return [
+    date,
+    status,
+    ...(day.note ? [day.note] : []),
+    ...day.entries.map((entry) => entry.title),
+  ].join("\n");
 }
 
 function EventLine({ entries }: { entries: CalendarEntry[] }) {
@@ -498,6 +508,7 @@ export default function CalendarPlanner() {
           <span><i className="status-sample sample-work" />Work</span>
           <span><i className="status-sample sample-travel" />Travel</span>
           <span><i className="status-sample sample-off" />Not working</span>
+          <span><i className="status-sample sample-vacation" />Vacation</span>
           <span><i className="fixed-event-sample">■</i>Fixed event</span>
           <small>Weekdays/work and weekends/off are initial assumptions.</small>
           <div className="all-controls">

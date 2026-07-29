@@ -25,7 +25,33 @@
     "marketHolidayDefault": "off",
     "marketEarlyCloseDefault": "work",
     "travelSource": "timeline events with type=travel",
-    "overrides": []
+    "overrides": [
+      {
+        "date": "2027-12-27",
+        "status": "vacation",
+        "note": "Snowbird vacation"
+      },
+      {
+        "date": "2027-12-28",
+        "status": "vacation",
+        "note": "Snowbird vacation"
+      },
+      {
+        "date": "2027-12-29",
+        "status": "vacation",
+        "note": "Snowbird vacation"
+      },
+      {
+        "date": "2027-12-30",
+        "status": "vacation",
+        "note": "Snowbird vacation"
+      },
+      {
+        "date": "2027-12-31",
+        "status": "vacation",
+        "note": "Snowbird vacation; NYSE is open."
+      }
+    ]
   },
   "marketCalendar": {
     "name": "NYSE",

@@ -76,6 +76,7 @@ test("server-renders the expandable weekly working calendar", async () => {
   assert.match(html, />Work</);
   assert.match(html, />Travel</);
   assert.match(html, />Not working</);
+  assert.match(html, />Vacation</);
   assert.match(html, />Fixed event</);
   assert.match(html, />\+ all</);
   assert.match(html, />− all</);
@@ -108,6 +109,22 @@ test("server-renders the expandable weekly working calendar", async () => {
   assert.equal(tripPlan.dayPlanning.weekendDefault, "off");
   assert.equal(tripPlan.dayPlanning.marketHolidayDefault, "off");
   assert.equal(tripPlan.dayPlanning.marketEarlyCloseDefault, "work");
+  assert.equal(tripPlan.dayPlanning.overrides.length, 5);
+  assert.deepEqual(
+    tripPlan.dayPlanning.overrides.map((entry) => entry.date),
+    [
+      "2027-12-27",
+      "2027-12-28",
+      "2027-12-29",
+      "2027-12-30",
+      "2027-12-31",
+    ],
+  );
+  assert.ok(
+    tripPlan.dayPlanning.overrides.every(
+      (entry) => entry.status === "vacation",
+    ),
+  );
   assert.equal(tripPlan.marketCalendar.dates.length, 8);
   assert.equal(
     tripPlan.marketCalendar.dates.filter((entry) => entry.status === "closed").length,

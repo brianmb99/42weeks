@@ -5,6 +5,8 @@
   --work: #a5aaad;
   --travel: #161a1c;
   --off: #5b946e;
+  --vacation: #2e7845;
+  --vacation-border: #173a24;
 }
 
 * {
@@ -164,6 +166,12 @@ button {
 .sample-off,
 .pattern-box.status-off {
   background: var(--off);
+}
+
+.sample-vacation,
+.pattern-box.status-vacation {
+  border: 2px solid var(--vacation-border);
+  background: var(--vacation);
 }
 
 .fixed-event-sample {
@@ -472,6 +480,10 @@ button {
   background: #f7f7f7;
 }
 
+.day-row.status-vacation {
+  background: #f5faf6;
+}
+
 .status-box {
   width: 12px;
   height: 12px;
@@ -488,6 +500,11 @@ button {
   background: var(--travel);
 }
 
+.status-vacation .status-box {
+  border: 2px solid var(--vacation-border);
+  background: var(--vacation);
+}
+
 .weekday {
   color: #7b8488;
   font-size: 9px;
@@ -498,6 +515,12 @@ button {
 .status-off .weekday,
 .status-off time {
   color: #426b50;
+}
+
+.status-vacation .weekday,
+.status-vacation time {
+  color: #285b39;
+  font-weight: 700;
 }
 
 .day-row time {
