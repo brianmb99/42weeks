@@ -34,7 +34,7 @@ test("server-renders the 42 Weeks overview", async () => {
   assert.match(html, /aria-current="page">Home/);
   assert.match(html, />Overview</);
   assert.doesNotMatch(html, /Broad route/);
-  assert.match(html, /Where the 42 weeks go/);
+  assert.match(html, /Where the weeks go/);
   assert.match(
     html,
     /aria-label="Time-scaled trip overview; each row represents 90 days"/,

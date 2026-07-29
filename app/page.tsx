@@ -382,7 +382,7 @@ export default function Home() {
           <div className="home-section-heading">
             <div>
               <p className="home-kicker">Overview</p>
-              <h2>Where the 42 weeks go</h2>
+              <h2>Where the weeks go</h2>
             </div>
             <p>
               Each row uses the same 90-day scale. Linked stops open their
