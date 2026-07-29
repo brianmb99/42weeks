@@ -2,6 +2,7 @@
 
 import { useLayoutEffect, useRef, useState } from "react";
 import tripPlan from "../../data/trip-plan.json";
+import { sitePath } from "../../lib/site-path";
 
 type TimelineEntry = (typeof tripPlan.timeline)[number];
 type MarketEntry = {
@@ -274,7 +275,7 @@ function EventLine({ entries }: { entries: CalendarEntry[] }) {
             {entry.type === "travel" && <b aria-hidden="true">→</b>}
             {fixed && <b className="fixed-mark" aria-label="Fixed date">■</b>}
             {href ? (
-              <a className="event-detail-link" href={href}>
+              <a className="event-detail-link" href={sitePath(href)}>
                 {entry.title} <span aria-hidden="true">↗</span>
               </a>
             ) : (
@@ -540,7 +541,7 @@ export default function CalendarPlanner() {
             </span>
           </p>
         </div>
-        <a href="/" className="back-link">Current planner</a>
+        <a href={sitePath("/")} className="back-link">Current planner</a>
       </header>
 
       <div className="calendar-tools">

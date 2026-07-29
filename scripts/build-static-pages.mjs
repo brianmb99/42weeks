@@ -1,4 +1,4 @@
-import { cp, mkdir, rm, writeFile } from "node:fs/promises";
+import { cp, mkdir, readFile, readdir, rm, writeFile } from "node:fs/promises";
 import { dirname, join, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 
@@ -6,6 +6,8 @@ const projectRoot = resolve(import.meta.dirname, "..");
 const outputDir = join(projectRoot, ".github-pages");
 const clientDir = join(projectRoot, "dist", "client");
 const workerPath = join(projectRoot, "dist", "server", "index.js");
+const siteBasePath = process.env.NEXT_PUBLIC_SITE_BASE_PATH ?? "";
+const siteOrigin = "https://brianmb99.github.io";
 const routes = [
   "/",
   "/calendar",
@@ -24,7 +26,7 @@ const { default: worker } = await import(workerUrl.href);
 
 for (const route of routes) {
   const response = await worker.fetch(
-    new Request(`https://brianmb99.github.io${route}`, {
+    new Request(`${siteOrigin}${route}`, {
       headers: { accept: "text/html" },
     }),
     {
@@ -47,13 +49,31 @@ for (const route of routes) {
       ? join(outputDir, "index.html")
       : join(outputDir, route.slice(1), "index.html");
   await mkdir(dirname(destination), { recursive: true });
-  await writeFile(destination, await response.text(), "utf8");
+  const html = (await response.text()).replaceAll(
+    "/assets/",
+    `${siteBasePath}/assets/`,
+  );
+  await writeFile(destination, html, "utf8");
 }
 
+async function prefixAssetReferences(directory) {
+  for (const entry of await readdir(directory, { withFileTypes: true })) {
+    const path = join(directory, entry.name);
+    if (entry.isDirectory()) {
+      await prefixAssetReferences(path);
+    } else if (/\.(?:css|js)$/.test(entry.name)) {
+      const source = await readFile(path, "utf8");
+      const updated = source.replaceAll("/assets/", `${siteBasePath}/assets/`);
+      if (updated !== source) await writeFile(path, updated, "utf8");
+    }
+  }
+}
+
+await prefixAssetReferences(join(outputDir, "assets"));
 await writeFile(join(outputDir, ".nojekyll"), "", "utf8");
 await writeFile(
   join(outputDir, "404.html"),
-  '<!doctype html><meta charset="utf-8"><title>42 Weeks</title><script>location.replace("/");</script>',
+  `<!doctype html><meta charset="utf-8"><title>42 Weeks</title><script>location.replace("${siteBasePath}/");</script>`,
   "utf8",
 );
 

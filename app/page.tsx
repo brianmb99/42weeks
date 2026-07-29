@@ -2,6 +2,7 @@ import type { CSSProperties } from "react";
 import type { Metadata } from "next";
 import tripPlan from "../data/trip-plan.json";
 import australiaPlan from "../data/australia-part-one.json";
+import { sitePath } from "../lib/site-path";
 import "./home.css";
 
 export const metadata: Metadata = {
@@ -207,7 +208,7 @@ function PlaceGrid({
               ))}
             </ul>
             {card.href && (
-              <a className="home-place-link" href={card.href}>
+              <a className="home-place-link" href={sitePath(card.href)}>
                 {card.linkLabel ?? "Open plan"} →
               </a>
             )}
@@ -237,7 +238,7 @@ export default function Home() {
           <a href="#places">Places</a>
           <a href="#open">Still open</a>
         </nav>
-        <a className="home-calendar-link" href="/calendar">
+        <a className="home-calendar-link" href={sitePath("/calendar")}>
           Open calendar
         </a>
       </header>
@@ -253,7 +254,7 @@ export default function Home() {
               Copenhagen.
             </p>
             <div className="home-hero-actions">
-              <a className="home-primary-action" href="/calendar">
+              <a className="home-primary-action" href={sitePath("/calendar")}>
                 View the exact calendar
               </a>
               <a className="home-text-action" href="#route">
@@ -347,7 +348,7 @@ export default function Home() {
             <div className="home-feature-actions">
               <a
                 className="home-primary-action"
-                href="/trips/great-southern-touring-route"
+                href={sitePath("/trips/great-southern-touring-route")}
               >
                 Open the 9-day plan
               </a>
@@ -461,7 +462,7 @@ export default function Home() {
             <p className="home-kicker">Planning view</p>
             <h2>Dates, workdays, travel, and vacation live in the calendar.</h2>
           </div>
-          <a className="home-primary-action" href="/calendar">
+          <a className="home-primary-action" href={sitePath("/calendar")}>
             Open calendar
           </a>
         </section>
@@ -470,7 +471,7 @@ export default function Home() {
       <div className="home-footer">
         <strong>42 Weeks</strong>
         <span>Broad-strokes overview · exact dates in the calendar</span>
-        <a href="/calendar">Calendar →</a>
+        <a href={sitePath("/calendar")}>Calendar →</a>
       </div>
     </>
   );

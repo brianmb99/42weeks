@@ -2,7 +2,7 @@
 
 A living planning site for a family sabbatical from September 2027 through June 2028.
 
-[Live site](https://brianmb99.github.io)
+[Live site](https://brianmb99.github.io/42weeks/)
 
 The site includes:
 
@@ -27,4 +27,5 @@ npm test
 npm run build:pages
 ```
 
-Pushes to `main` publish the generated static routes to GitHub Pages.
+Pushes to `main` in [`brianmb99/42weeks`](https://github.com/brianmb99/42weeks)
+publish the generated static routes to GitHub Pages.

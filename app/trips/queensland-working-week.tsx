@@ -1,4 +1,5 @@
 import queensland from "../../data/queensland.json";
+import { sitePath } from "../../lib/site-path";
 import "./queensland.css";
 
 type Trip = typeof queensland.hamiltonIsland | typeof queensland.longreach;
@@ -43,8 +44,8 @@ export default function QueenslandWorkingWeek({ trip }: { trip: Trip }) {
     <main className="qld-page">
       <header className="qld-header">
         <div className="qld-topline">
-          <a href="/calendar">← Calendar</a>
-          <a href={`/trips/${other.slug}`}>Next: {other.title} →</a>
+          <a href={sitePath("/calendar")}>← Calendar</a>
+          <a href={sitePath(`/trips/${other.slug}`)}>Next: {other.title} →</a>
         </div>
         <p className="qld-eyebrow">{trip.eyebrow}</p>
         <h1>{trip.title}</h1>

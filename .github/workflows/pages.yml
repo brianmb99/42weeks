@@ -17,6 +17,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      NEXT_PUBLIC_SITE_BASE_PATH: /42weeks
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

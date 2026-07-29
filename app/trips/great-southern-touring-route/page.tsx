@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import australiaPlan from "../../../data/australia-part-one.json";
+import { sitePath } from "../../../lib/site-path";
 import "./route.css";
 
 export const metadata: Metadata = {
@@ -26,7 +27,7 @@ export default function GreatSouthernTouringRoutePage() {
   return (
     <main className="route-page">
       <header className="route-header">
-        <a href="/calendar" className="route-back">
+        <a href={sitePath("/calendar")} className="route-back">
           ← Working calendar
         </a>
         <p>{australiaPlan.title}</p>
