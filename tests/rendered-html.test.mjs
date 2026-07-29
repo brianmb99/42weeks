@@ -385,7 +385,10 @@ test("server-renders the Great Ocean Road Loop detail", async () => {
     3,
   );
   assert.match(html, /images\.unsplash\.com\/photo-1736893474760/);
-  assert.match(html, /images\.unsplash\.com\/photo-1542991871/);
+  assert.match(html, /images\.unsplash\.com\/photo-1602729396501/);
+  assert.match(html, /images\.unsplash\.com\/photo-1634449594030/);
+  assert.match(html, /Otways rainforest/);
+  assert.match(html, /Mount Abrupt, Grampians/);
   assert.match(html, /Geelong work week/);
   assert.match(html, /Melbourne work week/);
   assert.match(html, /Newtown/);

@@ -25,19 +25,20 @@ const roadPhotos: DestinationPhoto[] = [
       "https://unsplash.com/photos/a-view-of-the-beach-and-cliffs-of-the-great-ocean-road-Yd-HvUwdqMc",
   },
   {
-    src: "https://images.unsplash.com/photo-1542991871-69ac6beec594?auto=format&fit=crop&fm=jpg&q=82&w=1400",
-    alt: "Ocean waves and rock formations along the Great Ocean Road",
-    caption: "Great Ocean Road coast",
-    credit: "Tiraya Adam / Unsplash",
-    source: "https://unsplash.com/photos/boulders-body-of-water-mGQJfDMBpKs",
+    src: "https://images.unsplash.com/photo-1602729396501-b7c1ab35a2e4?auto=format&fit=crop&fm=jpg&q=82&w=1400",
+    alt: "Tree ferns and tall forest in Great Otway National Park",
+    caption: "Otways rainforest",
+    credit: "Caitie Philpott / Unsplash",
+    source:
+      "https://unsplash.com/photos/green-and-brown-trees-during-daytime-GIcFo20HDt0",
   },
   {
-    src: "https://images.unsplash.com/photo-1650190460921-aa02f0528ff0?auto=format&fit=crop&fm=jpg&q=82&w=1400",
-    alt: "Cliffs and sea stacks seen from the Great Ocean Road",
-    caption: "Coast, cliffs, and sea stacks",
-    credit: "gabriel xu / Unsplash",
+    src: "https://images.unsplash.com/photo-1634449594030-74d022f19fd8?auto=format&fit=crop&fm=jpg&q=82&w=1400",
+    alt: "Mount Abrupt rising over woodland in the Grampians",
+    caption: "Mount Abrupt, Grampians",
+    credit: "Christian Bass / Unsplash",
     source:
-      "https://unsplash.com/photos/a-view-of-the-ocean-and-the-cliffs-of-the-great-ocean-road-1JgJ_1sXimI",
+      "https://unsplash.com/photos/a-view-of-a-mountain-range-with-trees-in-the-foreground-C1HARJTjGfk",
   },
 ];
 
