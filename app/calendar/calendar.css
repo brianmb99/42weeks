@@ -211,7 +211,7 @@ button {
 
 .week-headings {
   height: 25px;
-  padding-left: 54px;
+  padding-left: 102px;
   border-bottom: 1px solid #aeb6b9;
   color: #7a8387;
   font-size: 8px;
@@ -223,7 +223,7 @@ button {
 .week-calendar {
   position: relative;
   width: 100%;
-  padding-left: 54px;
+  padding-left: 102px;
 }
 
 .location-rail {
@@ -232,7 +232,7 @@ button {
   top: 0;
   bottom: 0;
   left: 0;
-  width: 43px;
+  width: 90px;
   overflow: hidden;
 }
 
@@ -262,8 +262,7 @@ button {
   letter-spacing: 0.015em;
   line-height: 1.05;
   text-align: center;
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
+  white-space: nowrap;
 }
 
 .location-rail-segment:hover {
@@ -274,15 +273,6 @@ button {
   z-index: 6;
   outline: 3px solid #111;
   outline-offset: -3px;
-}
-
-.location-rail-segment.is-short span {
-  font-size: 7px;
-  letter-spacing: 0;
-  line-height: 1;
-  white-space: normal;
-  writing-mode: horizontal-tb;
-  transform: none;
 }
 
 .week-block {
@@ -670,19 +660,19 @@ button {
   }
 
   .week-headings {
-    padding-left: 40px;
+    padding-left: 84px;
   }
 
   .week-calendar {
-    padding-left: 40px;
+    padding-left: 84px;
   }
 
   .location-rail {
-    width: 31px;
+    width: 74px;
   }
 
   .location-rail-segment span {
-    font-size: 7px;
+    font-size: 6.5px;
   }
 
   .week-summary {
