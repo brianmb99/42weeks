@@ -47,7 +47,10 @@ test("server-renders the 42 Weeks overview", async () => {
   assert.match(html, /summary_large_image/);
   assert.match(html, /Geelong/);
   assert.match(html, /Melbourne/);
-  assert.match(html, /Brisbane/);
+  assert.match(html, /Hamilton Island/);
+  assert.match(html, /Longreach/);
+  assert.match(html, /\/trips\/hamilton-island-working-week/);
+  assert.match(html, /\/trips\/longreach-outback-working-week/);
   assert.match(html, /Diwali/);
   assert.match(html, /Singapore/);
   assert.match(html, /Hong Kong/);
@@ -95,10 +98,17 @@ test("server-renders the expandable weekly calendar", async () => {
   assert.match(html, /Great Southern Touring Route/);
   assert.match(html, /Expand all weeks in GSTR/);
   assert.match(html, /Melbourne/);
-  assert.match(html, /Brisbane/);
+  assert.match(html, /Hamilton Island/);
+  assert.match(html, /Longreach/);
+  assert.match(html, /Brisbane Airport/);
   assert.match(html, />Description</);
   assert.match(html, /Arrive in Melbourne; stay for the week/);
-  assert.match(html, /Melbourne weekend; fly to Brisbane/);
+  assert.match(html, /Fly Melbourne → Hamilton Island/);
+  assert.match(html, /Work &amp; homeschool — Hamilton Island/);
+  assert.match(html, /Hamilton Island vacation days/);
+  assert.match(html, /Fly Brisbane → Longreach/);
+  assert.match(html, /Longreach vacation days/);
+  assert.match(html, /Location = where we sleep that night/);
   assert.match(html, /Fly home; unpack and repack for Europe/);
   assert.doesNotMatch(html, /Japan/);
   assert.doesNotMatch(html, /AFL (semifinal|Grand Final)/);
@@ -116,7 +126,7 @@ test("server-renders the expandable weekly calendar", async () => {
     await readFile(new URL("../data/trip-plan.json", import.meta.url), "utf8"),
   );
   const datedEvents = tripPlan.timeline.filter((entry) => entry.type === "event");
-  assert.equal(datedEvents.length, 5);
+  assert.equal(datedEvents.length, 9);
   assert.ok(datedEvents.every((entry) => typeof entry.fixed === "boolean"));
   assert.equal(datedEvents.filter((entry) => entry.fixed).length, 2);
   assert.equal(tripPlan.rules.length, 2);
@@ -124,7 +134,7 @@ test("server-renders the expandable weekly calendar", async () => {
   assert.equal(tripPlan.dayPlanning.weekendDefault, "off");
   assert.equal(tripPlan.dayPlanning.marketHolidayDefault, "off");
   assert.equal(tripPlan.dayPlanning.marketEarlyCloseDefault, "work");
-  assert.equal(tripPlan.dayPlanning.overrides.length, 10);
+  assert.equal(tripPlan.dayPlanning.overrides.length, 14);
   assert.deepEqual(
     tripPlan.dayPlanning.overrides.map((entry) => entry.date),
     [
@@ -133,6 +143,10 @@ test("server-renders the expandable weekly calendar", async () => {
       "2027-09-29",
       "2027-09-30",
       "2027-10-01",
+      "2027-10-14",
+      "2027-10-15",
+      "2027-10-21",
+      "2027-10-22",
       "2027-12-27",
       "2027-12-28",
       "2027-12-29",
@@ -157,6 +171,7 @@ test("server-renders the expandable weekly calendar", async () => {
     1,
   );
   assert.equal(tripPlan.trip.start, "2027-09-18");
+  assert.match(tripPlan.locationPolicy, /sleep at the end/);
   const melbourneTravel = tripPlan.timeline.find(
     (entry) => entry.id === "travel-to-geelong",
   );
@@ -172,16 +187,33 @@ test("server-renders the expandable weekly calendar", async () => {
   const melbourne = tripPlan.timeline.find(
     (entry) => entry.id === "location-melbourne",
   );
-  const brisbane = tripPlan.timeline.find(
-    (entry) => entry.id === "location-brisbane",
+  const hamiltonIsland = tripPlan.timeline.find(
+    (entry) => entry.id === "location-hamilton-island",
+  );
+  const longreach = tripPlan.timeline.find(
+    (entry) => entry.id === "location-longreach",
   );
   assert.deepEqual(
     [geelong.start, geelong.end, roadTrip.start, roadTrip.end],
-    ["2027-09-18", "2027-09-24", "2027-09-25", "2027-10-03"],
+    ["2027-09-19", "2027-09-24", "2027-09-25", "2027-10-02"],
   );
   assert.deepEqual(
-    [melbourne.start, melbourne.end, brisbane.start, brisbane.end],
-    ["2027-10-04", "2027-10-10", "2027-10-11", "2027-10-24"],
+    [
+      melbourne.start,
+      melbourne.end,
+      hamiltonIsland.start,
+      hamiltonIsland.end,
+      longreach.start,
+      longreach.end,
+    ],
+    [
+      "2027-10-03",
+      "2027-10-09",
+      "2027-10-10",
+      "2027-10-15",
+      "2027-10-17",
+      "2027-10-22",
+    ],
   );
 
   const locations = tripPlan.timeline.filter(
@@ -236,11 +268,11 @@ test("server-renders the expandable weekly calendar", async () => {
   );
   assert.deepEqual(
     [india.start, india.end, hongKong.start, hongKong.end],
-    ["2027-10-25", "2027-11-14", "2027-11-29", "2027-12-17"],
+    ["2027-10-25", "2027-11-13", "2027-11-28", "2027-12-17"],
   );
   assert.deepEqual(
     [repack.start, repack.end, alps.start, alps.end, copenhagen.start],
-    ["2028-01-01", "2028-01-05", "2028-01-06", "2028-04-01", "2028-04-02"],
+    ["2028-01-01", "2028-01-05", "2028-01-07", "2028-03-31", "2028-04-01"],
   );
 
   const weekendTravel = tripPlan.timeline.filter(
@@ -256,6 +288,38 @@ test("server-renders the expandable weekly calendar", async () => {
       [0, 6].includes(dateValue(entry.start).getUTCDay()),
     ),
   );
+});
+
+test("server-renders the Hamilton Island working week", async () => {
+  const response = await render("/trips/hamilton-island-working-week");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /Hamilton Island Working Week/);
+  assert.match(html, /6<!-- --> nights/);
+  assert.match(html, /Whitehaven Beach/);
+  assert.match(html, /Outer Great Barrier Reef/);
+  assert.match(html, /Work Mon–Wed/);
+  assert.match(html, /Vacation Thu–Fri/);
+  assert.match(html, /Hamilton Island Holiday Home/);
+  assert.match(html, /Starlink/);
+  assert.match(html, /Next: .*Longreach Outback Working Week/);
+  assert.match(html, /Queensland Working Notes\.md/);
+});
+
+test("server-renders the Longreach outback working week", async () => {
+  const response = await render("/trips/longreach-outback-working-week");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /Longreach Outback Working Week/);
+  assert.match(html, /6<!-- --> nights/);
+  assert.match(html, /Qantas Founders Museum/);
+  assert.match(html, /Australian Stockman/);
+  assert.match(html, /Winton dinosaur day/);
+  assert.match(html, /Saltbush Retreat/);
+  assert.match(html, /Work Mon–Wed/);
+  assert.match(html, /Vacation Thu–Fri/);
+  assert.match(html, /Next: .*Hamilton Island Working Week/);
+  assert.match(html, /Queensland Working Notes\.md/);
 });
 
 test("server-renders the Great Southern Touring Route detail", async () => {
@@ -292,11 +356,12 @@ test("server-renders the Great Southern Touring Route detail", async () => {
   const calendarRoute = tripPlan.timeline.find(
     (entry) => entry.id === "location-great-southern-touring-route",
   );
+  const routeEnd = tripPlan.timeline.find(
+    (entry) => entry.id === "event-great-southern-touring-route-end",
+  );
   const detailRoute = australiaPlan.segments.roadTrip;
   assert.equal(detailRoute.days.length, 9);
   assert.equal(detailRoute.overnights.length, 6);
-  assert.deepEqual(
-    [detailRoute.start, detailRoute.end],
-    [calendarRoute.start, calendarRoute.end],
-  );
+  assert.equal(detailRoute.start, calendarRoute.start);
+  assert.equal(detailRoute.end, routeEnd.start);
 });

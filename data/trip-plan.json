@@ -1,8 +1,9 @@
 {
-  "schemaVersion": 4,
+  "schemaVersion": 5,
   "lastReviewed": "2026-07-29",
   "title": "42 Weeks",
   "datePolicy": "This ordered timeline is the definitive source for exact working dates. Location start and end dates are inclusive. Dated events use fixed=true only when their dates must not move as the working plan is rebalanced.",
+  "locationPolicy": "A location entry identifies where the family expects to sleep at the end of that calendar date. Use an explicit In transit location for an overnight travel night. A named multi-stop route may stand in for that route's individual overnight stops.",
   "trip": {
     "start": "2027-09-18",
     "end": "2028-06-28"
@@ -50,6 +51,26 @@
         "date": "2027-10-01",
         "status": "vacation",
         "note": "Great Southern Touring Route vacation"
+      },
+      {
+        "date": "2027-10-14",
+        "status": "vacation",
+        "note": "Hamilton Island vacation — Whitehaven Beach / Whitsundays"
+      },
+      {
+        "date": "2027-10-15",
+        "status": "vacation",
+        "note": "Hamilton Island vacation — outer Great Barrier Reef"
+      },
+      {
+        "date": "2027-10-21",
+        "status": "vacation",
+        "note": "Longreach vacation — aviation and outback heritage"
+      },
+      {
+        "date": "2027-10-22",
+        "status": "vacation",
+        "note": "Longreach vacation — Winton or station / pioneer day"
       },
       {
         "date": "2027-12-27",
@@ -155,11 +176,22 @@
       "color": null
     },
     {
-      "id": "location-geelong",
+      "id": "location-in-transit-australia",
       "type": "location",
       "start": "2027-09-18",
+      "end": "2027-09-18",
+      "days": 1,
+      "title": "In transit",
+      "locationId": "in-transit-australia",
+      "context": "Overnight flight toward Melbourne.",
+      "color": "#5e6770"
+    },
+    {
+      "id": "location-geelong",
+      "type": "location",
+      "start": "2027-09-19",
       "end": "2027-09-24",
-      "days": 7,
+      "days": 6,
       "title": "Geelong",
       "locationId": "geelong",
       "context": null,
@@ -182,8 +214,8 @@
       "id": "location-great-southern-touring-route",
       "type": "location",
       "start": "2027-09-25",
-      "end": "2027-10-03",
-      "days": 9,
+      "end": "2027-10-02",
+      "days": 8,
       "title": "GSTR",
       "locationId": "great-southern-touring-route",
       "context": null,
@@ -205,8 +237,8 @@
     {
       "id": "location-melbourne",
       "type": "location",
-      "start": "2027-10-04",
-      "end": "2027-10-10",
+      "start": "2027-10-03",
+      "end": "2027-10-09",
       "days": 7,
       "title": "Melbourne",
       "locationId": "melbourne",
@@ -214,26 +246,148 @@
       "color": "#76abc8"
     },
     {
-      "id": "travel-melbourne-brisbane",
+      "id": "travel-melbourne-hamilton-island",
       "type": "travel",
       "start": "2027-10-10",
       "end": null,
       "days": null,
-      "title": "Melbourne weekend; fly to Brisbane",
-      "locationId": "brisbane",
-      "context": null,
-      "color": null
+      "title": "Fly Melbourne → Hamilton Island",
+      "locationId": "hamilton-island",
+      "context": "Fly directly if the 2027 schedule permits; otherwise connect through Brisbane. Settle in and test work connections.",
+      "color": null,
+      "href": "/trips/hamilton-island-working-week"
     },
     {
-      "id": "location-brisbane",
+      "id": "location-hamilton-island",
       "type": "location",
+      "start": "2027-10-10",
+      "end": "2027-10-15",
+      "days": 6,
+      "title": "Hamilton Island",
+      "locationId": "hamilton-island",
+      "context": "Six nights in the Whitsundays.",
+      "color": "#4f9eb3"
+    },
+    {
+      "id": "event-hamilton-work-block",
+      "type": "event",
+      "fixed": false,
       "start": "2027-10-11",
-      "end": "2027-10-24",
-      "days": 14,
-      "title": "Brisbane",
-      "locationId": "brisbane",
-      "context": null,
-      "color": "#76abc8"
+      "end": "2027-10-13",
+      "days": 3,
+      "title": "Work & homeschool — Hamilton Island",
+      "locationId": "hamilton-island",
+      "context": "Early work and homeschool mornings; family activities after lunch.",
+      "color": null,
+      "href": "/trips/hamilton-island-working-week#work-days"
+    },
+    {
+      "id": "event-hamilton-vacation-block",
+      "type": "event",
+      "fixed": false,
+      "start": "2027-10-14",
+      "end": "2027-10-15",
+      "days": 2,
+      "title": "Hamilton Island vacation days",
+      "locationId": "hamilton-island",
+      "context": "Reserve for Whitehaven Beach and the outer reef; swap according to marine weather.",
+      "color": null,
+      "href": "/trips/hamilton-island-working-week#vacation-days"
+    },
+    {
+      "id": "travel-hamilton-island-brisbane",
+      "type": "travel",
+      "start": "2027-10-16",
+      "end": null,
+      "days": null,
+      "title": "Fly Hamilton Island → Brisbane",
+      "locationId": "brisbane-airport",
+      "context": "Stay at or beside the airport to protect the Longreach connection.",
+      "color": null,
+      "href": "/trips/hamilton-island-working-week#departure"
+    },
+    {
+      "id": "location-brisbane-airport-oct-16",
+      "type": "location",
+      "start": "2027-10-16",
+      "end": "2027-10-16",
+      "days": 1,
+      "title": "Brisbane Airport",
+      "locationId": "brisbane-airport-oct-16",
+      "context": "Connection night only.",
+      "color": "#8999a2"
+    },
+    {
+      "id": "travel-brisbane-longreach",
+      "type": "travel",
+      "start": "2027-10-17",
+      "end": null,
+      "days": null,
+      "title": "Fly Brisbane → Longreach",
+      "locationId": "longreach",
+      "context": "Collect a rental car, buy groceries, settle in, and test primary and backup internet.",
+      "color": null,
+      "href": "/trips/longreach-outback-working-week"
+    },
+    {
+      "id": "location-longreach",
+      "type": "location",
+      "start": "2027-10-17",
+      "end": "2027-10-22",
+      "days": 6,
+      "title": "Longreach",
+      "locationId": "longreach",
+      "context": "Six nights in Outback Queensland.",
+      "color": "#c47b39"
+    },
+    {
+      "id": "event-longreach-work-block",
+      "type": "event",
+      "fixed": false,
+      "start": "2027-10-18",
+      "end": "2027-10-20",
+      "days": 3,
+      "title": "Work & homeschool — Longreach",
+      "locationId": "longreach",
+      "context": "Early work and homeschool mornings; town, heritage, swimming, station, and sunset activities later.",
+      "color": null,
+      "href": "/trips/longreach-outback-working-week#work-days"
+    },
+    {
+      "id": "event-longreach-vacation-block",
+      "type": "event",
+      "fixed": false,
+      "start": "2027-10-21",
+      "end": "2027-10-22",
+      "days": 2,
+      "title": "Longreach vacation days",
+      "locationId": "longreach",
+      "context": "Use for the major museums and either Winton or the best available station / pioneer program.",
+      "color": null,
+      "href": "/trips/longreach-outback-working-week#vacation-days"
+    },
+    {
+      "id": "travel-longreach-brisbane",
+      "type": "travel",
+      "start": "2027-10-23",
+      "end": null,
+      "days": null,
+      "title": "Fly Longreach → Brisbane",
+      "locationId": "brisbane-airport",
+      "context": "Sleep at or beside the airport before the India flight.",
+      "color": null,
+      "href": "/trips/longreach-outback-working-week#departure"
+    },
+    {
+      "id": "location-brisbane-airport-oct-23",
+      "type": "location",
+      "start": "2027-10-23",
+      "end": "2027-10-23",
+      "days": 1,
+      "title": "Brisbane Airport",
+      "locationId": "brisbane-airport-oct-23",
+      "context": "Connection night before India.",
+      "color": "#8999a2"
     },
     {
       "id": "travel-brisbane-india",
@@ -241,17 +395,28 @@
       "start": "2027-10-24",
       "end": null,
       "days": null,
-      "title": "Fly to India",
+      "title": "Fly Brisbane → India",
       "locationId": "india",
-      "context": null,
+      "context": "Depart after the Brisbane airport buffer night; exact 2027 routing remains to be confirmed.",
       "color": null
+    },
+    {
+      "id": "location-in-transit-india",
+      "type": "location",
+      "start": "2027-10-24",
+      "end": "2027-10-24",
+      "days": 1,
+      "title": "In transit",
+      "locationId": "in-transit-india",
+      "context": "Overnight travel toward India.",
+      "color": "#5e6770"
     },
     {
       "id": "location-india",
       "type": "location",
       "start": "2027-10-25",
-      "end": "2027-11-14",
-      "days": 21,
+      "end": "2027-11-13",
+      "days": 20,
       "title": "India",
       "locationId": "india",
       "context": null,
@@ -283,8 +448,8 @@
     {
       "id": "location-singapore",
       "type": "location",
-      "start": "2027-11-15",
-      "end": "2027-11-28",
+      "start": "2027-11-14",
+      "end": "2027-11-27",
       "days": 14,
       "title": "Singapore",
       "locationId": "singapore",
@@ -305,9 +470,9 @@
     {
       "id": "location-hong-kong",
       "type": "location",
-      "start": "2027-11-29",
+      "start": "2027-11-28",
       "end": "2027-12-17",
-      "days": 19,
+      "days": 20,
       "title": "Hong Kong",
       "locationId": "hong-kong",
       "context": null,
@@ -325,11 +490,22 @@
       "color": null
     },
     {
-      "id": "location-new-hampshire",
+      "id": "location-in-transit-new-hampshire",
       "type": "location",
       "start": "2027-12-18",
+      "end": "2027-12-18",
+      "days": 1,
+      "title": "In transit",
+      "locationId": "in-transit-new-hampshire",
+      "context": "Overnight travel home from Hong Kong.",
+      "color": "#5e6770"
+    },
+    {
+      "id": "location-new-hampshire",
+      "type": "location",
+      "start": "2027-12-19",
       "end": "2027-12-23",
-      "days": 6,
+      "days": 5,
       "title": "New Hampshire",
       "locationId": "new-hampshire",
       "context": null,
@@ -403,11 +579,22 @@
       "color": null
     },
     {
-      "id": "location-alps",
+      "id": "location-in-transit-alps",
       "type": "location",
       "start": "2028-01-06",
-      "end": "2028-04-01",
-      "days": 87,
+      "end": "2028-01-06",
+      "days": 1,
+      "title": "In transit",
+      "locationId": "in-transit-alps",
+      "context": "Overnight flight to Europe.",
+      "color": "#5e6770"
+    },
+    {
+      "id": "location-alps",
+      "type": "location",
+      "start": "2028-01-07",
+      "end": "2028-03-31",
+      "days": 85,
       "title": "The Alps",
       "locationId": "alps",
       "context": null,
@@ -427,9 +614,9 @@
     {
       "id": "location-copenhagen",
       "type": "location",
-      "start": "2028-04-02",
+      "start": "2028-04-01",
       "end": "2028-06-28",
-      "days": 88,
+      "days": 89,
       "title": "Copenhagen",
       "locationId": "copenhagen",
       "context": null,

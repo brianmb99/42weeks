@@ -129,7 +129,7 @@ function dayParts(value: Date) {
 
 function entriesForDate(date: string) {
   return datedEntries.filter((entry) => {
-    if (entry.type === "travel" && entry.end) {
+    if (entry.end) {
       return entry.start <= date && entry.end >= date;
     }
     return entry.start === date;
@@ -626,7 +626,8 @@ export default function CalendarPlanner() {
       </section>
 
       <footer className="calendar-footer">
-        Exact working dates · <code>data/trip-plan.json</code> ·{" "}
+        Location = where we sleep that night · Exact working dates ·{" "}
+        <code>data/trip-plan.json</code> ·{" "}
         <a href={tripPlan.marketCalendar.sourceUrl}>NYSE holiday calendar</a>
       </footer>
     </main>

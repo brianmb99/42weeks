@@ -1,0 +1,443 @@
+:root {
+  --qld-ink: #182226;
+  --qld-muted: #667278;
+  --qld-rule: #d9dedf;
+  --qld-paper: #fbfaf6;
+  --qld-work: #727d82;
+  --qld-vacation: #256f5b;
+  --qld-travel: #1c2529;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--qld-ink);
+  background: var(--qld-paper);
+}
+
+.qld-page {
+  width: min(1100px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 26px 0 52px;
+  font-family: var(--font-sans), Arial, sans-serif;
+}
+
+.qld-topline {
+  margin-bottom: 42px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.qld-topline a {
+  color: #315b54;
+  font-size: 11px;
+  font-weight: 750;
+  text-underline-offset: 3px;
+}
+
+.qld-header {
+  padding: 0 0 30px 150px;
+  border-bottom: 2px solid var(--qld-ink);
+}
+
+.qld-eyebrow {
+  margin: 0 0 6px;
+  color: var(--qld-muted);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.qld-header h1 {
+  max-width: 800px;
+  margin: 0;
+  font-size: clamp(34px, 5.5vw, 58px);
+  font-weight: 650;
+  letter-spacing: -0.05em;
+  line-height: 0.98;
+}
+
+.qld-facts {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px 20px;
+  color: #344149;
+  font-size: 12px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.qld-facts span + span::before {
+  margin-right: 20px;
+  color: #a0a8ac;
+  content: "·";
+}
+
+.qld-summary {
+  max-width: 790px;
+  margin: 22px 0 0;
+  color: #3f4b50;
+  font-size: 16px;
+  line-height: 1.58;
+}
+
+.qld-status {
+  max-width: 790px;
+  margin: 18px 0 0;
+  padding: 10px 12px;
+  border-left: 3px solid #d29a43;
+  color: #5b513e;
+  background: #f5eedf;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.qld-rhythm {
+  padding: 24px 0 24px 150px;
+  border-bottom: 1px solid var(--qld-rule);
+  display: grid;
+  grid-template-columns: 250px minmax(0, 1fr);
+  gap: 25px;
+}
+
+.qld-rhythm h2,
+.qld-panel h2,
+.qld-booking h2,
+.qld-references h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.qld-rhythm dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.qld-rhythm dl div {
+  padding: 0 18px;
+  border-left: 1px solid var(--qld-rule);
+}
+
+.qld-rhythm dt {
+  color: var(--qld-muted);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.qld-rhythm dd {
+  margin: 5px 0 0;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.qld-sequence {
+  margin-top: 24px;
+  border-top: 1px solid var(--qld-rule);
+}
+
+.qld-sequence-item {
+  position: relative;
+  padding: 22px 24px 24px 150px;
+  border-bottom: 1px solid var(--qld-rule);
+}
+
+.qld-sequence-item::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 8px;
+  background: var(--sequence-color);
+  content: "";
+}
+
+.qld-sequence-item.is-travel {
+  --sequence-color: var(--qld-travel);
+}
+
+.qld-sequence-item.is-work {
+  --sequence-color: var(--qld-work);
+}
+
+.qld-sequence-item.is-vacation {
+  --sequence-color: var(--qld-vacation);
+}
+
+.qld-sequence-item > time {
+  position: absolute;
+  top: 25px;
+  left: 24px;
+  width: 105px;
+  color: var(--sequence-color);
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.qld-sequence-item > h2 {
+  margin: 0 0 10px;
+  font-size: 19px;
+}
+
+.qld-sequence-item > h3 {
+  margin: 20px 0 8px;
+  font-size: 12px;
+}
+
+.qld-sequence-item > p,
+.qld-panel > p {
+  max-width: 770px;
+  margin: 0;
+  color: #47545a;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.qld-list {
+  max-width: 820px;
+  margin: 10px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px 24px;
+  list-style: none;
+}
+
+.qld-list li {
+  position: relative;
+  padding-left: 15px;
+  color: #3e4a50;
+  font-size: 11px;
+  line-height: 1.48;
+}
+
+.qld-list li::before {
+  position: absolute;
+  left: 0;
+  color: var(--sequence-color, #577078);
+  content: "—";
+}
+
+.qld-vacation-days {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  border: 1px solid #bfd1ca;
+  background: #f6faf8;
+}
+
+.qld-vacation-days > div {
+  padding: 18px;
+}
+
+.qld-vacation-days > div + div {
+  border-left: 1px solid #bfd1ca;
+}
+
+.qld-vacation-days time {
+  color: var(--qld-vacation);
+  font-size: 9px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.qld-vacation-days h3 {
+  margin: 5px 0 8px;
+  font-size: 14px;
+}
+
+.qld-vacation-days p {
+  margin: 0;
+  color: #46544f;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.qld-planning-grid {
+  margin-top: 30px;
+  border-top: 1px solid var(--qld-rule);
+  border-left: 1px solid var(--qld-rule);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.qld-panel {
+  min-width: 0;
+  padding: 24px;
+  border-right: 1px solid var(--qld-rule);
+  border-bottom: 1px solid var(--qld-rule);
+  background: #fff;
+}
+
+.qld-panel h3 {
+  margin: 20px 0 0;
+  font-size: 11px;
+}
+
+.qld-panel .qld-list {
+  grid-template-columns: 1fr;
+}
+
+.qld-backup {
+  margin-top: 12px !important;
+}
+
+.qld-booking,
+.qld-references {
+  padding: 28px 0 28px 150px;
+  border-bottom: 1px solid var(--qld-rule);
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr);
+  gap: 28px;
+}
+
+.qld-booking ol {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  list-style: none;
+  background: var(--qld-rule);
+}
+
+.qld-booking li {
+  padding: 12px;
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  background: var(--qld-paper);
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.qld-booking li span {
+  color: var(--qld-muted);
+  font-size: 9px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 800;
+}
+
+.qld-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 20px;
+}
+
+.qld-links a {
+  color: #315b72;
+  font-size: 11px;
+  font-weight: 700;
+  text-underline-offset: 3px;
+}
+
+.qld-footer {
+  padding: 18px 0 0 150px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  color: #778287;
+  font-size: 9px;
+}
+
+.qld-footer code {
+  font-family: var(--font-mono), monospace;
+}
+
+.qld-page a:focus-visible {
+  outline: 3px solid rgb(49 91 114 / 22%);
+  outline-offset: 3px;
+}
+
+@media (max-width: 780px) {
+  .qld-page {
+    width: min(100% - 20px, 1100px);
+    padding-top: 18px;
+  }
+
+  .qld-topline {
+    margin-bottom: 30px;
+  }
+
+  .qld-header,
+  .qld-rhythm,
+  .qld-booking,
+  .qld-references,
+  .qld-footer {
+    padding-left: 0;
+  }
+
+  .qld-rhythm,
+  .qld-booking,
+  .qld-references {
+    grid-template-columns: 1fr;
+  }
+
+  .qld-rhythm dl {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .qld-rhythm dl div {
+    padding: 0 0 0 12px;
+  }
+
+  .qld-sequence-item {
+    padding-left: 120px;
+  }
+
+  .qld-sequence-item > time {
+    left: 18px;
+    width: 86px;
+  }
+}
+
+@media (max-width: 600px) {
+  .qld-facts {
+    display: grid;
+    gap: 4px;
+  }
+
+  .qld-facts span + span::before {
+    display: none;
+  }
+
+  .qld-sequence-item {
+    padding: 18px 16px 20px 24px;
+  }
+
+  .qld-sequence-item > time {
+    position: static;
+    display: block;
+    width: auto;
+    margin-bottom: 5px;
+  }
+
+  .qld-list,
+  .qld-vacation-days,
+  .qld-planning-grid,
+  .qld-booking ol,
+  .qld-links {
+    grid-template-columns: 1fr;
+  }
+
+  .qld-vacation-days > div + div {
+    border-top: 1px solid #bfd1ca;
+    border-left: 0;
+  }
+
+  .qld-booking,
+  .qld-references {
+    gap: 16px;
+  }
+}

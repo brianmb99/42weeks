@@ -26,6 +26,11 @@ const locations = tripPlan.timeline.filter(
     typeof entry.days === "number" &&
     typeof entry.color === "string",
 );
+const overviewLocations = locations.filter(
+  (entry) =>
+    !entry.locationId.startsWith("in-transit") &&
+    !entry.locationId.startsWith("brisbane-airport"),
+);
 
 function getLocation(id: string) {
   const location = locations.find((entry) => entry.id === id);
@@ -53,6 +58,8 @@ type PlaceCard = {
   highlights: string[];
   open: string;
   anchor?: string;
+  href?: string;
+  linkLabel?: string;
 };
 
 const australiaCards: PlaceCard[] = [
@@ -73,12 +80,24 @@ const australiaCards: PlaceCard[] = [
     open: "Neighborhood and the rest of the evening plan",
   },
   {
-    locationId: "location-brisbane",
-    category: "Two-week base",
+    locationId: "location-hamilton-island",
+    category: "6-night working week",
     summary:
-      "Brisbane is the working label for the Queensland portion. The exact base and shape of these two weeks are still open.",
-    highlights: ["Queensland base", "Workweek rhythm", "Weekend excursions"],
-    open: "Brisbane vs. another base; city, coast, and hinterland balance",
+      "Three early work and homeschool mornings, active island afternoons, then vacation days for Whitehaven Beach and the outer reef.",
+    highlights: ["Whitsundays base", "Whitehaven Beach", "Outer reef"],
+    open: "Exact holiday home, flights, and 2027 marine operators",
+    href: "/trips/hamilton-island-working-week",
+    linkLabel: "Open Hamilton plan",
+  },
+  {
+    locationId: "location-longreach",
+    category: "6-night working week",
+    summary:
+      "Live in a practical outback town: three work and homeschool mornings, then two full days for aviation, heritage, and one defining outback experience.",
+    highlights: ["Qantas history", "Outback heritage", "Winton or station day"],
+    open: "Lodging, seasonal programs, and Winton vs. Longreach",
+    href: "/trips/longreach-outback-working-week",
+    linkLabel: "Open Longreach plan",
   },
 ];
 
@@ -188,6 +207,11 @@ function PlaceGrid({
                 <li key={highlight}>{highlight}</li>
               ))}
             </ul>
+            {card.href && (
+              <Link className="home-place-link" href={card.href}>
+                {card.linkLabel ?? "Open plan"} →
+              </Link>
+            )}
             <p className="home-open-item">
               <span>Still open</span>
               {card.open}
@@ -273,7 +297,7 @@ export default function Home() {
             </p>
           </div>
           <ol className="home-route-list">
-            {locations.map((location) => (
+            {overviewLocations.map((location) => (
               <li
                 style={{ "--place-color": location.color } as CSSProperties}
                 key={location.id}
@@ -349,7 +373,8 @@ export default function Home() {
               </div>
               <p>
                 Settle into work quickly, take one concentrated vacation week,
-                then use Melbourne and Brisbane as working bases.
+                then test the same three-workday / two-vacation-day rhythm in
+                the Whitsundays and Outback Queensland.
               </p>
             </div>
             <PlaceGrid cards={australiaCards} ariaLabel="Australia places" />

@@ -1,0 +1,237 @@
+{
+  "schemaVersion": 1,
+  "lastReviewed": "2026-07-29",
+  "status": "Working plan. Recheck 2027 flight schedules, attraction calendars, prices, Starlink terms, and marine conditions before booking.",
+  "shared": {
+    "workPattern": {
+      "workdays": "Monday–Wednesday",
+      "vacationDays": "Thursday–Friday",
+      "workHours": "4:30 a.m.–12:30 p.m. AEST",
+      "schoolHours": "8:30–11:30 a.m.",
+      "principle": "Finish serious work and homeschool in the morning, then preserve a substantial shared afternoon and evening."
+    },
+    "connectivity": [
+      "Choose lodging with existing Wi-Fi and usable mobile coverage before considering Starlink.",
+      "Get written permission and confirm a safe, unobstructed outdoor setup before relying on Starlink Mini.",
+      "Test the corporate VPN and a real video call on arrival day.",
+      "Keep two independent connection methods and a fallback place to work."
+    ]
+  },
+  "hamiltonIsland": {
+    "slug": "hamilton-island-working-week",
+    "eyebrow": "Whitsundays · Queensland",
+    "title": "Hamilton Island Working Week",
+    "start": "2027-10-10",
+    "end": "2027-10-16",
+    "nights": 6,
+    "summary": "Live on Hamilton Island for six nights rather than treating the Whitsundays as a rushed Brisbane excursion. Work and homeschool Monday through Wednesday mornings, then use Thursday and Friday for Whitehaven Beach and the outer Great Barrier Reef.",
+    "arrival": {
+      "date": "2027-10-10",
+      "title": "Arrive and establish the base",
+      "items": [
+        "Fly from Melbourne directly if the 2027 schedule permits; otherwise connect through Brisbane.",
+        "Buy groceries, learn the buggy and shuttle system, and keep the day deliberately light.",
+        "Test property Wi-Fi, mobile backup, Starlink placement, the corporate VPN, and work / school zones."
+      ]
+    },
+    "departure": {
+      "date": "2027-10-16",
+      "title": "Fly to Brisbane Airport",
+      "items": [
+        "Keep the final morning easy.",
+        "Sleep at or beside Brisbane Airport to protect the Longreach connection.",
+        "Do not assume a same-day onward flight until the 2027 schedule supports it."
+      ]
+    },
+    "base": {
+      "recommendation": "A two- or preferably three-bedroom Hamilton Island Holiday Home",
+      "reason": "A holiday home offers a closable work area, kitchen, laundry, and enough separation for a 4:30 a.m. start.",
+      "requirements": [
+        "A real door between the workspace and sleeping / living areas",
+        "Air conditioning and a desk or table for a laptop and portable monitor",
+        "Kitchen, laundry, existing Wi-Fi, and good mobile reception at the exact unit",
+        "Written permission and a safe broad-sky location for temporary Starlink placement",
+        "A golf buggy included or reserved"
+      ]
+    },
+    "workAfternoons": [
+      "Catseye Beach swimming and beach sports",
+      "Kayak or stand-up paddleboard hire",
+      "Hamilton Island Wildlife",
+      "Mini golf, bowling / arcade, or an art activity",
+      "Buggy exploration and scenic stops",
+      "A short walking-trail section",
+      "Pool and unstructured family downtime",
+      "Sunset paddle or cruise if timing and energy fit"
+    ],
+    "vacationDays": [
+      {
+        "date": "2027-10-14",
+        "title": "Whitehaven Beach and the Whitsunday Islands",
+        "plan": "Choose a full-day sail / snorkel trip or a strong half-day Whitehaven trip. Prioritize Whitehaven and a Hill Inlet viewpoint if included; avoid an overloaded checklist itinerary."
+      },
+      {
+        "date": "2027-10-15",
+        "title": "Outer Great Barrier Reef",
+        "plan": "Reserve a full day for a family-appropriate reef trip with snorkeling and interpretation. Treat this as weather-dependent and swap the two vacation days if operator advice favors it."
+      }
+    ],
+    "cautions": [
+      "October begins the commonly described marine-stinger season; follow current local advice and use stinger suits when recommended.",
+      "Confirm children's minimum ages, swimming expectations, seasickness precautions, shade, food, and cancellation terms.",
+      "Passage Peak is a challenging walk, not an automatic after-work stroll."
+    ],
+    "homeschool": [
+      "Coral anatomy, symbiosis, bleaching, and reef resilience",
+      "Tides, navigation, wind, weather, and marine food webs",
+      "Island ecology, tourism, conservation, and Great Barrier Reef geography",
+      "Field journaling, species sketches, mapping, and trip-cost mathematics"
+    ],
+    "bookFirst": [
+      "Holiday home with a separate work room and written Starlink permission",
+      "Melbourne → Hamilton Island flight",
+      "Hamilton Island → Brisbane flight",
+      "Whitehaven excursion",
+      "Outer-reef excursion",
+      "Brisbane airport hotel for October 16",
+      "Golf buggy if not included"
+    ],
+    "links": [
+      {
+        "title": "Hamilton Island accommodation",
+        "url": "https://www.hamiltonisland.com.au/hotels-and-holiday-homes"
+      },
+      {
+        "title": "Hamilton Island family hub",
+        "url": "https://www.hamiltonisland.com.au/family-hub"
+      },
+      {
+        "title": "Tours and activities",
+        "url": "https://www.hamiltonisland.com.au/things-to-do/all-tours-and-activities"
+      },
+      {
+        "title": "Walking-trail map",
+        "url": "https://www.hamiltonisland.com.au/HamiltonIsland/media/PDF-Files/Activities/Walking-Trail-Map.pdf"
+      },
+      {
+        "title": "Hamilton Island Airport",
+        "url": "https://www.hamiltonisland.com.au/community-and-development/transport/airport"
+      },
+      {
+        "title": "Whitsundays visitor FAQ",
+        "url": "https://www.tourismwhitsundays.com.au/plan/visitor-information/faqs"
+      }
+    ]
+  },
+  "longreach": {
+    "slug": "longreach-outback-working-week",
+    "eyebrow": "Outback Queensland",
+    "title": "Longreach Outback Working Week",
+    "start": "2027-10-17",
+    "end": "2027-10-23",
+    "nights": 6,
+    "summary": "Spend six nights in a functioning outback town rather than attempting a high-speed road loop. Longreach offers the airport, groceries, accommodation, museums, restaurants, pool, and tour operators needed for a credible work and homeschool base.",
+    "arrival": {
+      "date": "2027-10-17",
+      "title": "Fly in and establish the base",
+      "items": [
+        "Fly from Brisbane to Longreach, collect a rental car, and buy groceries.",
+        "Settle into a two-bedroom base with a quiet air-conditioned workspace.",
+        "Test property Wi-Fi, mobile backup, Starlink placement, and work / school zones."
+      ]
+    },
+    "departure": {
+      "date": "2027-10-23",
+      "title": "Return to Brisbane Airport",
+      "items": [
+        "Fly to Brisbane and sleep at or beside the airport.",
+        "Protect the international connection by avoiding a same-day Longreach → India itinerary.",
+        "Depart for India the following day."
+      ]
+    },
+    "base": {
+      "recommendation": "Saltbush Retreat two-bedroom house or cabin",
+      "reason": "It combines a family configuration, kitchen, pool, Wi-Fi, outdoor space, and proximity to the two major museums.",
+      "backup": "Longreach Motor Inn two-bedroom family room",
+      "requirements": [
+        "Two bedrooms and a quiet air-conditioned work area",
+        "Kitchen or strong kitchenette, laundry access, and a pool",
+        "Existing high-speed Wi-Fi plus usable mobile coverage",
+        "Written permission and a safe broad-sky location for temporary Starlink placement",
+        "Car parking"
+      ]
+    },
+    "workAfternoons": [
+      "Longreach town orientation and groceries",
+      "Longreach Aquatic Centre",
+      "Ilfracombe and the machinery mile",
+      "Thomson River sunset experience",
+      "Short museum preview or heritage walk",
+      "Station or stockman's experience if the timetable fits",
+      "Unstructured pool and recovery time"
+    ],
+    "vacationDays": [
+      {
+        "date": "2027-10-21",
+        "title": "Aviation and outback heritage",
+        "plan": "Use a full day for the Qantas Founders Museum and Australian Stockman's Hall of Fame, with enough time for the strongest tours rather than treating both as quick stops."
+      },
+      {
+        "date": "2027-10-22",
+        "title": "Choose one defining outback day",
+        "plan": "Option A is a long Winton dinosaur day. Option B is the best available Longreach station, stagecoach, or pioneer program. Prefer the Longreach option unless the Winton museums are a family priority."
+      }
+    ],
+    "cautions": [
+      "Late October can be hot and some visitor experiences are seasonal; verify 2027 operating days before booking.",
+      "Do not use a remote station as the work base without independently confirmed power, connectivity, workspace, and cancellation terms.",
+      "Treat the Winton day as optional: it is a substantial drive, not a casual afternoon."
+    ],
+    "homeschool": [
+      "Australian aviation history and the origins of Qantas",
+      "Pastoral work, wool, stock routes, drought, and water management",
+      "Dinosaurs, fossils, geological time, and the inland-sea story",
+      "Aboriginal history and the limits of museum interpretation",
+      "Distance, fuel, temperature, route planning, and outback economics"
+    ],
+    "bookFirst": [
+      "Two-bedroom Longreach accommodation with a credible work setup",
+      "Brisbane → Longreach flight",
+      "Longreach → Brisbane flight",
+      "Rental car",
+      "Brisbane airport hotel for October 23",
+      "Major museum tours",
+      "Chosen Winton or Longreach full-day experience"
+    ],
+    "links": [
+      {
+        "title": "Longreach destination overview",
+        "url": "https://www.outbackqueensland.com.au/town/longreach/"
+      },
+      {
+        "title": "Family Longreach itinerary",
+        "url": "https://www.queensland.com/au/en/plan-your-holiday/itineraries/4-day-longreach-itinerary-families"
+      },
+      {
+        "title": "Saltbush Retreat",
+        "url": "https://saltbushretreat.com.au/accommodation/outback-cabins/"
+      },
+      {
+        "title": "Longreach Motor Inn family room",
+        "url": "https://www.longreachmotorinn.com.au/rooms/2-bedroom-family-room-queen-4-single-new.html"
+      },
+      {
+        "title": "Qantas Founders Museum",
+        "url": "https://qfom.com.au/"
+      },
+      {
+        "title": "Australian Stockman's Hall of Fame",
+        "url": "https://stockmanshalloffame.com.au/"
+      },
+      {
+        "title": "Experience Longreach",
+        "url": "https://experiencelongreach.com.au/"
+      }
+    ]
+  }
+}
