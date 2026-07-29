@@ -89,6 +89,8 @@ test("server-renders the expandable weekly working calendar", async () => {
   assert.match(html, /NYSE closed — Thanksgiving Day/);
   assert.match(html, /NYSE closes 1:00 p\.m\. — Day after Thanksgiving/);
   assert.match(html, /NYSE holiday calendar/);
+  assert.match(html, /Expand all weeks in Melbourne/);
+  assert.match(html, /aria-pressed="false"/);
   assert.doesNotMatch(html, />Location</);
   assert.doesNotMatch(html, /Things under consideration/);
   assert.doesNotMatch(html, />Anchor<|Maximum 90-day|max 90-day/i);

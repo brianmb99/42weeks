@@ -376,6 +376,14 @@ function initialRailSegments(): RailSegment[] {
   });
 }
 
+function weekNumbersForLocation(locationId: string) {
+  return weeks
+    .filter((week) =>
+      week.days.some((day) => day.location.id === locationId),
+    )
+    .map((week) => week.number);
+}
+
 export default function CalendarPlanner() {
   const [expandedWeeks, setExpandedWeeks] = useState<Set<number>>(new Set());
   const [railSegments, setRailSegments] =
@@ -450,6 +458,19 @@ export default function CalendarPlanner() {
     setExpandedWeeks(new Set());
   }
 
+  function toggleLocation(locationId: string) {
+    const locationWeeks = weekNumbersForLocation(locationId);
+    setExpandedWeeks((current) => {
+      const next = new Set(current);
+      const allExpanded = locationWeeks.every((number) => next.has(number));
+      locationWeeks.forEach((number) => {
+        if (allExpanded) next.delete(number);
+        else next.add(number);
+      });
+      return next;
+    });
+  }
+
   return (
     <main className="calendar-page">
       <header className="page-header">
@@ -499,23 +520,34 @@ export default function CalendarPlanner() {
         ref={calendarRef}
       >
         <aside className="location-rail" aria-label="Trip locations">
-          {railSegments.map((segment) => (
-            <div
-              className={`location-rail-segment ${segment.shortLabel ? "is-short" : ""}`}
-              style={
-                {
-                  "--rail-color": segment.color,
-                  "--rail-text": segment.textColor,
-                  top: segment.top,
-                  height: segment.height,
-                } as React.CSSProperties
-              }
-              title={segment.title}
-              key={segment.id}
-            >
-              <span>{segment.title}</span>
-            </div>
-          ))}
+          {railSegments.map((segment) => {
+            const locationWeeks = weekNumbersForLocation(segment.id);
+            const allExpanded = locationWeeks.every((number) =>
+              expandedWeeks.has(number),
+            );
+            const action = allExpanded ? "Collapse" : "Expand";
+            return (
+              <button
+                type="button"
+                className={`location-rail-segment ${segment.shortLabel ? "is-short" : ""}`}
+                style={
+                  {
+                    "--rail-color": segment.color,
+                    "--rail-text": segment.textColor,
+                    top: segment.top,
+                    height: segment.height,
+                  } as React.CSSProperties
+                }
+                aria-label={`${action} all weeks in ${segment.title}`}
+                aria-pressed={allExpanded}
+                title={`${action} all weeks in ${segment.title}`}
+                onClick={() => toggleLocation(segment.id)}
+                key={segment.id}
+              >
+                <span>{segment.title}</span>
+              </button>
+            );
+          })}
         </aside>
         {weeks.map((week) => {
           const expanded = expandedWeeks.has(week.number);

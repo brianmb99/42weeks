@@ -226,7 +226,6 @@ button {
   left: 0;
   width: 43px;
   overflow: hidden;
-  pointer-events: none;
 }
 
 .location-rail-segment {
@@ -238,6 +237,9 @@ button {
   overflow: hidden;
   color: var(--rail-text);
   background: var(--rail-color);
+  cursor: pointer;
+  font: inherit;
+  padding: 0;
 }
 
 .location-rail-segment span {
@@ -248,18 +250,27 @@ button {
   justify-content: center;
   overflow: hidden;
   font-size: 8px;
-  font-weight: 750;
-  letter-spacing: 0.045em;
+  font-weight: 700;
+  letter-spacing: 0.015em;
   line-height: 1.05;
   text-align: center;
-  text-transform: uppercase;
   writing-mode: vertical-rl;
   transform: rotate(180deg);
 }
 
+.location-rail-segment:hover {
+  filter: brightness(0.94);
+}
+
+.location-rail-segment:focus-visible {
+  z-index: 6;
+  outline: 3px solid #111;
+  outline-offset: -3px;
+}
+
 .location-rail-segment.is-short span {
   font-size: 7px;
-  letter-spacing: 0.015em;
+  letter-spacing: 0;
   line-height: 1;
   white-space: normal;
   writing-mode: horizontal-tb;
