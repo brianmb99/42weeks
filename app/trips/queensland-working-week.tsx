@@ -1,4 +1,3 @@
-import Link from "next/link";
 import queensland from "../../data/queensland.json";
 import "./queensland.css";
 
@@ -44,8 +43,8 @@ export default function QueenslandWorkingWeek({ trip }: { trip: Trip }) {
     <main className="qld-page">
       <header className="qld-header">
         <div className="qld-topline">
-          <Link href="/calendar">← Calendar</Link>
-          <Link href={`/trips/${other.slug}`}>Next: {other.title} →</Link>
+          <a href="/calendar">← Calendar</a>
+          <a href={`/trips/${other.slug}`}>Next: {other.title} →</a>
         </div>
         <p className="qld-eyebrow">{trip.eyebrow}</p>
         <h1>{trip.title}</h1>

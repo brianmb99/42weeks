@@ -2,13 +2,14 @@
 
 A living planning site for a family sabbatical from September 2027 through June 2028.
 
-The first version includes:
+[Live site](https://brianmb99.github.io)
 
-- a proportional overview of the full trip;
-- destination-by-destination planning views;
-- dated anchors and open decisions;
-- a browser-local scratchpad with Markdown export; and
-- a small, plan-aware idea concierge preview.
+The site includes:
+
+- the definitive date-based itinerary in `data/trip-plan.json`;
+- an expandable weekly calendar with work, travel, vacation, and NYSE holidays;
+- a broad trip overview; and
+- detail pages for the Great Southern Touring Route, Hamilton Island, and Outback Queensland.
 
 ## Local development
 
@@ -22,6 +23,8 @@ npm run dev
 ## Validation
 
 ```sh
-npm run build
-node --test tests/rendered-html.test.mjs
+npm test
+npm run build:pages
 ```
+
+Pushes to `main` publish the generated static routes to GitHub Pages.

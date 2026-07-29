@@ -1,6 +1,5 @@
 import type { CSSProperties } from "react";
 import type { Metadata } from "next";
-import Link from "next/link";
 import tripPlan from "../data/trip-plan.json";
 import australiaPlan from "../data/australia-part-one.json";
 import "./home.css";
@@ -208,9 +207,9 @@ function PlaceGrid({
               ))}
             </ul>
             {card.href && (
-              <Link className="home-place-link" href={card.href}>
+              <a className="home-place-link" href={card.href}>
                 {card.linkLabel ?? "Open plan"} →
-              </Link>
+              </a>
             )}
             <p className="home-open-item">
               <span>Still open</span>
@@ -238,9 +237,9 @@ export default function Home() {
           <a href="#places">Places</a>
           <a href="#open">Still open</a>
         </nav>
-        <Link className="home-calendar-link" href="/calendar">
+        <a className="home-calendar-link" href="/calendar">
           Open calendar
-        </Link>
+        </a>
       </header>
 
       <main className="home-main" id="top">
@@ -254,9 +253,9 @@ export default function Home() {
               Copenhagen.
             </p>
             <div className="home-hero-actions">
-              <Link className="home-primary-action" href="/calendar">
+              <a className="home-primary-action" href="/calendar">
                 View the exact calendar
-              </Link>
+              </a>
               <a className="home-text-action" href="#route">
                 See the broad route ↓
               </a>
@@ -346,12 +345,12 @@ export default function Home() {
               ))}
             </div>
             <div className="home-feature-actions">
-              <Link
+              <a
                 className="home-primary-action"
                 href="/trips/great-southern-touring-route"
               >
                 Open the 9-day plan
-              </Link>
+              </a>
               <a
                 className="home-text-action"
                 href={roadTrip.officialRoute.url}
@@ -462,16 +461,16 @@ export default function Home() {
             <p className="home-kicker">Planning view</p>
             <h2>Dates, workdays, travel, and vacation live in the calendar.</h2>
           </div>
-          <Link className="home-primary-action" href="/calendar">
+          <a className="home-primary-action" href="/calendar">
             Open calendar
-          </Link>
+          </a>
         </section>
       </main>
 
       <div className="home-footer">
         <strong>42 Weeks</strong>
         <span>Broad-strokes overview · exact dates in the calendar</span>
-        <Link href="/calendar">Calendar →</Link>
+        <a href="/calendar">Calendar →</a>
       </div>
     </>
   );

@@ -211,6 +211,9 @@ test("server-renders the expandable weekly calendar", async () => {
   assert.equal(oct16Airport.title, "Brisbane Airport");
   assert.equal(oct23Airport.title, "Brisbane Airport");
   assert.equal(longreach.railLabel, "Outback");
+  assert.equal(longreach.color, "#4f7fa2");
+  assert.equal(oct16Airport.railColor, longreach.color);
+  assert.equal(oct23Airport.railColor, longreach.color);
   assert.deepEqual(
     [
       melbourne.start,

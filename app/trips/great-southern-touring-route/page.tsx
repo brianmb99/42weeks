@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import australiaPlan from "../../../data/australia-part-one.json";
 import "./route.css";
 
@@ -27,9 +26,9 @@ export default function GreatSouthernTouringRoutePage() {
   return (
     <main className="route-page">
       <header className="route-header">
-        <Link href="/calendar" className="route-back">
+        <a href="/calendar" className="route-back">
           ← Working calendar
-        </Link>
+        </a>
         <p>{australiaPlan.title}</p>
         <h1>{roadTrip.title}</h1>
         <div className="route-facts">

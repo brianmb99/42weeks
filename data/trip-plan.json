@@ -322,7 +322,7 @@
       "color": "#8999a2",
       "railGroupId": "location-longreach",
       "railLabel": "Outback",
-      "railColor": "#c47b39"
+      "railColor": "#4f7fa2"
     },
     {
       "id": "travel-brisbane-longreach",
@@ -345,7 +345,7 @@
       "title": "Longreach",
       "locationId": "longreach",
       "context": "Six nights in Outback Queensland.",
-      "color": "#c47b39",
+      "color": "#4f7fa2",
       "railLabel": "Outback"
     },
     {
@@ -398,7 +398,7 @@
       "color": "#8999a2",
       "railGroupId": "location-longreach",
       "railLabel": "Outback",
-      "railColor": "#c47b39"
+      "railColor": "#4f7fa2"
     },
     {
       "id": "travel-brisbane-india",
