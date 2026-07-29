@@ -3,6 +3,7 @@
 import { useLayoutEffect, useRef, useState } from "react";
 import tripPlan from "../../data/trip-plan.json";
 import { sitePath } from "../../lib/site-path";
+import SiteNav from "../site-nav";
 
 type TimelineEntry = (typeof tripPlan.timeline)[number];
 type MarketEntry = {
@@ -528,7 +529,9 @@ export default function CalendarPlanner() {
   }
 
   return (
-    <main className="calendar-page">
+    <>
+      <SiteNav current="calendar" />
+      <main className="calendar-page">
       <header className="page-header">
         <div>
           <p className="eyebrow">{tripPlan.title}</p>
@@ -541,7 +544,6 @@ export default function CalendarPlanner() {
             </span>
           </p>
         </div>
-        <a href={sitePath("/")} className="back-link">Current planner</a>
       </header>
 
       <div className="calendar-tools">
@@ -669,6 +671,7 @@ export default function CalendarPlanner() {
         <code>data/trip-plan.json</code> ·{" "}
         <a href={tripPlan.marketCalendar.sourceUrl}>NYSE holiday calendar</a>
       </footer>
-    </main>
+      </main>
+    </>
   );
 }

@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import tripPlan from "../data/trip-plan.json";
 import australiaPlan from "../data/australia-part-one.json";
 import { sitePath } from "../lib/site-path";
+import SiteNav from "./site-nav";
 import "./home.css";
 
 export const metadata: Metadata = {
@@ -247,20 +248,7 @@ export default function Home() {
 
   return (
     <>
-      <header className="home-header">
-        <a className="home-brand" href="#top" aria-label="42 Weeks home">
-          <strong>42</strong>
-          <span>Weeks</span>
-        </a>
-        <nav aria-label="Home page sections">
-          <a href="#route">Route</a>
-          <a href="#places">Places</a>
-          <a href="#open">Still open</a>
-        </nav>
-        <a className="home-calendar-link" href={sitePath("/calendar")}>
-          Open calendar
-        </a>
-      </header>
+      <SiteNav current="home" />
 
       <main className="home-main" id="top">
         <section className="home-hero">

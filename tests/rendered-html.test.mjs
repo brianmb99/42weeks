@@ -30,6 +30,8 @@ test("server-renders the 42 Weeks overview", async () => {
 
   const html = await response.text();
   assert.match(html, /<title>42 Weeks/);
+  assert.match(html, /class="site-nav"/);
+  assert.match(html, /aria-current="page">Home/);
   assert.match(html, /Broad route/);
   assert.match(html, /Where the 42 weeks go/);
   assert.match(html, /View the exact calendar/);
@@ -92,7 +94,11 @@ test("server-renders the expandable weekly calendar", async () => {
   assert.match(html, /40<!-- --> weeks/);
   assert.match(html, /\+ 5 days/);
   assert.match(html, /285<!-- --> days/);
-  assert.match(html, /Current planner/);
+  assert.match(html, /class="site-nav"/);
+  assert.match(html, /aria-current="page">Calendar/);
+  assert.match(html, />Great Ocean Road</);
+  assert.match(html, />Hamilton Island</);
+  assert.match(html, />Outback</);
   assert.match(html, /data\/trip-plan\.json/);
   assert.match(html, />Work</);
   assert.match(html, />Travel</);
@@ -325,6 +331,13 @@ test("server-renders the Hamilton Island working week", async () => {
   assert.equal(response.status, 200);
   const html = await response.text();
   assert.match(html, /Hamilton Island: Work &amp; Play/);
+  assert.match(html, /aria-current="page">Hamilton Island/);
+  assert.equal(
+    (html.match(/<figure(?: class="is-featured")?>/g) ?? []).length,
+    3,
+  );
+  assert.match(html, /images\.pexels\.com\/photos\/35087571/);
+  assert.match(html, /images\.unsplash\.com\/photo-1706591791971/);
   assert.match(html, /6<!-- --> nights/);
   assert.match(html, /Whitehaven Beach/);
   assert.match(html, /Outer Great Barrier Reef/);
@@ -332,7 +345,7 @@ test("server-renders the Hamilton Island working week", async () => {
   assert.match(html, /Vacation Thu–Fri/);
   assert.match(html, /Hamilton Island Holiday Home/);
   assert.match(html, /Starlink/);
-  assert.match(html, /Next: .*Outback Queensland: Work &amp; Play/);
+  assert.match(html, />Outback</);
   assert.match(html, /Queensland Working Notes\.md/);
 });
 
@@ -341,6 +354,13 @@ test("server-renders the Outback Queensland plan", async () => {
   assert.equal(response.status, 200);
   const html = await response.text();
   assert.match(html, /Outback Queensland: Work &amp; Play/);
+  assert.match(html, /aria-current="page">Outback/);
+  assert.equal(
+    (html.match(/<figure(?: class="is-featured")?>/g) ?? []).length,
+    3,
+  );
+  assert.match(html, /images\.pexels\.com\/photos\/32915492/);
+  assert.match(html, /images\.pexels\.com\/photos\/20534219/);
   assert.match(html, /6<!-- --> nights/);
   assert.match(html, /Qantas Founders Museum/);
   assert.match(html, /Australian Stockman/);
@@ -348,7 +368,7 @@ test("server-renders the Outback Queensland plan", async () => {
   assert.match(html, /Saltbush Retreat/);
   assert.match(html, /Work Mon–Wed/);
   assert.match(html, /Vacation Thu–Fri/);
-  assert.match(html, /Next: .*Hamilton Island: Work &amp; Play/);
+  assert.match(html, />Hamilton Island</);
   assert.match(html, /Queensland Working Notes\.md/);
 });
 
@@ -359,6 +379,13 @@ test("server-renders the Great Ocean Road Loop detail", async () => {
 
   const html = await response.text();
   assert.match(html, /Great Ocean Road Loop/);
+  assert.match(html, /aria-current="page">Great Ocean Road/);
+  assert.equal(
+    (html.match(/<figure(?: class="is-featured")?>/g) ?? []).length,
+    3,
+  );
+  assert.match(html, /images\.unsplash\.com\/photo-1736893474760/);
+  assert.match(html, /images\.unsplash\.com\/photo-1542991871/);
   assert.match(html, /Geelong work week/);
   assert.match(html, /Melbourne work week/);
   assert.match(html, /Newtown/);

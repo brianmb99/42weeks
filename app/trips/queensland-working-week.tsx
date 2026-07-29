@@ -1,8 +1,65 @@
 import queensland from "../../data/queensland.json";
-import { sitePath } from "../../lib/site-path";
+import SiteNav from "../site-nav";
+import DestinationGallery, {
+  type DestinationPhoto,
+} from "./destination-gallery";
 import "./queensland.css";
 
 type Trip = typeof queensland.hamiltonIsland | typeof queensland.longreach;
+
+const hamiltonPhotos: DestinationPhoto[] = [
+  {
+    src: "https://images.pexels.com/photos/35087571/pexels-photo-35087571.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    alt: "Hamilton Island Marina surrounded by blue water and green islands",
+    caption: "Hamilton Island Marina",
+    credit: "Toki No Ori / Pexels",
+    source:
+      "https://www.pexels.com/photo/scenic-view-of-hamilton-island-marina-35087571/",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1706591791971-e64df1bc78f0?auto=format&fit=crop&fm=jpg&q=82&w=1400",
+    alt: "Aerial view of blue water and reef formations",
+    caption: "Great Barrier Reef from above",
+    credit: "Lorenzo Angeli / Unsplash",
+    source:
+      "https://unsplash.com/photos/an-aerial-view-of-the-great-barrier-reef-giCtF3YtEtc",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1633319377690-fa954d0fb59c?auto=format&fit=crop&fm=jpg&q=82&w=1400",
+    alt: "Aerial view of coral reef patterns in the ocean",
+    caption: "Live coral on the Great Barrier Reef",
+    credit: "GeoNadir / Unsplash",
+    source:
+      "https://unsplash.com/photos/an-aerial-view-of-a-coral-reef-in-the-ocean-eQZAqg-4sQQ",
+  },
+];
+
+const outbackPhotos: DestinationPhoto[] = [
+  {
+    src: "https://images.pexels.com/photos/32915492/pexels-photo-32915492.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    alt: "Aerial view of a red dirt road crossing the Australian Outback",
+    caption: "The scale of the Australian Outback",
+    credit: "Mark Direen / Pexels",
+    source:
+      "https://www.pexels.com/photo/aerial-view-of-the-rugged-australian-outback-32915492/",
+  },
+  {
+    src: "https://images.pexels.com/photos/20534219/pexels-photo-20534219.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    alt: "Remote red shed in a vast dry Australian landscape",
+    caption: "Big sky and working landscape",
+    credit: "Francesco Ungaro / Pexels",
+    source:
+      "https://www.pexels.com/photo/dirt-road-through-the-outback-in-australia-20534219/",
+  },
+  {
+    src: "https://images.pexels.com/photos/32915389/pexels-photo-32915389.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    alt: "Red soil and sparse vegetation beneath a blue Outback sky",
+    caption: "Red earth, scrub, and open sky",
+    credit: "Mark Direen / Pexels",
+    source:
+      "https://www.pexels.com/photo/vast-australian-outback-landscape-under-blue-sky-32915389/",
+  },
+];
 
 function dateLabel(value: string, weekday = false) {
   return new Intl.DateTimeFormat("en-US", {
@@ -35,18 +92,14 @@ function SimpleList({ items }: { items: string[] }) {
 }
 
 export default function QueenslandWorkingWeek({ trip }: { trip: Trip }) {
-  const other =
-    trip.slug === queensland.hamiltonIsland.slug
-      ? queensland.longreach
-      : queensland.hamiltonIsland;
+  const isHamilton = trip.slug === queensland.hamiltonIsland.slug;
+  const photos = isHamilton ? hamiltonPhotos : outbackPhotos;
 
   return (
-    <main className="qld-page">
+    <>
+      <SiteNav current={isHamilton ? "hamilton" : "outback"} />
+      <main className="qld-page">
       <header className="qld-header">
-        <div className="qld-topline">
-          <a href={sitePath("/calendar")}>← Calendar</a>
-          <a href={sitePath(`/trips/${other.slug}`)}>Next: {other.title} →</a>
-        </div>
         <p className="qld-eyebrow">{trip.eyebrow}</p>
         <h1>{trip.title}</h1>
         <div className="qld-facts">
@@ -58,6 +111,11 @@ export default function QueenslandWorkingWeek({ trip }: { trip: Trip }) {
         <p className="qld-summary">{trip.summary}</p>
         <p className="qld-status">{queensland.status}</p>
       </header>
+
+      <DestinationGallery
+        photos={photos}
+        label={`${trip.title} photographs`}
+      />
 
       <section className="qld-rhythm" aria-labelledby="rhythm-title">
         <div>
@@ -184,6 +242,7 @@ export default function QueenslandWorkingWeek({ trip }: { trip: Trip }) {
           Exact dates: <code>data/trip-plan.json</code>
         </span>
       </footer>
-    </main>
+      </main>
+    </>
   );
 }

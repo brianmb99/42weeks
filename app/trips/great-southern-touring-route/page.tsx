@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import australiaPlan from "../../../data/australia-part-one.json";
-import { sitePath } from "../../../lib/site-path";
+import SiteNav from "../../site-nav";
+import DestinationGallery, {
+  type DestinationPhoto,
+} from "../destination-gallery";
 import "./route.css";
 
 export const metadata: Metadata = {
@@ -12,6 +15,31 @@ export const metadata: Metadata = {
 const roadTrip = australiaPlan.segments.roadTrip;
 const geelong = australiaPlan.segments.geelong;
 const melbourne = australiaPlan.segments.melbourne;
+const roadPhotos: DestinationPhoto[] = [
+  {
+    src: "https://images.unsplash.com/photo-1736893474760-759d20e84f58?auto=format&fit=crop&fm=jpg&q=82&w=2200",
+    alt: "The Twelve Apostles and cliffs along Victoria's Great Ocean Road",
+    caption: "Twelve Apostles",
+    credit: "Philip Ho / Unsplash",
+    source:
+      "https://unsplash.com/photos/a-view-of-the-beach-and-cliffs-of-the-great-ocean-road-Yd-HvUwdqMc",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1542991871-69ac6beec594?auto=format&fit=crop&fm=jpg&q=82&w=1400",
+    alt: "Ocean waves and rock formations along the Great Ocean Road",
+    caption: "Great Ocean Road coast",
+    credit: "Tiraya Adam / Unsplash",
+    source: "https://unsplash.com/photos/boulders-body-of-water-mGQJfDMBpKs",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1650190460921-aa02f0528ff0?auto=format&fit=crop&fm=jpg&q=82&w=1400",
+    alt: "Cliffs and sea stacks seen from the Great Ocean Road",
+    caption: "Coast, cliffs, and sea stacks",
+    credit: "gabriel xu / Unsplash",
+    source:
+      "https://unsplash.com/photos/a-view-of-the-ocean-and-the-cliffs-of-the-great-ocean-road-1JgJ_1sXimI",
+  },
+];
 
 function dateLabel(value: string, weekday = false) {
   return new Intl.DateTimeFormat("en-US", {
@@ -25,11 +53,10 @@ function dateLabel(value: string, weekday = false) {
 
 export default function GreatSouthernTouringRoutePage() {
   return (
-    <main className="route-page">
+    <>
+      <SiteNav current="great-ocean-road" />
+      <main className="route-page">
       <header className="route-header">
-        <a href={sitePath("/calendar")} className="route-back">
-          ← Working calendar
-        </a>
         <p>{australiaPlan.title}</p>
         <h1>{roadTrip.title}</h1>
         <div className="route-facts">
@@ -49,6 +76,11 @@ export default function GreatSouthernTouringRoutePage() {
           {roadTrip.officialRoute.title} ↗
         </a>
       </header>
+
+      <DestinationGallery
+        photos={roadPhotos}
+        label="Great Ocean Road Loop photographs"
+      />
 
       <section className="route-context" aria-label="Before and after the road trip">
         <article>
@@ -149,6 +181,7 @@ export default function GreatSouthernTouringRoutePage() {
         Detail source: <code>data/australia-part-one.json</code>. Calendar dates
         remain authoritative in <code>data/trip-plan.json</code>.
       </p>
-    </main>
+      </main>
+    </>
   );
 }

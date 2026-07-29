@@ -1830,3 +1830,82 @@ footer > a {
     scroll-behavior: auto;
   }
 }
+html {
+  --site-nav-height: 54px;
+}
+
+.site-nav {
+  min-height: var(--site-nav-height);
+  border-bottom: 1px solid #d9dedf;
+  position: sticky;
+  z-index: 100;
+  top: 0;
+  color: #1d2528;
+  background: rgb(250 250 247 / 96%);
+  backdrop-filter: blur(10px);
+  font-family: Arial, sans-serif;
+}
+
+.site-nav-inner {
+  width: min(1220px, calc(100% - 32px));
+  min-height: var(--site-nav-height);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.site-nav a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-nav-brand {
+  flex: 0 0 auto;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.site-nav-brand strong {
+  margin-right: 3px;
+  font-size: 18px;
+}
+
+.site-nav-links {
+  min-width: 0;
+  display: flex;
+  align-self: stretch;
+  align-items: center;
+  gap: 4px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.site-nav-links::-webkit-scrollbar {
+  display: none;
+}
+
+.site-nav-links a {
+  flex: 0 0 auto;
+  padding: 8px 10px;
+  border-radius: 3px;
+  color: #596367;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.site-nav-links a:hover {
+  color: #172126;
+  background: #ecefed;
+}
+
+.site-nav-links a[aria-current="page"] {
+  color: #172126;
+  background: #e2e8e5;
+}
+
+.site-nav a:focus-visible {
+  outline: 2px solid #315b54;
+  outline-offset: 2px;
+}
