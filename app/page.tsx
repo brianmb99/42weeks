@@ -65,11 +65,21 @@ type PlaceCard = {
 const australiaCards: PlaceCard[] = [
   {
     locationId: "location-geelong",
-    category: "Work base",
+    category: "Work + local evenings",
     summary:
-      "Land in Melbourne and go straight to Geelong, probably Newtown, for a normal workweek before the road trip.",
+      "Land in Melbourne and go straight to Geelong, probably Newtown. Work during the day, then use the afternoons and evenings to explore.",
     highlights: ["Newtown base", "Queenscliff evening", "Geelong after work"],
     open: "Apartment, neighborhood routine, and local evening list",
+  },
+  {
+    locationId: "location-great-southern-touring-route",
+    category: "Vacation road trip",
+    summary:
+      "Follow the Great Ocean Road through the Otways, then continue to the Grampians and Ballarat before reaching Melbourne.",
+    highlights: ["Great Ocean Road", "Otways rainforest", "Grampians"],
+    open: "Lodging, wildlife stops, and the final activity mix",
+    href: "/trips/great-southern-touring-route",
+    linkLabel: "Open the 9-day plan",
   },
   {
     locationId: "location-melbourne",
@@ -81,7 +91,7 @@ const australiaCards: PlaceCard[] = [
   },
   {
     locationId: "location-hamilton-island",
-    category: "6-night working week",
+    category: "Play, with some work",
     summary:
       "Three early work and homeschool mornings, active island afternoons, then vacation days for Whitehaven Beach and the outer reef.",
     highlights: ["Whitsundays base", "Whitehaven Beach", "Outer reef"],
@@ -91,13 +101,13 @@ const australiaCards: PlaceCard[] = [
   },
   {
     locationId: "location-longreach",
-    category: "6-night working week",
+    category: "Play, with some work",
     summary:
       "Live in a practical outback town: three work and homeschool mornings, then two full days for aviation, heritage, and one defining outback experience.",
     highlights: ["Qantas history", "Outback heritage", "Winton or station day"],
     open: "Lodging, seasonal programs, and Winton vs. Longreach",
     href: "/trips/longreach-outback-working-week",
-    linkLabel: "Open Longreach plan",
+    linkLabel: "Open Outback plan",
   },
 ];
 

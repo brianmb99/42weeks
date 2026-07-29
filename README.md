@@ -9,7 +9,7 @@ The site includes:
 - the definitive date-based itinerary in `data/trip-plan.json`;
 - an expandable weekly calendar with work, travel, vacation, and NYSE holidays;
 - a broad trip overview; and
-- detail pages for the Great Southern Touring Route, Hamilton Island, and Outback Queensland.
+- detail pages for the Great Ocean Road Loop, Hamilton Island, and Outback Queensland.
 
 ## Local development
 

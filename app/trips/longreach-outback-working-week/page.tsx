@@ -3,7 +3,7 @@ import queensland from "../../../data/queensland.json";
 import QueenslandWorkingWeek from "../queensland-working-week";
 
 export const metadata: Metadata = {
-  title: "Longreach Outback Working Week",
+  title: "Outback Queensland: Work & Play",
   description:
     "The six-night Longreach work, homeschool, aviation, heritage, and outback plan.",
 };

@@ -31,27 +31,27 @@
       {
         "date": "2027-09-27",
         "status": "vacation",
-        "note": "Great Southern Touring Route vacation"
+        "note": "Great Ocean Road Loop vacation"
       },
       {
         "date": "2027-09-28",
         "status": "vacation",
-        "note": "Great Southern Touring Route vacation"
+        "note": "Great Ocean Road Loop vacation"
       },
       {
         "date": "2027-09-29",
         "status": "vacation",
-        "note": "Great Southern Touring Route vacation"
+        "note": "Great Ocean Road Loop vacation"
       },
       {
         "date": "2027-09-30",
         "status": "vacation",
-        "note": "Great Southern Touring Route vacation"
+        "note": "Great Ocean Road Loop vacation"
       },
       {
         "date": "2027-10-01",
         "status": "vacation",
-        "note": "Great Southern Touring Route vacation"
+        "note": "Great Ocean Road Loop vacation"
       },
       {
         "date": "2027-10-14",
@@ -66,12 +66,12 @@
       {
         "date": "2027-10-21",
         "status": "vacation",
-        "note": "Longreach vacation — aviation and outback heritage"
+        "note": "Outback vacation — aviation and heritage"
       },
       {
         "date": "2027-10-22",
         "status": "vacation",
-        "note": "Longreach vacation — Winton or station / pioneer day"
+        "note": "Outback vacation — Winton or station / pioneer day"
       },
       {
         "date": "2027-12-27",
@@ -208,7 +208,7 @@
       "start": "2027-09-25",
       "end": null,
       "days": null,
-      "title": "Great Southern Touring Route",
+      "title": "Great Ocean Road Loop",
       "locationId": "great-southern-touring-route",
       "context": "Nine-day vacation road trip from Geelong to Melbourne.",
       "color": null,
@@ -220,10 +220,11 @@
       "start": "2027-09-25",
       "end": "2027-10-02",
       "days": 8,
-      "title": "GSTR",
+      "title": "Great Ocean Road Loop",
       "locationId": "great-southern-touring-route",
       "context": null,
-      "color": "#5592b7"
+      "color": "#5592b7",
+      "railLabel": "Great Ocean Road"
     },
     {
       "id": "event-great-southern-touring-route-end",
@@ -342,7 +343,7 @@
       "start": "2027-10-17",
       "end": "2027-10-22",
       "days": 6,
-      "title": "Longreach",
+      "title": "Outback",
       "locationId": "longreach",
       "context": "Six nights in Outback Queensland.",
       "color": "#4f7fa2",
@@ -355,7 +356,7 @@
       "start": "2027-10-18",
       "end": "2027-10-20",
       "days": 3,
-      "title": "Work & homeschool — Longreach",
+      "title": "Work & homeschool — Outback",
       "locationId": "longreach",
       "context": "Early work and homeschool mornings; town, heritage, swimming, station, and sunset activities later.",
       "color": null,
@@ -368,7 +369,7 @@
       "start": "2027-10-21",
       "end": "2027-10-22",
       "days": 2,
-      "title": "Longreach vacation days",
+      "title": "Outback vacation days",
       "locationId": "longreach",
       "context": "Use for the major museums and either Winton or the best available station / pioneer program.",
       "color": null,

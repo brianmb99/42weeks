@@ -4,9 +4,9 @@ import { sitePath } from "../../../lib/site-path";
 import "./route.css";
 
 export const metadata: Metadata = {
-  title: "Great Southern Touring Route",
+  title: "Great Ocean Road Loop",
   description:
-    "The nine-day working plan from Geelong to Melbourne via the Great Ocean Road, Gariwerd, and Ballarat.",
+    "The nine-day vacation loop from Geelong to Melbourne via the Great Ocean Road, Gariwerd, and Ballarat.",
 };
 
 const roadTrip = australiaPlan.segments.roadTrip;

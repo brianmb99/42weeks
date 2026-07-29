@@ -33,7 +33,7 @@ test("server-renders the 42 Weeks overview", async () => {
   assert.match(html, /Broad route/);
   assert.match(html, /Where the 42 weeks go/);
   assert.match(html, /View the exact calendar/);
-  assert.match(html, /Great Southern Touring Route/);
+  assert.match(html, /Great Ocean Road Loop/);
   assert.match(html, /Open the 9-day plan/);
   assert.match(
     html,
@@ -48,7 +48,9 @@ test("server-renders the 42 Weeks overview", async () => {
   assert.match(html, /Geelong/);
   assert.match(html, /Melbourne/);
   assert.match(html, /Hamilton Island/);
-  assert.match(html, /Longreach/);
+  assert.match(html, /Outback/);
+  assert.match(html, /Play, with some work/);
+  assert.match(html, /Work \+ local evenings/);
   assert.match(html, /\/trips\/hamilton-island-working-week/);
   assert.match(html, /\/trips\/longreach-outback-working-week/);
   assert.match(html, /Diwali/);
@@ -95,8 +97,8 @@ test("server-renders the expandable weekly calendar", async () => {
   assert.match(html, /2028-03-12: not working/);
   assert.match(html, /New Hampshire/);
   assert.match(html, /Geelong/);
-  assert.match(html, /Great Southern Touring Route/);
-  assert.match(html, /Expand all weeks in GSTR/);
+  assert.match(html, /Great Ocean Road Loop/);
+  assert.match(html, /Expand all weeks in Great Ocean Road/);
   assert.match(html, /Melbourne/);
   assert.match(html, /Hamilton Island/);
   assert.match(html, /Longreach/);
@@ -109,7 +111,7 @@ test("server-renders the expandable weekly calendar", async () => {
   assert.match(html, /Work &amp; homeschool — Hamilton Island/);
   assert.match(html, /Hamilton Island vacation days/);
   assert.match(html, /Fly Brisbane → Longreach/);
-  assert.match(html, /Longreach vacation days/);
+  assert.match(html, /Outback vacation days/);
   assert.match(html, /Location = where we sleep that night/);
   assert.match(html, /Fly home; unpack and repack for Europe/);
   assert.doesNotMatch(html, /Japan/);
@@ -311,7 +313,7 @@ test("server-renders the Hamilton Island working week", async () => {
   const response = await render("/trips/hamilton-island-working-week");
   assert.equal(response.status, 200);
   const html = await response.text();
-  assert.match(html, /Hamilton Island Working Week/);
+  assert.match(html, /Hamilton Island: Work &amp; Play/);
   assert.match(html, /6<!-- --> nights/);
   assert.match(html, /Whitehaven Beach/);
   assert.match(html, /Outer Great Barrier Reef/);
@@ -319,15 +321,15 @@ test("server-renders the Hamilton Island working week", async () => {
   assert.match(html, /Vacation Thu–Fri/);
   assert.match(html, /Hamilton Island Holiday Home/);
   assert.match(html, /Starlink/);
-  assert.match(html, /Next: .*Longreach Outback Working Week/);
+  assert.match(html, /Next: .*Outback Queensland: Work &amp; Play/);
   assert.match(html, /Queensland Working Notes\.md/);
 });
 
-test("server-renders the Longreach outback working week", async () => {
+test("server-renders the Outback Queensland plan", async () => {
   const response = await render("/trips/longreach-outback-working-week");
   assert.equal(response.status, 200);
   const html = await response.text();
-  assert.match(html, /Longreach Outback Working Week/);
+  assert.match(html, /Outback Queensland: Work &amp; Play/);
   assert.match(html, /6<!-- --> nights/);
   assert.match(html, /Qantas Founders Museum/);
   assert.match(html, /Australian Stockman/);
@@ -335,17 +337,17 @@ test("server-renders the Longreach outback working week", async () => {
   assert.match(html, /Saltbush Retreat/);
   assert.match(html, /Work Mon–Wed/);
   assert.match(html, /Vacation Thu–Fri/);
-  assert.match(html, /Next: .*Hamilton Island Working Week/);
+  assert.match(html, /Next: .*Hamilton Island: Work &amp; Play/);
   assert.match(html, /Queensland Working Notes\.md/);
 });
 
-test("server-renders the Great Southern Touring Route detail", async () => {
+test("server-renders the Great Ocean Road Loop detail", async () => {
   const response = await render("/trips/great-southern-touring-route");
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /Great Southern Touring Route/);
+  assert.match(html, /Great Ocean Road Loop/);
   assert.match(html, /Geelong work week/);
   assert.match(html, /Melbourne work week/);
   assert.match(html, /Newtown/);
