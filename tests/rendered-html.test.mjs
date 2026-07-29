@@ -68,11 +68,13 @@ test("server-renders the separate zoomable calendar prototype", async () => {
 
   const html = await response.text();
   assert.match(html, /Calendar prototype/);
-  assert.match(html, /Things under consideration/);
   assert.match(html, /Trip calendar/);
-  assert.match(html, /Whole trip/);
-  assert.match(html, /Back to current planner/);
-  assert.match(html, /Definitive working timeline/);
+  assert.match(html, /Exact working dates/);
+  assert.match(html, /Current planner/);
   assert.match(html, /data\/trip-plan\.json/);
-  assert.match(html, /Portugal: Algarve &amp; Alentejo/);
+  assert.match(html, /Dates run top to bottom/);
+  assert.match(html, /Overview/);
+  assert.match(html, /Weeks/);
+  assert.match(html, /Days/);
+  assert.doesNotMatch(html, /Things under consideration/);
 });

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import "vis-timeline/styles/vis-timeline-graph2d.css";
 import "./calendar.css";
 import CalendarPlanner from "./calendar-planner";
 
