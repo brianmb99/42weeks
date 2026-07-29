@@ -580,6 +580,22 @@ button {
   font-weight: 750;
 }
 
+.event-detail-link {
+  color: inherit;
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.event-detail-link:hover {
+  color: #234f67;
+}
+
+.event-detail-link:focus-visible {
+  outline: 2px solid rgb(35 79 103 / 28%);
+  outline-offset: 2px;
+}
+
 .day-event.event-market-holiday {
   color: #315f40;
   font-weight: 750;

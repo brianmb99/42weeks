@@ -228,6 +228,7 @@ function EventLine({ entries }: { entries: CalendarEntry[] }) {
     <>
       {entries.map((entry, index) => {
         const fixed = entry.type === "event" && entry.fixed;
+        const href = "href" in entry ? entry.href : null;
         return (
           <span
             className={`day-event event-${entry.type} ${fixed ? "is-fixed" : ""}`}
@@ -237,7 +238,13 @@ function EventLine({ entries }: { entries: CalendarEntry[] }) {
             {index > 0 && <i aria-hidden="true"> · </i>}
             {entry.type === "travel" && <b aria-hidden="true">→</b>}
             {fixed && <b className="fixed-mark" aria-label="Fixed date">■</b>}
-            {entry.title}
+            {href ? (
+              <Link className="event-detail-link" href={href}>
+                {entry.title} <span aria-hidden="true">↗</span>
+              </Link>
+            ) : (
+              entry.title
+            )}
           </span>
         );
       })}

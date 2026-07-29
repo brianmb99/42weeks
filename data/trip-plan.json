@@ -1,6 +1,6 @@
 {
-  "schemaVersion": 3,
-  "lastReviewed": "2026-07-28",
+  "schemaVersion": 4,
+  "lastReviewed": "2026-07-29",
   "title": "42 Weeks",
   "datePolicy": "This ordered timeline is the definitive source for exact working dates. Location start and end dates are inclusive. Dated events use fixed=true only when their dates must not move as the working plan is rebalanced.",
   "trip": {
@@ -26,6 +26,31 @@
     "marketEarlyCloseDefault": "work",
     "travelSource": "timeline events with type=travel",
     "overrides": [
+      {
+        "date": "2027-09-27",
+        "status": "vacation",
+        "note": "Great Southern Touring Route vacation"
+      },
+      {
+        "date": "2027-09-28",
+        "status": "vacation",
+        "note": "Great Southern Touring Route vacation"
+      },
+      {
+        "date": "2027-09-29",
+        "status": "vacation",
+        "note": "Great Southern Touring Route vacation"
+      },
+      {
+        "date": "2027-09-30",
+        "status": "vacation",
+        "note": "Great Southern Touring Route vacation"
+      },
+      {
+        "date": "2027-10-01",
+        "status": "vacation",
+        "note": "Great Southern Touring Route vacation"
+      },
       {
         "date": "2027-12-27",
         "status": "vacation",
@@ -119,55 +144,79 @@
   },
   "timeline": [
     {
-      "id": "travel-to-melbourne",
+      "id": "travel-to-geelong",
       "type": "travel",
       "start": "2027-09-18",
       "end": "2027-09-19",
       "days": 2,
-      "title": "Travel to Melbourne",
-      "locationId": "melbourne",
-      "context": "Two travel days from New Hampshire; arrive in Melbourne September 20.",
+      "title": "New Hampshire → Geelong",
+      "locationId": "geelong",
+      "context": "Two travel days; arrive at Melbourne airport and drive directly to Geelong.",
       "color": null
     },
     {
-      "id": "location-melbourne",
+      "id": "location-geelong",
       "type": "location",
       "start": "2027-09-18",
-      "end": "2027-10-07",
-      "days": 20,
-      "title": "Melbourne",
-      "locationId": "melbourne",
+      "end": "2027-09-24",
+      "days": 7,
+      "title": "Geelong",
+      "locationId": "geelong",
       "context": null,
       "color": "#397ca6"
     },
     {
-      "id": "event-afl-semi",
+      "id": "event-great-southern-touring-route",
       "type": "event",
       "fixed": false,
-      "start": "2027-09-10",
-      "end": null,
-      "days": null,
-      "title": "AFL semifinal",
-      "locationId": "melbourne",
-      "context": "Estimated date from the comparable season; use as the Melbourne arrival target.",
-      "color": null
-    },
-    {
-      "id": "event-afl-final",
-      "type": "event",
-      "fixed": true,
       "start": "2027-09-25",
       "end": null,
       "days": null,
-      "title": "AFL Grand Final",
+      "title": "Great Southern Touring Route",
+      "locationId": "great-southern-touring-route",
+      "context": "Nine-day vacation road trip from Geelong to Melbourne.",
+      "color": null,
+      "href": "/trips/great-southern-touring-route"
+    },
+    {
+      "id": "location-great-southern-touring-route",
+      "type": "location",
+      "start": "2027-09-25",
+      "end": "2027-10-03",
+      "days": 9,
+      "title": "Touring route",
+      "locationId": "great-southern-touring-route",
+      "context": null,
+      "color": "#5592b7"
+    },
+    {
+      "id": "event-great-southern-touring-route-end",
+      "type": "event",
+      "fixed": false,
+      "start": "2027-10-03",
+      "end": null,
+      "days": null,
+      "title": "Touring route → Melbourne",
+      "locationId": "great-southern-touring-route",
+      "context": "Spend the day at Sovereign Hill, then reach Melbourne Sunday evening.",
+      "color": null,
+      "href": "/trips/great-southern-touring-route#day-9"
+    },
+    {
+      "id": "location-melbourne",
+      "type": "location",
+      "start": "2027-10-04",
+      "end": "2027-10-10",
+      "days": 7,
+      "title": "Melbourne",
       "locationId": "melbourne",
-      "context": "Tickets are expected to be difficult.",
-      "color": null
+      "context": null,
+      "color": "#76abc8"
     },
     {
       "id": "travel-melbourne-brisbane",
       "type": "travel",
-      "start": "2027-10-08",
+      "start": "2027-10-11",
       "end": null,
       "days": null,
       "title": "Melbourne → Brisbane area",
@@ -178,9 +227,9 @@
     {
       "id": "location-brisbane",
       "type": "location",
-      "start": "2027-10-08",
+      "start": "2027-10-11",
       "end": "2027-10-26",
-      "days": 19,
+      "days": 16,
       "title": "Brisbane area",
       "locationId": "brisbane",
       "context": null,
