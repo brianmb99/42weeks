@@ -101,7 +101,16 @@ export default function GreatSouthernTouringRoutePage() {
             Arrive in Melbourne late October 1, use Saturday and most of Sunday
             in the city—including the St Kilda Pier penguins—then fly to Sydney
             Sunday evening. Work October 4–8, keep Saturday for Sydney, and
-            continue to Hamilton Island Sunday.
+            reserve one evening for a{" "}
+            <a
+              href={sydney.eveningIdeas[0].links[0].url}
+              rel="noreferrer"
+              target="_blank"
+            >
+              Sydney Opera House performance
+            </a>
+            , ideally a full staged opera or Great Opera Hits. Continue to
+            Hamilton Island Sunday.
           </p>
         </article>
       </section>

@@ -236,7 +236,25 @@
       "notes": [
         "Settle in Sunday evening and protect a normal Monday-through-Friday work and homeschool week.",
         "Use afternoons and evenings for nearby Sydney activities.",
+        "Reserve one evening for a performance at the Sydney Opera House.",
         "Keep Saturday for a full Sydney day, then fly to Hamilton Island on Sunday."
+      ],
+      "eveningIdeas": [
+        {
+          "title": "Sydney Opera House performance",
+          "status": "Likely; exact performance and date TBD",
+          "note": "Prefer a full staged opera if one is scheduled. Otherwise choose Great Opera Hits or another family-appropriate performance in the Joan Sutherland Theatre.",
+          "links": [
+            {
+              "title": "Opera Australia — Sydney",
+              "url": "https://opera.org.au/sydney/"
+            },
+            {
+              "title": "Sydney Opera House — Opera",
+              "url": "https://www.sydneyoperahouse.com/opera"
+            }
+          ]
+        }
       ]
     }
   }

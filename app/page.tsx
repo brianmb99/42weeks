@@ -98,7 +98,7 @@ const australiaCards: PlaceCard[] = [
     category: "Weekend + work base",
     summary:
       "A full Melbourne weekend followed by a Sunday-evening flight and a protected Monday–Friday work week in Sydney.",
-    highlights: ["Melbourne weekend", "Sydney work week", "St Kilda + Sydney Saturday"],
+    highlights: ["Melbourne weekend", "Sydney work week", "Opera House evening"],
     open: "Sydney neighborhood, lodging, and exact flight timing",
   },
   {

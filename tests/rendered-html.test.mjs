@@ -60,6 +60,7 @@ test("server-renders the 42 Weeks overview", async () => {
   assert.match(html, /<span>Sydney<\/span>/);
   assert.match(html, /<h3>Melbourne \+ Sydney<\/h3>/);
   assert.match(html, /Sydney work week/);
+  assert.match(html, /Opera House evening/);
   assert.match(html, /Sydney neighborhood/);
   assert.match(html, /Hamilton Island/);
   assert.match(html, /Outback/);
@@ -459,6 +460,9 @@ test("server-renders the Great Ocean Road Loop detail", async () => {
   assert.match(html, /Queenscliff/);
   assert.match(html, /St Kilda Pier/);
   assert.match(html, /Sydney/);
+  assert.match(html, /Sydney Opera House performance/);
+  assert.match(html, /full staged opera or Great Opera Hits/);
+  assert.match(html, /https:\/\/opera\.org\.au\/sydney\//);
   assert.match(html, /Pole House/);
   assert.match(html, /Fairhaven family house/);
   assert.match(html, /Otway Fly/);
@@ -486,8 +490,11 @@ test("server-renders the Great Ocean Road Loop detail", async () => {
     (entry) => entry.id === "event-great-southern-touring-route-end",
   );
   const detailRoute = australiaPlan.segments.roadTrip;
+  const sydneyPlan = australiaPlan.segments.sydney;
   assert.equal(detailRoute.days.length, 7);
   assert.equal(detailRoute.overnights.length, 4);
   assert.equal(detailRoute.start, calendarRoute.start);
   assert.equal(detailRoute.end, routeEnd.start);
+  assert.equal(sydneyPlan.eveningIdeas[0].title, "Sydney Opera House performance");
+  assert.match(sydneyPlan.eveningIdeas[0].status, /Likely/);
 });
