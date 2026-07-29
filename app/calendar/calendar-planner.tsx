@@ -165,12 +165,18 @@ function dayParts(value: Date) {
 }
 
 function entriesForDate(date: string) {
-  return datedEntries.filter((entry) => {
-    if (entry.end) {
-      return entry.start <= date && entry.end >= date;
-    }
-    return entry.start === date;
-  });
+  return datedEntries
+    .filter((entry) => {
+      if (entry.end) {
+        return entry.start <= date && entry.end >= date;
+      }
+      return entry.start === date;
+    })
+    .sort((first, second) => {
+      const firstFixed = first.type === "event" && first.fixed;
+      const secondFixed = second.type === "event" && second.fixed;
+      return Number(firstFixed) - Number(secondFixed);
+    });
 }
 
 function locationForDate(date: string) {

@@ -266,11 +266,11 @@
       "id": "location-hamilton-island",
       "type": "location",
       "start": "2027-10-10",
-      "end": "2027-10-15",
-      "days": 6,
+      "end": "2027-10-16",
+      "days": 7,
       "title": "Hamilton Island",
       "locationId": "hamilton-island",
-      "context": "Six nights in the Whitsundays.",
+      "context": "Seven nights in the Whitsundays, including a full Saturday on Hamilton Island.",
       "color": "#4f9eb3"
     },
     {
@@ -312,42 +312,16 @@
       "href": "/trips/hamilton-island-working-week#vacation-days"
     },
     {
-      "id": "travel-hamilton-island-brisbane",
-      "type": "travel",
-      "start": "2027-10-16",
-      "end": null,
-      "days": null,
-      "title": "Fly Hamilton Island → Brisbane",
-      "locationId": "brisbane-airport",
-      "context": "Stay at or beside the airport to protect the Longreach connection.",
-      "color": null,
-      "href": "/trips/hamilton-island-working-week#departure"
-    },
-    {
-      "id": "location-brisbane-airport-oct-16",
-      "type": "location",
-      "start": "2027-10-16",
-      "end": "2027-10-16",
-      "days": 1,
-      "title": "Brisbane Airport",
-      "locationId": "brisbane-airport-oct-16",
-      "context": "Connection night only.",
-      "color": "#8999a2",
-      "railGroupId": "location-longreach",
-      "railLabel": "Outback",
-      "railColor": "#4f7fa2"
-    },
-    {
-      "id": "travel-brisbane-longreach",
+      "id": "travel-hamilton-island-longreach",
       "type": "travel",
       "start": "2027-10-17",
       "end": null,
       "days": null,
-      "title": "Fly Brisbane → Longreach",
+      "title": "Fly Hamilton Island → Brisbane → Longreach",
       "locationId": "longreach",
-      "context": "Collect a rental car, buy groceries, settle in, and test primary and backup internet.",
+      "context": "Use Sunday morning on Hamilton Island if flight timing allows, then connect through Brisbane without an overnight. Recheck the 2027 schedules before booking.",
       "color": null,
-      "href": "/trips/longreach-outback-working-week"
+      "href": "/trips/hamilton-island-working-week#departure"
     },
     {
       "id": "location-longreach",

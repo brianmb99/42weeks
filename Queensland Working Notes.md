@@ -39,7 +39,7 @@ The concept depends on early-shift work rather than U.S. market hours. A working
 - Longreach is a real town with groceries, services, museums, restaurants, a pool, airport access, and outback experiences. It is a more credible work base than a remote station.
 - Three work/homeschool days followed by two vacation days creates a repeatable weekly rhythm.
 - Starlink reduces dependence on accommodation Wi-Fi, while existing Wi-Fi and mobile coverage remain essential backups.
-- Two connection nights in Brisbane protect the itinerary from fragile same-day connections.
+- Brisbane is only an airport connection between Hamilton Island and Longreach; the single Brisbane overnight remains October 23 before the India flight.
 - India still begins on Sunday, October 24, preserving arrival before Diwali on Friday, October 29.
 
 ## Calendar implementation specification
@@ -59,12 +59,10 @@ Replace the first two with the entries below. Retain the October 24 India travel
 | Proposed ID | Type | Start | End | Title | Location | Context / calendar copy | Proposed page |
 |---|---|---:|---:|---|---|---|---|
 | `travel-melbourne-hamilton-island` | travel | 2027-10-10 |  | Fly Melbourne → Hamilton Island | Hamilton Island | Fly from Melbourne to Hamilton Island, directly if the 2027 schedule permits; otherwise connect through Brisbane. Settle into a family holiday home and test all work connections. | `/trips/hamilton-island-working-week` |
-| `location-hamilton-island` | location | 2027-10-10 | 2027-10-15 | Hamilton Island | Hamilton Island | Six-night Whitsundays living week: three work/homeschool mornings, active afternoons, then two full vacation days for Whitehaven Beach and the outer reef. | `/trips/hamilton-island-working-week` |
+| `location-hamilton-island` | location | 2027-10-10 | 2027-10-16 | Hamilton Island | Hamilton Island | Seven-night Whitsundays living week: three work/homeschool mornings, two full vacation days, and a final Saturday on Hamilton Island. | `/trips/hamilton-island-working-week` |
 | `event-hamilton-work-block` | event | 2027-10-11 | 2027-10-13 | Work & homeschool — Hamilton Island | Hamilton Island | Brian works approximately 4:30 a.m.–12:30 p.m.; children homeschool during the morning; family activities begin after lunch. | `/trips/hamilton-island-working-week#work-days` |
 | `event-hamilton-vacation-block` | event | 2027-10-14 | 2027-10-15 | Hamilton Island vacation days | Hamilton Island | Reserve the two full days for Whitehaven Beach and Great Barrier Reef excursions; swap days according to marine weather and operator advice. | `/trips/hamilton-island-working-week#vacation-days` |
-| `travel-hamilton-island-brisbane` | travel | 2027-10-16 |  | Fly Hamilton Island → Brisbane | Brisbane Airport | Keep the Hamilton morning light, fly to Brisbane, and stay at or beside the airport to protect the Longreach connection. | `/trips/hamilton-island-working-week#departure` |
-| `location-brisbane-airport-oct-16` | location | 2027-10-16 | 2027-10-16 | Brisbane Airport | Brisbane Airport | One-night connection stay only; not a Queensland sightseeing base. |  |
-| `travel-brisbane-longreach` | travel | 2027-10-17 |  | Fly Brisbane → Longreach | Longreach | Fly to Longreach, collect the rental car, buy groceries, settle in, and test Starlink plus backup internet. | `/trips/longreach-outback-working-week` |
+| `travel-hamilton-island-longreach` | travel | 2027-10-17 |  | Fly Hamilton Island → Brisbane → Longreach | Longreach | Use Sunday morning on Hamilton Island if timing allows, then connect through Brisbane without an overnight. Confirm this against the 2027 flight schedule. | `/trips/hamilton-island-working-week#departure` |
 | `location-longreach` | location | 2027-10-17 | 2027-10-22 | Longreach | Longreach | Six-night outback living week: three work/homeschool mornings, afternoon and sunset experiences, and two full vacation days. | `/trips/longreach-outback-working-week` |
 | `event-longreach-work-block` | event | 2027-10-18 | 2027-10-20 | Work & homeschool — Longreach | Longreach | Brian works approximately 4:30 a.m.–12:30 p.m.; children homeschool during the morning; use afternoons and evenings for town, heritage, swimming, station, and sunset activities. | `/trips/longreach-outback-working-week#work-days` |
 | `event-longreach-vacation-block` | event | 2027-10-21 | 2027-10-22 | Longreach outback vacation days | Longreach | Use the two full days for the major Longreach museums and either a Winton dinosaur day or the best available station/stagecoach program. | `/trips/longreach-outback-working-week#vacation-days` |
@@ -76,13 +74,13 @@ Replace the first two with the entries below. Retain the October 24 India travel
 ### Calendar display guidance
 
 - Location bars should emphasize Hamilton Island and Longreach, not Brisbane.
-- On the simplified left rail, label the Longreach / Brisbane connection sequence **Outback** and include both Brisbane Airport nights in that segment. Keep the exact airport locations in expanded daily detail.
+- On the simplified left rail, label the Longreach / October 23 Brisbane connection sequence **Outback**. Brisbane on October 17 is an airport connection within the Hamilton Island → Longreach travel day, not an overnight location.
 - The two work blocks and two vacation blocks should be visually distinguishable.
 - The calendar card for each location should link to its dedicated page.
 - Do not present any flight as nonstop or any attraction as operating until the 2027 timetable is published.
 - The location dates are inclusive calendar dates and mean where the family expects to sleep at the end of that date.
 - A named multi-stop route may stand in for its individual overnight stops; overnight flights use an explicit `In transit` location.
-- Each principal Queensland base has six location dates / six nights. Its dedicated page also includes the following departure day.
+- Hamilton Island has seven nights, including Saturday, before the Sunday connection to Longreach. Longreach remains a six-night base.
 
 ---
 

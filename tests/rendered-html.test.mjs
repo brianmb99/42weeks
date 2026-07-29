@@ -127,12 +127,16 @@ test("server-renders the expandable weekly calendar", async () => {
   assert.match(html, /Fly Melbourne → Hamilton Island/);
   assert.match(html, /Work &amp; homeschool — Hamilton Island/);
   assert.match(html, /Hamilton Island vacation days/);
-  assert.match(html, /Fly Brisbane → Longreach/);
+  assert.match(html, /Fly Hamilton Island → Brisbane → Longreach/);
   assert.match(html, /Outback vacation days/);
   assert.match(html, /Charlie&#x27;s birthday/);
   assert.match(html, /Kate&#x27;s birthday/);
   assert.match(html, /Allie&#x27;s birthday/);
   assert.match(html, /Brian&#x27;s birthday/);
+  assert.match(
+    html,
+    /Tuesday, October 12, 2027\nWork\nWork &amp; homeschool — Hamilton Island\nCharlie&#x27;s birthday/,
+  );
   assert.match(html, /Location = where we sleep that night/);
   assert.match(html, /Fly home; unpack and repack for Europe/);
   assert.doesNotMatch(html, /Japan/);
@@ -235,20 +239,25 @@ test("server-renders the expandable weekly calendar", async () => {
     [geelong.start, geelong.end, roadTrip.start, roadTrip.end],
     ["2027-09-19", "2027-09-24", "2027-09-25", "2027-10-02"],
   );
-  const oct16Airport = tripPlan.timeline.find(
-    (entry) => entry.id === "location-brisbane-airport-oct-16",
-  );
   const oct23Airport = tripPlan.timeline.find(
     (entry) => entry.id === "location-brisbane-airport-oct-23",
   );
-  assert.equal(oct16Airport.railGroupId, "location-longreach");
   assert.equal(oct23Airport.railGroupId, "location-longreach");
-  assert.equal(oct16Airport.title, "Brisbane Airport");
   assert.equal(oct23Airport.title, "Brisbane Airport");
   assert.equal(longreach.railLabel, "Outback");
   assert.equal(longreach.color, "#4f7fa2");
-  assert.equal(oct16Airport.railColor, longreach.color);
   assert.equal(oct23Airport.railColor, longreach.color);
+  assert.equal(
+    tripPlan.timeline.some(
+      (entry) => entry.id === "location-brisbane-airport-oct-16",
+    ),
+    false,
+  );
+  const hamiltonToLongreach = tripPlan.timeline.find(
+    (entry) => entry.id === "travel-hamilton-island-longreach",
+  );
+  assert.equal(hamiltonToLongreach.start, "2027-10-17");
+  assert.match(hamiltonToLongreach.title, /Hamilton Island → Brisbane → Longreach/);
   assert.deepEqual(
     [
       melbourne.start,
@@ -262,7 +271,7 @@ test("server-renders the expandable weekly calendar", async () => {
       "2027-10-03",
       "2027-10-09",
       "2027-10-10",
-      "2027-10-15",
+      "2027-10-16",
       "2027-10-17",
       "2027-10-22",
     ],
@@ -354,7 +363,9 @@ test("server-renders the Hamilton Island working week", async () => {
   );
   assert.match(html, /images\.pexels\.com\/photos\/35087571/);
   assert.match(html, /images\.unsplash\.com\/photo-1706591791971/);
-  assert.match(html, /6<!-- --> nights/);
+  assert.match(html, /7<!-- --> nights/);
+  assert.match(html, /Connect through Brisbane to Longreach/);
+  assert.doesNotMatch(html, /Brisbane airport hotel for October 16/);
   assert.match(html, /Whitehaven Beach/);
   assert.match(html, /Outer Great Barrier Reef/);
   assert.match(html, /Work Mon–Wed/);

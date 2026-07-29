@@ -22,9 +22,9 @@
     "eyebrow": "Whitsundays · Queensland",
     "title": "Hamilton Island: Work & Play",
     "start": "2027-10-10",
-    "end": "2027-10-16",
-    "nights": 6,
-    "summary": "Live on Hamilton Island for six nights rather than treating the Whitsundays as a rushed Brisbane excursion. Work and homeschool Monday through Wednesday mornings, then use Thursday and Friday for Whitehaven Beach and the outer Great Barrier Reef.",
+    "end": "2027-10-17",
+    "nights": 7,
+    "summary": "Live on Hamilton Island for seven nights rather than treating the Whitsundays as a rushed Brisbane excursion. Work and homeschool Monday through Wednesday mornings, use Thursday and Friday for Whitehaven Beach and the outer Great Barrier Reef, and keep Saturday on the island.",
     "arrival": {
       "date": "2027-10-10",
       "title": "Arrive and establish the base",
@@ -35,12 +35,12 @@
       ]
     },
     "departure": {
-      "date": "2027-10-16",
-      "title": "Fly to Brisbane Airport",
+      "date": "2027-10-17",
+      "title": "Connect through Brisbane to Longreach",
       "items": [
-        "Keep the final morning easy.",
-        "Sleep at or beside Brisbane Airport to protect the Longreach connection.",
-        "Do not assume a same-day onward flight until the 2027 schedule supports it."
+        "Keep Saturday entirely on Hamilton Island and use Sunday morning there if flight timing allows.",
+        "Fly Hamilton Island → Brisbane → Longreach on one travel day, using Brisbane only as an airport connection.",
+        "Treat the same-day connection as a working assumption until the 2027 schedule confirms it."
       ]
     },
     "base": {
@@ -90,10 +90,9 @@
     "bookFirst": [
       "Holiday home with a separate work room and written Starlink permission",
       "Melbourne → Hamilton Island flight",
-      "Hamilton Island → Brisbane flight",
+      "Hamilton Island → Brisbane → Longreach same-day flights",
       "Whitehaven excursion",
       "Outer-reef excursion",
-      "Brisbane airport hotel for October 16",
       "Golf buggy if not included"
     ],
     "links": [
