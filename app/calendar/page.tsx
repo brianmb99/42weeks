@@ -3,8 +3,8 @@ import "./calendar.css";
 import CalendarPlanner from "./calendar-planner";
 
 export const metadata: Metadata = {
-  title: "Working timeline",
-  description: "The definitive working timeline for the 42 Weeks trip.",
+  title: "Working calendar",
+  description: "The day-by-day working calendar for the 42 Weeks trip.",
 };
 
 export default function CalendarPage() {

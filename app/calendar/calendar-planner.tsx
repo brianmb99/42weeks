@@ -2,49 +2,55 @@ import Link from "next/link";
 import tripPlan from "../../data/trip-plan.json";
 
 type TimelineEntry = (typeof tripPlan.timeline)[number];
-type DateCluster = {
+type LocationEntry = TimelineEntry & {
+  type: "location";
+  end: string;
+  days: number;
+  color: string;
+};
+type DayStatus = "work" | "off" | "travel";
+type DayOverride = {
   date: string;
-  entries: TimelineEntry[];
+  status: Exclude<DayStatus, "travel">;
+  note: string | null;
 };
 
 const DAY = 24 * 60 * 60 * 1000;
-const LONG_GAP_DAYS = 28;
-const PIXELS_PER_DAY = 4;
-
-const locationNames = Object.fromEntries(
-  tripPlan.timeline
-    .filter((entry) => entry.type === "location")
-    .map((entry) => [entry.locationId, entry.title]),
+const locations = tripPlan.timeline.filter(
+  (entry): entry is LocationEntry =>
+    entry.type === "location" &&
+    typeof entry.end === "string" &&
+    typeof entry.days === "number" &&
+    typeof entry.color === "string",
 );
-
-const clusters = tripPlan.timeline.reduce<DateCluster[]>((result, entry) => {
-  const current = result[result.length - 1];
-  if (current?.date === entry.start) {
-    current.entries.push(entry);
-  } else {
-    result.push({ date: entry.start, entries: [entry] });
-  }
-  return result;
-}, []);
+const datedEntries = tripPlan.timeline.filter((entry) => entry.type !== "location");
+const dayOverrides = tripPlan.dayPlanning.overrides as DayOverride[];
 
 function localDate(value: string) {
   return new Date(`${value}T00:00:00`);
 }
 
-function daysBetween(start: string, end: string) {
-  return Math.round((localDate(end).getTime() - localDate(start).getTime()) / DAY);
+function isoDate(value: Date) {
+  const year = value.getFullYear();
+  const month = String(value.getMonth() + 1).padStart(2, "0");
+  const day = String(value.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
 }
 
-function dateParts(value: string) {
-  const date = localDate(value);
-  return {
-    weekday: new Intl.DateTimeFormat("en-US", { weekday: "short" }).format(date),
-    monthDay: new Intl.DateTimeFormat("en-US", {
-      month: "short",
-      day: "numeric",
-    }).format(date),
-    year: date.getFullYear(),
-  };
+function addDays(value: Date, days: number) {
+  return new Date(value.getTime() + days * DAY);
+}
+
+function datesBetween(start: string, end: string) {
+  const dates: Date[] = [];
+  for (
+    let date = localDate(start);
+    date <= localDate(end);
+    date = addDays(date, 1)
+  ) {
+    dates.push(date);
+  }
+  return dates;
 }
 
 function compactDate(value: string, year = true) {
@@ -55,94 +61,154 @@ function compactDate(value: string, year = true) {
   }).format(localDate(value));
 }
 
-function typeLabel(type: TimelineEntry["type"]) {
-  if (type === "location") return "Location";
-  if (type === "travel") return "Travel";
-  return "Event";
+function monthName(value: Date, short = false) {
+  return new Intl.DateTimeFormat("en-US", {
+    month: short ? "short" : "long",
+    year: "numeric",
+  }).format(value);
 }
 
-function ClusterDate({ value }: { value: string }) {
-  const date = dateParts(value);
+function dayParts(value: Date) {
+  return {
+    weekday: new Intl.DateTimeFormat("en-US", { weekday: "short" }).format(value),
+    month: new Intl.DateTimeFormat("en-US", { month: "short" }).format(value),
+    day: value.getDate(),
+  };
+}
+
+function entriesForDate(date: string) {
+  return datedEntries.filter((entry) => entry.start === date);
+}
+
+function statusForDate(date: Date, entries: TimelineEntry[]): DayStatus {
+  if (entries.some((entry) => entry.type === "travel")) return "travel";
+
+  const override = dayOverrides.find((entry) => entry.date === isoDate(date));
+  if (override) return override.status;
+
+  const weekend = date.getDay() === 0 || date.getDay() === 6;
+  return weekend
+    ? (tripPlan.dayPlanning.weekendDefault as DayStatus)
+    : (tripPlan.dayPlanning.weekdayDefault as DayStatus);
+}
+
+const allTripDays = datesBetween(tripPlan.trip.start, tripPlan.trip.end);
+const monthLinks = allTripDays.reduce<Array<{ id: string; label: string }>>(
+  (result, date) => {
+    const id = `month-${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}`;
+    if (!result.some((item) => item.id === id)) {
+      result.push({ id, label: monthName(date, true) });
+    }
+    return result;
+  },
+  [],
+);
+
+function EventLine({ entries }: { entries: TimelineEntry[] }) {
+  if (entries.length === 0) return <span className="empty-event">—</span>;
+
   return (
-    <time className="cluster-date" dateTime={value}>
-      <span>{date.weekday}</span>
-      <strong>{date.monthDay}</strong>
-      <small>{date.year}</small>
-    </time>
+    <>
+      {entries.map((entry, index) => {
+        const fixed = entry.type === "event" && entry.fixed;
+        return (
+          <span
+            className={`day-event event-${entry.type} ${fixed ? "is-fixed" : ""}`}
+            title={entry.context ?? entry.title}
+            key={entry.id}
+          >
+            {index > 0 && <i aria-hidden="true"> · </i>}
+            {entry.type === "travel" && <b aria-hidden="true">→</b>}
+            {fixed && <b className="fixed-mark" aria-label="Fixed date">■</b>}
+            {entry.title}
+          </span>
+        );
+      })}
+    </>
   );
 }
 
-function EventEntry({ entry }: { entry: TimelineEntry }) {
-  const location = locationNames[entry.locationId];
-  const showContext =
-    entry.context &&
-    (entry.type === "event" || entry.id === "travel-to-melbourne");
-  const fixed = entry.type === "event" && entry.fixed;
+function DayRow({
+  date,
+  isFirstTripDay,
+}: {
+  date: Date;
+  isFirstTripDay: boolean;
+}) {
+  const iso = isoDate(date);
+  const entries = entriesForDate(iso);
+  const status = statusForDate(date, entries);
+  const parts = dayParts(date);
+  const monthStart = date.getDate() === 1 || isFirstTripDay;
+  const monthId = monthStart
+    ? `month-${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}`
+    : undefined;
 
   return (
     <div
-      className={`event-entry event-${entry.type} ${fixed ? "is-fixed" : ""}`}
-      style={
-        entry.color
-          ? ({ "--location-color": entry.color } as React.CSSProperties)
-          : undefined
-      }
+      className={`day-row status-${status} ${date.getDay() === 1 ? "is-monday" : ""} ${monthStart ? "is-month-start" : ""}`}
+      id={monthId}
     >
-      <div className="event-meta">
-        <span className="event-type">{typeLabel(entry.type)}</span>
-        {entry.type === "location" && entry.end && (
-          <>
-            <span>through {compactDate(entry.end, false)}</span>
-            <span>{entry.days} days</span>
-          </>
-        )}
-        {entry.type === "event" && location && <span>{location}</span>}
-        {fixed && <span className="fixed-label">Fixed</span>}
+      <span
+        className="status-box"
+        title={
+          status === "travel"
+            ? "Travel"
+            : status === "work"
+              ? "Speculative workday"
+              : "Speculative non-work day"
+        }
+      />
+      <span className="weekday">{parts.weekday}</span>
+      <time dateTime={iso}>
+        <span className="date-month">{parts.month}</span>
+        <strong>{parts.day}</strong>
+      </time>
+      <div className="events-cell">
+        <EventLine entries={entries} />
       </div>
-      <h2>{entry.title}</h2>
-      {showContext && <p>{entry.context}</p>}
     </div>
   );
 }
 
-function ElapsedGap({ from, to }: { from: string; to: string }) {
-  const elapsedDays = daysBetween(from, to);
-  if (elapsedDays <= 0) return null;
-
-  const emptyDays = Math.max(0, elapsedDays - 1);
-  const compressed = emptyDays > LONG_GAP_DAYS;
-  const representedDays = compressed ? LONG_GAP_DAYS : emptyDays;
-  const height = Math.max(12, representedDays * PIXELS_PER_DAY);
+function LocationSection({ location }: { location: LocationEntry }) {
+  const dates = datesBetween(location.start, location.end);
 
   return (
-    <div
-      className={`elapsed-gap ${compressed ? "is-compressed" : ""}`}
-      style={{ "--gap-height": `${height}px` } as React.CSSProperties}
-      aria-label={
-        compressed
-          ? `${emptyDays} days without a separate dated event, compressed`
-          : `${emptyDays} days until the next dated event`
-      }
+    <section
+      className="location-section"
+      style={{ "--location-color": location.color } as React.CSSProperties}
+      aria-label={`${location.title}, ${compactDate(location.start)} through ${compactDate(location.end)}`}
     >
-      {compressed && (
-        <span className="gap-label">
-          <i aria-hidden="true">∕ ∕</i>
-          {emptyDays} days
-        </span>
-      )}
-    </div>
+      <aside className="location-bracket">
+        <div>
+          <strong>{location.title}</strong>
+          <span>{location.days} days</span>
+        </div>
+      </aside>
+      <div className="day-list">
+        {dates.map((date) => (
+          <DayRow
+            date={date}
+            isFirstTripDay={isoDate(date) === tripPlan.trip.start}
+            key={isoDate(date)}
+          />
+        ))}
+      </div>
+    </section>
   );
 }
 
 export default function CalendarPlanner() {
   return (
-    <main className="timeline-page">
+    <main className="calendar-page">
       <header className="page-header">
         <div>
           <p className="eyebrow">{tripPlan.title}</p>
-          <h1>Working timeline</h1>
+          <h1>Working calendar</h1>
           <p className="trip-range">
             {compactDate(tripPlan.trip.start)} – {compactDate(tripPlan.trip.end)}
+            <span>{allTripDays.length} days</span>
           </p>
         </div>
         <Link href="/" className="back-link">
@@ -150,58 +216,35 @@ export default function CalendarPlanner() {
         </Link>
       </header>
 
-      <section className="timeline-key" aria-label="Timeline key">
-        <div><span className="key-mark key-location" />Location stay</div>
-        <div><span className="key-mark key-travel" />Travel day</div>
-        <div><span className="key-mark key-event" />Dated event</div>
-        <div><span className="key-mark key-fixed" />Fixed date</div>
-        <p>Spacing reflects elapsed time; long empty periods are compressed.</p>
-      </section>
-
-      <div className="source-line">
-        Exact working dates · source: <code>data/trip-plan.json</code>
+      <div className="calendar-tools">
+        <nav className="month-nav" aria-label="Jump to month">
+          {monthLinks.map((month) => (
+            <a href={`#${month.id}`} key={month.id}>{month.label}</a>
+          ))}
+        </nav>
+        <div className="status-key" aria-label="Day shading">
+          <span><i className="status-sample sample-work" />Work</span>
+          <span><i className="status-sample sample-travel" />Travel</span>
+          <span><i className="status-sample sample-off" />Not working</span>
+          <span><i className="fixed-event-sample">■</i>Fixed event</span>
+          <small>Weekdays/work and weekends/off are initial assumptions.</small>
+        </div>
+        <div className="column-headings" aria-hidden="true">
+          <span>Location</span>
+          <span>Day</span>
+          <span>Schedule</span>
+        </div>
       </div>
 
-      <section className="timeline" aria-label="Chronological trip timeline">
-        {clusters.map((cluster, index) => {
-          const nextDate =
-            clusters[index + 1]?.date ??
-            (cluster.date < tripPlan.trip.end ? tripPlan.trip.end : null);
-
-          return (
-            <div className="cluster-block" key={cluster.date}>
-              <section className="date-cluster">
-                <ClusterDate value={cluster.date} />
-                <div
-                  className={`cluster-marker ${
-                    cluster.entries.length > 1
-                      ? "marker-mixed"
-                      : cluster.entries[0].type === "event" &&
-                          cluster.entries[0].fixed
-                        ? "marker-fixed"
-                        : `marker-${cluster.entries[0].type}`
-                  }`}
-                  aria-hidden="true"
-                >
-                  <span />
-                </div>
-                <div className="cluster-events">
-                  {cluster.entries.map((entry) => (
-                    <EventEntry entry={entry} key={entry.id} />
-                  ))}
-                </div>
-              </section>
-              {nextDate && <ElapsedGap from={cluster.date} to={nextDate} />}
-            </div>
-          );
-        })}
-
-        <div className="timeline-end">
-          <time dateTime={tripPlan.trip.end}>{compactDate(tripPlan.trip.end)}</time>
-          <span aria-hidden="true" />
-          <p>End of working timeline</p>
-        </div>
+      <section className="day-calendar" aria-label="Day-by-day trip calendar">
+        {locations.map((location) => (
+          <LocationSection location={location} key={location.id} />
+        ))}
       </section>
+
+      <footer className="calendar-footer">
+        Exact working dates · <code>data/trip-plan.json</code>
+      </footer>
     </main>
   );
 }

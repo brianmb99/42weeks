@@ -61,26 +61,26 @@ test("server-renders the 42 Weeks planner", async () => {
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
 });
 
-test("server-renders the single chronological working timeline", async () => {
+test("server-renders the day-by-day working calendar", async () => {
   const response = await render("/calendar");
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /Working timeline/);
-  assert.match(html, /Exact working dates/);
+  assert.match(html, /Working calendar/);
+  assert.match(html, /294<!-- --> days/);
   assert.match(html, /Current planner/);
   assert.match(html, /data\/trip-plan\.json/);
-  assert.match(html, /Location stay/);
-  assert.match(html, /Travel day/);
-  assert.match(html, /Dated event/);
-  assert.match(html, /Fixed date/);
+  assert.match(html, />Work</);
+  assert.match(html, />Travel</);
+  assert.match(html, />Not working</);
+  assert.match(html, />Fixed event</);
   assert.match(html, /Travel to Melbourne/);
   assert.match(html, /Melbourne → Brisbane area/);
   assert.match(html, /AFL Grand Final/);
   assert.doesNotMatch(html, /Things under consideration/);
   assert.doesNotMatch(html, /Anchor|Maximum 90-day|max 90-day/i);
-  assert.doesNotMatch(html, />Overview<|>Weeks<|Dates run top to bottom/);
+  assert.doesNotMatch(html, />Overview<|>Weeks<|Dates run top to bottom|Spacing reflects elapsed time/);
 
   const tripPlan = JSON.parse(
     await readFile(new URL("../data/trip-plan.json", import.meta.url), "utf8"),
@@ -90,4 +90,6 @@ test("server-renders the single chronological working timeline", async () => {
   assert.ok(datedEvents.every((entry) => typeof entry.fixed === "boolean"));
   assert.equal(datedEvents.filter((entry) => entry.fixed).length, 3);
   assert.equal(tripPlan.rules.length, 2);
+  assert.equal(tripPlan.dayPlanning.weekdayDefault, "work");
+  assert.equal(tripPlan.dayPlanning.weekendDefault, "off");
 });

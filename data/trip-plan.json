@@ -19,6 +19,12 @@
       "note": "The Copenhagen stay must not exceed 90 days."
     }
   ],
+  "dayPlanning": {
+    "weekdayDefault": "work",
+    "weekendDefault": "off",
+    "travelSource": "timeline events with type=travel",
+    "overrides": []
+  },
   "timeline": [
     {
       "id": "travel-to-melbourne",
