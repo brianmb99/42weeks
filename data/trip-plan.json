@@ -1,134 +1,287 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "lastReviewed": "2026-07-28",
   "title": "42 Weeks",
-  "datePolicy": "These are the exact working dates. Segment start and end dates are inclusive. Change dates here first; the calendar UI renders from this file.",
+  "datePolicy": "This ordered timeline is the definitive source for exact working dates. Location start and end dates are inclusive. Travel days and anchor dates are explicit events.",
   "trip": {
     "start": "2027-09-09",
     "end": "2028-06-28"
   },
-  "segments": [
+  "timeline": [
     {
-      "id": "melbourne",
-      "name": "Melbourne",
+      "id": "travel-to-melbourne",
+      "type": "travel",
+      "start": "2027-09-09",
+      "end": null,
+      "days": null,
+      "title": "Travel to Melbourne",
+      "locationId": "melbourne",
+      "context": "Arrival details to be determined",
+      "color": null
+    },
+    {
+      "id": "location-melbourne",
+      "type": "location",
       "start": "2027-09-09",
       "end": "2027-10-03",
       "days": 25,
-      "color": "#ba4b3a"
+      "title": "Melbourne",
+      "locationId": "melbourne",
+      "context": null,
+      "color": "#b65543"
     },
     {
-      "id": "brisbane",
-      "name": "Brisbane area",
+      "id": "anchor-afl-semi",
+      "type": "anchor",
+      "start": "2027-09-10",
+      "end": null,
+      "days": null,
+      "title": "AFL semifinal",
+      "locationId": "melbourne",
+      "context": "Estimated date from the comparable season; use as the Melbourne arrival target.",
+      "color": null
+    },
+    {
+      "id": "anchor-afl-final",
+      "type": "anchor",
+      "start": "2027-09-25",
+      "end": null,
+      "days": null,
+      "title": "AFL Grand Final",
+      "locationId": "melbourne",
+      "context": "Melbourne anchor date; tickets are expected to be difficult.",
+      "color": null
+    },
+    {
+      "id": "travel-melbourne-brisbane",
+      "type": "travel",
+      "start": "2027-10-04",
+      "end": null,
+      "days": null,
+      "title": "Melbourne → Brisbane area",
+      "locationId": "brisbane",
+      "context": "Travel day",
+      "color": null
+    },
+    {
+      "id": "location-brisbane",
+      "type": "location",
       "start": "2027-10-04",
       "end": "2027-10-26",
       "days": 23,
-      "color": "#c47d25"
+      "title": "Brisbane area",
+      "locationId": "brisbane",
+      "context": null,
+      "color": "#c1832d"
     },
     {
-      "id": "india",
-      "name": "India",
+      "id": "travel-brisbane-india",
+      "type": "travel",
+      "start": "2027-10-27",
+      "end": null,
+      "days": null,
+      "title": "Brisbane area → India",
+      "locationId": "india",
+      "context": "Travel day",
+      "color": null
+    },
+    {
+      "id": "location-india",
+      "type": "location",
       "start": "2027-10-27",
       "end": "2027-11-09",
       "days": 14,
-      "color": "#a5527a"
+      "title": "India",
+      "locationId": "india",
+      "context": null,
+      "color": "#a8547c"
     },
     {
-      "id": "singapore",
-      "name": "Singapore",
+      "id": "anchor-diwali",
+      "type": "anchor",
+      "start": "2027-10-29",
+      "end": null,
+      "days": null,
+      "title": "Diwali",
+      "locationId": "india",
+      "context": "India anchor date",
+      "color": null
+    },
+    {
+      "id": "travel-india-singapore",
+      "type": "travel",
+      "start": "2027-11-10",
+      "end": null,
+      "days": null,
+      "title": "India → Singapore",
+      "locationId": "singapore",
+      "context": "Travel day",
+      "color": null
+    },
+    {
+      "id": "location-singapore",
+      "type": "location",
       "start": "2027-11-10",
       "end": "2027-11-23",
       "days": 14,
-      "color": "#197d74"
+      "title": "Singapore",
+      "locationId": "singapore",
+      "context": null,
+      "color": "#287f75"
     },
     {
-      "id": "hong-kong",
-      "name": "Hong Kong",
+      "id": "travel-singapore-hong-kong",
+      "type": "travel",
+      "start": "2027-11-24",
+      "end": null,
+      "days": null,
+      "title": "Singapore → Hong Kong",
+      "locationId": "hong-kong",
+      "context": "Travel day",
+      "color": null
+    },
+    {
+      "id": "location-hong-kong",
+      "type": "location",
       "start": "2027-11-24",
       "end": "2027-12-07",
       "days": 14,
-      "color": "#2d678f"
+      "title": "Hong Kong",
+      "locationId": "hong-kong",
+      "context": null,
+      "color": "#3c7298"
     },
     {
-      "id": "japan",
-      "name": "Japan",
+      "id": "travel-hong-kong-japan",
+      "type": "travel",
+      "start": "2027-12-08",
+      "end": null,
+      "days": null,
+      "title": "Hong Kong → Japan",
+      "locationId": "japan",
+      "context": "Travel day",
+      "color": null
+    },
+    {
+      "id": "location-japan",
+      "type": "location",
       "start": "2027-12-08",
       "end": "2027-12-16",
       "days": 9,
-      "color": "#874357"
+      "title": "Japan",
+      "locationId": "japan",
+      "context": null,
+      "color": "#87495b"
     },
     {
-      "id": "new-hampshire",
-      "name": "New Hampshire",
+      "id": "travel-japan-new-hampshire",
+      "type": "travel",
+      "start": "2027-12-17",
+      "end": null,
+      "days": null,
+      "title": "Japan → New Hampshire",
+      "locationId": "new-hampshire",
+      "context": "Travel day",
+      "color": null
+    },
+    {
+      "id": "location-new-hampshire",
+      "type": "location",
       "start": "2027-12-17",
       "end": "2027-12-23",
       "days": 7,
-      "color": "#65728f"
+      "title": "New Hampshire",
+      "locationId": "new-hampshire",
+      "context": null,
+      "color": "#6a748d"
     },
     {
-      "id": "snowbird",
-      "name": "Snowbird",
+      "id": "travel-new-hampshire-snowbird",
+      "type": "travel",
+      "start": "2027-12-24",
+      "end": null,
+      "days": null,
+      "title": "New Hampshire → Snowbird",
+      "locationId": "snowbird",
+      "context": "Travel day",
+      "color": null
+    },
+    {
+      "id": "location-snowbird",
+      "type": "location",
       "start": "2027-12-24",
       "end": "2027-12-31",
       "days": 8,
-      "color": "#536b8c"
+      "title": "Snowbird",
+      "locationId": "snowbird",
+      "context": null,
+      "color": "#566b89"
     },
     {
-      "id": "alps",
-      "name": "The Alps",
+      "id": "anchor-christmas",
+      "type": "anchor",
+      "start": "2027-12-25",
+      "end": null,
+      "days": null,
+      "title": "Christmas",
+      "locationId": "snowbird",
+      "context": "Snowbird",
+      "color": null
+    },
+    {
+      "id": "travel-snowbird-alps",
+      "type": "travel",
+      "start": "2028-01-01",
+      "end": null,
+      "days": null,
+      "title": "Snowbird → The Alps",
+      "locationId": "alps",
+      "context": "Travel day",
+      "color": null
+    },
+    {
+      "id": "location-alps",
+      "type": "location",
       "start": "2028-01-01",
       "end": "2028-03-30",
       "days": 90,
-      "color": "#315c78"
+      "title": "The Alps",
+      "locationId": "alps",
+      "context": "Maximum 90-day stay",
+      "color": "#365f78"
     },
     {
-      "id": "copenhagen",
-      "name": "Copenhagen",
+      "id": "travel-alps-copenhagen",
+      "type": "travel",
+      "start": "2028-03-31",
+      "end": null,
+      "days": null,
+      "title": "The Alps → Copenhagen",
+      "locationId": "copenhagen",
+      "context": "Travel day",
+      "color": null
+    },
+    {
+      "id": "location-copenhagen",
+      "type": "location",
       "start": "2028-03-31",
       "end": "2028-06-28",
       "days": 90,
-      "color": "#256b58"
-    }
-  ],
-  "anchors": [
-    {
-      "id": "afl-semi",
-      "name": "AFL semifinal",
-      "date": "2027-09-10",
-      "segmentId": "melbourne",
-      "certainty": "estimated",
-      "note": "Estimated from the comparable season; use as the Melbourne arrival target."
+      "title": "Copenhagen",
+      "locationId": "copenhagen",
+      "context": "Maximum 90-day stay",
+      "color": "#2f725f"
     },
     {
-      "id": "afl-final",
-      "name": "AFL Grand Final",
-      "date": "2027-09-25",
-      "segmentId": "melbourne",
-      "certainty": "working-date",
-      "note": "Melbourne anchor date; tickets are expected to be difficult."
-    },
-    {
-      "id": "diwali",
-      "name": "Diwali",
-      "date": "2027-10-29",
-      "segmentId": "india",
-      "certainty": "confirmed",
-      "note": "India anchor date."
-    },
-    {
-      "id": "christmas",
-      "name": "Christmas",
-      "date": "2027-12-25",
-      "segmentId": "snowbird",
-      "certainty": "confirmed",
-      "note": "Snowbird week runs December 24–31."
-    },
-    {
-      "id": "copenhagen-arrival",
-      "name": "Copenhagen arrival",
-      "date": "2028-03-31",
-      "segmentId": "copenhagen",
-      "certainty": "working-date",
-      "note": "Begins the 90-day Copenhagen stay."
+      "id": "anchor-copenhagen-arrival",
+      "type": "anchor",
+      "start": "2028-03-31",
+      "end": null,
+      "days": null,
+      "title": "Copenhagen arrival",
+      "locationId": "copenhagen",
+      "context": "Begins the 90-day Copenhagen stay",
+      "color": null
     }
   ],
   "considerations": [

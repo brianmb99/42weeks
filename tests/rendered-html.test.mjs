@@ -61,20 +61,22 @@ test("server-renders the 42 Weeks planner", async () => {
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
 });
 
-test("server-renders the separate zoomable calendar prototype", async () => {
+test("server-renders the single chronological working timeline", async () => {
   const response = await render("/calendar");
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /Calendar prototype/);
-  assert.match(html, /Trip calendar/);
+  assert.match(html, /Working timeline/);
   assert.match(html, /Exact working dates/);
   assert.match(html, /Current planner/);
   assert.match(html, /data\/trip-plan\.json/);
-  assert.match(html, /Dates run top to bottom/);
-  assert.match(html, /Overview/);
-  assert.match(html, /Weeks/);
-  assert.match(html, /Days/);
+  assert.match(html, /Location stay/);
+  assert.match(html, /Travel day/);
+  assert.match(html, /Anchor date/);
+  assert.match(html, /Travel to Melbourne/);
+  assert.match(html, /Melbourne → Brisbane area/);
+  assert.match(html, /AFL Grand Final/);
   assert.doesNotMatch(html, /Things under consideration/);
+  assert.doesNotMatch(html, />Overview<|>Weeks<|Dates run top to bottom/);
 });

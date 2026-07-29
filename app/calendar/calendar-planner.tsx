@@ -1,195 +1,116 @@
-"use client";
-
 import Link from "next/link";
-import { useMemo, useState } from "react";
 import tripPlan from "../../data/trip-plan.json";
 
-const DAY = 24 * 60 * 60 * 1000;
+type TimelineEntry = (typeof tripPlan.timeline)[number];
 
-type Density = "overview" | "weeks" | "days";
-type Segment = (typeof tripPlan.segments)[number];
-type Anchor = (typeof tripPlan.anchors)[number];
-
-const densities: Record<
-  Density,
-  { label: string; pixelsPerDay: number; minimumHeight: number }
-> = {
-  overview: { label: "Overview", pixelsPerDay: 3.2, minimumHeight: 82 },
-  weeks: { label: "Weeks", pixelsPerDay: 9, minimumHeight: 110 },
-  days: { label: "Days", pixelsPerDay: 28, minimumHeight: 196 },
-};
+const locationNames = Object.fromEntries(
+  tripPlan.timeline
+    .filter((entry) => entry.type === "location")
+    .map((entry) => [entry.locationId, entry.title]),
+);
 
 function localDate(value: string) {
   return new Date(`${value}T00:00:00`);
 }
 
-function addDays(date: Date, days: number) {
-  const result = new Date(date);
-  result.setDate(result.getDate() + days);
-  return result;
+function dateParts(value: string) {
+  const date = localDate(value);
+  return {
+    weekday: new Intl.DateTimeFormat("en-US", { weekday: "short" }).format(date),
+    monthDay: new Intl.DateTimeFormat("en-US", {
+      month: "short",
+      day: "numeric",
+    }).format(date),
+    year: date.getFullYear(),
+  };
 }
 
-function differenceInDays(start: Date, end: Date) {
-  return Math.round((end.getTime() - start.getTime()) / DAY);
-}
-
-function formatDate(value: string | Date, year = true) {
-  const date = typeof value === "string" ? localDate(value) : value;
-  return new Intl.DateTimeFormat("en-US", {
-    weekday: "short",
-    month: "short",
-    day: "numeric",
-    ...(year ? { year: "numeric" } : {}),
-  }).format(date);
-}
-
-function formatCompactDate(value: string | Date) {
-  const date = typeof value === "string" ? localDate(value) : value;
+function compactDate(value: string) {
   return new Intl.DateTimeFormat("en-US", {
     month: "short",
     day: "numeric",
     year: "numeric",
-  }).format(date);
+  }).format(localDate(value));
 }
 
-function tickDates(segment: Segment, density: Density) {
-  const start = localDate(segment.start);
-  const end = localDate(segment.end);
-  const ticks: Date[] = [];
+function typeLabel(type: TimelineEntry["type"]) {
+  if (type === "location") return "Location";
+  if (type === "travel") return "Travel";
+  return "Anchor";
+}
 
-  for (let date = new Date(start); date <= end; date = addDays(date, 1)) {
-    const isFirst = date.getTime() === start.getTime();
-    const isLast = date.getTime() === end.getTime();
-    const isMonday = date.getDay() === 1;
-    const isMonthStart = date.getDate() === 1;
+function TimelineDate({ entry }: { entry: TimelineEntry }) {
+  const start = dateParts(entry.start);
 
-    if (
-      density === "days" ||
-      (density === "weeks" && (isFirst || isLast || isMonday)) ||
-      (density === "overview" && (isFirst || isLast || isMonthStart))
-    ) {
-      ticks.push(new Date(date));
-    }
+  if (entry.end) {
+    return (
+      <div className="entry-date entry-date-range">
+        <time dateTime={entry.start}>
+          <span>{start.weekday}</span>
+          <strong>{start.monthDay}</strong>
+          <small>{start.year}</small>
+        </time>
+        <span className="date-through">to</span>
+        <time dateTime={entry.end}>
+          <strong>{dateParts(entry.end).monthDay}</strong>
+          <small>{dateParts(entry.end).year}</small>
+        </time>
+      </div>
+    );
   }
 
-  return ticks;
-}
-
-function tickPosition(segment: Segment, date: Date) {
-  if (segment.days <= 1) return 0;
-  return (differenceInDays(localDate(segment.start), date) / (segment.days - 1)) * 100;
-}
-
-function SegmentRow({
-  segment,
-  density,
-  anchors,
-}: {
-  segment: Segment;
-  density: Density;
-  anchors: Anchor[];
-}) {
-  const settings = densities[density];
-  const contentMinimum = anchors.length
-    ? 82 + anchors.length * 58
-    : settings.minimumHeight;
-  const rowHeight = Math.max(
-    settings.minimumHeight,
-    contentMinimum,
-    Math.round(segment.days * settings.pixelsPerDay),
+  return (
+    <time className="entry-date" dateTime={entry.start}>
+      <span>{start.weekday}</span>
+      <strong>{start.monthDay}</strong>
+      <small>{start.year}</small>
+    </time>
   );
-  const ticks = tickDates(segment, density);
+}
+
+function TimelineRow({ entry }: { entry: TimelineEntry }) {
+  const location = locationNames[entry.locationId];
 
   return (
-    <section
-      className={`segment-row density-${density}`}
-      style={{ "--row-height": `${rowHeight}px` } as React.CSSProperties}
-      aria-label={`${segment.name}, ${formatCompactDate(segment.start)} through ${formatCompactDate(segment.end)}`}
+    <article
+      className={`timeline-row event-${entry.type}`}
+      style={
+        entry.color
+          ? ({ "--location-color": entry.color } as React.CSSProperties)
+          : undefined
+      }
     >
-      <div className="date-bookends" aria-hidden="true">
-        <time dateTime={segment.start}>{formatCompactDate(segment.start)}</time>
-        <span>{segment.days} days</span>
-        <time dateTime={segment.end}>{formatCompactDate(segment.end)}</time>
+      <TimelineDate entry={entry} />
+      <div className="timeline-marker" aria-hidden="true">
+        <span />
       </div>
-
-      <div className="vertical-track">
-        <div className="track-line" />
-
-        {ticks.map((date) => {
-          const weekend = date.getDay() === 0 || date.getDay() === 6;
-          const isBoundary =
-            date.getTime() === localDate(segment.start).getTime() ||
-            date.getTime() === localDate(segment.end).getTime();
-
-          return (
-            <div
-              className={`date-tick ${weekend ? "is-weekend" : ""} ${isBoundary ? "is-boundary" : ""}`}
-              style={{ top: `${tickPosition(segment, date)}%` }}
-              key={date.toISOString()}
-            >
-              <span className="tick-dot" />
-              <time dateTime={date.toISOString().slice(0, 10)}>
-                {formatDate(date, density === "overview")}
-              </time>
-            </div>
-          );
-        })}
-
-        <article
-          className="destination-block"
-          style={{ "--segment-color": segment.color } as React.CSSProperties}
-        >
-          <header className="destination-heading">
-            <div>
-              <p className="location-label">Location</p>
-              <h2>{segment.name}</h2>
-            </div>
-            <div className="destination-dates">
-              <strong>{formatCompactDate(segment.start)} – {formatCompactDate(segment.end)}</strong>
-              <span>{segment.days} days</span>
-            </div>
-          </header>
-
-          {anchors.length > 0 && (
-            <div className="anchor-list" aria-label={`Anchor dates in ${segment.name}`}>
-              {anchors.map((anchor) => (
-                <div className="anchor-event" key={anchor.id}>
-                  <time dateTime={anchor.date}>{formatCompactDate(anchor.date)}</time>
-                  <div>
-                    <strong>{anchor.name}</strong>
-                    <p>{anchor.note}</p>
-                  </div>
-                  <span className={`certainty certainty-${anchor.certainty}`}>
-                    {anchor.certainty.replace("-", " ")}
-                  </span>
-                </div>
-              ))}
-            </div>
-          )}
-        </article>
+      <div className="entry-content">
+        <div className="entry-meta">
+          <span className="event-type">{typeLabel(entry.type)}</span>
+          {entry.type === "location" && entry.days && <span>{entry.days} days</span>}
+          {entry.type === "anchor" && location && <span>{location}</span>}
+        </div>
+        <h2>{entry.title}</h2>
+        {entry.type === "location" && entry.end && (
+          <p className="date-summary">
+            {compactDate(entry.start)} – {compactDate(entry.end)}
+          </p>
+        )}
+        {entry.context && <p>{entry.context}</p>}
       </div>
-    </section>
+    </article>
   );
 }
 
 export default function CalendarPlanner() {
-  const [density, setDensity] = useState<Density>("overview");
-  const anchorsBySegment = useMemo(() => {
-    return tripPlan.anchors.reduce<Record<string, Anchor[]>>((result, anchor) => {
-      result[anchor.segmentId] ??= [];
-      result[anchor.segmentId].push(anchor);
-      return result;
-    }, {});
-  }, []);
-
   return (
-    <main className="calendar-page">
+    <main className="timeline-page">
       <header className="page-header">
         <div>
           <p className="eyebrow">{tripPlan.title}</p>
-          <h1>Trip calendar</h1>
+          <h1>Working timeline</h1>
           <p className="trip-range">
-            {formatCompactDate(tripPlan.trip.start)} – {formatCompactDate(tripPlan.trip.end)}
+            {compactDate(tripPlan.trip.start)} – {compactDate(tripPlan.trip.end)}
           </p>
         </div>
         <Link href="/" className="back-link">
@@ -197,50 +118,24 @@ export default function CalendarPlanner() {
         </Link>
       </header>
 
-      <div className="calendar-toolbar">
-        <div className="density-control" role="group" aria-label="Calendar detail">
-          <span>Detail</span>
-          {Object.entries(densities).map(([value, setting]) => (
-            <button
-              type="button"
-              className={density === value ? "is-active" : ""}
-              aria-pressed={density === value}
-              onClick={() => setDensity(value as Density)}
-              key={value}
-            >
-              {setting.label}
-            </button>
-          ))}
-        </div>
-        <p className="toolbar-help">
-          Dates run top to bottom. Increase detail to reveal weeks or individual days.
-        </p>
+      <section className="timeline-key" aria-label="Timeline key">
+        <div><span className="key-mark key-location" />Location stay</div>
+        <div><span className="key-mark key-travel" />Travel day</div>
+        <div><span className="key-mark key-anchor" />Anchor date</div>
+      </section>
+
+      <div className="source-line">
+        Exact working dates · source: <code>data/trip-plan.json</code>
       </div>
 
-      <div className="source-strip">
-        <strong>Exact working dates</strong>
-        <span>Definitive source: <code>data/trip-plan.json</code></span>
-      </div>
-
-      <div className="timeline-header" aria-hidden="true">
-        <span>Date range</span>
-        <span>Calendar</span>
-        <span>Destination and anchors</span>
-      </div>
-
-      <div className="vertical-calendar">
-        {tripPlan.segments.map((segment) => (
-          <SegmentRow
-            segment={segment}
-            density={density}
-            anchors={anchorsBySegment[segment.id] ?? []}
-            key={segment.id}
-          />
+      <section className="timeline" aria-label="Chronological trip timeline">
+        {tripPlan.timeline.map((entry) => (
+          <TimelineRow entry={entry} key={entry.id} />
         ))}
-      </div>
+      </section>
 
-      <footer className="calendar-footer">
-        End of working timeline · {formatCompactDate(tripPlan.trip.end)}
+      <footer className="page-footer">
+        End of working timeline · {compactDate(tripPlan.trip.end)}
       </footer>
     </main>
   );
