@@ -76,6 +76,7 @@ Replace the first two with the entries below. Retain the October 24 India travel
 ### Calendar display guidance
 
 - Location bars should emphasize Hamilton Island and Longreach, not Brisbane.
+- On the simplified left rail, label the Longreach / Brisbane connection sequence **Outback** and include both Brisbane Airport nights in that segment. Keep the exact airport locations in expanded daily detail.
 - The two work blocks and two vacation blocks should be visually distinguishable.
 - The calendar card for each location should link to its dedicated page.
 - Do not present any flight as nonstop or any attraction as operating until the 2027 timetable is published.

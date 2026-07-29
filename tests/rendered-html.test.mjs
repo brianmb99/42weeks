@@ -100,7 +100,9 @@ test("server-renders the expandable weekly calendar", async () => {
   assert.match(html, /Melbourne/);
   assert.match(html, /Hamilton Island/);
   assert.match(html, /Longreach/);
-  assert.match(html, /Brisbane Airport/);
+  assert.match(html, /Expand all weeks in Outback/);
+  assert.match(html, /Expand all weeks in India/);
+  assert.doesNotMatch(html, /Expand all weeks in (Brisbane Airport|In transit|Longreach)/);
   assert.match(html, />Description</);
   assert.match(html, /Arrive in Melbourne; stay for the week/);
   assert.match(html, /Fly Melbourne → Hamilton Island/);
@@ -172,6 +174,7 @@ test("server-renders the expandable weekly calendar", async () => {
   );
   assert.equal(tripPlan.trip.start, "2027-09-18");
   assert.match(tripPlan.locationPolicy, /sleep at the end/);
+  assert.match(tripPlan.railPolicy, /groups connection and overnight-travel/);
   const melbourneTravel = tripPlan.timeline.find(
     (entry) => entry.id === "travel-to-geelong",
   );
@@ -197,6 +200,17 @@ test("server-renders the expandable weekly calendar", async () => {
     [geelong.start, geelong.end, roadTrip.start, roadTrip.end],
     ["2027-09-19", "2027-09-24", "2027-09-25", "2027-10-02"],
   );
+  const oct16Airport = tripPlan.timeline.find(
+    (entry) => entry.id === "location-brisbane-airport-oct-16",
+  );
+  const oct23Airport = tripPlan.timeline.find(
+    (entry) => entry.id === "location-brisbane-airport-oct-23",
+  );
+  assert.equal(oct16Airport.railGroupId, "location-longreach");
+  assert.equal(oct23Airport.railGroupId, "location-longreach");
+  assert.equal(oct16Airport.title, "Brisbane Airport");
+  assert.equal(oct23Airport.title, "Brisbane Airport");
+  assert.equal(longreach.railLabel, "Outback");
   assert.deepEqual(
     [
       melbourne.start,

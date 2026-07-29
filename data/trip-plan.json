@@ -4,6 +4,7 @@
   "title": "42 Weeks",
   "datePolicy": "This ordered timeline is the definitive source for exact working dates. Location start and end dates are inclusive. Dated events use fixed=true only when their dates must not move as the working plan is rebalanced.",
   "locationPolicy": "A location entry identifies where the family expects to sleep at the end of that calendar date. Use an explicit In transit location for an overnight travel night. A named multi-stop route may stand in for that route's individual overnight stops.",
+  "railPolicy": "The calendar's left rail groups connection and overnight-travel locations into the most useful adjacent trip segment. Expanded days retain the exact underlying sleep location.",
   "trip": {
     "start": "2027-09-18",
     "end": "2028-06-28"
@@ -184,7 +185,10 @@
       "title": "In transit",
       "locationId": "in-transit-australia",
       "context": "Overnight flight toward Melbourne.",
-      "color": "#5e6770"
+      "color": "#5e6770",
+      "railGroupId": "location-geelong",
+      "railLabel": "Geelong",
+      "railColor": "#397ca6"
     },
     {
       "id": "location-geelong",
@@ -315,7 +319,10 @@
       "title": "Brisbane Airport",
       "locationId": "brisbane-airport-oct-16",
       "context": "Connection night only.",
-      "color": "#8999a2"
+      "color": "#8999a2",
+      "railGroupId": "location-longreach",
+      "railLabel": "Outback",
+      "railColor": "#c47b39"
     },
     {
       "id": "travel-brisbane-longreach",
@@ -338,7 +345,8 @@
       "title": "Longreach",
       "locationId": "longreach",
       "context": "Six nights in Outback Queensland.",
-      "color": "#c47b39"
+      "color": "#c47b39",
+      "railLabel": "Outback"
     },
     {
       "id": "event-longreach-work-block",
@@ -387,7 +395,10 @@
       "title": "Brisbane Airport",
       "locationId": "brisbane-airport-oct-23",
       "context": "Connection night before India.",
-      "color": "#8999a2"
+      "color": "#8999a2",
+      "railGroupId": "location-longreach",
+      "railLabel": "Outback",
+      "railColor": "#c47b39"
     },
     {
       "id": "travel-brisbane-india",
@@ -409,7 +420,10 @@
       "title": "In transit",
       "locationId": "in-transit-india",
       "context": "Overnight travel toward India.",
-      "color": "#5e6770"
+      "color": "#5e6770",
+      "railGroupId": "location-india",
+      "railLabel": "India",
+      "railColor": "#a95f27"
     },
     {
       "id": "location-india",
@@ -498,7 +512,10 @@
       "title": "In transit",
       "locationId": "in-transit-new-hampshire",
       "context": "Overnight travel home from Hong Kong.",
-      "color": "#5e6770"
+      "color": "#5e6770",
+      "railGroupId": "location-new-hampshire",
+      "railLabel": "New Hampshire",
+      "railColor": "#737b86"
     },
     {
       "id": "location-new-hampshire",
@@ -587,7 +604,10 @@
       "title": "In transit",
       "locationId": "in-transit-alps",
       "context": "Overnight flight to Europe.",
-      "color": "#5e6770"
+      "color": "#5e6770",
+      "railGroupId": "location-alps",
+      "railLabel": "The Alps",
+      "railColor": "#3f7b62"
     },
     {
       "id": "location-alps",

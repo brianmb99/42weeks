@@ -18,6 +18,9 @@ type LocationEntry = TimelineEntry & {
   end: string;
   days: number;
   color: string;
+  railGroupId?: string;
+  railLabel?: string;
+  railColor?: string;
 };
 type DayStatus = "work" | "off" | "travel" | "vacation";
 type DayOverride = {
@@ -48,6 +51,14 @@ type RailSegment = {
   top: number;
   height: number;
 };
+type RailLocation = {
+  id: string;
+  title: string;
+  color: string;
+  start: string;
+  end: string;
+  days: number;
+};
 
 const locations = tripPlan.timeline.filter(
   (entry): entry is LocationEntry =>
@@ -56,6 +67,31 @@ const locations = tripPlan.timeline.filter(
     typeof entry.days === "number" &&
     typeof entry.color === "string",
 );
+const railLocations = locations.reduce<RailLocation[]>((result, location) => {
+  const id = location.railGroupId ?? location.id;
+  const title = location.railLabel ?? location.title;
+  const color = location.railColor ?? location.color;
+  const previous = result[result.length - 1];
+  const followsPrevious =
+    previous &&
+    previous.id === id &&
+    isoDate(addDays(localDate(previous.end), 1)) === location.start;
+
+  if (followsPrevious) {
+    previous.end = location.end;
+    previous.days += location.days;
+  } else {
+    result.push({
+      id,
+      title,
+      color,
+      start: location.start,
+      end: location.end,
+      days: location.days,
+    });
+  }
+  return result;
+}, []);
 const marketEntries: MarketEntry[] = tripPlan.marketCalendar.dates.map((entry) => ({
   id: entry.id,
   type:
@@ -378,7 +414,7 @@ function collapsedDatePosition(date: string, endEdge = false) {
 }
 
 function initialRailSegments(): RailSegment[] {
-  return locations.map((location) => {
+  return railLocations.map((location) => {
     const top = collapsedDatePosition(location.start);
     const bottom = collapsedDatePosition(location.end, true);
     return {
@@ -396,7 +432,10 @@ function initialRailSegments(): RailSegment[] {
 function weekNumbersForLocation(locationId: string) {
   return weeks
     .filter((week) =>
-      week.days.some((day) => day.location.id === locationId),
+      week.days.some(
+        (day) =>
+          (day.location.railGroupId ?? day.location.id) === locationId,
+      ),
     )
     .map((week) => week.number);
 }
@@ -437,7 +476,7 @@ export default function CalendarPlanner() {
 
     function measureRail() {
       setRailSegments(
-        locations.map((location) => {
+        railLocations.map((location) => {
           const top = measureDate(location.start);
           const bottom = measureDate(location.end, true);
           return {
