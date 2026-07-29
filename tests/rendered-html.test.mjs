@@ -2,13 +2,13 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 
-async function render() {
+async function render(path = "/") {
   const workerUrl = new URL("../dist/server/index.js", import.meta.url);
   workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
   const { default: worker } = await import(workerUrl.href);
 
   return worker.fetch(
-    new Request("http://localhost/", {
+    new Request(`http://localhost${path}`, {
       headers: { accept: "text/html" },
     }),
     {
@@ -59,4 +59,20 @@ test("server-renders the 42 Weeks planner", async () => {
     /https:\/\/www\.backroads\.com\/trips\/MBIIF\/basque-country-family-multi-adventure-tour/,
   );
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
+});
+
+test("server-renders the separate zoomable calendar prototype", async () => {
+  const response = await render("/calendar");
+  assert.equal(response.status, 200);
+  assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
+
+  const html = await response.text();
+  assert.match(html, /Calendar prototype/);
+  assert.match(html, /Things under consideration/);
+  assert.match(html, /Trip calendar/);
+  assert.match(html, /Whole trip/);
+  assert.match(html, /Back to current planner/);
+  assert.match(html, /Definitive working timeline/);
+  assert.match(html, /data\/trip-plan\.json/);
+  assert.match(html, /Portugal: Algarve &amp; Alentejo/);
 });

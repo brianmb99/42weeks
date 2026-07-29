@@ -1,0 +1,171 @@
+{
+  "schemaVersion": 1,
+  "lastReviewed": "2026-07-28",
+  "title": "42 Weeks",
+  "datePolicy": "These are the exact working dates. Segment start and end dates are inclusive. Change dates here first; the calendar UI renders from this file.",
+  "trip": {
+    "start": "2027-09-09",
+    "end": "2028-06-28"
+  },
+  "segments": [
+    {
+      "id": "melbourne",
+      "name": "Melbourne",
+      "start": "2027-09-09",
+      "end": "2027-10-03",
+      "days": 25,
+      "color": "#ba4b3a"
+    },
+    {
+      "id": "brisbane",
+      "name": "Brisbane area",
+      "start": "2027-10-04",
+      "end": "2027-10-26",
+      "days": 23,
+      "color": "#c47d25"
+    },
+    {
+      "id": "india",
+      "name": "India",
+      "start": "2027-10-27",
+      "end": "2027-11-09",
+      "days": 14,
+      "color": "#a5527a"
+    },
+    {
+      "id": "singapore",
+      "name": "Singapore",
+      "start": "2027-11-10",
+      "end": "2027-11-23",
+      "days": 14,
+      "color": "#197d74"
+    },
+    {
+      "id": "hong-kong",
+      "name": "Hong Kong",
+      "start": "2027-11-24",
+      "end": "2027-12-07",
+      "days": 14,
+      "color": "#2d678f"
+    },
+    {
+      "id": "japan",
+      "name": "Japan",
+      "start": "2027-12-08",
+      "end": "2027-12-16",
+      "days": 9,
+      "color": "#874357"
+    },
+    {
+      "id": "new-hampshire",
+      "name": "New Hampshire",
+      "start": "2027-12-17",
+      "end": "2027-12-23",
+      "days": 7,
+      "color": "#65728f"
+    },
+    {
+      "id": "snowbird",
+      "name": "Snowbird",
+      "start": "2027-12-24",
+      "end": "2027-12-31",
+      "days": 8,
+      "color": "#536b8c"
+    },
+    {
+      "id": "alps",
+      "name": "The Alps",
+      "start": "2028-01-01",
+      "end": "2028-03-30",
+      "days": 90,
+      "color": "#315c78"
+    },
+    {
+      "id": "copenhagen",
+      "name": "Copenhagen",
+      "start": "2028-03-31",
+      "end": "2028-06-28",
+      "days": 90,
+      "color": "#256b58"
+    }
+  ],
+  "anchors": [
+    {
+      "id": "afl-semi",
+      "name": "AFL semifinal",
+      "date": "2027-09-10",
+      "segmentId": "melbourne",
+      "certainty": "estimated",
+      "note": "Estimated from the comparable season; use as the Melbourne arrival target."
+    },
+    {
+      "id": "afl-final",
+      "name": "AFL Grand Final",
+      "date": "2027-09-25",
+      "segmentId": "melbourne",
+      "certainty": "working-date",
+      "note": "Melbourne anchor date; tickets are expected to be difficult."
+    },
+    {
+      "id": "diwali",
+      "name": "Diwali",
+      "date": "2027-10-29",
+      "segmentId": "india",
+      "certainty": "confirmed",
+      "note": "India anchor date."
+    },
+    {
+      "id": "christmas",
+      "name": "Christmas",
+      "date": "2027-12-25",
+      "segmentId": "snowbird",
+      "certainty": "confirmed",
+      "note": "Snowbird week runs December 24–31."
+    },
+    {
+      "id": "copenhagen-arrival",
+      "name": "Copenhagen arrival",
+      "date": "2028-03-31",
+      "segmentId": "copenhagen",
+      "certainty": "working-date",
+      "note": "Begins the 90-day Copenhagen stay."
+    }
+  ],
+  "considerations": [
+    {
+      "title": "Paris and the Eiffel Tower",
+      "meta": "Must do · date TBD",
+      "href": null
+    },
+    {
+      "title": "Berlin",
+      "meta": "Likely · date TBD",
+      "href": null
+    },
+    {
+      "title": "Italy",
+      "meta": "May deserve a separate trip",
+      "href": null
+    },
+    {
+      "title": "Portugal: Algarve & Alentejo",
+      "meta": "Backroads family trip · May candidate",
+      "href": "https://www.backroads.com/trips/MPGIF/portugals-algarve-alentejo-family-multi-adventure-tour"
+    },
+    {
+      "title": "Basque Country",
+      "meta": "Backroads family trip · May candidate",
+      "href": "https://www.backroads.com/trips/MBIIF/basque-country-family-multi-adventure-tour"
+    },
+    {
+      "title": "Alps hiking trip",
+      "meta": "Route and dates TBD",
+      "href": null
+    },
+    {
+      "title": "Normandy / World War history",
+      "meta": "Itinerary and dates TBD",
+      "href": null
+    }
+  ]
+}
