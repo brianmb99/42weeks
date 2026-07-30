@@ -27,6 +27,13 @@ function assertNoHotlinkedPhotos(html) {
   assert.doesNotMatch(html, /https:\/\/images\.(?:unsplash|pexels)\.com/);
 }
 
+function assertUsesImperialUnits(html) {
+  assert.doesNotMatch(
+    html,
+    /\d[\d.,â€“â€”\s]*(?:km|kg)\b|\b(?:kilomet(?:er|re)s?|kilograms?|lit(?:er|re)s?|metres?)\b/i,
+  );
+}
+
 test("server-renders the 42 Weeks overview", async () => {
   const response = await render();
   assert.equal(response.status, 200);
@@ -440,6 +447,8 @@ test("server-renders the Hamilton Island working week", async () => {
   assert.match(html, />Outback</);
   assert.match(html, /Whitsundays Sea Kayak Expedition Options\.md/);
   assert.match(html, /\/trips\/whitsundays-sea-kayaking\/planning-booking/);
+  assert.match(html, /12.{1,6}14 mile/);
+  assertUsesImperialUnits(html);
 });
 
 test("server-renders the Outback Queensland plan", async () => {
@@ -520,6 +529,9 @@ test("server-renders all three Whitsundays sea-kayak options", async () => {
     assert.match(html, /Whitsundays overview/);
     assert.match(html, /conceptual itinerary overlay, not a navigation chart/i);
     assert.match(html, /Planning &amp; booking/);
+    assert.match(html, /gallons/);
+    assert.match(html, /pounds/);
+    assertUsesImperialUnits(html);
   }
 });
 
@@ -584,6 +596,8 @@ test("server-renders the Great Ocean Road Loop detail", async () => {
   assert.match(html, /Day by day/);
   assert.match(html, /Book first/);
   assert.match(html, /data\/australia-part-one\.json/);
+  assert.match(html, /2\.6 miles round trip/);
+  assertUsesImperialUnits(html);
 
   const tripPlan = JSON.parse(
     await readFile(new URL("../data/trip-plan.json", import.meta.url), "utf8"),

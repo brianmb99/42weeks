@@ -64,7 +64,7 @@ export const kayakOptions: KayakOption[] = [
       "Scamper to Crayfish Beach → reef-heavy northern Hook Island paddle → Maureen’s Cove → Scamper pickup",
     bestWhen:
       "The family deliberately wants reef snorkeling inside the expedition, northern Hook has a genuinely calm forecast, and Salty Dog approves the tide, landing, rescue, and navigation plan.",
-    distanceSummary: "8–12km transfer, plus optional unloaded paddles",
+    distanceSummary: "5–7 miles transfer, plus optional unloaded paddles",
     distanceType: "Provisional planning range—confirm locally",
     camps: "Crayfish Beach · Maureen’s Cove",
     reefVerdict:
@@ -136,7 +136,7 @@ export const kayakOptions: KayakOption[] = [
     distances: [
       {
         segment: "Crayfish → Maureen’s Cove coastal route",
-        distance: "8–12km",
+        distance: "5–7 miles",
         type: "Provisional planning range—confirm locally",
       },
       {
@@ -152,7 +152,7 @@ export const kayakOptions: KayakOption[] = [
           "Maximum 12 people; composting toilet only",
           "No mobile reception",
           "Mid-to-high-tide shallow-craft landing",
-          "Extensive fringing reef metres from camp",
+          "Extensive fringing reef just offshore from camp",
         ],
       },
       {
@@ -215,14 +215,14 @@ export const kayakOptions: KayakOption[] = [
     route:
       "Scamper to South Whitehaven → Henning Island camp → Paddle Bay pickup on South Molle",
     bestWhen:
-      "The family and operators support one serious 20–23km day and Scamper’s tide-driven schedule permits a useful Paddle Bay pickup.",
-    distanceSummary: "Approximately 29–32km total",
+      "The family and operators support one serious 12–14 mile day and Scamper’s tide-driven schedule permits a useful Paddle Bay pickup.",
+    distanceSummary: "Approximately 18–20 miles total",
     distanceType: "Official route-planner distances",
     camps: "South Whitehaven · Northern Spit, Henning",
     reefVerdict:
       "Keep the important snorkeling on the separate boat-based outer-reef day. This expedition should focus on paddling, Whitehaven, two camps, planned shore breaks and the three-island journey.",
     recommendation:
-      "Current first choice, provided Salty Dog approves the loaded 20–23km day and Scamper can provide a useful Paddle Bay pickup.",
+      "Current first choice, provided Salty Dog approves the loaded 12–14 mile day and Scamper can provide a useful Paddle Bay pickup.",
     cost: "About A$1,750–A$2,000",
     photos: [
       {
@@ -257,7 +257,7 @@ export const kayakOptions: KayakOption[] = [
         description:
           "Scamper drops the family at an all-tide landing. Establish camp, complete the loaded-boat check and enjoy Whitehaven after most day boats leave.",
         bullets: [
-          "Walk the 1.2km Solway circuit.",
+          "Walk the ¾-mile Solway circuit.",
           "Do not confuse South Whitehaven with Hill Inlet at the beach’s northern end.",
           "Keep the optional Hill Inlet paddle out of the committed plan.",
         ],
@@ -266,7 +266,7 @@ export const kayakOptions: KayakOption[] = [
         label: "Day 2",
         title: "Whitehaven to Henning",
         description:
-          "A serious 20–23km family day via Solway Passage, Chance Bay and a second operator-selected southern cove before the Henning crossing.",
+          "A serious 12–14 mile family day via Solway Passage, Chance Bay and a second operator-selected southern cove before the Henning crossing.",
         bullets: [
           "Time Solway Passage for wind and current.",
           "Use Chance as the first planned shore break if access is workable.",
@@ -277,7 +277,7 @@ export const kayakOptions: KayakOption[] = [
         label: "Day 3",
         title: "Henning to Paddle Bay",
         description:
-          "Paddle roughly 9km to South Molle only if the pickup time leaves a credible morning. Otherwise arrange pickup from Henning.",
+          "Paddle roughly 5½ miles to South Molle only if the pickup time leaves a credible morning. Otherwise arrange pickup from Henning.",
         bullets: [
           "Northern Spit gives all-tide access and mobile reception.",
           "Paddle Bay itself needs a useful mid-to-high tide.",
@@ -288,12 +288,12 @@ export const kayakOptions: KayakOption[] = [
     distances: [
       {
         segment: "Whitehaven → Henning",
-        distance: "Approximately 23km",
+        distance: "Approximately 14 miles",
         type: "Official Ngaro Sea Trail route-planner distance",
       },
       {
         segment: "Henning → Paddle Bay",
-        distance: "Approximately 9km",
+        distance: "Approximately 5½ miles",
         type: "Official Ngaro Sea Trail route-planner distance",
       },
     ],
@@ -319,7 +319,7 @@ export const kayakOptions: KayakOption[] = [
     ],
     weatherGates: [
       "A safe Solway Passage tide and wind combination",
-      "Family readiness for a serious 20–23km loaded day with two planned shore breaks",
+      "Family readiness for a serious 12–14 mile loaded day with two planned shore breaks",
       "A clearly identified second rest/bailout beach",
       "A useful Paddle Bay tide and Scamper pickup time",
     ],
@@ -330,7 +330,7 @@ export const kayakOptions: KayakOption[] = [
       "Delete the Paddle Bay leg and collect from Henning if timing is poor.",
     ],
     questions: [
-      "Is 20–23km realistic for these loaded tandems and children?",
+      "Is 12–14 miles realistic for these loaded tandems and children?",
       "Which second shore break works in the expected wind direction?",
       "Can Scamper collect from Paddle Bay late enough to make Day 3 worthwhile?",
       "Can the Wednesday Hardy Reef day and Thursday departure both be confirmed?",
@@ -367,7 +367,7 @@ export const kayakOptions: KayakOption[] = [
       "Scamper to South Whitehaven → Chance Bay camp → Henning Island pickup",
     bestWhen:
       "The family wants more even transfer stages, more camp time, a clearer bailout and less dependence on a final Paddle Bay pickup.",
-    distanceSummary: "Approximately 23–29km total",
+    distanceSummary: "Approximately 14–18 miles total",
     distanceType: "Official distance plus account-derived planning range",
     camps: "South Whitehaven · Chance Bay",
     reefVerdict:
@@ -410,14 +410,14 @@ export const kayakOptions: KayakOption[] = [
         bullets: [
           "Complete the loaded-boat check.",
           "Protect time for Whitehaven after the day boats leave.",
-          "Do not add 18–20km to Hill Inlet unless every timing variable is unusually favorable.",
+          "Do not add an 11–12½ mile Hill Inlet round trip unless every timing variable is unusually favorable.",
         ],
       },
       {
         label: "Day 2",
         title: "Whitehaven to Chance Bay",
         description:
-          "An approximately 8km transfer through Solway Passage, leaving substantial time for camp, snorkeling, the walking track and child-led exploration.",
+          "An approximately 5-mile transfer through Solway Passage, leaving substantial time for camp, snorkeling, the walking track and child-led exploration.",
         bullets: [
           "Approach Chance around the useful tide level.",
           "Use protected southern coves as optional micro-stops.",
@@ -428,7 +428,7 @@ export const kayakOptions: KayakOption[] = [
         label: "Day 3",
         title: "Chance Bay to Henning",
         description:
-          "Plan 15–21km with two deliberate stops before the final traffic-and-current crossing to Henning’s all-tide Northern Spit.",
+          "Plan 9–13 miles with two deliberate stops before the final traffic-and-current crossing to Henning’s all-tide Northern Spit.",
         bullets: [
           "Stop first near Turtle Bay or another approved southern cove.",
           "Make the second stop the honest pre-crossing decision point.",
@@ -439,17 +439,17 @@ export const kayakOptions: KayakOption[] = [
     distances: [
       {
         segment: "Whitehaven → Chance Bay",
-        distance: "Approximately 8km",
+        distance: "Approximately 5 miles",
         type: "Planning distance from route brief",
       },
       {
         segment: "Chance Bay → Henning",
-        distance: "Approximately 15km",
+        distance: "Approximately 9 miles",
         type: "Official route-planner distance",
       },
       {
         segment: "Chance Bay → Henning with detours",
-        distance: "Up to approximately 21km",
+        distance: "Up to approximately 13 miles",
         type: "Account-derived planning range—confirm locally",
       },
     ],
@@ -488,7 +488,7 @@ export const kayakOptions: KayakOption[] = [
     questions: [
       "Which southern Whitsunday coves are suitable in the forecast wind?",
       "Is Chance access workable at the required time?",
-      "Should the family plan around the 15km figure or a longer real-world day?",
+      "Should the family plan around the 9-mile figure or a longer real-world day?",
       "Can the Wednesday Hardy Reef day and Thursday departure both be confirmed?",
     ],
     links: [
@@ -520,7 +520,7 @@ export const sharedKayakPlanning = {
   source: "Whitsundays Sea Kayak Expedition Options.md",
   party: "Two adults and two children under 12",
   boats: "Two decked double sea kayaks; one adult and one child in each",
-  water: "At least 60 litres / 60kg for four people over three days",
+  water: "At least 16 gallons / about 133 pounds for four people over three days",
   operators: [
     {
       title: "Salty Dog sea-kayak hire",
