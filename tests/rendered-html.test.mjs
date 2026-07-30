@@ -75,6 +75,11 @@ test("server-renders the 42 Weeks overview", async () => {
     html,
     /\/images\/victoria\/twelve-apostles\.jpg/,
   );
+  assert.match(html, /href="\/australia" aria-label="Open Australia plans"/);
+  assert.match(html, /\/images\/home\/val-disere-winter\.jpg/);
+  assert.match(html, /\/images\/home\/copenhagen-nyhavn\.jpg/);
+  assert.match(html, /Val d&#x27;Isère/);
+  assert.doesNotMatch(html, /Australia highlight/);
   assertNoHotlinkedPhotos(html);
   assert.match(html, /\/og\.png/);
   assert.match(html, /summary_large_image/);

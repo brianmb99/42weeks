@@ -1,7 +1,6 @@
 import type { CSSProperties } from "react";
 import type { Metadata } from "next";
 import tripPlan from "../data/trip-plan.json";
-import australiaPlan from "../data/australia-part-one.json";
 import { sitePath } from "../lib/site-path";
 import SiteNav from "./site-nav";
 import "./home.css";
@@ -330,8 +329,6 @@ function PlaceGrid({
 }
 
 export default function Home() {
-  const roadTrip = australiaPlan.segments.roadTrip;
-
   return (
     <>
       <SiteNav current="home" />
@@ -460,15 +457,20 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="home-feature" aria-labelledby="gstr-title">
-          <figure>
-            <img
-              alt="The Twelve Apostles and cliffs along Victoria’s Great Ocean Road"
-              fetchPriority="high"
-              src={sitePath("/images/victoria/twelve-apostles.jpg")}
-            />
+        <section
+          className="home-trip-collage"
+          aria-label="Australia, Val d'Isère, and Copenhagen"
+        >
+          <figure className="home-trip-collage-australia">
+            <a href={sitePath("/australia")} aria-label="Open Australia plans">
+              <img
+                alt="The Twelve Apostles and cliffs along Victoria's Great Ocean Road"
+                fetchPriority="high"
+                src={sitePath("/images/victoria/twelve-apostles.jpg")}
+              />
+              <span>Australia</span>
+            </a>
             <figcaption>
-              Twelve Apostles, Victoria · Photo by{" "}
               <a
                 href="https://unsplash.com/photos/a-view-of-the-beach-and-cliffs-of-the-great-ocean-road-Yd-HvUwdqMc"
                 rel="noreferrer"
@@ -478,39 +480,40 @@ export default function Home() {
               </a>
             </figcaption>
           </figure>
-          <div className="home-feature-copy">
-            <p className="home-kicker">Australia highlight · 7-day vacation</p>
-            <h2 id="gstr-title">{roadTrip.title}</h2>
-            <p>{roadTrip.summary}</p>
-            <div className="home-feature-route">
-              {roadTrip.overnights.map((stop) => (
-                <span key={stop.place}>
-                  <strong>{stop.place}</strong>
-                  <small>
-                    {stop.nights
-                      ? `${stop.nights} night${stop.nights === 1 ? "" : "s"}`
-                      : "finish"}
-                  </small>
-                </span>
-              ))}
-            </div>
-            <div className="home-feature-actions">
+
+          <figure>
+            <img
+              alt="Skiers walking through deep snow in Val d'Isère"
+              src={sitePath("/images/home/val-disere-winter.jpg")}
+            />
+            <span>Val d'Isère</span>
+            <figcaption>
               <a
-                className="home-primary-action"
-                href={sitePath("/trips/great-southern-touring-route")}
-              >
-                Open the 7-day plan
-              </a>
-              <a
-                className="home-text-action"
-                href={roadTrip.officialRoute.url}
+                href="https://commons.wikimedia.org/wiki/File:Village_enneig%C3%A9_pendant_l%27hiver_-_Val_d%27Is%C3%A8re.jpg"
                 rel="noreferrer"
                 target="_blank"
               >
-                Visit Victoria route ↗
+                Webvaldisere / CC BY-SA 4.0
               </a>
-            </div>
-          </div>
+            </figcaption>
+          </figure>
+
+          <figure>
+            <img
+              alt="Colorful buildings and boats along Copenhagen's Nyhavn canal"
+              src={sitePath("/images/home/copenhagen-nyhavn.jpg")}
+            />
+            <span>Copenhagen</span>
+            <figcaption>
+              <a
+                href="https://commons.wikimedia.org/wiki/File:Nyhavn-2023.jpg"
+                rel="noreferrer"
+                target="_blank"
+              >
+                Mahendra / CC BY-SA 4.0
+              </a>
+            </figcaption>
+          </figure>
         </section>
 
         <div id="places">
