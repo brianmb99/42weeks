@@ -11,6 +11,10 @@ const siteOrigin = "https://brianmb99.github.io";
 const routes = [
   "/",
   "/calendar",
+  "/australia",
+  "/australia/geelong",
+  "/australia/melbourne",
+  "/australia/sydney",
   "/trips/great-southern-touring-route",
   "/trips/hamilton-island-working-week",
   "/trips/whitsundays-sea-kayaking/hook-island-reef",

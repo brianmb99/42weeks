@@ -25,7 +25,7 @@ export default function WhitsundaysKayakOption({
 }) {
   return (
     <>
-      <SiteNav current="hamilton" />
+      <SiteNav current="australia" australiaCurrent="whitsundays" />
       <main className="kayak-page">
         <header className="kayak-header">
           <div className="kayak-rank">

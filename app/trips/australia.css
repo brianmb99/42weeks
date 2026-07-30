@@ -1,0 +1,376 @@
+:root {
+  --aus-ink: #172126;
+  --aus-muted: #657178;
+  --aus-rule: #d8dddf;
+  --aus-paper: #fbfaf6;
+  --aus-blue: #315f78;
+  --aus-pale-blue: #e8f0f3;
+  --aus-red: #9c4c39;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--aus-ink);
+  background: var(--aus-paper);
+}
+
+.aus-city-page,
+.aus-overview-page {
+  width: min(1100px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 30px 0 56px;
+  font-family: var(--font-sans), Arial, sans-serif;
+}
+
+.aus-city-header,
+.aus-overview-header {
+  padding: 0 0 30px 150px;
+  border-bottom: 2px solid var(--aus-ink);
+}
+
+.aus-city-header > p:first-child,
+.aus-overview-header > p:first-child,
+.aus-stay > div > p:first-child,
+.aus-ideas > header p,
+.aus-planning-notes > p:first-child,
+.aus-route-intro p {
+  margin: 0 0 6px;
+  color: var(--aus-muted);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.aus-city-header h1,
+.aus-overview-header h1 {
+  max-width: 820px;
+  margin: 0;
+  font-size: clamp(38px, 6vw, 64px);
+  font-weight: 650;
+  letter-spacing: -0.055em;
+  line-height: 0.95;
+}
+
+.aus-city-facts,
+.aus-overview-facts {
+  margin-top: 17px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px 18px;
+  color: #38454b;
+  font-size: 12px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.aus-city-facts span + span::before,
+.aus-overview-facts span + span::before {
+  margin-right: 18px;
+  color: #9ca6aa;
+  content: "·";
+}
+
+.aus-city-summary,
+.aus-overview-summary {
+  max-width: 790px;
+  margin: 22px 0 0;
+  color: #3f4b51;
+  font-size: 16px;
+  line-height: 1.58;
+}
+
+.aus-stay {
+  margin-top: 12px;
+  padding: 31px 0;
+  border-top: 1px solid var(--aus-rule);
+  border-bottom: 1px solid var(--aus-rule);
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+  gap: clamp(36px, 7vw, 90px);
+}
+
+.aus-stay > div {
+  padding-left: 60px;
+}
+
+.aus-stay h2,
+.aus-ideas h2,
+.aus-planning-notes h2,
+.aus-route-intro h2 {
+  margin: 0;
+  font-size: clamp(25px, 3vw, 36px);
+  font-weight: 650;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
+
+.aus-stay > div > p:last-child {
+  margin: 16px 0 0;
+  color: #49565d;
+  font-size: 13px;
+  line-height: 1.62;
+}
+
+.aus-stay ul,
+.aus-planning-notes ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.aus-stay li {
+  padding: 10px 0 10px 21px;
+  border-bottom: 1px solid var(--aus-rule);
+  position: relative;
+  color: #455158;
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.aus-stay li::before {
+  width: 7px;
+  height: 7px;
+  border: 2px solid var(--aus-blue);
+  border-radius: 50%;
+  position: absolute;
+  top: 13px;
+  left: 0;
+  content: "";
+}
+
+.aus-ideas {
+  padding: 38px 0 18px;
+  display: grid;
+  grid-template-columns: 170px minmax(0, 1fr);
+  gap: 32px;
+}
+
+.aus-ideas > div {
+  border-top: 1px solid var(--aus-rule);
+}
+
+.aus-ideas article {
+  padding: 19px 0;
+  border-bottom: 1px solid var(--aus-rule);
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 18px;
+}
+
+.aus-ideas article > span {
+  color: var(--aus-red);
+  font-size: 10px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.aus-ideas article p {
+  margin: 0;
+  color: #536067;
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.aus-ideas article > div > p:first-child {
+  margin-bottom: 4px;
+  color: var(--aus-blue);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.aus-ideas h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  letter-spacing: -0.025em;
+}
+
+.aus-idea-links {
+  margin-top: 11px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px 15px;
+}
+
+.aus-idea-links a {
+  color: var(--aus-blue);
+  font-size: 10px;
+  font-weight: 750;
+  text-underline-offset: 3px;
+}
+
+.aus-planning-notes {
+  margin: 24px 0 0 150px;
+  padding: 26px 30px;
+  background: var(--aus-pale-blue);
+}
+
+.aus-planning-notes ul {
+  margin-top: 15px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+}
+
+.aus-planning-notes li {
+  padding: 0 18px;
+  color: #435159;
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.aus-planning-notes li:first-child {
+  padding-left: 0;
+}
+
+.aus-planning-notes li + li {
+  border-left: 1px solid #c6d3d8;
+}
+
+.aus-route-intro {
+  padding: 30px 0 22px 150px;
+}
+
+.aus-route-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.aus-route-card {
+  min-height: 310px;
+  border: 1px solid var(--aus-rule);
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  background: #32454d;
+  text-decoration: none;
+}
+
+.aus-route-card img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  transition: transform 320ms ease;
+}
+
+.aus-route-card::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: linear-gradient(180deg, rgb(9 18 22 / 4%) 15%, rgb(9 18 22 / 84%) 100%);
+}
+
+.aus-route-card:hover img {
+  transform: scale(1.018);
+}
+
+.aus-route-card > div {
+  padding: 24px;
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.aus-route-card span {
+  display: block;
+  color: rgb(255 255 255 / 72%);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.aus-route-card h2 {
+  margin: 6px 0 8px;
+  font-size: clamp(23px, 3vw, 34px);
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.aus-route-card p {
+  max-width: 540px;
+  margin: 0;
+  color: rgb(255 255 255 / 78%);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.aus-route-card strong {
+  margin-top: 14px;
+  display: block;
+  font-size: 10px;
+}
+
+.aus-overview-note {
+  margin: 28px 0 0 150px;
+  padding-top: 16px;
+  border-top: 1px solid var(--aus-rule);
+  color: var(--aus-muted);
+  font-size: 10px;
+  line-height: 1.55;
+}
+
+@media (max-width: 760px) {
+  .aus-city-header,
+  .aus-overview-header,
+  .aus-route-intro {
+    padding-left: 0;
+  }
+
+  .aus-stay {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .aus-stay > div {
+    padding-left: 0;
+  }
+
+  .aus-ideas {
+    grid-template-columns: 1fr;
+    gap: 17px;
+  }
+
+  .aus-planning-notes,
+  .aus-overview-note {
+    margin-left: 0;
+  }
+
+  .aus-planning-notes ul {
+    grid-template-columns: 1fr;
+  }
+
+  .aus-planning-notes li {
+    padding: 9px 0;
+  }
+
+  .aus-planning-notes li + li {
+    border-top: 1px solid #c6d3d8;
+    border-left: 0;
+  }
+
+  .aus-route-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .aus-route-card {
+    min-height: 270px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aus-route-card img {
+    transition: none;
+  }
+}

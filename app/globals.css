@@ -1909,3 +1909,43 @@ html {
   outline: 2px solid #315b54;
   outline-offset: 2px;
 }
+
+.site-subnav {
+  border-top: 1px solid #e3e7e6;
+  background: rgb(245 247 244 / 97%);
+}
+
+.site-subnav-inner {
+  width: min(1220px, calc(100% - 32px));
+  min-height: 38px;
+  margin: 0 auto;
+  display: flex;
+  align-items: stretch;
+  gap: 2px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.site-subnav-inner::-webkit-scrollbar {
+  display: none;
+}
+
+.site-subnav a {
+  flex: 0 0 auto;
+  padding: 11px 10px 9px;
+  border-bottom: 2px solid transparent;
+  color: #667176;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.site-subnav a:hover {
+  color: #172126;
+  background: #eef1ef;
+}
+
+.site-subnav a[aria-current="page"] {
+  border-bottom-color: #9c4c39;
+  color: #172126;
+}

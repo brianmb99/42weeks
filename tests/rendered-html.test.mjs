@@ -25,6 +25,7 @@ async function render(path = "/") {
 
 function assertNoHotlinkedPhotos(html) {
   assert.doesNotMatch(html, /https:\/\/images\.(?:unsplash|pexels)\.com/);
+  assert.doesNotMatch(html, /<img[^>]+src="https?:\/\//i);
 }
 
 function assertUsesImperialUnits(html) {
@@ -43,6 +44,8 @@ test("server-renders the 42 Weeks overview", async () => {
   assert.match(html, /<title>42 Weeks/);
   assert.match(html, /class="site-nav"/);
   assert.match(html, /aria-current="page">Home/);
+  assert.match(html, /href="\/australia">Australia/);
+  assert.doesNotMatch(html, /class="site-subnav"/);
   assert.match(html, />Overview</);
   assert.doesNotMatch(html, /Broad route/);
   assert.match(html, /Where the weeks go/);
@@ -106,6 +109,111 @@ test("server-renders the 42 Weeks overview", async () => {
     /https:\/\/www\.backroads\.com\/trips\/MBIIF\/basque-country-family-multi-adventure-tour/,
   );
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
+});
+
+test("server-renders the Australia hub and regional navigation", async () => {
+  const response = await render("/australia");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+
+  assert.match(html, /<title>Australia/);
+  assert.match(html, /href="\/australia" aria-current="page">Australia/);
+  assert.match(html, /class="site-subnav"/);
+  assert.match(html, /aria-label="Australia"/);
+  assert.match(html, /aria-current="page">Overview/);
+  for (const label of [
+    "Geelong",
+    "Great Ocean Road",
+    "Melbourne",
+    "Sydney",
+    "Whitsundays",
+    "Outback",
+  ]) {
+    assert.match(html, new RegExp(`>${label}<`));
+  }
+  assert.equal((html.match(/class="aus-route-card"/g) ?? []).length, 6);
+  assert.match(html, /\/australia\/geelong/);
+  assert.match(html, /\/australia\/melbourne/);
+  assert.match(html, /\/australia\/sydney/);
+  assert.match(html, /\/trips\/great-southern-touring-route/);
+  assert.match(html, /\/trips\/hamilton-island-working-week/);
+  assert.match(html, /\/trips\/longreach-outback-working-week/);
+  assert.match(html, /\/images\/australia\/geelong-waterfront\.jpg/);
+  assert.match(html, /\/images\/australia\/sydney-opera-house\.jpg/);
+  assertNoHotlinkedPhotos(html);
+});
+
+test("server-renders Geelong, Melbourne and Sydney planning pages", async () => {
+  const routes = [
+    {
+      path: "/australia/geelong",
+      current: "Geelong",
+      content: [
+        /Newtown, near the Barwon River/,
+        /Balyang Sanctuary/,
+        /Queenscliff/,
+        /Geelong Library &amp; Heritage Centre/,
+        /dedicated children and youth floor/,
+      ],
+      images: [
+        /\/images\/australia\/geelong-waterfront\.jpg/,
+        /\/images\/australia\/geelong-queenscliff-pier\.jpg/,
+        /\/images\/australia\/geelong-balyang-sanctuary\.jpg/,
+      ],
+    },
+    {
+      path: "/australia/melbourne",
+      current: "Melbourne",
+      content: [
+        /CBD or Southbank for a short stay/,
+        /Little Penguins at St Kilda Pier/,
+        /free, ticketed evening sessions/,
+        /Royal Botanic Gardens/,
+      ],
+      images: [
+        /\/images\/australia\/melbourne-skyline\.jpg/,
+        /\/images\/australia\/melbourne-little-penguin\.jpg/,
+        /\/images\/australia\/melbourne-st-kilda-skyline\.jpg/,
+      ],
+    },
+    {
+      path: "/australia/sydney",
+      current: "Sydney",
+      content: [
+        /Shortlist Manly first, Coogee second/,
+        /Sydney Opera House/,
+        /Live at the beach/,
+        /3\.7-mile Bondi-to-Coogee walk/,
+        /credible evening return after the Sydney Opera House/,
+      ],
+      images: [
+        /\/images\/australia\/sydney-opera-house\.jpg/,
+        /\/images\/australia\/sydney-manly-beach\.jpg/,
+        /\/images\/australia\/sydney-coogee-beach\.jpg/,
+      ],
+    },
+  ];
+
+  for (const route of routes) {
+    const response = await render(route.path);
+    assert.equal(response.status, 200);
+    const html = await response.text();
+    assert.match(html, /href="\/australia" aria-current="page">Australia/);
+    assert.match(html, /class="site-subnav"/);
+    assert.match(
+      html,
+      new RegExp(`aria-current="page">${route.current}<`),
+    );
+    assert.equal(
+      (html.match(/<figure(?: class="is-featured")?>/g) ?? []).length,
+      3,
+    );
+    for (const pattern of [...route.content, ...route.images]) {
+      assert.match(html, pattern);
+    }
+    assertNoHotlinkedPhotos(html);
+    assertUsesImperialUnits(html);
+  }
 });
 
 test("server-renders the expandable weekly calendar", async () => {

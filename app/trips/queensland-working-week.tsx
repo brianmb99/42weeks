@@ -242,7 +242,10 @@ export default function QueenslandWorkingWeek({ trip }: { trip: Trip }) {
 
   return (
     <>
-      <SiteNav current={isHamilton ? "hamilton" : "outback"} />
+      <SiteNav
+        current="australia"
+        australiaCurrent={isHamilton ? "whitsundays" : "outback"}
+      />
       <main className="qld-page">
       <header className="qld-header">
         <p className="qld-eyebrow">{trip.eyebrow}</p>

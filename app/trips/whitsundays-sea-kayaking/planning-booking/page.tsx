@@ -34,7 +34,7 @@ const capacitySnapshot = [
 export default function WhitsundaysPlanningBookingPage() {
   return (
     <>
-      <SiteNav current="hamilton" />
+      <SiteNav current="australia" australiaCurrent="whitsundays" />
       <main className="kayak-page kayak-planning-page">
         <header className="kayak-header">
           <div className="kayak-rank">Decision support</div>

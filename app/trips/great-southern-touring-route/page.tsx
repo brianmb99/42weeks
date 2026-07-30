@@ -57,7 +57,7 @@ function dateLabel(value: string, weekday = false) {
 export default function GreatSouthernTouringRoutePage() {
   return (
     <>
-      <SiteNav current="great-ocean-road" />
+      <SiteNav current="australia" australiaCurrent="great-ocean-road" />
       <main className="route-page">
       <header className="route-header">
         <p>{australiaPlan.title}</p>
