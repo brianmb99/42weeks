@@ -1,4 +1,8 @@
-import { kayakOptions, sharedKayakPlanning, type KayakOption } from "../../data/whitsundays-kayaking";
+import {
+  rankedKayakOptions,
+  sharedKayakPlanning,
+  type KayakOption,
+} from "../../data/whitsundays-kayaking";
 import { sitePath } from "../../lib/site-path";
 import SiteNav from "../site-nav";
 import DestinationGallery from "./destination-gallery";
@@ -24,7 +28,9 @@ export default function WhitsundaysKayakOption({
       <SiteNav current="hamilton" />
       <main className="kayak-page">
         <header className="kayak-header">
-          <div className="kayak-rank">Rank {option.rank}</div>
+          <div className="kayak-rank">
+            Current choice {option.rank} · map route {option.stableRouteNumber}
+          </div>
           <p>{option.eyebrow}</p>
           <h1>{option.title}</h1>
           <p className="kayak-route">{option.route}</p>
@@ -48,6 +54,25 @@ export default function WhitsundaysKayakOption({
           photos={option.photos}
           label={`${option.shortTitle} photographs`}
         />
+
+        <section className="kayak-map" aria-labelledby="kayak-map-title">
+          <header>
+            <p>Conceptual route</p>
+            <h2 id="kayak-map-title">{option.title}</h2>
+            <span>
+              Map route {option.stableRouteNumber} is a stable identifier, not
+              the current ranking.
+            </span>
+          </header>
+          <a
+            href={sitePath(option.mapSrc)}
+            target="_blank"
+            aria-label={`Enlarge map route ${option.stableRouteNumber}: ${option.title}`}
+          >
+            <img src={sitePath(option.mapSrc)} alt={option.mapAlt} />
+          </a>
+          <p>{sharedKayakPlanning.mapQualification}</p>
+        </section>
 
         <section className="kayak-verdict" aria-labelledby="verdict-title">
           <div>
@@ -171,16 +196,19 @@ export default function WhitsundaysKayakOption({
           <a href={sitePath("/trips/hamilton-island-working-week")}>
             ← Whitsundays overview
           </a>
-          {kayakOptions
+          {rankedKayakOptions
             .filter((item) => item.slug !== option.slug)
             .map((item) => (
               <a
                 href={sitePath(`/trips/whitsundays-sea-kayaking/${item.slug}`)}
                 key={item.slug}
               >
-                Option {item.rank}: {item.shortTitle} →
+                Current choice {item.rank}: {item.shortTitle} →
               </a>
             ))}
+          <a href={sitePath("/trips/whitsundays-sea-kayaking/planning-booking")}>
+            Planning &amp; booking →
+          </a>
         </nav>
 
         <footer className="kayak-footer">

@@ -9,6 +9,9 @@ export type KayakPhoto = {
 export type KayakOption = {
   slug: string;
   rank: number;
+  stableRouteNumber: number;
+  mapSrc: string;
+  mapAlt: string;
   shortTitle: string;
   title: string;
   eyebrow: string;
@@ -50,21 +53,24 @@ const parks = "https://parks.qld.gov.au/parks/whitsunday-islands/camping";
 export const kayakOptions: KayakOption[] = [
   {
     slug: "hook-island-reef",
-    rank: 1,
-    shortTitle: "Hook Island reef route",
+    rank: 3,
+    stableRouteNumber: 1,
+    mapSrc: "/images/whitsundays/kayak-routes/route-1-hook-island-reef-v2.png",
+    mapAlt: "Conceptual map of the Hook Island route from Crayfish Beach to Maureen’s Cove",
+    shortTitle: "Crayfish–Maureen’s Cove",
     title: "Crayfish Beach → Maureen’s Cove",
-    eyebrow: "Option 1 · reef-first",
+    eyebrow: "Map route 1 · reef-integrated alternate",
     route:
       "Scamper to Crayfish Beach → reef-heavy northern Hook Island paddle → Maureen’s Cove → Scamper pickup",
     bestWhen:
-      "The northern Hook forecast is genuinely calm and settled and Salty Dog approves the tide, landing, rescue, and navigation plan.",
+      "The family deliberately wants reef snorkeling inside the expedition, northern Hook has a genuinely calm forecast, and Salty Dog approves the tide, landing, rescue, and navigation plan.",
     distanceSummary: "8–12km transfer, plus optional unloaded paddles",
     distanceType: "Provisional planning range—confirm locally",
     camps: "Crayfish Beach · Maureen’s Cove",
     reefVerdict:
-      "The only three-day option that can credibly satisfy the trip’s reef-snorkeling priority without adding another day. Plan substantial water time at Crayfish, Manta Ray Bay, and/or Maureen’s Cove—not merely quick swim stops.",
+      "Its primary advantage is optional shore snorkeling after camp is established at Crayfish or Maureen’s Cove. Manta Ray Bay and Butterfly Bay are scenic waypoints or possible regroup locations—not scheduled snorkeling stops during the loaded paddle.",
     recommendation:
-      "Working first choice, but only inside a truly favorable weather window. If the forecast is mediocre, it stops being first choice.",
+      "Third under the current separate-snorkeling plan. It rises to first only when reef snorkeling is an intentional expedition objective and northern Hook is genuinely calm.",
     cost: "About A$2,100–A$2,360",
     photos: [
       {
@@ -95,9 +101,9 @@ export const kayakOptions: KayakOption[] = [
     days: [
       {
         label: "Day 1",
-        title: "Brief, transfer, camp and snorkel at Crayfish",
+        title: "Brief, transfer and camp at Crayfish",
         description:
-          "Complete the Shute Harbour briefing, load two decked doubles onto Scamper, establish camp, then use the best slack-water window for the first serious reef session.",
+          "Complete the Shute Harbour briefing, load two decked doubles onto Scamper and establish camp. Consider an easy shore snorkel only after camp is secure and only if tide, visibility, energy and daylight cooperate.",
         bullets: [
           "Rig the boats exactly as they will be paddled loaded.",
           "Confirm child fit, spray decks, tow systems, pumps and communications.",
@@ -106,12 +112,12 @@ export const kayakOptions: KayakOption[] = [
       },
       {
         label: "Day 2",
-        title: "Northern Hook reef day",
+        title: "Northern Hook camp-transfer paddle",
         description:
-          "Paddle early from Crayfish around the approved coastal line, using Manta Ray Bay as the principal snorkel stop if conditions and vessel traffic allow.",
+          "Paddle early from Crayfish around the operator-approved coastal line. Do not schedule a loaded-paddle snorkel stop at Manta Ray Bay or Butterfly Bay.",
         bullets: [
           "Reassess before committing around Pinnacle Point.",
-          "Treat Butterfly Bay as an optional second reef or regroup stop.",
+          "Treat Manta Ray Bay and Butterfly Bay as scenic waypoints or operator-approved regroup locations.",
           "Reach Maureen’s Cove with enough water over the reef approach.",
         ],
       },
@@ -119,7 +125,7 @@ export const kayakOptions: KayakOption[] = [
         label: "Day 3",
         title: "Maureen’s Cove morning and pickup",
         description:
-          "Use the tide-driven pickup time as the constraint. Snorkel the cove, make a short unloaded paddle, or retain the morning as weather margin.",
+          "Use the tide-driven pickup time as the constraint. Consider an easy camp-based shore snorkel, make a short unloaded paddle, or retain the morning as weather margin.",
         bullets: [
           "Do not land at seasonally closed Steens Beach in October.",
           "Pack early enough that the Scamper pickup is never rushed.",
@@ -175,7 +181,7 @@ export const kayakOptions: KayakOption[] = [
       "Exact approved chart line and useful landing beaches",
       "Children’s participation and adult solo-control expectations",
       "Actual wind, swell and tide limits",
-      "Whether this route’s reef time meets our high-quality snorkeling standard",
+      "Whether camp-based shore snorkeling is worthwhile in the expected tide and visibility",
       "Scamper’s October 2027 drop and pickup sequence",
     ],
     links: [
@@ -199,10 +205,13 @@ export const kayakOptions: KayakOption[] = [
   },
   {
     slug: "whitehaven-henning-paddle",
-    rank: 2,
-    shortTitle: "Three-island traverse",
+    rank: 1,
+    stableRouteNumber: 2,
+    mapSrc: "/images/whitsundays/kayak-routes/route-2-whitehaven-henning-paddle-bay.png",
+    mapAlt: "Conceptual map of the Whitehaven, Henning and Paddle Bay kayak route",
+    shortTitle: "Whitehaven–Henning–Paddle Bay",
     title: "Whitehaven → Henning → Paddle Bay",
-    eyebrow: "Option 2 · expedition shape",
+    eyebrow: "Preferred paddling expedition · map route 2",
     route:
       "Scamper to South Whitehaven → Henning Island camp → Paddle Bay pickup on South Molle",
     bestWhen:
@@ -211,9 +220,9 @@ export const kayakOptions: KayakOption[] = [
     distanceType: "Official route-planner distances",
     camps: "South Whitehaven · Northern Spit, Henning",
     reefVerdict:
-      "Excellent variety and expedition shape, but Whitehaven and Henning do not replace a dedicated high-quality reef day. Pair this route with Bait Reef or choose the Hook Island option.",
+      "Keep the important snorkeling on the separate boat-based outer-reef day. This expedition should focus on paddling, Whitehaven, two camps, planned shore breaks and the three-island journey.",
     recommendation:
-      "Best broad traverse if the family wants three islands and can handle the long middle day. Its final leg is only worthwhile if pickup timing works.",
+      "Current first choice, provided Salty Dog approves the loaded 20–23km day and Scamper can provide a useful Paddle Bay pickup.",
     cost: "About A$1,750–A$2,000",
     photos: [
       {
@@ -310,7 +319,7 @@ export const kayakOptions: KayakOption[] = [
     ],
     weatherGates: [
       "A safe Solway Passage tide and wind combination",
-      "Family readiness for a 20–23km loaded day with two real shore breaks",
+      "Family readiness for a serious 20–23km loaded day with two planned shore breaks",
       "A clearly identified second rest/bailout beach",
       "A useful Paddle Bay tide and Scamper pickup time",
     ],
@@ -324,7 +333,7 @@ export const kayakOptions: KayakOption[] = [
       "Is 20–23km realistic for these loaded tandems and children?",
       "Which second shore break works in the expected wind direction?",
       "Can Scamper collect from Paddle Bay late enough to make Day 3 worthwhile?",
-      "What separate day preserves guaranteed high-quality reef snorkeling?",
+      "Can the Wednesday Hardy Reef day and Thursday departure both be confirmed?",
     ],
     links: [
       {
@@ -347,10 +356,13 @@ export const kayakOptions: KayakOption[] = [
   },
   {
     slug: "whitehaven-chance-henning",
-    rank: 3,
-    shortTitle: "Modular southern route",
+    rank: 2,
+    stableRouteNumber: 3,
+    mapSrc: "/images/whitsundays/kayak-routes/route-3-whitehaven-chance-henning.png",
+    mapAlt: "Conceptual map of the Whitehaven, Chance Bay and Henning kayak route",
+    shortTitle: "Whitehaven–Chance–Henning",
     title: "Whitehaven → Chance → Henning",
-    eyebrow: "Option 3 · more modular",
+    eyebrow: "Balanced fallback · map route 3",
     route:
       "Scamper to South Whitehaven → Chance Bay camp → Henning Island pickup",
     bestWhen:
@@ -359,9 +371,9 @@ export const kayakOptions: KayakOption[] = [
     distanceType: "Official distance plus account-derived planning range",
     camps: "South Whitehaven · Chance Bay",
     reefVerdict:
-      "Chance offers useful snorkeling and turtle potential, but this remains less reef-heavy than Hook Island. Keep a dedicated outer-reef plan if reef quality is non-negotiable.",
+      "Keep the important snorkeling on the separate boat-based outer-reef day. Any swim or exploratory snorkel at Chance is optional and should not shape the route timing.",
     recommendation:
-      "Operationally the most modular. It gives up the elegant three-island overnight sequence in exchange for better pacing and a real midpoint camp.",
+      "Current second choice: the operationally simpler fallback when the long Route 2 day or Paddle Bay pickup is unattractive.",
     cost: "About A$1,820–A$2,070",
     photos: [
       {
@@ -477,7 +489,7 @@ export const kayakOptions: KayakOption[] = [
       "Which southern Whitsunday coves are suitable in the forecast wind?",
       "Is Chance access workable at the required time?",
       "Should the family plan around the 15km figure or a longer real-world day?",
-      "How will a separate outer-reef day fit if this option wins?",
+      "Can the Wednesday Hardy Reef day and Thursday departure both be confirmed?",
     ],
     links: [
       {
@@ -499,6 +511,10 @@ export const kayakOptions: KayakOption[] = [
     ],
   },
 ];
+
+export const rankedKayakOptions = [...kayakOptions].sort(
+  (left, right) => left.rank - right.rank,
+);
 
 export const sharedKayakPlanning = {
   source: "Whitsundays Sea Kayak Expedition Options.md",
@@ -529,12 +545,88 @@ export const sharedKayakPlanning = {
     "Carry PLB, satellite messaging or phone, marine VHF, waterproof Telstra phones, charts and compasses.",
     "Do not buy permits until Salty Dog and Scamper confirm the same route, direction, dates and tide windows.",
   ],
+  mapQualification:
+    "This is a conceptual itinerary overlay, not a navigation chart. Final routing around coral, shoals, tide gates, landing hazards, currents, and vessel traffic must come from Salty Dog’s charts and briefing.",
+  snorkelingDecision: {
+    title: "Separate the serious snorkeling from the kayak expedition",
+    summary:
+      "Move from Hamilton Island to the mainland on Tuesday evening, optionally work about 4:30–7:00 a.m. Wednesday before a dedicated boat-based outer-reef day, then begin the Thursday–Saturday kayak expedition after the Shute Harbour briefing.",
+    reasons: [
+      "The kayak routes can focus on paddling, beaches, walks, primitive camps and tide-driven transfers.",
+      "The family’s only major reef experience no longer depends on the narrower weather window for northern Hook.",
+      "Loaded kayaks do not need to be left drifting or managed by one adult while the other adult-child pair snorkels.",
+    ],
+  },
   reefTour: {
+    title: "Cruise Whitsundays Great Barrier Reef Full Day Adventure",
+    url: "https://www.cruisewhitsundays.com/experiences/great-barrier-reef-full-day-adventure/",
+    note:
+      "Current 2026 planning proxy: Port of Airlie 8:00 a.m.–6:10 p.m., with about four hours at Hardy Reef, snorkeling gear and stinger suits included. Recheck the October 2027 schedule and child participation before booking.",
+  },
+  hamiltonReefTour: {
     title: "Explore Bait Reef full-day snorkel",
     url: "https://www.hamiltonisland.com.au/great-barrier-reef/explore-dive-or-snorkel",
     note:
-      "The current Hamilton Island tour runs about 8 a.m.–4 p.m., visits two Bait Reef snorkel locations and spends at least 3.5 hours on site. Recheck the 2027 schedule.",
+      "A strong alternative if the trip remains Hamilton-based: the current schedule is about 8:00 a.m.–4:00 p.m., with two Bait Reef snorkel sites and at least 3.5 hours on location. It complicates the mainland briefing and transfer sequence.",
   },
+  bookingSequence: [
+    "Ask Salty Dog for preliminary approval of the family, two loaded decked doubles and all three route concepts.",
+    "Ask Scamper which camp pairs and pickup points are serviceable on the candidate dates, including kayak carriage and tide constraints.",
+    "Hold or book the matching Scamper transfer.",
+    "Book the matching Queensland Parks permits immediately.",
+    "Secure the exact two double kayaks and the Shute Harbour briefing slot.",
+    "Confirm that every reservation uses the same direction, dates, camp sequence and pickup point.",
+  ],
+  bookingTiming: [
+    "Contact Salty Dog and Scamper now; ask when their October 2027 schedules open.",
+    "Start checking Queensland Parks at 12 months, around October 10, 2026.",
+    "Treat November 10, 2026—the 11-month mark—as the latest likely permit-release point under the Whitsundays-specific guidance.",
+    "Chance Bay is the likely capacity bottleneck; on the July 30, 2026 comparison check it had space for only two more people while the other route camps still had room for four.",
+  ],
+  weatherStrategy: [
+    "Book one coherent primary route and ask both operators which fallback they can support.",
+    "Do not wait for the seven-day forecast before reserving camps; the useful forecast arrives far too late.",
+    "At the final forecast check, switch only to a backup that has operator support, matching transfer logistics and real permit availability.",
+    "Northern Hook requires both a deliberately reef-oriented trip and a genuinely calm forecast; calm weather alone does not make it the preferred route.",
+  ],
+  planningLinks: [
+    {
+      title: "Salty Dog contact",
+      url: "https://www.saltydog.com.au/contact/",
+    },
+    {
+      title: "Salty Dog policies",
+      url: "https://www.saltydog.com.au/policies/",
+    },
+    {
+      title: "Scamper equipment and kayak carriage",
+      url: "https://www.whitsundaycamping.com.au/equipment/",
+    },
+    {
+      title: "Scamper terms",
+      url: "https://www.whitsundaycamping.com.au/terms-conditions/",
+    },
+    {
+      title: "Queensland camping bookings",
+      url: "https://parks.qld.gov.au/camping/bookings",
+    },
+    {
+      title: "Whitsundays maps and resources",
+      url: "https://parks.qld.gov.au/parks/whitsunday-islands/maps-resources",
+    },
+    {
+      title: "Mackay Coastal Waters forecast",
+      url: "https://www.bom.gov.au/qld/forecasts/mackay-coast.shtml",
+    },
+    {
+      title: "Queensland Parks alerts",
+      url: "https://parks.qld.gov.au/park-alerts",
+    },
+    {
+      title: "Whitsunday Group zoning map",
+      url: "https://elibrary.gbrmpa.gov.au/jspui/retrieve/4fa6bf02-9ceb-499b-b34a-42f4004cfd01/WEB_Map%2010A%20_Merge.pdf",
+    },
+  ],
 };
 
 export function getKayakOption(slug: string) {

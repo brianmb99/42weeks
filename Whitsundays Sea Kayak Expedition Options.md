@@ -15,24 +15,32 @@ This is a standalone, website-ready research brief for comparing three possible 
 
 The family is comfortable with multi-night wilderness travel and substantial outdoor days. The remaining gating skill is specifically **loaded-tandem sea-kayak rescue and navigation**, because [Salty Dog requires prior kayaking experience, swimming ability, and proficiency in open-water rescue](https://www.saltydog.com.au/hire-and-rentals/).
 
-## Dynamic ranking
+## Ranking depends on the role of snorkeling
 
-| Rank | Route | Select it when | Approximate paddling | Camps |
+### Current working recommendation: serious snorkeling is a separate outing
+
+If the kayak expedition is primarily about paddling, beaches, walks, and camping, the ranking is:
+
+| Rank | Route | Why it ranks here | Approximate paddling | Camps |
 |---|---|---|---:|---|
-| **1** | **Crayfish Beach → Maureen's Cove, Hook Island** | The forecast is genuinely calm and settled, with a favorable tide plan for the exposed northern/eastern Hook coastline | Approximately 8-12km for the camp-transfer leg, plus optional unloaded excursions | Crayfish and Maureen's Cove |
-| **2** | **Whitehaven → Henning Island → Paddle Bay pickup** | Conditions support one serious 20-23km day and the Scamper tide schedule permits a Paddle Bay pickup | Approximately 29-32km total | Whitehaven and Henning, finishing on South Molle |
-| **3** | **Whitehaven → Chance Bay → Henning pickup** | The family wants two more evenly divided transfer stages, more camp time, and less dependence on a final Paddle Bay pickup | Approximately 23-29km total, before optional Hill Inlet outing | Whitehaven and Chance, finishing on Henning |
+| **1** | **Whitehaven → Henning Island → Paddle Bay pickup** | The strongest expedition journey: iconic beach, substantial 20-23km day with planned stops, two camp islands, and a third-island finish | Approximately 29-32km total | Whitehaven and Henning, finishing on South Molle |
+| **2** | **Whitehaven → Chance Bay → Henning pickup** | Better-balanced transfer days, two genuinely different camps, more beach and walking time, and simpler pickup logistics | Approximately 23-29km total, before optional Hill Inlet outing | Whitehaven and Chance, finishing on Henning |
+| **3** | **Crayfish Beach → Maureen's Cove, Hook Island** | Remote and attractive, but the core paddle is shorter and its principal comparative advantage is adjacent reef rather than exceptional beaches | Approximately 8-12km for the camp-transfer leg, plus optional unloaded excursions | Crayfish and Maureen's Cove |
 
-### Is the reef-heavy route correctly ranked first only in very good weather?
+For this active, experienced family, **Whitehaven–Henning–Paddle Bay is the preferred paddling expedition**, provided Salty Dog approves the loaded 20-23km stage and Scamper can support the Paddle Bay pickup. Use Whitehaven–Chance–Henning when the family wants less mileage pressure or when pickup/tide logistics make Paddle Bay awkward.
 
-**Yes.** When the northern Hook Island forecast is light, the reef-heavy route offers the best overall expedition:
+### Alternative ranking: snorkeling is deliberately integrated into the expedition
 
-- the two camps have substantially better shore snorkeling than Whitehaven or Henning;
-- the transfer day naturally passes several of the Whitsundays' notable fringing-reef bays;
-- it feels more remote and less resort-adjacent;
-- the core camp-to-camp mileage is moderate, leaving time for snorkeling rather than treating the reef as scenery passed under time pressure.
+Hook Island becomes #1 only if the family wants snorkeling to be a meaningful component of the two-night kayak trip—not merely equipment packed in case there is spare time. In a genuinely calm northern-Hook window it offers:
 
-It should not remain #1 in mediocre weather. The route involves exposed water around Hook Island's eastern and northern points, few dependable communications, mid-to-high-tide campsite landings, and less convenient bailout support. Maureen's Cove is sheltered from south-easterlies but exposed to strong northerlies. The decision must use the [Mackay Coastal Waters forecast](https://www.bom.gov.au/qld/forecasts/mackay-coast.shtml), the local inshore forecast and tides, and Salty Dog's route briefing—not the general Airlie Beach weather forecast.
+- strong shore snorkeling at both camps;
+- a route past several notable fringing-reef bays;
+- a more remote and less resort-adjacent setting;
+- moderate camp-to-camp mileage that leaves time for reef sessions.
+
+Without that integrated reef objective, Crayfish–Maureen's is still a worthwhile short, remote coastal trip, but it is not as compelling as the Whitehaven routes for this family.
+
+Hook should never remain #1 in mediocre weather. The route involves exposed water around Hook Island's eastern and northern points, few dependable communications, mid-to-high-tide campsite landings, and less convenient bailout support. Maureen's Cove is sheltered from south-easterlies but exposed to strong northerlies. The decision must use the [Mackay Coastal Waters forecast](https://www.bom.gov.au/qld/forecasts/mackay-coast.shtml), the local inshore forecast and tides, and Salty Dog's route briefing—not the general Airlie Beach weather forecast.
 
 For planning purposes, "really good/calm" means a forecast scenario around light winds—ideally roughly 10 knots or less—low swell, good visibility, no thunderstorm or squall risk, and no significant wind-against-tide problem around the exposed points. That is a preferred scenario, not a remotely prescribed safety limit. Salty Dog should set the actual go/no-go limits using the forecast, paddlers, boat models, and tide gates.
 
@@ -301,6 +309,51 @@ If Scamper delivers the family to Whitehaven early, an unloaded Whitehaven–Hil
 | Food, local transport, communications/safety rental, fuel, and consumables | About A$250-A$500 |
 | **Total before major personal-gear rental or purchase** | **About A$1,820-A$2,070** |
 
+## Snorkeling strategy
+
+### Recommendation
+
+The current working recommendation is to **separate the main snorkeling experience from the kayak expedition**:
+
+- **Do not schedule an en-route snorkeling stop on any of the three kayak itineraries.** Organize the expedition around paddling, beaches, camps, walks, tide windows, and pickup timing.
+- **Route 1 only:** carry masks, snorkels, stinger suits, and reef shoes for easy shore snorkeling after camp is established at Crayfish or Maureen's Cove. Treat this as a camp activity that can be skipped, not a route commitment. If these reef sessions are not an important attraction, choose Route 2 or 3 instead.
+- **Routes 2 and 3:** make beaches, camping, walking, and the paddle the priorities. Any snorkeling is purely opportunistic.
+- Schedule the family's important reef-snorkeling experience as a separate boat-based outing. Do not make the family's only reef experience depend on the narrow weather window that makes northern Hook suitable for loaded tandem kayaks.
+
+### How snorkeling should work on Route 1
+
+Do not plan to put everyone into the water at Manta Ray Bay or Butterfly Bay during the loaded camp-transfer paddle. Instead:
+
+1. Establish camp at Crayfish Beach, then consider a shore snorkel if the tide, visibility, energy, and daylight are favorable.
+2. Treat Manta Ray Bay and Butterfly Bay as scenic reef waypoints or possible rest/regroup locations, not scheduled snorkeling stops.
+3. Establish camp at Maureen's Cove, then consider a shore snorkel there or on the pickup morning.
+4. Skip both camp snorkels without hesitation if conditions or family energy favor beach time and exploration instead.
+
+This preserves up to two low-friction camp-based opportunities without turning the paddle into repeated landing, unpacking, wet-gear management, and boat-security exercises.
+
+With one adult and one child in each double kayak, both boats cannot simply be left drifting or unattended while everyone snorkels. Avoiding planned en-route snorkeling also avoids requiring one adult to supervise two loaded boats while the other adult-child pair is in the water.
+
+### Why Routes 2 and 3 should not be built around snorkeling
+
+Whitehaven is primarily a beach and walking destination, while Henning is a useful expedition camp and pickup point rather than a top snorkeling objective. Option 2 already contains a 20-23km loaded day, so adding a mandatory snorkel stop creates avoidable time pressure. Chance Bay can provide an opportunistic swim or exploratory snorkel when local advice and conditions support it, but it should not be sold as the reef centerpiece.
+
+The official facilities guide identifies **Manta Ray Bay** for excellent boat-based diving and **Butterfly Bay** for excellent boat-based snorkeling/diving; both use public moorings and prohibit anchoring. Queensland Parks describes **Crayfish Beach** as having an expansive fringing reef metres offshore and **Maureen's Cove** as having snorkelable reef on both sides. Those facts strongly favor concentrating expedition snorkeling on Route 1.
+
+### Conditions and family safety
+
+- Queensland Parks says snorkeling is generally best about one hour either side of high or low tide, but local current, visibility, swell, boat traffic, and the campsite's reef-flat access still control the decision.
+- Never snorkel alone. Keep the group together or use a clearly managed buddy rotation.
+- October is within the official October-to-May period when dangerous marine stingers are prevalent, though they can occur all year. Everyone should use full-body stinger suits or equivalent protective clothing and carry vinegar.
+- Use reef shoes for coral-rubble entries, never stand on coral, and do not force a distant snorkel site from shore.
+
+Useful sources:
+
+- Queensland Parks, [Crayfish Beach](https://parks.qld.gov.au/parks/whitsunday-islands/camping/crayfish-beach-hook-island)
+- Queensland Parks, [Maureen's Cove](https://parks.qld.gov.au/parks/whitsunday-islands/camping/maureens-cove-hook-island)
+- Queensland Parks, [snorkeling, tides, and water safety](https://parks.qld.gov.au/parks/parks-whitsundays/visiting-safely)
+- Queensland Parks, [Whitsundays facilities and activities guide](https://parks.qld.gov.au/__data/assets/pdf_file/0022/167611/ws-facilities-activities.pdf)
+- Salty Dog, [kayak hire and local route planning](https://www.saltydog.com.au/hire-and-rentals/)
+
 ## Equipment and load specification common to all options
 
 ### Kayaks
@@ -398,11 +451,115 @@ Do not buy permits until Salty Dog and Scamper confirm the same route, direction
 
 ### Maps
 
+- Official Whitsunday Islands maps-and-resources landing page: <https://parks.qld.gov.au/parks/whitsunday-islands/maps-resources>
 - Official Whitsunday Ngaro Sea Trail route planner: <https://parks.qld.gov.au/__data/assets/pdf_file/0022/162652/wnst-map.pdf>
 - Official Parks of the Whitsundays facilities and activities map: <https://parks.qld.gov.au/__data/assets/pdf_file/0022/167611/ws-facilities-activities.pdf>
 - Official Whitsunday national-parks journey guide: <https://parks.qld.gov.au/__data/assets/pdf_file/0020/150842/whitsunday-vg.pdf>
 - Reef Authority Whitsundays public-moorings map: <https://elibrary.gbrmpa.gov.au/jspui/retrieve/c44bbc38-d911-46b7-9f95-38c26a2b02af/2024-11-Public-Moorings-Map-Whitsundays.pdf>
 - Reef Authority Whitsunday Group zoning map: <https://elibrary.gbrmpa.gov.au/jspui/retrieve/4fa6bf02-9ceb-499b-b34a-42f4004cfd01/WEB_Map%2010A%20_Merge.pdf>
+- Reef Authority zoning-map landing page: <https://www2.gbrmpa.gov.au/access/zoning/zoning-maps>
+
+### Route overlays on the official Ngaro Sea Trail map
+
+The earlier custom basemap has been superseded. Use the three route-specific overlays below for the website. Each is drawn directly on the Queensland Parks Ngaro Sea Trail map supplied for this project.
+
+There are deliberately **no arrowheads** on the orange lines. Direction is shown by the numbered camp/drop/pickup labels, which avoids implying either a return trip or a precise navigational heading.
+
+#### Route 1: Hook Island reef route
+
+![Route 1: Crayfish Beach to Maureen's Cove via Manta Ray Bay and Butterfly Bay](public/images/whitsundays/kayak-routes/route-1-hook-island-reef-v2.png)
+
+Direct asset: `public/images/whitsundays/kayak-routes/route-1-hook-island-reef-v2.png`
+
+#### Route 2: Whitehaven, Henning, and Paddle Bay
+
+![Route 2: Whitehaven Beach to Henning Island and Paddle Bay](public/images/whitsundays/kayak-routes/route-2-whitehaven-henning-paddle-bay.png)
+
+Direct asset: `public/images/whitsundays/kayak-routes/route-2-whitehaven-henning-paddle-bay.png`
+
+#### Route 3: Whitehaven, Chance, and Henning
+
+![Route 3: Whitehaven Beach to Chance Bay and Henning Island](public/images/whitsundays/kayak-routes/route-3-whitehaven-chance-henning.png)
+
+Direct asset: `public/images/whitsundays/kayak-routes/route-3-whitehaven-chance-henning.png`
+
+These remain **conceptual planning overlays, not navigation charts**. The orange lines show the intended sequence and general shape, not safe micro-routing around coral, shoals, tide gates, vessel traffic, or landing hazards. Salty Dog's waterproof chart, tide tables, briefing, and final route approval control.
+
+## Booking lead time and sell-out risk
+
+### Bottom line for an October 2027 trip
+
+At 13-14 months out, it is too early to buy the national-park permits, but it is not too early to contact both operators. The family has roughly the next 2-3 months to settle its preferred route/date envelope and get the two operators to approve the concept.
+
+The practical target is:
+
+1. **Contact Scamper and Salty Dog now.**
+2. **Start checking the Queensland permit system at 12 months, around 10 October 2026.**
+3. **Treat 10 November 2026, 11 months before the trip, as the latest likely permit-release point under the Whitsundays-specific rule.**
+4. **Once the operators and tide schedule align, book the transfer, permits, and two tandem kayaks as one coordinated package—ideally within the first week the necessary inventory is available.**
+
+This does **not** appear to be a universal "be online the minute bookings open" situation for the family's dates. It also is not safe to assume there will be many months to decide after bookings open. The smallest route-critical camp, not the famous camp, is the likely bottleneck.
+
+### Why the official booking horizon is ambiguous
+
+The [general Queensland camping page](https://parks.qld.gov.au/camping/bookings) and the [new booking-service FAQ](https://parks.qld.gov.au/camping/frequently-asked-questions) currently describe a 12-month horizon. The [Whitsundays-specific FAQ](https://parks.qld.gov.au/parks/parks-whitsundays/about/faq) and [Whitsundays camping instructions](https://parks.qld.gov.au/parks/parks-whitsundays/things-to-do) still say bookings open 11 months ahead. The Whitsundays page also says to book the boat transfer before the camping permit because commercial operators plan long-lead annual schedules.
+
+Because the trip begins around 10 October 2027:
+
+- **12-month check date:** approximately 10 October 2026.
+- **11-month check date:** approximately 10 November 2026.
+- Check each night's rolling release separately if the system will not initially accept the entire stay.
+- Use the [Queensland National Parks Booking Service](https://book.parks.qld.gov.au/), and create or verify the customer account before the release window.
+
+### Point-in-time availability test
+
+On 30 July 2026, the live Queensland booking system was checked for a comparable two-night Sunday-to-Tuesday stay in October 2026, approximately 2.5 months away. The system reports remaining **people**, not remaining tent pads:
+
+| Camp | Comparable dates checked | People still available | Interpretation |
+|---|---|---:|---|
+| Crayfish Beach | 11-13 October 2026 | 12 | Full published camp capacity remained |
+| Maureen's Cove | 10-12 October 2026 | 24 | Full published camp capacity remained |
+| Whitehaven Beach | 11-13 October 2026 | 30 | Full published camp capacity remained |
+| Northern Spit, Henning | 11-13 October 2026 | 18 | Full published camp capacity remained |
+| Chance Bay | 11-13 October 2026 | 2 | Not enough room for this family of four |
+
+This is only a snapshot, not a guarantee about 2027 and not a direct measurement of how quickly any reservation was made. It does establish two useful things:
+
+- most of these camps do not automatically sell out on release for an ordinary October school-term week;
+- Chance Bay can become the controlling bottleneck while larger or more famous camps remain completely open.
+
+The official Whitsundays guidance says school-holiday periods are often fully booked soon after bookings open. The planned 10-16 October 2027 window is after the published NSW spring holiday, which ends Friday 8 October 2027, and should be within the Queensland school term. The first weekend may still catch families extending a holiday, and independent/Catholic school dates can vary.
+
+### How far ahead to reserve each component
+
+| Component | Public rule or constraint | Recommended action |
+|---|---|---|
+| **Scamper transfer and kayak carriage** | The [departure schedule](https://www.whitsundaycamping.com.au/scheduled-departures/) is tide-based; not every camp is served every day; there is usually one departure daily; full payment confirms the booking. Scamper does not publish a fixed maximum booking horizon. | Enquire now with the full three-route concept and October 2027 window. Ask when the 2027 schedule opens. Place the booking as soon as the required outbound, multi-stop handling, and pickup are confirmed. |
+| **QPWS camping permits** | General pages say 12 months; Whitsundays-specific pages say 11 months. School holidays can fill soon after release. | Begin checking at 12 months and be ready to book no later than the 11-month release. For this family's non-holiday dates, first week is a sensible target; same-minute urgency is mainly warranted if Chance Bay is essential and the operator schedule is already confirmed. |
+| **Two decked double sea kayaks** | [Salty Dog](https://www.saltydog.com.au/hire-and-rentals/) accepts experienced renters subject to availability, skills, weather, and a Shute Harbour briefing. Its [policy](https://www.saltydog.com.au/policies/) says advance booking is advisable, especially in school holidays, and a minimum 20% deposit or full payment plus card details secures the booking. No fixed public booking horizon is stated. | Contact now because the requirement is unusually specific: exactly two expedition-capable doubles, adult-child fit, three-day hire, and water-taxi carriage. Book when Salty Dog, Scamper, and the permits agree; do not treat this like an ordinary last-minute day rental. |
+| **Satellite communicator/phone** | Salty Dog says some east/north Hook areas have limited reception and some renters arrange a satellite phone in advance. | Reserve about 2-3 months ahead once the route is firm; verify delivery/return logistics before leaving home. |
+| **Final route choice** | Route 1 depends on a genuinely calm forecast, but the useful forecast will not exist at the permit-release date. | Book one coherent primary route early, then ask both operators what weather-contingency substitutions they can support. Do not rely on booking the camps only after the seven-day forecast. |
+
+### Recommended booking sequence
+
+The official Whitsundays instruction is to secure the transfer before the permit. For this expedition, the sequence should be:
+
+1. Salty Dog gives preliminary approval for the family, loaded doubles, and route family.
+2. Scamper confirms which camp pairs and pickup points are serviceable on the candidate dates, including kayak carriage and tide constraints.
+3. Scamper transfer inventory is held or booked.
+4. QPWS permits for the matching camps are booked immediately.
+5. Salty Dog's exact two double kayaks and briefing slot are secured.
+6. Confirm that all three reservations describe the same route direction, dates, loading point, camp sequence, and pickup point.
+
+If an operator cannot hold inventory while the permit is purchased, have both browser sessions and contact details ready and make the bookings back-to-back.
+
+### Weather flexibility and cancellation terms
+
+- [QPWS permits can generally be changed to another available campsite or date more than two calendar days before the permit starts](https://parks.desi.qld.gov.au/camping/how-to-make-a-booking/modify-a-camping-booking). This does not create availability at the desired backup camp.
+- [Scamper currently offers a full transfer refund for cancellations more than 24 hours before departure](https://www.whitsundaycamping.com.au/terms-conditions/) and may substitute a camp location or time for safety and operational reasons.
+- [Salty Dog rentals cancelled within 48 hours incur a 100% fee](https://www.saltydog.com.au/policies/); other rental cancellations incur 20% of the full price. Once a rental has commenced, bad-weather early returns are not refunded.
+
+The sensible strategy is one real booking plus an operator-agreed fallback, not overlapping speculative permits at several scarce camps. At the final forecast check, any permit change remains subject to the backup campsite actually being available.
 
 ## Image bank for the itinerary website
 
@@ -527,6 +684,17 @@ These are operator-owned images and should be treated as reference images unless
 
 ## Website-builder guidance
 
+### Canonical inputs
+
+Use only:
+
+- this document, `Whitsundays Sea Kayak Expedition Options.md`;
+- `public/images/whitsundays/kayak-routes/route-1-hook-island-reef-v2.png`;
+- `public/images/whitsundays/kayak-routes/route-2-whitehaven-henning-paddle-bay.png`;
+- `public/images/whitsundays/kayak-routes/route-3-whitehaven-chance-henning.png`.
+
+Do **not** use route images embedded in the Codex conversation, files under `.codex/generated_images`, or the superseded `whitsundays-kayak-routes.html` visualization. The canonical orange route lines have no arrowheads. The blue dotted lines are part of the official Ngaro Sea Trail basemap.
+
 Suggested page structure:
 
 1. **Overview page:** dynamic ranking, weather-dependent decision rule, map, shared equipment, and operator roles.
@@ -534,6 +702,8 @@ Suggested page structure:
 3. **Option 2 detail page:** three-island map, two planned stops on the 20-23km day, camp comparison, and pickup dependency.
 4. **Option 3 detail page:** modular stages, Chance Bay detail, optional Hill Inlet addition, and why it is operationally simpler.
 5. **Comparison page:** distance, reef quality, camp remoteness, communications, tide sensitivity, bailout quality, estimated cost, and "choose this when" filters.
+
+Treat the map numbers as stable route identifiers, not preference rankings. The website should show **Whitehaven–Henning–Paddle Bay first** under the current "serious snorkeling separately" assumption. It should show Hook Island first only in an alternate view where reef snorkeling is intentionally integrated into the kayak expedition.
 
 The website should visually label every distance as one of:
 
@@ -545,4 +715,4 @@ Do not draw a precise Hook Island route line from this prose alone. The route ma
 
 ## Exact enquiry for Salty Dog and Scamper
 
-> We are a family of four with two children under 12 and substantial multi-night outdoor experience. We intend to hire two decked double sea kayaks, with one adult and one child in each. Our first-choice calm-weather itinerary is Scamper delivery to Crayfish Beach, camp night one, then a locally approved paddle around northern Hook Island with possible Manta Ray and Butterfly Bay stops to camp at Maureen's Cove night two, followed by pickup there. We understand Steens Beach is closed in October. Our alternatives are Whitehaven–Henning–Paddle and Whitehaven–Chance–Henning. Please assess the routes, children's participation, open-water rescue requirements, exact kayak models and payload, 60-plus-litre water load, tide gates, wind/swell limits, viable landing and bailout beaches, marine traffic, campsite access, kayak carriage, transfer schedules, resupply options, and an all-in quote.
+> We are a family of four with two children under 12 and substantial multi-night outdoor experience. We intend to hire two decked double sea kayaks, with one adult and one child in each. Our first-choice calm-weather itinerary is Scamper delivery to Crayfish Beach, camp night one, then a locally approved paddle around northern Hook Island past Manta Ray and Butterfly bays to camp at Maureen's Cove night two, followed by pickup there. We do not intend to schedule en-route snorkeling stops; snorkeling would be an optional shore activity after camp is established. We understand Steens Beach is closed in October. Our alternatives are Whitehaven–Henning–Paddle and Whitehaven–Chance–Henning. Please assess the routes, children's participation, open-water rescue requirements, exact kayak models and payload, 60-plus-litre water load, tide gates, wind/swell limits, viable landing and bailout beaches, marine traffic, campsite access, kayak carriage, transfer schedules, resupply options, and an all-in quote.

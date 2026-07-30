@@ -285,6 +285,40 @@ body {
   font-size: 10px;
 }
 
+.qld-kayak-compare {
+  margin-top: 24px;
+  border-top: 1px solid rgb(255 255 255 / 28%);
+  border-left: 1px solid rgb(255 255 255 / 28%);
+}
+
+.qld-kayak-compare > div {
+  display: grid;
+  grid-template-columns: minmax(150px, 0.8fr) minmax(120px, 0.65fr) minmax(220px, 1.25fr) minmax(220px, 1.3fr);
+}
+
+.qld-kayak-compare > div > * {
+  min-width: 0;
+  padding: 11px 12px;
+  border-right: 1px solid rgb(255 255 255 / 28%);
+  border-bottom: 1px solid rgb(255 255 255 / 28%);
+  color: rgb(255 255 255 / 74%);
+  font-size: 9px;
+  line-height: 1.45;
+}
+
+.qld-kayak-compare > div > strong {
+  color: #fff;
+  font-size: 10px;
+}
+
+.qld-kayak-compare .qld-kayak-compare-head > * {
+  color: #84d2c4;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
 .qld-kayak-contingency {
   margin-top: 20px;
   padding-top: 17px;
@@ -303,6 +337,13 @@ body {
   color: rgb(255 255 255 / 68%);
   font-size: 10px;
   line-height: 1.55;
+}
+
+.qld-kayak-contingency a {
+  margin-left: 8px;
+  color: #fff;
+  font-weight: 750;
+  text-underline-offset: 3px;
 }
 
 .qld-rhythm {
@@ -618,6 +659,31 @@ body {
 
   .qld-kayak-options > a > div > p {
     min-height: 0;
+  }
+
+  .qld-kayak-compare {
+    border-left: 0;
+  }
+
+  .qld-kayak-compare .qld-kayak-compare-head {
+    display: none;
+  }
+
+  .qld-kayak-compare > div {
+    margin-top: 10px;
+    border-top: 1px solid rgb(255 255 255 / 28%);
+    border-left: 1px solid rgb(255 255 255 / 28%);
+    grid-template-columns: 1fr;
+  }
+
+  .qld-kayak-compare > div > *::before {
+    margin-right: 8px;
+    color: #84d2c4;
+    content: attr(data-label) ":";
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
   }
 
   .qld-rhythm,

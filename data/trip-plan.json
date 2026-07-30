@@ -55,14 +55,19 @@
         "note": "Great Ocean Road Loop vacation"
       },
       {
+        "date": "2027-10-13",
+        "status": "vacation",
+        "note": "Whitsundays vacation — optional early work, then dedicated Hardy Reef snorkeling"
+      },
+      {
         "date": "2027-10-14",
         "status": "vacation",
-        "note": "Hamilton Island vacation — Whitehaven Beach / Whitsundays"
+        "note": "Whitsundays vacation — kayak expedition day 1"
       },
       {
         "date": "2027-10-15",
         "status": "vacation",
-        "note": "Hamilton Island vacation — outer Great Barrier Reef"
+        "note": "Whitsundays vacation — kayak expedition day 2"
       },
       {
         "date": "2027-10-21",
@@ -291,9 +296,9 @@
       "start": "2027-10-10",
       "end": "2027-10-16",
       "days": 7,
-      "title": "Hamilton Island",
+      "title": "Whitsundays",
       "locationId": "hamilton-island",
-      "context": "Seven nights in the Whitsundays, including a full Saturday on Hamilton Island.",
+      "context": "Hamilton Island through Tuesday, then mainland reef day and a Thursday-to-Saturday two-night kayak expedition. Exact camps depend on the selected route.",
       "color": "#4f9eb3"
     },
     {
@@ -309,12 +314,25 @@
       "color": null
     },
     {
+      "id": "travel-hamilton-island-mainland",
+      "type": "event",
+      "fixed": false,
+      "start": "2027-10-12",
+      "end": null,
+      "days": null,
+      "title": "Evening ferry Hamilton Island → Port of Airlie",
+      "locationId": "hamilton-island",
+      "context": "Move to the mainland after work and Charlie's birthday time so Wednesday can be a full Hardy Reef day.",
+      "color": null,
+      "href": "/trips/hamilton-island-working-week#vacation-days"
+    },
+    {
       "id": "event-hamilton-work-block",
       "type": "event",
       "fixed": false,
       "start": "2027-10-11",
-      "end": "2027-10-13",
-      "days": 3,
+      "end": "2027-10-12",
+      "days": 2,
       "title": "Work & homeschool — Hamilton Island",
       "locationId": "hamilton-island",
       "context": "Early work and homeschool mornings; family activities after lunch.",
@@ -325,12 +343,12 @@
       "id": "event-hamilton-vacation-block",
       "type": "event",
       "fixed": false,
-      "start": "2027-10-14",
+      "start": "2027-10-13",
       "end": "2027-10-16",
-      "days": 3,
-      "title": "Hamilton Island vacation days",
+      "days": 4,
+      "title": "Hardy Reef + Whitsundays kayak expedition",
       "locationId": "hamilton-island",
-      "context": "Reserve for Whitehaven Beach and the outer reef; swap according to marine weather.",
+      "context": "Optional Wednesday 4:30–7:00 a.m. work block before the outer-reef boat day, then Thursday-to-Saturday two-night kayak expedition.",
       "color": null,
       "href": "/trips/hamilton-island-working-week#vacation-days"
     },
@@ -340,9 +358,9 @@
       "start": "2027-10-17",
       "end": null,
       "days": null,
-      "title": "Fly Hamilton Island → Brisbane → Longreach",
+      "title": "Fly Proserpine → Brisbane → Longreach",
       "locationId": "longreach",
-      "context": "Use Sunday morning on Hamilton Island if flight timing allows, then connect through Brisbane without an overnight. Recheck the 2027 schedules before booking.",
+      "context": "Leave from the mainland after the Saturday kayak pickup and connect through Brisbane without an overnight. Recheck the 2027 schedules before booking.",
       "color": null,
       "href": "/trips/hamilton-island-working-week#departure"
     },

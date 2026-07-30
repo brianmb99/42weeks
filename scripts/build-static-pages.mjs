@@ -16,6 +16,7 @@ const routes = [
   "/trips/whitsundays-sea-kayaking/hook-island-reef",
   "/trips/whitsundays-sea-kayaking/whitehaven-henning-paddle",
   "/trips/whitsundays-sea-kayaking/whitehaven-chance-henning",
+  "/trips/whitsundays-sea-kayaking/planning-booking",
   "/trips/longreach-outback-working-week",
 ];
 

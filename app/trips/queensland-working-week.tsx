@@ -1,6 +1,6 @@
 import queensland from "../../data/queensland.json";
 import {
-  kayakOptions,
+  rankedKayakOptions,
   sharedKayakPlanning,
 } from "../../data/whitsundays-kayaking";
 import { sitePath } from "../../lib/site-path";
@@ -101,70 +101,75 @@ function WhitsundaysKayakPlanning() {
     <section className="qld-kayak-plan" aria-labelledby="kayak-plan-title">
       <header>
         <div>
-          <p className="qld-eyebrow">New expedition option</p>
+          <p className="qld-eyebrow">Current expedition recommendation</p>
           <h2 id="kayak-plan-title">
-            A three-day sea-kayak trip can fit without moving India.
+            Separate the reef day; choose the best paddling journey.
           </h2>
         </div>
         <p>
-          The cleanest version replaces the current Thursday–Saturday vacation
-          block. Keep the calendar unchanged until Salty Dog and Scamper confirm
-          the family, boats, tides, camps and 2027 transfer schedule.
+          Whitehaven–Henning–Paddle Bay is the preferred two-night
+          expedition. Whitehaven–Chance–Henning is the more balanced fallback.
+          Hook Island rises to first only when snorkeling is deliberately part
+          of the expedition and northern Hook is genuinely calm.
         </p>
       </header>
 
       <div className="qld-kayak-fit">
         <article>
-          <span>Sun–Wed</span>
+          <span>Sun–Tue</span>
           <strong>Hamilton Island base</strong>
-          <p>Arrive Sunday; work and homeschool Monday through Wednesday.</p>
+          <p>
+            Arrive Sunday; work and homeschool Monday and Tuesday. Ferry to the
+            mainland Tuesday evening.
+          </p>
         </article>
         <article>
-          <span>Wed evening</span>
-          <strong>Move to the mainland</strong>
+          <span>Wednesday</span>
+          <strong>Dedicated Hardy Reef day</strong>
           <p>
-            Ferry to Port of Airlie after work and sleep near Shute Harbour.
-            Salty Dog requires every rental briefing at Shute Harbour.
+            Optional light work about 4:30–7:00 a.m., then the full-day boat
+            trip from Port of Airlie. Serious snorkeling happens here.
           </p>
         </article>
         <article>
           <span>Thu–Sat</span>
           <strong>Three-day / two-night expedition</strong>
-          <p>Scamper drop, two island camps, tide-driven Saturday pickup.</p>
+          <p>
+            Shute Harbour briefing, Scamper drop, two island camps and a
+            tide-driven Saturday pickup.
+          </p>
         </article>
         <article>
           <span>Sunday</span>
           <strong>Fly to Outback Queensland</strong>
           <p>
-            Test Proserpine → Brisbane → Longreach instead of returning to
-            Hamilton Island Airport.
+            Proserpine → Brisbane → Longreach. Keep Outback at six nights.
           </p>
         </article>
       </div>
 
       <div className="qld-reef-rule">
         <div>
-          <p className="qld-eyebrow">Non-negotiable</p>
-          <h3>At least one high-quality reef-snorkeling day</h3>
+          <p className="qld-eyebrow">Snorkeling decision</p>
+          <h3>{sharedKayakPlanning.snorkelingDecision.title}</h3>
         </div>
         <p>
-          Option 1 can meet that standard inside the expedition if the operator
-          confirms meaningful reef time at Crayfish, Manta Ray Bay and/or
-          Maureen’s Cove. Options 2 and 3 cannot safely be treated as
-          substitutes for the current{" "}
+          The practical default is the{" "}
           <a
             href={sharedKayakPlanning.reefTour.url}
             rel="noreferrer"
             target="_blank"
           >
-            full-day Bait Reef plan
+            Hardy Reef full-day adventure
           </a>
-          .
+          {" "}from Port of Airlie on Wednesday. The published 2026 schedule is
+          the planning proxy; confirm the 2027 trip, child participation and
+          Thursday operator handoff before booking.
         </p>
       </div>
 
       <div className="qld-kayak-options">
-        {kayakOptions.map((option) => (
+        {rankedKayakOptions.map((option) => (
           <a
             href={sitePath(`/trips/whitsundays-sea-kayaking/${option.slug}`)}
             key={option.slug}
@@ -177,7 +182,10 @@ function WhitsundaysKayakPlanning() {
               />
             </figure>
             <div>
-              <span>Rank {option.rank}</span>
+              <span>
+                Current choice {option.rank} · map route{" "}
+                {option.stableRouteNumber}
+              </span>
               <h3>{option.shortTitle}</h3>
               <p>{option.bestWhen}</p>
               <dl>
@@ -190,20 +198,38 @@ function WhitsundaysKayakPlanning() {
                   <dd>{option.camps}</dd>
                 </div>
               </dl>
-              <strong>Open option {option.rank} →</strong>
+              <strong>Open route details →</strong>
             </div>
           </a>
         ))}
       </div>
 
+      <div className="qld-kayak-compare" role="table" aria-label="Sea-kayak route comparison">
+        <div className="qld-kayak-compare-head" role="row">
+          <span role="columnheader">Route</span>
+          <span role="columnheader">Paddling</span>
+          <span role="columnheader">Why choose it</span>
+          <span role="columnheader">Main dependency</span>
+        </div>
+        {rankedKayakOptions.map((option) => (
+          <div role="row" key={`comparison-${option.slug}`}>
+            <strong role="cell" data-label="Route">{option.shortTitle}</strong>
+            <span role="cell" data-label="Paddling">{option.distanceSummary}</span>
+            <span role="cell" data-label="Why choose it">{option.recommendation}</span>
+            <span role="cell" data-label="Main dependency">{option.bestWhen}</span>
+          </div>
+        ))}
+      </div>
+
       <aside className="qld-kayak-contingency">
-        <strong>Current recommendation</strong>
+        <strong>Ranking logic</strong>
         <p>
-          Keep the dates and rank Hook Island first in genuinely calm weather.
-          If Option 2 or 3 wins, either use Wednesday as an additional vacation
-          day for Bait Reef before the evening mainland transfer, or add Sunday
-          for a separate outer-reef trip and shorten Outback by one night. Do
-          not shorten Outback yet.
+          The numbers printed on the maps are stable route identifiers, not
+          rankings. Under the current separate-snorkeling assumption, map route
+          2 ranks first, map route 3 second and map route 1 third.
+          <a href={sitePath("/trips/whitsundays-sea-kayaking/planning-booking")}>
+            Open planning and booking guidance →
+          </a>
         </p>
       </aside>
     </section>
@@ -224,8 +250,8 @@ export default function QueenslandWorkingWeek({ trip }: { trip: Trip }) {
         <div className="qld-facts">
           <span>{dateLabel(trip.start)}–{dateLabel(trip.end)}</span>
           <span>{trip.nights} nights</span>
-          <span>Work Mon–Wed</span>
-          <span>{isHamilton ? "Vacation Thu–Sat" : "Vacation Thu–Fri"}</span>
+          <span>{isHamilton ? "Work Mon–Tue + Wed early" : "Work Mon–Wed"}</span>
+          <span>{isHamilton ? "Vacation Wed–Sat" : "Vacation Thu–Fri"}</span>
         </div>
         <p className="qld-summary">{trip.summary}</p>
         <p className="qld-status">{queensland.status}</p>
@@ -268,11 +294,15 @@ export default function QueenslandWorkingWeek({ trip }: { trip: Trip }) {
 
         <article className="qld-sequence-item is-work" id="work-days">
           <time>
-            {trip.slug === queensland.hamiltonIsland.slug
-              ? "Mon–Wed · Oct 11–13"
+            {isHamilton
+              ? "Mon–Tue · Oct 11–12"
               : "Mon–Wed · Oct 18–20"}
           </time>
-          <h2>Three work & homeschool mornings</h2>
+          <h2>
+            {isHamilton
+              ? "Two work & homeschool mornings"
+              : "Three work & homeschool mornings"}
+          </h2>
           <p>{queensland.shared.workPattern.principle}</p>
           <h3>Good afternoon / evening options</h3>
           <SimpleList items={trip.workAfternoons} />
@@ -281,12 +311,12 @@ export default function QueenslandWorkingWeek({ trip }: { trip: Trip }) {
         <article className="qld-sequence-item is-vacation" id="vacation-days">
           <time>
             {isHamilton
-              ? "Thu–Sat · no-expedition baseline"
+              ? "Wed–Sat · reef + expedition"
               : "Thu–Fri · vacation"}
           </time>
           <h2>
             {isHamilton
-              ? "Current fallback: reef, Whitehaven and island time"
+              ? "Hardy Reef, then the two-night kayak expedition"
               : "Two full excursion days"}
           </h2>
           <div className="qld-vacation-days">
@@ -365,7 +395,12 @@ export default function QueenslandWorkingWeek({ trip }: { trip: Trip }) {
 
       <footer className="qld-footer">
         <span>
-          Detail source: <code>Queensland Working Notes.md</code>
+          Detail source:{" "}
+          <code>
+            {isHamilton
+              ? "Whitsundays Sea Kayak Expedition Options.md"
+              : "Queensland Working Notes.md"}
+          </code>
         </span>
         <span>
           Exact dates: <code>data/trip-plan.json</code>

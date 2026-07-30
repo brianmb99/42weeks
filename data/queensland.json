@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "lastReviewed": "2026-07-29",
+  "lastReviewed": "2026-07-30",
   "status": "Working plan. Recheck 2027 flight schedules, attraction calendars, prices, Starlink terms, and marine conditions before booking.",
   "shared": {
     "workPattern": {
@@ -24,7 +24,7 @@
     "start": "2027-10-10",
     "end": "2027-10-16",
     "nights": 7,
-    "summary": "Use Hamilton Island as the work and homeschool base through Wednesday, then decide between the current reef-and-Whitehaven plan and a weather-approved three-day sea-kayak expedition. Keep the existing Sunday-to-Sunday window unless the chosen route cannot preserve a serious reef-snorkeling day.",
+    "summary": "Use Hamilton Island as the base through Tuesday, move to the mainland Tuesday evening, optionally work about 4:30–7:00 a.m. Wednesday before serious boat-based snorkeling at Hardy Reef, then take a Thursday-to-Saturday two-night sea-kayak expedition. This keeps the Outback dates intact.",
     "arrival": {
       "date": "2027-10-10",
       "title": "Arrive and establish the base",
@@ -36,10 +36,10 @@
     },
     "departure": {
       "date": "2027-10-17",
-      "title": "Connect through Brisbane to Longreach",
+      "title": "Fly Proserpine → Brisbane → Longreach",
       "items": [
-        "Keep Saturday entirely on Hamilton Island and use Sunday morning there if flight timing allows.",
-        "Fly Hamilton Island → Brisbane → Longreach on one travel day, using Brisbane only as an airport connection.",
+        "Finish the kayak trip Saturday, then sleep on the mainland near the Proserpine departure route.",
+        "Fly Proserpine → Brisbane → Longreach on Sunday, using Brisbane only as an airport connection.",
         "Treat the same-day connection as a working assumption until the 2027 schedule confirms it."
       ]
     },
@@ -66,19 +66,24 @@
     ],
     "vacationDays": [
       {
+        "date": "2027-10-13",
+        "title": "Dedicated Hardy Reef snorkeling day",
+        "plan": "Optionally work about 4:30–7:00 a.m. from the mainland accommodation, then use the full-day Cruise Whitsundays outer-reef trip as the serious snorkeling experience. The current planning proxy is 8:00 a.m.–6:10 p.m. with about four hours at Hardy Reef; recheck the 2027 schedule and child participation."
+      },
+      {
         "date": "2027-10-14",
-        "title": "Whitehaven Beach and the Whitsunday Islands",
-        "plan": "Choose a full-day sail / snorkel trip or a strong half-day Whitehaven trip. Prioritize Whitehaven and a Hill Inlet viewpoint if included; avoid an overloaded checklist itinerary."
+        "title": "Kayak expedition: briefing, drop and camp 1",
+        "plan": "Complete the required Salty Dog briefing at Shute Harbour, load two decked double kayaks and use Scamper for the route-specific drop. Final route depends on operator approval, tides and forecast."
       },
       {
         "date": "2027-10-15",
-        "title": "Outer Great Barrier Reef",
-        "plan": "Reserve a full day for a family-appropriate reef trip with snorkeling and interpretation. Treat this as weather-dependent and swap the two vacation days if operator advice favors it."
+        "title": "Kayak expedition: camp-transfer paddle",
+        "plan": "Use the selected route’s main paddling day. The preferred Whitehaven–Henning route includes a serious 20–23 km loaded stage with two planned shore breaks."
       },
       {
         "date": "2027-10-16",
-        "title": "Hamilton Island Saturday",
-        "plan": "Keep the whole day on Hamilton Island for beach, pool, buggy exploration, and an easy final island evening. This is a weekend day, so it extends the mini-vacation without using another workday."
+        "title": "Kayak expedition: final paddle and pickup",
+        "plan": "Finish at Paddle Bay, Henning or Maureen’s Cove according to the confirmed route and Scamper schedule, then sleep on the mainland before Sunday’s flight."
       }
     ],
     "cautions": [
@@ -95,9 +100,11 @@
     "bookFirst": [
       "Holiday home with a separate work room and written Starlink permission",
       "Sydney → Hamilton Island flight",
-      "Hamilton Island → Brisbane → Longreach same-day flights",
-      "Whitehaven excursion",
-      "Outer-reef excursion",
+      "Proserpine → Brisbane → Longreach same-day flights",
+      "Cruise Whitsundays Hardy Reef day from Port of Airlie",
+      "Salty Dog two-double-kayak hire and Shute Harbour briefing",
+      "Scamper route-specific drop, kayak carriage and pickup",
+      "Matching Queensland Parks permits",
       "Golf buggy if not included"
     ],
     "links": [
@@ -112,6 +119,14 @@
       {
         "title": "Tours and activities",
         "url": "https://www.hamiltonisland.com.au/things-to-do/all-tours-and-activities"
+      },
+      {
+        "title": "Hardy Reef full-day adventure",
+        "url": "https://www.cruisewhitsundays.com/experiences/great-barrier-reef-full-day-adventure/"
+      },
+      {
+        "title": "Hamilton Island–mainland ferry",
+        "url": "https://www.cruisewhitsundays.com/island-transfers/"
       },
       {
         "title": "Walking-trail map",

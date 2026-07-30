@@ -200,9 +200,9 @@ const australiaCards: PlaceCard[] = [
     locationId: "location-hamilton-island",
     category: "Play, with some work",
     summary:
-      "Three early work and homeschool mornings on Hamilton Island, then either the reef-and-Whitehaven baseline or a three-day family sea-kayak expedition.",
-    highlights: ["Hamilton work base", "Reef snorkeling", "Sea-kayak options"],
-    open: "Expedition route, reef guarantee, lodging, and 2027 transfers",
+      "Two full work and homeschool mornings, an optional light Wednesday block, a dedicated Hardy Reef day, then a three-day family sea-kayak expedition.",
+    highlights: ["Hamilton work base", "Hardy Reef snorkeling", "Two-night sea kayak"],
+    open: "Expedition route, operator handoff, lodging, and 2027 transfers",
     href: "/trips/hamilton-island-working-week",
     linkLabel: "Open Whitsundays plan",
   },
@@ -522,8 +522,8 @@ export default function Home() {
               </div>
               <p>
                 Settle into work quickly, take one concentrated vacation week,
-                then test the same three-workday / two-vacation-day rhythm in
-                the Whitsundays and Outback Queensland.
+                then use a reef-and-expedition mini-vacation in the Whitsundays
+                before returning to a work-and-play rhythm in Outback Queensland.
               </p>
             </div>
             <PlaceGrid cards={australiaCards} ariaLabel="Australia places" />

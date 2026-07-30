@@ -50,7 +50,7 @@ test("server-renders the 42 Weeks overview", async () => {
   assert.match(html, /Great Ocean Road Loop/);
   assert.match(html, /Open the 7-day plan/);
   assert.match(html, /aria-label="Open Great Ocean Road Loop plan"/);
-  assert.match(html, /aria-label="Open Hamilton Island plan"/);
+  assert.match(html, /aria-label="Open Whitsundays plan"/);
   assert.match(html, /aria-label="Open Outback plan"/);
   assert.equal(
     (html.match(/<a class="home-overview-item home-overview-link"/g) ?? [])
@@ -75,7 +75,7 @@ test("server-renders the 42 Weeks overview", async () => {
   assert.match(html, /Sydney work week/);
   assert.match(html, /Opera House evening/);
   assert.match(html, /Sydney neighborhood/);
-  assert.match(html, /Hamilton Island/);
+  assert.match(html, /Whitsundays/);
   assert.match(html, /Outback/);
   assert.match(html, /Play, with some work/);
   assert.match(html, /Work \+ local evenings/);
@@ -115,7 +115,7 @@ test("server-renders the expandable weekly calendar", async () => {
   assert.match(html, /class="site-nav"/);
   assert.match(html, /aria-current="page">Calendar/);
   assert.match(html, />Great Ocean Road</);
-  assert.match(html, />Hamilton Island</);
+  assert.match(html, />Whitsundays</);
   assert.match(html, />Outback</);
   assert.match(html, /data\/trip-plan\.json/);
   assert.match(html, />Work</);
@@ -144,12 +144,13 @@ test("server-renders the expandable weekly calendar", async () => {
   assert.match(html, /Melbourne day; evening flight to Sydney/);
   assert.match(html, /Fly Sydney → Hamilton Island/);
   assert.match(html, /Work &amp; homeschool — Hamilton Island/);
-  assert.match(html, /Hamilton Island vacation days/);
+  assert.match(html, /Hardy Reef \+ Whitsundays kayak expedition/);
   assert.match(
     html,
-    /Saturday, October 16, 2027\nNot working\nHamilton Island vacation days/,
+    /Saturday, October 16, 2027\nNot working\nHardy Reef \+ Whitsundays kayak expedition/,
   );
-  assert.match(html, /Fly Hamilton Island → Brisbane → Longreach/);
+  assert.match(html, /Fly Proserpine → Brisbane → Longreach/);
+  assert.match(html, /Evening ferry Hamilton Island → Port of Airlie/);
   assert.match(html, /Outback vacation days/);
   assert.match(html, /Fly Longreach → Brisbane → India/);
   assert.doesNotMatch(html, /Fly Longreach → Brisbane<\/|Fly Brisbane → India/);
@@ -159,7 +160,7 @@ test("server-renders the expandable weekly calendar", async () => {
   assert.match(html, /Brian&#x27;s birthday/);
   assert.match(
     html,
-    /Tuesday, October 12, 2027\nWork\nWork &amp; homeschool — Hamilton Island\nCharlie&#x27;s birthday/,
+    /Tuesday, October 12, 2027\nWork[\s\S]{0,300}Charlie&#x27;s birthday/,
   );
   assert.match(html, /Location = where we sleep that night/);
   assert.match(html, /Fly home; unpack and repack for Europe/);
@@ -181,7 +182,7 @@ test("server-renders the expandable weekly calendar", async () => {
     await readFile(new URL("../data/trip-plan.json", import.meta.url), "utf8"),
   );
   const datedEvents = tripPlan.timeline.filter((entry) => entry.type === "event");
-  assert.equal(datedEvents.length, 13);
+  assert.equal(datedEvents.length, 14);
   assert.ok(datedEvents.every((entry) => typeof entry.fixed === "boolean"));
   assert.equal(datedEvents.filter((entry) => entry.fixed).length, 6);
   assert.deepEqual(
@@ -200,7 +201,7 @@ test("server-renders the expandable weekly calendar", async () => {
   assert.equal(tripPlan.dayPlanning.weekendDefault, "off");
   assert.equal(tripPlan.dayPlanning.marketHolidayDefault, "off");
   assert.equal(tripPlan.dayPlanning.marketEarlyCloseDefault, "work");
-  assert.equal(tripPlan.dayPlanning.overrides.length, 14);
+  assert.equal(tripPlan.dayPlanning.overrides.length, 15);
   assert.deepEqual(
     tripPlan.dayPlanning.overrides.map((entry) => entry.date),
     [
@@ -209,6 +210,7 @@ test("server-renders the expandable weekly calendar", async () => {
       "2027-09-29",
       "2027-09-30",
       "2027-10-01",
+      "2027-10-13",
       "2027-10-14",
       "2027-10-15",
       "2027-10-21",
@@ -297,10 +299,10 @@ test("server-renders the expandable weekly calendar", async () => {
     (entry) => entry.id === "event-hamilton-vacation-block",
   );
   assert.equal(hamiltonToLongreach.start, "2027-10-17");
-  assert.match(hamiltonToLongreach.title, /Hamilton Island → Brisbane → Longreach/);
+  assert.match(hamiltonToLongreach.title, /Proserpine → Brisbane → Longreach/);
   assert.deepEqual(
     [hamiltonVacation.start, hamiltonVacation.end, hamiltonVacation.days],
-    ["2027-10-14", "2027-10-16", 3],
+    ["2027-10-13", "2027-10-16", 4],
   );
   assert.deepEqual(
     [
@@ -413,26 +415,31 @@ test("server-renders the Hamilton Island working week", async () => {
   assert.match(html, /\/images\/whitsundays\/reef-aerial\.jpg/);
   assertNoHotlinkedPhotos(html);
   assert.match(html, /7<!-- --> nights/);
-  assert.match(html, /Connect through Brisbane to Longreach/);
+  assert.match(html, /Fly Proserpine → Brisbane → Longreach/);
   assert.doesNotMatch(html, /Brisbane airport hotel for October 16/);
   assert.match(html, /Whitehaven Beach/);
-  assert.match(html, /Outer Great Barrier Reef/);
-  assert.match(html, /Work Mon–Wed/);
-  assert.match(html, /Vacation Thu–Sat/);
-  assert.match(html, /Current fallback: reef, Whitehaven and island time/);
-  assert.match(html, /A three-day sea-kayak trip can fit without moving India/);
-  assert.match(html, /At least one high-quality reef-snorkeling day/);
-  assert.match(html, /Hook Island reef route/);
-  assert.match(html, /Three-island traverse/);
-  assert.match(html, /Modular southern route/);
+  assert.match(html, /Hardy Reef/);
+  assert.match(html, /Work Mon–Tue \+ Wed early/);
+  assert.match(html, /Vacation Wed–Sat/);
+  assert.match(html, /Hardy Reef, then the two-night kayak expedition/);
+  assert.match(html, /Separate the reef day; choose the best paddling journey/);
+  assert.match(html, /Separate the serious snorkeling from the kayak expedition/);
+  assert.match(html, /Whitehaven–Henning–Paddle Bay/);
+  assert.match(html, /Whitehaven–Chance–Henning/);
+  assert.match(html, /Crayfish–Maureen’s Cove/);
+  assert.match(html, /Current first choice/);
+  assert.match(html, /Current second choice/);
+  assert.match(html, /Third under the current separate-snorkeling plan/);
   assert.match(html, /\/trips\/whitsundays-sea-kayaking\/hook-island-reef/);
   assert.match(html, /\/trips\/whitsundays-sea-kayaking\/whitehaven-henning-paddle/);
   assert.match(html, /\/trips\/whitsundays-sea-kayaking\/whitehaven-chance-henning/);
-  assert.match(html, /Hamilton Island Saturday/);
+  assert.match(html, /Dedicated Hardy Reef snorkeling day/);
+  assert.match(html, /optional light work about 4:30–7:00 a\.m\./i);
   assert.match(html, /Hamilton Island Holiday Home/);
   assert.match(html, /Starlink/);
   assert.match(html, />Outback</);
-  assert.match(html, /Queensland Working Notes\.md/);
+  assert.match(html, /Whitsundays Sea Kayak Expedition Options\.md/);
+  assert.match(html, /\/trips\/whitsundays-sea-kayaking\/planning-booking/);
 });
 
 test("server-renders the Outback Queensland plan", async () => {
@@ -468,19 +475,25 @@ test("server-renders all three Whitsundays sea-kayak options", async () => {
       path: "/trips/whitsundays-sea-kayaking/hook-island-reef",
       title: /Crayfish Beach → Maureen’s Cove/,
       image: /\/images\/whitsundays\/islands-aerial\.jpg/,
-      reef: /only three-day option that can credibly satisfy/,
+      map: /\/images\/whitsundays\/kayak-routes\/route-1-hook-island-reef-v2\.png/,
+      reef: /primary advantage is optional shore snorkeling after camp is established/,
+      choice: /Current choice <!-- -->3<!-- --> · map route <!-- -->1/,
     },
     {
       path: "/trips/whitsundays-sea-kayaking/whitehaven-henning-paddle",
       title: /Whitehaven → Henning → Paddle Bay/,
       image: /\/images\/whitsundays\/whitehaven-beach\.jpg/,
-      reef: /do not replace a dedicated high-quality reef day/,
+      map: /\/images\/whitsundays\/kayak-routes\/route-2-whitehaven-henning-paddle-bay\.png/,
+      reef: /Keep the important snorkeling on the separate boat-based outer-reef day/,
+      choice: /Current choice <!-- -->1<!-- --> · map route <!-- -->2/,
     },
     {
       path: "/trips/whitsundays-sea-kayaking/whitehaven-chance-henning",
       title: /Whitehaven → Chance → Henning/,
       image: /\/images\/whitsundays\/hill-inlet-aerial\.jpg/,
-      reef: /Keep a dedicated outer-reef plan/,
+      map: /\/images\/whitsundays\/kayak-routes\/route-3-whitehaven-chance-henning\.png/,
+      reef: /Keep the important snorkeling on the separate boat-based outer-reef day/,
+      choice: /Current choice <!-- -->2<!-- --> · map route <!-- -->3/,
     },
   ];
 
@@ -490,7 +503,9 @@ test("server-renders all three Whitsundays sea-kayak options", async () => {
     const html = await response.text();
     assert.match(html, route.title);
     assert.match(html, route.image);
+    assert.match(html, route.map);
     assert.match(html, route.reef);
+    assert.match(html, route.choice);
     assertNoHotlinkedPhotos(html);
     assert.match(html, /aria-current="page">Whitsundays/);
     assert.equal(
@@ -503,7 +518,30 @@ test("server-renders all three Whitsundays sea-kayak options", async () => {
     assert.match(html, /Family load and safety/);
     assert.match(html, /Whitsundays Sea Kayak Expedition Options\.md/);
     assert.match(html, /Whitsundays overview/);
+    assert.match(html, /conceptual itinerary overlay, not a navigation chart/i);
+    assert.match(html, /Planning &amp; booking/);
   }
+});
+
+test("server-renders Whitsundays planning and booking guidance", async () => {
+  const response = await render(
+    "/trips/whitsundays-sea-kayaking/planning-booking",
+  );
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /Planning &amp; booking/);
+  assert.match(html, /Reef Wednesday; paddle Thursday–Saturday/);
+  assert.match(html, /Optional 4:30–7:00 a\.m\. work block/);
+  assert.match(html, /Hardy Reef/);
+  assert.match(html, /Salty Dog/);
+  assert.match(html, /Scamper/);
+  assert.match(html, /Queensland Parks/);
+  assert.match(html, /Camp capacity snapshot/);
+  assert.match(html, /Chance Bay/);
+  assert.match(html, /One booking, one supported fallback/);
+  assert.match(html, /Whitehaven–Henning–Paddle Bay/);
+  assert.match(html, /Whitsundays Sea Kayak Expedition Options\.md/);
+  assertNoHotlinkedPhotos(html);
 });
 
 test("server-renders the Great Ocean Road Loop detail", async () => {
