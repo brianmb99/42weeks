@@ -12,7 +12,7 @@ const navItems: Array<{ id: NavPage; label: string; href: string }> = [
   },
   {
     id: "hamilton",
-    label: "Hamilton Island",
+    label: "Whitsundays",
     href: "/trips/hamilton-island-working-week",
   },
   {

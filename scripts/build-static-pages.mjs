@@ -13,6 +13,9 @@ const routes = [
   "/calendar",
   "/trips/great-southern-touring-route",
   "/trips/hamilton-island-working-week",
+  "/trips/whitsundays-sea-kayaking/hook-island-reef",
+  "/trips/whitsundays-sea-kayaking/whitehaven-henning-paddle",
+  "/trips/whitsundays-sea-kayaking/whitehaven-chance-henning",
   "/trips/longreach-outback-working-week",
 ];
 
@@ -49,8 +52,8 @@ for (const route of routes) {
       ? join(outputDir, "index.html")
       : join(outputDir, route.slice(1), "index.html");
   await mkdir(dirname(destination), { recursive: true });
-  const html = (await response.text()).replaceAll(
-    "/assets/",
+  const html = (await response.text()).replace(
+    /(?<![A-Za-z0-9_.-])\/assets\//g,
     `${siteBasePath}/assets/`,
   );
   await writeFile(destination, html, "utf8");
@@ -63,7 +66,10 @@ async function prefixAssetReferences(directory) {
       await prefixAssetReferences(path);
     } else if (/\.(?:css|js)$/.test(entry.name)) {
       const source = await readFile(path, "utf8");
-      const updated = source.replaceAll("/assets/", `${siteBasePath}/assets/`);
+      const updated = source.replace(
+        /(?<![A-Za-z0-9_.-])\/assets\//g,
+        `${siteBasePath}/assets/`,
+      );
       if (updated !== source) await writeFile(path, updated, "utf8");
     }
   }

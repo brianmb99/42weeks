@@ -98,6 +98,213 @@ body {
   line-height: 1.5;
 }
 
+.qld-kayak-plan {
+  margin: 30px 0 36px;
+  padding: 30px;
+  color: #fff;
+  background: #123f47;
+}
+
+.qld-kayak-plan > header {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.9fr) minmax(0, 1.1fr);
+  align-items: end;
+  gap: 44px;
+}
+
+.qld-kayak-plan .qld-eyebrow {
+  color: rgb(255 255 255 / 58%);
+}
+
+.qld-kayak-plan > header h2 {
+  max-width: 520px;
+  margin: 0;
+  font-size: clamp(29px, 4.2vw, 47px);
+  font-weight: 620;
+  letter-spacing: -0.045em;
+  line-height: 1;
+}
+
+.qld-kayak-plan > header > p {
+  margin: 0;
+  color: rgb(255 255 255 / 72%);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.qld-kayak-fit {
+  margin-top: 28px;
+  border-top: 1px solid rgb(255 255 255 / 25%);
+  border-left: 1px solid rgb(255 255 255 / 25%);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.qld-kayak-fit article {
+  min-width: 0;
+  padding: 16px;
+  border-right: 1px solid rgb(255 255 255 / 25%);
+  border-bottom: 1px solid rgb(255 255 255 / 25%);
+}
+
+.qld-kayak-fit span,
+.qld-kayak-options > a > div > span {
+  color: #84d2c4;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.qld-kayak-fit strong {
+  margin-top: 6px;
+  display: block;
+  font-size: 12px;
+}
+
+.qld-kayak-fit p {
+  margin: 8px 0 0;
+  color: rgb(255 255 255 / 65%);
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.qld-reef-rule {
+  margin-top: 22px;
+  padding: 19px 20px;
+  border-left: 5px solid #76c7a8;
+  display: grid;
+  grid-template-columns: minmax(230px, 0.7fr) minmax(0, 1.3fr);
+  gap: 32px;
+  background: rgb(255 255 255 / 8%);
+}
+
+.qld-reef-rule h3 {
+  margin: 0;
+  font-size: 17px;
+}
+
+.qld-reef-rule > p {
+  margin: 0;
+  color: rgb(255 255 255 / 76%);
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.qld-reef-rule a {
+  color: #fff;
+  font-weight: 750;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.qld-kayak-options {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.qld-kayak-options > a {
+  min-width: 0;
+  display: block;
+  color: #183036;
+  background: #fff;
+  text-decoration: none;
+}
+
+.qld-kayak-options figure {
+  height: 190px;
+  margin: 0;
+  overflow: hidden;
+  background: #d6e0df;
+}
+
+.qld-kayak-options img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 250ms ease;
+}
+
+.qld-kayak-options > a:hover img {
+  transform: scale(1.02);
+}
+
+.qld-kayak-options > a > div {
+  min-height: 285px;
+  padding: 18px;
+}
+
+.qld-kayak-options h3 {
+  margin: 5px 0 0;
+  font-size: 19px;
+  letter-spacing: -0.025em;
+}
+
+.qld-kayak-options > a > div > p {
+  min-height: 70px;
+  margin: 13px 0 0;
+  color: #536368;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.qld-kayak-options dl {
+  margin: 14px 0 0;
+  border-top: 1px solid #d9dfdf;
+}
+
+.qld-kayak-options dl div {
+  padding: 8px 0;
+  display: grid;
+  grid-template-columns: 62px minmax(0, 1fr);
+  gap: 10px;
+  border-bottom: 1px solid #e4e8e8;
+}
+
+.qld-kayak-options dt {
+  color: #778589;
+  font-size: 8px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.qld-kayak-options dd {
+  margin: 0;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.qld-kayak-options > a > div > strong {
+  margin-top: 17px;
+  display: block;
+  color: #1e6874;
+  font-size: 10px;
+}
+
+.qld-kayak-contingency {
+  margin-top: 20px;
+  padding-top: 17px;
+  border-top: 1px solid rgb(255 255 255 / 25%);
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 25px;
+}
+
+.qld-kayak-contingency strong {
+  font-size: 11px;
+}
+
+.qld-kayak-contingency p {
+  margin: 0;
+  color: rgb(255 255 255 / 68%);
+  font-size: 10px;
+  line-height: 1.55;
+}
+
 .qld-rhythm {
   padding: 24px 0 24px 150px;
   border-bottom: 1px solid var(--qld-rule);
@@ -377,6 +584,42 @@ body {
     padding-left: 0;
   }
 
+  .qld-kayak-plan {
+    padding: 24px 18px;
+  }
+
+  .qld-kayak-plan > header,
+  .qld-reef-rule {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .qld-kayak-fit {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .qld-kayak-options {
+    grid-template-columns: 1fr;
+  }
+
+  .qld-kayak-options > a {
+    display: grid;
+    grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.2fr);
+  }
+
+  .qld-kayak-options figure {
+    height: auto;
+    min-height: 300px;
+  }
+
+  .qld-kayak-options > a > div {
+    min-height: 0;
+  }
+
+  .qld-kayak-options > a > div > p {
+    min-height: 0;
+  }
+
   .qld-rhythm,
   .qld-booking,
   .qld-references {
@@ -431,6 +674,16 @@ body {
     grid-template-columns: 1fr;
   }
 
+  .qld-kayak-fit,
+  .qld-kayak-contingency,
+  .qld-kayak-options > a {
+    grid-template-columns: 1fr;
+  }
+
+  .qld-kayak-options figure {
+    min-height: 220px;
+  }
+
   .qld-vacation-days > div + div {
     border-top: 1px solid #bfd1ca;
     border-left: 0;
@@ -439,5 +692,11 @@ body {
   .qld-booking,
   .qld-references {
     gap: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .qld-kayak-options img {
+    transition: none;
   }
 }

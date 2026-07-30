@@ -398,11 +398,11 @@ test("server-renders the Hamilton Island working week", async () => {
   const response = await render("/trips/hamilton-island-working-week");
   assert.equal(response.status, 200);
   const html = await response.text();
-  assert.match(html, /Hamilton Island: Work &amp; Play/);
-  assert.match(html, /aria-current="page">Hamilton Island/);
+  assert.match(html, /Whitsundays: Work, Reef &amp; Sea Kayak/);
+  assert.match(html, /aria-current="page">Whitsundays/);
   assert.equal(
     (html.match(/<figure(?: class="is-featured")?>/g) ?? []).length,
-    3,
+    6,
   );
   assert.match(html, /images\.pexels\.com\/photos\/35087571/);
   assert.match(html, /images\.unsplash\.com\/photo-1706591791971/);
@@ -413,7 +413,15 @@ test("server-renders the Hamilton Island working week", async () => {
   assert.match(html, /Outer Great Barrier Reef/);
   assert.match(html, /Work Mon–Wed/);
   assert.match(html, /Vacation Thu–Sat/);
-  assert.match(html, /Two excursion days \+ island Saturday/);
+  assert.match(html, /Current fallback: reef, Whitehaven and island time/);
+  assert.match(html, /A three-day sea-kayak trip can fit without moving India/);
+  assert.match(html, /At least one high-quality reef-snorkeling day/);
+  assert.match(html, /Hook Island reef route/);
+  assert.match(html, /Three-island traverse/);
+  assert.match(html, /Modular southern route/);
+  assert.match(html, /\/trips\/whitsundays-sea-kayaking\/hook-island-reef/);
+  assert.match(html, /\/trips\/whitsundays-sea-kayaking\/whitehaven-henning-paddle/);
+  assert.match(html, /\/trips\/whitsundays-sea-kayaking\/whitehaven-chance-henning/);
   assert.match(html, /Hamilton Island Saturday/);
   assert.match(html, /Hamilton Island Holiday Home/);
   assert.match(html, /Starlink/);
@@ -443,8 +451,51 @@ test("server-renders the Outback Queensland plan", async () => {
   assert.match(html, /Begin the trip to India/);
   assert.match(html, /arrive in India on Sunday, October 24/i);
   assert.doesNotMatch(html, /Brisbane airport hotel for October 23/);
-  assert.match(html, />Hamilton Island</);
+  assert.match(html, />Whitsundays</);
   assert.match(html, /Queensland Working Notes\.md/);
+});
+
+test("server-renders all three Whitsundays sea-kayak options", async () => {
+  const routes = [
+    {
+      path: "/trips/whitsundays-sea-kayaking/hook-island-reef",
+      title: /Crayfish Beach → Maureen’s Cove/,
+      image: /photo-1709984290478-4c86bf42ed9b/,
+      reef: /only three-day option that can credibly satisfy/,
+    },
+    {
+      path: "/trips/whitsundays-sea-kayaking/whitehaven-henning-paddle",
+      title: /Whitehaven → Henning → Paddle Bay/,
+      image: /photo-1561027104-aa69b72a7174/,
+      reef: /do not replace a dedicated high-quality reef day/,
+    },
+    {
+      path: "/trips/whitsundays-sea-kayaking/whitehaven-chance-henning",
+      title: /Whitehaven → Chance → Henning/,
+      image: /photo-1610056352054-a68fe4f998e1/,
+      reef: /Keep a dedicated outer-reef plan/,
+    },
+  ];
+
+  for (const route of routes) {
+    const response = await render(route.path);
+    assert.equal(response.status, 200);
+    const html = await response.text();
+    assert.match(html, route.title);
+    assert.match(html, route.image);
+    assert.match(html, route.reef);
+    assert.match(html, /aria-current="page">Whitsundays/);
+    assert.equal(
+      (html.match(/<figure(?: class="is-featured")?>/g) ?? []).length,
+      3,
+    );
+    assert.match(html, /Expedition sequence/);
+    assert.match(html, /Distance basis/);
+    assert.match(html, /Weather and operating gates/);
+    assert.match(html, /Family load and safety/);
+    assert.match(html, /Whitsundays Sea Kayak Expedition Options\.md/);
+    assert.match(html, /Whitsundays overview/);
+  }
 });
 
 test("server-renders the Great Ocean Road Loop detail", async () => {

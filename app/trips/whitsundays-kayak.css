@@ -1,0 +1,432 @@
+:root {
+  --kayak-ink: #102326;
+  --kayak-muted: #627478;
+  --kayak-rule: #d4dddc;
+  --kayak-paper: #f5f8f5;
+  --kayak-blue: #177c8f;
+  --kayak-deep: #123f47;
+  --kayak-reef: #1f755d;
+  --kayak-sand: #e9dfc2;
+}
+
+body {
+  margin: 0;
+  color: var(--kayak-ink);
+  background: var(--kayak-paper);
+}
+
+.kayak-page {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 28px 0 52px;
+  font-family: var(--font-sans), Arial, sans-serif;
+}
+
+.kayak-header {
+  padding: 18px 0 30px 150px;
+  border-bottom: 2px solid var(--kayak-ink);
+  position: relative;
+}
+
+.kayak-rank {
+  position: absolute;
+  top: 21px;
+  left: 0;
+  padding: 7px 9px;
+  color: #fff;
+  background: var(--kayak-deep);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.kayak-header > p:first-of-type,
+.kayak-verdict > div:first-child > p,
+.kayak-days header p,
+.kayak-distance header p,
+.kayak-camps header p,
+.kayak-risk-grid article > p,
+.kayak-links > div:first-child p {
+  margin: 0 0 6px;
+  color: var(--kayak-muted);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.kayak-header h1 {
+  max-width: 870px;
+  margin: 0;
+  font-size: clamp(38px, 6vw, 67px);
+  font-weight: 650;
+  letter-spacing: -0.055em;
+  line-height: 0.95;
+}
+
+.kayak-route {
+  max-width: 800px;
+  margin: 22px 0 0;
+  color: #405257;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.kayak-header dl {
+  max-width: 850px;
+  margin: 25px 0 0;
+  border-top: 1px solid var(--kayak-rule);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.kayak-header dl div {
+  padding: 12px 14px 0 0;
+}
+
+.kayak-header dl div + div {
+  padding-left: 14px;
+  border-left: 1px solid var(--kayak-rule);
+}
+
+.kayak-header dt,
+.kayak-risk-grid dt {
+  color: var(--kayak-muted);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.kayak-header dd,
+.kayak-risk-grid dd {
+  margin: 4px 0 0;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.kayak-verdict {
+  margin-top: 28px;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: minmax(220px, 0.7fr) minmax(0, 1.3fr);
+  gap: 42px;
+  color: #fff;
+  background: var(--kayak-deep);
+}
+
+.kayak-verdict > div:first-child > p {
+  color: rgb(255 255 255 / 60%);
+}
+
+.kayak-verdict h2 {
+  margin: 0;
+  font-size: clamp(25px, 3.5vw, 39px);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.03;
+}
+
+.kayak-verdict > div:last-child {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.kayak-verdict article {
+  padding: 3px 23px;
+  border-left: 1px solid rgb(255 255 255 / 25%);
+}
+
+.kayak-verdict article span {
+  color: rgb(255 255 255 / 58%);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.kayak-verdict article p {
+  margin: 9px 0 0;
+  color: rgb(255 255 255 / 82%);
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.kayak-verdict article.is-reef {
+  box-shadow: inset 4px 0 0 #75c9a7;
+}
+
+.kayak-days,
+.kayak-distance,
+.kayak-camps,
+.kayak-links {
+  padding: 31px 0;
+  border-bottom: 1px solid var(--kayak-rule);
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 0;
+}
+
+.kayak-days h2,
+.kayak-distance h2,
+.kayak-camps h2,
+.kayak-links h2,
+.kayak-risk-grid h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.kayak-days > div {
+  border-top: 1px solid var(--kayak-rule);
+}
+
+.kayak-days article {
+  min-height: 180px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 70px minmax(180px, 0.7fr) minmax(220px, 1fr);
+  gap: 22px;
+  border-right: 1px solid var(--kayak-rule);
+  border-bottom: 1px solid var(--kayak-rule);
+  border-left: 1px solid var(--kayak-rule);
+  background: #fff;
+}
+
+.kayak-days article > span {
+  color: var(--kayak-blue);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.kayak-days article h3 {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.25;
+}
+
+.kayak-day-detail > p {
+  margin: 0;
+  color: #4b5c60;
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.kayak-list {
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.kayak-list li {
+  position: relative;
+  padding-left: 14px;
+  color: #405156;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.kayak-list li + li {
+  margin-top: 5px;
+}
+
+.kayak-list li::before {
+  position: absolute;
+  left: 0;
+  color: var(--kayak-blue);
+  content: "—";
+}
+
+.kayak-distance-table,
+.kayak-camps > div {
+  border-top: 1px solid var(--kayak-rule);
+  border-left: 1px solid var(--kayak-rule);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.kayak-distance-table article,
+.kayak-camps article {
+  min-width: 0;
+  padding: 18px;
+  border-right: 1px solid var(--kayak-rule);
+  border-bottom: 1px solid var(--kayak-rule);
+  background: #fff;
+}
+
+.kayak-distance-table strong,
+.kayak-distance-table span,
+.kayak-distance-table small {
+  display: block;
+}
+
+.kayak-distance-table strong {
+  font-size: 11px;
+}
+
+.kayak-distance-table span {
+  margin-top: 11px;
+  color: var(--kayak-deep);
+  font-size: 18px;
+  font-weight: 750;
+}
+
+.kayak-distance-table small {
+  margin-top: 5px;
+  color: var(--kayak-muted);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.kayak-camps h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.kayak-risk-grid {
+  margin-top: 31px;
+  border-top: 1px solid var(--kayak-rule);
+  border-left: 1px solid var(--kayak-rule);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.kayak-risk-grid article {
+  min-width: 0;
+  padding: 25px;
+  border-right: 1px solid var(--kayak-rule);
+  border-bottom: 1px solid var(--kayak-rule);
+  background: #fff;
+}
+
+.kayak-risk-grid article.is-common {
+  background: #edf5f2;
+}
+
+.kayak-risk-grid dl {
+  margin: 17px 0 0;
+}
+
+.kayak-risk-grid dl div + div {
+  margin-top: 9px;
+}
+
+.kayak-links > div:last-child {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 22px;
+}
+
+.kayak-links a,
+.kayak-option-nav a {
+  color: #1d6271;
+  font-size: 10px;
+  font-weight: 750;
+  line-height: 1.4;
+  text-underline-offset: 3px;
+}
+
+.kayak-option-nav {
+  padding: 25px 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px 22px;
+}
+
+.kayak-footer {
+  padding-top: 15px;
+  border-top: 1px solid var(--kayak-ink);
+  color: var(--kayak-muted);
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+.kayak-footer code {
+  font-family: var(--font-mono), monospace;
+}
+
+.kayak-page a:focus-visible {
+  outline: 3px solid rgb(23 124 143 / 24%);
+  outline-offset: 3px;
+}
+
+@media (max-width: 780px) {
+  .kayak-page {
+    width: min(100% - 20px, 1120px);
+    padding-top: 18px;
+  }
+
+  .kayak-header {
+    padding: 55px 0 24px;
+  }
+
+  .kayak-rank {
+    top: 8px;
+  }
+
+  .kayak-verdict,
+  .kayak-days,
+  .kayak-distance,
+  .kayak-camps,
+  .kayak-links {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .kayak-days article {
+    grid-template-columns: 60px minmax(0, 1fr);
+  }
+
+  .kayak-day-detail {
+    grid-column: 2;
+  }
+}
+
+@media (max-width: 560px) {
+  .kayak-header dl,
+  .kayak-verdict > div:last-child,
+  .kayak-distance-table,
+  .kayak-camps > div,
+  .kayak-risk-grid,
+  .kayak-links > div:last-child {
+    grid-template-columns: 1fr;
+  }
+
+  .kayak-header dl div + div {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .kayak-verdict {
+    padding: 23px 18px;
+  }
+
+  .kayak-verdict article {
+    padding: 14px 0;
+    border-top: 1px solid rgb(255 255 255 / 25%);
+    border-left: 0;
+  }
+
+  .kayak-verdict article.is-reef {
+    padding-left: 12px;
+    box-shadow: inset 4px 0 0 #75c9a7;
+  }
+
+  .kayak-days article {
+    display: block;
+  }
+
+  .kayak-days article h3 {
+    margin-top: 6px;
+  }
+
+  .kayak-day-detail {
+    margin-top: 10px;
+  }
+}

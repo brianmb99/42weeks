@@ -200,11 +200,11 @@ const australiaCards: PlaceCard[] = [
     locationId: "location-hamilton-island",
     category: "Play, with some work",
     summary:
-      "Three early work and homeschool mornings, active island afternoons, then vacation days for Whitehaven Beach and the outer reef.",
-    highlights: ["Whitsundays base", "Whitehaven Beach", "Outer reef"],
-    open: "Exact holiday home, flights, and 2027 marine operators",
+      "Three early work and homeschool mornings on Hamilton Island, then either the reef-and-Whitehaven baseline or a three-day family sea-kayak expedition.",
+    highlights: ["Hamilton work base", "Reef snorkeling", "Sea-kayak options"],
+    open: "Expedition route, reef guarantee, lodging, and 2027 transfers",
     href: "/trips/hamilton-island-working-week",
-    linkLabel: "Open Hamilton plan",
+    linkLabel: "Open Whitsundays plan",
   },
   {
     locationId: "location-longreach",

@@ -1,4 +1,9 @@
 import queensland from "../../data/queensland.json";
+import {
+  kayakOptions,
+  sharedKayakPlanning,
+} from "../../data/whitsundays-kayaking";
+import { sitePath } from "../../lib/site-path";
 import SiteNav from "../site-nav";
 import DestinationGallery, {
   type DestinationPhoto,
@@ -91,6 +96,120 @@ function SimpleList({ items }: { items: string[] }) {
   );
 }
 
+function WhitsundaysKayakPlanning() {
+  return (
+    <section className="qld-kayak-plan" aria-labelledby="kayak-plan-title">
+      <header>
+        <div>
+          <p className="qld-eyebrow">New expedition option</p>
+          <h2 id="kayak-plan-title">
+            A three-day sea-kayak trip can fit without moving India.
+          </h2>
+        </div>
+        <p>
+          The cleanest version replaces the current Thursday–Saturday vacation
+          block. Keep the calendar unchanged until Salty Dog and Scamper confirm
+          the family, boats, tides, camps and 2027 transfer schedule.
+        </p>
+      </header>
+
+      <div className="qld-kayak-fit">
+        <article>
+          <span>Sun–Wed</span>
+          <strong>Hamilton Island base</strong>
+          <p>Arrive Sunday; work and homeschool Monday through Wednesday.</p>
+        </article>
+        <article>
+          <span>Wed evening</span>
+          <strong>Move to the mainland</strong>
+          <p>
+            Ferry to Port of Airlie after work and sleep near Shute Harbour.
+            Salty Dog requires every rental briefing at Shute Harbour.
+          </p>
+        </article>
+        <article>
+          <span>Thu–Sat</span>
+          <strong>Three-day / two-night expedition</strong>
+          <p>Scamper drop, two island camps, tide-driven Saturday pickup.</p>
+        </article>
+        <article>
+          <span>Sunday</span>
+          <strong>Fly to Outback Queensland</strong>
+          <p>
+            Test Proserpine → Brisbane → Longreach instead of returning to
+            Hamilton Island Airport.
+          </p>
+        </article>
+      </div>
+
+      <div className="qld-reef-rule">
+        <div>
+          <p className="qld-eyebrow">Non-negotiable</p>
+          <h3>At least one high-quality reef-snorkeling day</h3>
+        </div>
+        <p>
+          Option 1 can meet that standard inside the expedition if the operator
+          confirms meaningful reef time at Crayfish, Manta Ray Bay and/or
+          Maureen’s Cove. Options 2 and 3 cannot safely be treated as
+          substitutes for the current{" "}
+          <a
+            href={sharedKayakPlanning.reefTour.url}
+            rel="noreferrer"
+            target="_blank"
+          >
+            full-day Bait Reef plan
+          </a>
+          .
+        </p>
+      </div>
+
+      <div className="qld-kayak-options">
+        {kayakOptions.map((option) => (
+          <a
+            href={sitePath(`/trips/whitsundays-sea-kayaking/${option.slug}`)}
+            key={option.slug}
+          >
+            <figure>
+              <img
+                src={option.photos[0].src}
+                alt={option.photos[0].alt}
+                loading="lazy"
+              />
+            </figure>
+            <div>
+              <span>Rank {option.rank}</span>
+              <h3>{option.shortTitle}</h3>
+              <p>{option.bestWhen}</p>
+              <dl>
+                <div>
+                  <dt>Distance</dt>
+                  <dd>{option.distanceSummary}</dd>
+                </div>
+                <div>
+                  <dt>Camps</dt>
+                  <dd>{option.camps}</dd>
+                </div>
+              </dl>
+              <strong>Open option {option.rank} →</strong>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <aside className="qld-kayak-contingency">
+        <strong>Current recommendation</strong>
+        <p>
+          Keep the dates and rank Hook Island first in genuinely calm weather.
+          If Option 2 or 3 wins, either use Wednesday as an additional vacation
+          day for Bait Reef before the evening mainland transfer, or add Sunday
+          for a separate outer-reef trip and shorten Outback by one night. Do
+          not shorten Outback yet.
+        </p>
+      </aside>
+    </section>
+  );
+}
+
 export default function QueenslandWorkingWeek({ trip }: { trip: Trip }) {
   const isHamilton = trip.slug === queensland.hamiltonIsland.slug;
   const photos = isHamilton ? hamiltonPhotos : outbackPhotos;
@@ -116,6 +235,8 @@ export default function QueenslandWorkingWeek({ trip }: { trip: Trip }) {
         photos={photos}
         label={`${trip.title} photographs`}
       />
+
+      {isHamilton && <WhitsundaysKayakPlanning />}
 
       <section className="qld-rhythm" aria-labelledby="rhythm-title">
         <div>
@@ -158,8 +279,16 @@ export default function QueenslandWorkingWeek({ trip }: { trip: Trip }) {
         </article>
 
         <article className="qld-sequence-item is-vacation" id="vacation-days">
-          <time>{isHamilton ? "Thu–Sat · vacation block" : "Thu–Fri · vacation"}</time>
-          <h2>{isHamilton ? "Two excursion days + island Saturday" : "Two full excursion days"}</h2>
+          <time>
+            {isHamilton
+              ? "Thu–Sat · no-expedition baseline"
+              : "Thu–Fri · vacation"}
+          </time>
+          <h2>
+            {isHamilton
+              ? "Current fallback: reef, Whitehaven and island time"
+              : "Two full excursion days"}
+          </h2>
           <div className="qld-vacation-days">
             {trip.vacationDays.map((day) => (
               <div key={day.date}>
