@@ -457,11 +457,14 @@ test("server-renders the Great Ocean Road Loop detail", async () => {
   assert.match(html, /aria-current="page">Great Ocean Road/);
   assert.equal(
     (html.match(/<figure(?: class="is-featured")?>/g) ?? []).length,
-    3,
+    4,
   );
   assert.match(html, /images\.unsplash\.com\/photo-1736893474760/);
   assert.match(html, /images\.unsplash\.com\/photo-1602729396501/);
   assert.match(html, /images\.unsplash\.com\/photo-1634449594030/);
+  assert.match(html, /great-ocean-road-loop-map\.png/);
+  assert.match(html, /Victoria loop at a glance/);
+  assert.match(html, /Great Southern Touring Route overview/);
   assert.match(html, /Otways rainforest/);
   assert.match(html, /Mount Abrupt, Grampians/);
   assert.match(html, /Geelong work week/);

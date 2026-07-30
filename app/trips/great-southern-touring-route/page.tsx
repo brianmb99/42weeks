@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import australiaPlan from "../../../data/australia-part-one.json";
+import { sitePath } from "../../../lib/site-path";
 import SiteNav from "../../site-nav";
 import DestinationGallery, {
   type DestinationPhoto,
@@ -83,6 +84,35 @@ export default function GreatSouthernTouringRoutePage() {
         photos={roadPhotos}
         label="Great Ocean Road Loop photographs"
       />
+
+      <section className="route-map" aria-labelledby="route-map-title">
+        <div>
+          <p>Route map</p>
+          <h2 id="route-map-title">Victoria loop at a glance</h2>
+          <p>
+            The seven-day plan follows the Geelong–Great Ocean Road–Otways–
+            Grampians–Ballarat–Melbourne side of the Great Southern Touring
+            Route.
+          </p>
+        </div>
+        <figure>
+          <img
+            src={sitePath("/great-ocean-road-loop-map.png")}
+            alt="Map of Victoria's Great Southern Touring Route through Geelong, the Great Ocean Road, the Otways, the Grampians, Ballarat, and Melbourne"
+            loading="lazy"
+          />
+          <figcaption>
+            Great Southern Touring Route overview ·{" "}
+            <a
+              href={roadTrip.officialRoute.url}
+              rel="noreferrer"
+              target="_blank"
+            >
+              Visit Victoria route ↗
+            </a>
+          </figcaption>
+        </figure>
+      </section>
 
       <section className="route-context" aria-label="Before and after the road trip">
         <article>
