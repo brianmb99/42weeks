@@ -465,7 +465,7 @@ export default function Home() {
             <img
               alt="The Twelve Apostles and cliffs along Victoria’s Great Ocean Road"
               fetchPriority="high"
-              src="https://images.unsplash.com/photo-1736893474760-759d20e84f58?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=82&w=2400"
+              src={sitePath("/images/victoria/twelve-apostles.jpg")}
             />
             <figcaption>
               Twelve Apostles, Victoria · Photo by{" "}

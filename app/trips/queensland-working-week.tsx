@@ -14,7 +14,7 @@ type Trip = typeof queensland.hamiltonIsland | typeof queensland.longreach;
 
 const hamiltonPhotos: DestinationPhoto[] = [
   {
-    src: "https://images.pexels.com/photos/35087571/pexels-photo-35087571.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    src: "/images/whitsundays/hamilton-marina.jpg",
     alt: "Hamilton Island Marina surrounded by blue water and green islands",
     caption: "Hamilton Island Marina",
     credit: "Toki No Ori / Pexels",
@@ -22,7 +22,7 @@ const hamiltonPhotos: DestinationPhoto[] = [
       "https://www.pexels.com/photo/scenic-view-of-hamilton-island-marina-35087571/",
   },
   {
-    src: "https://images.unsplash.com/photo-1706591791971-e64df1bc78f0?auto=format&fit=crop&fm=jpg&q=82&w=1400",
+    src: "/images/whitsundays/reef-aerial.jpg",
     alt: "Aerial view of blue water and reef formations",
     caption: "Great Barrier Reef from above",
     credit: "Lorenzo Angeli / Unsplash",
@@ -30,7 +30,7 @@ const hamiltonPhotos: DestinationPhoto[] = [
       "https://unsplash.com/photos/an-aerial-view-of-the-great-barrier-reef-giCtF3YtEtc",
   },
   {
-    src: "https://images.unsplash.com/photo-1633319377690-fa954d0fb59c?auto=format&fit=crop&fm=jpg&q=82&w=1400",
+    src: "/images/whitsundays/coral-aerial.jpg",
     alt: "Aerial view of coral reef patterns in the ocean",
     caption: "Live coral on the Great Barrier Reef",
     credit: "GeoNadir / Unsplash",
@@ -41,7 +41,7 @@ const hamiltonPhotos: DestinationPhoto[] = [
 
 const outbackPhotos: DestinationPhoto[] = [
   {
-    src: "https://images.pexels.com/photos/32915492/pexels-photo-32915492.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    src: "/images/outback/aerial-road.jpg",
     alt: "Aerial view of a red dirt road crossing the Australian Outback",
     caption: "The scale of the Australian Outback",
     credit: "Mark Direen / Pexels",
@@ -49,7 +49,7 @@ const outbackPhotos: DestinationPhoto[] = [
       "https://www.pexels.com/photo/aerial-view-of-the-rugged-australian-outback-32915492/",
   },
   {
-    src: "https://images.pexels.com/photos/20534219/pexels-photo-20534219.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    src: "/images/outback/red-shed.jpg",
     alt: "Remote red shed in a vast dry Australian landscape",
     caption: "Big sky and working landscape",
     credit: "Francesco Ungaro / Pexels",
@@ -57,7 +57,7 @@ const outbackPhotos: DestinationPhoto[] = [
       "https://www.pexels.com/photo/dirt-road-through-the-outback-in-australia-20534219/",
   },
   {
-    src: "https://images.pexels.com/photos/32915389/pexels-photo-32915389.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    src: "/images/outback/red-earth.jpg",
     alt: "Red soil and sparse vegetation beneath a blue Outback sky",
     caption: "Red earth, scrub, and open sky",
     credit: "Mark Direen / Pexels",
@@ -171,7 +171,7 @@ function WhitsundaysKayakPlanning() {
           >
             <figure>
               <img
-                src={option.photos[0].src}
+                src={sitePath(option.photos[0].src)}
                 alt={option.photos[0].alt}
                 loading="lazy"
               />

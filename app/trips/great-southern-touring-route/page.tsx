@@ -19,7 +19,7 @@ const melbourne = australiaPlan.segments.melbourne;
 const sydney = australiaPlan.segments.sydney;
 const roadPhotos: DestinationPhoto[] = [
   {
-    src: "https://images.unsplash.com/photo-1736893474760-759d20e84f58?auto=format&fit=crop&fm=jpg&q=82&w=2200",
+    src: "/images/victoria/twelve-apostles.jpg",
     alt: "The Twelve Apostles and cliffs along Victoria's Great Ocean Road",
     caption: "Twelve Apostles",
     credit: "Philip Ho / Unsplash",
@@ -27,7 +27,7 @@ const roadPhotos: DestinationPhoto[] = [
       "https://unsplash.com/photos/a-view-of-the-beach-and-cliffs-of-the-great-ocean-road-Yd-HvUwdqMc",
   },
   {
-    src: "https://images.unsplash.com/photo-1602729396501-b7c1ab35a2e4?auto=format&fit=crop&fm=jpg&q=82&w=1400",
+    src: "/images/victoria/otways-rainforest.jpg",
     alt: "Tree ferns and tall forest in Great Otway National Park",
     caption: "Otways rainforest",
     credit: "Caitie Philpott / Unsplash",
@@ -35,7 +35,7 @@ const roadPhotos: DestinationPhoto[] = [
       "https://unsplash.com/photos/green-and-brown-trees-during-daytime-GIcFo20HDt0",
   },
   {
-    src: "https://images.unsplash.com/photo-1634449594030-74d022f19fd8?auto=format&fit=crop&fm=jpg&q=82&w=1400",
+    src: "/images/victoria/grampians-mount-abrupt.jpg",
     alt: "Mount Abrupt rising over woodland in the Grampians",
     caption: "Mount Abrupt, Grampians",
     credit: "Christian Bass / Unsplash",

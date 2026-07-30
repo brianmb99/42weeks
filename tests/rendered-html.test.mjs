@@ -23,6 +23,10 @@ async function render(path = "/") {
   );
 }
 
+function assertNoHotlinkedPhotos(html) {
+  assert.doesNotMatch(html, /https:\/\/images\.(?:unsplash|pexels)\.com/);
+}
+
 test("server-renders the 42 Weeks overview", async () => {
   const response = await render();
   assert.equal(response.status, 200);
@@ -59,8 +63,9 @@ test("server-renders the 42 Weeks overview", async () => {
   );
   assert.match(
     html,
-    /images\.unsplash\.com\/photo-1736893474760-759d20e84f58/,
+    /\/images\/victoria\/twelve-apostles\.jpg/,
   );
+  assertNoHotlinkedPhotos(html);
   assert.match(html, /\/og\.png/);
   assert.match(html, /summary_large_image/);
   assert.match(html, /Geelong/);
@@ -404,8 +409,9 @@ test("server-renders the Hamilton Island working week", async () => {
     (html.match(/<figure(?: class="is-featured")?>/g) ?? []).length,
     6,
   );
-  assert.match(html, /images\.pexels\.com\/photos\/35087571/);
-  assert.match(html, /images\.unsplash\.com\/photo-1706591791971/);
+  assert.match(html, /\/images\/whitsundays\/hamilton-marina\.jpg/);
+  assert.match(html, /\/images\/whitsundays\/reef-aerial\.jpg/);
+  assertNoHotlinkedPhotos(html);
   assert.match(html, /7<!-- --> nights/);
   assert.match(html, /Connect through Brisbane to Longreach/);
   assert.doesNotMatch(html, /Brisbane airport hotel for October 16/);
@@ -439,8 +445,9 @@ test("server-renders the Outback Queensland plan", async () => {
     (html.match(/<figure(?: class="is-featured")?>/g) ?? []).length,
     3,
   );
-  assert.match(html, /images\.pexels\.com\/photos\/32915492/);
-  assert.match(html, /images\.pexels\.com\/photos\/20534219/);
+  assert.match(html, /\/images\/outback\/aerial-road\.jpg/);
+  assert.match(html, /\/images\/outback\/red-shed\.jpg/);
+  assertNoHotlinkedPhotos(html);
   assert.match(html, /6<!-- --> nights/);
   assert.match(html, /Qantas Founders Museum/);
   assert.match(html, /Australian Stockman/);
@@ -460,19 +467,19 @@ test("server-renders all three Whitsundays sea-kayak options", async () => {
     {
       path: "/trips/whitsundays-sea-kayaking/hook-island-reef",
       title: /Crayfish Beach → Maureen’s Cove/,
-      image: /photo-1709984290478-4c86bf42ed9b/,
+      image: /\/images\/whitsundays\/islands-aerial\.jpg/,
       reef: /only three-day option that can credibly satisfy/,
     },
     {
       path: "/trips/whitsundays-sea-kayaking/whitehaven-henning-paddle",
       title: /Whitehaven → Henning → Paddle Bay/,
-      image: /photo-1561027104-aa69b72a7174/,
+      image: /\/images\/whitsundays\/whitehaven-beach\.jpg/,
       reef: /do not replace a dedicated high-quality reef day/,
     },
     {
       path: "/trips/whitsundays-sea-kayaking/whitehaven-chance-henning",
       title: /Whitehaven → Chance → Henning/,
-      image: /photo-1610056352054-a68fe4f998e1/,
+      image: /\/images\/whitsundays\/hill-inlet-aerial\.jpg/,
       reef: /Keep a dedicated outer-reef plan/,
     },
   ];
@@ -484,6 +491,7 @@ test("server-renders all three Whitsundays sea-kayak options", async () => {
     assert.match(html, route.title);
     assert.match(html, route.image);
     assert.match(html, route.reef);
+    assertNoHotlinkedPhotos(html);
     assert.match(html, /aria-current="page">Whitsundays/);
     assert.equal(
       (html.match(/<figure(?: class="is-featured")?>/g) ?? []).length,
@@ -510,9 +518,10 @@ test("server-renders the Great Ocean Road Loop detail", async () => {
     (html.match(/<figure(?: class="is-featured")?>/g) ?? []).length,
     4,
   );
-  assert.match(html, /images\.unsplash\.com\/photo-1736893474760/);
-  assert.match(html, /images\.unsplash\.com\/photo-1602729396501/);
-  assert.match(html, /images\.unsplash\.com\/photo-1634449594030/);
+  assert.match(html, /\/images\/victoria\/twelve-apostles\.jpg/);
+  assert.match(html, /\/images\/victoria\/otways-rainforest\.jpg/);
+  assert.match(html, /\/images\/victoria\/grampians-mount-abrupt\.jpg/);
+  assertNoHotlinkedPhotos(html);
   assert.match(html, /great-ocean-road-loop-map\.png/);
   assert.match(html, /Victoria loop at a glance/);
   assert.match(html, /Great Southern Touring Route overview/);

@@ -1,3 +1,4 @@
+import { sitePath } from "../../lib/site-path";
 import "./destination-gallery.css";
 
 export type DestinationPhoto = {
@@ -20,7 +21,7 @@ export default function DestinationGallery({
       {photos.map((photo, index) => (
         <figure className={index === 0 ? "is-featured" : undefined} key={photo.src}>
           <img
-            src={photo.src}
+            src={sitePath(photo.src)}
             alt={photo.alt}
             fetchPriority={index === 0 ? "high" : undefined}
             loading={index === 0 ? "eager" : "lazy"}

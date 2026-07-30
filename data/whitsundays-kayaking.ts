@@ -68,7 +68,7 @@ export const kayakOptions: KayakOption[] = [
     cost: "About A$2,100–A$2,360",
     photos: [
       {
-        src: "https://images.unsplash.com/photo-1709984290478-4c86bf42ed9b?auto=format&fit=crop&fm=jpg&q=82&w=2200",
+        src: "/images/whitsundays/islands-aerial.jpg",
         alt: "Aerial view of a sheltered bay and green islands in the Whitsundays",
         caption: "Whitsundays water and island terrain",
         credit: "Richard Lin / Unsplash",
@@ -76,7 +76,7 @@ export const kayakOptions: KayakOption[] = [
           "https://unsplash.com/photos/an-aerial-view-of-a-body-of-water-surrounded-by-land-HPgMyVHnanw",
       },
       {
-        src: "https://images.unsplash.com/photo-1706591791971-e64df1bc78f0?auto=format&fit=crop&fm=jpg&q=82&w=1600",
+        src: "/images/whitsundays/reef-aerial.jpg",
         alt: "Aerial view of blue water and Great Barrier Reef formations",
         caption: "Great Barrier Reef from above",
         credit: "Lorenzo Angeli / Unsplash",
@@ -84,7 +84,7 @@ export const kayakOptions: KayakOption[] = [
           "https://unsplash.com/photos/an-aerial-view-of-the-great-barrier-reef-giCtF3YtEtc",
       },
       {
-        src: "https://images.unsplash.com/photo-1633319377690-fa954d0fb59c?auto=format&fit=crop&fm=jpg&q=82&w=1600",
+        src: "/images/whitsundays/coral-aerial.jpg",
         alt: "Aerial view of live coral patterns beneath clear ocean water",
         caption: "Live coral on the Great Barrier Reef",
         credit: "GeoNadir / Unsplash",
@@ -217,7 +217,7 @@ export const kayakOptions: KayakOption[] = [
     cost: "About A$1,750–A$2,000",
     photos: [
       {
-        src: "https://images.unsplash.com/photo-1561027104-aa69b72a7174?auto=format&fit=crop&fm=jpg&q=82&w=2200",
+        src: "/images/whitsundays/whitehaven-beach.jpg",
         alt: "White sand, blue water and green headlands at Whitehaven Beach",
         caption: "Whitehaven Beach",
         credit: "Zhimai Zhang / Unsplash",
@@ -225,7 +225,7 @@ export const kayakOptions: KayakOption[] = [
           "https://unsplash.com/photos/land-in-a-body-of-water-during-daytime-2vl2xFZyiJo",
       },
       {
-        src: "https://images.unsplash.com/photo-1603105059143-a81f632fd966?auto=format&fit=crop&fm=jpg&q=82&w=1600",
+        src: "/images/whitsundays/hill-inlet.jpg",
         alt: "Turquoise water, sand and forested hills at Hill Inlet",
         caption: "Hill Inlet, Whitsunday Island",
         credit: "N Storey / Unsplash",
@@ -233,7 +233,7 @@ export const kayakOptions: KayakOption[] = [
           "https://unsplash.com/photos/body-of-water-near-mountain-during-daytime-4xLVht2hAgM",
       },
       {
-        src: "https://images.unsplash.com/photo-1600085601598-e132cca43e36?auto=format&fit=crop&fm=jpg&q=82&w=1600",
+        src: "/images/whitsundays/whitehaven-sailboat.jpg",
         alt: "Family sailboat anchored near Whitehaven Beach",
         caption: "Among the Whitsunday Islands",
         credit: "Florian de Graaf / Unsplash",
@@ -365,7 +365,7 @@ export const kayakOptions: KayakOption[] = [
     cost: "About A$1,820–A$2,070",
     photos: [
       {
-        src: "https://images.unsplash.com/photo-1610056352054-a68fe4f998e1?auto=format&fit=crop&fm=jpg&q=82&w=2200",
+        src: "/images/whitsundays/hill-inlet-aerial.jpg",
         alt: "Aerial view of Hill Inlet and Whitehaven Beach",
         caption: "Hill Inlet and Whitehaven Beach",
         credit: "Lochie Riordan / Unsplash",
@@ -373,7 +373,7 @@ export const kayakOptions: KayakOption[] = [
           "https://unsplash.com/photos/aerial-view-of-lake-and-mountains-during-daytime-OaOzYu0ygco",
       },
       {
-        src: "https://images.unsplash.com/photo-1623027622995-e17ae3971f47?auto=format&fit=crop&fm=jpg&q=82&w=1600",
+        src: "/images/whitsundays/whitehaven-lookout.jpg",
         alt: "Whitehaven Beach and turquoise water viewed from a lookout",
         caption: "Whitehaven from above",
         credit: "Romain Terpreau / Unsplash",
@@ -381,7 +381,7 @@ export const kayakOptions: KayakOption[] = [
           "https://unsplash.com/photos/brown-wooden-fence-near-body-of-water-during-daytime-fRISxkaIVcY",
       },
       {
-        src: "https://images.unsplash.com/photo-1561027104-65dca9402221?auto=format&fit=crop&fm=jpg&q=82&w=1600",
+        src: "/images/whitsundays/whitehaven-small-boat.jpg",
         alt: "Small white boat pulled onto Whitehaven Beach",
         caption: "A small-craft landing at Whitehaven",
         credit: "Zhimai Zhang / Unsplash",
