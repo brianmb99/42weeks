@@ -375,6 +375,29 @@ export default function Home() {
           </dl>
         </section>
 
+        <section
+          className="home-trip-collage"
+          aria-label="Australia, Val d'Isère, and Copenhagen"
+        >
+          <figure>
+            <img
+              className="home-trip-collage-image"
+              alt="42 Weeks collage showing coastal Australia, a snowy Alpine village, and Copenhagen's colorful waterfront"
+              fetchPriority="high"
+              src={sitePath("/og.png")}
+            />
+            <a
+              className="home-trip-collage-australia-link"
+              href={sitePath("/australia")}
+              aria-label="Open Australia plans"
+            >
+              <span>Australia →</span>
+            </a>
+            <span className="home-trip-collage-alps">Val d'Isère</span>
+            <span className="home-trip-collage-copenhagen">Copenhagen</span>
+          </figure>
+        </section>
+
         <section className="home-route-section" id="overview">
           <div className="home-section-heading">
             <div>
@@ -455,65 +478,6 @@ export default function Home() {
               );
             })}
           </div>
-        </section>
-
-        <section
-          className="home-trip-collage"
-          aria-label="Australia, Val d'Isère, and Copenhagen"
-        >
-          <figure className="home-trip-collage-australia">
-            <a href={sitePath("/australia")} aria-label="Open Australia plans">
-              <img
-                alt="The Twelve Apostles and cliffs along Victoria's Great Ocean Road"
-                fetchPriority="high"
-                src={sitePath("/images/victoria/twelve-apostles.jpg")}
-              />
-              <span>Australia</span>
-            </a>
-            <figcaption>
-              <a
-                href="https://unsplash.com/photos/a-view-of-the-beach-and-cliffs-of-the-great-ocean-road-Yd-HvUwdqMc"
-                rel="noreferrer"
-                target="_blank"
-              >
-                Philip Ho / Unsplash
-              </a>
-            </figcaption>
-          </figure>
-
-          <figure>
-            <img
-              alt="Skiers walking through deep snow in Val d'Isère"
-              src={sitePath("/images/home/val-disere-winter.jpg")}
-            />
-            <span>Val d'Isère</span>
-            <figcaption>
-              <a
-                href="https://commons.wikimedia.org/wiki/File:Village_enneig%C3%A9_pendant_l%27hiver_-_Val_d%27Is%C3%A8re.jpg"
-                rel="noreferrer"
-                target="_blank"
-              >
-                Webvaldisere / CC BY-SA 4.0
-              </a>
-            </figcaption>
-          </figure>
-
-          <figure>
-            <img
-              alt="Colorful buildings and boats along Copenhagen's Nyhavn canal"
-              src={sitePath("/images/home/copenhagen-nyhavn.jpg")}
-            />
-            <span>Copenhagen</span>
-            <figcaption>
-              <a
-                href="https://commons.wikimedia.org/wiki/File:Nyhavn-2023.jpg"
-                rel="noreferrer"
-                target="_blank"
-              >
-                Mahendra / CC BY-SA 4.0
-              </a>
-            </figcaption>
-          </figure>
         </section>
 
         <div id="places">

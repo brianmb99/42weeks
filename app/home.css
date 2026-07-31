@@ -343,74 +343,65 @@ body {
 
 .home-trip-collage {
   width: min(1320px, calc(100% - 48px));
-  margin-bottom: 72px;
-  display: grid;
-  grid-template-columns: minmax(0, 1.7fr) minmax(280px, 0.8fr);
-  grid-template-rows: repeat(2, 265px);
-  gap: 4px;
-  background: var(--home-paper);
+  margin-bottom: 62px;
+  aspect-ratio: 1.904 / 1;
 }
 
 .home-trip-collage figure {
+  width: 100%;
+  height: 100%;
   margin: 0;
   position: relative;
   overflow: hidden;
   background: #d8d9d4;
 }
 
-.home-trip-collage-australia {
-  grid-row: 1 / 3;
-}
-
-.home-trip-collage figure > a:first-child {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-.home-trip-collage img {
+.home-trip-collage-image {
   width: 100%;
   height: 100%;
   position: absolute;
   inset: 0;
   object-fit: cover;
-  transition: transform 260ms ease;
 }
 
-.home-trip-collage-australia > a:hover img {
-  transform: scale(1.015);
-}
-
-.home-trip-collage figure > span,
-.home-trip-collage figure > a > span {
+.home-trip-collage-australia-link {
+  width: 56%;
+  height: 100%;
   position: absolute;
-  left: 20px;
-  bottom: 18px;
+  inset: 0 auto 0 0;
+}
+
+.home-trip-collage-australia-link span,
+.home-trip-collage-alps,
+.home-trip-collage-copenhagen {
+  position: absolute;
+  padding: 7px 10px;
   color: #fff;
-  font-size: clamp(24px, 3vw, 42px);
-  font-weight: 650;
-  letter-spacing: -0.045em;
+  background: rgb(20 31 27 / 72%);
+  font-size: clamp(10px, 1.15vw, 14px);
+  font-weight: 750;
+  letter-spacing: -0.01em;
   line-height: 1;
-  text-shadow: 0 2px 18px rgb(0 0 0 / 55%);
+  backdrop-filter: blur(3px);
 }
 
-.home-trip-collage figure:not(.home-trip-collage-australia) > span {
-  font-size: clamp(21px, 2.25vw, 31px);
+.home-trip-collage-australia-link span {
+  left: 18px;
+  bottom: 18px;
 }
 
-.home-trip-collage figcaption {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  z-index: 2;
-  padding: 4px 6px;
-  color: rgb(255 255 255 / 78%);
-  background: rgb(0 0 0 / 35%);
-  font-size: 7px;
+.home-trip-collage-australia-link:hover span {
+  background: rgb(20 31 27 / 92%);
 }
 
-.home-trip-collage figcaption a {
-  text-decoration: underline;
+.home-trip-collage-alps {
+  top: 18px;
+  right: 18px;
+}
+
+.home-trip-collage-copenhagen {
+  right: 18px;
+  bottom: 18px;
 }
 
 .home-chapter {
@@ -717,11 +708,6 @@ body {
     padding-right: 18px;
   }
 
-  .home-trip-collage {
-    grid-template-columns: 1.3fr 1fr;
-    grid-template-rows: repeat(2, 220px);
-  }
-
   .home-place-grid {
     grid-template-columns: 1fr;
   }
@@ -819,25 +805,21 @@ body {
 
   .home-trip-collage {
     width: 100%;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 310px 190px;
-    gap: 3px;
   }
 
-  .home-trip-collage-australia {
-    grid-row: auto;
-    grid-column: 1 / 3;
+  .home-trip-collage-australia-link span {
+    left: 10px;
+    bottom: 10px;
   }
 
-  .home-trip-collage figure > span,
-  .home-trip-collage figure > a > span {
-    left: 13px;
-    bottom: 12px;
-    font-size: 25px;
+  .home-trip-collage-alps {
+    top: 10px;
+    right: 10px;
   }
 
-  .home-trip-collage figure:not(.home-trip-collage-australia) > span {
-    font-size: 20px;
+  .home-trip-collage-copenhagen {
+    right: 10px;
+    bottom: 10px;
   }
 
   .home-chapter-tinted,

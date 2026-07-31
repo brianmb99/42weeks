@@ -267,6 +267,7 @@ export const australiaCities: Record<AustraliaCity["slug"], AustraliaCity> = {
       },
     ],
     planningNotes: [
+      "If departing before September 18 becomes possible, use the extra one or two weeks as an up-front Melbourne work-and-homeschool base. Keep weekdays stable and use afternoons or weekends for the Dandenong Ranges, Yarra Valley, Mornington Peninsula and other places around Melbourne.",
       "The St Kilda penguin sessions are free but ticketed and capacity-limited.",
       "Confirm the Sunday evening Melbourne-to-Sydney flight before choosing lodging.",
       "Two nights is enough for a strong taste of Melbourne, not a comprehensive visit.",

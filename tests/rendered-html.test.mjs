@@ -71,14 +71,14 @@ test("server-renders the 42 Weeks overview", async () => {
     html,
     /\/trips\/great-southern-touring-route/,
   );
-  assert.match(
-    html,
-    /\/images\/victoria\/twelve-apostles\.jpg/,
-  );
   assert.match(html, /href="\/australia" aria-label="Open Australia plans"/);
-  assert.match(html, /\/images\/home\/val-disere-winter\.jpg/);
-  assert.match(html, /\/images\/home\/copenhagen-nyhavn\.jpg/);
   assert.match(html, /Val d&#x27;Isère/);
+  assert.match(html, /class="home-trip-collage-image"/);
+  assert.match(html, /src="\/og\.png"/);
+  assert.ok(
+    html.indexOf('class="home-trip-collage"') <
+      html.indexOf("<h2>Where the weeks go</h2>"),
+  );
   assert.doesNotMatch(html, /Australia highlight/);
   assertNoHotlinkedPhotos(html);
   assert.match(html, /\/og\.png/);
@@ -174,6 +174,8 @@ test("server-renders Geelong, Melbourne and Sydney planning pages", async () => 
         /Little Penguins at St Kilda Pier/,
         /free, ticketed evening sessions/,
         /Royal Botanic Gardens/,
+        /If departing before September 18 becomes possible/,
+        /Dandenong Ranges/,
       ],
       images: [
         /\/images\/australia\/melbourne-skyline\.jpg/,
