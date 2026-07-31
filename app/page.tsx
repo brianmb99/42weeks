@@ -2,6 +2,7 @@ import type { CSSProperties } from "react";
 import type { Metadata } from "next";
 import tripPlan from "../data/trip-plan.json";
 import { sitePath } from "../lib/site-path";
+import ScrollToSectionButton from "./scroll-to-section-button";
 import SiteNav from "./site-nav";
 import "./home.css";
 
@@ -28,8 +29,11 @@ const locations = tripPlan.timeline.filter(
 );
 
 const locationDetailPages: Record<string, string> = {
+  "location-geelong": "/australia/geelong",
   "location-great-southern-touring-route":
     "/trips/great-southern-touring-route",
+  "location-melbourne": "/australia/melbourne",
+  "location-sydney": "/australia/sydney",
   "location-hamilton-island": "/trips/hamilton-island-working-week",
   "location-longreach": "/trips/longreach-outback-working-week",
 };
@@ -86,6 +90,7 @@ function makeOverviewBlock(
     endLocationId?: string;
     title?: string;
     color?: string;
+    href?: string;
   } = {},
 ): OverviewBlock {
   const location = getLocation(locationId);
@@ -102,7 +107,7 @@ function makeOverviewBlock(
     end: endLocation.end,
     days: inclusiveDays(location.start, endLocation.end),
     color: options.color ?? location.color,
-    href: locationDetailPages[location.id],
+    href: options.href ?? locationDetailPages[location.id],
   };
 }
 
@@ -116,6 +121,7 @@ const overviewRows: OverviewRow[] = [
       makeOverviewBlock("location-melbourne", {
         endLocationId: "location-sydney",
         title: "Melbourne + Sydney",
+        href: "/australia",
       }),
       makeOverviewBlock("location-hamilton-island"),
       makeOverviewBlock("location-longreach"),
@@ -347,9 +353,12 @@ export default function Home() {
               <a className="home-primary-action" href={sitePath("/calendar")}>
                 View the exact calendar
               </a>
-              <a className="home-text-action" href="#overview">
+              <ScrollToSectionButton
+                className="home-text-action home-scroll-action"
+                targetId="overview"
+              >
                 See the overview ↓
-              </a>
+              </ScrollToSectionButton>
             </div>
           </div>
           <dl className="home-facts">

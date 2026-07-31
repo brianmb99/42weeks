@@ -162,6 +162,13 @@ body {
   text-underline-offset: 4px;
 }
 
+.home-scroll-action {
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+  background: transparent;
+}
+
 .home-facts {
   margin: 0;
   border-top: 1px solid #909995;
@@ -193,6 +200,7 @@ body {
 .home-route-section {
   padding: 55px 0 62px;
   border-top: 1px solid var(--home-ink);
+  scroll-margin-top: calc(var(--site-nav-height) + 14px);
 }
 
 .home-section-heading {

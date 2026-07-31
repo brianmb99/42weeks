@@ -65,8 +65,15 @@ test("server-renders the 42 Weeks overview", async () => {
   assert.equal(
     (html.match(/<a class="home-overview-item home-overview-link"/g) ?? [])
       .length,
-    3,
+    5,
   );
+  assert.match(html, /href="\/australia\/geelong"/);
+  assert.match(
+    html,
+    /href="\/australia" aria-label="Open Melbourne \+ Sydney plan"/,
+  );
+  assert.doesNotMatch(html, /href="#overview"/);
+  assert.match(html, /aria-label="Scroll to overview"/);
   assert.match(
     html,
     /\/trips\/great-southern-touring-route/,
