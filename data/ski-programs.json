@@ -1,0 +1,82 @@
+{
+  "lastUpdated": "September 1, 2026",
+  "planning": {
+    "racers": ["Allie", "Charlie"],
+    "ageGroup": "U12",
+    "period": "January–March 2028"
+  },
+  "programs": [
+    {
+      "name": "GR Ski Racing Team Silvaplana",
+      "location": "Engadin / St. Moritz, Switzerland",
+      "url": "https://stmoritz.gr-mountain.com/ski-club/",
+      "status": "strong option",
+      "currentRead": "Program says a continuous January–March placement may work if level is appropriate; almost-daily training and possible local races.",
+      "nextStep": "Reconnect around July 2027 when 2027–28 packages are available."
+    },
+    {
+      "name": "Ski Zenit",
+      "location": "Zinal / Val d'Anniviers, Switzerland",
+      "url": "https://skiracingcamps.ch/",
+      "status": "possible",
+      "currentRead": "Three-week January camp plus rolling private/shared training, but no fixed younger U12 group.",
+      "nextStep": "Keep as a flexible backup and revisit as 2028 plans firm up."
+    },
+    {
+      "name": "Tignes / Val d'Isère warm referral",
+      "location": "Tignes / Val d'Isère, France",
+      "url": "https://www.tignes.net/",
+      "status": "awaiting reply",
+      "currentRead": "Warm local guide referral asked for perspective or relevant program contacts.",
+      "nextStep": "Await referral response."
+    },
+    {
+      "name": "Ski Club Verbier",
+      "location": "Verbier, Switzerland",
+      "url": "https://www.skiclubverbier.ch/fr/",
+      "status": "awaiting reply",
+      "currentRead": "Contacted after referral from ESS Verbier; no response yet.",
+      "nextStep": "Await reply, then follow up if needed."
+    },
+    {
+      "name": "Ski Club de Bagnes",
+      "location": "Verbier / Val de Bagnes, Switzerland",
+      "url": "https://www.skiclubbagnes.ch/",
+      "status": "awaiting reply",
+      "currentRead": "Contacted after referral from ESS Verbier; no response yet.",
+      "nextStep": "Await reply, then follow up if needed."
+    },
+    {
+      "name": "ACM Ski Team",
+      "location": "Crans-Montana, Switzerland",
+      "url": "https://www.acm-ski-team.ch/inscription",
+      "status": "awaiting reply",
+      "currentRead": "Asked about a three-month visiting U12 placement, assessment, and guest racing.",
+      "nextStep": "Await reply, then follow up if needed."
+    },
+    {
+      "name": "Club des Sports de Val d'Isère",
+      "location": "Val d'Isère, France",
+      "url": "https://www.valsport.org/en/ski-section/",
+      "status": "draft ready",
+      "currentRead": "Serious local U12 club, but eligibility may be tied to local school enrollment and full-season attendance.",
+      "nextStep": "Decide whether to send the prepared inquiry."
+    },
+    {
+      "name": "PDS Racing / PDS Snowsport",
+      "location": "Portes du Soleil, France",
+      "url": "https://pdssnowsport.com/race-club/",
+      "status": "not a fit",
+      "currentRead": "Offered private coaching only, without the consistent peer group and race opportunities sought.",
+      "nextStep": "No action unless they provide a stronger club referral."
+    },
+    {
+      "name": "ESS Verbier",
+      "location": "Verbier, Switzerland",
+      "url": "https://essverbier.ch/",
+      "status": "not a fit",
+      "currentRead": "Weekly groups change too much for continuous race-team development; they referred us to local clubs.",
+      "nextStep": "No further action."
+    }
+  ]
+}

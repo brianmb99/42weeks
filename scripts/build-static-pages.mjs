@@ -22,6 +22,7 @@ const routes = [
   "/trips/whitsundays-sea-kayaking/whitehaven-chance-henning",
   "/trips/whitsundays-sea-kayaking/planning-booking",
   "/trips/longreach-outback-working-week",
+  "/ski-programs",
 ];
 
 await rm(outputDir, { recursive: true, force: true });

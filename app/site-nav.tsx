@@ -46,7 +46,7 @@ export default function SiteNav({
   current,
   australiaCurrent,
 }: {
-  current: NavPage;
+  current?: NavPage;
   australiaCurrent?: AustraliaNavPage;
 }) {
   const showAustraliaNav = current === "australia";

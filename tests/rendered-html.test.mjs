@@ -745,3 +745,42 @@ test("server-renders the Great Ocean Road Loop detail", async () => {
   assert.equal(sydneyPlan.eveningIdeas[0].title, "Sydney Opera House performance");
   assert.match(sydneyPlan.eveningIdeas[0].status, /Likely/);
 });
+
+test("server-renders the unlisted U12 ski program status board", async () => {
+  const response = await render("/ski-programs");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+
+  assert.match(html, /<title>U12 Ski Programs/);
+  assert.match(html, />U12 ski program search</);
+  assert.match(html, /Allie and Charlie/);
+  assert.match(html, /January–March 2028/);
+  assert.match(html, /Last updated <!-- -->September 1, 2026/);
+  assert.match(html, /9<!-- --> programs tracked/);
+  assert.match(html, /class="ski-program-status is-strong"/);
+  assert.match(html, /class="ski-program-status is-possible"/);
+  assert.match(html, /class="ski-program-status is-awaiting"/);
+  assert.match(html, /class="ski-program-status is-draft"/);
+  assert.match(html, /class="ski-program-status is-not-fit"/);
+  assert.match(html, />Strong option</);
+  assert.match(html, />Awaiting reply</);
+  assert.match(html, />Draft ready</);
+  assert.match(html, />Not a fit</);
+  assert.match(html, /GR Ski Racing Team Silvaplana/);
+  assert.match(
+    html,
+    /https:\/\/stmoritz\.gr-mountain\.com\/ski-club\//,
+  );
+  assert.match(html, /ESS Verbier/);
+  assert.match(html, /data\/ski-programs\.json/);
+  assert.match(html, /class="site-nav"/);
+  assert.doesNotMatch(html, /href="\/ski-programs"/);
+  assert.doesNotMatch(html, /mailto:/i);
+  assert.doesNotMatch(html, /@[a-z0-9.-]+\.[a-z]{2,}/i);
+  assert.equal((html.match(/class="ski-program-card"/g) ?? []).length, 9);
+  assert.equal((html.match(/class="ski-program-status is-strong"/g) ?? []).length, 1);
+  assert.equal((html.match(/class="ski-program-status is-possible"/g) ?? []).length, 1);
+  assert.equal((html.match(/class="ski-program-status is-awaiting"/g) ?? []).length, 4);
+  assert.equal((html.match(/class="ski-program-status is-draft"/g) ?? []).length, 1);
+  assert.equal((html.match(/class="ski-program-status is-not-fit"/g) ?? []).length, 2);
+});
