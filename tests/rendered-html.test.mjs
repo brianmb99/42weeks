@@ -775,7 +775,9 @@ test("server-renders the unlisted U12 ski program status board", async () => {
   assert.match(html, /Lucia/);
   assert.match(html, /Pascal Arpin/);
   assert.match(html, /Elodie Crépin/);
-  assert.match(html, /Inquiry drafted but not sent/);
+  assert.match(html, /Cold-outreach inquiry drafted but intentionally not sent/);
+  assert.match(html, /Pascal Arpin \(possible introduction\)/);
+  assert.match(html, /send the cold outreach only if he cannot/);
   assert.match(
     html,
     /https:\/\/stmoritz\.gr-mountain\.com\/ski-club\//,
