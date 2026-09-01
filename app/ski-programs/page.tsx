@@ -15,6 +15,8 @@ type SkiProgram = {
   location: string;
   url: string;
   status: ProgramStatus;
+  contactActivity: string;
+  people: string;
   currentRead: string;
   nextStep: string;
 };
@@ -108,6 +110,18 @@ export default function SkiProgramsPage() {
                 </span>
               </div>
               <div className="ski-program-fields">
+                <div className="ski-program-field">
+                  <span className="ski-program-field-label">
+                    Contact activity
+                  </span>
+                  <p className="ski-program-field-value">
+                    {program.contactActivity}
+                  </p>
+                </div>
+                <div className="ski-program-field">
+                  <span className="ski-program-field-label">People</span>
+                  <p className="ski-program-field-value">{program.people}</p>
+                </div>
                 <div className="ski-program-field">
                   <span className="ski-program-field-label">Current read</span>
                   <p className="ski-program-field-value">{program.currentRead}</p>

@@ -767,6 +767,15 @@ test("server-renders the unlisted U12 ski program status board", async () => {
   assert.match(html, />Draft ready</);
   assert.match(html, />Not a fit</);
   assert.match(html, /GR Ski Racing Team Silvaplana/);
+  assert.match(html, />Contact activity</);
+  assert.match(html, />People</);
+  assert.match(html, /Active exchange/);
+  assert.match(html, /Veronica/);
+  assert.match(html, /Valentina \(Ski Team\)/);
+  assert.match(html, /Lucia/);
+  assert.match(html, /Pascal Arpin/);
+  assert.match(html, /Elodie Crépin/);
+  assert.match(html, /Inquiry drafted but not sent/);
   assert.match(
     html,
     /https:\/\/stmoritz\.gr-mountain\.com\/ski-club\//,

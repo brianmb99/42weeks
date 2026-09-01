@@ -229,7 +229,7 @@
     grid-template-columns: 1fr 1fr;
   }
 
-  .ski-program-field:nth-child(1) {
+  .ski-program-field:nth-child(3) {
     grid-column: 1 / -1;
   }
 }

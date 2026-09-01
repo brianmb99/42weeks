@@ -11,6 +11,8 @@
       "location": "Engadin / St. Moritz, Switzerland",
       "url": "https://stmoritz.gr-mountain.com/ski-club/",
       "status": "strong option",
+      "contactActivity": "Active exchange — initial outreach, two detailed replies, a follow-up, and a closing acknowledgement.",
+      "people": "Veronica; Valentina (Ski Team)",
       "currentRead": "Program says a continuous January–March placement may work if level is appropriate; almost-daily training and possible local races.",
       "nextStep": "Reconnect around July 2027 when 2027–28 packages are available."
     },
@@ -19,6 +21,8 @@
       "location": "Zinal / Val d'Anniviers, Switzerland",
       "url": "https://skiracingcamps.ch/",
       "status": "possible",
+      "contactActivity": "Active exchange — initial reply, follow-up questions, a detailed second reply, and a closing acknowledgement.",
+      "people": "Lucia",
       "currentRead": "Three-week January camp plus rolling private/shared training, but no fixed younger U12 group.",
       "nextStep": "Keep as a flexible backup and revisit as 2028 plans firm up."
     },
@@ -27,6 +31,8 @@
       "location": "Tignes / Val d'Isère, France",
       "url": "https://www.tignes.net/",
       "status": "awaiting reply",
+      "contactActivity": "One outreach email sent; no reply yet.",
+      "people": "Pascal Arpin; introduced by Sixtine Fleury",
       "currentRead": "Warm local guide referral asked for perspective or relevant program contacts.",
       "nextStep": "Await referral response."
     },
@@ -35,6 +41,8 @@
       "location": "Verbier, Switzerland",
       "url": "https://www.skiclubverbier.ch/fr/",
       "status": "awaiting reply",
+      "contactActivity": "One outreach email sent; no reply yet.",
+      "people": "Ski Club Verbier team inbox; no named respondent yet",
       "currentRead": "Contacted after referral from ESS Verbier; no response yet.",
       "nextStep": "Await reply, then follow up if needed."
     },
@@ -43,6 +51,8 @@
       "location": "Verbier / Val de Bagnes, Switzerland",
       "url": "https://www.skiclubbagnes.ch/",
       "status": "awaiting reply",
+      "contactActivity": "One outreach email sent; no reply yet.",
+      "people": "Ski Club de Bagnes team inbox; no named respondent yet",
       "currentRead": "Contacted after referral from ESS Verbier; no response yet.",
       "nextStep": "Await reply, then follow up if needed."
     },
@@ -51,6 +61,8 @@
       "location": "Crans-Montana, Switzerland",
       "url": "https://www.acm-ski-team.ch/inscription",
       "status": "awaiting reply",
+      "contactActivity": "One outreach email sent; no reply yet.",
+      "people": "Nicolas Combe",
       "currentRead": "Asked about a three-month visiting U12 placement, assessment, and guest racing.",
       "nextStep": "Await reply, then follow up if needed."
     },
@@ -59,6 +71,8 @@
       "location": "Val d'Isère, France",
       "url": "https://www.valsport.org/en/ski-section/",
       "status": "draft ready",
+      "contactActivity": "Inquiry drafted but not sent.",
+      "people": "Lionel Fayolle",
       "currentRead": "Serious local U12 club, but eligibility may be tied to local school enrollment and full-season attendance.",
       "nextStep": "Decide whether to send the prepared inquiry."
     },
@@ -67,6 +81,8 @@
       "location": "Portes du Soleil, France",
       "url": "https://pdssnowsport.com/race-club/",
       "status": "not a fit",
+      "contactActivity": "Brief exchange — they replied once and we responded with the peer-group requirement.",
+      "people": "Tom",
       "currentRead": "Offered private coaching only, without the consistent peer group and race opportunities sought.",
       "nextStep": "No action unless they provide a stronger club referral."
     },
@@ -75,6 +91,8 @@
       "location": "Verbier, Switzerland",
       "url": "https://essverbier.ch/",
       "status": "not a fit",
+      "contactActivity": "Brief exchange — they replied with guidance and referrals, and we acknowledged.",
+      "people": "Elodie Crépin",
       "currentRead": "Weekly groups change too much for continuous race-team development; they referred us to local clubs.",
       "nextStep": "No further action."
     }
