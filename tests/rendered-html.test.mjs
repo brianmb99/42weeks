@@ -256,10 +256,15 @@ test("server-renders Alice Springs, Brisbane and Wānaka glance-first plans", as
         /Uluru is a separate vacation decision/,
         /East Side/,
         /class="location-rhythm-track"/,
+        /Two full Work &amp; School weeks/,
+        /Work &amp; School · week one/,
+        /Weekday rhythm/,
+        /Place-based learning — Use the Telegraph Station/,
         /What fits here/,
         /data\/alice-springs\.json/,
       ],
       image: /\/images\/outback\/aerial-road\.jpg/,
+      absent: [/Work \+ school/],
     },
     {
       path: "/australia/brisbane",
@@ -299,6 +304,9 @@ test("server-renders Alice Springs, Brisbane and Wānaka glance-first plans", as
     const html = await response.text();
     assert.match(html, route.current);
     for (const pattern of route.content) assert.match(html, pattern);
+    for (const pattern of route.absent ?? []) {
+      assert.doesNotMatch(html, pattern);
+    }
     assert.match(html, route.image);
     assert.equal(
       (html.match(/<figure(?: class="is-featured")?>/g) ?? []).length,

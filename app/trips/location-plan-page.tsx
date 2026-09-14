@@ -106,7 +106,9 @@ export default function LocationPlanPage({
             {tones.map((tone) => (
               <span className={`is-${tone}`} key={tone}>
                 <i aria-hidden="true" />
-                {toneLabels[tone]}
+                {tone === "work" && plan.workLabel
+                  ? plan.workLabel
+                  : toneLabels[tone]}
               </span>
             ))}
           </div>

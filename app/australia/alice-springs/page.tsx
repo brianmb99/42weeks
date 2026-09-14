@@ -5,7 +5,7 @@ import LocationPlanPage from "../../trips/location-plan-page";
 export const metadata: Metadata = {
   title: "Alice Springs",
   description:
-    "The selected two-week Alice Springs work base, Red Centre weekend and practical family plan.",
+    "The selected two-week Alice Springs Work & School base, Red Centre weekend and practical family plan.",
 };
 
 export default function AliceSpringsPage() {
@@ -20,7 +20,7 @@ export default function AliceSpringsPage() {
         dates: "Sep 12–25, 2027",
         facts: [
           "14 nights",
-          "Two full work weeks",
+          "Two full Work & School weeks",
           "Complete outback weekend",
         ],
         summary: alice.summary,
@@ -50,9 +50,10 @@ export default function AliceSpringsPage() {
               "https://www.pexels.com/photo/vast-australian-outback-landscape-under-blue-sky-32915389/",
           },
         ],
-        rhythmTitle: "Two work weeks, one real outback weekend",
+        rhythmTitle: "Two Work & School weeks, one real outback weekend",
         rhythmSummary:
-          "Keeping one house for fourteen nights is what turns Alice Springs into a credible work base. Local afternoons provide the texture; the complete middle weekend carries the remote driving.",
+          "Keeping one house for fourteen nights is what makes a credible weekday routine possible. Core work and school stay protected; local afternoons become place-based learning, while the complete middle weekend carries the remote driving.",
+        workLabel: "Work & School",
         rhythm: [
           {
             label: "Arrive and set up",
@@ -62,9 +63,9 @@ export default function AliceSpringsPage() {
             tone: "arrival",
           },
           {
-            label: "Work week one",
+            label: "Work & School · week one",
             dates: "Sep 13–17",
-            detail: "Normal work and school with low-friction afternoons.",
+            detail: "Core morning blocks, then flexible local learning.",
             days: 5,
             tone: "work",
           },
@@ -76,9 +77,9 @@ export default function AliceSpringsPage() {
             tone: "family",
           },
           {
-            label: "Work week two",
+            label: "Work & School · week two",
             dates: "Sep 20–24",
-            detail: "Return to full output and fill local gaps.",
+            detail: "Return to the routine and fill the local gaps.",
             days: 5,
             tone: "work",
           },
@@ -103,7 +104,7 @@ export default function AliceSpringsPage() {
           },
           {
             title: alice.workdayAfternoons[0].title,
-            timing: "Substantial half-day or lighter workday",
+            timing: "Substantial half-day or lighter Work & School day",
             description: alice.workdayAfternoons[0].note,
             links: [alice.links[3]],
           },
@@ -145,8 +146,16 @@ export default function AliceSpringsPage() {
           {
             id: "work-rhythm",
             eyebrow: "September 13–24",
-            title: "Protect two ordinary work weeks",
-            items: alice.workRhythm.localPlan,
+            title: "Weekday rhythm",
+            description:
+              "Keep core professional work and school in a predictable morning block, then use selected afternoons for place-based learning without programming every day.",
+            items: [
+              "Work — Use a substantial local-morning block for deep work while the children complete core schoolwork.",
+              "School — Protect reading, writing and math before treating an outing as the day's learning.",
+              "Place-based learning — Use the Telegraph Station, Araluen Cultural Precinct and Olive Pink Botanic Garden as flexible school-day options.",
+              "Longer learning day — Put Desert Park or the Royal Flying Doctor Service and School of the Air on a lighter day and follow their published program times.",
+              "U.S. overlap — When live overlap is needed, 6–10 a.m. New York maps to approximately 7:30–11:30 p.m. in Alice Springs; do not schedule it every night.",
+            ],
           },
           {
             id: "weekend",

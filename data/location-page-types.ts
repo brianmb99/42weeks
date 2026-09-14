@@ -51,6 +51,7 @@ export type LocationPagePlan = {
   rhythmTitle: string;
   rhythmSummary: string;
   rhythm: LocationRhythmSegment[];
+  workLabel?: string;
   stayTitle: string;
   stayDescription: string;
   stayChecks: string[];
