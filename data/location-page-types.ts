@@ -24,9 +24,14 @@ export type LocationRhythmSegment = {
   detail: string;
   days: number;
   tone: LocationRhythmTone;
+  highlights?: Array<{
+    title: string;
+    activityId: string;
+  }>;
 };
 
 export type LocationActivity = {
+  id?: string;
   title: string;
   timing: string;
   description: string;
@@ -41,16 +46,6 @@ export type LocationPanel = {
   id?: string;
 };
 
-export type LocationWeekdayHighlights = {
-  title: string;
-  summary: string;
-  cards: Array<{
-    title: string;
-    timing: string;
-    items: string[];
-  }>;
-};
-
 export type LocationPagePlan = {
   eyebrow: string;
   title: string;
@@ -62,7 +57,6 @@ export type LocationPagePlan = {
   rhythmSummary: string;
   rhythm: LocationRhythmSegment[];
   workLabel?: string;
-  weekdayHighlights?: LocationWeekdayHighlights;
   stayTitle: string;
   stayDescription: string;
   stayChecks: string[];

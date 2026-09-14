@@ -87,7 +87,9 @@ export default function LocationPlanPage({
           >
             {plan.rhythm.map((segment) => (
               <li
-                className={`is-${segment.tone}`}
+                className={`is-${segment.tone}${
+                  segment.highlights?.length ? " has-highlights" : ""
+                }`}
                 style={
                   { "--rhythm-days": segment.days } as CSSProperties
                 }
@@ -96,6 +98,20 @@ export default function LocationPlanPage({
                 <span>{segment.dates}</span>
                 <strong>{segment.label}</strong>
                 <small>{segment.detail}</small>
+                {segment.highlights && (
+                  <ul className="location-rhythm-links">
+                    {segment.highlights.map((highlight) => (
+                      <li key={highlight.activityId}>
+                        <a
+                          href={`#${highlight.activityId}`}
+                          aria-label={`Details: ${highlight.title}`}
+                        >
+                          {highlight.title}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </li>
             ))}
           </ol>
@@ -112,35 +128,6 @@ export default function LocationPlanPage({
               </span>
             ))}
           </div>
-          {plan.weekdayHighlights && (
-            <div
-              className="location-weekday-highlights"
-              aria-labelledby="location-weekday-highlights-title"
-            >
-              <header>
-                <div>
-                  <p>During Work &amp; School</p>
-                  <h3 id="location-weekday-highlights-title">
-                    {plan.weekdayHighlights.title}
-                  </h3>
-                </div>
-                <p>{plan.weekdayHighlights.summary}</p>
-              </header>
-              <div className="location-weekday-highlight-grid">
-                {plan.weekdayHighlights.cards.map((card) => (
-                  <article key={card.title}>
-                    <p>{card.timing}</p>
-                    <h4>{card.title}</h4>
-                    <ul>
-                      {card.items.map((item) => (
-                        <li key={item}>{item}</li>
-                      ))}
-                    </ul>
-                  </article>
-                ))}
-              </div>
-            </div>
-          )}
         </section>
 
         <section className="location-stay" aria-labelledby="location-stay-title">
@@ -162,7 +149,7 @@ export default function LocationPlanPage({
           </header>
           <div>
             {plan.activities.map((activity, index) => (
-              <article key={activity.title}>
+              <article id={activity.id} key={activity.title}>
                 <span>{String(index + 1).padStart(2, "0")}</span>
                 <div>
                   <p>{activity.timing}</p>

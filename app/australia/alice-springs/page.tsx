@@ -68,6 +68,20 @@ export default function AliceSpringsPage() {
             detail: "Core morning blocks, then flexible local learning.",
             days: 5,
             tone: "work",
+            highlights: [
+              {
+                title: "Telegraph Station",
+                activityId: "telegraph-station",
+              },
+              {
+                title: "Olive Pink + Anzac Hill",
+                activityId: "olive-pink-anzac-hill",
+              },
+              {
+                title: "Araluen Cultural Precinct",
+                activityId: "araluen-cultural-precinct",
+              },
+            ],
           },
           {
             label: "Red Centre weekend",
@@ -82,6 +96,20 @@ export default function AliceSpringsPage() {
             detail: "Return to the routine and fill the local gaps.",
             days: 5,
             tone: "work",
+            highlights: [
+              {
+                title: "Alice Springs Desert Park",
+                activityId: "alice-springs-desert-park",
+              },
+              {
+                title: "RFDS + School of the Air",
+                activityId: "rfds-school-of-the-air",
+              },
+              {
+                title: "Ordinary Alice Springs life",
+                activityId: "ordinary-alice-springs-life",
+              },
+            ],
           },
           {
             label: "Pack locally",
@@ -91,45 +119,12 @@ export default function AliceSpringsPage() {
             tone: "family",
           },
         ],
-        weekdayHighlights: {
-          title: "The weekdays are part of the outback experience",
-          summary:
-            "Choose throughout both weeks rather than assigning these to fixed dates. Mix short local learning with one or two longer outings, and leave some afternoons open.",
-          cards: [
-            {
-              timing: "Easy local afternoons",
-              title: "History, art and desert plants",
-              items: [
-                "Telegraph Station history and nearby trails",
-                "Olive Pink Botanic Garden desert ecology",
-                "Araluen Cultural Precinct galleries and collections",
-              ],
-            },
-            {
-              timing: "Lighter Work & School day",
-              title: "Longer learning outings",
-              items: [
-                "Desert Park ecosystems and wildlife programs",
-                "Royal Flying Doctor Service visitor experience",
-                "School of the Air and remote education",
-              ],
-            },
-            {
-              timing: "Little or no booking",
-              title: "Everyday outback learning",
-              items: [
-                "East Side walks and desert observation",
-                "Anzac Hill sunset and town orientation",
-                "Night-sky observation and a constellation journal",
-              ],
-            },
-          ],
-        },
         stayTitle: alice.base.recommendation,
         stayDescription: alice.base.reason,
         stayChecks: alice.base.requirements,
         activities: [
           {
+            id: "tjoritja-weekend",
             title: "Tjoritja / West MacDonnell Ranges",
             timing: "Complete middle weekend · Sep 18–19",
             description:
@@ -137,34 +132,40 @@ export default function AliceSpringsPage() {
             links: [alice.links[2]],
           },
           {
+            id: "alice-springs-desert-park",
             title: alice.workdayAfternoons[0].title,
             timing: "Substantial half-day or lighter Work & School day",
             description: alice.workdayAfternoons[0].note,
             links: [alice.links[3]],
           },
           {
+            id: "telegraph-station",
             title: alice.workdayAfternoons[1].title,
             timing: "Easy East Side afternoon",
             description: alice.workdayAfternoons[1].note,
           },
           {
+            id: "rfds-school-of-the-air",
             title: "Royal Flying Doctor Service + School of the Air",
             timing: "One program-led afternoon",
             description:
               "Pair two of the clearest windows into the logistics of remote Australian life. Use published tour times rather than assuming both can be dropped into any afternoon.",
           },
           {
+            id: "araluen-cultural-precinct",
             title: alice.workdayAfternoons[2].title,
             timing: "Heat, wind or recovery-day option",
             description: alice.workdayAfternoons[2].note,
           },
           {
+            id: "olive-pink-anzac-hill",
             title: "Olive Pink Botanic Garden + Anzac Hill",
             timing: "Short outing or sunset",
             description:
               "Use these as flexible local ecology and orientation stops, not as substitutes for the complete outback weekend.",
           },
           {
+            id: "ordinary-alice-springs-life",
             title: "Ordinary Alice Springs life",
             timing: "Leave several afternoons unbooked",
             description: alice.workdayAfternoons[5].note,

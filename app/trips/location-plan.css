@@ -127,7 +127,7 @@ body {
   background: #fff;
 }
 
-.location-rhythm-track li {
+.location-rhythm-track > li {
   --rhythm-color: var(--location-arrival);
   min-width: 0;
   min-height: 132px;
@@ -137,33 +137,33 @@ body {
   background: color-mix(in srgb, var(--rhythm-color) 8%, white);
 }
 
-.location-rhythm-track li + li {
+.location-rhythm-track > li + li {
   border-left: 1px solid var(--location-rule);
 }
 
-.location-rhythm-track .is-work {
+.location-rhythm-track > .is-work {
   --rhythm-color: var(--location-work);
 }
 
-.location-rhythm-track .is-family {
+.location-rhythm-track > .is-family {
   --rhythm-color: var(--location-family);
 }
 
-.location-rhythm-track .is-vacation {
+.location-rhythm-track > .is-vacation {
   --rhythm-color: var(--location-vacation);
 }
 
-.location-rhythm-track .is-travel {
+.location-rhythm-track > .is-travel {
   --rhythm-color: var(--location-travel);
 }
 
-.location-rhythm-track li > span,
-.location-rhythm-track li > strong,
-.location-rhythm-track li > small {
+.location-rhythm-track > li > span,
+.location-rhythm-track > li > strong,
+.location-rhythm-track > li > small {
   display: block;
 }
 
-.location-rhythm-track li > span {
+.location-rhythm-track > li > span {
   color: var(--rhythm-color);
   font-size: 9px;
   font-weight: 850;
@@ -171,17 +171,55 @@ body {
   text-transform: uppercase;
 }
 
-.location-rhythm-track li > strong {
+.location-rhythm-track > li > strong {
   margin-top: 7px;
   font-size: 13px;
   line-height: 1.2;
 }
 
-.location-rhythm-track li > small {
+.location-rhythm-track > li > small {
   margin-top: 7px;
   color: #58646a;
   font-size: 9px;
   line-height: 1.45;
+}
+
+.location-rhythm-links {
+  margin: 11px 0 0;
+  padding: 9px 0 0;
+  border-top: 1px solid color-mix(in srgb, var(--rhythm-color) 28%, white);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 5px 12px;
+  list-style: none;
+}
+
+.location-rhythm-links li {
+  min-width: 0;
+}
+
+.location-rhythm-links a {
+  padding-left: 10px;
+  display: block;
+  position: relative;
+  overflow-wrap: anywhere;
+  color: #315f78;
+  font-size: 9px;
+  font-weight: 750;
+  line-height: 1.32;
+  text-decoration: none;
+}
+
+.location-rhythm-links a::before {
+  position: absolute;
+  left: 0;
+  color: var(--rhythm-color);
+  content: "—";
+}
+
+.location-rhythm-links a:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 .location-rhythm-legend {
@@ -227,90 +265,6 @@ body {
   height: 4px;
   display: block;
   background: var(--rhythm-color);
-}
-
-.location-weekday-highlights {
-  margin-top: 24px;
-  padding-top: 25px;
-  border-top: 1px solid var(--location-rule);
-}
-
-.location-weekday-highlights > header {
-  padding-left: 60px;
-  display: grid;
-  grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.2fr);
-  align-items: end;
-  gap: clamp(30px, 6vw, 80px);
-}
-
-.location-weekday-highlights h3 {
-  margin: 0;
-  font-size: clamp(20px, 2.5vw, 28px);
-  letter-spacing: -0.035em;
-  line-height: 1.05;
-}
-
-.location-weekday-highlights > header > p {
-  margin: 0;
-  color: #4b585f;
-  font-size: 11px;
-  line-height: 1.58;
-}
-
-.location-weekday-highlight-grid {
-  margin-top: 18px;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 8px;
-}
-
-.location-weekday-highlight-grid article {
-  min-width: 0;
-  padding: 17px 18px 16px;
-  border: 1px solid var(--location-rule);
-  border-top: 6px solid var(--location-work);
-  background: color-mix(in srgb, var(--location-work) 6%, white);
-}
-
-.location-weekday-highlight-grid article > p {
-  margin: 0;
-  color: var(--location-work);
-  font-size: 9px;
-  font-weight: 850;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-}
-
-.location-weekday-highlight-grid h4 {
-  margin: 6px 0 12px;
-  font-size: 16px;
-  letter-spacing: -0.025em;
-  line-height: 1.2;
-}
-
-.location-weekday-highlight-grid ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.location-weekday-highlight-grid li {
-  padding-left: 14px;
-  position: relative;
-  color: #4c5960;
-  font-size: 10px;
-  line-height: 1.48;
-}
-
-.location-weekday-highlight-grid li + li {
-  margin-top: 6px;
-}
-
-.location-weekday-highlight-grid li::before {
-  position: absolute;
-  left: 0;
-  color: var(--location-work);
-  content: "—";
 }
 
 .location-stay {
@@ -376,6 +330,7 @@ body {
   display: grid;
   grid-template-columns: 42px minmax(0, 1fr);
   gap: 18px;
+  scroll-margin-top: 96px;
 }
 
 .location-activities article > span {
@@ -550,20 +505,17 @@ body {
 @media (max-width: 800px) {
   .location-header,
   .location-rhythm > header,
-  .location-weekday-highlights > header,
   .location-stay > div {
     padding-left: 0;
   }
 
   .location-rhythm > header,
-  .location-weekday-highlights > header,
   .location-stay,
   .location-activities {
     grid-template-columns: 1fr;
   }
 
   .location-rhythm > header,
-  .location-weekday-highlights > header,
   .location-activities {
     gap: 18px;
   }
@@ -573,10 +525,15 @@ body {
     scroll-snap-type: x proximity;
   }
 
-  .location-rhythm-track li {
+  .location-rhythm-track > li {
     min-width: 132px;
     flex-basis: 132px;
     scroll-snap-align: start;
+  }
+
+  .location-rhythm-track > li.has-highlights {
+    min-width: 280px;
+    flex-basis: 280px;
   }
 
   .location-rhythm-mobile-hint {
@@ -590,10 +547,6 @@ body {
 
   .location-stay {
     gap: 25px;
-  }
-
-  .location-weekday-highlight-grid {
-    grid-template-columns: 1fr;
   }
 
   .location-notes,

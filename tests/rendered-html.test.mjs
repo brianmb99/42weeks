@@ -260,15 +260,19 @@ test("server-renders Alice Springs, Brisbane and Wānaka glance-first plans", as
         /Work &amp; School · week one/,
         /Weekday rhythm/,
         /Place-based learning — Use the Telegraph Station/,
-        /class="location-weekday-highlights"/,
-        /The weekdays are part of the outback experience/,
-        /History, art and desert plants/,
-        /Everyday outback learning/,
+        /href="#telegraph-station" aria-label="Details: Telegraph Station"/,
+        /href="#alice-springs-desert-park" aria-label="Details: Alice Springs Desert Park"/,
+        /id="rfds-school-of-the-air"/,
         /What fits here/,
         /data\/alice-springs\.json/,
       ],
       image: /\/images\/outback\/aerial-road\.jpg/,
-      absent: [/Work \+ school/],
+      absent: [
+        /Work \+ school/,
+        /location-weekday-highlights/,
+        /The weekdays are part of the outback experience/,
+      ],
+      highlightedSegments: 2,
     },
     {
       path: "/australia/brisbane",
@@ -312,6 +316,12 @@ test("server-renders Alice Springs, Brisbane and Wānaka glance-first plans", as
     for (const pattern of route.content) assert.match(html, pattern);
     for (const pattern of route.absent ?? []) {
       assert.doesNotMatch(html, pattern);
+    }
+    if (route.highlightedSegments) {
+      assert.equal(
+        (html.match(/class="is-work has-highlights"/g) ?? []).length,
+        route.highlightedSegments,
+      );
     }
     assert.match(html, route.image);
     assert.equal(
