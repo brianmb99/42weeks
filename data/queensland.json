@@ -1,6 +1,6 @@
 {
-  "schemaVersion": 1,
-  "lastReviewed": "2026-07-30",
+  "schemaVersion": 2,
+  "lastReviewed": "2026-09-13",
   "status": "Working plan. Recheck 2027 flight schedules, attraction calendars, prices, Starlink terms, and marine conditions before booking.",
   "shared": {
     "workPattern": {
@@ -24,7 +24,7 @@
     "start": "2027-10-10",
     "end": "2027-10-16",
     "nights": 7,
-    "summary": "Use Hamilton Island as the base through Tuesday, move to the mainland Tuesday evening, optionally work about 4:30–7:00 a.m. Wednesday before serious boat-based snorkeling at Hardy Reef, then take a Thursday-to-Saturday two-night sea-kayak expedition. This keeps the Outback dates intact.",
+    "summary": "Use Hamilton Island as the base through Tuesday, move to the mainland Tuesday evening, optionally work about 4:30–7:00 a.m. Wednesday before serious boat-based snorkeling at Hardy Reef, then take a Thursday-to-Saturday two-night sea-kayak expedition. Fly to Brisbane on Sunday for the final Australian work week.",
     "arrival": {
       "date": "2027-10-10",
       "title": "Arrive and establish the base",
@@ -36,11 +36,11 @@
     },
     "departure": {
       "date": "2027-10-17",
-      "title": "Fly Proserpine → Brisbane → Longreach",
+      "title": "Fly Proserpine → Brisbane",
       "items": [
         "Finish the kayak trip Saturday, then sleep on the mainland near the Proserpine departure route.",
-        "Fly Proserpine → Brisbane → Longreach on Sunday, using Brisbane only as an airport connection.",
-        "Treat the same-day connection as a working assumption until the 2027 schedule confirms it."
+        "Fly directly from Proserpine to Brisbane on Sunday.",
+        "Settle into the final six-night work, laundry and repacking base before India."
       ]
     },
     "base": {
@@ -100,7 +100,7 @@
     "bookFirst": [
       "Holiday home with a separate work room and written Starlink permission",
       "Sydney → Hamilton Island flight",
-      "Proserpine → Brisbane → Longreach same-day flights",
+      "Proserpine → Brisbane flight",
       "Cruise Whitsundays Hardy Reef day from Port of Airlie",
       "Salty Dog two-double-kayak hire and Shute Harbour briefing",
       "Scamper route-specific drop, kayak carriage and pickup",
@@ -142,7 +142,82 @@
       }
     ]
   },
+  "brisbane": {
+    "slug": "brisbane-working-week",
+    "eyebrow": "Brisbane · Queensland",
+    "title": "Brisbane: Work, Reset & Repack",
+    "start": "2027-10-17",
+    "end": "2027-10-22",
+    "nights": 6,
+    "summary": "Use Brisbane as a dependable final Australian work base after the Whitsundays. This is not a retained home or another sightseeing sprint: the priorities are full output, homeschool, laundry, recovery and deliberate packing for India.",
+    "arrival": {
+      "date": "2027-10-17",
+      "title": "Fly Proserpine → Brisbane",
+      "items": [
+        "Use Sunday for the direct flight and airport transfer.",
+        "Buy groceries and establish the work and school zones before dinner.",
+        "Test broadband, mobile backup and the full work setup that evening."
+      ]
+    },
+    "departure": {
+      "date": "2027-10-23",
+      "title": "Begin the weekend trip to India",
+      "items": [
+        "Pack during the week rather than turning Friday night into a scramble.",
+        "Use a protected one-stop international itinerary.",
+        "Travel over the weekend and arrive Sunday, October 24."
+      ]
+    },
+    "base": {
+      "recommendation": "New Farm first, West End second",
+      "reason": "New Farm offers quiet streets, river paths and family apartments; West End offers stronger walkability, food and South Bank access.",
+      "requirements": [
+        "A closed-door workspace and a second school surface",
+        "Measured broadband plus usable mobile backup",
+        "Air conditioning, kitchen and laundry",
+        "Groceries and outdoor space within an easy walk",
+        "Straightforward Sunday airport access"
+      ]
+    },
+    "workAfternoons": [
+      "New Farm Park and the riverwalk",
+      "CityCat ride and South Bank",
+      "West End markets or neighborhood dinner",
+      "Queensland Museum or GOMA if weather turns",
+      "Pool, laundry and unstructured recovery time"
+    ],
+    "cautions": [
+      "October is warm and generally pleasant, but thunderstorms become more plausible.",
+      "Do not over-program the week: its value is restoring output and leaving Australia organized.",
+      "Choose the rental for workspace and laundry before views or resort amenities."
+    ],
+    "homeschool": [
+      "Brisbane River geography, flooding and city design",
+      "Queensland history and the transition from coast and reef to a subtropical capital",
+      "Trip budgeting, packing systems and route mapping"
+    ],
+    "bookFirst": [
+      "Six-night New Farm or West End rental with a separate work room",
+      "Proserpine → Brisbane flight",
+      "Brisbane → India itinerary"
+    ],
+    "links": [
+      {
+        "title": "New Farm",
+        "url": "https://visit.brisbane.qld.au/places-to-go/inner-city/new-farm"
+      },
+      {
+        "title": "West End",
+        "url": "https://visit.brisbane.qld.au/places-to-go/inner-city/west-end"
+      },
+      {
+        "title": "South Bank",
+        "url": "https://visit.brisbane.qld.au/places-to-go/inner-city/south-bank/about-south-bank"
+      }
+    ]
+  },
   "longreach": {
+    "status": "Archived alternative; not part of the selected canonical route.",
     "slug": "longreach-outback-working-week",
     "eyebrow": "Outback Queensland",
     "title": "Outback Queensland: Work & Play",

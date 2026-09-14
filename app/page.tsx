@@ -9,7 +9,7 @@ import "./home.css";
 export const metadata: Metadata = {
   title: { absolute: "42 Weeks" },
   description:
-    "The broad-strokes route, highlights, and open questions for a family sabbatical from September 2027 through June 2028.",
+    "The broad-strokes route, highlights, and open questions for a family sabbatical from August 2027 through June 2028.",
 };
 
 type TimelineEntry = (typeof tripPlan.timeline)[number];
@@ -29,13 +29,16 @@ const locations = tripPlan.timeline.filter(
 );
 
 const locationDetailPages: Record<string, string> = {
+  "location-melbourne-opening": "/australia/melbourne",
   "location-geelong": "/australia/geelong",
   "location-great-southern-touring-route":
     "/trips/great-southern-touring-route",
-  "location-melbourne": "/australia/melbourne",
+  "location-melbourne-return": "/australia/melbourne",
+  "location-alice-springs": "/australia/alice-springs",
   "location-sydney": "/australia/sydney",
   "location-hamilton-island": "/trips/hamilton-island-working-week",
-  "location-longreach": "/trips/longreach-outback-working-week",
+  "location-brisbane": "/australia/brisbane",
+  "location-wanaka": "/new-zealand/wanaka",
 };
 
 function getLocation(id: string) {
@@ -116,15 +119,17 @@ const overviewRows: OverviewRow[] = [
     id: "australia",
     title: "Australia",
     blocks: [
+      makeOverviewBlock("location-melbourne-opening"),
       makeOverviewBlock("location-geelong"),
-      makeOverviewBlock("location-great-southern-touring-route"),
-      makeOverviewBlock("location-melbourne", {
-        endLocationId: "location-sydney",
-        title: "Melbourne + Sydney",
-        href: "/australia",
+      makeOverviewBlock("location-great-southern-touring-route", {
+        endLocationId: "location-melbourne-return",
+        title: "Victoria road trip",
+        href: "/trips/great-southern-touring-route",
       }),
+      makeOverviewBlock("location-alice-springs"),
+      makeOverviewBlock("location-sydney"),
       makeOverviewBlock("location-hamilton-island"),
-      makeOverviewBlock("location-longreach"),
+      makeOverviewBlock("location-brisbane"),
     ],
   },
   {
@@ -135,6 +140,11 @@ const overviewRows: OverviewRow[] = [
       makeOverviewBlock("location-singapore"),
       makeOverviewBlock("location-hong-kong"),
     ],
+  },
+  {
+    id: "new-zealand",
+    title: "New Zealand",
+    blocks: [makeOverviewBlock("location-wanaka")],
   },
   {
     id: "home-snowbird-home",
@@ -174,12 +184,24 @@ type PlaceCard = {
 
 const australiaCards: PlaceCard[] = [
   {
-    locationId: "location-geelong",
-    category: "Work + local evenings",
+    locationId: "location-melbourne-opening",
+    category: "Landing + work launch",
     summary:
-      "Land in Melbourne and go straight to Geelong, probably Newtown. Work during the day, then use the afternoons and evenings to explore.",
-    highlights: ["Newtown base", "Queenscliff evening", "Geelong after work"],
-    open: "Apartment, neighborhood routine, and local evening list",
+      "Use six nights to absorb the long-haul arrival, establish work and homeschool, and target any available men's AFL match at the MCG.",
+    highlights: ["Soft work launch", "MCG match", "Melbourne afternoons"],
+    open: "Exact flight, rental, and 2027 AFL fixture",
+    href: "/australia/melbourne",
+    linkLabel: "Open Melbourne plan",
+  },
+  {
+    locationId: "location-geelong",
+    category: "Family history + work",
+    summary:
+      "Live in Newtown for a full week, protect the weekday routine, and leave room for remembered places, ordinary neighborhood time, and Queenscliff.",
+    highlights: ["Newtown base", "Remembered places", "Queenscliff"],
+    open: "Apartment, internet, and personal family-history list",
+    href: "/australia/geelong",
+    linkLabel: "Open Geelong plan",
   },
   {
     locationId: "location-great-southern-touring-route",
@@ -192,14 +214,24 @@ const australiaCards: PlaceCard[] = [
     linkLabel: "Open the 7-day plan",
   },
   {
-    locationId: "location-melbourne",
-    endLocationId: "location-sydney",
-    title: "Melbourne + Sydney",
-    category: "Weekend + work base",
+    locationId: "location-alice-springs",
+    category: "Two-week outback work base",
     summary:
-      "A full Melbourne weekend followed by a Sunday-evening flight and a protected Monday–Friday work week in Sydney.",
-    highlights: ["Melbourne weekend", "Sydney work week", "Opera House evening"],
-    open: "Sydney neighborhood, lodging, and exact flight timing",
+      "Work and live in the Red Centre for two full weeks, using the complete middle weekend for Tjoritja or another outback excursion.",
+    highlights: ["Red Centre life", "Tjoritja weekend", "Two full work weeks"],
+    open: "Rental, flight days, and exact middle-weekend route",
+    href: "/australia/alice-springs",
+    linkLabel: "Open Alice Springs plan",
+  },
+  {
+    locationId: "location-sydney",
+    category: "Two-week beach work base",
+    summary:
+      "Run two normal work and homeschool weeks beside the beach, with a complete middle weekend for the harbour, coast or Opera House.",
+    highlights: ["Manly or Coogee", "Full city weekend", "Opera House evening"],
+    open: "Neighborhood, rental, and 2027 performance calendar",
+    href: "/australia/sydney",
+    linkLabel: "Open Sydney plan",
   },
   {
     locationId: "location-hamilton-island",
@@ -212,14 +244,14 @@ const australiaCards: PlaceCard[] = [
     linkLabel: "Open Whitsundays plan",
   },
   {
-    locationId: "location-longreach",
-    category: "Play, with some work",
+    locationId: "location-brisbane",
+    category: "Work + reset",
     summary:
-      "Live in a practical outback town: three work and homeschool mornings, then two full days for aviation, heritage, and one defining outback experience.",
-    highlights: ["Qantas history", "Outback heritage", "Winton or station day"],
-    open: "Lodging, seasonal programs, and Winton vs. Longreach",
-    href: "/trips/longreach-outback-working-week",
-    linkLabel: "Open Outback plan",
+      "Finish Australia with one dependable full-output week, laundry, recovery, and deliberate packing for India.",
+    highlights: ["Full work week", "New Farm or West End", "Pack for India"],
+    open: "Rental, exact flight, and international handoff",
+    href: "/australia/brisbane",
+    linkLabel: "Open Brisbane plan",
   },
 ];
 
@@ -235,7 +267,7 @@ const asiaCards: PlaceCard[] = [
   },
   {
     locationId: "location-singapore",
-    category: "Two-week base",
+    category: "One bounded office week",
     summary:
       "A compact, easy-to-navigate work base with strong food, gardens, transit, and family-friendly city days.",
     highlights: ["Hawker food", "Gardens", "Easy transit"],
@@ -243,11 +275,24 @@ const asiaCards: PlaceCard[] = [
   },
   {
     locationId: "location-hong-kong",
-    category: "Nearly three weeks",
+    category: "Thanksgiving office week",
     summary:
-      "A longer city stay with room for ferries, hikes, harbor life, and a sustainable working rhythm.",
-    highlights: ["Harbor and ferries", "Country-park hikes", "Dense city life"],
-    open: "Hong Kong Island, Kowloon, or an outlying base",
+      "Keep the office commitment compact, use the Thanksgiving break intelligently, and preserve Saturday before the overnight flight.",
+    highlights: ["Harbor and ferries", "Three core office days", "Saturday in Hong Kong"],
+    open: "Neighborhood, office rhythm, and exact Auckland flight",
+  },
+];
+
+const newZealandCards: PlaceCard[] = [
+  {
+    locationId: "location-wanaka",
+    category: "Twenty-night working base",
+    summary:
+      "Use one Wānaka house for almost three weeks: early full workdays, long late-spring afternoons, two weekends, and a four-day mini-vacation using two leave days.",
+    highlights: ["Long evenings", "Mount Aspiring country", "Forecast-led mini-vacation"],
+    open: "Rental, flight timing, and Wānaka vs. one two-night excursion",
+    href: "/new-zealand/wanaka",
+    linkLabel: "Open Wānaka plan",
   },
 ];
 
@@ -345,7 +390,7 @@ export default function Home() {
             <p className="home-kicker">Family sabbatical · working plan</p>
             <h1>42 Weeks</h1>
             <p>
-              September 2027 through June 2028: Australia and Asia first,
+              August 2027 through June 2028: Australia, Asia and Wānaka first,
               Christmas skiing in Utah, then long stays in the Alps and
               Copenhagen.
             </p>
@@ -371,7 +416,9 @@ export default function Home() {
             </div>
             <div>
               <dt>Length</dt>
-              <dd>285 days</dd>
+              <dd>
+                {inclusiveDays(tripPlan.trip.start, tripPlan.trip.end)} days
+              </dd>
             </div>
             <div>
               <dt>Long stays</dt>
@@ -402,7 +449,7 @@ export default function Home() {
             >
               <span>Australia →</span>
             </a>
-            <span className="home-trip-collage-alps">Val d'Isère</span>
+            <span className="home-trip-collage-alps">Val d&apos;Isère</span>
             <span className="home-trip-collage-copenhagen">Copenhagen</span>
           </figure>
         </section>
@@ -493,13 +540,13 @@ export default function Home() {
           <section className="home-chapter">
             <div className="home-section-heading">
               <div>
-                <p className="home-kicker">September–October 2027</p>
+                <p className="home-kicker">August–October 2027</p>
                 <h2>Australia</h2>
               </div>
               <p>
-                Settle into work quickly, take one concentrated vacation week,
-                then use a reef-and-expedition mini-vacation in the Whitsundays
-                before returning to a work-and-play rhythm in Outback Queensland.
+                Land gently in Melbourne, preserve Newtown family-history time,
+                take one concentrated road-trip week, then use two-week Alice
+                Springs and Sydney bases before the reef and Brisbane.
               </p>
             </div>
             <PlaceGrid cards={australiaCards} ariaLabel="Australia places" />
@@ -508,18 +555,34 @@ export default function Home() {
           <section className="home-chapter home-chapter-tinted">
             <div className="home-section-heading">
               <div>
-                <p className="home-kicker">October–December 2027</p>
+                <p className="home-kicker">October–November 2027</p>
                 <h2>Asia</h2>
               </div>
               <p>
-                Three distinct bases, mostly connected by weekend travel. India
-                has the anchor date; the city-level plans are still open.
+                India carries the family and Diwali anchors. Singapore and Hong
+                Kong remain intentionally short office stays connected on
+                weekends.
               </p>
             </div>
             <PlaceGrid cards={asiaCards} ariaLabel="Asia places" />
           </section>
 
           <section className="home-chapter">
+            <div className="home-section-heading">
+              <div>
+                <p className="home-kicker">November–December 2027</p>
+                <h2>New Zealand</h2>
+              </div>
+              <p>
+                One Wānaka house for twenty nights: early work, long
+                late-spring afternoons and a four-day forecast-led
+                mini-vacation.
+              </p>
+            </div>
+            <PlaceGrid cards={newZealandCards} ariaLabel="New Zealand places" />
+          </section>
+
+          <section className="home-chapter home-chapter-tinted">
             <div className="home-section-heading">
               <div>
                 <p className="home-kicker">December 2027–January 2028</p>

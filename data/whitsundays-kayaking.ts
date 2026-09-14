@@ -129,7 +129,7 @@ export const kayakOptions: KayakOption[] = [
         bullets: [
           "Do not land at seasonally closed Steens Beach in October.",
           "Pack early enough that the Scamper pickup is never rushed.",
-          "Return to the mainland for the next day’s flight to Outback Queensland.",
+          "Return to the mainland for the next day’s flight to Brisbane.",
         ],
       },
     ],

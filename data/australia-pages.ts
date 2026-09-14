@@ -30,41 +30,51 @@ export type AustraliaCity = {
 
 export const australiaStops = [
   {
-    title: "Geelong",
-    dates: "Sep 19–24",
-    mode: "Work week",
+    title: "Melbourne",
+    dates: "Aug 23–28",
+    mode: "Landing and work launch",
     description:
-      "Recover from the long flight, settle into Newtown, work and homeschool, and use the evenings for the Barwon River, Balyang Sanctuary and Queenscliff.",
+      "Recover from the weekend flight, establish the first work and homeschool rhythm, and target any available men's AFL match at the MCG.",
+    href: "/australia/melbourne",
+    image: "/images/australia/melbourne-skyline.jpg",
+    alt: "Melbourne skyline from Southbank",
+  },
+  {
+    title: "Newtown, Geelong",
+    dates: "Aug 29–Sep 4",
+    mode: "Family-history work week",
+    description:
+      "Live in the neighborhood for a full week, work and homeschool normally, and preserve afternoons, evenings and Saturday for remembered places and Queenscliff.",
     href: "/australia/geelong",
     image: "/images/australia/geelong-waterfront.jpg",
     alt: "Geelong waterfront and Corio Bay",
   },
   {
     title: "Great Ocean Road Loop",
-    dates: "Sep 25–Oct 1",
+    dates: "Sep 5–11",
     mode: "Vacation",
     description:
-      "Seven days through the surf coast, Otways, Shipwreck Coast, Gariwerd and Sovereign Hill, with only three lodging bases.",
+      "Seven early-spring days through the Surf Coast, Otways, Shipwreck Coast, Gariwerd and Sovereign Hill; Labor Day plus four vacation weekdays.",
     href: "/trips/great-southern-touring-route",
     image: "/images/victoria/twelve-apostles.jpg",
     alt: "The Twelve Apostles on Victoria's Great Ocean Road",
   },
   {
-    title: "Melbourne",
-    dates: "Oct 1–3",
-    mode: "City weekend",
+    title: "Alice Springs",
+    dates: "Sep 12–25",
+    mode: "Two-week outback work base",
     description:
-      "A compact Melbourne stop for laneways, the river and a ticketed sunset session with the Little Penguins at St Kilda Pier.",
-    href: "/australia/melbourne",
-    image: "/images/australia/melbourne-skyline.jpg",
-    alt: "Melbourne skyline from Southbank",
+      "Live and work in the Red Centre for two weeks, using the complete middle weekend for Tjoritja and ordinary afternoons for Alice Springs.",
+    href: "/australia/alice-springs",
+    image: "/images/outback/aerial-road.jpg",
+    alt: "A road crossing the red landscape of inland Australia",
   },
   {
     title: "Sydney",
-    dates: "Oct 3–9",
-    mode: "Beach work week",
+    dates: "Sep 26–Oct 9",
+    mode: "Two-week beach work base",
     description:
-      "Work from a real neighborhood near the beach, keep afternoons coastal, and reserve one evening for the Sydney Opera House.",
+      "Work from a real neighborhood near the beach, preserve a complete middle weekend, and reserve one evening for the Sydney Opera House.",
     href: "/australia/sydney",
     image: "/images/australia/sydney-opera-house.jpg",
     alt: "Sydney Opera House and Harbour Bridge from the water",
@@ -80,14 +90,14 @@ export const australiaStops = [
     alt: "Hamilton Island marina and the Whitsunday Islands",
   },
   {
-    title: "Outback",
+    title: "Brisbane",
     dates: "Oct 17–22",
-    mode: "Play, with some work",
+    mode: "Work and repacking base",
     description:
-      "Longreach and Winton for aviation, dinosaurs, stock-route history and wide-open Queensland landscapes.",
-    href: "/trips/longreach-outback-working-week",
-    image: "/images/outback/aerial-road.jpg",
-    alt: "An outback road crossing red Queensland country",
+      "Finish Australia with one dependable work week, laundry and deliberate packing before the weekend flight to India.",
+    href: "/australia/brisbane",
+    image: "/images/australia/melbourne-skyline.jpg",
+    alt: "Australian city skyline beside a river",
   },
 ] as const;
 
@@ -95,11 +105,11 @@ export const australiaCities: Record<AustraliaCity["slug"], AustraliaCity> = {
   geelong: {
     slug: "geelong",
     title: "Geelong",
-    eyebrow: "Australia · first working base",
-    dates: "Sep 19–24, 2027",
-    facts: ["6 nights", "Work Mon–Fri", "Newtown preferred"],
+    eyebrow: "Australia · family-history work base",
+    dates: "Aug 29–Sep 4, 2027",
+    facts: ["7 nights", "Work Mon–Fri", "Newtown preferred"],
     summary:
-      "This is the landing-and-recovery week. Drive straight from Melbourne Airport to Geelong, establish a dependable work and homeschool setup in Newtown, and keep the interesting pieces deliberately small enough for afternoons and evenings.",
+      "This is a week of ordinary life in the place Brian grew up, not a gateway stop. Move from Melbourne on Sunday, establish a dependable work and homeschool setup in Newtown, and leave enough unscheduled time for remembered places, follow-up visits and family stories.",
     stayTitle: "Newtown, near the Barwon River",
     stayDescription:
       "Prioritize an actual work room, strong internet, laundry and parking over waterfront views. A Newtown base puts Balyang Sanctuary and the Barwon River close by while keeping central Geelong and the Bellarine Peninsula practical.",
@@ -186,27 +196,28 @@ export const australiaCities: Record<AustraliaCity["slug"], AustraliaCity> = {
       },
     ],
     planningNotes: [
-      "Treat September 19 as the arrival-and-settle day after the two-day trip from New Hampshire.",
-      "Do not prebook every evening; the first week needs jet-lag margin.",
+      "Move from Melbourne on Sunday, August 29 and protect the Monday-through-Friday routine.",
+      "Do not prebook every evening; family-history time needs room for remembered places and spontaneous follow-up.",
+      "If the selected MCG match falls September 3–5, make one purposeful trip to Melbourne rather than moving the base.",
       "Choose the Great Ocean Road rental-car handoff together with the Newtown lodging.",
     ],
   },
   melbourne: {
     slug: "melbourne",
     title: "Melbourne",
-    eyebrow: "Australia · short city weekend",
-    dates: "Oct 1–3, 2027",
-    facts: ["2 nights", "Arrive late Friday", "Fly to Sydney Sunday evening"],
+    eyebrow: "Australia · landing and work launch",
+    dates: "Aug 23–28, 2027",
+    facts: ["6 nights", "Soft work launch", "MCG priority"],
     summary:
-      "Melbourne is intentionally compact in the current plan: arrive after Sovereign Hill on Friday, use Saturday and most of Sunday for the city, then fly to Sydney. Pick two or three strong experiences rather than trying to cover the whole city.",
-    stayTitle: "CBD or Southbank for a short stay",
+      "Melbourne absorbs the long-haul landing, the first work and homeschool setup, and the best early opportunity for an MCG match. Keep the first days light, build output through the week, and avoid turning recovery into an ambitious sightseeing schedule.",
+    stayTitle: "Inner Melbourne with an easy MCG trip",
     stayDescription:
-      "With only two nights, optimize for walking, trams and an easy airport departure. CBD or Southbank keeps the river, laneways, galleries and market close; take a tram to St Kilda for the penguin evening.",
+      "Prioritize a separate work room, groceries, laundry and straightforward transit to the MCG. Richmond, South Yarra, East Melbourne or the CBD can work; the exact match date should influence the final choice.",
     stayChecks: [
       "Walkable access to the central city and a straightforward airport transfer",
-      "Enough room to reorganize after the road trip",
-      "A Saturday-night St Kilda plan that includes travel and dinner",
-      "Sunday checkout and luggage storage before the Sydney flight",
+      "Enough room to absorb jet lag without disrupting work and school zones",
+      "A St Kilda evening plan that includes travel and dinner",
+      "A simple Sunday move to Newtown after the final home-and-away weekend",
     ],
     photos: [
       {
@@ -237,9 +248,9 @@ export const australiaCities: Record<AustraliaCity["slug"], AustraliaCity> = {
     ideas: [
       {
         title: "Little Penguins at St Kilda Pier",
-        timing: "Saturday at sunset · fixed priority",
+        timing: "One clear evening",
         description:
-          "Book one of the free, ticketed evening sessions when October 2027 reservations open. The penguins return after sunset; build in the tram ride, dinner and the no-flash wildlife rules.",
+          "Book one of the free, ticketed evening sessions when August 2027 reservations open. The penguins return after sunset; build in the tram ride, dinner and the no-flash wildlife rules.",
         links: [
           {
             title: "Parks Victoria · Little Penguins",
@@ -249,38 +260,38 @@ export const australiaCities: Record<AustraliaCity["slug"], AustraliaCity> = {
       },
       {
         title: "Laneways, arcades and the river",
-        timing: "Saturday daytime",
+        timing: "Flexible afternoon",
         description:
           "Use a loose walking line through the central laneways and arcades, Federation Square, the Yarra and Southbank. Stop when the family has had enough city rather than chasing a checklist.",
       },
       {
         title: "Choose one cultural anchor",
-        timing: "Saturday or Sunday",
+        timing: "Weather-dependent afternoon",
         description:
           "Pick the National Gallery of Victoria, Melbourne Museum or Queen Victoria Market according to the weather and current exhibitions.",
       },
       {
         title: "Royal Botanic Gardens",
-        timing: "Sunday reset",
+        timing: "Recovery-day option",
         description:
           "Use the gardens and Shrine precinct as the calmer Sunday option before collecting luggage and heading to the airport.",
       },
     ],
     planningNotes: [
-      "If departing before September 18 becomes possible, use the extra one or two weeks as an up-front Melbourne work-and-homeschool base. Keep weekdays stable and use afternoons or weekends for the Dandenong Ranges, Yarra Valley, Mornington Peninsula and other places around Melbourne.",
+      "Target any men's AFL match at the MCG; do not organize the trip around Grand Final access.",
+      "If the best match falls after the August 29 move, travel from Newtown for that one scheduled event.",
       "The St Kilda penguin sessions are free but ticketed and capacity-limited.",
-      "Confirm the Sunday evening Melbourne-to-Sydney flight before choosing lodging.",
-      "Two nights is enough for a strong taste of Melbourne, not a comprehensive visit.",
+      "Keep arrival Monday light and use four-hour anchor blocks Tuesday and Wednesday before increasing output.",
     ],
   },
   sydney: {
     slug: "sydney",
     title: "Sydney",
-    eyebrow: "Australia · beach work week",
-    dates: "Oct 3–9, 2027",
-    facts: ["7 nights", "Work Mon–Fri", "Beach-base priority"],
+    eyebrow: "Australia · two-week beach work base",
+    dates: "Sep 26–Oct 9, 2027",
+    facts: ["14 nights", "Two work weeks", "Complete middle weekend"],
     summary:
-      "Sydney should feel different from Melbourne: live beside the water, protect a normal work and homeschool week, use the beach almost every day, and make one Opera House evening plus one full Saturday the larger city experiences.",
+      "Sydney should feel different from Melbourne: live beside the water, protect two normal work and homeschool weeks, use the beach almost every day, and reserve the complete October 2–3 weekend for the harbour, coast or a major cultural experience.",
     stayTitle: "Shortlist Manly first, Coogee second",
     stayDescription:
       "Manly offers the clearest beach-at-the-door version and a memorable harbour ferry into the city. Coogee offers a calmer eastern-suburbs neighborhood and immediate access to ocean pools and the coastal walk. Do not default to the CBD if the goal is to live near a beach.",
@@ -356,15 +367,16 @@ export const australiaCities: Record<AustraliaCity["slug"], AustraliaCity> = {
           "If staying in Manly, the ferry is useful transportation and one of the week's best sightseeing experiences. Pair it with Circular Quay, the Rocks or the Botanic Garden.",
       },
       {
-        title: "Full Sydney Saturday",
-        timing: "Saturday, Oct 9",
+        title: "Full Sydney weekend",
+        timing: "October 2–3",
         description:
-          "Use the full non-work day for the harbour, a chosen section of the 3.7-mile Bondi-to-Coogee walk, Taronga Zoo or whichever major experience the weekday evenings did not cover.",
+          "Use the complete non-work weekend for the harbour, a chosen section of the 3.7-mile Bondi-to-Coogee walk, Taronga Zoo or whichever major experiences the weekday evenings did not cover.",
       },
     ],
     planningNotes: [
       "Compare Manly and Coogee rentals on workspace and internet before comparing views.",
       "Recheck the 2027 Opera Australia and Sydney Opera House calendars when published.",
+      "Daylight saving begins October 3 and moves the New York overlap one hour later locally.",
       "Keep Sunday, October 10 for the flight to Hamilton Island.",
     ],
   },

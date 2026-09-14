@@ -1,19 +1,22 @@
 import { sitePath } from "../lib/site-path";
 
-type NavPage = "home" | "calendar" | "australia";
+type NavPage = "home" | "calendar" | "australia" | "new-zealand";
 export type AustraliaNavPage =
   | "overview"
+  | "melbourne"
   | "geelong"
   | "great-ocean-road"
-  | "melbourne"
+  | "alice-springs"
   | "sydney"
   | "whitsundays"
+  | "brisbane"
   | "outback";
 
 const navItems: Array<{ id: NavPage; label: string; href: string }> = [
   { id: "home", label: "Home", href: "/" },
   { id: "calendar", label: "Calendar", href: "/calendar" },
   { id: "australia", label: "Australia", href: "/australia" },
+  { id: "new-zealand", label: "New Zealand", href: "/new-zealand/wanaka" },
 ];
 
 const australiaNavItems: Array<{
@@ -22,13 +25,18 @@ const australiaNavItems: Array<{
   href: string;
 }> = [
   { id: "overview", label: "Overview", href: "/australia" },
+  { id: "melbourne", label: "Melbourne", href: "/australia/melbourne" },
   { id: "geelong", label: "Geelong", href: "/australia/geelong" },
   {
     id: "great-ocean-road",
     label: "Great Ocean Road",
     href: "/trips/great-southern-touring-route",
   },
-  { id: "melbourne", label: "Melbourne", href: "/australia/melbourne" },
+  {
+    id: "alice-springs",
+    label: "Alice Springs",
+    href: "/australia/alice-springs",
+  },
   { id: "sydney", label: "Sydney", href: "/australia/sydney" },
   {
     id: "whitsundays",
@@ -36,9 +44,9 @@ const australiaNavItems: Array<{
     href: "/trips/hamilton-island-working-week",
   },
   {
-    id: "outback",
-    label: "Outback",
-    href: "/trips/longreach-outback-working-week",
+    id: "brisbane",
+    label: "Brisbane",
+    href: "/australia/brisbane",
   },
 ];
 

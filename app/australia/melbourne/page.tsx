@@ -5,7 +5,7 @@ import AustraliaCityPage from "../../trips/australia-city-page";
 export const metadata: Metadata = {
   title: "Melbourne",
   description:
-    "A compact Melbourne weekend with St Kilda Pier's Little Penguins, laneways, the river and one cultural anchor.",
+    "The six-night Melbourne landing, work-launch and MCG match plan.",
 };
 
 export default function MelbournePage() {

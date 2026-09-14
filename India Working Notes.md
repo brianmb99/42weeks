@@ -4,7 +4,7 @@
 
 ## Current itinerary concept
 
-Likely timing: **October 26 or 27 through November 2027**, after approximately two months in Australia and before returning to the United States for December, Snowbird, and Christmas. Arriving before Diwali is now an itinerary anchor.
+Selected timing: **October 24 through November 13, 2027**, after Australia and before bounded Singapore and Hong Kong office stays followed by Wānaka. Arriving five days before Diwali is now an itinerary anchor.
 
 Possible sequence:
 
@@ -19,9 +19,8 @@ Keep the route flexible enough to attend a cricket match. India's November 2027 
 
 ## Fixed-date and work notes
 
-- **Diwali/Deepavali (Lakshmi Puja): Friday, October 29, 2027.** Target arrival on October 26 or 27, allowing a one- or two-day buffer before the main celebration. Avoid scheduling the inbound flight on October 28–29 if practical. Confirm the extended family's local customs before setting flights.
+- **Diwali/Deepavali (Lakshmi Puja): Friday, October 29, 2027.** Arrive Sunday, October 24, allowing a five-day buffer before the main celebration. Confirm the extended family's local customs before setting flights.
 - **U.S. market hours from India:** NYSE core trading is 9:30 a.m.–4:00 p.m. New York time. That maps to 7:00 p.m.–1:30 a.m. IST on November 1–6, then 8:00 p.m.–2:30 a.m. IST from November 7 after U.S. daylight saving time ends. Add any pre-market or after-hours coverage separately.
-- **Visas:** Each U.S.-passport traveler needs an Indian visa. Plan on the official Government of India e-Visa process if eligibility remains unchanged, and recheck the rules and application timing closer to departure.
 
 ## Trek ideas
 
@@ -53,7 +52,7 @@ Keep the route flexible enough to attend a cricket match. India's November 2027 
 ## Open questions
 
 - Exact family location and desired duration near Dehradun
-- October 26 versus October 27 arrival and the exact December departure date
+- Allocation of the fixed October 24–November 13 window among family, trek and visitor priorities
 - Trek ambition, camping preferences, guide, altitude comfort, and road-time tolerance
 - Whether Rajasthan is a moving itinerary or organized as excursions from one or two bases
 - Whether to finish in Rajasthan, Mumbai, Bengaluru, Kerala, or elsewhere

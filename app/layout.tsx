@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "42 Weeks",
     description:
-      "The broad route and working plan for a family sabbatical from September 2027 through June 2028.",
+      "The broad route and working plan for a family sabbatical from August 2027 through June 2028.",
     type: "website",
     siteName: "42 Weeks",
     images: [
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1734,
         height: 907,
-        alt: "42 Weeks: September 2027 through June 2028",
+        alt: "42 Weeks: August 2027 through June 2028",
       },
     ],
   },
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "42 Weeks",
     description:
-      "The broad route and working plan for a family sabbatical from September 2027 through June 2028.",
+      "The broad route and working plan for a family sabbatical from August 2027 through June 2028.",
     images: ["/og.png"],
   },
 };

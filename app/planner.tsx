@@ -405,14 +405,16 @@ export function Planner() {
 
   useEffect(() => {
     const saved = window.localStorage.getItem("42-weeks-draft-notes");
-    if (saved) {
-      try {
-        setNotes(JSON.parse(saved) as Note[]);
-      } catch {
-        setNotes(starterNotes);
+    queueMicrotask(() => {
+      if (saved) {
+        try {
+          setNotes(JSON.parse(saved) as Note[]);
+        } catch {
+          setNotes(starterNotes);
+        }
       }
-    }
-    setNotesReady(true);
+      setNotesReady(true);
+    });
   }, []);
 
   useEffect(() => {

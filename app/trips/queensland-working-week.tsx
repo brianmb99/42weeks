@@ -141,9 +141,10 @@ function WhitsundaysKayakPlanning() {
         </article>
         <article>
           <span>Sunday</span>
-          <strong>Fly to Outback Queensland</strong>
+          <strong>Fly to Brisbane</strong>
           <p>
-            Proserpine → Brisbane → Longreach. Keep Outback at six nights.
+            Use the direct Proserpine → Brisbane flight and settle into the
+            final Australian work and repacking base.
           </p>
         </article>
       </div>
@@ -257,7 +258,9 @@ export default function QueenslandWorkingWeek({ trip }: { trip: Trip }) {
           <span>{isHamilton ? "Vacation Wed–Sat" : "Vacation Thu–Fri"}</span>
         </div>
         <p className="qld-summary">{trip.summary}</p>
-        <p className="qld-status">{queensland.status}</p>
+        <p className="qld-status">
+          {"status" in trip ? trip.status : queensland.status}
+        </p>
       </header>
 
       <DestinationGallery

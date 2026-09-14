@@ -5,7 +5,7 @@ import AustraliaCityPage from "../../trips/australia-city-page";
 export const metadata: Metadata = {
   title: "Sydney",
   description:
-    "A Sydney beach work week with Manly and Coogee lodging options, an Opera House evening and a full harbour Saturday.",
+    "A two-week Sydney beach work base with Manly and Coogee lodging options, an Opera House evening and a complete city weekend.",
 };
 
 export default function SydneyPage() {

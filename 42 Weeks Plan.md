@@ -1,7 +1,7 @@
 # 42 Weeks
 
-> Living planning baseline — last updated July 20, 2026  
-> Family of four from Hanover, New Hampshire | Target: September 2027–June 2028
+> Living planning baseline — last updated September 13, 2026
+> Family of four from Hanover, New Hampshire | Target: August 2027–June 2028
 
 ## At a glance
 
@@ -11,13 +11,15 @@ The goal is a year of **living elsewhere**, not continuous vacation: meaningful 
 
 | Period | Likely location | Status | Main purpose |
 |---|---|---|---|
-| Late Aug–late Oct 2027 | Australia | Working plan | Melbourne footy, then a Queensland base and short reef vacation |
-| Late Oct–Nov 2027 | India | Working plan | Diwali, extended family, cricket, Taj Mahal, trek, selective travel |
+| Aug 21–Oct 23, 2027 | Australia | Selected working plan | Melbourne footy, Newtown, Victoria road trip, Alice Springs, Sydney, reef and Brisbane |
+| Oct 24–Nov 13, 2027 | India | Working plan | Diwali, extended family, cricket, Taj Mahal, trek, selective travel |
+| Nov 14–27, 2027 | Singapore and Hong Kong | Working plan | Two bounded office stays with family weekends |
+| Nov 28–Dec 17, 2027 | Wānaka, New Zealand | Selected working plan | Stable late-spring work base and four-day mini-vacation |
 | Dec 2027 | Snowbird, Utah | Working plan | Christmas and skiing |
 | Jan–Mar 2028 | Alps | Wide open | Stable winter base, serious children's skiing, ordinary community life |
 | Apr–Jun 2028 | Denmark | Working plan | Stable spring base, Danish life, sports and regional travel |
 
-The revised fall sequence is **Australia from late August through late October 2027, India from just before Diwali through November, then the United States in December**, including Snowbird and Christmas. This preserves roughly two full months in Australia while reaching India before Diwali. It replaces the older concept of remaining in Australia into November.
+The selected fall sequence is **Australia from August 21 through October 23, India through November 13, short Singapore and Hong Kong office stays, then Wānaka through December 17**. The family returns to New Hampshire December 19 before Snowbird and Christmas. This replaces both the older two-base Australia model and the later Longreach/Singapore/Hong Kong canonical route; that prior route is archived under `proposals/archive/`.
 
 ## What is decided—or close to it
 
@@ -35,8 +37,8 @@ The revised fall sequence is **Australia from late August through late October 2
 
 Questions to resolve:
 
-- Exact late-August departure date and allocation between the two Australian bases
-- Which Queensland location works best as the second long-term base
+- Confirm the exact August 21 long-haul itinerary and 2027 Sunday flight days within Australia
+- Secure work-grade family housing in Melbourne, Newtown, Alice Springs, Sydney and Wānaka
 - What routing minimizes backtracking, cost, and jet lag?
 - How much time should be reserved in or near Dehradun to spend with Brian's wife's extended family?
 - How should Dehradun family time connect to the principal tourist priorities, including the Taj Mahal?
@@ -44,26 +46,37 @@ Questions to resolve:
 - Can Brian reliably complete eight hours of work from India, given the time difference, connectivity, work environment, and family schedule?
 - Where will the children find routine and peers during the fall?
 
-#### Australia: late August–late October
+#### Australia: August 21–October 23
 
-- Use a **two-base structure**, rather than treating Australia as continuous touring: approximately five weeks in Melbourne/Victoria followed by approximately three to four weeks at one Queensland long-term rental.
-- Arrive in **Melbourne in late August**, settle there through September, and target an AFL finals match. The AFL premiership season runs from March into September, with the finals series and Grand Final in September; the 2027 fixture is not yet published, so no particular match or Melbourne venue can be assumed yet.
-- Treat footy as a September-only objective. October is off-season.
-- Move to the Queensland base around the end of September or beginning of October, following spring north. The Gold Coast is the leading concept; the exact base remains open.
-- Treat **Hamilton Island/Whitsundays** as a short vacation from the Queensland base—perhaps four nights—while retaining the long-term rental and leaving most belongings there. A flight is acceptable. Hamilton Island is not part of the Gold Coast and is roughly 900 km farther north. October is a strong weather window and precedes the commonly described November–May marine-stinger season, but stinger risk is not literally zero outside those months; follow local beach and operator advice.
-- Do not plan around the Big Bash League. Its recent seasons have begun in mid-December, after the family will have left, and the 2027–28 fixture is not yet available.
+- Leave New Hampshire Saturday, August 21 after roughly six days at home following camp; arrive in **Melbourne** around Monday, August 23.
+- Use six Melbourne nights for recovery, a soft work launch and the best available chance to see **any men's AFL match at the MCG**. The full fixture is not yet published, so the exact match remains open.
+- Move to **Newtown, Geelong** August 29–September 4. This is a personal family-history base, not a day trip from Melbourne.
+- Use September 5–11 for the Great Ocean Road, Otways, Gariwerd and Sovereign Hill. Labor Day plus four vacation weekdays makes this a real vacation road trip with no planned work.
+- Live and work in **Alice Springs September 12–25**. Two weeks create ordinary Red Centre life and a complete middle weekend for Tjoritja or another outback excursion.
+- Use **Sydney September 26–October 9** as a two-week beach work base with one complete city weekend.
+- Keep **Hamilton Island and the Whitsundays October 10–16**, including Charlie's birthday, Hardy Reef and the kayak expedition.
+- Finish with **Brisbane October 17–22** as a six-night work, laundry and repacking base. Do not retain an empty Queensland house during the prior route.
+- Use weekend travel to India beginning October 23.
 
 #### India: late October–November
 
 - Make attendance at a **cricket match** a planning objective. November is plausibly within India's home international and domestic season, but the November 2027 international fixture and host cities have not been announced. Preserve routing flexibility until the BCCI schedule appears; a major domestic match is the fallback.
 - November is generally favorable for northern and western India after the southwest monsoon, though local conditions still vary. Delhi-region air quality is a material seasonal concern.
-- **Diwali/Deepavali's principal night (Lakshmi Puja) is Friday, October 29, 2027.** Plan to arrive in India by **October 26 or 27**, leaving a one- or two-day buffer before the main celebration rather than traveling into the holiday itself. Confirm the extended family's local observance dates before booking.
-- Every U.S.-passport family member needs an Indian visa. The official e-Visa route is the likely straightforward option, but recheck eligibility, permitted airports/seaports, validity, and application window before purchase; use only the Government of India portal.
+- **Diwali/Deepavali's principal night (Lakshmi Puja) is Friday, October 29, 2027.** Plan to arrive Sunday, **October 24**, leaving a five-day buffer before the main celebration. Confirm the extended family's local observance dates before booking.
 - Sanity-check the work model before locking November. NYSE core hours are 9:30 a.m.–4:00 p.m. New York time, equal to **7:00 p.m.–1:30 a.m. IST through November 6, 2027** and **8:00 p.m.–2:30 a.m. IST from November 7**, when New York returns to standard time. These hours cover the market session only, not any required pre-market or post-close work.
 
 India is both a family visit and a broader travel experience: part of Brian's wife's family is from India, so meaningful time in or near **Dehradun** is a core requirement. The family also wants a selective first-time visitor itinerary, including the **Taj Mahal**, rather than spending the entire India leg in one place.
 
 A **short, family-appropriate Himalayan trek** is also a core objective. The likely approach is to place Dehradun and the trek near the beginning of the India leg—ideally in early November—then move into family time and lower-altitude tourism as winter advances. Nag Tibba is an early candidate because it starts near Dehradun, is officially described as a two-day, easy-to-moderate trek suitable for families and groups, and reaches roughly 3,000 m. Trek choice remains open pending exact dates, desired difficulty, road time, guide arrangements, and the children's comfort with altitude and camping.
+
+#### Singapore, Hong Kong and Wānaka: November 14–December 17
+
+- Cap Singapore at November 14–20: Sunday arrival, up to five office days and Saturday with the family.
+- Use Hong Kong November 21–27: a Sunday arrival, three to five office days, Thanksgiving on Thursday and the early market close Friday.
+- Prefer a Saturday-night Hong Kong departure when the eventual timetable permits, then connect through Auckland and Queenstown to Wānaka.
+- Keep one Wānaka rental from November 28 through December 17. Work fully November 29–December 3, use four-hour anchor blocks December 6–8, take December 9–10 as vacation, then work fully December 13–17.
+- A roughly 5 a.m.–1 p.m. New Zealand workday overlaps approximately 11 a.m.–7 p.m. New York or 10 a.m.–6 p.m. Chicago on the previous date and leaves the long late-spring afternoon available.
+- Keep Wānaka as the base for the four-day mini-vacation unless a two-night Aoraki or Te Anau excursion clearly earns the packing cost. Do not attempt Milford Sound as a day trip from Wānaka.
 
 ### 2. Winter: choose an Alpine base
 
@@ -179,8 +192,8 @@ The plan is working if:
 ## Near-term priorities
 
 1. Build a structured comparison of Alpine bases and choose a shortlist.
-2. Choose the Queensland long-term base and sketch a short Hamilton Island/Whitsundays side vacation while retaining that rental.
-3. Design the late-October/November India model around arrival by October 26–27, Dehradun/family time, workable hours, and flexibility for the eventual cricket fixture.
+2. Validate the selected Australia and New Zealand route against 2027 flight schedules, housing, broadband and the AFL fixture as each becomes bookable.
+3. Design the late-October/November India model around arrival October 24, Dehradun/family time, workable hours, and flexibility for the eventual cricket fixture.
 4. Verify the Danish bilateral-waiver plan and map legal spring travel options.
 5. Obtain employer guidance on permitted countries and constraints.
 6. Draft a high-level budget and identify commitments with long lead times.
@@ -202,6 +215,9 @@ The plan is working if:
 | Jul 2026 | Time in or near Dehradun added as a core India requirement because of extended family ties; the India leg will also include major visitor experiences such as the Taj Mahal. |
 | Jul 2026 | A short, family-appropriate Himalayan trek added as a core India objective, preferably early in the India leg. |
 | Jul 2026 | Denmark retained as the preferred spring base; broader Schengen travel during the bilateral-waiver period flagged as an unresolved legal/risk issue. |
+| Sep 2026 | Selected the August 21 Australia departure and the Melbourne → Newtown → Victoria road trip → Alice Springs → Sydney → Whitsundays → Brisbane route. |
+| Sep 2026 | Shortened Singapore and Hong Kong to bounded office stays and added a twenty-night Wānaka working base before the return home. |
+| Sep 2026 | Archived the superseded September 18 / Longreach canonical route under `proposals/archive/` and an annotated Git tag. |
 
 ## Parking lot
 

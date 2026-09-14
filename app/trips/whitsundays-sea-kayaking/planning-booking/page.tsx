@@ -57,7 +57,7 @@ export default function WhitsundaysPlanningBookingPage() {
             <li><strong>Tuesday evening</strong><span>Ferry to Port of Airlie and sleep on the mainland.</span></li>
             <li><strong>Wednesday</strong><span>Optional 4:30–7:00 a.m. work block, then the dedicated boat-based day at Hardy Reef.</span></li>
             <li><strong>Thursday–Saturday</strong><span>Shute Harbour briefing and two-night kayak expedition.</span></li>
-            <li><strong>Sunday</strong><span>Fly Proserpine → Brisbane → Longreach.</span></li>
+            <li><strong>Sunday</strong><span>Fly Proserpine → Brisbane and establish the final Australian work base.</span></li>
           </ol>
           <p>
             The current 2026 ferry and reef schedules make this sequence

@@ -1,6 +1,6 @@
 # 42 Weeks
 
-A living planning site for a family sabbatical from September 2027 through June 2028.
+A living planning site for a family sabbatical from August 2027 through June 2028.
 
 [Live site](https://brianmb99.github.io/42weeks/)
 
@@ -9,7 +9,8 @@ The site includes:
 - the definitive date-based itinerary in `data/trip-plan.json`;
 - an expandable weekly calendar with work, travel, vacation, and NYSE holidays;
 - a broad trip overview; and
-- detail pages for the Great Ocean Road Loop, Hamilton Island, and Outback Queensland.
+- detailed working-base plans for Melbourne, Newtown/Geelong, Alice Springs, Sydney, the Whitsundays, Brisbane, and Wānaka;
+- and an explicit archive of superseded route models under `proposals/archive/`.
 
 ## Local development
 

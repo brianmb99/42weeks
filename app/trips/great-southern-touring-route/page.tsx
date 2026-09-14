@@ -119,19 +119,19 @@ export default function GreatSouthernTouringRoutePage() {
           <span>Before · {dateLabel(geelong.start)}–{dateLabel(geelong.end)}</span>
           <h2>Geelong work week</h2>
           <p>
-            Aim for <strong>{geelong.preferredArea}</strong>. Work September
-            20–24; use an evening for Queenscliff and other afternoons or
-            evenings for Geelong.
+            Aim for <strong>{geelong.preferredArea}</strong>. Work August
+            30–September 3; use afternoons, evenings and Saturday for
+            family-history time, Queenscliff and local Geelong.
           </p>
         </article>
         <article>
           <span>After · {dateLabel(melbourne.start)}–{dateLabel(sydney.end)}</span>
-          <h2>Melbourne weekend, then Sydney work week</h2>
+          <h2>Melbourne handoff, then Alice Springs and Sydney</h2>
           <p>
-            Arrive in Melbourne late October 1, use Saturday and most of Sunday
-            in the city—including the St Kilda Pier penguins—then fly to Sydney
-            Sunday evening. Work October 4–8, keep Saturday for Sydney, and
-            reserve one evening for a{" "}
+            Finish at Sovereign Hill and sleep in Melbourne September 11, then
+            fly to Alice Springs for two full work weeks and the Red Centre
+            weekend. Continue to Sydney September 26 for another two-week work
+            base and reserve one evening for a{" "}
             <a
               href={sydney.eveningIdeas[0].links[0].url}
               rel="noreferrer"
@@ -139,8 +139,8 @@ export default function GreatSouthernTouringRoutePage() {
             >
               Sydney Opera House performance
             </a>
-            , ideally a full staged opera or Great Opera Hits. Continue to
-            Hamilton Island Sunday.
+            , ideally a full staged opera. Continue to Hamilton Island October
+            10.
           </p>
         </article>
       </section>

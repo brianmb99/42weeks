@@ -1,0 +1,220 @@
+{
+  "schemaVersion": 4,
+  "status": "selected",
+  "canonical": true,
+  "created": "2026-09-13",
+  "summary": "Selected family-history, Alice Springs and Wānaka route. The live implementation is data/trip-plan.json.",
+  "tripStart": "2027-08-21",
+  "anchors": {
+    "campReturn": "2027-08-15",
+    "targetDeparture": "2027-08-21",
+    "mcgWindow": {
+      "start": "2027-08-27",
+      "end": "2027-09-05",
+      "rule": "Any men's AFL match at the MCG satisfies the objective."
+    },
+    "diwali": "2027-10-29",
+    "indiaArrival": "2027-10-24",
+    "newHampshireReturn": "2027-12-19"
+  },
+  "locations": [
+    {
+      "id": "in-transit-australia",
+      "start": "2027-08-21",
+      "end": "2027-08-22"
+    },
+    {
+      "id": "melbourne-opening",
+      "start": "2027-08-23",
+      "end": "2027-08-28"
+    },
+    {
+      "id": "geelong-newtown",
+      "start": "2027-08-29",
+      "end": "2027-09-04"
+    },
+    {
+      "id": "great-southern-touring-route",
+      "start": "2027-09-05",
+      "end": "2027-09-11"
+    },
+    {
+      "id": "alice-springs",
+      "start": "2027-09-12",
+      "end": "2027-09-25"
+    },
+    {
+      "id": "sydney",
+      "start": "2027-09-26",
+      "end": "2027-10-09"
+    },
+    {
+      "id": "hamilton-island",
+      "start": "2027-10-10",
+      "end": "2027-10-16"
+    },
+    {
+      "id": "brisbane",
+      "start": "2027-10-17",
+      "end": "2027-10-22"
+    },
+    {
+      "id": "in-transit-india",
+      "start": "2027-10-23",
+      "end": "2027-10-23"
+    },
+    {
+      "id": "india",
+      "start": "2027-10-24",
+      "end": "2027-11-13"
+    },
+    {
+      "id": "singapore",
+      "start": "2027-11-14",
+      "end": "2027-11-20"
+    },
+    {
+      "id": "hong-kong",
+      "start": "2027-11-21",
+      "end": "2027-11-26"
+    },
+    {
+      "id": "in-transit-new-zealand",
+      "start": "2027-11-27",
+      "end": "2027-11-27"
+    },
+    {
+      "id": "wanaka",
+      "start": "2027-11-28",
+      "end": "2027-12-17"
+    },
+    {
+      "id": "in-transit-new-hampshire",
+      "start": "2027-12-18",
+      "end": "2027-12-18"
+    },
+    {
+      "id": "new-hampshire",
+      "start": "2027-12-19",
+      "end": "2027-12-23"
+    }
+  ],
+  "travel": [
+    {
+      "start": "2027-08-21",
+      "end": "2027-08-23",
+      "route": "New Hampshire → Melbourne"
+    },
+    {
+      "start": "2027-08-29",
+      "route": "Melbourne → Newtown, Geelong"
+    },
+    {
+      "start": "2027-09-05",
+      "end": "2027-09-11",
+      "route": "Geelong → Great Ocean Road → Gariwerd → Sovereign Hill → Melbourne"
+    },
+    {
+      "start": "2027-09-12",
+      "route": "Melbourne → Alice Springs"
+    },
+    {
+      "start": "2027-09-26",
+      "route": "Alice Springs → Sydney"
+    },
+    {
+      "start": "2027-10-10",
+      "route": "Sydney → Hamilton Island"
+    },
+    {
+      "start": "2027-10-17",
+      "route": "Proserpine → Brisbane"
+    },
+    {
+      "start": "2027-10-23",
+      "end": "2027-10-24",
+      "route": "Brisbane → India"
+    },
+    {
+      "start": "2027-11-14",
+      "route": "India → Singapore"
+    },
+    {
+      "start": "2027-11-21",
+      "route": "Singapore → Hong Kong"
+    },
+    {
+      "start": "2027-11-27",
+      "end": "2027-11-28",
+      "route": "Hong Kong → Auckland → Queenstown → Wānaka"
+    },
+    {
+      "start": "2027-12-18",
+      "end": "2027-12-19",
+      "route": "New Zealand → New Hampshire"
+    }
+  ],
+  "vacationOverrides": [
+    "2027-09-07",
+    "2027-09-08",
+    "2027-09-09",
+    "2027-09-10",
+    "2027-10-13",
+    "2027-10-14",
+    "2027-10-15",
+    "2027-10-29",
+    "2027-12-09",
+    "2027-12-10"
+  ],
+  "reducedWorkDays": [
+    {
+      "date": "2027-08-24",
+      "targetHours": 4,
+      "note": "Melbourne arrival soft launch"
+    },
+    {
+      "date": "2027-08-25",
+      "targetHours": 4,
+      "note": "Melbourne arrival soft launch"
+    },
+    {
+      "date": "2027-12-06",
+      "targetHours": 4,
+      "note": "New Zealand anchor workday"
+    },
+    {
+      "date": "2027-12-07",
+      "targetHours": 4,
+      "note": "New Zealand anchor workday"
+    },
+    {
+      "date": "2027-12-08",
+      "targetHours": 4,
+      "note": "New Zealand anchor workday"
+    }
+  ],
+  "outbackAlternatives": [
+    {
+      "id": "alice-springs-fourteen-nights",
+      "status": "selected",
+      "start": "2027-09-12",
+      "end": "2027-09-25",
+      "routing": "Melbourne → Alice Springs → Sydney"
+    },
+    {
+      "id": "longreach-fourteen-nights",
+      "status": "fallback",
+      "start": "2027-09-12",
+      "end": "2027-09-25",
+      "routing": "Melbourne → Brisbane → Longreach → Brisbane → Sydney"
+    },
+    {
+      "id": "longreach-seven-nights",
+      "status": "fallback",
+      "start": "2027-09-12",
+      "end": "2027-09-18",
+      "routing": "Melbourne → Brisbane → Longreach → Brisbane → Sydney",
+      "tradeoff": "Extends Sydney from September 19 through October 9."
+    }
+  ]
+}

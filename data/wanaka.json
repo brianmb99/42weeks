@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "lastReviewed": "2026-09-13",
+  "title": "Wānaka: Twenty-Night Working Base",
+  "start": "2027-11-28",
+  "end": "2027-12-17",
+  "nights": 20,
+  "summary": "Wānaka works because this is almost three weeks in one house, not a South Island road trip disguised as a work period. Early starts preserve long late-spring afternoons, two complete weekends create real excursion time, and the middle four-day mini-vacation uses only two leave days.",
+  "season": {
+    "summary": "Late November and early December bring long daylight, cool-to-mild temperatures and changeable alpine weather before the Christmas peak.",
+    "planningRange": "Expect many daytime temperatures in the high teens or low twenties Celsius, cooler nights, strong sun, wind and periodic rain; use the forecast rather than a rigid activity calendar.",
+    "notes": [
+      "Daylight lasts well into the evening, which is the main reason working here remains rewarding.",
+      "Lake and river water stay cold even on warm days.",
+      "Mountain routes can be wet, windy, snowy at elevation or inaccessible despite pleasant weather in town.",
+      "Book before the pre-Christmas period tightens, but keep major outdoor plans flexible."
+    ]
+  },
+  "base": {
+    "recommendation": "Meadowstone or the quiet southern edge of central Wānaka",
+    "reason": "This keeps the lakefront and town practical on foot or bike while offering a better chance of a family house and separate early-morning workspace. Albert Town is the value fallback if its property is materially better.",
+    "requirements": [
+      "Three bedrooms or two bedrooms plus a genuinely separate office",
+      "A work room far enough from bedrooms for a 5 a.m. start",
+      "Verified fibre or high-quality fixed broadband and strong mobile backup",
+      "Heating, laundry, full kitchen and blackout curtains",
+      "Parking and secure bicycle storage",
+      "Flexible cancellation around the long-haul flight connection"
+    ]
+  },
+  "arrival": {
+    "plan": "Preserve Saturday daytime in Hong Kong, take a Saturday-night long-haul flight if the eventual schedule permits, connect through Auckland to Queenstown, then use a prearranged rental car for the drive to Wānaka.",
+    "fallback": "If the 2027 schedule forces a Sunday departure and Monday arrival, protect Tuesday through Friday as the first work block rather than pretending arrival Monday will be normal."
+  },
+  "workRhythm": [
+    {
+      "dates": "2027-11-29/2027-12-03",
+      "mode": "Full work week",
+      "plan": "Work approximately 5 a.m.–1 p.m. New Zealand time. This maps to roughly 11 a.m.–7 p.m. New York or 10 a.m.–6 p.m. Chicago on the previous date and leaves a long afternoon."
+    },
+    {
+      "dates": "2027-12-06/2027-12-08",
+      "mode": "Three four-hour anchor days",
+      "plan": "Work approximately 5–9 a.m., remain reachable for true priorities, and use nearby afternoons rather than beginning a road trip."
+    },
+    {
+      "dates": "2027-12-09/2027-12-12",
+      "mode": "Four-day mini-vacation",
+      "plan": "Use Thursday and Friday as vacation days plus the weekend. Pick the actual activities from the ten-day forecast."
+    },
+    {
+      "dates": "2027-12-13/2027-12-17",
+      "mode": "Full work week",
+      "plan": "Return to visible full output before the Christmas break and pack gradually for the Saturday trip home."
+    }
+  ],
+  "ordinaryAfternoons": [
+    "Walk or cycle the Wānaka lakefront and Outlet Track",
+    "Swim only with realistic cold-water expectations or use the community pool",
+    "Mount Iron for a compact local hike when wind and heat permit",
+    "Diamond Lake or the lower Rocky Mountain track when conditions are appropriate",
+    "Paddleboard or kayak close to shore in settled weather",
+    "Puzzling World, the library or an indoor recovery afternoon",
+    "Cook, read and leave some evenings deliberately empty"
+  ],
+  "weekends": [
+    {
+      "dates": "2027-12-04/2027-12-05",
+      "plan": "Use one larger local outing and one recovery day. Rob Roy Glacier Track is the leading full-day candidate if road, ford and track conditions are good; otherwise use Diamond Lake, Rocky Mountain or a lake day."
+    },
+    {
+      "dates": "2027-12-11/2027-12-12",
+      "plan": "This is part of the four-day forecast-selected mini-vacation rather than a separate commitment."
+    }
+  ],
+  "miniVacation": {
+    "dates": "2027-12-09/2027-12-12",
+    "recommendation": "Keep Wānaka as the base unless a two-night excursion clearly earns the packing cost.",
+    "rankedOptions": [
+      {
+        "rank": 1,
+        "title": "Wānaka and Mount Aspiring weather window",
+        "tradeoff": "Best fit for the one-base goal and easiest to rearrange around rain, wind and cloud."
+      },
+      {
+        "rank": 2,
+        "title": "Two nights at Aoraki / Mount Cook",
+        "tradeoff": "A meaningful second landscape at a manageable distance, but it adds one lodging change and should be booked flexibly."
+      },
+      {
+        "rank": 3,
+        "title": "Two nights in Te Anau for Milford Sound",
+        "tradeoff": "A major New Zealand experience, but the long transfer and weather exposure make it the most operationally expensive option."
+      }
+    ],
+    "pushback": "Do not attempt Milford Sound as a day trip from Wānaka. If Milford becomes the priority, spend two nights in Te Anau and accept that the trip is briefly no longer a single-base model."
+  },
+  "homeschool": [
+    "Glaciation, alpine geology and the Southern Alps watershed",
+    "New Zealand birds, invasive species and conservation",
+    "Māori place names and Kāi Tahu history",
+    "Weather forecasting, UV, river crossings and mountain judgment",
+    "Time-zone arithmetic and the International Date Line"
+  ],
+  "bookFirst": [
+    "Twenty-night Wānaka house with separate early-morning workspace and verified broadband",
+    "Hong Kong → Auckland and Auckland → Queenstown itinerary",
+    "Queenstown rental car sized for luggage and the Wānaka transfer",
+    "Flexible Aoraki or Te Anau backup only if the family wants a two-night excursion"
+  ],
+  "links": [
+    {
+      "title": "Wānaka official visitor site",
+      "url": "https://www.lakewanaka.co.nz/"
+    },
+    {
+      "title": "Department of Conservation — Wānaka area",
+      "url": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/otago/places/wanaka-area/"
+    },
+    {
+      "title": "Rob Roy Track",
+      "url": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/otago/places/mount-aspiring-national-park/things-to-do/tracks/rob-roy-track/"
+    },
+    {
+      "title": "MetService Wānaka forecast",
+      "url": "https://www.metservice.com/towns-cities/locations/wanaka"
+    },
+    {
+      "title": "NIWA climate overview",
+      "url": "https://niwa.co.nz/climate-and-weather/regional-climatologies/otago"
+    }
+  ]
+}

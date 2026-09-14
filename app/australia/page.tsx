@@ -7,7 +7,7 @@ import "../trips/australia.css";
 export const metadata: Metadata = {
   title: "Australia",
   description:
-    "The working route through Geelong, Victoria, Sydney, the Whitsundays and Outback Queensland.",
+    "The selected working route through Melbourne, Newtown, Victoria, Alice Springs, Sydney, the Whitsundays and Brisbane.",
 };
 
 export default function AustraliaPage() {
@@ -19,21 +19,21 @@ export default function AustraliaPage() {
           <p>42 Weeks · regional plan</p>
           <h1>Australia</h1>
           <div className="aus-overview-facts">
-            <span>Sep 18–Oct 23, 2027</span>
-            <span>Victoria, New South Wales and Queensland</span>
+            <span>Aug 21–Oct 23, 2027</span>
+            <span>Victoria, Northern Territory, New South Wales and Queensland</span>
             <span>Work + vacation</span>
           </div>
           <p className="aus-overview-summary">
-            Start with a stable work week in Geelong, take the seven-day
-            Victorian road trip, use Melbourne as a compact city weekend,
-            work beside a Sydney beach, then finish with the Whitsundays and
-            Outback Queensland.
+            Land in Melbourne, live for a week in Newtown, take the
+            seven-day Victorian road trip, spend two weeks working in Alice
+            Springs, work beside a Sydney beach, then finish with the
+            Whitsundays and a Brisbane reset week.
           </p>
         </header>
 
         <section className="aus-route-intro" aria-labelledby="aus-route-title">
           <p>In order</p>
-          <h2 id="aus-route-title">Six pieces of the Australia plan</h2>
+          <h2 id="aus-route-title">Seven pieces of the Australia plan</h2>
         </section>
 
         <section className="aus-route-grid" aria-label="Australia trip sections">

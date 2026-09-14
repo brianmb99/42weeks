@@ -1,49 +1,43 @@
 # 42 Weeks — Queensland Working Notes
 
-> Supporting brief for the 2027–28 family sabbatical. Implemented in the primary calendar and two dedicated trip pages on July 29, 2026. `data/trip-plan.json` remains authoritative for dates.
+> Supporting brief for the selected October 2027 Queensland sequence. `data/trip-plan.json` remains authoritative for dates.
 >
-> Last researched: July 29, 2026. Flight schedules, attraction calendars, prices, Starlink terms, and marine conditions must be rechecked for October 2027.
+> Updated September 13, 2026. Flight schedules, attraction calendars, prices and marine conditions must be rechecked for October 2027.
 
 ## Decision summary
 
-Use two compact Queensland bases:
+Use two compact Queensland bases after the outback has already been completed in Alice Springs:
 
 1. **Hamilton Island, Sunday, October 10 through Saturday, October 16**
-2. **Longreach, Sunday, October 17 through Friday, October 22**, followed by one continuous trip to India on Saturday
+2. **Brisbane, Sunday, October 17 through Friday, October 22**, followed by weekend travel to India
 
-Use Brisbane only as a same-day airport connection on October 17 and October 23.
-
-At each principal base:
-
-- Brian works three full days.
-- The children homeschool on those same mornings.
-- The family reunites for substantial afternoon and evening activities.
-- Brian takes Thursday and Friday as vacation.
-- Full-day, weather-dependent or logistically involved excursions go on the vacation days.
+Hamilton Island carries two planned workdays, the Hardy Reef day and the kayak expedition. Brisbane carries a full Monday–Friday work and homeschool week; its purpose is output, recovery, laundry and packing rather than another sightseeing sprint.
 
 This produces:
 
 - 7 nights on Hamilton Island
-- 6 nights in Longreach
-- 0 Brisbane airport nights
-- 6 full workdays
-- 4 vacation days
-- 2 weekend days that extend the Hamilton Island mini-vacation
+- 6 nights in Brisbane
+- 7 planned workdays
+- 3 vacation weekdays in the Whitsundays
+- 1 weekend kayak day
 - 13 Queensland nights before the October 23 international departure
 
-The concept depends on early-shift work rather than U.S. market hours. A working target is **4:30 a.m.–12:30 p.m. AEST**, with family lunch around 12:30 and activities from approximately 1:30 onward. Exact hours can flex around tours and calls.
+The Hamilton Island work block can use the early-shift model. Brisbane can use a split day if live U.S. overlap is needed, but the week should prioritize full output over excursions.
 
 ## Why this structure is preferred
 
-- The family actually lives in two distinctive Queensland environments rather than commuting to them from Brisbane.
+- The family lives in the Whitsundays rather than commuting to them from Brisbane.
 - Hamilton Island supports low-friction afternoon recreation: beach, pools, watersports, wildlife, walking, buggy exploration, and sunsets.
-- Longreach is a real town with groceries, services, museums, restaurants, a pool, airport access, and outback experiences. It is a more credible work base than a remote station.
-- Three work/homeschool days followed by two vacation days creates a repeatable weekly rhythm.
-- Starlink reduces dependence on accommodation Wi-Fi, while existing Wi-Fi and mobile coverage remain essential backups.
-- Brisbane is only an airport connection: between Hamilton Island and Longreach, then between Longreach and India.
+- Alice Springs now supplies the substantive outback chapter earlier in the route.
+- Brisbane absorbs the operational reset that would otherwise be attempted immediately after the kayak expedition or during international travel.
+- Existing fixed broadband and mobile backup are more important than planning around temporary satellite equipment.
 - India begins on arrival Sunday, October 24, preserving five days before Diwali on Friday, October 29.
 
-## Calendar implementation specification
+## Archived July 2026 Longreach implementation
+
+The detailed Longreach specification below records the superseded route and is not the current calendar. The exact prior canonical route is also preserved in `proposals/archive/canonical-before-alice-wanaka-2026-09-13/` and the `archive/pre-alice-wanaka-2026-09-13` Git tag.
+
+### Calendar implementation specification
 
 ### Existing entries to replace or reinterpret
 

@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "status": "archived-canonical",
+  "canonical": false,
+  "archivedOn": "2026-09-13",
+  "sourceCommit": "91d3c6d",
+  "sourceTag": "archive/pre-alice-wanaka-2026-09-13",
+  "tripStart": "2027-09-18",
+  "tripEnd": "2028-06-28",
+  "locations": [
+    {
+      "id": "in-transit-australia",
+      "start": "2027-09-18",
+      "end": "2027-09-18"
+    },
+    {
+      "id": "geelong",
+      "start": "2027-09-19",
+      "end": "2027-09-24"
+    },
+    {
+      "id": "great-southern-touring-route",
+      "start": "2027-09-25",
+      "end": "2027-09-30"
+    },
+    {
+      "id": "melbourne",
+      "start": "2027-10-01",
+      "end": "2027-10-02"
+    },
+    {
+      "id": "sydney",
+      "start": "2027-10-03",
+      "end": "2027-10-09"
+    },
+    {
+      "id": "hamilton-island",
+      "start": "2027-10-10",
+      "end": "2027-10-16"
+    },
+    {
+      "id": "longreach",
+      "start": "2027-10-17",
+      "end": "2027-10-22"
+    },
+    {
+      "id": "in-transit-india",
+      "start": "2027-10-23",
+      "end": "2027-10-23"
+    },
+    {
+      "id": "india",
+      "start": "2027-10-24",
+      "end": "2027-11-13"
+    },
+    {
+      "id": "singapore",
+      "start": "2027-11-14",
+      "end": "2027-11-27"
+    },
+    {
+      "id": "hong-kong",
+      "start": "2027-11-28",
+      "end": "2027-12-17"
+    },
+    {
+      "id": "in-transit-new-hampshire",
+      "start": "2027-12-18",
+      "end": "2027-12-18"
+    },
+    {
+      "id": "new-hampshire",
+      "start": "2027-12-19",
+      "end": "2027-12-23"
+    }
+  ],
+  "vacationWeekdays": [
+    "2027-09-27",
+    "2027-09-28",
+    "2027-09-29",
+    "2027-09-30",
+    "2027-10-01",
+    "2027-10-13",
+    "2027-10-14",
+    "2027-10-15",
+    "2027-10-21",
+    "2027-10-22"
+  ],
+  "notes": [
+    "The Great Southern Touring Route concluded at Sovereign Hill and Melbourne on October 1.",
+    "The exact canonical event structure remains available from the source tag."
+  ]
+}

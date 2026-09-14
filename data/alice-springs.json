@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "lastReviewed": "2026-09-13",
+  "title": "Alice Springs: Two-Week Outback Base",
+  "start": "2027-09-12",
+  "end": "2027-09-25",
+  "nights": 14,
+  "summary": "Live and work in the Red Centre for two weeks rather than treating the outback as a short attraction circuit. Alice Springs has the housing, groceries, airport, car hire and daily-life infrastructure needed for a credible base, while Tjoritja/West MacDonnell Ranges and the East MacDonnell Ranges make the complete middle weekend genuinely distinctive.",
+  "season": {
+    "summary": "September is one of the strongest Alice Springs windows: warm, dry days and cool nights before October heat builds.",
+    "meanMaximumC": 27.5,
+    "meanMinimumC": 10.3,
+    "meanRainfallMm": 8.8,
+    "notes": [
+      "Pack warm layers for early mornings and evenings as well as sun protection for afternoons.",
+      "The low monthly rainfall average does not eliminate isolated storms or strong winds.",
+      "Carry water on every excursion and avoid treating dry-weather averages as permission to improvise remote drives."
+    ]
+  },
+  "base": {
+    "recommendation": "East Side or the quieter edge of the town centre",
+    "reason": "East Side offers a more residential rhythm, access to the Telegraph Station and trails, and a short drive to groceries and central services. A central-edge property can work if it provides better workspace, security, laundry and internet.",
+    "requirements": [
+      "At least two bedrooms plus a closed-door workspace",
+      "Verified fixed broadband and strong mobile backup",
+      "Air conditioning, heating, kitchen and laundry",
+      "Secure parking for a rental car",
+      "A shaded outdoor area or pool",
+      "Written confirmation that the desk and internet are suitable for repeated video calls"
+    ]
+  },
+  "workRhythm": {
+    "fullWeeks": [
+      "2027-09-13/2027-09-17",
+      "2027-09-20/2027-09-24"
+    ],
+    "localPlan": [
+      "Use a substantial local-morning block for deep work while the children homeschool.",
+      "Keep most afternoons available for nearby town, cultural and outdoor activities.",
+      "When live U.S. overlap is needed, 6–10 a.m. New York maps to approximately 7:30–11:30 p.m. in Alice Springs.",
+      "Do not schedule late overlap every night; protect sleep before driving days."
+    ]
+  },
+  "workdayAfternoons": [
+    {
+      "title": "Alice Springs Desert Park",
+      "note": "Best used as a substantial half-day rather than squeezed into an hour; choose a lighter workday or weekend if program times require it."
+    },
+    {
+      "title": "Alice Springs Telegraph Station",
+      "note": "Close to East Side and suitable for history, trails and a lower-friction afternoon."
+    },
+    {
+      "title": "Araluen Cultural Precinct",
+      "note": "Use galleries and cultural collections as a heat, wind or recovery-day option."
+    },
+    {
+      "title": "Royal Flying Doctor Service and School of the Air",
+      "note": "High-value family learning, subject to published tour hours."
+    },
+    {
+      "title": "Olive Pink Botanic Garden and Anzac Hill",
+      "note": "Short, flexible outings for local ecology and sunset views."
+    },
+    {
+      "title": "Ordinary town life",
+      "note": "Groceries, pool time, cooking and unprogrammed evenings are part of the purpose of a two-week stay."
+    }
+  ],
+  "middleWeekend": {
+    "dates": "2027-09-18/2027-09-19",
+    "recommendation": "Keep the Alice Springs rental and use two day trips rather than moving the work base.",
+    "preferredPlan": [
+      "Saturday: Tjoritja/West MacDonnell Ranges, choosing a realistic line such as Simpsons Gap, Standley Chasm and one farther gorge rather than attempting every stop.",
+      "Sunday: a second West MacDonnell focus, East MacDonnell Ranges, Desert Park or a slower town day according to weather and family energy."
+    ],
+    "alternative": "Use one overnight west of town only if it materially improves the selected walks and the accommodation is operating; do not add Uluru casually."
+  },
+  "uluruDecision": {
+    "status": "Not included in the canonical two-week base",
+    "reason": "Uluru is roughly a separate three-night vacation decision. Adding it automatically would consume leave, create another lodging move and weaken the ordinary-life purpose of Alice Springs.",
+    "revisitIf": [
+      "The family considers Uluru a non-negotiable Australian objective",
+      "At least two additional vacation weekdays are available",
+      "The route can use a one-way Alice Springs → Uluru → Sydney flight pattern"
+    ]
+  },
+  "homeschool": [
+    "Arrernte history, living culture and the limits of outsider interpretation",
+    "Desert ecology, water, geology and adaptation",
+    "Royal Flying Doctor Service, School of the Air and the logistics of remote communities",
+    "Australian exploration, telegraphy and the contested history of settlement",
+    "Distance, fuel, heat, route planning and remote-area decision-making"
+  ],
+  "bookFirst": [
+    "Fourteen-night family rental with verified workspace and broadband",
+    "Melbourne → Alice Springs and Alice Springs → Sydney flights",
+    "Rental car for the full stay",
+    "Any timed Desert Park, School of the Air or cultural programs",
+    "Middle-weekend plan after checking park access and road conditions"
+  ],
+  "links": [
+    {
+      "title": "Tourism Australia Alice Springs guide",
+      "url": "https://www.australia.com/en-us/places/alice-springs-and-surrounds/guide-to-alice-springs.html"
+    },
+    {
+      "title": "Northern Territory Alice Springs and surrounds",
+      "url": "https://northernterritory.com/us/en/alice-springs-and-surrounds"
+    },
+    {
+      "title": "Tjoritja / West MacDonnell National Park",
+      "url": "https://nt.gov.au/parks/find-a-park/tjoritja-west-macdonnell-national-park"
+    },
+    {
+      "title": "Alice Springs Desert Park",
+      "url": "https://alicespringsdesertpark.com.au/"
+    },
+    {
+      "title": "Bureau of Meteorology climate statistics",
+      "url": "https://www.bom.gov.au/climate/averages/tables/cw_015590.shtml"
+    }
+  ]
+}
