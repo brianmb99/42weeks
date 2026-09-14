@@ -152,6 +152,7 @@ export default function AliceSpringsPage() {
           id: "work-rhythm",
           eyebrow: "Weekday base",
           title: "Work & School from Alice Springs",
+          headerNote: "US Eastern → 10:30 p.m.–6:30 a.m. local",
           description:
             "Treat professional work and academic subjects as the fixed weekday commitments. The linked activities are optional place-based learning, not a requirement to program every day.",
           items: [
@@ -159,7 +160,6 @@ export default function AliceSpringsPage() {
             "Culture and history — Use Telegraph Station and Araluen to examine telegraphy, settlement and Central Australian art with appropriate Arrernte context.",
             "Remote systems — Connect the Royal Flying Doctor Service and School of the Air to medicine, education and distance.",
             "Desert lens — Study ecology, water, geology and adaptation at Desert Park and Olive Pink Botanic Garden.",
-            "9 a.m.–5 p.m. Eastern → 10:30 p.m.–6:30 a.m. Alice Springs (next day)",
           ],
         },
         stayTitle: alice.base.recommendation,

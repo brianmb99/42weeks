@@ -49,6 +49,7 @@ export type LocationActivity = {
 export type LocationPanel = {
   eyebrow: string;
   title: string;
+  headerNote?: string;
   description?: string;
   items?: string[];
   id?: string;

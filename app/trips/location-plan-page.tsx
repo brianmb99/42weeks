@@ -137,7 +137,12 @@ export default function LocationPlanPage({
         {plan.basePanel ? (
           <section className="location-base-grid" aria-label="Base setup">
             <article id={plan.basePanel.id}>
-              <p>{plan.basePanel.eyebrow}</p>
+              <div className="location-base-kicker">
+                <p>{plan.basePanel.eyebrow}</p>
+                {plan.basePanel.headerNote && (
+                  <p>{plan.basePanel.headerNote}</p>
+                )}
+              </div>
               <h2>{plan.basePanel.title}</h2>
               {plan.basePanel.description && (
                 <p>{plan.basePanel.description}</p>

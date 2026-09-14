@@ -38,6 +38,7 @@ body {
 .location-rhythm header > div > p,
 .location-stay > div > p:first-child,
 .location-base-grid article > p:first-child,
+.location-base-kicker > p:first-child,
 .location-feature-plans article header > p:first-child,
 .location-activities > header p,
 .location-panels article > p:first-child,
@@ -432,6 +433,32 @@ body {
 
 .location-base-grid article:last-child {
   border-top: 6px solid var(--location-family);
+}
+
+.location-base-kicker {
+  margin-bottom: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 7px 12px;
+}
+
+.location-base-kicker > p:first-child {
+  margin: 0;
+}
+
+.location-base-kicker > p:last-child:not(:first-child) {
+  margin: 0;
+  padding: 5px 8px;
+  border-left: 3px solid var(--location-work);
+  color: var(--location-blue);
+  background: var(--location-pale-blue);
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: 0.015em;
+  line-height: 1.2;
+  white-space: nowrap;
 }
 
 .location-base-grid h2 {
