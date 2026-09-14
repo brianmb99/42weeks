@@ -229,6 +229,90 @@ body {
   background: var(--rhythm-color);
 }
 
+.location-weekday-highlights {
+  margin-top: 24px;
+  padding-top: 25px;
+  border-top: 1px solid var(--location-rule);
+}
+
+.location-weekday-highlights > header {
+  padding-left: 60px;
+  display: grid;
+  grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.2fr);
+  align-items: end;
+  gap: clamp(30px, 6vw, 80px);
+}
+
+.location-weekday-highlights h3 {
+  margin: 0;
+  font-size: clamp(20px, 2.5vw, 28px);
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+}
+
+.location-weekday-highlights > header > p {
+  margin: 0;
+  color: #4b585f;
+  font-size: 11px;
+  line-height: 1.58;
+}
+
+.location-weekday-highlight-grid {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.location-weekday-highlight-grid article {
+  min-width: 0;
+  padding: 17px 18px 16px;
+  border: 1px solid var(--location-rule);
+  border-top: 6px solid var(--location-work);
+  background: color-mix(in srgb, var(--location-work) 6%, white);
+}
+
+.location-weekday-highlight-grid article > p {
+  margin: 0;
+  color: var(--location-work);
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.location-weekday-highlight-grid h4 {
+  margin: 6px 0 12px;
+  font-size: 16px;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+.location-weekday-highlight-grid ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.location-weekday-highlight-grid li {
+  padding-left: 14px;
+  position: relative;
+  color: #4c5960;
+  font-size: 10px;
+  line-height: 1.48;
+}
+
+.location-weekday-highlight-grid li + li {
+  margin-top: 6px;
+}
+
+.location-weekday-highlight-grid li::before {
+  position: absolute;
+  left: 0;
+  color: var(--location-work);
+  content: "—";
+}
+
 .location-stay {
   padding: 31px 0;
   border-bottom: 1px solid var(--location-rule);
@@ -466,17 +550,20 @@ body {
 @media (max-width: 800px) {
   .location-header,
   .location-rhythm > header,
+  .location-weekday-highlights > header,
   .location-stay > div {
     padding-left: 0;
   }
 
   .location-rhythm > header,
+  .location-weekday-highlights > header,
   .location-stay,
   .location-activities {
     grid-template-columns: 1fr;
   }
 
   .location-rhythm > header,
+  .location-weekday-highlights > header,
   .location-activities {
     gap: 18px;
   }
@@ -503,6 +590,10 @@ body {
 
   .location-stay {
     gap: 25px;
+  }
+
+  .location-weekday-highlight-grid {
+    grid-template-columns: 1fr;
   }
 
   .location-notes,

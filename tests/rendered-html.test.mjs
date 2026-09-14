@@ -260,6 +260,10 @@ test("server-renders Alice Springs, Brisbane and Wānaka glance-first plans", as
         /Work &amp; School · week one/,
         /Weekday rhythm/,
         /Place-based learning — Use the Telegraph Station/,
+        /class="location-weekday-highlights"/,
+        /The weekdays are part of the outback experience/,
+        /History, art and desert plants/,
+        /Everyday outback learning/,
         /What fits here/,
         /data\/alice-springs\.json/,
       ],
@@ -279,6 +283,7 @@ test("server-renders Alice Springs, Brisbane and Wānaka glance-first plans", as
         /data\/queensland\.json/,
       ],
       image: /\/images\/australia\/brisbane-skyline\.jpg/,
+      absent: [/location-weekday-highlights/],
     },
     {
       path: "/new-zealand/wanaka",
@@ -295,6 +300,7 @@ test("server-renders Alice Springs, Brisbane and Wānaka glance-first plans", as
         /data\/wanaka\.json/,
       ],
       image: /\/images\/new-zealand\/wanaka-lake\.jpg/,
+      absent: [/location-weekday-highlights/],
     },
   ];
 

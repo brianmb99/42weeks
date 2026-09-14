@@ -112,6 +112,35 @@ export default function LocationPlanPage({
               </span>
             ))}
           </div>
+          {plan.weekdayHighlights && (
+            <div
+              className="location-weekday-highlights"
+              aria-labelledby="location-weekday-highlights-title"
+            >
+              <header>
+                <div>
+                  <p>During Work &amp; School</p>
+                  <h3 id="location-weekday-highlights-title">
+                    {plan.weekdayHighlights.title}
+                  </h3>
+                </div>
+                <p>{plan.weekdayHighlights.summary}</p>
+              </header>
+              <div className="location-weekday-highlight-grid">
+                {plan.weekdayHighlights.cards.map((card) => (
+                  <article key={card.title}>
+                    <p>{card.timing}</p>
+                    <h4>{card.title}</h4>
+                    <ul>
+                      {card.items.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
+                  </article>
+                ))}
+              </div>
+            </div>
+          )}
         </section>
 
         <section className="location-stay" aria-labelledby="location-stay-title">

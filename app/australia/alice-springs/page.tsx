@@ -91,6 +91,40 @@ export default function AliceSpringsPage() {
             tone: "family",
           },
         ],
+        weekdayHighlights: {
+          title: "The weekdays are part of the outback experience",
+          summary:
+            "Choose throughout both weeks rather than assigning these to fixed dates. Mix short local learning with one or two longer outings, and leave some afternoons open.",
+          cards: [
+            {
+              timing: "Easy local afternoons",
+              title: "History, art and desert plants",
+              items: [
+                "Telegraph Station history and nearby trails",
+                "Olive Pink Botanic Garden desert ecology",
+                "Araluen Cultural Precinct galleries and collections",
+              ],
+            },
+            {
+              timing: "Lighter Work & School day",
+              title: "Longer learning outings",
+              items: [
+                "Desert Park ecosystems and wildlife programs",
+                "Royal Flying Doctor Service visitor experience",
+                "School of the Air and remote education",
+              ],
+            },
+            {
+              timing: "Little or no booking",
+              title: "Everyday outback learning",
+              items: [
+                "East Side walks and desert observation",
+                "Anzac Hill sunset and town orientation",
+                "Night-sky observation and a constellation journal",
+              ],
+            },
+          ],
+        },
         stayTitle: alice.base.recommendation,
         stayDescription: alice.base.reason,
         stayChecks: alice.base.requirements,
