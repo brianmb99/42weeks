@@ -159,7 +159,7 @@ export default function AliceSpringsPage() {
             "Culture and history — Use Telegraph Station and Araluen to examine telegraphy, settlement and Central Australian art with appropriate Arrernte context.",
             "Remote systems — Connect the Royal Flying Doctor Service and School of the Air to medicine, education and distance.",
             "Desert lens — Study ecology, water, geology and adaptation at Desert Park and Olive Pink Botanic Garden.",
-            "Time-zone reference — During these September dates, 9 a.m.–5 p.m. U.S. Eastern is 10:30 p.m.–6:30 a.m. the following day in Alice Springs.",
+            "9 a.m.–5 p.m. Eastern → 10:30 p.m.–6:30 a.m. Alice Springs (next day)",
           ],
         },
         stayTitle: alice.base.recommendation,

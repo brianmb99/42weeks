@@ -263,7 +263,7 @@ test("server-renders Alice Springs, Brisbane and Wānaka glance-first plans", as
         /href="https:\/\/alicespringstelegraphstation\.com\.au\/plan-your-visit\/"/,
         /href="https:\/\/www\.schooloftheair\.net\.au\/the-experience\/"/,
         /Work &amp; School from Alice Springs/,
-        /9 a\.m\.–5 p\.m\. U\.S\. Eastern is 10:30 p\.m\.–6:30 a\.m\. the following day/,
+        /9 a\.m\.–5 p\.m\. Eastern → 10:30 p\.m\.–6:30 a\.m\. Alice Springs \(next day\)/,
         /class="location-base-grid"/,
         /href="#red-centre-weekend"/,
         /id="red-centre-weekend"/,
