@@ -40,6 +40,8 @@ Use `LocationPlanPage` for city and working-base pages. The page should let a re
 - Avoid claims about future opening hours, fixtures, flights, or conditions. State what must be rechecked for the actual year.
 - Locally store photographs; do not hotlink. Include credit and source metadata.
 - Every serious work base needs an explicit workspace, internet, backup connectivity, laundry, and homeschool check.
+- Do not prescribe the traveler’s working hours on the public page. End the Work & School box with a neutral conversion of 9 a.m.–5 p.m. U.S. Eastern to local time for the stay’s exact dates, including any next-day crossover.
+- Keep any schedule preferences or overlap strategies in internal planning data rather than display copy.
 - Describe personal and family-history value directly when it is part of the stop’s purpose.
 
 ## Implementation checklist

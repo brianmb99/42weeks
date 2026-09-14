@@ -52,7 +52,7 @@ export default function AliceSpringsPage() {
         ],
         rhythmTitle: "Two Work & School weeks, one real outback weekend",
         rhythmSummary:
-          "Keeping one house for fourteen nights is what makes a credible weekday routine possible. Core work and school stay protected; local afternoons become place-based learning, while the complete middle weekend carries the remote driving.",
+          "Keeping one house for fourteen nights is what makes a credible weekday routine possible. Core work and school stay protected; short local outings become place-based learning, while the complete middle weekend carries the remote driving.",
         workLabel: "Work & School",
         rhythm: [
           {
@@ -65,7 +65,7 @@ export default function AliceSpringsPage() {
           {
             label: "Work & School · week one",
             dates: "Sep 13–17",
-            detail: "Core morning blocks, then flexible local learning.",
+            detail: "Protected work and school, with flexible local learning.",
             days: 5,
             tone: "work",
             highlights: [
@@ -153,13 +153,13 @@ export default function AliceSpringsPage() {
           eyebrow: "Weekday base",
           title: "Work & School from Alice Springs",
           description:
-            "Protect core professional work and academic subjects in a predictable morning block, then use selected afternoons for place-based learning without programming every day.",
+            "Treat professional work and academic subjects as the fixed weekday commitments. The linked activities are optional place-based learning, not a requirement to program every day.",
           items: [
             "Core rhythm — Complete deep work, reading, writing and math before treating an outing as the day's learning.",
             "Culture and history — Use Telegraph Station and Araluen to examine telegraphy, settlement and Central Australian art with appropriate Arrernte context.",
             "Remote systems — Connect the Royal Flying Doctor Service and School of the Air to medicine, education and distance.",
             "Desert lens — Study ecology, water, geology and adaptation at Desert Park and Olive Pink Botanic Garden.",
-            "U.S. overlap — When needed, 6–10 a.m. New York maps to approximately 7:30–11:30 p.m.; do not schedule it every night.",
+            "Time-zone reference — During these September dates, 9 a.m.–5 p.m. U.S. Eastern is 10:30 p.m.–6:30 a.m. the following day in Alice Springs.",
           ],
         },
         stayTitle: alice.base.recommendation,
@@ -193,7 +193,6 @@ export default function AliceSpringsPage() {
         planningNotes: [
           "Verify park access, road conditions and 2027 flight days before booking.",
           "Carry water on every excursion and do not improvise remote drives from a dry-weather average.",
-          "Do not rely on late-night U.S. overlap every evening before driving days.",
         ],
         links: alice.links,
       }}
