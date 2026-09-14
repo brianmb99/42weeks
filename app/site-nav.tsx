@@ -1,6 +1,6 @@
 import { sitePath } from "../lib/site-path";
 
-type NavPage = "home" | "calendar" | "australia" | "new-zealand";
+type NavPage = "home" | "calendar" | "australia" | "asia" | "new-zealand";
 export type AustraliaNavPage =
   | "overview"
   | "melbourne"
@@ -11,11 +11,13 @@ export type AustraliaNavPage =
   | "whitsundays"
   | "brisbane"
   | "outback";
+export type AsiaNavPage = "singapore" | "hong-kong";
 
 const navItems: Array<{ id: NavPage; label: string; href: string }> = [
   { id: "home", label: "Home", href: "/" },
   { id: "calendar", label: "Calendar", href: "/calendar" },
   { id: "australia", label: "Australia", href: "/australia" },
+  { id: "asia", label: "Asia", href: "/#asia" },
   { id: "new-zealand", label: "New Zealand", href: "/new-zealand/wanaka" },
 ];
 
@@ -50,18 +52,32 @@ const australiaNavItems: Array<{
   },
 ];
 
+const asiaNavItems: Array<{
+  id: AsiaNavPage;
+  label: string;
+  href: string;
+}> = [
+  { id: "singapore", label: "Singapore", href: "/asia/singapore" },
+  { id: "hong-kong", label: "Hong Kong", href: "/asia/hong-kong" },
+];
+
 export default function SiteNav({
   current,
   australiaCurrent,
+  asiaCurrent,
 }: {
   current?: NavPage;
   australiaCurrent?: AustraliaNavPage;
+  asiaCurrent?: AsiaNavPage;
 }) {
   const showAustraliaNav = current === "australia";
+  const showAsiaNav = current === "asia";
 
   return (
     <nav
-      className={`site-nav${showAustraliaNav ? " has-secondary" : ""}`}
+      className={`site-nav${
+        showAustraliaNav || showAsiaNav ? " has-secondary" : ""
+      }`}
       aria-label="Primary"
     >
       <div className="site-nav-inner">
@@ -89,6 +105,21 @@ export default function SiteNav({
                 aria-current={
                   item.id === australiaCurrent ? "page" : undefined
                 }
+                key={item.id}
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+      {showAsiaNav && (
+        <div className="site-subnav" aria-label="Asia">
+          <div className="site-subnav-inner">
+            {asiaNavItems.map((item) => (
+              <a
+                href={sitePath(item.href)}
+                aria-current={item.id === asiaCurrent ? "page" : undefined}
                 key={item.id}
               >
                 {item.label}

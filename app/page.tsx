@@ -38,6 +38,8 @@ const locationDetailPages: Record<string, string> = {
   "location-sydney": "/australia/sydney",
   "location-hamilton-island": "/trips/hamilton-island-working-week",
   "location-brisbane": "/australia/brisbane",
+  "location-singapore": "/asia/singapore",
+  "location-hong-kong": "/asia/hong-kong",
   "location-wanaka": "/new-zealand/wanaka",
 };
 
@@ -273,6 +275,8 @@ const asiaCards: PlaceCard[] = [
       "A compact, easy-to-navigate work base with strong food, gardens, transit, and family-friendly city days.",
     highlights: ["Hawker food", "Gardens", "Easy transit"],
     open: "Neighborhood, lodging, and weekday routine",
+    href: "/asia/singapore",
+    linkLabel: "Open Singapore plan",
   },
   {
     locationId: "location-hong-kong",
@@ -281,6 +285,8 @@ const asiaCards: PlaceCard[] = [
       "Keep the office commitment compact, use the Thanksgiving break intelligently, and preserve Saturday before the overnight flight.",
     highlights: ["Harbor and ferries", "Three core office days", "Saturday in Hong Kong"],
     open: "Neighborhood, office rhythm, and exact Auckland flight",
+    href: "/asia/hong-kong",
+    linkLabel: "Open Hong Kong plan",
   },
 ];
 
@@ -553,7 +559,7 @@ export default function Home() {
             <PlaceGrid cards={australiaCards} ariaLabel="Australia places" />
           </section>
 
-          <section className="home-chapter home-chapter-tinted">
+          <section className="home-chapter home-chapter-tinted" id="asia">
             <div className="home-section-heading">
               <div>
                 <p className="home-kicker">October–November 2027</p>

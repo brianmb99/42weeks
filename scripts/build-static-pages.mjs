@@ -17,6 +17,8 @@ const routes = [
   "/australia/alice-springs",
   "/australia/sydney",
   "/australia/brisbane",
+  "/asia/singapore",
+  "/asia/hong-kong",
   "/new-zealand/wanaka",
   "/trips/great-southern-touring-route",
   "/trips/hamilton-island-working-week",

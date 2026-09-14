@@ -62,11 +62,13 @@ test("server-renders the 42 Weeks overview", async () => {
   assert.match(html, /aria-label="Open Victoria road trip plan"/);
   assert.match(html, /aria-label="Open Whitsundays plan"/);
   assert.match(html, /aria-label="Open Alice Springs plan"/);
+  assert.match(html, /aria-label="Open Singapore plan"/);
+  assert.match(html, /aria-label="Open Hong Kong plan"/);
   assert.match(html, /aria-label="Open Wānaka plan"/);
   assert.equal(
     (html.match(/<a class="home-overview-item home-overview-link"/g) ?? [])
       .length,
-    8,
+    10,
   );
   assert.match(html, /href="\/australia\/geelong"/);
   assert.match(
@@ -104,6 +106,8 @@ test("server-renders the 42 Weeks overview", async () => {
   assert.match(html, /Family history \+ work/);
   assert.match(html, /\/trips\/hamilton-island-working-week/);
   assert.match(html, /\/australia\/brisbane/);
+  assert.match(html, /\/asia\/singapore/);
+  assert.match(html, /\/asia\/hong-kong/);
   assert.match(html, /Diwali/);
   assert.match(html, /Dehradun family base/);
   assert.match(html, /credible work and homeschool routine/);
@@ -189,13 +193,14 @@ test("server-renders Geelong, Melbourne and Sydney planning pages", async () => 
         /Little Penguins at St Kilda Pier/,
         /free, ticketed evening sessions/,
         /Royal Botanic Gardens/,
+        /AFL at the MCG/,
         /any men&#x27;s AFL match at the MCG/,
         /four-hour anchor blocks/,
       ],
       images: [
         /\/images\/australia\/melbourne-skyline\.jpg/,
         /\/images\/australia\/melbourne-little-penguin\.jpg/,
-        /\/images\/australia\/melbourne-st-kilda-skyline\.jpg/,
+        /\/images\/australia\/melbourne-afl-mcg\.jpg/,
       ],
     },
     {
@@ -230,6 +235,7 @@ test("server-renders Geelong, Melbourne and Sydney planning pages", async () => 
       (html.match(/<figure(?: class="is-featured")?>/g) ?? []).length,
       3,
     );
+    assert.match(html, /class="location-rhythm-track"/);
     for (const pattern of [...route.content, ...route.images]) {
       assert.match(html, pattern);
     }
@@ -238,43 +244,52 @@ test("server-renders Geelong, Melbourne and Sydney planning pages", async () => 
   }
 });
 
-test("server-renders Alice Springs, Brisbane and Wānaka working-base plans", async () => {
+test("server-renders Alice Springs, Brisbane and Wānaka glance-first plans", async () => {
   const routes = [
     {
       path: "/australia/alice-springs",
       current: /aria-current="page">Alice Springs</,
       content: [
-        /Alice Springs: Two-Week Outback Base/,
+        /<h1>Alice Springs<\/h1>/,
         /Warm dry days, cool desert nights/,
         /Tjoritja/,
         /Uluru is a separate vacation decision/,
         /East Side/,
+        /class="location-rhythm-track"/,
+        /What fits here/,
         /data\/alice-springs\.json/,
       ],
+      image: /\/images\/outback\/aerial-road\.jpg/,
     },
     {
       path: "/australia/brisbane",
       current: /aria-current="page">Brisbane</,
       content: [
-        /Brisbane: Work, Reset &amp; Repack/,
-        /Protect the full work and homeschool week/,
+        /<h1>Brisbane<\/h1>/,
+        /Protect full work and homeschool output/,
         /New Farm first, West End second/,
         /Begin the weekend trip to India/,
+        /class="location-rhythm-track"/,
+        /CityCat \+ South Bank/,
         /data\/queensland\.json/,
       ],
+      image: /\/images\/australia\/brisbane-skyline\.jpg/,
     },
     {
       path: "/new-zealand/wanaka",
       current: /aria-current="page">New Zealand</,
       content: [
-        /Wānaka: Twenty-Night Working Base/,
+        /<h1>Wānaka<\/h1>/,
         /Long evenings make the work model worthwhile/,
         /Early full weeks around three anchor days/,
         /Nov 29–Dec 3/,
         /Do not attempt Milford Sound as a day trip/,
         /Meadowstone/,
+        /class="location-rhythm-track"/,
+        /Rob Roy Glacier Track/,
         /data\/wanaka\.json/,
       ],
+      image: /\/images\/new-zealand\/wanaka-lake\.jpg/,
     },
   ];
 
@@ -284,7 +299,65 @@ test("server-renders Alice Springs, Brisbane and Wānaka working-base plans", as
     const html = await response.text();
     assert.match(html, route.current);
     for (const pattern of route.content) assert.match(html, pattern);
+    assert.match(html, route.image);
+    assert.equal(
+      (html.match(/<figure(?: class="is-featured")?>/g) ?? []).length,
+      3,
+    );
     assert.match(html, /Open exact calendar/);
+    assertNoHotlinkedPhotos(html);
+    assertUsesImperialUnits(html);
+  }
+});
+
+test("server-renders Singapore and Hong Kong location plans", async () => {
+  const routes = [
+    {
+      path: "/asia/singapore",
+      current: "Singapore",
+      content: [
+        /One office week, one real family day/,
+        /Robertson Quay or River Valley/,
+        /Gardens by the Bay/,
+        /Mandai family day/,
+        /Hot, humid and frequently stormy/,
+        /data\/asia-pages\.ts/,
+      ],
+      image: /\/images\/asia\/singapore-gardens-bay\.jpg/,
+    },
+    {
+      path: "/asia/hong-kong",
+      current: "Hong Kong",
+      content: [
+        /Use the U\.S\. holiday instead of fighting it/,
+        /Western Wan Chai or the Admiralty edge/,
+        /Dragon&#x27;s Back to Big Wave Bay/,
+        /Three office days, then use the holiday shape/,
+        /Friday&#x27;s early close is 2 a\.m\. Saturday locally/,
+        /data\/asia-pages\.ts/,
+      ],
+      image: /\/images\/asia\/hong-kong-peak\.jpg/,
+    },
+  ];
+
+  for (const route of routes) {
+    const response = await render(route.path);
+    assert.equal(response.status, 200);
+    const html = await response.text();
+    assert.match(html, /href="\/#asia" aria-current="page">Asia/);
+    assert.match(html, /class="site-subnav"/);
+    assert.match(html, /aria-label="Asia"/);
+    assert.match(
+      html,
+      new RegExp(`aria-current="page">${route.current}<`),
+    );
+    assert.match(html, /class="location-rhythm-track"/);
+    assert.match(html, route.image);
+    assert.equal(
+      (html.match(/<figure(?: class="is-featured")?>/g) ?? []).length,
+      3,
+    );
+    for (const pattern of route.content) assert.match(html, pattern);
     assertNoHotlinkedPhotos(html);
     assertUsesImperialUnits(html);
   }
@@ -871,29 +944,35 @@ test("server-renders the unlisted U12 ski program status board", async () => {
   assert.match(html, />U12 ski program search</);
   assert.match(html, /Allie and Charlie/);
   assert.match(html, /January–March 2028/);
-  assert.match(html, /Last updated <!-- -->September 1, 2026/);
-  assert.match(html, /9<!-- --> programs tracked/);
+  assert.match(html, /Last updated <!-- -->September 14, 2026/);
+  assert.match(html, /dateTime="2026-09-14"/);
+  assert.match(html, /12<!-- --> programs tracked/);
   assert.match(html, /class="ski-program-status is-strong"/);
   assert.match(html, /class="ski-program-status is-possible"/);
   assert.match(html, /class="ski-program-status is-awaiting"/);
-  assert.match(html, /class="ski-program-status is-draft"/);
   assert.match(html, /class="ski-program-status is-not-fit"/);
   assert.match(html, />Strong option</);
   assert.match(html, />Awaiting reply</);
-  assert.match(html, />Draft ready</);
   assert.match(html, />Not a fit</);
+  assert.doesNotMatch(html, />Draft ready</);
   assert.match(html, /GR Ski Racing Team Silvaplana/);
+  assert.match(html, /Apex 2100 Academy/);
+  assert.match(html, /Club des Sports de Tignes/);
   assert.match(html, />Contact activity</);
   assert.match(html, />People</);
   assert.match(html, /Active exchange/);
   assert.match(html, /Veronica/);
   assert.match(html, /Valentina \(Ski Team\)/);
   assert.match(html, /Lucia/);
+  assert.match(html, /Britt Tilston/);
+  assert.match(html, /Nicolas Combe/);
+  assert.match(html, /Lionel Fayolle/);
   assert.match(html, /Pascal Arpin/);
+  assert.match(html, /Cyril/);
   assert.match(html, /Elodie Crépin/);
-  assert.match(html, /Cold-outreach inquiry drafted but intentionally not sent/);
-  assert.match(html, /Pascal Arpin \(possible introduction\)/);
-  assert.match(html, /send the cold outreach only if he cannot/);
+  assert.match(html, /Get the admissions call with Britt on the calendar/);
+  assert.match(html, /Send race history and current skiing video/);
+  assert.match(html, /One outreach email sent after Pascal/);
   assert.match(
     html,
     /https:\/\/stmoritz\.gr-mountain\.com\/ski-club\//,
@@ -904,10 +983,10 @@ test("server-renders the unlisted U12 ski program status board", async () => {
   assert.doesNotMatch(html, /href="\/ski-programs"/);
   assert.doesNotMatch(html, /mailto:/i);
   assert.doesNotMatch(html, /@[a-z0-9.-]+\.[a-z]{2,}/i);
-  assert.equal((html.match(/class="ski-program-card"/g) ?? []).length, 9);
+  assert.equal((html.match(/class="ski-program-card"/g) ?? []).length, 12);
   assert.equal((html.match(/class="ski-program-status is-strong"/g) ?? []).length, 1);
-  assert.equal((html.match(/class="ski-program-status is-possible"/g) ?? []).length, 1);
+  assert.equal((html.match(/class="ski-program-status is-possible"/g) ?? []).length, 4);
   assert.equal((html.match(/class="ski-program-status is-awaiting"/g) ?? []).length, 4);
-  assert.equal((html.match(/class="ski-program-status is-draft"/g) ?? []).length, 1);
-  assert.equal((html.match(/class="ski-program-status is-not-fit"/g) ?? []).length, 2);
+  assert.equal((html.match(/class="ski-program-status is-draft"/g) ?? []).length, 0);
+  assert.equal((html.match(/class="ski-program-status is-not-fit"/g) ?? []).length, 3);
 });

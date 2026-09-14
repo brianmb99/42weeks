@@ -670,7 +670,8 @@
       "title": "Singapore",
       "locationId": "singapore",
       "context": "One weekend and up to five office days; expect humid inter-monsoon weather and frequent afternoon storms.",
-      "color": "#c8752e"
+      "color": "#c8752e",
+      "href": "/asia/singapore"
     },
     {
       "id": "event-singapore-office-week",
@@ -682,7 +683,8 @@
       "title": "Singapore office week",
       "locationId": "singapore",
       "context": "Keep the office commitment bounded to Monday through Friday and preserve Saturday for the family.",
-      "color": null
+      "color": null,
+      "href": "/asia/singapore#work-rhythm"
     },
     {
       "id": "travel-singapore-hong-kong",
@@ -704,7 +706,8 @@
       "title": "Hong Kong",
       "locationId": "hong-kong",
       "context": "A compact office stay with dry, mild November weather and Thanksgiving reducing the market-week load.",
-      "color": "#d68b43"
+      "color": "#d68b43",
+      "href": "/asia/hong-kong"
     },
     {
       "id": "event-hong-kong-office-week",
@@ -716,7 +719,8 @@
       "title": "Hong Kong office days",
       "locationId": "hong-kong",
       "context": "Use Monday through Wednesday as the core office commitment; Thanksgiving is Thursday and the market closes early Friday.",
-      "color": null
+      "color": null,
+      "href": "/asia/hong-kong#work-rhythm"
     },
     {
       "id": "travel-hong-kong-wanaka",

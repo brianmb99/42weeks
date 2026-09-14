@@ -1,3 +1,5 @@
+import type { LocationRhythmSegment } from "./location-page-types";
+
 export type AustraliaPhoto = {
   src: string;
   alt: string;
@@ -23,6 +25,9 @@ export type AustraliaCity = {
   stayTitle: string;
   stayDescription: string;
   stayChecks: string[];
+  rhythmTitle: string;
+  rhythmSummary: string;
+  rhythm: LocationRhythmSegment[];
   photos: AustraliaPhoto[];
   ideas: AustraliaIdea[];
   planningNotes: string[];
@@ -96,8 +101,8 @@ export const australiaStops = [
     description:
       "Finish Australia with one dependable work week, laundry and deliberate packing before the weekend flight to India.",
     href: "/australia/brisbane",
-    image: "/images/australia/melbourne-skyline.jpg",
-    alt: "Australian city skyline beside a river",
+    image: "/images/australia/brisbane-skyline.jpg",
+    alt: "Brisbane skyline and Story Bridge above the Brisbane River",
   },
 ] as const;
 
@@ -118,6 +123,32 @@ export const australiaCities: Record<AustraliaCity["slug"], AustraliaCity> = {
       "Verified broadband, not merely a listing that says Wi-Fi",
       "Laundry and parking for the post-flight week and road-trip handoff",
       "Easy access to groceries and the Barwon River paths",
+    ],
+    rhythmTitle: "One ordinary week in Newtown",
+    rhythmSummary:
+      "The point is to live here long enough for family-history time to emerge around a normal week, not to compress remembered places into a Melbourne day trip.",
+    rhythm: [
+      {
+        label: "Move and settle",
+        dates: "Sun, Aug 29",
+        detail: "Melbourne to Newtown; groceries and work setup.",
+        days: 1,
+        tone: "arrival",
+      },
+      {
+        label: "Newtown work week",
+        dates: "Aug 30–Sep 3",
+        detail: "Work and school first; family places in the afternoons.",
+        days: 5,
+        tone: "work",
+      },
+      {
+        label: "Local Saturday",
+        dates: "Sat, Sep 4",
+        detail: "Return visits, Queenscliff, or an MCG match if needed.",
+        days: 1,
+        tone: "family",
+      },
     ],
     photos: [
       {
@@ -219,6 +250,32 @@ export const australiaCities: Record<AustraliaCity["slug"], AustraliaCity> = {
       "A St Kilda evening plan that includes travel and dinner",
       "A simple Sunday move to Newtown after the final home-and-away weekend",
     ],
+    rhythmTitle: "Land softly, then build the routine",
+    rhythmSummary:
+      "Melbourne is the buffer between the long-haul flight and the first normal week. Keep Monday genuinely light, increase work through Friday, and reserve the weekend edge for the best available MCG match.",
+    rhythm: [
+      {
+        label: "Land and recover",
+        dates: "Mon, Aug 23",
+        detail: "Apartment, groceries, sleep and only essential work.",
+        days: 1,
+        tone: "arrival",
+      },
+      {
+        label: "Soft work launch",
+        dates: "Aug 24–27",
+        detail: "Four-hour anchors first, then normal output.",
+        days: 4,
+        tone: "work",
+      },
+      {
+        label: "MCG / city window",
+        dates: "Sat, Aug 28",
+        detail: "Use the fixture first; keep a flexible city fallback.",
+        days: 1,
+        tone: "family",
+      },
+    ],
     photos: [
       {
         src: "/images/australia/melbourne-skyline.jpg",
@@ -237,15 +294,31 @@ export const australiaCities: Record<AustraliaCity["slug"], AustraliaCity> = {
           "https://commons.wikimedia.org/wiki/File:20091121_Little_Penguin_on_rock_at_St_Kilda_Breakwater_(left_side_view).jpg",
       },
       {
-        src: "/images/australia/melbourne-st-kilda-skyline.jpg",
-        alt: "Melbourne skyline viewed across the water from St Kilda Pier",
-        caption: "View from St Kilda Pier",
-        credit: "Dietmar Rabich / Wikimedia Commons",
+        src: "/images/australia/melbourne-afl-mcg.jpg",
+        alt: "Australian rules football players fly for a mark during the 2005 AFL Grand Final at the MCG",
+        caption: "AFL at the MCG",
+        credit: "Jimmy Harris / Wikimedia Commons · CC BY 2.0",
         source:
-          "https://commons.wikimedia.org/wiki/File:Melbourne_(AU),_View_from_St_Kilda_Pier_--_2019_--_1596.jpg",
+          "https://commons.wikimedia.org/wiki/File:Players_fly_for_the_mark,_2005_AFL_Grand_Final.jpg",
       },
     ],
     ideas: [
+      {
+        title: "AFL at the MCG",
+        timing: "One match · target Aug 27–Sep 5",
+        description:
+          "This is a specific trip objective, not a generic Melbourne possibility: buy tickets for any available men's AFL match at the MCG. Prefer the final home-and-away weekend while based in Melbourne; if the better fixture is the following weekend, make one purposeful trip from Newtown instead of changing the route.",
+        links: [
+          {
+            title: "AFL fixtures",
+            url: "https://www.afl.com.au/fixture",
+          },
+          {
+            title: "MCG events",
+            url: "https://www.mcg.org.au/whats-on/events-calendar",
+          },
+        ],
+      },
       {
         title: "Little Penguins at St Kilda Pier",
         timing: "One clear evening",
@@ -300,6 +373,46 @@ export const australiaCities: Record<AustraliaCity["slug"], AustraliaCity> = {
       "A real work room, excellent internet and quiet weekday mornings",
       "Groceries, casual food and outdoor space usable without a car",
       "A credible evening return after the Sydney Opera House",
+    ],
+    rhythmTitle: "Two real work weeks beside the water",
+    rhythmSummary:
+      "The long stay makes ordinary beach afternoons possible and preserves one complete weekend without asking the family to work around another move.",
+    rhythm: [
+      {
+        label: "Arrive and settle",
+        dates: "Sun, Sep 26",
+        detail: "Alice Springs flight, groceries and beach orientation.",
+        days: 1,
+        tone: "arrival",
+      },
+      {
+        label: "Work week one",
+        dates: "Sep 27–Oct 1",
+        detail: "Normal work and school; beach afternoons.",
+        days: 5,
+        tone: "work",
+      },
+      {
+        label: "Full Sydney weekend",
+        dates: "Oct 2–3",
+        detail: "Harbour, coast, zoo or one major family plan.",
+        days: 2,
+        tone: "family",
+      },
+      {
+        label: "Work week two",
+        dates: "Oct 4–8",
+        detail: "Normal routine plus one Opera House evening.",
+        days: 5,
+        tone: "work",
+      },
+      {
+        label: "Local Saturday",
+        dates: "Sat, Oct 9",
+        detail: "Keep the last day nearby before Sunday travel.",
+        days: 1,
+        tone: "family",
+      },
     ],
     photos: [
       {
