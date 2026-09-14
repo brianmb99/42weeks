@@ -105,6 +105,9 @@ test("server-renders the 42 Weeks overview", async () => {
   assert.match(html, /\/trips\/hamilton-island-working-week/);
   assert.match(html, /\/australia\/brisbane/);
   assert.match(html, /Diwali/);
+  assert.match(html, /Dehradun family base/);
+  assert.match(html, /credible work and homeschool routine/);
+  assert.doesNotMatch(html, /real route rather than a rushed stop/);
   assert.match(html, /Singapore/);
   assert.match(html, /Hong Kong/);
   assert.match(html, /Wānaka/);

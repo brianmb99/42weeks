@@ -259,11 +259,11 @@ const australiaCards: PlaceCard[] = [
 const asiaCards: PlaceCard[] = [
   {
     locationId: "location-india",
-    category: "Three weeks",
+    category: "Family base + work",
     summary:
-      "The longest Asian segment, built around Diwali with enough time for a real route rather than a rushed stop.",
-    highlights: ["Diwali", "Food and history", "Multi-stop route"],
-    open: "Cities, internal travel, and the Diwali plan",
+      "The longer stay is primarily for family in Dehradun. Base there for at least a week with a credible work and homeschool routine, then fit only selective travel around family time, Diwali, and work.",
+    highlights: ["Dehradun family base", "Diwali", "Selective Taj or trek"],
+    open: "Dehradun housing, family calendar, work setup, and which outside trips genuinely fit",
     anchor: "Diwali · Oct 29",
   },
   {
@@ -560,8 +560,9 @@ export default function Home() {
                 <h2>Asia</h2>
               </div>
               <p>
-                India carries the family and Diwali anchors. Singapore and Hong
-                Kong remain intentionally short office stays connected on
+                India is primarily a Dehradun family-and-work stay, anchored by
+                Diwali, with only selective travel around it. Singapore and
+                Hong Kong remain intentionally short office stays connected on
                 weekends.
               </p>
             </div>
