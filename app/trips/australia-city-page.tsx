@@ -17,10 +17,11 @@ export default function AustraliaCityPage({ city }: { city: AustraliaCity }) {
         rhythmTitle: city.rhythmTitle,
         rhythmSummary: city.rhythmSummary,
         rhythm: city.rhythm,
+        basePanel: city.basePanel,
         stayTitle: city.stayTitle,
         stayDescription: city.stayDescription,
         stayChecks: city.stayChecks,
-        activities: city.ideas,
+        featurePlans: city.featurePlans,
         planningNotes: city.planningNotes,
       }}
     />

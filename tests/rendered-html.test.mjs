@@ -35,6 +35,21 @@ function assertUsesImperialUnits(html) {
   );
 }
 
+function assertNoPrescribedWorkHours(html) {
+  for (const pattern of [
+    /work approximately/i,
+    /local-morning work block/i,
+    /5 a\.m\.–1 p\.m\./i,
+    /5–9 a\.m\./i,
+    /four-hour anchor blocks/i,
+    /late-night U\.S\. session/i,
+    /Friday&#x27;s early close is/i,
+    /6–10 a\.m\. New York/i,
+  ]) {
+    assert.doesNotMatch(html, pattern);
+  }
+}
+
 test("server-renders the 42 Weeks overview", async () => {
   const response = await render();
   assert.equal(response.status, 200);
@@ -176,9 +191,15 @@ test("server-renders Geelong, Melbourne and Sydney planning pages", async () => 
         /Newtown, near the Barwon River/,
         /Balyang Sanctuary/,
         /Queenscliff/,
-        /Geelong Library &amp; Heritage Centre/,
-        /dedicated children and youth floor/,
+        /Geelong Library/,
+        /Work &amp; School from Geelong/,
+        /US Eastern → 11 p\.m\.–7 a\.m\. local/,
+        /href="#geelong-family-history"/,
+        /id="geelong-family-history"/,
       ],
+      highlightedSegments: 1,
+      vibeActivities: 4,
+      featurePlans: 1,
       images: [
         /\/images\/australia\/geelong-waterfront\.jpg/,
         /\/images\/australia\/geelong-queenscliff-pier\.jpg/,
@@ -190,13 +211,17 @@ test("server-renders Geelong, Melbourne and Sydney planning pages", async () => 
       current: "Melbourne",
       content: [
         /Inner Melbourne with an easy MCG trip/,
-        /Little Penguins at St Kilda Pier/,
-        /free, ticketed evening sessions/,
+        /St Kilda Little Penguins/,
         /Royal Botanic Gardens/,
         /AFL at the MCG/,
         /any men&#x27;s AFL match at the MCG/,
-        /four-hour anchor blocks/,
+        /Work &amp; School from Melbourne/,
+        /US Eastern → 11 p\.m\.–7 a\.m\. local/,
+        /href="#afl-at-the-mcg"/,
       ],
+      highlightedSegments: 1,
+      vibeActivities: 4,
+      featurePlans: 1,
       images: [
         /\/images\/australia\/melbourne-skyline\.jpg/,
         /\/images\/australia\/melbourne-little-penguin\.jpg/,
@@ -209,10 +234,17 @@ test("server-renders Geelong, Melbourne and Sydney planning pages", async () => 
       content: [
         /Shortlist Manly first, Coogee second/,
         /Sydney Opera House/,
-        /Live at the beach/,
-        /3\.7-mile Bondi-to-Coogee walk/,
+        /Manly Ferry/,
+        /Bondi-to-Coogee coastal walkway/,
         /credible evening return after the Sydney Opera House/,
+        /Work &amp; School from Sydney/,
+        /US Eastern → 11 p\.m\.–7 a\.m\. local; midnight–8 a\.m\. from Oct 3/,
+        /href="#full-sydney-weekend"/,
+        /href="#sydney-opera-house"/,
       ],
+      highlightedSegments: 2,
+      vibeActivities: 4,
+      featurePlans: 2,
       images: [
         /\/images\/australia\/sydney-opera-house\.jpg/,
         /\/images\/australia\/sydney-manly-beach\.jpg/,
@@ -236,11 +268,28 @@ test("server-renders Geelong, Melbourne and Sydney planning pages", async () => 
       3,
     );
     assert.match(html, /class="location-rhythm-track"/);
+    assert.match(html, /class="location-base-grid"/);
+    assert.match(html, /class="location-vibe-preview"/);
+    assert.match(html, /class="location-vibe-dialog"/);
+    assert.doesNotMatch(html, /What fits here/);
+    assert.equal(
+      (html.match(/class="is-work has-highlights"/g) ?? []).length,
+      route.highlightedSegments,
+    );
+    assert.equal(
+      (html.match(/class="location-vibe-activity"/g) ?? []).length,
+      route.vibeActivities,
+    );
+    assert.equal(
+      (html.match(/class="location-feature-plan"/g) ?? []).length,
+      route.featurePlans,
+    );
     for (const pattern of [...route.content, ...route.images]) {
       assert.match(html, pattern);
     }
     assertNoHotlinkedPhotos(html);
     assertUsesImperialUnits(html);
+    assertNoPrescribedWorkHours(html);
   }
 });
 
@@ -282,38 +331,58 @@ test("server-renders Alice Springs, Brisbane and Wānaka glance-first plans", as
       ],
       highlightedSegments: 2,
       vibeActivities: 7,
+      featurePlans: 1,
     },
     {
       path: "/australia/brisbane",
       current: /aria-current="page">Brisbane</,
       content: [
         /<h1>Brisbane<\/h1>/,
-        /Protect full work and homeschool output/,
+        /Work &amp; School from Brisbane/,
+        /US Eastern → 11 p\.m\.–7 a\.m\. local/,
         /New Farm first, West End second/,
         /Begin the weekend trip to India/,
         /class="location-rhythm-track"/,
-        /CityCat \+ South Bank/,
+        /CityCat/,
+        /Queensland Museum/,
         /data\/queensland\.json/,
       ],
       image: /\/images\/australia\/brisbane-skyline\.jpg/,
-      absent: [/location-weekday-highlights/],
+      absent: [
+        /location-weekday-highlights/,
+        /What fits here/,
+        /local-morning work block/,
+      ],
+      highlightedSegments: 1,
+      vibeActivities: 4,
+      featurePlans: 0,
     },
     {
       path: "/new-zealand/wanaka",
       current: /aria-current="page">New Zealand</,
       content: [
         /<h1>Wānaka<\/h1>/,
-        /Long evenings make the work model worthwhile/,
-        /Early full weeks around three anchor days/,
+        /Long evenings make the Work &amp; School model worthwhile/,
+        /Work &amp; School from Wānaka/,
+        /US Eastern → 3–11 a\.m\. local/,
         /Nov 29–Dec 3/,
         /Do not attempt Milford Sound as a day trip/,
         /Meadowstone/,
         /class="location-rhythm-track"/,
         /Rob Roy Glacier Track/,
+        /href="#wanaka-mini-vacation"/,
         /data\/wanaka\.json/,
       ],
       image: /\/images\/new-zealand\/wanaka-lake\.jpg/,
-      absent: [/location-weekday-highlights/],
+      absent: [
+        /location-weekday-highlights/,
+        /What fits here/,
+        /5 a\.m\.–1 p\.m\./,
+        /Three four-hour anchor days/,
+      ],
+      highlightedSegments: 3,
+      vibeActivities: 7,
+      featurePlans: 2,
     },
   ];
 
@@ -338,6 +407,10 @@ test("server-renders Alice Springs, Brisbane and Wānaka glance-first plans", as
         route.vibeActivities,
       );
     }
+    assert.equal(
+      (html.match(/class="location-feature-plan"/g) ?? []).length,
+      route.featurePlans,
+    );
     assert.match(html, route.image);
     assert.equal(
       (html.match(/<figure(?: class="is-featured")?>/g) ?? []).length,
@@ -346,6 +419,7 @@ test("server-renders Alice Springs, Brisbane and Wānaka glance-first plans", as
     assert.match(html, /Open exact calendar/);
     assertNoHotlinkedPhotos(html);
     assertUsesImperialUnits(html);
+    assertNoPrescribedWorkHours(html);
   }
 });
 
@@ -358,11 +432,17 @@ test("server-renders Singapore and Hong Kong location plans", async () => {
         /One office week, one real family day/,
         /Robertson Quay or River Valley/,
         /Gardens by the Bay/,
-        /Mandai family day/,
+        /Mandai Saturday/,
+        /Work &amp; School from Singapore/,
+        /US Eastern → 10 p\.m\.–6 a\.m\. local/,
+        /href="#singapore-family-saturday"/,
         /Hot, humid and frequently stormy/,
         /data\/asia-pages\.ts/,
       ],
       image: /\/images\/asia\/singapore-gardens-bay\.jpg/,
+      highlightedSegments: 1,
+      vibeActivities: 4,
+      featurePlans: 1,
     },
     {
       path: "/asia/hong-kong",
@@ -370,12 +450,17 @@ test("server-renders Singapore and Hong Kong location plans", async () => {
       content: [
         /Use the U\.S\. holiday instead of fighting it/,
         /Western Wan Chai or the Admiralty edge/,
-        /Dragon&#x27;s Back to Big Wave Bay/,
-        /Three office days, then use the holiday shape/,
-        /Friday&#x27;s early close is 2 a\.m\. Saturday locally/,
+        /Dragon’s Back/,
+        /Work &amp; School from Hong Kong/,
+        /US Eastern → 10 p\.m\.–6 a\.m\. local/,
+        /href="#hong-kong-thanksgiving"/,
+        /href="#hong-kong-departure-day"/,
         /data\/asia-pages\.ts/,
       ],
       image: /\/images\/asia\/hong-kong-peak\.jpg/,
+      highlightedSegments: 1,
+      vibeActivities: 4,
+      featurePlans: 2,
     },
   ];
 
@@ -391,6 +476,22 @@ test("server-renders Singapore and Hong Kong location plans", async () => {
       new RegExp(`aria-current="page">${route.current}<`),
     );
     assert.match(html, /class="location-rhythm-track"/);
+    assert.match(html, /class="location-base-grid"/);
+    assert.match(html, /class="location-vibe-preview"/);
+    assert.match(html, /class="location-vibe-dialog"/);
+    assert.doesNotMatch(html, /What fits here/);
+    assert.equal(
+      (html.match(/class="is-work has-highlights"/g) ?? []).length,
+      route.highlightedSegments,
+    );
+    assert.equal(
+      (html.match(/class="location-vibe-activity"/g) ?? []).length,
+      route.vibeActivities,
+    );
+    assert.equal(
+      (html.match(/class="location-feature-plan"/g) ?? []).length,
+      route.featurePlans,
+    );
     assert.match(html, route.image);
     assert.equal(
       (html.match(/<figure(?: class="is-featured")?>/g) ?? []).length,
@@ -399,6 +500,7 @@ test("server-renders Singapore and Hong Kong location plans", async () => {
     for (const pattern of route.content) assert.match(html, pattern);
     assertNoHotlinkedPhotos(html);
     assertUsesImperialUnits(html);
+    assertNoPrescribedWorkHours(html);
   }
 });
 

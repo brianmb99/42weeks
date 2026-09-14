@@ -5,20 +5,8 @@ import LocationPlanPage from "../../trips/location-plan-page";
 export const metadata: Metadata = {
   title: "Wānaka",
   description:
-    "The selected twenty-night Wānaka working base, early-shift rhythm and forecast-led four-day mini-vacation.",
+    "The selected twenty-night Wānaka Work & School base and forecast-led four-day mini-vacation.",
 };
-
-function dateRangeLabel(value: string) {
-  const [start, end] = value.split("/");
-  const format = (date: string, includeMonth = true) =>
-    new Intl.DateTimeFormat("en-US", {
-      ...(includeMonth ? { month: "short" } : {}),
-      day: "numeric",
-      timeZone: "UTC",
-    }).format(new Date(`${date}T00:00:00Z`));
-  const sameMonth = start.slice(0, 7) === end.slice(0, 7);
-  return `${format(start)}–${format(end, !sameMonth)}`;
-}
 
 export default function WanakaPage() {
   return (
@@ -26,15 +14,16 @@ export default function WanakaPage() {
       current="new-zealand"
       source="data/wanaka.json"
       plan={{
-        eyebrow: "New Zealand · late-spring working base",
+        eyebrow: "New Zealand · late-spring Work & School base",
         title: "Wānaka",
         dates: "Nov 28–Dec 17, 2027",
         facts: [
           "20 nights",
-          "Two full work weeks",
+          "Two full Work & School weeks",
           "Two vacation weekdays",
         ],
-        summary: wanaka.summary,
+        summary:
+          "Wānaka works because this is almost three weeks in one house, not a South Island road trip disguised as a Work & School period. Long late-spring daylight, two complete weekends and one forecast-led mini-vacation provide the New Zealand experience without repeated lodging changes.",
         photos: [
           {
             src: "/images/new-zealand/wanaka-lake.jpg",
@@ -73,11 +62,41 @@ export default function WanakaPage() {
             tone: "arrival",
           },
           {
-            label: "Full work week",
+            label: "Work & School · week one",
             dates: "Nov 29–Dec 3",
-            detail: "Early full days; long late-spring afternoons.",
+            detail: "Protected commitments with flexible local outings.",
             days: 5,
             tone: "work",
+            highlights: [
+              {
+                title: "Lakefront + Outlet Track",
+                timing: "Default local outing",
+                description:
+                  "Walk or cycle from the base with no destination pressure and adjust the distance to conditions.",
+                url: "https://www.wanaka.co.nz/explore/outlet-track/",
+              },
+              {
+                title: "Mount Iron",
+                timing: "Compact local hike",
+                description:
+                  "Use the local loop when wind, heat and family energy make a substantial walk sensible.",
+                url: "https://www.doc.govt.nz/parks-and-recreation/places-to-go/otago/places/wanaka-area/things-to-do/mount-iron-track/",
+              },
+              {
+                title: "Wānaka Library",
+                timing: "School reset or wet day",
+                description:
+                  "Use the library as practical working-base infrastructure for reading, study and a change of scene.",
+                url: "https://qldclibraries.govt.nz/library-locations/wanaka-library/",
+              },
+              {
+                title: "Wānaka Pool",
+                timing: "Cold, windy or recovery option",
+                description:
+                  "Use the community pool when open-water conditions or family energy rule out a lake outing.",
+                url: "https://www.qldc.govt.nz/recreation/wanaka-recreation-centre/wanaka-recreation-centre-pool",
+              },
+            ],
           },
           {
             label: "Local weekend",
@@ -85,13 +104,33 @@ export default function WanakaPage() {
             detail: "One larger outing and one recovery day.",
             days: 2,
             tone: "family",
+            featureLink: {
+              title: "See local weekend plan",
+              href: "#wanaka-local-weekend",
+            },
           },
           {
-            label: "Anchor workdays",
+            label: "Work & School · three days",
             dates: "Dec 6–8",
-            detail: "Three four-hour early blocks; stay near Wānaka.",
+            detail: "Protected commitments; keep optional plans nearby.",
             days: 3,
             tone: "work",
+            highlights: [
+              {
+                title: "Puzzling World",
+                timing: "Rain or high-wind option",
+                description:
+                  "Use the maze and illusion rooms as a playful indoor family outing close to town.",
+                url: "https://www.puzzlingworld.co.nz/",
+              },
+              {
+                title: "Paddle close to shore",
+                timing: "Settled-weather option",
+                description:
+                  "Use realistic cold-water expectations and current local boating-safety guidance.",
+                url: "https://www.qldc.govt.nz/recreation/lakes-and-boating/boat-safety",
+              },
+            ],
           },
           {
             label: "Mini-vacation",
@@ -99,103 +138,125 @@ export default function WanakaPage() {
             detail: "Two leave days plus the weekend; follow the forecast.",
             days: 4,
             tone: "vacation",
+            featureLink: {
+              title: "See mini-vacation plan",
+              href: "#wanaka-mini-vacation",
+            },
           },
           {
-            label: "Full work week",
+            label: "Work & School · final week",
             dates: "Dec 13–17",
-            detail: "Visible full output and gradual packing for home.",
+            detail: "Protected commitments and gradual packing for home.",
             days: 5,
             tone: "work",
+            highlights: [
+              {
+                title: "Diamond Lake + Rocky Mountain",
+                timing: "Longer local outing",
+                description:
+                  "Choose the lower or fuller route according to daylight, track conditions and family energy.",
+                url: "https://www.doc.govt.nz/parks-and-recreation/places-to-go/otago/places/diamond-lake-and-hospital-flat/things-to-do/rocky-mountain-track/",
+              },
+            ],
           },
         ],
+        basePanel: {
+          id: "work-rhythm",
+          eyebrow: "Three-week base",
+          title: "Work & School from Wānaka",
+          headerNote: "US Eastern → 3–11 a.m. local",
+          description:
+            "The long stay supports normal professional and academic commitments while late-spring daylight and a single stable home keep local New Zealand experiences practical.",
+          items: [
+            "Alpine systems — Study glaciation, geology, watersheds and the Southern Alps through local landscapes.",
+            "Conservation — Examine native birds, invasive species and New Zealand’s protected-land model.",
+            "Kāi Tahu context — Use Māori place names and regional history as part of understanding the landscape.",
+            "Mountain judgment — Treat forecasts, UV, cold water, river crossings and track conditions as real learning.",
+          ],
+        },
         stayTitle: wanaka.base.recommendation,
-        stayDescription: wanaka.base.reason,
-        stayChecks: wanaka.base.requirements,
-        activities: [
-          {
-            title: "Wānaka lakefront + Outlet Track",
-            timing: "Default workday afternoon",
-            description:
-              "Walk or cycle from the base with no destination pressure. The lakefront is what makes ordinary workdays here feel like New Zealand rather than a remote office with weekend tourism.",
-          },
-          {
-            title: "Mount Iron",
-            timing: "Compact hike when wind and heat permit",
-            description:
-              "Use the local loop for a substantial after-work walk without sacrificing an entire day. Move it freely according to weather and family energy.",
-          },
-          {
-            title: "Diamond Lake + Rocky Mountain",
-            timing: "Longer afternoon",
-            description:
-              "Choose the lower or fuller route according to conditions and remaining daylight. It is a flexible local outing, not a fixed reservation.",
-          },
-          {
-            title: "Rob Roy Glacier Track",
-            timing: "Leading full-day weekend candidate",
-            description:
-              "Use this only when the access road, fords, track and alpine forecast all cooperate. Keep a lake day or Diamond Lake as the honest fallback.",
-            links: [wanaka.links[2]],
-          },
-          {
-            title: "Paddle close to shore",
-            timing: "Settled-weather afternoon",
-            description:
-              "Kayak or paddleboard only with realistic cold-water expectations. Wind can turn an appealing lake afternoon into the wrong plan quickly.",
-          },
-          {
-            title: "Library, Puzzling World or the pool",
-            timing: "Rain, wind or recovery day",
-            description:
-              "These are useful working-base infrastructure, not consolation prizes. Keep at least one afternoon quiet each week.",
-          },
-          {
-            title: "Forecast-led four-day mini-vacation",
-            timing: "Dec 9–12 · two vacation weekdays",
-            description:
-              "Keep Wānaka as the default base. Add two nights at Aoraki only if the forecast and flexible booking make the move worthwhile; do not attempt Milford Sound as a day trip.",
-          },
+        stayDescription:
+          "This keeps the lakefront and town practical on foot or bike while offering a better chance of a family house and separate closed-door workspace. Albert Town is the value fallback if its property is materially better.",
+        stayChecks: [
+          "Three bedrooms or two bedrooms plus a genuinely separate office",
+          "A closed-door workspace separated from sleeping and school areas",
+          "Verified fibre or high-quality fixed broadband and strong mobile backup",
+          "Heating, laundry, full kitchen and blackout curtains",
+          "Parking and secure bicycle storage",
+          "Flexible cancellation around the long-haul flight connection",
         ],
-        panels: [
+        featurePlans: [
           {
-            eyebrow: "Arrival",
-            title: "Use the overnight flight; protect the first real workday",
-            description: `${wanaka.arrival.plan} ${wanaka.arrival.fallback}`,
+            id: "wanaka-local-weekend",
+            eyebrow: "December 4–5 · dedicated trip",
+            title: "Local Wānaka weekend",
+            description:
+              "Use one larger outing and one recovery day. Rob Roy Glacier Track leads only when the access road, fords, track and alpine forecast all cooperate.",
+            items: [
+              "Choose Rob Roy as the primary full-day plan only after checking access and conditions.",
+              "Use Diamond Lake, Rocky Mountain or a lake day as the honest fallback.",
+              "Keep the second day slower rather than stacking two demanding alpine outings.",
+            ],
+            links: [
+              {
+                title: "Rob Roy Glacier Track",
+                url: "https://www.doc.govt.nz/parks-and-recreation/places-to-go/otago/places/mount-aspiring-national-park/things-to-do/tracks/rob-roy-track/",
+              },
+              {
+                title: "Diamond Lake and Rocky Mountain",
+                url: "https://www.doc.govt.nz/parks-and-recreation/places-to-go/otago/places/diamond-lake-and-hospital-flat/things-to-do/rocky-mountain-track/",
+              },
+            ],
           },
           {
-            eyebrow: "Late spring",
-            title: "Long evenings make the work model worthwhile",
-            description: `${wanaka.season.summary} ${wanaka.season.planningRange}`,
-            items: wanaka.season.notes,
-          },
-          {
-            id: "work-rhythm",
-            eyebrow: "November 29–December 17",
-            title: "Early full weeks around three anchor days",
-            items: wanaka.workRhythm.map(
-              (block) =>
-                `${dateRangeLabel(block.dates)} — ${block.mode}: ${block.plan}`,
-            ),
-          },
-          {
-            id: "mini-vacation",
-            eyebrow: "December 9–12",
-            title: "Choose the four-day plan from the forecast",
+            id: "wanaka-mini-vacation",
+            eyebrow: "December 9–12 · two vacation weekdays",
+            title: "Forecast-led four-day mini-vacation",
             description: `${wanaka.miniVacation.recommendation} ${wanaka.miniVacation.pushback}`,
             items: wanaka.miniVacation.rankedOptions.map(
               (option) =>
                 `${option.rank}. ${option.title}: ${option.tradeoff}`,
             ),
-          },
-          {
-            eyebrow: "Place-based learning",
-            title: "Homeschool hooks",
-            items: wanaka.homeschool,
+            links: [
+              {
+                title: "Department of Conservation · Wānaka area",
+                url: "https://www.doc.govt.nz/parks-and-recreation/places-to-go/otago/places/wanaka-area/",
+              },
+              {
+                title: "Aoraki / Mount Cook National Park",
+                url: "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/aoraki-mount-cook-national-park/",
+              },
+              {
+                title: "Milford Sound",
+                url: "https://www.newzealand.com/us/milford-sound/",
+              },
+            ],
           },
         ],
-        bookFirst: wanaka.bookFirst,
+        panels: [
+          {
+            eyebrow: "Arrival",
+            title: "Use the overnight itinerary if the schedule permits",
+            description: `${wanaka.arrival.plan} ${wanaka.arrival.fallback}`,
+          },
+          {
+            eyebrow: "Late spring",
+            title: "Long evenings make the Work & School model worthwhile",
+            description: `${wanaka.season.summary} ${wanaka.season.planningRange}`,
+            items: [
+              "Daylight lasts well into the evening, which is the main reason this base remains rewarding.",
+              ...wanaka.season.notes.slice(1),
+            ],
+          },
+        ],
+        bookFirst: [
+          "Twenty-night Wānaka house with a separate workspace and verified broadband",
+          "Hong Kong → Auckland and Auckland → Queenstown itinerary",
+          "Queenstown rental car sized for luggage and the Wānaka transfer",
+          "Flexible Aoraki or Te Anau backup only if the family wants a two-night excursion",
+        ],
         planningNotes: [
-          ...wanaka.season.notes,
+          "Keep major outdoor plans flexible until the short-range forecast and track conditions are clear.",
           wanaka.arrival.fallback,
         ],
         links: wanaka.links,

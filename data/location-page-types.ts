@@ -74,12 +74,12 @@ export type LocationPagePlan = {
   rhythmTitle: string;
   rhythmSummary: string;
   rhythm: LocationRhythmSegment[];
-  workLabel?: string;
-  basePanel?: LocationPanel;
+  basePanel: LocationPanel;
   stayTitle: string;
   stayDescription: string;
   stayChecks: string[];
   activities?: LocationActivity[];
+  showActivities?: boolean;
   featurePlans?: LocationFeaturePlan[];
   panels?: LocationPanel[];
   planningNotes: string[];

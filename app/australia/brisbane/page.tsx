@@ -7,7 +7,7 @@ const brisbane = queensland.brisbane;
 export const metadata: Metadata = {
   title: "Brisbane",
   description:
-    "The selected six-night Brisbane work, recovery, laundry and India repacking base.",
+    "The selected six-night Brisbane Work & School, recovery and India repacking base.",
 };
 
 export default function BrisbanePage() {
@@ -22,10 +22,11 @@ export default function BrisbanePage() {
         dates: "Oct 17–22, 2027",
         facts: [
           "6 nights",
-          "Full Monday–Friday output",
+          "Full Work & School week",
           "Weekend departure",
         ],
-        summary: brisbane.summary,
+        summary:
+          "Use Brisbane as a dependable final Australian Work & School base after the Whitsundays. This is not another sightseeing sprint: the priorities are stable commitments, laundry, recovery and deliberate packing for India.",
         photos: [
           {
             src: "/images/australia/brisbane-skyline.jpg",
@@ -64,11 +65,41 @@ export default function BrisbanePage() {
             tone: "arrival",
           },
           {
-            label: "Full work week",
+            label: "Work & School week",
             dates: "Oct 18–22",
-            detail: "Work and school first; pack gradually; easy afternoons.",
+            detail: "Protected commitments, gradual packing and easy outings.",
             days: 5,
             tone: "work",
+            highlights: [
+              {
+                title: "New Farm Park",
+                timing: "Lowest-friction local outing",
+                description:
+                  "Use nearby green space and river paths without creating another logistics project.",
+                url: "https://visit.brisbane.qld.au/things-to-do/inner-city/natural-attractions/new-farm-park-9442",
+              },
+              {
+                title: "CityCat",
+                timing: "River transport and city experience",
+                description:
+                  "Use the ferry for an easy introduction to Brisbane’s river geography and neighborhoods.",
+                url: "https://www.brisbane.qld.gov.au/transport-and-parking/public-transport/citycats-and-ferries",
+              },
+              {
+                title: "South Bank Parklands",
+                timing: "Longer local outing",
+                description:
+                  "Choose the riverfront, parklands, dinner or a swim according to weather and energy.",
+                url: "https://visit.brisbane.qld.au/things-to-do/inner-city/arts-and-culture/south-bank-parklands-1ff5",
+              },
+              {
+                title: "Queensland Museum",
+                timing: "Storm, heat or recovery option",
+                description:
+                  "Keep one strong indoor learning option ready without prebooking a dense museum day.",
+                url: "https://www.museum.qld.gov.au/kurilpa/plan-your-visit/",
+              },
+            ],
           },
           {
             label: "Begin India trip",
@@ -78,57 +109,24 @@ export default function BrisbanePage() {
             tone: "travel",
           },
         ],
+        basePanel: {
+          id: "work-rhythm",
+          eyebrow: "Reset week",
+          title: "Work & School from Brisbane",
+          headerNote: "US Eastern → 11 p.m.–7 a.m. local",
+          description:
+            "Use Brisbane as the dependable output and recovery base after the Whitsundays. Optional city time remains low-friction and secondary.",
+          items: [
+            "Stable setup — Keep separate professional and school surfaces with verified internet and mobile backup.",
+            "River city — Use CityCat and South Bank to examine transport, flooding and city design around the Brisbane River.",
+            "Subtropical capital — Compare Brisbane with the coast, reef and inland Australia already visited.",
+            "Transition skills — Use packing, laundry, budgeting and route mapping as practical preparation for India.",
+          ],
+        },
         stayTitle: brisbane.base.recommendation,
         stayDescription: brisbane.base.reason,
         stayChecks: brisbane.base.requirements,
-        activities: [
-          {
-            title: "New Farm Park + riverwalk",
-            timing: "Default after-work outing",
-            description:
-              "Walk straight from a New Farm base into open space and along the river. It is the right scale for a tired afternoon and does not create another logistics project.",
-            links: [brisbane.links[0]],
-          },
-          {
-            title: "CityCat + South Bank",
-            timing: "One longer afternoon or evening",
-            description:
-              "Use the ferry as both transportation and the city experience, then choose the riverfront, parklands, dinner or a swim at South Bank according to energy.",
-            links: [brisbane.links[2]],
-          },
-          {
-            title: "Queensland Museum or GOMA",
-            timing: "Storm, heat or recovery-day option",
-            description:
-              "Keep one indoor cultural option ready, but do not prebook a dense museum program during the week whose primary purpose is work and reset.",
-          },
-          {
-            title: "West End",
-            timing: "One neighborhood dinner",
-            description:
-              "Use West End for food, a market if timing happens to align, or a change of neighborhood. It is an alternative base, not a daily cross-city obligation.",
-            links: [brisbane.links[1]],
-          },
-          {
-            title: "Laundry, pool and packing",
-            timing: "Several deliberately unprogrammed afternoons",
-            description:
-              "These are core activities here. Pack for India during the week, recover from the kayak expedition, and avoid manufacturing sightseeing because Brisbane appears on the route.",
-          },
-        ],
         panels: [
-          {
-            id: "work-rhythm",
-            eyebrow: "October 18–22",
-            title: "Protect full work and homeschool output",
-            description:
-              "This week is the dependable output block after the reef and sea-kayak trip. Optional city time stays low-friction and secondary.",
-            items: [
-              "Use the same serious local-morning work block every weekday.",
-              "Keep a second stable surface for homeschool rather than improvising around the apartment.",
-              "Pack and do laundry incrementally so Friday remains a normal workday.",
-            ],
-          },
           {
             eyebrow: "October conditions",
             title: "Warm, mostly pleasant, with storm risk building",
@@ -137,11 +135,6 @@ export default function BrisbanePage() {
               "Choose a property with air conditioning and a nearby indoor fallback.",
               "Keep the India packing system inside the apartment, not spread across multiple day trips.",
             ],
-          },
-          {
-            eyebrow: "Place-based learning",
-            title: "Homeschool hooks",
-            items: brisbane.homeschool,
           },
           {
             eyebrow: brisbane.departure.date,

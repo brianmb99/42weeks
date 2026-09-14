@@ -9,7 +9,7 @@ export const asiaLocationPages: Record<AsiaLocationSlug, LocationPagePlan> = {
     dates: "Nov 14–20, 2027",
     facts: ["7 nights", "Office Mon–Fri", "Protected family Saturday"],
     summary:
-      "Use Singapore as a bounded work-and-homeschool week: arrive Sunday, work Monday through Friday from a central serviced apartment, explore one compact district each afternoon or evening, and protect Saturday for one substantial family outing. November rain rewards flexible plans with indoor fallbacks.",
+      "Use Singapore as a bounded Work & School week: arrive Sunday, keep the Monday-through-Friday office commitment in a central serviced apartment, explore one compact district at a time, and protect Saturday for one substantial family outing. November rain rewards flexible plans with indoor fallbacks.",
     photos: [
       {
         src: "/images/asia/singapore-gardens-bay.jpg",
@@ -48,11 +48,41 @@ export const asiaLocationPages: Record<AsiaLocationSlug, LocationPagePlan> = {
         tone: "arrival",
       },
       {
-        label: "Office + homeschool",
+        label: "Work & School · office week",
         dates: "Nov 15–19",
         detail: "Bounded weekdays with one compact outing at a time.",
         days: 5,
         tone: "work",
+        highlights: [
+          {
+            title: "Gardens by the Bay",
+            timing: "Late afternoon or evening",
+            description:
+              "Use the cooled conservatories in difficult weather and add Garden Rhapsody only if energy permits.",
+            url: "https://www.gardensbythebay.com.sg/",
+          },
+          {
+            title: "Maxwell Food Centre",
+            timing: "Hawker dinner",
+            description:
+              "Let one hawker centre and its surrounding district create the evening instead of crossing the city.",
+            url: "https://www.roots.gov.sg/places/places-landing/Places/surveyed-sites/maxwell-road-food-centre",
+          },
+          {
+            title: "Central Public Library",
+            timing: "School reset or wet day",
+            description:
+              "Use the children’s collection and study space as practical Work & School infrastructure.",
+            url: "https://www.nlb.gov.sg/main/visit-us/our-libraries-and-locations/libraries/central-library",
+          },
+          {
+            title: "Singapore Botanic Gardens",
+            timing: "Forecast-led outdoor outing",
+            description:
+              "Use a focused garden visit when rain, heat and lightning risk allow.",
+            url: "https://sbg.nparks.gov.sg/visit/general-info/",
+          },
+        ],
       },
       {
         label: "Family Saturday",
@@ -60,6 +90,52 @@ export const asiaLocationPages: Record<AsiaLocationSlug, LocationPagePlan> = {
         detail: "Choose one major day; do not stack three attractions.",
         days: 1,
         tone: "family",
+        featureLink: {
+          title: "See Mandai plan",
+          href: "#singapore-family-saturday",
+        },
+      },
+    ],
+    basePanel: {
+      id: "work-rhythm",
+      eyebrow: "Bounded office week",
+      title: "Work & School from Singapore",
+      headerNote: "US Eastern → 10 p.m.–6 a.m. local",
+      description:
+        "Keep the office commitment and academic work bounded while using Singapore’s compact transit network for one nearby idea at a time.",
+      items: [
+        "Office logistics — Confirm the actual office before choosing the apartment and test the real commute.",
+        "Tropical systems — Study biodiversity, rainfall, lightning and urban heat through gardens and daily weather.",
+        "Food cultures — Use hawker centres to examine migration, trade and the communities behind Singaporean food.",
+        "Urban planning — Compare high-density housing, land reclamation and car-light public transport.",
+      ],
+    },
+    featurePlans: [
+      {
+        id: "singapore-family-saturday",
+        eyebrow: "November 20 · dedicated family day",
+        title: "Mandai Saturday",
+        description:
+          "Choose one daytime park, preferably Bird Paradise, then decide whether Night Safari still fits after dinner. Do not attempt every Mandai park in one day.",
+        items: [
+          "Treat Bird Paradise as the leading daytime choice rather than adding the zoo automatically.",
+          "Add Night Safari only if the family still has the energy for a second timed experience.",
+          "Use Singapore Oceanarium as the persistent-rain fallback instead of forcing an outdoor plan.",
+        ],
+        links: [
+          {
+            title: "Bird Paradise",
+            url: "https://www.mandai.com/en/bird-paradise.html",
+          },
+          {
+            title: "Night Safari",
+            url: "https://www.mandai.com/en/night-safari.html",
+          },
+          {
+            title: "Singapore Oceanarium",
+            url: "https://www.sentosa.com.sg/en/things-to-do/attractions/singapore-oceanarium",
+          },
+        ],
       },
     ],
     stayTitle: "Robertson Quay or River Valley",
@@ -150,18 +226,6 @@ export const asiaLocationPages: Record<AsiaLocationSlug, LocationPagePlan> = {
     ],
     panels: [
       {
-        id: "work-rhythm",
-        eyebrow: "November 15–19",
-        title: "Keep the office commitment bounded",
-        description:
-          "Five office days are acceptable here because the stop is explicitly for work, the commute is short and the family retains Saturday. Do not let office dinners consume every evening.",
-        items: [
-          "Confirm the office location before choosing the apartment.",
-          "Keep homeschool stable in the apartment or library rather than touring all day.",
-          "Use only one later evening before another demanding work morning.",
-        ],
-      },
-      {
         eyebrow: "November conditions",
         title: "Hot, humid and frequently stormy",
         description:
@@ -172,25 +236,9 @@ export const asiaLocationPages: Record<AsiaLocationSlug, LocationPagePlan> = {
           "Do not prepay for an outdoor-only weekday schedule.",
         ],
       },
-      {
-        eyebrow: "Place-based learning",
-        title: "Homeschool hooks",
-        items: [
-          "Tropical biodiversity, rainfall, lightning and urban heat",
-          "Food cultures, migration and the history behind hawker centers",
-          "Port geography, land reclamation and high-density city planning",
-          "Public transit mapping and the tradeoffs of car-light urban life",
-        ],
-      },
-      {
-        eyebrow: "Saturday judgment",
-        title: "One substantial family day is enough",
-        description:
-          "Mandai is the leading family choice. Singapore Oceanarium and a short Sentosa visit are the persistent-rain fallback; neither needs to become a second itinerary layered onto the first.",
-      },
     ],
     bookFirst: [
-      "Seven-night serviced apartment with verified work setup",
+      "Seven-night serviced apartment with verified Work & School setup",
       "India → Singapore and Sunday Singapore → Hong Kong flights",
       "Saturday Mandai plan after checking 2027 hours and timed entry",
     ],
@@ -220,7 +268,7 @@ export const asiaLocationPages: Record<AsiaLocationSlug, LocationPagePlan> = {
     dates: "Nov 21–27, 2027",
     facts: ["6 nights + departure day", "Three core office days", "Thanksgiving"],
     summary:
-      "Use Monday through Wednesday as the core office-and-homeschool block, Thanksgiving Thursday as the principal family day, and Friday as a light local-hours workday followed by an evening outing. Preserve Saturday for a compact city day before the overnight flight.",
+      "Use Monday through Wednesday as the core office-and-school block, Thanksgiving Thursday as the principal family day, and Friday as a lighter Work & School day followed by an evening outing. Preserve Saturday for a compact city day before the overnight flight.",
     photos: [
       {
         src: "/images/asia/hong-kong-peak.jpg",
@@ -249,7 +297,7 @@ export const asiaLocationPages: Record<AsiaLocationSlug, LocationPagePlan> = {
     ],
     rhythmTitle: "Use the U.S. holiday instead of fighting it",
     rhythmSummary:
-      "Three full office days are enough for this stop. Thanksgiving creates the best family day; Friday's U.S. early close occurs late at night in Hong Kong and should not be mistaken for a free local afternoon.",
+      "Three core office days define the stop. Thanksgiving creates the principal family day, while Friday and departure Saturday remain deliberately bounded.",
     rhythm: [
       {
         label: "Arrive and orient",
@@ -259,11 +307,41 @@ export const asiaLocationPages: Record<AsiaLocationSlug, LocationPagePlan> = {
         tone: "arrival",
       },
       {
-        label: "Core office days",
+        label: "Work & School · office days",
         dates: "Nov 22–24",
-        detail: "Three full office and homeschool days.",
+        detail: "Three full office and school days.",
         days: 3,
         tone: "work",
+        highlights: [
+          {
+            title: "The Peak",
+            timing: "Clearest late afternoon",
+            description:
+              "Let visibility determine the day and use the tram and harbour view as one coherent outing.",
+            url: "https://www.thepeak.com.hk/en/the-peak-experience/the-peak-tram",
+          },
+          {
+            title: "Star Ferry",
+            timing: "Low-friction harbour outing",
+            description:
+              "Use the ferry as both transport and an efficient introduction to Victoria Harbour.",
+            url: "https://www.starferry.com.hk/en/service",
+          },
+          {
+            title: "Tai Kwun",
+            timing: "Culture and dinner outing",
+            description:
+              "Use the heritage and arts compound before continuing through Central without adding another district.",
+            url: "https://www.taikwun.hk/en/visit/visiting_information",
+          },
+          {
+            title: "Tsim Sha Tsui Promenade",
+            timing: "Harbour evening",
+            description:
+              "Walk the promenade and add the light show only if the family wants to stay.",
+            url: "https://www.discoverhongkong.com/eng/attractions/top-things-to-see-and-do-around-tsim-sha-tsui-promenade.html",
+          },
+        ],
       },
       {
         label: "Thanksgiving",
@@ -271,11 +349,15 @@ export const asiaLocationPages: Record<AsiaLocationSlug, LocationPagePlan> = {
         detail: "Principal family day; hike or cultural fallback.",
         days: 1,
         tone: "family",
+        featureLink: {
+          title: "See Thanksgiving plan",
+          href: "#hong-kong-thanksgiving",
+        },
       },
       {
-        label: "Light local work",
+        label: "Work & School · Friday",
         dates: "Fri, Nov 26",
-        detail: "Asynchronous anchor block, then a city evening.",
+        detail: "Bounded commitments, then a city evening.",
         days: 1,
         tone: "work",
       },
@@ -285,6 +367,70 @@ export const asiaLocationPages: Record<AsiaLocationSlug, LocationPagePlan> = {
         detail: "Keep luggage central; finish four hours before departure.",
         days: 1,
         tone: "travel",
+        featureLink: {
+          title: "See departure plan",
+          href: "#hong-kong-departure-day",
+        },
+      },
+    ],
+    basePanel: {
+      id: "work-rhythm",
+      eyebrow: "Thanksgiving office stay",
+      title: "Work & School from Hong Kong",
+      headerNote: "US Eastern → 10 p.m.–6 a.m. local",
+      description:
+        "Keep the core office commitment and academic work visible without turning the entire Thanksgiving week into an office itinerary.",
+      items: [
+        "Office logistics — Confirm the actual office before choosing Hong Kong Island over Kowloon.",
+        "Harbour geography — Use ferries and viewpoints to understand Victoria Harbour’s role in the city.",
+        "History — Examine colonial rule, the 1997 handover and present-day Hong Kong with appropriate nuance.",
+        "Urban form — Compare density, vertical transport, housing and public-space tradeoffs.",
+      ],
+    },
+    featurePlans: [
+      {
+        id: "hong-kong-thanksgiving",
+        eyebrow: "November 25 · dedicated family day",
+        title: "Thanksgiving in Hong Kong",
+        description:
+          "Use the U.S. holiday for the strongest full family day. Dragon’s Back is the leading active plan when conditions cooperate; M+ and West Kowloon are the honest weather or energy fallback.",
+        items: [
+          "Choose Dragon’s Back only with a dry forecast, acceptable visibility and enough family energy for the full route.",
+          "Use M+ as a substantial alternative, not merely something squeezed in after a failed hike.",
+          "Keep the evening flexible rather than layering another major attraction onto the day.",
+        ],
+        links: [
+          {
+            title: "Dragon’s Back",
+            url: "https://www.discoverhongkong.com/eng/place-to-go/travel-guide-dragon-s-back.html",
+          },
+          {
+            title: "M+ visitor information",
+            url: "https://www.mplus.org.hk/en/plan-your-visit/",
+          },
+        ],
+      },
+      {
+        id: "hong-kong-departure-day",
+        eyebrow: "November 27 · overnight flight",
+        title: "Compact departure Saturday",
+        description:
+          "Leave luggage at the hotel and choose one central cultural or harbour plan. Do not schedule Disneyland, Lantau, an island or a long hike before the overnight flight.",
+        items: [
+          "Keep the outing close to reliable transport and confirmed luggage storage.",
+          "Use the Hong Kong Museum of Art or a short harbourfront route as the leading options.",
+          "Finish sightseeing with a generous airport-transfer margin.",
+        ],
+        links: [
+          {
+            title: "Hong Kong Museum of Art",
+            url: "https://hk.art.museum/en/web/ma/visit/opening-hours-and-admission.html",
+          },
+          {
+            title: "Airport Express timetable",
+            url: "https://www.mtr.com.hk/en/customer/services/timetable_index.html",
+          },
+        ],
       },
     ],
     stayTitle: "Western Wan Chai or the Admiralty edge",
@@ -371,42 +517,10 @@ export const asiaLocationPages: Record<AsiaLocationSlug, LocationPagePlan> = {
     ],
     panels: [
       {
-        id: "work-rhythm",
-        eyebrow: "November 22–26",
-        title: "Three office days, then use the holiday shape",
-        description:
-          "Five office days would squander this particular week. Monday through Wednesday plus a Friday anchor block is the better default unless a specific office obligation proves otherwise.",
-        items: [
-          "Keep Monday through Wednesday as the visible office commitment.",
-          "Use local daytime Friday for asynchronous work, not a fourth full office day by default.",
-          "Avoid live U.S. coverage Friday night if preserving Saturday matters.",
-        ],
-      },
-      {
-        eyebrow: "U.S. market calendar",
-        title: "Friday's early close is 2 a.m. Saturday locally",
-        description:
-          "The NYSE is closed Thanksgiving Thursday and closes at 1 p.m. Eastern Friday. In Hong Kong, that Friday session is approximately 10:30 p.m.–2 a.m.; the early close does not create a local Friday afternoon.",
-        items: [
-          "Prefer asynchronous or Hong Kong-hour work Friday.",
-          "Treat any live Friday-night coverage as a conscious trade against Saturday.",
-        ],
-      },
-      {
         eyebrow: "November conditions",
         title: "Usually mild and comparatively dry",
         description:
           "Historical November conditions are roughly 69–76°F with much less rain than summer. Carry a light layer and retain a museum fallback; a late tropical system remains possible.",
-      },
-      {
-        eyebrow: "Place-based learning",
-        title: "Homeschool hooks",
-        items: [
-          "Harbour geography, ferries and the role of Victoria Harbour",
-          "Colonial history, the 1997 handover and present-day Hong Kong",
-          "Density, vertical transport, housing and public-space tradeoffs",
-          "Subtropical ecology on Dragon's Back and the contrast with the city",
-        ],
       },
     ],
     bookFirst: [
@@ -417,7 +531,6 @@ export const asiaLocationPages: Record<AsiaLocationSlug, LocationPagePlan> = {
     ],
     planningNotes: [
       "Confirm the actual office location before selecting Hong Kong Island over Kowloon.",
-      "Do not use Friday's late-night U.S. session by default; it would erode Saturday.",
       "Stop Saturday sightseeing at least four hours before the overnight flight.",
     ],
     links: [

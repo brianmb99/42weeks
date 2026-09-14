@@ -458,7 +458,7 @@ body {
   font-weight: 850;
   letter-spacing: 0.015em;
   line-height: 1.2;
-  white-space: nowrap;
+  text-align: right;
 }
 
 .location-base-grid h2 {

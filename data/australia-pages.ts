@@ -1,4 +1,8 @@
-import type { LocationRhythmSegment } from "./location-page-types";
+import type {
+  LocationFeaturePlan,
+  LocationPanel,
+  LocationRhythmSegment,
+} from "./location-page-types";
 
 export type AustraliaPhoto = {
   src: string;
@@ -28,6 +32,8 @@ export type AustraliaCity = {
   rhythmTitle: string;
   rhythmSummary: string;
   rhythm: LocationRhythmSegment[];
+  basePanel: LocationPanel;
+  featurePlans?: LocationFeaturePlan[];
   photos: AustraliaPhoto[];
   ideas: AustraliaIdea[];
   planningNotes: string[];
@@ -110,11 +116,11 @@ export const australiaCities: Record<AustraliaCity["slug"], AustraliaCity> = {
   geelong: {
     slug: "geelong",
     title: "Geelong",
-    eyebrow: "Australia · family-history work base",
+    eyebrow: "Australia · family-history Work & School base",
     dates: "Aug 29–Sep 4, 2027",
-    facts: ["7 nights", "Work Mon–Fri", "Newtown preferred"],
+    facts: ["7 nights", "Work & School Mon–Fri", "Newtown preferred"],
     summary:
-      "This is a week of ordinary life in the place Brian grew up, not a gateway stop. Move from Melbourne on Sunday, establish a dependable work and homeschool setup in Newtown, and leave enough unscheduled time for remembered places, follow-up visits and family stories.",
+      "This is a week of ordinary life in the place Brian grew up, not a gateway stop. Move from Melbourne on Sunday, establish a dependable Work & School setup in Newtown, and leave enough unscheduled time for remembered places, follow-up visits and family stories.",
     stayTitle: "Newtown, near the Barwon River",
     stayDescription:
       "Prioritize an actual work room, strong internet, laundry and parking over waterfront views. A Newtown base puts Balyang Sanctuary and the Barwon River close by while keeping central Geelong and the Bellarine Peninsula practical.",
@@ -136,11 +142,41 @@ export const australiaCities: Record<AustraliaCity["slug"], AustraliaCity> = {
         tone: "arrival",
       },
       {
-        label: "Newtown work week",
+        label: "Newtown Work & School week",
         dates: "Aug 30–Sep 3",
-        detail: "Work and school first; family places in the afternoons.",
+        detail: "Protected commitments with flexible family-history time.",
         days: 5,
         tone: "work",
+        highlights: [
+          {
+            title: "Balyang Sanctuary",
+            timing: "Easy neighborhood nature outing",
+            description:
+              "Walk the lake and Barwon River paths from Newtown for birds, ecology and ordinary local time.",
+            url: "https://www.geelongcity.vic.gov.au/services/parks-and-outdoor-spaces/parks-and-reserves/balyang-sanctuary",
+          },
+          {
+            title: "Geelong Waterfront",
+            timing: "Low-effort local outing",
+            description:
+              "Use Eastern Beach and the waterfront when the family wants water, space and no complicated logistics.",
+            url: "https://www.geelongcity.vic.gov.au/services/parks-and-outdoor-spaces/parks-and-reserves/eastern-beach-reserve",
+          },
+          {
+            title: "Geelong Library",
+            timing: "School reset or rainy day",
+            description:
+              "Use the Dome for reading, study space and the regional heritage collection.",
+            url: "https://www.grlc.vic.gov.au/glhc",
+          },
+          {
+            title: "Geelong Botanic Gardens",
+            timing: "Flexible ecology outing",
+            description:
+              "Use the gardens for a compact local walk and plant study without turning it into an excursion day.",
+            url: "https://app.geelongcity.vic.gov.au/gbg/",
+          },
+        ],
       },
       {
         label: "Local Saturday",
@@ -148,6 +184,44 @@ export const australiaCities: Record<AustraliaCity["slug"], AustraliaCity> = {
         detail: "Return visits, Queenscliff, or an MCG match if needed.",
         days: 1,
         tone: "family",
+        featureLink: {
+          title: "See family-history plan",
+          href: "#geelong-family-history",
+        },
+      },
+    ],
+    basePanel: {
+      id: "work-rhythm",
+      eyebrow: "Weekday base",
+      title: "Work & School from Geelong",
+      headerNote: "US Eastern → 11 p.m.–7 a.m. local",
+      description:
+        "Keep professional work and academic subjects protected while leaving enough unscheduled time for remembered places and follow-up family stories.",
+      items: [
+        "Family history — Revisit Newtown gradually rather than compressing childhood places into one tour.",
+        "Local ecology — Use Balyang Sanctuary, the Barwon River and the Botanic Gardens for place-based science.",
+        "Regional history — Use the library’s heritage collection to add records and context to family memories.",
+        "Port geography — Compare Corio Bay, the waterfront and Queenscliff’s relationship to Port Phillip.",
+      ],
+    },
+    featurePlans: [
+      {
+        id: "geelong-family-history",
+        eyebrow: "Personal anchor · keep flexible",
+        title: "Newtown and Queenscliff family-history time",
+        description:
+          "The reason to stay in Geelong is access to specific personal places, not generic sightseeing. Keep the exact route open until family memories identify the right homes, parks, schools and follow-up stops.",
+        items: [
+          "Use weekday gaps for nearby Newtown places so a brief memory or question can lead to a return visit.",
+          "Give Queenscliff a purposeful half-day or early evening because it connects directly to where Brian’s father worked.",
+          "Do not substitute a Melbourne day trip; the value comes from having enough time for small, specific visits.",
+        ],
+        links: [
+          {
+            title: "Queenscliff visitor information",
+            url: "https://www.visitgeelongbellarine.com.au/queenscliff-point-lonsdale/queenscliff",
+          },
+        ],
       },
     ],
     photos: [
@@ -236,11 +310,11 @@ export const australiaCities: Record<AustraliaCity["slug"], AustraliaCity> = {
   melbourne: {
     slug: "melbourne",
     title: "Melbourne",
-    eyebrow: "Australia · landing and work launch",
+    eyebrow: "Australia · landing and Work & School launch",
     dates: "Aug 23–28, 2027",
-    facts: ["6 nights", "Soft work launch", "MCG priority"],
+    facts: ["6 nights", "Soft Work & School launch", "MCG priority"],
     summary:
-      "Melbourne absorbs the long-haul landing, the first work and homeschool setup, and the best early opportunity for an MCG match. Keep the first days light, build output through the week, and avoid turning recovery into an ambitious sightseeing schedule.",
+      "Melbourne absorbs the long-haul landing, the first Work & School setup, and the best early opportunity for an MCG match. Keep the first days light and avoid turning recovery into an ambitious sightseeing schedule.",
     stayTitle: "Inner Melbourne with an easy MCG trip",
     stayDescription:
       "Prioritize a separate work room, groceries, laundry and straightforward transit to the MCG. Richmond, South Yarra, East Melbourne or the CBD can work; the exact match date should influence the final choice.",
@@ -250,9 +324,9 @@ export const australiaCities: Record<AustraliaCity["slug"], AustraliaCity> = {
       "A St Kilda evening plan that includes travel and dinner",
       "A simple Sunday move to Newtown after the final home-and-away weekend",
     ],
-    rhythmTitle: "Land softly, then build the routine",
+    rhythmTitle: "Land softly, then build the Work & School routine",
     rhythmSummary:
-      "Melbourne is the buffer between the long-haul flight and the first normal week. Keep Monday genuinely light, increase work through Friday, and reserve the weekend edge for the best available MCG match.",
+      "Melbourne is the buffer between the long-haul flight and the first normal week. Keep Work & School flexible around recovery and reserve the weekend edge for the best available MCG match.",
     rhythm: [
       {
         label: "Land and recover",
@@ -262,11 +336,41 @@ export const australiaCities: Record<AustraliaCity["slug"], AustraliaCity> = {
         tone: "arrival",
       },
       {
-        label: "Soft work launch",
+        label: "Work & School launch",
         dates: "Aug 24–27",
-        detail: "Four-hour anchors first, then normal output.",
+        detail: "Protected commitments with flexible city outings.",
         days: 4,
         tone: "work",
+        highlights: [
+          {
+            title: "St Kilda Little Penguins",
+            timing: "One clear evening",
+            description:
+              "Use a ticketed post-sunset session and preserve the no-flash wildlife rules.",
+            url: "https://www.parks.vic.gov.au/places-to-see/parks/st-kilda-pier-and-breakwater/attractions/little-penguins",
+          },
+          {
+            title: "Laneways & Arcades",
+            timing: "Flexible city walk",
+            description:
+              "Use one loose central route through the lanes and arcades rather than chasing a city checklist.",
+            url: "https://whatson.melbourne.vic.gov.au/things-to-do/walks/arcades-and-lanes",
+          },
+          {
+            title: "NGV International",
+            timing: "Weather-dependent cultural stop",
+            description:
+              "Choose a focused gallery visit when an indoor, low-logistics outing suits the day.",
+            url: "https://www.ngv.vic.gov.au/plan-your-visit/visitor-guide-ngv-international/",
+          },
+          {
+            title: "Royal Botanic Gardens",
+            timing: "Calmer recovery outing",
+            description:
+              "Use the gardens and Shrine precinct for open space close to central Melbourne.",
+            url: "https://www.rbg.vic.gov.au/melbourne-gardens/",
+          },
+        ],
       },
       {
         label: "MCG / city window",
@@ -274,6 +378,48 @@ export const australiaCities: Record<AustraliaCity["slug"], AustraliaCity> = {
         detail: "Use the fixture first; keep a flexible city fallback.",
         days: 1,
         tone: "family",
+        featureLink: {
+          title: "See MCG plan",
+          href: "#afl-at-the-mcg",
+        },
+      },
+    ],
+    basePanel: {
+      id: "work-rhythm",
+      eyebrow: "Landing week",
+      title: "Work & School from Melbourne",
+      headerNote: "US Eastern → 11 p.m.–7 a.m. local",
+      description:
+        "Treat the first week as a stable landing base. Work and academic commitments remain real, while the surrounding city plans stay deliberately easy to rearrange.",
+      items: [
+        "Recovery — Keep optional plans easy to cancel while the family adjusts after the long-haul flight.",
+        "Urban form — Use trams, laneways, the Yarra and Federation Square to understand central Melbourne.",
+        "Arts and culture — Choose one focused NGV or museum visit rather than stacking institutions.",
+        "Urban wildlife — Use the St Kilda penguin visit to examine habitat, conservation and responsible viewing.",
+      ],
+    },
+    featurePlans: [
+      {
+        id: "afl-at-the-mcg",
+        eyebrow: "Fixture-led trip priority",
+        title: "AFL at the MCG",
+        description:
+          "Buy tickets for any available men’s AFL match at the MCG. Prefer the final home-and-away weekend while based in Melbourne; if the better fixture is the following weekend, make one purposeful trip from Newtown instead of changing the route.",
+        items: [
+          "Use the actual 2027 fixture before locking the match date.",
+          "Choose seats and transit for a family match-day experience, not merely the cheapest entry.",
+          "Keep a flexible central-city fallback if no suitable MCG match is available in this window.",
+        ],
+        links: [
+          {
+            title: "MCG events",
+            url: "https://www.mcg.org.au/events",
+          },
+          {
+            title: "AFL fixtures",
+            url: "https://www.afl.com.au/fixture",
+          },
+        ],
       },
     ],
     photos: [
@@ -354,17 +500,16 @@ export const australiaCities: Record<AustraliaCity["slug"], AustraliaCity> = {
       "Target any men's AFL match at the MCG; do not organize the trip around Grand Final access.",
       "If the best match falls after the August 29 move, travel from Newtown for that one scheduled event.",
       "The St Kilda penguin sessions are free but ticketed and capacity-limited.",
-      "Keep arrival Monday light and use four-hour anchor blocks Tuesday and Wednesday before increasing output.",
     ],
   },
   sydney: {
     slug: "sydney",
     title: "Sydney",
-    eyebrow: "Australia · two-week beach work base",
+    eyebrow: "Australia · two-week beach Work & School base",
     dates: "Sep 26–Oct 9, 2027",
-    facts: ["14 nights", "Two work weeks", "Complete middle weekend"],
+    facts: ["14 nights", "Two Work & School weeks", "Complete middle weekend"],
     summary:
-      "Sydney should feel different from Melbourne: live beside the water, protect two normal work and homeschool weeks, use the beach almost every day, and reserve the complete October 2–3 weekend for the harbour, coast or a major cultural experience.",
+      "Sydney should feel different from Melbourne: live beside the water, protect two normal Work & School weeks, use the beach almost every day, and reserve the complete October 2–3 weekend for the harbour, coast or a major cultural experience.",
     stayTitle: "Shortlist Manly first, Coogee second",
     stayDescription:
       "Manly offers the clearest beach-at-the-door version and a memorable harbour ferry into the city. Coogee offers a calmer eastern-suburbs neighborhood and immediate access to ocean pools and the coastal walk. Do not default to the CBD if the goal is to live near a beach.",
@@ -374,9 +519,9 @@ export const australiaCities: Record<AustraliaCity["slug"], AustraliaCity> = {
       "Groceries, casual food and outdoor space usable without a car",
       "A credible evening return after the Sydney Opera House",
     ],
-    rhythmTitle: "Two real work weeks beside the water",
+    rhythmTitle: "Two real Work & School weeks beside the water",
     rhythmSummary:
-      "The long stay makes ordinary beach afternoons possible and preserves one complete weekend without asking the family to work around another move.",
+      "The long stay makes ordinary beach outings possible and preserves one complete weekend without another lodging move.",
     rhythm: [
       {
         label: "Arrive and settle",
@@ -386,11 +531,27 @@ export const australiaCities: Record<AustraliaCity["slug"], AustraliaCity> = {
         tone: "arrival",
       },
       {
-        label: "Work week one",
+        label: "Work & School · week one",
         dates: "Sep 27–Oct 1",
-        detail: "Normal work and school; beach afternoons.",
+        detail: "Protected commitments with easy access to the water.",
         days: 5,
         tone: "work",
+        highlights: [
+          {
+            title: "Manly Beach",
+            timing: "Low-friction beach time",
+            description:
+              "Use the beach as ordinary neighborhood life rather than a scheduled excursion.",
+            url: "https://www.northernbeaches.nsw.gov.au/things-to-do/recreation-area/manly-beach",
+          },
+          {
+            title: "Manly Ferry",
+            timing: "Harbour transport and outing",
+            description:
+              "Use the ferry as both practical transport and one of Sydney’s strongest harbour experiences.",
+            url: "https://transportnsw.info/routes/details/sydney-ferries/f1/090F1",
+          },
+        ],
       },
       {
         label: "Full Sydney weekend",
@@ -398,13 +559,37 @@ export const australiaCities: Record<AustraliaCity["slug"], AustraliaCity> = {
         detail: "Harbour, coast, zoo or one major family plan.",
         days: 2,
         tone: "family",
+        featureLink: {
+          title: "See weekend plan",
+          href: "#full-sydney-weekend",
+        },
       },
       {
-        label: "Work week two",
+        label: "Work & School · week two",
         dates: "Oct 4–8",
         detail: "Normal routine plus one Opera House evening.",
         days: 5,
         tone: "work",
+        highlights: [
+          {
+            title: "Coogee Beach",
+            timing: "Beach or ocean-pool outing",
+            description:
+              "Use Coogee for a calmer eastern-suburbs beach day with immediate coastal access.",
+            url: "https://www.randwick.nsw.gov.au/facilities-and-recreation/beaches-and-coast/beaches/coogee-beach",
+          },
+          {
+            title: "Royal Botanic Garden",
+            timing: "Harbour-side ecology outing",
+            description:
+              "Pair a focused garden visit with Circular Quay when the city and weather align.",
+            url: "https://www.botanicgardens.org.au/royal-botanic-garden-sydney/plan-your-visit",
+          },
+        ],
+        featureLink: {
+          title: "See Opera House plan",
+          href: "#sydney-opera-house",
+        },
       },
       {
         label: "Local Saturday",
@@ -412,6 +597,67 @@ export const australiaCities: Record<AustraliaCity["slug"], AustraliaCity> = {
         detail: "Keep the last day nearby before Sunday travel.",
         days: 1,
         tone: "family",
+      },
+    ],
+    basePanel: {
+      id: "work-rhythm",
+      eyebrow: "Two-week beach base",
+      title: "Work & School from Sydney",
+      headerNote:
+        "US Eastern → 11 p.m.–7 a.m. local; midnight–8 a.m. from Oct 3",
+      description:
+        "The two-week stay supports normal professional and academic commitments while making beach, ferry and coastal time available without another lodging move.",
+      items: [
+        "Everyday water — Use the nearest beach, ocean pool or shoreline walk without turning it into a formal excursion.",
+        "Harbour geography — Connect ferries, headlands, Port Jackson and the city’s development around the water.",
+        "Coastal ecology — Compare surf beaches, ocean pools, sandstone cliffs and marine conditions.",
+        "Performing arts — Use the Opera House evening to explore architecture, production and live performance.",
+      ],
+    },
+    featurePlans: [
+      {
+        id: "sydney-opera-house",
+        eyebrow: "One weekday evening",
+        title: "Sydney Opera House",
+        description:
+          "Prefer a full staged Opera Australia production if the 2027 season cooperates. Otherwise choose another family-appropriate performance and make the harbour arrival part of the evening.",
+        items: [
+          "Check the 2027 calendars before treating a specific production as available.",
+          "Choose the performance first, then confirm the return trip to the beach base.",
+          "Do not add another major attraction to the same evening.",
+        ],
+        links: [
+          {
+            title: "Opera Australia · Sydney",
+            url: "https://opera.org.au/sydney/",
+          },
+          {
+            title: "Sydney Opera House · Opera",
+            url: "https://www.sydneyoperahouse.com/opera",
+          },
+        ],
+      },
+      {
+        id: "full-sydney-weekend",
+        eyebrow: "October 2–3 · dedicated trip",
+        title: "Full Sydney weekend",
+        description:
+          "Use the complete non-work weekend for one coherent harbour or coast plan rather than trying to collect every major Sydney attraction.",
+        items: [
+          "Choose a realistic section of the Bondi-to-Coogee coastal walk according to weather and family energy.",
+          "Use Taronga Zoo as the leading full-day family alternative when the harbour setting and wildlife program justify it.",
+          "Keep one half-day slower so the second Work & School week does not begin depleted.",
+        ],
+        links: [
+          {
+            title: "Bondi-to-Coogee coastal walkway",
+            url: "https://www.randwick.nsw.gov.au/facilities-and-recreation/explore-randwick-city/coastal-walkway",
+          },
+          {
+            title: "Taronga Zoo Sydney",
+            url: "https://www.taronga.org.au/sydney-zoo",
+          },
+        ],
       },
     ],
     photos: [
@@ -489,7 +735,6 @@ export const australiaCities: Record<AustraliaCity["slug"], AustraliaCity> = {
     planningNotes: [
       "Compare Manly and Coogee rentals on workspace and internet before comparing views.",
       "Recheck the 2027 Opera Australia and Sydney Opera House calendars when published.",
-      "Daylight saving begins October 3 and moves the New York overlap one hour later locally.",
       "Keep Sunday, October 10 for the flight to Hamilton Island.",
     ],
   },

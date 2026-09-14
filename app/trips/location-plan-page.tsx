@@ -14,7 +14,7 @@ import "./location-plan.css";
 
 const toneLabels: Record<LocationRhythmTone, string> = {
   arrival: "Arrive / settle",
-  work: "Work + school",
+  work: "Work & School",
   family: "Family time",
   vacation: "Vacation",
   travel: "Travel",
@@ -126,48 +126,33 @@ export default function LocationPlanPage({
             {tones.map((tone) => (
               <span className={`is-${tone}`} key={tone}>
                 <i aria-hidden="true" />
-                {tone === "work" && plan.workLabel
-                  ? plan.workLabel
-                  : toneLabels[tone]}
+                {toneLabels[tone]}
               </span>
             ))}
           </div>
         </section>
 
-        {plan.basePanel ? (
-          <section className="location-base-grid" aria-label="Base setup">
-            <article id={plan.basePanel.id}>
-              <div className="location-base-kicker">
-                <p>{plan.basePanel.eyebrow}</p>
-                {plan.basePanel.headerNote && (
-                  <p>{plan.basePanel.headerNote}</p>
-                )}
-              </div>
-              <h2>{plan.basePanel.title}</h2>
-              {plan.basePanel.description && (
-                <p>{plan.basePanel.description}</p>
+        <section className="location-base-grid" aria-label="Base setup">
+          <article id={plan.basePanel.id}>
+            <div className="location-base-kicker">
+              <p>{plan.basePanel.eyebrow}</p>
+              {plan.basePanel.headerNote && (
+                <p>{plan.basePanel.headerNote}</p>
               )}
-              {plan.basePanel.items && (
-                <ItemList items={plan.basePanel.items} />
-              )}
-            </article>
-            <article id="where-to-stay">
-              <p>Where to stay</p>
-              <h2>{plan.stayTitle}</h2>
-              <p>{plan.stayDescription}</p>
-              <ItemList items={plan.stayChecks} />
-            </article>
-          </section>
-        ) : (
-          <section className="location-stay" aria-labelledby="location-stay-title">
-            <div>
-              <p>Where to stay</p>
-              <h2 id="location-stay-title">{plan.stayTitle}</h2>
-              <p>{plan.stayDescription}</p>
             </div>
+            <h2>{plan.basePanel.title}</h2>
+            {plan.basePanel.description && (
+              <p>{plan.basePanel.description}</p>
+            )}
+            {plan.basePanel.items && <ItemList items={plan.basePanel.items} />}
+          </article>
+          <article id="where-to-stay">
+            <p>Where to stay</p>
+            <h2>{plan.stayTitle}</h2>
+            <p>{plan.stayDescription}</p>
             <ItemList items={plan.stayChecks} />
-          </section>
-        )}
+          </article>
+        </section>
 
         {plan.featurePlans && plan.featurePlans.length > 0 && (
           <section
@@ -175,7 +160,11 @@ export default function LocationPlanPage({
             aria-label="Dedicated experience plans"
           >
             {plan.featurePlans.map((feature) => (
-              <article id={feature.id} key={feature.id}>
+              <article
+                className="location-feature-plan"
+                id={feature.id}
+                key={feature.id}
+              >
                 <header>
                   <p>{feature.eyebrow}</p>
                   <h2>{feature.title}</h2>
@@ -203,7 +192,7 @@ export default function LocationPlanPage({
           </section>
         )}
 
-        {plan.activities && plan.activities.length > 0 && (
+        {plan.showActivities && plan.activities && plan.activities.length > 0 && (
           <section
             className="location-activities"
             aria-labelledby="location-activities-title"
