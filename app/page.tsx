@@ -205,6 +205,7 @@ const australiaCards: PlaceCard[] = [
   },
   {
     locationId: "location-great-southern-touring-route",
+    endLocationId: "location-melbourne-return",
     category: "Vacation road trip",
     summary:
       "Follow the Great Ocean Road through the Otways, then continue to the Grampians and Ballarat before reaching Melbourne.",

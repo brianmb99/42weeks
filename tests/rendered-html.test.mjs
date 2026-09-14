@@ -267,6 +267,7 @@ test("server-renders Alice Springs, Brisbane and Wānaka working-base plans", as
         /Wānaka: Twenty-Night Working Base/,
         /Long evenings make the work model worthwhile/,
         /Early full weeks around three anchor days/,
+        /Nov 29–Dec 3/,
         /Do not attempt Milford Sound as a day trip/,
         /Meadowstone/,
         /data\/wanaka\.json/,

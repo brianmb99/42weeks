@@ -8,6 +8,18 @@ export const metadata: Metadata = {
     "The selected twenty-night Wānaka working base, early-shift rhythm and forecast-led four-day mini-vacation.",
 };
 
+function dateRangeLabel(value: string) {
+  const [start, end] = value.split("/");
+  const format = (date: string, includeMonth = true) =>
+    new Intl.DateTimeFormat("en-US", {
+      ...(includeMonth ? { month: "short" } : {}),
+      day: "numeric",
+      timeZone: "UTC",
+    }).format(new Date(`${date}T00:00:00Z`));
+  const sameMonth = start.slice(0, 7) === end.slice(0, 7);
+  return `${format(start)}–${format(end, !sameMonth)}`;
+}
+
 export default function WanakaPage() {
   return (
     <WorkingBasePage
@@ -41,7 +53,8 @@ export default function WanakaPage() {
           eyebrow: "November 29–December 17",
           title: "Early full weeks around three anchor days",
           items: wanaka.workRhythm.map(
-            (block) => `${block.dates} — ${block.mode}: ${block.plan}`,
+            (block) =>
+              `${dateRangeLabel(block.dates)} — ${block.mode}: ${block.plan}`,
           ),
         },
         {
@@ -53,7 +66,7 @@ export default function WanakaPage() {
           eyebrow: "Complete weekends",
           title: "One larger outing plus recovery",
           items: wanaka.weekends.map(
-            (weekend) => `${weekend.dates}: ${weekend.plan}`,
+            (weekend) => `${dateRangeLabel(weekend.dates)}: ${weekend.plan}`,
           ),
         },
         {
