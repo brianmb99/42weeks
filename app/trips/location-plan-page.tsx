@@ -9,6 +9,7 @@ import SiteNav, {
   type AustraliaNavPage,
 } from "../site-nav";
 import DestinationGallery from "./destination-gallery";
+import VibeActivityLink from "./vibe-activity-link";
 import "./location-plan.css";
 
 const toneLabels: Record<LocationRhythmTone, string> = {
@@ -101,16 +102,19 @@ export default function LocationPlanPage({
                 {segment.highlights && (
                   <ul className="location-rhythm-links">
                     {segment.highlights.map((highlight) => (
-                      <li key={highlight.activityId}>
-                        <a
-                          href={`#${highlight.activityId}`}
-                          aria-label={`Details: ${highlight.title}`}
-                        >
-                          {highlight.title}
-                        </a>
+                      <li key={highlight.url}>
+                        <VibeActivityLink activity={highlight} />
                       </li>
                     ))}
                   </ul>
+                )}
+                {segment.featureLink && (
+                  <a
+                    className="location-rhythm-feature-link"
+                    href={segment.featureLink.href}
+                  >
+                    {segment.featureLink.title} ↓
+                  </a>
                 )}
               </li>
             ))}
@@ -130,34 +134,53 @@ export default function LocationPlanPage({
           </div>
         </section>
 
-        <section className="location-stay" aria-labelledby="location-stay-title">
-          <div>
-            <p>Where to stay</p>
-            <h2 id="location-stay-title">{plan.stayTitle}</h2>
-            <p>{plan.stayDescription}</p>
-          </div>
-          <ItemList items={plan.stayChecks} />
-        </section>
+        {plan.basePanel ? (
+          <section className="location-base-grid" aria-label="Base setup">
+            <article id={plan.basePanel.id}>
+              <p>{plan.basePanel.eyebrow}</p>
+              <h2>{plan.basePanel.title}</h2>
+              {plan.basePanel.description && (
+                <p>{plan.basePanel.description}</p>
+              )}
+              {plan.basePanel.items && (
+                <ItemList items={plan.basePanel.items} />
+              )}
+            </article>
+            <article id="where-to-stay">
+              <p>Where to stay</p>
+              <h2>{plan.stayTitle}</h2>
+              <p>{plan.stayDescription}</p>
+              <ItemList items={plan.stayChecks} />
+            </article>
+          </section>
+        ) : (
+          <section className="location-stay" aria-labelledby="location-stay-title">
+            <div>
+              <p>Where to stay</p>
+              <h2 id="location-stay-title">{plan.stayTitle}</h2>
+              <p>{plan.stayDescription}</p>
+            </div>
+            <ItemList items={plan.stayChecks} />
+          </section>
+        )}
 
-        <section
-          className="location-activities"
-          aria-labelledby="location-activities-title"
-        >
-          <header>
-            <p>At a glance, then in detail</p>
-            <h2 id="location-activities-title">What fits here</h2>
-          </header>
-          <div>
-            {plan.activities.map((activity, index) => (
-              <article id={activity.id} key={activity.title}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
+        {plan.featurePlans && plan.featurePlans.length > 0 && (
+          <section
+            className="location-feature-plans"
+            aria-label="Dedicated experience plans"
+          >
+            {plan.featurePlans.map((feature) => (
+              <article id={feature.id} key={feature.id}>
+                <header>
+                  <p>{feature.eyebrow}</p>
+                  <h2>{feature.title}</h2>
+                  <p>{feature.description}</p>
+                </header>
                 <div>
-                  <p>{activity.timing}</p>
-                  <h3>{activity.title}</h3>
-                  <p>{activity.description}</p>
-                  {activity.links && (
-                    <div className="location-activity-links">
-                      {activity.links.map((link) => (
+                  {feature.items && <ItemList items={feature.items} />}
+                  {feature.links && (
+                    <div className="location-feature-links">
+                      {feature.links.map((link) => (
                         <a
                           href={link.url}
                           rel="noreferrer"
@@ -172,8 +195,46 @@ export default function LocationPlanPage({
                 </div>
               </article>
             ))}
-          </div>
-        </section>
+          </section>
+        )}
+
+        {plan.activities && plan.activities.length > 0 && (
+          <section
+            className="location-activities"
+            aria-labelledby="location-activities-title"
+          >
+            <header>
+              <p>At a glance, then in detail</p>
+              <h2 id="location-activities-title">What fits here</h2>
+            </header>
+            <div>
+              {plan.activities.map((activity, index) => (
+                <article id={activity.id} key={activity.title}>
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <div>
+                    <p>{activity.timing}</p>
+                    <h3>{activity.title}</h3>
+                    <p>{activity.description}</p>
+                    {activity.links && (
+                      <div className="location-activity-links">
+                        {activity.links.map((link) => (
+                          <a
+                            href={link.url}
+                            rel="noreferrer"
+                            target="_blank"
+                            key={link.url}
+                          >
+                            {link.title} ↗
+                          </a>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+        )}
 
         {plan.panels && plan.panels.length > 0 && (
           <section className="location-panels" aria-label="Planning details">

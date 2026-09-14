@@ -18,16 +18,24 @@ export type LocationRhythmTone =
   | "vacation"
   | "travel";
 
+export type LocationRhythmHighlight = {
+  title: string;
+  timing: string;
+  description: string;
+  url: string;
+};
+
 export type LocationRhythmSegment = {
   label: string;
   dates: string;
   detail: string;
   days: number;
   tone: LocationRhythmTone;
-  highlights?: Array<{
+  highlights?: LocationRhythmHighlight[];
+  featureLink?: {
     title: string;
-    activityId: string;
-  }>;
+    href: string;
+  };
 };
 
 export type LocationActivity = {
@@ -46,6 +54,15 @@ export type LocationPanel = {
   id?: string;
 };
 
+export type LocationFeaturePlan = {
+  id: string;
+  eyebrow: string;
+  title: string;
+  description: string;
+  items?: string[];
+  links?: LocationPageLink[];
+};
+
 export type LocationPagePlan = {
   eyebrow: string;
   title: string;
@@ -57,10 +74,12 @@ export type LocationPagePlan = {
   rhythmSummary: string;
   rhythm: LocationRhythmSegment[];
   workLabel?: string;
+  basePanel?: LocationPanel;
   stayTitle: string;
   stayDescription: string;
   stayChecks: string[];
-  activities: LocationActivity[];
+  activities?: LocationActivity[];
+  featurePlans?: LocationFeaturePlan[];
   panels?: LocationPanel[];
   planningNotes: string[];
   bookFirst?: string[];

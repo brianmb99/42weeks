@@ -6,11 +6,11 @@ Use `LocationPlanPage` for city and working-base pages. The page should let a re
 
 1. **Purpose and facts** — why this stop exists, exact dates, nights, and work/vacation character.
 2. **Photographs** — three useful, locally stored images with descriptive alt text, credit, and source.
-3. **Stay rhythm** — a compact, chronological strip showing how the days divide among arrival, Work & School, family time, vacation, and travel.
-4. **Where to stay** — one recommendation, meaningful alternatives only when location or commute changes the answer, and concrete housing requirements.
-5. **What fits here** — a numbered, scannable activity list. Put timing first and the operational detail below it.
-6. **Planning panels** — climate, work hours, homeschool, or a major decision that needs more explanation.
-7. **Book first, judgment calls, and references**.
+3. **Vibe bar / stay rhythm** — a compact, chronological strip showing how the days divide among arrival, Work & School, family time, vacation, and travel.
+4. **Base setup** — paired boxes for Work & School and Where to Stay. For vacation stops, replace Work & School with the most useful pacing or logistics box.
+5. **Dedicated experiences** — substantial boxes for special weekends, side trips, or other segments that need an actual plan.
+6. **Planning panels** — climate, booking constraints, or a major decision that needs more explanation.
+7. **Optional overflow ideas, book first, judgment calls, and references**.
 
 ## Rhythm strip rules
 
@@ -18,16 +18,19 @@ Use `LocationPlanPage` for city and working-base pages. The page should let a re
 - Keep it chronological and proportional enough to show the shape of the stay.
 - Use explicit tones: `arrival`, `work`, `family`, `vacation`, or `travel`.
 - For a normal working base, show Work & School weeks and genuinely free weekends.
-- A Work & School segment may contain up to four short weekday ideas in a two-column grid. Each idea must link to its detailed activity below.
-- Treat those linked ideas as a practical menu for that block, not reserved dates. The detail copy should retain weather, timing and energy caveats.
-- Preserve important fragment IDs such as `work-rhythm`, `weekend`, and `mini-vacation` in the deeper planning panels.
+- A Work & School segment may contain up to four short weekday ideas in a two-column grid.
+- Give every idea one meaningful, authoritative external link. One item represents one destination; do not combine unrelated destinations under one link.
+- Each idea carries a title, timing guideline and one-sentence detail. Show that preview on hover or keyboard focus; on touch devices, open it in an accessible bottom sheet with the external link.
+- Treat ideas as a practical menu for that block, not reserved dates. The preview should retain weather, timing and energy caveats.
+- Link major rhythm segments to dedicated on-page experience boxes.
+- Preserve important fragment IDs such as `work-rhythm`, `weekend`, and `mini-vacation` in deeper planning boxes.
 
 ## Activity rules
 
 - Separate low-friction workday options from full-day or weather-dependent outings.
 - Prefer five to eight strong entries over an exhaustive attraction list.
 - Explain the planning judgment: duration, timing, commute, weather fallback, or what should not be combined.
-- Give every rhythm-linked activity a stable `id`; keep its rhythm label shorter than its detailed heading when necessary.
+- Use the numbered “What fits here” list only when worthwhile ideas remain after the vibe bar and dedicated experience boxes. Do not repeat the same activity detail in both places.
 - Keep tentative activities tentative. A location page is not authority to add them to the canonical itinerary.
 
 ## Content standards

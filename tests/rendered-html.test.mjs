@@ -258,12 +258,14 @@ test("server-renders Alice Springs, Brisbane and Wānaka glance-first plans", as
         /class="location-rhythm-track"/,
         /Two full Work &amp; School weeks/,
         /Work &amp; School · week one/,
-        /Weekday rhythm/,
-        /Place-based learning — Use the Telegraph Station/,
-        /href="#telegraph-station" aria-label="Details: Telegraph Station"/,
-        /href="#alice-springs-desert-park" aria-label="Details: Alice Springs Desert Park"/,
-        /id="rfds-school-of-the-air"/,
-        /What fits here/,
+        /class="location-vibe-preview"/,
+        /class="location-vibe-dialog"/,
+        /href="https:\/\/alicespringstelegraphstation\.com\.au\/plan-your-visit\/"/,
+        /href="https:\/\/www\.schooloftheair\.net\.au\/the-experience\/"/,
+        /Work &amp; School from Alice Springs/,
+        /class="location-base-grid"/,
+        /href="#red-centre-weekend"/,
+        /id="red-centre-weekend"/,
         /data\/alice-springs\.json/,
       ],
       image: /\/images\/outback\/aerial-road\.jpg/,
@@ -271,8 +273,11 @@ test("server-renders Alice Springs, Brisbane and Wānaka glance-first plans", as
         /Work \+ school/,
         /location-weekday-highlights/,
         /The weekdays are part of the outback experience/,
+        /What fits here/,
+        /Ordinary Alice Springs life/,
       ],
       highlightedSegments: 2,
+      vibeActivities: 7,
     },
     {
       path: "/australia/brisbane",
@@ -321,6 +326,12 @@ test("server-renders Alice Springs, Brisbane and Wānaka glance-first plans", as
       assert.equal(
         (html.match(/class="is-work has-highlights"/g) ?? []).length,
         route.highlightedSegments,
+      );
+    }
+    if (route.vibeActivities) {
+      assert.equal(
+        (html.match(/class="location-vibe-activity"/g) ?? []).length,
+        route.vibeActivities,
       );
     }
     assert.match(html, route.image);

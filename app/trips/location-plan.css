@@ -37,6 +37,8 @@ body {
 .location-header > p:first-child,
 .location-rhythm header > div > p,
 .location-stay > div > p:first-child,
+.location-base-grid article > p:first-child,
+.location-feature-plans article header > p:first-child,
 .location-activities > header p,
 .location-panels article > p:first-child,
 .location-booking > div > p,
@@ -99,6 +101,8 @@ body {
 
 .location-rhythm h2,
 .location-stay h2,
+.location-base-grid h2,
+.location-feature-plans h2,
 .location-activities h2,
 .location-panels h2,
 .location-booking h2,
@@ -198,7 +202,11 @@ body {
   min-width: 0;
 }
 
-.location-rhythm-links a {
+.location-vibe-activity {
+  position: relative;
+}
+
+.location-vibe-activity > a {
   padding-left: 10px;
   display: block;
   position: relative;
@@ -207,19 +215,154 @@ body {
   font-size: 9px;
   font-weight: 750;
   line-height: 1.32;
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-color: rgb(49 95 120 / 38%);
+  text-underline-offset: 2px;
 }
 
-.location-rhythm-links a::before {
+.location-vibe-activity > a::before {
   position: absolute;
   left: 0;
   color: var(--rhythm-color);
   content: "—";
 }
 
-.location-rhythm-links a:hover {
-  text-decoration: underline;
+.location-vibe-activity > a:hover {
+  text-decoration-color: currentColor;
+}
+
+.location-vibe-preview {
+  width: 260px;
+  padding: 13px 14px;
+  border: 1px solid #b8c8d0;
+  border-top: 5px solid var(--rhythm-color);
+  position: absolute;
+  top: calc(100% + 8px);
+  left: -10px;
+  z-index: 20;
+  visibility: hidden;
+  opacity: 0;
+  color: var(--location-ink);
+  background: #fff;
+  box-shadow: 0 12px 28px rgb(23 33 38 / 18%);
+  pointer-events: none;
+  transform: translateY(4px);
+  transition:
+    opacity 120ms ease,
+    transform 120ms ease,
+    visibility 120ms ease;
+}
+
+.location-vibe-activity:hover .location-vibe-preview,
+.location-vibe-activity:focus-within .location-vibe-preview {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.location-vibe-preview strong,
+.location-vibe-preview span {
+  display: block;
+}
+
+.location-vibe-preview strong {
+  font-size: 13px;
+  line-height: 1.2;
+}
+
+.location-vibe-preview span {
+  margin-top: 5px;
+  color: var(--rhythm-color);
+  font-size: 8px;
+  font-weight: 850;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.location-vibe-preview p {
+  margin: 7px 0 0;
+  color: #4b585f;
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+.location-rhythm-feature-link {
+  margin-top: 13px;
+  display: inline-block;
+  color: var(--location-blue);
+  font-size: 9px;
+  font-weight: 800;
   text-underline-offset: 2px;
+}
+
+.location-vibe-dialog {
+  width: min(100% - 24px, 480px);
+  max-width: none;
+  margin: auto auto 0;
+  padding: 0;
+  border: 0;
+  border-radius: 15px 15px 0 0;
+  color: var(--location-ink);
+  background: transparent;
+}
+
+.location-vibe-dialog::backdrop {
+  background: rgb(23 33 38 / 52%);
+  backdrop-filter: blur(2px);
+}
+
+.location-vibe-dialog > div {
+  padding: 27px 24px 25px;
+  border-top: 7px solid var(--location-work);
+  position: relative;
+  background: var(--location-paper);
+}
+
+.location-vibe-dialog button {
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 1px solid var(--location-rule);
+  border-radius: 50%;
+  position: absolute;
+  top: 15px;
+  right: 16px;
+  color: var(--location-ink);
+  background: #fff;
+  font: inherit;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.location-vibe-dialog > div > p:first-of-type {
+  margin: 0 48px 7px 0;
+  color: var(--location-work);
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.location-vibe-dialog h2 {
+  margin: 0;
+  font-size: 25px;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+}
+
+.location-vibe-dialog h2 + p {
+  margin: 13px 0 18px;
+  color: #4b585f;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.location-vibe-dialog a {
+  color: var(--location-blue);
+  font-size: 12px;
+  font-weight: 800;
+  text-underline-offset: 3px;
 }
 
 .location-rhythm-legend {
@@ -267,6 +410,45 @@ body {
   background: var(--rhythm-color);
 }
 
+.location-base-grid {
+  margin-top: 0;
+  border-top: 1px solid var(--location-rule);
+  border-left: 1px solid var(--location-rule);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.location-base-grid article {
+  min-width: 0;
+  padding: 28px 30px;
+  border-right: 1px solid var(--location-rule);
+  border-bottom: 1px solid var(--location-rule);
+  background: #fff;
+}
+
+.location-base-grid article:first-child {
+  border-top: 6px solid var(--location-work);
+}
+
+.location-base-grid article:last-child {
+  border-top: 6px solid var(--location-family);
+}
+
+.location-base-grid h2 {
+  font-size: clamp(22px, 2.7vw, 31px);
+}
+
+.location-base-grid article > p:not(:first-child) {
+  margin: 14px 0 0;
+  color: #49565d;
+  font-size: 11px;
+  line-height: 1.58;
+}
+
+.location-base-grid .location-item-list {
+  margin-top: 15px;
+}
+
 .location-stay {
   padding: 31px 0;
   border-bottom: 1px solid var(--location-rule);
@@ -311,6 +493,58 @@ body {
   top: 14px;
   left: 0;
   content: "";
+}
+
+.location-feature-plans {
+  margin-top: 22px;
+}
+
+.location-feature-plans article {
+  padding: 31px 36px;
+  border: 1px solid var(--location-rule);
+  border-top: 7px solid var(--location-family);
+  display: grid;
+  grid-template-columns: minmax(230px, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(30px, 6vw, 72px);
+  scroll-margin-top: 90px;
+  background: color-mix(in srgb, var(--location-family) 7%, white);
+}
+
+.location-feature-plans article + article {
+  margin-top: 14px;
+}
+
+.location-feature-plans header > p:last-child {
+  margin: 14px 0 0;
+  color: #49565d;
+  font-size: 12px;
+  line-height: 1.58;
+}
+
+.location-feature-plans .location-item-list li {
+  border-bottom-color: color-mix(
+    in srgb,
+    var(--location-family) 25%,
+    white
+  );
+}
+
+.location-feature-plans .location-item-list li::before {
+  border-color: var(--location-family);
+}
+
+.location-feature-links {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+}
+
+.location-feature-links a {
+  color: var(--location-blue);
+  font-size: 10px;
+  font-weight: 800;
+  text-underline-offset: 3px;
 }
 
 .location-activities {
@@ -511,7 +745,9 @@ body {
 
   .location-rhythm > header,
   .location-stay,
-  .location-activities {
+  .location-base-grid,
+  .location-activities,
+  .location-feature-plans article {
     grid-template-columns: 1fr;
   }
 
@@ -547,6 +783,11 @@ body {
 
   .location-stay {
     gap: 25px;
+  }
+
+  .location-feature-plans article {
+    padding: 26px 24px;
+    gap: 18px;
   }
 
   .location-notes,
@@ -605,7 +846,17 @@ body {
   }
 }
 
+@media (hover: none), (pointer: coarse) {
+  .location-vibe-preview {
+    display: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .location-vibe-preview {
+    transition: none;
+  }
+
   .location-rhythm-track {
     scroll-behavior: auto;
   }

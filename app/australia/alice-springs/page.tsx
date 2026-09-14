@@ -70,16 +70,32 @@ export default function AliceSpringsPage() {
             tone: "work",
             highlights: [
               {
-                title: "Telegraph Station",
-                activityId: "telegraph-station",
+                title: "Alice Springs Telegraph Station",
+                timing: "Easy local half-day",
+                description:
+                  "Close to East Side and useful for telegraph history, museum interpretation and nearby trails.",
+                url: "https://alicespringstelegraphstation.com.au/plan-your-visit/",
               },
               {
-                title: "Olive Pink + Anzac Hill",
-                activityId: "olive-pink-anzac-hill",
+                title: "Olive Pink Botanic Garden",
+                timing: "Short ecology outing",
+                description:
+                  "Use a self-guided walk to study Central Australian plants without consuming the whole afternoon.",
+                url: "https://opbg.com.au/visit/",
               },
               {
                 title: "Araluen Cultural Precinct",
-                activityId: "araluen-cultural-precinct",
+                timing: "Heat, wind or recovery-day option",
+                description:
+                  "Use the galleries and cultural collections when an indoor, lower-energy school-day outing is useful.",
+                url: "https://araluenartscentre.nt.gov.au/more/araluen-cultural-precinct",
+              },
+              {
+                title: "Anzac Hill",
+                timing: "Short sunset outing",
+                description:
+                  "Use the lookout for town orientation and interpretive context rather than treating it as a major excursion.",
+                url: "https://northernterritory.com/alice-springs-and-surrounds/see-and-do/anzac-hill-memorial",
               },
             ],
           },
@@ -89,6 +105,10 @@ export default function AliceSpringsPage() {
             detail: "Tjoritja first; adjust the second day to conditions.",
             days: 2,
             tone: "family",
+            featureLink: {
+              title: "See weekend plan",
+              href: "#red-centre-weekend",
+            },
           },
           {
             label: "Work & School · week two",
@@ -99,15 +119,24 @@ export default function AliceSpringsPage() {
             highlights: [
               {
                 title: "Alice Springs Desert Park",
-                activityId: "alice-springs-desert-park",
+                timing: "Lighter Work & School day",
+                description:
+                  "Allow a substantial half-day and choose programs deliberately instead of squeezing the park into a spare hour.",
+                url: "https://alicespringsdesertpark.com.au/",
               },
               {
-                title: "RFDS + School of the Air",
-                activityId: "rfds-school-of-the-air",
+                title: "Royal Flying Doctor Service",
+                timing: "Program-led afternoon",
+                description:
+                  "Use the museum to understand how medical care reaches isolated communities across the outback.",
+                url: "https://www.rfdsalicesprings.com.au/",
               },
               {
-                title: "Ordinary Alice Springs life",
-                activityId: "ordinary-alice-springs-life",
+                title: "School of the Air",
+                timing: "Weekday learning visit",
+                description:
+                  "Connect the family’s own remote schooling with how education works across enormous outback distances.",
+                url: "https://www.schooloftheair.net.au/the-experience/",
               },
             ],
           },
@@ -119,56 +148,31 @@ export default function AliceSpringsPage() {
             tone: "family",
           },
         ],
+        basePanel: {
+          id: "work-rhythm",
+          eyebrow: "Weekday base",
+          title: "Work & School from Alice Springs",
+          description:
+            "Protect core professional work and academic subjects in a predictable morning block, then use selected afternoons for place-based learning without programming every day.",
+          items: [
+            "Core rhythm — Complete deep work, reading, writing and math before treating an outing as the day's learning.",
+            "Culture and history — Use Telegraph Station and Araluen to examine telegraphy, settlement and Central Australian art with appropriate Arrernte context.",
+            "Remote systems — Connect the Royal Flying Doctor Service and School of the Air to medicine, education and distance.",
+            "Desert lens — Study ecology, water, geology and adaptation at Desert Park and Olive Pink Botanic Garden.",
+            "U.S. overlap — When needed, 6–10 a.m. New York maps to approximately 7:30–11:30 p.m.; do not schedule it every night.",
+          ],
+        },
         stayTitle: alice.base.recommendation,
         stayDescription: alice.base.reason,
         stayChecks: alice.base.requirements,
-        activities: [
+        featurePlans: [
           {
-            id: "tjoritja-weekend",
-            title: "Tjoritja / West MacDonnell Ranges",
-            timing: "Complete middle weekend · Sep 18–19",
-            description:
-              "Use Saturday for a realistic westward line such as Simpsons Gap, Standley Chasm and one farther gorge. Choose Sunday from a second West MacDonnell focus, East MacDonnell country or a slower recovery day; do not try to collect every stop.",
+            id: "red-centre-weekend",
+            eyebrow: "September 18–19 · dedicated trip",
+            title: "Red Centre weekend",
+            description: `${alice.middleWeekend.recommendation} ${alice.middleWeekend.alternative}`,
+            items: alice.middleWeekend.preferredPlan,
             links: [alice.links[2]],
-          },
-          {
-            id: "alice-springs-desert-park",
-            title: alice.workdayAfternoons[0].title,
-            timing: "Substantial half-day or lighter Work & School day",
-            description: alice.workdayAfternoons[0].note,
-            links: [alice.links[3]],
-          },
-          {
-            id: "telegraph-station",
-            title: alice.workdayAfternoons[1].title,
-            timing: "Easy East Side afternoon",
-            description: alice.workdayAfternoons[1].note,
-          },
-          {
-            id: "rfds-school-of-the-air",
-            title: "Royal Flying Doctor Service + School of the Air",
-            timing: "One program-led afternoon",
-            description:
-              "Pair two of the clearest windows into the logistics of remote Australian life. Use published tour times rather than assuming both can be dropped into any afternoon.",
-          },
-          {
-            id: "araluen-cultural-precinct",
-            title: alice.workdayAfternoons[2].title,
-            timing: "Heat, wind or recovery-day option",
-            description: alice.workdayAfternoons[2].note,
-          },
-          {
-            id: "olive-pink-anzac-hill",
-            title: "Olive Pink Botanic Garden + Anzac Hill",
-            timing: "Short outing or sunset",
-            description:
-              "Use these as flexible local ecology and orientation stops, not as substitutes for the complete outback weekend.",
-          },
-          {
-            id: "ordinary-alice-springs-life",
-            title: "Ordinary Alice Springs life",
-            timing: "Leave several afternoons unbooked",
-            description: alice.workdayAfternoons[5].note,
           },
         ],
         panels: [
@@ -179,36 +183,10 @@ export default function AliceSpringsPage() {
             items: alice.season.notes,
           },
           {
-            id: "work-rhythm",
-            eyebrow: "September 13–24",
-            title: "Weekday rhythm",
-            description:
-              "Keep core professional work and school in a predictable morning block, then use selected afternoons for place-based learning without programming every day.",
-            items: [
-              "Work — Use a substantial local-morning block for deep work while the children complete core schoolwork.",
-              "School — Protect reading, writing and math before treating an outing as the day's learning.",
-              "Place-based learning — Use the Telegraph Station, Araluen Cultural Precinct and Olive Pink Botanic Garden as flexible school-day options.",
-              "Longer learning day — Put Desert Park or the Royal Flying Doctor Service and School of the Air on a lighter day and follow their published program times.",
-              "U.S. overlap — When live overlap is needed, 6–10 a.m. New York maps to approximately 7:30–11:30 p.m. in Alice Springs; do not schedule it every night.",
-            ],
-          },
-          {
-            id: "weekend",
-            eyebrow: "September 18–19",
-            title: "Keep the house for the Red Centre weekend",
-            description: `${alice.middleWeekend.recommendation} ${alice.middleWeekend.alternative}`,
-            items: alice.middleWeekend.preferredPlan,
-          },
-          {
             eyebrow: "Deliberate exclusion",
             title: "Uluru is a separate vacation decision",
             description: alice.uluruDecision.reason,
             items: alice.uluruDecision.revisitIf,
-          },
-          {
-            eyebrow: "Place-based learning",
-            title: "Homeschool hooks",
-            items: alice.homeschool,
           },
         ],
         bookFirst: alice.bookFirst,
