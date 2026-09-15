@@ -74,6 +74,7 @@ export type LocationPagePlan = {
   rhythmTitle: string;
   rhythmSummary: string;
   rhythm: LocationRhythmSegment[];
+  mobileRhythmLayout?: "overview-cards";
   basePanel: LocationPanel;
   stayTitle: string;
   stayDescription: string;

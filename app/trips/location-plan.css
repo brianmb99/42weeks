@@ -132,6 +132,11 @@ body {
   background: #fff;
 }
 
+.location-rhythm-mobile-map,
+.location-rhythm-mobile-map-note {
+  display: none;
+}
+
 .location-rhythm-track > li {
   --rhythm-color: var(--location-arrival);
   min-width: 0;
@@ -797,6 +802,105 @@ body {
   .location-rhythm-track > li.has-highlights {
     min-width: 280px;
     flex-basis: 280px;
+  }
+
+  .location-rhythm.has-mobile-overview-cards .location-rhythm-mobile-map {
+    height: 34px;
+    margin-top: 25px;
+    border: 1px solid var(--location-rule);
+    display: flex;
+    overflow: hidden;
+    background: #fff;
+  }
+
+  .location-rhythm-mobile-map > span {
+    --rhythm-color: var(--location-arrival);
+    min-width: 0;
+    border-top: 5px solid var(--rhythm-color);
+    flex: var(--rhythm-days) 1 0;
+    background: color-mix(in srgb, var(--rhythm-color) 14%, white);
+  }
+
+  .location-rhythm-mobile-map > span + span {
+    border-left: 1px solid var(--location-rule);
+  }
+
+  .location-rhythm-mobile-map > .is-work {
+    --rhythm-color: var(--location-work);
+  }
+
+  .location-rhythm-mobile-map > .is-family {
+    --rhythm-color: var(--location-family);
+  }
+
+  .location-rhythm-mobile-map > .is-vacation {
+    --rhythm-color: var(--location-vacation);
+  }
+
+  .location-rhythm-mobile-map > .is-travel {
+    --rhythm-color: var(--location-travel);
+  }
+
+  .location-rhythm.has-mobile-overview-cards
+    .location-rhythm-mobile-map-note {
+    margin: 7px 0 0;
+    display: block;
+    color: var(--location-muted);
+    font-size: 8px;
+    font-weight: 750;
+    letter-spacing: 0.04em;
+    text-align: right;
+    text-transform: uppercase;
+  }
+
+  .location-rhythm.has-mobile-overview-cards .location-rhythm-track {
+    margin-top: 14px;
+    border: 0;
+    display: grid;
+    gap: 10px;
+    overflow: visible;
+    scroll-snap-type: none;
+    background: transparent;
+  }
+
+  .location-rhythm.has-mobile-overview-cards .location-rhythm-track > li,
+  .location-rhythm.has-mobile-overview-cards
+    .location-rhythm-track
+    > li.has-highlights {
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+    padding: 16px 15px 15px;
+    border: 1px solid var(--location-rule);
+    border-top: 5px solid var(--rhythm-color);
+    flex-basis: auto;
+    scroll-snap-align: none;
+  }
+
+  .location-rhythm.has-mobile-overview-cards
+    .location-rhythm-track
+    > li
+    + li {
+    border-left: 1px solid var(--location-rule);
+  }
+
+  .location-rhythm.has-mobile-overview-cards
+    .location-rhythm-track
+    > li
+    > strong {
+    font-size: 15px;
+  }
+
+  .location-rhythm.has-mobile-overview-cards
+    .location-rhythm-track
+    > li
+    > small {
+    max-width: 55ch;
+    font-size: 10px;
+  }
+
+  .location-rhythm.has-mobile-overview-cards .location-rhythm-mobile-hint {
+    display: none;
   }
 
   .location-rhythm-mobile-hint {

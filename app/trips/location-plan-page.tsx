@@ -46,6 +46,8 @@ export default function LocationPlanPage({
   source,
 }: LocationPlanPageProps) {
   const tones = Array.from(new Set(plan.rhythm.map((segment) => segment.tone)));
+  const usesMobileOverviewCards =
+    plan.mobileRhythmLayout === "overview-cards";
 
   return (
     <>
@@ -74,7 +76,12 @@ export default function LocationPlanPage({
           />
         )}
 
-        <section className="location-rhythm" aria-labelledby="location-rhythm-title">
+        <section
+          className={`location-rhythm${
+            usesMobileOverviewCards ? " has-mobile-overview-cards" : ""
+          }`}
+          aria-labelledby="location-rhythm-title"
+        >
           <header>
             <div>
               <p>Stay rhythm</p>
@@ -82,6 +89,37 @@ export default function LocationPlanPage({
             </div>
             <p>{plan.rhythmSummary}</p>
           </header>
+          {usesMobileOverviewCards && (
+            <div
+              className="location-rhythm-mobile-map"
+              role="img"
+              aria-label={`${plan.title} proportional stay overview: ${plan.rhythm
+                .map(
+                  (segment) =>
+                    `${segment.label}, ${segment.days} ${
+                      segment.days === 1 ? "day" : "days"
+                    }`,
+                )
+                .join("; ")}`}
+            >
+              {plan.rhythm.map((segment) => (
+                <span
+                  className={`is-${segment.tone}`}
+                  style={
+                    { "--rhythm-days": segment.days } as CSSProperties
+                  }
+                  title={`${segment.dates} · ${segment.label}`}
+                  aria-hidden="true"
+                  key={`${segment.dates}-${segment.label}`}
+                />
+              ))}
+            </div>
+          )}
+          {usesMobileOverviewCards && (
+            <p className="location-rhythm-mobile-map-note" aria-hidden="true">
+              Width shows time · details follow
+            </p>
+          )}
           <ol
             className="location-rhythm-track"
             aria-label={`${plan.title} stay rhythm`}
@@ -119,9 +157,11 @@ export default function LocationPlanPage({
               </li>
             ))}
           </ol>
-          <p className="location-rhythm-mobile-hint" aria-hidden="true">
-            Swipe to see the whole stay →
-          </p>
+          {!usesMobileOverviewCards && (
+            <p className="location-rhythm-mobile-hint" aria-hidden="true">
+              Swipe to see the whole stay →
+            </p>
+          )}
           <div className="location-rhythm-legend" aria-label="Rhythm colors">
             {tones.map((tone) => (
               <span className={`is-${tone}`} key={tone}>

@@ -53,6 +53,7 @@ export default function AliceSpringsPage() {
         rhythmTitle: "Two Work & School weeks, one real outback weekend",
         rhythmSummary:
           "Keeping one house for fourteen nights is what makes a credible weekday routine possible. Core work and school stay protected; short local outings become place-based learning, while the complete middle weekend carries the remote driving.",
+        mobileRhythmLayout: "overview-cards",
         rhythm: [
           {
             label: "Arrive and set up",

@@ -307,6 +307,9 @@ test("server-renders Alice Springs, Brisbane and Wānaka glance-first plans", as
         /class="location-rhythm-track"/,
         /Two full Work &amp; School weeks/,
         /Work &amp; School · week one/,
+        /class="location-rhythm has-mobile-overview-cards"/,
+        /class="location-rhythm-mobile-map"/,
+        /Width shows time · details follow/,
         /class="location-vibe-preview"/,
         /class="location-vibe-dialog"/,
         /href="https:\/\/alicespringstelegraphstation\.com\.au\/plan-your-visit\/"/,
@@ -326,6 +329,7 @@ test("server-renders Alice Springs, Brisbane and Wānaka glance-first plans", as
         /The weekdays are part of the outback experience/,
         /What fits here/,
         /Ordinary Alice Springs life/,
+        /Swipe to see the whole stay/,
         /6–10 a\.m\. New York/,
         /do not schedule it every night/,
       ],
@@ -351,6 +355,7 @@ test("server-renders Alice Springs, Brisbane and Wānaka glance-first plans", as
       absent: [
         /location-weekday-highlights/,
         /What fits here/,
+        /has-mobile-overview-cards/,
         /local-morning work block/,
       ],
       highlightedSegments: 1,
@@ -377,6 +382,7 @@ test("server-renders Alice Springs, Brisbane and Wānaka glance-first plans", as
       absent: [
         /location-weekday-highlights/,
         /What fits here/,
+        /has-mobile-overview-cards/,
         /5 a\.m\.–1 p\.m\./,
         /Three four-hour anchor days/,
       ],
