@@ -537,6 +537,35 @@ export default function Home() {
                       );
                     })}
                   </ol>
+                  <ol className="home-overview-key">
+                    {row.blocks.map((block) => {
+                      const content = (
+                        <>
+                          <strong>{block.title}</strong>
+                          <time>
+                            {formatDate(block.start)}–{formatDate(block.end)}
+                          </time>
+                        </>
+                      );
+
+                      return (
+                        <li
+                          key={`${block.id}-key`}
+                          style={
+                            {
+                              "--place-color": block.color,
+                            } as CSSProperties
+                          }
+                        >
+                          {block.href ? (
+                            <a href={sitePath(block.href)}>{content}</a>
+                          ) : (
+                            content
+                          )}
+                        </li>
+                      );
+                    })}
+                  </ol>
                 </section>
               );
             })}

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { australiaStops } from "../../data/australia-pages";
 import { sitePath } from "../../lib/site-path";
+import RegionRhythm from "../trips/region-rhythm";
 import SiteNav from "../site-nav";
 import "../trips/australia.css";
 
@@ -31,10 +32,13 @@ export default function AustraliaPage() {
           </p>
         </header>
 
-        <section className="aus-route-intro" aria-labelledby="aus-route-title">
-          <p>In order</p>
-          <h2 id="aus-route-title">Seven pieces of the Australia plan</h2>
-        </section>
+        <RegionRhythm
+          headingId="aus-route-title"
+          label="Australia stay sequence"
+          title="Seven pieces of the Australia plan"
+          summary="Each block is proportional to nights in that place. Linked stops open their detail plans."
+          stops={australiaStops}
+        />
 
         <section className="aus-route-grid" aria-label="Australia trip sections">
           {australiaStops.map((stop) => (

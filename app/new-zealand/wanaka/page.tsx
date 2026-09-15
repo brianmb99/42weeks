@@ -56,6 +56,7 @@ export default function WanakaPage() {
         rhythm: [
           {
             label: "Arrive and settle",
+            mapLabel: "Arrive",
             dates: "Sun, Nov 28",
             detail: "Queenstown connection, drive, groceries and sleep.",
             days: 1,
@@ -63,6 +64,7 @@ export default function WanakaPage() {
           },
           {
             label: "Work & School · week one",
+            mapLabel: "Week one",
             dates: "Nov 29–Dec 3",
             detail: "Protected commitments with flexible local outings.",
             days: 5,
@@ -100,6 +102,7 @@ export default function WanakaPage() {
           },
           {
             label: "Local weekend",
+            mapLabel: "Weekend",
             dates: "Dec 4–5",
             detail: "One larger outing and one recovery day.",
             days: 2,
@@ -111,6 +114,7 @@ export default function WanakaPage() {
           },
           {
             label: "Work & School · three days",
+            mapLabel: "Three days",
             dates: "Dec 6–8",
             detail: "Protected commitments; keep optional plans nearby.",
             days: 3,
@@ -134,6 +138,7 @@ export default function WanakaPage() {
           },
           {
             label: "Mini-vacation",
+            mapLabel: "Mini-vac",
             dates: "Dec 9–12",
             detail: "Two leave days plus the weekend; follow the forecast.",
             days: 4,
@@ -145,6 +150,7 @@ export default function WanakaPage() {
           },
           {
             label: "Work & School · final week",
+            mapLabel: "Final week",
             dates: "Dec 13–17",
             detail: "Protected commitments and gradual packing for home.",
             days: 5,

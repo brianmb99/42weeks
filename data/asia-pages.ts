@@ -2,6 +2,45 @@ import type { LocationPagePlan } from "./location-page-types";
 
 export type AsiaLocationSlug = "singapore" | "hong-kong";
 
+export const asiaStops = [
+  {
+    title: "India",
+    mapLabel: "India",
+    dates: "Oct 24–Nov 13",
+    days: 21,
+    color: "#a95f27",
+    mode: "Family base + work",
+    description:
+      "The longer stay is primarily for family in Dehradun. Base there for at least a week with a credible Work & School routine, then fit only selective travel around family time, Diwali, and work.",
+  },
+  {
+    title: "Singapore",
+    mapLabel: "Singapore",
+    dates: "Nov 14–20",
+    days: 7,
+    color: "#c8752e",
+    mode: "One bounded office week",
+    description:
+      "A compact, easy-to-navigate work base with strong food, gardens, transit, and family-friendly city days.",
+    href: "/asia/singapore",
+    image: "/images/asia/singapore-gardens-bay.jpg",
+    alt: "Gardens by the Bay and Marina Bay Sands at dusk in Singapore",
+  },
+  {
+    title: "Hong Kong",
+    mapLabel: "Hong Kong",
+    dates: "Nov 21–27",
+    days: 7,
+    color: "#d68b43",
+    mode: "Thanksgiving office week",
+    description:
+      "Keep the office commitment compact, use the Thanksgiving break intelligently, and preserve Saturday before the overnight flight.",
+    href: "/asia/hong-kong",
+    image: "/images/asia/hong-kong-peak.jpg",
+    alt: "Victoria Harbour and Hong Kong's skyline viewed from Victoria Peak",
+  },
+] as const;
+
 export const asiaLocationPages: Record<AsiaLocationSlug, LocationPagePlan> = {
   singapore: {
     eyebrow: "Asia · bounded office week",
@@ -42,6 +81,7 @@ export const asiaLocationPages: Record<AsiaLocationSlug, LocationPagePlan> = {
     rhythm: [
       {
         label: "Arrive and establish",
+        mapLabel: "Arrive",
         dates: "Sun, Nov 14",
         detail: "India flight, groceries, transit and workspace test.",
         days: 1,
@@ -49,6 +89,7 @@ export const asiaLocationPages: Record<AsiaLocationSlug, LocationPagePlan> = {
       },
       {
         label: "Work & School · office week",
+        mapLabel: "Office",
         dates: "Nov 15–19",
         detail: "Bounded weekdays with one compact outing at a time.",
         days: 5,
@@ -86,6 +127,7 @@ export const asiaLocationPages: Record<AsiaLocationSlug, LocationPagePlan> = {
       },
       {
         label: "Family Saturday",
+        mapLabel: "Sat",
         dates: "Sat, Nov 20",
         detail: "Choose one major day; do not stack three attractions.",
         days: 1,
@@ -301,6 +343,7 @@ export const asiaLocationPages: Record<AsiaLocationSlug, LocationPagePlan> = {
     rhythm: [
       {
         label: "Arrive and orient",
+        mapLabel: "Arrive",
         dates: "Sun, Nov 21",
         detail: "Singapore flight, MTR, groceries and workspace.",
         days: 1,
@@ -308,6 +351,7 @@ export const asiaLocationPages: Record<AsiaLocationSlug, LocationPagePlan> = {
       },
       {
         label: "Work & School · office days",
+        mapLabel: "Office",
         dates: "Nov 22–24",
         detail: "Three full office and school days.",
         days: 3,
@@ -345,6 +389,7 @@ export const asiaLocationPages: Record<AsiaLocationSlug, LocationPagePlan> = {
       },
       {
         label: "Thanksgiving",
+        mapLabel: "Thanks.",
         dates: "Thu, Nov 25",
         detail: "Principal family day; hike or cultural fallback.",
         days: 1,
@@ -356,6 +401,7 @@ export const asiaLocationPages: Record<AsiaLocationSlug, LocationPagePlan> = {
       },
       {
         label: "Work & School · Friday",
+        mapLabel: "Friday",
         dates: "Fri, Nov 26",
         detail: "Bounded commitments, then a city evening.",
         days: 1,
@@ -363,6 +409,7 @@ export const asiaLocationPages: Record<AsiaLocationSlug, LocationPagePlan> = {
       },
       {
         label: "City + overnight flight",
+        mapLabel: "Fly",
         dates: "Sat, Nov 27",
         detail: "Keep luggage central; finish four hours before departure.",
         days: 1,

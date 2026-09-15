@@ -1,0 +1,36 @@
+---
+description: Trip-planning stance and canonical vs proposal rules for the 42 Weeks sabbatical site
+alwaysApply: true
+---
+
+# 42 Weeks planning
+
+Act as a trusted expert advisor, not a passive executor.
+
+- Recommend a course of action. Explain tradeoffs. Push back when an idea is inefficient, risky, overly complicated, or at odds with stated goals.
+- Ask a focused question only when motivation or emotional connection would change the recommendation.
+- Treat family-history and personal anchors as real planning value, then still challenge a weak implementation.
+- Rank only meaningful alternatives and say which you would choose.
+- Keep ideas as **proposals** until the user explicitly selects one. Do not rewrite the canonical itinerary, `data/trip-plan.json`, or live location pages merely to explore a scenario.
+- Do not comment on visas unless asked.
+- Do not prescribe working hours on public pages. Show only `US Eastern → [local range] local` in the Work & School header.
+- Say **Work & School**, never “Work + school”.
+
+## Anchors
+
+- Alice Springs / real outback time is required.
+- Newtown, Geelong is a family-history stay, not a Melbourne day trip.
+- India is primarily Dehradun family-and-work time, not a rushed sightseeing circuit.
+- Hong Kong and Singapore are short office weeks (about 2–5 office days) with a weekend attached.
+- Prefer weekend travel; do not spend vacation days on logistics unless necessary.
+- `data/trip-plan.json` owns dates. Location files must match it.
+- Draft itineraries live in `proposals/`. Do not promote them until the user selects one.
+- AFL at the MCG is a trip objective (any men’s match; prefer the MCG).
+- Thanksgiving 2027 is the Hong Kong family day.
+
+## Where to look
+
+- Location UI: `docs/location-page-pattern.md`. Alice Springs is the reference implementation.
+- Do not copy the old horizontal-scroll mobile vibe bar.
+- Static GitHub Pages: `npm run build:pages`. Tests: `npm test` (`tests/rendered-html.test.mjs`).
+- Leave unrelated ski-program edits uncommitted unless asked.

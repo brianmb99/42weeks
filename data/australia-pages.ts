@@ -42,7 +42,10 @@ export type AustraliaCity = {
 export const australiaStops = [
   {
     title: "Melbourne",
+    mapLabel: "Melb",
     dates: "Aug 23–28",
+    days: 6,
+    color: "#76abc8",
     mode: "Landing and work launch",
     description:
       "Recover from the weekend flight, establish the first work and homeschool rhythm, and target any available men's AFL match at the MCG.",
@@ -52,7 +55,10 @@ export const australiaStops = [
   },
   {
     title: "Newtown, Geelong",
+    mapLabel: "Geelong",
     dates: "Aug 29–Sep 4",
+    days: 7,
+    color: "#397ca6",
     mode: "Family-history work week",
     description:
       "Live in the neighborhood for a full week, work and homeschool normally, and preserve afternoons, evenings and Saturday for remembered places and Queenscliff.",
@@ -62,7 +68,10 @@ export const australiaStops = [
   },
   {
     title: "Great Ocean Road Loop",
+    mapLabel: "Road",
     dates: "Sep 5–11",
+    days: 7,
+    color: "#5592b7",
     mode: "Vacation",
     description:
       "Seven early-spring days through the Surf Coast, Otways, Shipwreck Coast, Gariwerd and Sovereign Hill; Labor Day plus four vacation weekdays.",
@@ -72,7 +81,10 @@ export const australiaStops = [
   },
   {
     title: "Alice Springs",
+    mapLabel: "Alice",
     dates: "Sep 12–25",
+    days: 14,
+    color: "#b87345",
     mode: "Two-week outback work base",
     description:
       "Live and work in the Red Centre for two weeks, using the complete middle weekend for Tjoritja and ordinary afternoons for Alice Springs.",
@@ -82,7 +94,10 @@ export const australiaStops = [
   },
   {
     title: "Sydney",
+    mapLabel: "Sydney",
     dates: "Sep 26–Oct 9",
+    days: 14,
+    color: "#5f91b7",
     mode: "Two-week beach work base",
     description:
       "Work from a real neighborhood near the beach, preserve a complete middle weekend, and reserve one evening for the Sydney Opera House.",
@@ -92,7 +107,10 @@ export const australiaStops = [
   },
   {
     title: "Whitsundays",
+    mapLabel: "Whit",
     dates: "Oct 10–16",
+    days: 7,
+    color: "#4f9eb3",
     mode: "Work, reef and expedition",
     description:
       "Two dependable workdays, a dedicated Hardy Reef day and a weather-dependent three-day family sea-kayak expedition.",
@@ -102,7 +120,10 @@ export const australiaStops = [
   },
   {
     title: "Brisbane",
+    mapLabel: "Bris",
     dates: "Oct 17–22",
+    days: 6,
+    color: "#4f7fa2",
     mode: "Work and repacking base",
     description:
       "Finish Australia with one dependable work week, laundry and deliberate packing before the weekend flight to India.",
@@ -136,6 +157,7 @@ export const australiaCities: Record<AustraliaCity["slug"], AustraliaCity> = {
     rhythm: [
       {
         label: "Move and settle",
+        mapLabel: "Settle",
         dates: "Sun, Aug 29",
         detail: "Melbourne to Newtown; groceries and work setup.",
         days: 1,
@@ -143,6 +165,7 @@ export const australiaCities: Record<AustraliaCity["slug"], AustraliaCity> = {
       },
       {
         label: "Newtown Work & School week",
+        mapLabel: "Week",
         dates: "Aug 30–Sep 3",
         detail: "Protected commitments with flexible family-history time.",
         days: 5,
@@ -180,6 +203,7 @@ export const australiaCities: Record<AustraliaCity["slug"], AustraliaCity> = {
       },
       {
         label: "Local Saturday",
+        mapLabel: "Sat",
         dates: "Sat, Sep 4",
         detail: "Return visits, Queenscliff, or an MCG match if needed.",
         days: 1,
@@ -330,6 +354,7 @@ export const australiaCities: Record<AustraliaCity["slug"], AustraliaCity> = {
     rhythm: [
       {
         label: "Land and recover",
+        mapLabel: "Land",
         dates: "Mon, Aug 23",
         detail: "Apartment, groceries, sleep and only essential work.",
         days: 1,
@@ -337,6 +362,7 @@ export const australiaCities: Record<AustraliaCity["slug"], AustraliaCity> = {
       },
       {
         label: "Work & School launch",
+        mapLabel: "Launch",
         dates: "Aug 24–27",
         detail: "Protected commitments with flexible city outings.",
         days: 4,
@@ -374,6 +400,7 @@ export const australiaCities: Record<AustraliaCity["slug"], AustraliaCity> = {
       },
       {
         label: "MCG / city window",
+        mapLabel: "MCG",
         dates: "Sat, Aug 28",
         detail: "Use the fixture first; keep a flexible city fallback.",
         days: 1,
@@ -525,6 +552,7 @@ export const australiaCities: Record<AustraliaCity["slug"], AustraliaCity> = {
     rhythm: [
       {
         label: "Arrive and settle",
+        mapLabel: "Arrive",
         dates: "Sun, Sep 26",
         detail: "Alice Springs flight, groceries and beach orientation.",
         days: 1,
@@ -532,6 +560,7 @@ export const australiaCities: Record<AustraliaCity["slug"], AustraliaCity> = {
       },
       {
         label: "Work & School · week one",
+        mapLabel: "Week one",
         dates: "Sep 27–Oct 1",
         detail: "Protected commitments with easy access to the water.",
         days: 5,
@@ -555,6 +584,7 @@ export const australiaCities: Record<AustraliaCity["slug"], AustraliaCity> = {
       },
       {
         label: "Full Sydney weekend",
+        mapLabel: "Weekend",
         dates: "Oct 2–3",
         detail: "Harbour, coast, zoo or one major family plan.",
         days: 2,
@@ -566,6 +596,7 @@ export const australiaCities: Record<AustraliaCity["slug"], AustraliaCity> = {
       },
       {
         label: "Work & School · week two",
+        mapLabel: "Week two",
         dates: "Oct 4–8",
         detail: "Normal routine plus one Opera House evening.",
         days: 5,
@@ -593,6 +624,7 @@ export const australiaCities: Record<AustraliaCity["slug"], AustraliaCity> = {
       },
       {
         label: "Local Saturday",
+        mapLabel: "Sat",
         dates: "Sat, Oct 9",
         detail: "Keep the last day nearby before Sunday travel.",
         days: 1,

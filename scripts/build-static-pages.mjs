@@ -12,6 +12,7 @@ const routes = [
   "/",
   "/calendar",
   "/australia",
+  "/asia",
   "/australia/geelong",
   "/australia/melbourne",
   "/australia/alice-springs",

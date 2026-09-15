@@ -1,10 +1,10 @@
 # Location page pattern
 
-Use `LocationPlanPage` for city and working-base pages. The page should let a reader understand the stay in under a minute, then provide enough detail to plan it.
+Use `LocationPlanPage` for city and working-base pages. The page should let a reader understand the stay in under a minute, then provide enough detail to plan it. **Alice Springs is the reference implementation.**
 
 ## Required information order
 
-1. **Purpose and facts** — why this stop exists, exact dates, nights, and work/vacation character.
+1. **Purpose and facts** — why this stop exists, exact dates, nights, and Work & School / vacation character.
 2. **Photographs** — three useful, locally stored images with descriptive alt text, credit, and source.
 3. **Vibe bar / stay rhythm** — a compact, chronological strip showing how the days divide among arrival, Work & School, family time, vacation, and travel.
 4. **Base setup** — paired boxes for Work & School and Where to Stay. For vacation stops, replace Work & School with the most useful pacing or logistics box.
@@ -23,7 +23,14 @@ Use `LocationPlanPage` for city and working-base pages. The page should let a re
 - Each idea carries a title, timing guideline and one-sentence detail. Show that preview on hover or keyboard focus; on touch devices, open it in an accessible bottom sheet with the external link.
 - Treat ideas as a practical menu for that block, not reserved dates. The preview should retain weather, timing and energy caveats.
 - Link major rhythm segments to dedicated on-page experience boxes.
+- Give every segment a short `mapLabel` that still identifies it (e.g. `Week one`, `Arrive`, `Pack`).
+- **Desktop:** keep the proportional strip with full labels and in-block links.
+- **Mobile:** do not horizontally scroll the strip. Show a compact full-width map with horizontal `mapLabel`s, then stacked cards for dates, day counts, copy, and links. Default `mobileRhythmLayout` is `overview-cards`.
 - Preserve important fragment IDs such as `work-rhythm`, `weekend`, and `mini-vacation` in deeper planning boxes.
+
+## Regional overview bars
+
+Australia and Asia hub pages should include a location-only proportional bar (stop sequence, not weekday ideas), in the same family as “Where the weeks go” on the homepage. On mobile, keep true proportional widths; put names and dates in a key under the bar rather than stacking every block to full width.
 
 ## Activity rules
 

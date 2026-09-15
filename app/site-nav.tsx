@@ -11,13 +11,13 @@ export type AustraliaNavPage =
   | "whitsundays"
   | "brisbane"
   | "outback";
-export type AsiaNavPage = "singapore" | "hong-kong";
+export type AsiaNavPage = "overview" | "singapore" | "hong-kong";
 
 const navItems: Array<{ id: NavPage; label: string; href: string }> = [
   { id: "home", label: "Home", href: "/" },
   { id: "calendar", label: "Calendar", href: "/calendar" },
   { id: "australia", label: "Australia", href: "/australia" },
-  { id: "asia", label: "Asia", href: "/#asia" },
+  { id: "asia", label: "Asia", href: "/asia" },
   { id: "new-zealand", label: "New Zealand", href: "/new-zealand/wanaka" },
 ];
 
@@ -57,6 +57,7 @@ const asiaNavItems: Array<{
   label: string;
   href: string;
 }> = [
+  { id: "overview", label: "Overview", href: "/asia" },
   { id: "singapore", label: "Singapore", href: "/asia/singapore" },
   { id: "hong-kong", label: "Hong Kong", href: "/asia/hong-kong" },
 ];

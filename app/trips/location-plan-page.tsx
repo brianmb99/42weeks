@@ -46,8 +46,7 @@ export default function LocationPlanPage({
   source,
 }: LocationPlanPageProps) {
   const tones = Array.from(new Set(plan.rhythm.map((segment) => segment.tone)));
-  const usesMobileOverviewCards =
-    plan.mobileRhythmLayout === "overview-cards";
+  const usesMobileOverviewCards = plan.mobileRhythmLayout !== "scroll";
 
   return (
     <>

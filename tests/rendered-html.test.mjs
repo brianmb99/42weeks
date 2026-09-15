@@ -68,6 +68,7 @@ test("server-renders the 42 Weeks overview", async () => {
     html,
     /aria-label="Time-scaled trip overview; each row represents 90 days"/,
   );
+  assert.match(html, /class="home-overview-key"/);
   assert.equal((html.match(/data-overview-row=/g) ?? []).length, 6);
   assert.equal((html.match(/data-overview-block=/g) ?? []).length, 14);
   assert.match(html, /90-day scale/);
@@ -170,6 +171,11 @@ test("server-renders the Australia hub and regional navigation", async () => {
     assert.match(html, new RegExp(`>${label}<`));
   }
   assert.equal((html.match(/class="aus-route-card"/g) ?? []).length, 7);
+  assert.match(html, /class="region-rhythm"/);
+  assert.match(html, /class="region-rhythm-map"/);
+  assert.match(html, /<b>Melb<\/b>/);
+  assert.match(html, /<b>Alice<\/b>/);
+  assert.match(html, /<b>Whit<\/b>/);
   assert.match(html, /\/australia\/geelong/);
   assert.match(html, /\/australia\/melbourne/);
   assert.match(html, /\/australia\/sydney/);
@@ -179,6 +185,30 @@ test("server-renders the Australia hub and regional navigation", async () => {
   assert.match(html, /\/australia\/brisbane/);
   assert.match(html, /\/images\/australia\/geelong-waterfront\.jpg/);
   assert.match(html, /\/images\/australia\/sydney-opera-house\.jpg/);
+  assertNoHotlinkedPhotos(html);
+});
+
+test("server-renders the Asia hub and regional navigation", async () => {
+  const response = await render("/asia");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+
+  assert.match(html, /<title>Asia/);
+  assert.match(html, /href="\/asia" aria-current="page">Asia/);
+  assert.match(html, /class="site-subnav"/);
+  assert.match(html, /aria-label="Asia"/);
+  assert.match(html, /aria-current="page">Overview/);
+  assert.match(html, />Singapore</);
+  assert.match(html, />Hong Kong</);
+  assert.match(html, /class="region-rhythm"/);
+  assert.match(html, /<b>India<\/b>/);
+  assert.match(html, /<b>Singapore<\/b>/);
+  assert.match(html, /Dehradun family/);
+  assert.match(html, /Detail page not yet written/);
+  assert.match(html, /\/asia\/singapore/);
+  assert.match(html, /\/asia\/hong-kong/);
+  assert.match(html, /\/images\/asia\/singapore-gardens-bay\.jpg/);
+  assert.match(html, /\/images\/asia\/hong-kong-peak\.jpg/);
   assertNoHotlinkedPhotos(html);
 });
 
@@ -268,6 +298,8 @@ test("server-renders Geelong, Melbourne and Sydney planning pages", async () => 
       3,
     );
     assert.match(html, /class="location-rhythm-track"/);
+    assert.match(html, /class="location-rhythm has-mobile-overview-cards"/);
+    assert.match(html, /class="location-rhythm-mobile-map"/);
     assert.match(html, /class="location-base-grid"/);
     assert.match(html, /class="location-vibe-preview"/);
     assert.match(html, /class="location-vibe-dialog"/);
@@ -358,7 +390,6 @@ test("server-renders Alice Springs, Brisbane and Wānaka glance-first plans", as
       absent: [
         /location-weekday-highlights/,
         /What fits here/,
-        /has-mobile-overview-cards/,
         /local-morning work block/,
       ],
       highlightedSegments: 1,
@@ -385,7 +416,6 @@ test("server-renders Alice Springs, Brisbane and Wānaka glance-first plans", as
       absent: [
         /location-weekday-highlights/,
         /What fits here/,
-        /has-mobile-overview-cards/,
         /5 a\.m\.–1 p\.m\./,
         /Three four-hour anchor days/,
       ],
@@ -425,6 +455,8 @@ test("server-renders Alice Springs, Brisbane and Wānaka glance-first plans", as
       (html.match(/<figure(?: class="is-featured")?>/g) ?? []).length,
       3,
     );
+    assert.match(html, /class="location-rhythm has-mobile-overview-cards"/);
+    assert.match(html, /class="location-rhythm-mobile-map"/);
     assert.match(html, /Open exact calendar/);
     assertNoHotlinkedPhotos(html);
     assertUsesImperialUnits(html);
@@ -477,14 +509,17 @@ test("server-renders Singapore and Hong Kong location plans", async () => {
     const response = await render(route.path);
     assert.equal(response.status, 200);
     const html = await response.text();
-    assert.match(html, /href="\/#asia" aria-current="page">Asia/);
+    assert.match(html, /href="\/asia" aria-current="page">Asia/);
     assert.match(html, /class="site-subnav"/);
     assert.match(html, /aria-label="Asia"/);
+    assert.match(html, /href="\/asia">Overview</);
     assert.match(
       html,
       new RegExp(`aria-current="page">${route.current}<`),
     );
     assert.match(html, /class="location-rhythm-track"/);
+    assert.match(html, /class="location-rhythm has-mobile-overview-cards"/);
+    assert.match(html, /class="location-rhythm-mobile-map"/);
     assert.match(html, /class="location-base-grid"/);
     assert.match(html, /class="location-vibe-preview"/);
     assert.match(html, /class="location-vibe-dialog"/);

@@ -306,6 +306,27 @@ body {
   line-height: 1.5;
 }
 
+.aus-route-card.is-plain {
+  color: var(--aus-ink);
+  background: color-mix(in srgb, var(--place-color, #a95f27) 16%, #fff);
+}
+
+.aus-route-card.is-plain::after {
+  display: none;
+}
+
+.aus-route-card.is-plain > div {
+  position: relative;
+}
+
+.aus-route-card.is-plain span {
+  color: var(--aus-muted);
+}
+
+.aus-route-card.is-plain p {
+  color: #536067;
+}
+
 .aus-route-card strong {
   margin-top: 14px;
   display: block;

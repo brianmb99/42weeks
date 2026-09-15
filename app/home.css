@@ -349,6 +349,10 @@ body {
   font-variant-numeric: tabular-nums;
 }
 
+.home-overview-key {
+  display: none;
+}
+
 .home-trip-collage {
   width: min(1320px, calc(100% - 48px));
   margin-bottom: 62px;
@@ -789,26 +793,72 @@ body {
   }
 
   .home-overview-track {
-    min-height: 0;
-    border-bottom: 0;
-    display: block;
-    background: rgb(255 255 255 / 28%);
+    min-height: 40px;
   }
 
   .home-overview-track li {
-    width: 100%;
-    min-height: 58px;
-    border-right: 0;
-    border-bottom: 1px solid var(--home-rule);
+    min-height: 40px;
   }
 
   .home-overview-item {
-    min-height: 57px;
-    padding: 12px 11px 9px;
+    min-height: 38px;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
   }
 
+  .home-overview-item span,
   .home-overview-item time {
-    margin-top: 8px;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+  }
+
+  .home-overview-key {
+    margin: 8px 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px 14px;
+    list-style: none;
+  }
+
+  .home-overview-key li {
+    min-width: 0;
+    padding-left: 9px;
+    box-shadow: inset 3px 0 0 var(--place-color);
+  }
+
+  .home-overview-key a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .home-overview-key a:hover strong {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .home-overview-key strong,
+  .home-overview-key time {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .home-overview-key strong {
+    font-size: 11px;
+    font-weight: 760;
+  }
+
+  .home-overview-key time {
+    color: var(--home-muted);
+    font-family: var(--font-mono), monospace;
+    font-size: 8px;
+    font-variant-numeric: tabular-nums;
   }
 
   .home-trip-collage {

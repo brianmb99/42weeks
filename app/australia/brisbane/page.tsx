@@ -59,6 +59,7 @@ export default function BrisbanePage() {
         rhythm: [
           {
             label: "Fly and establish",
+            mapLabel: "Arrive",
             dates: "Sun, Oct 17",
             detail: "Proserpine flight, groceries and full workspace test.",
             days: 1,
@@ -66,6 +67,7 @@ export default function BrisbanePage() {
           },
           {
             label: "Work & School week",
+            mapLabel: "Week",
             dates: "Oct 18–22",
             detail: "Protected commitments, gradual packing and easy outings.",
             days: 5,
@@ -103,6 +105,7 @@ export default function BrisbanePage() {
           },
           {
             label: "Begin India trip",
+            mapLabel: "India",
             dates: "Sat, Oct 23",
             detail: "Protected weekend itinerary; arrive Sunday.",
             days: 1,
