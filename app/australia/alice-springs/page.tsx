@@ -57,6 +57,7 @@ export default function AliceSpringsPage() {
         rhythm: [
           {
             label: "Arrive and set up",
+            mapLabel: "Arrive",
             dates: "Sun, Sep 12",
             detail: "Flight, car, groceries, internet and work rooms.",
             days: 1,
@@ -64,6 +65,7 @@ export default function AliceSpringsPage() {
           },
           {
             label: "Work & School · week one",
+            mapLabel: "Week one",
             dates: "Sep 13–17",
             detail: "Protected work and school, with flexible local learning.",
             days: 5,
@@ -101,6 +103,7 @@ export default function AliceSpringsPage() {
           },
           {
             label: "Red Centre weekend",
+            mapLabel: "Weekend",
             dates: "Sep 18–19",
             detail: "Tjoritja first; adjust the second day to conditions.",
             days: 2,
@@ -112,6 +115,7 @@ export default function AliceSpringsPage() {
           },
           {
             label: "Work & School · week two",
+            mapLabel: "Week two",
             dates: "Sep 20–24",
             detail: "Return to the routine and fill the local gaps.",
             days: 5,
@@ -142,6 +146,7 @@ export default function AliceSpringsPage() {
           },
           {
             label: "Pack locally",
+            mapLabel: "Pack",
             dates: "Sat, Sep 25",
             detail: "Easy final day before Sunday travel.",
             days: 1,

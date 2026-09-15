@@ -132,9 +132,25 @@ body {
   background: #fff;
 }
 
-.location-rhythm-mobile-map,
-.location-rhythm-mobile-map-note {
+.location-rhythm-mobile-map {
   display: none;
+}
+
+.location-rhythm-card-meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.location-rhythm-card-meta em {
+  display: none;
+  color: var(--rhythm-color);
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 .location-rhythm-track > li {
@@ -169,11 +185,13 @@ body {
 
 .location-rhythm-track > li > span,
 .location-rhythm-track > li > strong,
-.location-rhythm-track > li > small {
+.location-rhythm-track > li > small,
+.location-rhythm-card-meta > span {
   display: block;
 }
 
-.location-rhythm-track > li > span {
+.location-rhythm-track > li > span,
+.location-rhythm-card-meta > span {
   color: var(--rhythm-color);
   font-size: 9px;
   font-weight: 850;
@@ -804,9 +822,19 @@ body {
     flex-basis: 280px;
   }
 
+  .location-rhythm.has-mobile-overview-cards {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .location-rhythm.has-mobile-overview-cards > header {
+    order: 1;
+  }
+
   .location-rhythm.has-mobile-overview-cards .location-rhythm-mobile-map {
-    height: 34px;
-    margin-top: 25px;
+    order: 2;
+    height: 40px;
+    margin-top: 22px;
     border: 1px solid var(--location-rule);
     display: flex;
     overflow: hidden;
@@ -816,9 +844,31 @@ body {
   .location-rhythm-mobile-map > span {
     --rhythm-color: var(--location-arrival);
     min-width: 0;
+    padding: 0 2px;
     border-top: 5px solid var(--rhythm-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
     flex: var(--rhythm-days) 1 0;
+    color: var(--rhythm-color);
     background: color-mix(in srgb, var(--rhythm-color) 14%, white);
+  }
+
+  .location-rhythm-mobile-map > span > b {
+    min-width: 0;
+    overflow: hidden;
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 0;
+    line-height: 1.05;
+    text-align: center;
+    text-overflow: clip;
+    white-space: nowrap;
+  }
+
+  .location-rhythm-mobile-map > span.is-wide > b {
+    font-size: 10px;
   }
 
   .location-rhythm-mobile-map > span + span {
@@ -841,19 +891,14 @@ body {
     --rhythm-color: var(--location-travel);
   }
 
-  .location-rhythm.has-mobile-overview-cards
-    .location-rhythm-mobile-map-note {
-    margin: 7px 0 0;
-    display: block;
-    color: var(--location-muted);
-    font-size: 8px;
-    font-weight: 750;
-    letter-spacing: 0.04em;
-    text-align: right;
-    text-transform: uppercase;
+  .location-rhythm.has-mobile-overview-cards .location-rhythm-legend {
+    order: 3;
+    margin-top: 8px;
+    justify-content: flex-start;
   }
 
   .location-rhythm.has-mobile-overview-cards .location-rhythm-track {
+    order: 4;
     margin-top: 14px;
     border: 0;
     display: grid;
@@ -882,6 +927,13 @@ body {
     > li
     + li {
     border-left: 1px solid var(--location-rule);
+  }
+
+  .location-rhythm.has-mobile-overview-cards
+    .location-rhythm-card-meta
+    em {
+    display: block;
+    flex: none;
   }
 
   .location-rhythm.has-mobile-overview-cards

@@ -27,6 +27,7 @@ export type LocationRhythmHighlight = {
 
 export type LocationRhythmSegment = {
   label: string;
+  mapLabel?: string;
   dates: string;
   detail: string;
   days: number;

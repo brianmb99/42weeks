@@ -104,21 +104,20 @@ export default function LocationPlanPage({
             >
               {plan.rhythm.map((segment) => (
                 <span
-                  className={`is-${segment.tone}`}
+                  className={`is-${segment.tone}${
+                    segment.days >= 3 ? " is-wide" : ""
+                  }`}
                   style={
                     { "--rhythm-days": segment.days } as CSSProperties
                   }
                   title={`${segment.dates} · ${segment.label}`}
                   aria-hidden="true"
                   key={`${segment.dates}-${segment.label}`}
-                />
+                >
+                  <b>{segment.mapLabel ?? segment.label}</b>
+                </span>
               ))}
             </div>
-          )}
-          {usesMobileOverviewCards && (
-            <p className="location-rhythm-mobile-map-note" aria-hidden="true">
-              Width shows time · details follow
-            </p>
           )}
           <ol
             className="location-rhythm-track"
@@ -134,7 +133,12 @@ export default function LocationPlanPage({
                 }
                 key={`${segment.dates}-${segment.label}`}
               >
-                <span>{segment.dates}</span>
+                <div className="location-rhythm-card-meta">
+                  <span>{segment.dates}</span>
+                  <em>
+                    {segment.days} {segment.days === 1 ? "day" : "days"}
+                  </em>
+                </div>
                 <strong>{segment.label}</strong>
                 <small>{segment.detail}</small>
                 {segment.highlights && (
