@@ -2,7 +2,7 @@
 
 > Decision record and comparison brief for the 2027 family sabbatical. The Alice Springs and Wānaka architecture was adopted as the canonical itinerary on September 13, 2026; the other architectures remain here as explicit fallbacks.
 >
-> Selected route: **preserve Newtown, add a two-week Alice Springs outback chapter, then travel linearly through Sydney, the Whitsundays, Brisbane, India, two short office stops, and Wānaka**.
+> Selected route: **preserve Newtown, add a two-week Alice Springs outback chapter, then travel linearly through Sydney, the Whitsundays, Brisbane, India, two weeks in Hong Kong, and Wānaka**. Singapore is not a family stay.
 >
 > Flight schedules, AFL fixtures, furnished-rental inventory, broadband, and attraction calendars must be rechecked before booking.
 
@@ -10,26 +10,28 @@
 
 The family-history and outback route is now the primary working model:
 
-- Leave Saturday, August 21, after roughly six days at home following camp; arrive in Melbourne around Monday, August 23.
-- Use Melbourne and Newtown together as the MCG catchment. A single Geelong → MCG trip is sensible if the selected match falls after the Melbourne stay.
-- Keep a full Newtown week. Geelong is a personal anchor, not a gateway to compress into an afternoon.
+- Leave Saturday, August 28, after roughly two weeks at home following camp; arrive in Melbourne around Monday, August 30, and continue to Newtown the same day.
+- Do not take a Melbourne rental. Newtown is the first Work & School base. A single Geelong → MCG trip covers the AFL objective.
+- Keep a Newtown week (six nights, Monday landing through Saturday). Geelong is a personal anchor, not a gateway to compress into an afternoon.
+- The selected MCG window is a wildcard or early-finals match from Newtown, likely Friday September 3 or Saturday September 4. Leaving Thursday August 26 or Friday 27 remains an option for one or two Melbourne hotel nights and a last-round game on or around August 30; that inbound is not selected.
 - Start the full seven-day Victoria road trip on Sunday, September 5. Labor Day reduces it to four vacation weekdays.
 - Use September 12–25 for a two-week outback base. Alice Springs currently leads because it fits a linear Melbourne → outback → Sydney route and has enough range for two weeks.
 - Keep Longreach as the small-town outback fallback, either for one or two weeks.
 - Restore Sydney to two full work weeks, September 26–October 9.
 - Use Brisbane only for the final work week before India; do not retain an empty home during the Whitsundays or Asia.
-- Keep India, Singapore, and Hong Kong as one linear route.
-- Cap Singapore and Hong Kong at seven nights each: Sunday arrival, up to five office days, Sunday departure.
-- Use the recovered twenty nights for one stable Wānaka base.
+- Keep India and Hong Kong as one linear Asia route; fly Bangalore → Hong Kong on Sunday, November 14.
+- Use Hong Kong for thirteen nights plus a Saturday-night departure: a full office week, a complete weekend, Thanksgiving, then New Zealand.
+- Singapore is not a family stay. A solo office hop remains optional and off the itinerary.
+- Keep the recovered twenty nights as one stable Wānaka base.
 
 This accepts weekly moves during the first Australian chapter, but every move buys something important: work transition, family history, a vacation road loop, real outback life, Sydney, reef time, or a final work reset.
 
 ## Non-negotiable anchors
 
 - The AFL objective is **any men's match at the MCG**, not the Grand Final.
-- The full 2027 fixture is not published. The home-and-away season is scheduled to end in late August, followed by September finals. The family can attend from either Melbourne or Newtown.
-- August 15 is the working camp-return date. August 21 is the target departure, leaving roughly six days at home.
-- Newtown is a seven-night stay, not an optional stop.
+- The 2027 calendar is locked even though the full fixture is unpublished: home-and-away concludes 30 August, wildcard finals start the first week of September, and the Grand Final is Saturday 2 October at the MCG. The selected match is a Newtown-to-MCG trip on the wildcard weekend. An earlier last-round game on or around August 30 is optional, not canonical.
+- August 15 is the working camp-return date. August 28 is the selected departure, leaving roughly two weeks at home. Thursday August 26 or Friday 27 is the earlier-leave option if a last-round Melbourne game is worth it.
+- Newtown is a six-night stay (Monday landing through Saturday), not an optional stop.
 - Some form of real outback stay is required; one week is the minimum and two weeks is preferred if the base supports ordinary work and family life.
 - India arrival remains Sunday, October 24, five days before Diwali on Friday, October 29.
 - Charlie's birthday remains in the Whitsundays on October 12.
@@ -41,9 +43,9 @@ This accepts weekly moves during the first Australian chapter, but every move bu
 
 ### Date map
 
-- August 21–23: Saturday departure and weekend travel to Melbourne
-- August 23–28: Melbourne recovery and soft work launch; target the final home-and-away MCG window
-- August 29–September 4: Newtown, Geelong; family-history time, Queenscliff, and a normal work week
+- August 28–30: Saturday departure and weekend travel to Melbourne; Monday same-day transfer to Newtown
+- August 30–September 4: Newtown, Geelong; family-history time, Queenscliff, Tuesday–Friday Work & School, and a wildcard MCG trip
+- Optional, not selected: leave Thursday August 26 or Friday 27 for one or two Melbourne hotel nights and a last-round game on or around August 30
 - September 5–11: Great Ocean Road, Otways, Gariwerd, and Sovereign Hill; Labor Day plus four vacation weekdays
 - September 12–25: Alice Springs outback work base
 - September 26–October 9: two-week Sydney work base
@@ -51,28 +53,27 @@ This accepts weekly moves during the first Australian chapter, but every move bu
 - October 17–22: Brisbane work week
 - October 23–24: travel to India
 - October 24–November 13: India
-- November 14–20: Singapore
-- November 21–27: Hong Kong, with the overnight departure ideally beginning Saturday evening
+- November 14–27: Hong Kong, with the overnight departure ideally beginning Saturday evening
 - November 28–December 17: Wānaka
 - December 18–19: travel home
 
 ### Strengths
 
 - Newtown receives a proper week rather than being reduced to scheduled day trips from Melbourne.
-- A one-off trip in the opposite direction for a scheduled MCG match preserves the AFL objective without holding the entire route in Melbourne through September 5.
-- The Saturday long-haul departure uses the weekend, preserves roughly six days at home after camp, and moves arrival recovery out of a Tuesday–Thursday travel pattern.
+- A one-off trip from Geelong for a scheduled MCG match preserves the AFL objective without holding a Melbourne rental.
+- The Saturday long-haul departure uses the weekend, preserves roughly two weeks at home after camp, and still lands on Monday.
 - Alice Springs is a genuine Red Centre base with access to Tjoritja/West MacDonnell Ranges, East MacDonnell Ranges, Aboriginal culture, Desert Park, RFDS, and School of the Air.
 - Two weeks create ordinary life: ten potential workdays, a full middle weekend, groceries, routines, and time that is not organized around attractions.
 - Current airline networks support direct Melbourne–Alice Springs and Alice Springs–Sydney service; exact 2027 operating days remain to be checked.
 - Sydney regains two work weeks and a complete middle weekend.
 - Every paid home is occupied. Brisbane is a final six-night work setup, not storage.
-- Seven-night Singapore and Hong Kong stays match the office requirement.
+- Two weeks in Hong Kong give a full office week, a complete weekend, and Thanksgiving without spending New Zealand nights on another city.
 - Twenty New Zealand nights create the longest stable base after Australia.
 
 ### Weaknesses
 
-- The family changes bases every Sunday from Melbourne through Brisbane, although the outback and Sydney stays each preserve a complete middle weekend.
-- Newtown has seven nights but only one fully free Saturday; much of its value must come from afternoons, evenings, and ordinary neighborhood time.
+- The family changes bases frequently from Newtown through Brisbane, although the outback and Sydney stays each preserve a complete middle weekend.
+- Newtown has six nights and only one fully free Saturday; Monday is landing, so much of its value must come from afternoons, evenings, and ordinary neighborhood time.
 - Alice Springs is a regional centre rather than a small pastoral town; it offers deeper landscapes and activities, while Longreach may better satisfy the desire to inhabit small-town outback life.
 - Two weeks require verified family housing, broadband, a car, and a plan for the middle weekend.
 
@@ -100,7 +101,7 @@ Use the same dates as Architecture 1, but substitute Longreach for Alice Springs
 
 ### Date map
 
-- August 21–September 11: same Melbourne, Newtown, and Victoria opening
+- August 28–September 11: same Newtown and Victoria opening
 - September 12–18: Longreach
 - September 19–October 9: Sydney
 - October 10 onward: same Whitsundays, Brisbane, India, Singapore, Hong Kong, and New Zealand route
@@ -127,7 +128,7 @@ Keep this as the compromise if fourteen outback nights feel excessive after rent
 - Queenscliff is farther. Treating it as a Melbourne day trip makes the visit a scheduled outing rather than part of ordinary life.
 - The meaningful activities are small and place-specific: the park where Dad played, old streets, schools, evening conversations, and returning when somebody remembers another place.
 - A Newtown work week is not a logistics failure. It is one extra move that buys the personal depth the Australia chapter is supposed to have.
-- August 30–September 3 can be a normal work and homeschool week. Sunday arrival, afternoons, evenings, and Saturday preserve meaningful local time.
+- August 30–September 3 can still be a useful Newtown week even with Monday as landing: Tuesday through Friday plus Saturday preserve meaningful local time.
 - Returning to Melbourne once for a specific MCG match is not the same mistake as basing in Melbourne and repeatedly scheduling family-history day trips. One objective is fixed and bounded; the other depends on unhurried local presence.
 
 The only persuasive case for staying in Melbourne would be a housing or internet failure in Newtown. Convenience alone is not enough.
@@ -210,27 +211,27 @@ Geographically weak. Queensland → New Zealand → Delhi creates a large southw
 
 Reject. Delhi → New Zealand → Singapore is much longer than Delhi → Singapore.
 
-### After Hong Kong — selected
+### After India — selected
 
 This is the cleanest late-year placement:
 
-- Keep Singapore to November 14–20 and Hong Kong to November 21–27.
-- Preserve Saturday daytime in Hong Kong, then take the overnight flight beginning November 27 if the 2027 schedule permits.
+- Fly Bangalore → Hong Kong on Sunday, November 14, and stay through a Saturday-night departure on November 27 if the 2027 schedule permits.
+- Use the first Hong Kong week as ordinary office-and-school life and protect November 20–21 as a complete family weekend.
+- Keep Thanksgiving as the principal Hong Kong family day, then connect overnight through Auckland and Queenstown to Wānaka.
 - Stay in one Wānaka base November 28–December 17.
 - Travel to New Hampshire December 18–19.
+- Leave Singapore off the family itinerary. A solo office hop remains optional.
 
-Seven calendar days in each office city provide a weekend and a bounded office window. Hong Kong may use six hotel nights plus a Saturday-evening departure. The recovered twenty nights turn New Zealand from a rushed add-on into the longest stable base in this chapter: work fully November 29–December 3, use four-hour anchor days December 6–8, take December 9–10 as vacation, then work fully December 13–17 before the Christmas break.
+Two weeks in Hong Kong satisfy the Asia-city pull without taking nights from New Zealand. The recovered twenty nights turn New Zealand from a rushed add-on into the longest stable base in this chapter: work fully November 29–December 3, use four-hour anchor days December 6–8, take December 9–10 as vacation, then work fully December 13–17 before the Christmas break.
 
 Wānaka is the base because it combines ordinary town life, lake access, nearby half-day outings and access to Mount Aspiring country. Use Meadowstone or the quiet southern edge of town if the property supports a genuinely separate 5 a.m. workspace. Treat late-spring weather as variable: keep mountain days forecast-led and use the long evenings, not guaranteed sunshine, as the core advantage.
 
 For the December 9–12 mini-vacation, staying in Wānaka is the default. A two-night Aoraki stay is the leading change-of-base option; Te Anau and Milford are worthwhile only if Milford becomes a priority. Do not day-trip Milford Sound from Wānaka.
 
-There is plenty to do in both Singapore and Hong Kong beyond one week. That is not the relevant threshold here. Extending either stay would mean choosing city living over New Zealand or outback time, not rescuing an under-filled itinerary.
-
 ## Practical checks
 
-- Verify the exact 2027 AFL fixture and ticket process.
-- Verify an August 21 departure that reaches Melbourne around August 23 without consuming the following work week.
+- Verify the exact 2027 AFL fixture and ticket process, including whether last-round includes a match on or around Monday 30 August.
+- Verify an August 28 departure that reaches Melbourne around August 30 without consuming the following work week. If taking the optional last-round inbound, verify a Thursday August 26 or Friday 27 departure instead.
 - Verify flight days for the selected outback route before fixing Sunday transitions.
 - Require measured broadband, a closable work room, a second school surface, laundry, and a car plan in Newtown and the outback.
 - Confirm which Longreach experiences are operating in late September if the fallback is ever reopened.

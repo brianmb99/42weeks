@@ -119,9 +119,10 @@ export default function GreatSouthernTouringRoutePage() {
           <span>Before · {dateLabel(geelong.start)}–{dateLabel(geelong.end)}</span>
           <h2>Geelong work week</h2>
           <p>
-            Aim for <strong>{geelong.preferredArea}</strong>. Work August
-            30–September 3; use afternoons, evenings and Saturday for
-            family-history time, Queenscliff and local Geelong.
+            Aim for <strong>{geelong.preferredArea}</strong>. Land Monday,
+            August 30; Work & School Tuesday through Friday; use Saturday
+            for an MCG match from Newtown or local family-history time,
+            Queenscliff and Geelong.
           </p>
         </article>
         <article>

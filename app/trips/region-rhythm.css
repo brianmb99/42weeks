@@ -47,7 +47,7 @@
 .region-rhythm-map > a,
 .region-rhythm-map > span {
   min-width: 0;
-  padding: 0 4px;
+  padding: 0 3px;
   border-right: 1px solid rgb(23 32 29 / 18%);
   display: flex;
   align-items: center;
@@ -77,13 +77,17 @@
 .region-rhythm-map b {
   min-width: 0;
   overflow: hidden;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 760;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
   line-height: 1.1;
   text-align: center;
   text-overflow: clip;
   white-space: nowrap;
+}
+
+.region-rhythm-map .is-short {
+  display: none;
 }
 
 .region-rhythm-key {
@@ -117,6 +121,14 @@
   .region-rhythm-map b {
     font-size: 8px;
     font-weight: 800;
+  }
+
+  .region-rhythm-map .is-full {
+    display: none;
+  }
+
+  .region-rhythm-map .is-short {
+    display: block;
   }
 
   .region-rhythm-map > .is-wide b {

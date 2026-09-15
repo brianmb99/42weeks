@@ -1,39 +1,37 @@
 {
   "schemaVersion": 3,
-  "lastReviewed": "2026-09-13",
+  "lastReviewed": "2026-09-14",
   "title": "Australia, part I",
   "datePolicy": "data/trip-plan.json is authoritative for calendar dates. These dated segments mirror it and preserve the planning detail behind the calendar.",
-  "start": "2027-08-23",
+  "start": "2027-08-30",
   "end": "2027-10-10",
   "segments": {
-    "melbourneOpening": {
-      "start": "2027-08-23",
-      "end": "2027-08-28",
-      "base": "Melbourne",
-      "workDates": {
-        "start": "2027-08-24",
-        "end": "2027-08-27"
-      },
+    "optionalMelbourneInbound": {
+      "start": "2027-08-28",
+      "end": "2027-08-30",
+      "base": "Melbourne hotel",
+      "selected": false,
       "notes": [
-        "Arrive around Monday after a Saturday departure from New Hampshire.",
-        "Keep the first days deliberately light, then build toward credible work and homeschool output.",
-        "Target any available men's AFL match at the MCG during the final home-and-away window."
+        "Not the selected stay. Use only if leaving Thursday, August 26 or Friday 27 for one or two hotel nights.",
+        "Target a last-round home-and-away game on or around August 30, then continue to Newtown.",
+        "Do not rent a Melbourne work base for this window."
       ]
     },
     "geelong": {
-      "start": "2027-08-29",
+      "start": "2027-08-30",
       "end": "2027-09-04",
       "base": "Geelong",
       "preferredArea": "Newtown",
       "workDates": {
-        "start": "2027-08-30",
+        "start": "2027-08-31",
         "end": "2027-09-03"
       },
       "notes": [
-        "Move from Melbourne to Newtown on Sunday and establish the full work-week base.",
+        "Land in Melbourne Monday, August 30 and continue to Newtown the same day.",
+        "Monday is landing; protect Tuesday through Friday.",
         "Treat family-history time as ordinary local life rather than a list of day trips.",
-        "Use afternoons, evenings and Saturday for the Barwon River, remembered places and Queenscliff.",
-        "If the selected MCG match falls in early September, make one purposeful trip back to Melbourne."
+        "Use afternoons, evenings and Saturday for the Barwon River, remembered places, Queenscliff and a wildcard MCG trip.",
+        "Leaving a few days earlier for Melbourne hotel nights and a last-round August 30 game remains an unselected option."
       ]
     },
     "roadTrip": {

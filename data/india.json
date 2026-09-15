@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "lastReviewed": "2026-09-14",
+  "title": "India: Dehradun, Golden Triangle and Bangalore",
+  "start": "2027-10-24",
+  "end": "2027-11-13",
+  "nights": 21,
+  "summary": "Use the twenty-one nights as three distinct weeks rather than a moving India tour. The first week is the reason the stop exists: live with extended family in Dehradun through Diwali while keeping a credible Work & School routine. The second week is a bounded Delhi–Agra–Jaipur vacation so the Taj Mahal is actually visited. The third week resets in Bangalore as a dependable Work & School base before the Sunday flight to Hong Kong.",
+  "season": {
+    "summary": "Late October and November are a strong northern-India window after the southwest monsoon: dry, clear and cool enough for walking, with Bangalore milder and a little wetter under the northeast monsoon.",
+    "notes": [
+      "Dehradun November normals are about 78°F by day and 53°F overnight, with roughly two-tenths of an inch of rain for the month.",
+      "Delhi November normals are about 83°F by day and 55°F overnight, but post-Diwali air quality—not temperature—is the planning constraint.",
+      "Bangalore November normals are about 81°F by day and 65°F overnight, with about two and a half inches of rain across a few wet days.",
+      "Pack a warm layer for Dehradun evenings, sun protection for Agra and Jaipur, and a compact rain layer for Bangalore."
+    ]
+  },
+  "base": {
+    "recommendation": "Family house in Dehradun, then Indiranagar or a Cubbon-adjacent apartment",
+    "reason": "The Dehradun house is the family-history stay, so the first booking question is whether it can actually support work, school, laundry and video calls—not whether a hotel would be nicer. Bangalore is the second Work & School base: choose one apartment for the final week and stay put. Indiranagar is the residential default; a Cubbon Park edge is the better answer if the family wants museum and park geography over neighborhood restaurants.",
+    "requirements": [
+      "Dehradun: a closed-door workspace, two genuine work and school surfaces, verified broadband, strong mobile backup, laundry and a confirmed inverter or generator",
+      "Written confirmation that the family house can support repeated video calls",
+      "Bangalore: a serviced apartment rather than one standard hotel room, covering the night of November 7 or 8 through November 13",
+      "Bangalore: verified fixed broadband, laundry, a usable kitchen and a park or playground within a short ride",
+      "Vacation hotels do not need a full work setup; keep those stays ordinary and short"
+    ]
+  },
+  "diwali": {
+    "dates": "2027-10-29/2027-10-31",
+    "recommendation": "Treat Friday through Sunday as family time in Dehradun. Lakshmi Puja on Friday, October 29, is the principal night; do not spend it in transit or at a tourist event.",
+    "preferredPlan": [
+      "Confirm the extended family's local puja timing, guest list and household customs before locking the Brisbane → India itinerary.",
+      "Keep Tuesday, October 26, as Kate's birthday inside the Dehradun house rather than turning it into a travel day.",
+      "Use Friday night for the family celebration and Saturday–Sunday for ordinary household time, leftovers, cousins and recovery.",
+      "Leave Dehradun on Monday, November 1, so the vacation week starts after Diwali rather than through it."
+    ]
+  },
+  "goldenTriangle": {
+    "dates": "2027-11-01/2027-11-07",
+    "recommendation": "Use seven days for a classic Delhi–Agra–Jaipur circuit and then fly to Bangalore. That is the whole vacation: three cities, not an opening into Rajasthan or Varanasi.",
+    "preferredPlan": [
+      "Monday: Dehradun to Delhi. If energy and air quality allow, use Humayun's Tomb as the arrival outing rather than Old Delhi.",
+      "Tuesday: one Delhi day. Choose Red Fort and Jama Masjid or Qutub Minar; do not stack north and south Delhi into the same afternoon.",
+      "Wednesday: train to Agra and spend the afternoon at Agra Fort. Keep the Taj for Thursday because current official practice closes it on Fridays.",
+      "Thursday: Taj Mahal at opening. Use Mehtab Bagh or a quiet hotel afternoon rather than adding Fatehpur Sikri unless the family still has legs.",
+      "Friday: Agra to Jaipur while the Taj is closed. Settle rather than forcing Amber Fort after a transfer day.",
+      "Saturday: Amber Fort as the one major Jaipur outing.",
+      "Sunday: City Palace or Jantar Mantar, then the Jaipur to Bangalore flight. Recheck 2027 flight days before treating Sunday evening as guaranteed."
+    ],
+    "alternative": "If Delhi air is severe or three hotel changes feel like too much, collapse Delhi to a transit night and keep Agra plus Jaipur. Do not add Udaipur, Ranthambore or Varanasi to this week."
+  },
+  "airQuality": {
+    "reason": "The vacation week begins three days after Diwali, which is historically one of Delhi's worst air periods because of firecrackers and the overlapping crop-residue season. Pleasant November temperatures do not make outdoor Delhi automatic.",
+    "revisitIf": [
+      "Live AQI is hazardous on arrival and indoor museum days are a better use of Delhi than Red Fort plus a long bazaar walk",
+      "The children are reacting to pollution and Agra or Jaipur should absorb more of the week",
+      "A severe forecast makes a Dehradun-to-Agra routing more sensible than a two-night Delhi stay"
+    ]
+  },
+  "trekDecision": {
+    "status": "Not included in this three-week sequence",
+    "reason": "Nag Tibba is near Dehradun and remains a strong family trek, but putting it on the Diwali weekend would steal the family days that are the point of week one. Adding it later would compress the Taj week or the Bangalore work week.",
+    "revisitIf": [
+      "The family wants a two-day Himalayan walk more than a full Golden Triangle",
+      "Family energy after Diwali is high and the vacation week can shrink to Agra plus one other city",
+      "A later India visit exists and can carry the trek"
+    ]
+  },
+  "bookFirst": [
+    "Confirm the Dehradun family house can support Work & School: workspace, broadband, mobile backup, laundry and power backup",
+    "Bangalore serviced apartment for the final week",
+    "Brisbane to India and India to Hong Kong flights",
+    "Internal transport: Dehradun to Delhi, Delhi to Agra, Agra to Jaipur, Jaipur to Bangalore",
+    "Taj Mahal tickets for Thursday, November 4, after rechecking 2027 hours and Friday closure practice",
+    "Recheck the extended family's 2027 Diwali dates before the long-haul tickets are final"
+  ],
+  "planningNotes": [
+    "U.S. clocks change on November 7, so the Bangalore week maps one hour later than the Dehradun week.",
+    "November 2027 cricket fixtures are not published; keep Delhi, Jaipur or Bangalore flexible until the BCCI calendar appears.",
+    "Recheck 2027 monument hours, train days and domestic flight days before buying nonrefundable hotel nights.",
+    "Do not add a fourth Indian city to this window."
+  ],
+  "links": [
+    {
+      "title": "Forest Research Institute, Dehradun",
+      "url": "https://fri.icfre.gov.in/"
+    },
+    {
+      "title": "Mindrolling Monastery",
+      "url": "https://www.mindrolling.org/"
+    },
+    {
+      "title": "Taj Mahal official site",
+      "url": "https://www.tajmahal.gov.in/"
+    },
+    {
+      "title": "Humayun's Tomb, Delhi Tourism",
+      "url": "https://delhitourism.gov.in/tourist_place/humayun_tomb.html"
+    },
+    {
+      "title": "Amber Fort, Incredible India",
+      "url": "https://www.incredibleindia.gov.in/en/rajasthan/jaipur/amber-fort"
+    },
+    {
+      "title": "Visvesvaraya Industrial and Technological Museum",
+      "url": "https://www.vismuseum.gov.in/"
+    },
+    {
+      "title": "Cubbon Park",
+      "url": "https://bengaluruurban.nic.in/en/tourist-place/cubbon-park/"
+    },
+    {
+      "title": "Central Pollution Control Board AQI",
+      "url": "https://airquality.cpcb.gov.in/AQI_India/"
+    },
+    {
+      "title": "IMD Dehradun climate normals",
+      "url": "https://mausam.imd.gov.in/dehradun/"
+    }
+  ]
+}

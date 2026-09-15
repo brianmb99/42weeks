@@ -5,7 +5,7 @@ import AustraliaCityPage from "../../trips/australia-city-page";
 export const metadata: Metadata = {
   title: "Geelong",
   description:
-    "The Newtown work week, Balyang Sanctuary, Queenscliff evening and local Geelong ideas.",
+    "The Newtown Work & School week, Monday landing, MCG trip from Geelong, and family-history time.",
 };
 
 export default function GeelongPage() {

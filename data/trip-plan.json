@@ -1,13 +1,13 @@
 {
   "schemaVersion": 6,
-  "lastReviewed": "2026-09-13",
+  "lastReviewed": "2026-09-14",
   "title": "42 Weeks",
   "datePolicy": "This ordered timeline is the definitive source for exact working dates. Location start and end dates are inclusive. Dated events use fixed=true only when their dates must not move as the working plan is rebalanced.",
   "locationPolicy": "A location entry identifies where the family expects to sleep at the end of that calendar date. Use an explicit In transit location for an overnight travel night. A named multi-stop route may stand in for that route's individual overnight stops.",
   "railPolicy": "The calendar's left rail groups connection and overnight-travel locations into the most useful adjacent trip segment. Expanded days retain the exact underlying sleep location.",
   "travelPolicy": "Use weekends for long-haul travel and generally preserve Saturday before routine Sunday repositioning. Treat airplane work as bonus output, not a dependency. Do not spend vacation days on ordinary transfers unless a weekday itinerary materially improves the trip.",
   "trip": {
-    "start": "2027-08-21",
+    "start": "2027-08-28",
     "end": "2028-06-28"
   },
   "rules": [
@@ -29,16 +29,6 @@
     "marketEarlyCloseDefault": "work",
     "travelSource": "timeline events with type=travel",
     "overrides": [
-      {
-        "date": "2027-08-24",
-        "status": "work",
-        "note": "Melbourne soft launch — target a solid four-hour output block"
-      },
-      {
-        "date": "2027-08-25",
-        "status": "work",
-        "note": "Melbourne soft launch — target a solid four-hour output block"
-      },
       {
         "date": "2027-09-07",
         "status": "vacation",
@@ -206,101 +196,76 @@
     {
       "id": "travel-to-melbourne",
       "type": "travel",
-      "start": "2027-08-21",
-      "end": "2027-08-23",
+      "start": "2027-08-28",
+      "end": "2027-08-30",
       "days": 3,
       "title": "Weekend flight to Melbourne",
-      "locationId": "melbourne",
-      "context": "Leave on Saturday after roughly six days at home following camp. Target a Monday arrival and treat airplane work as optional output.",
+      "locationId": "geelong",
+      "context": "Leave on Saturday after roughly two weeks at home following camp. Target a Monday arrival, continue to Newtown the same day, and treat airplane work as optional output. Leaving Thursday August 26 or Friday 27 remains an unselected option for one or two Melbourne hotel nights and a last-round home-and-away game on or around August 30.",
       "color": null
     },
     {
       "id": "location-in-transit-australia",
       "type": "location",
-      "start": "2027-08-21",
-      "end": "2027-08-22",
+      "start": "2027-08-28",
+      "end": "2027-08-29",
       "days": 2,
       "title": "In transit",
       "locationId": "in-transit-australia",
-      "context": "Overnight flight toward Melbourne.",
+      "context": "Overnight flight toward Melbourne, then Newtown the same day as landing.",
       "color": "#5e6770",
-      "railGroupId": "location-melbourne-opening",
-      "railLabel": "Melbourne",
-      "railColor": "#76abc8"
-    },
-    {
-      "id": "location-melbourne-opening",
-      "type": "location",
-      "start": "2027-08-23",
-      "end": "2027-08-28",
-      "days": 6,
-      "title": "Melbourne",
-      "locationId": "melbourne",
-      "context": "Arrival recovery, work-and-school soft launch, and the final home-and-away MCG window.",
-      "color": "#76abc8",
-      "railLabel": "Melbourne"
-    },
-    {
-      "id": "event-melbourne-soft-launch",
-      "type": "event",
-      "fixed": false,
-      "start": "2027-08-23",
-      "end": "2027-08-27",
-      "days": 5,
-      "title": "Land, recover and build the work routine",
-      "locationId": "melbourne",
-      "context": "Keep Monday light, use four-hour anchor blocks Tuesday and Wednesday, and build toward credible full output by the end of the week.",
-      "color": null,
-      "href": "/australia/melbourne"
-    },
-    {
-      "id": "event-mcg-match-window",
-      "type": "event",
-      "fixed": false,
-      "start": "2027-08-27",
-      "end": "2027-09-05",
-      "days": 10,
-      "title": "Target any men's AFL match at the MCG",
-      "locationId": "melbourne",
-      "context": "Use the final home-and-away window first. If the best match falls after the move, make one purposeful Newtown-to-MCG trip.",
-      "color": null,
-      "href": "/australia/melbourne"
+      "railGroupId": "location-geelong",
+      "railLabel": "Newtown, Geelong",
+      "railColor": "#397ca6"
     },
     {
       "id": "travel-melbourne-geelong",
       "type": "travel",
-      "start": "2027-08-29",
+      "start": "2027-08-30",
       "end": null,
       "days": null,
-      "title": "Move Melbourne → Newtown, Geelong",
+      "title": "Same-day transfer Melbourne Airport → Newtown, Geelong",
       "locationId": "geelong",
-      "context": "Use Sunday for the short move and settle before the full work and homeschool week.",
+      "context": "Land Monday and continue to Newtown the same day. Do not take a Melbourne rental for the selected stay.",
       "color": null,
       "href": "/australia/geelong"
     },
     {
       "id": "location-geelong",
       "type": "location",
-      "start": "2027-08-29",
+      "start": "2027-08-30",
       "end": "2027-09-04",
-      "days": 7,
+      "days": 6,
       "title": "Newtown, Geelong",
       "locationId": "geelong",
-      "context": "A family-history work base rather than a gateway stop.",
+      "context": "First real Australia base: land Monday, live in Newtown, and make one MCG trip from here.",
       "color": "#397ca6"
     },
     {
       "id": "event-geelong-work-block",
       "type": "event",
       "fixed": false,
-      "start": "2027-08-30",
+      "start": "2027-08-31",
       "end": "2027-09-03",
-      "days": 5,
+      "days": 4,
       "title": "Work, homeschool and live locally in Newtown",
       "locationId": "geelong",
-      "context": "Protect the full weekday routine while using afternoons and evenings for remembered places, the Barwon River and Queenscliff.",
+      "context": "Monday is landing. Protect Tuesday through Friday while using afternoons, evenings and Saturday for remembered places, Queenscliff and the MCG window.",
       "color": null,
       "href": "/australia/geelong"
+    },
+    {
+      "id": "event-mcg-match-window",
+      "type": "event",
+      "fixed": false,
+      "start": "2027-09-03",
+      "end": "2027-09-05",
+      "days": 3,
+      "title": "Target a wildcard or early-finals MCG match from Newtown",
+      "locationId": "geelong",
+      "context": "Primary plan is a Newtown-to-MCG trip on the wildcard weekend, likely Friday September 3 or Saturday September 4. Leaving a few days earlier remains an option for one or two Melbourne hotel nights and a last-round home-and-away game on or around August 30; that variant is not the selected stay.",
+      "color": null,
+      "href": "/australia/geelong#afl-at-the-mcg"
     },
     {
       "id": "event-great-southern-touring-route",
@@ -623,8 +588,9 @@
       "days": 21,
       "title": "India",
       "locationId": "india",
-      "context": null,
-      "color": "#a95f27"
+      "context": "Dehradun family week through Diwali, a bounded Golden Triangle vacation, then a Bangalore Work & School week.",
+      "color": "#a95f27",
+      "href": "/asia/india"
     },
     {
       "id": "event-kate-birthday-2027",
@@ -651,66 +617,43 @@
       "color": null
     },
     {
-      "id": "travel-india-singapore",
+      "id": "travel-india-hong-kong",
       "type": "travel",
       "start": "2027-11-14",
       "end": null,
       "days": null,
-      "title": "India weekend; fly to Singapore",
-      "locationId": "singapore",
-      "context": null,
-      "color": null
-    },
-    {
-      "id": "location-singapore",
-      "type": "location",
-      "start": "2027-11-14",
-      "end": "2027-11-20",
-      "days": 7,
-      "title": "Singapore",
-      "locationId": "singapore",
-      "context": "One weekend and up to five office days; expect humid inter-monsoon weather and frequent afternoon storms.",
-      "color": "#c8752e",
-      "href": "/asia/singapore"
-    },
-    {
-      "id": "event-singapore-office-week",
-      "type": "event",
-      "fixed": false,
-      "start": "2027-11-15",
-      "end": "2027-11-19",
-      "days": 5,
-      "title": "Singapore office week",
-      "locationId": "singapore",
-      "context": "Keep the office commitment bounded to Monday through Friday and preserve Saturday for the family.",
-      "color": null,
-      "href": "/asia/singapore#work-rhythm"
-    },
-    {
-      "id": "travel-singapore-hong-kong",
-      "type": "travel",
-      "start": "2027-11-21",
-      "end": null,
-      "days": null,
-      "title": "Fly Singapore → Hong Kong",
+      "title": "India weekend; fly to Hong Kong",
       "locationId": "hong-kong",
-      "context": "Use Sunday for the short regional flight.",
+      "context": "Use Sunday for the Bangalore → Hong Kong flight.",
       "color": null
     },
     {
       "id": "location-hong-kong",
       "type": "location",
-      "start": "2027-11-21",
+      "start": "2027-11-14",
       "end": "2027-11-26",
-      "days": 6,
+      "days": 13,
       "title": "Hong Kong",
       "locationId": "hong-kong",
-      "context": "A compact office stay with dry, mild November weather and Thanksgiving reducing the market-week load.",
+      "context": "A two-week office stay with a complete weekend, dry November weather, Thanksgiving, and a Saturday-night departure to New Zealand.",
       "color": "#d68b43",
       "href": "/asia/hong-kong"
     },
     {
-      "id": "event-hong-kong-office-week",
+      "id": "event-hong-kong-office-week-one",
+      "type": "event",
+      "fixed": false,
+      "start": "2027-11-15",
+      "end": "2027-11-19",
+      "days": 5,
+      "title": "Hong Kong office week",
+      "locationId": "hong-kong",
+      "context": "Use the first week as a full office-and-school week and preserve Saturday–Sunday for the family.",
+      "color": null,
+      "href": "/asia/hong-kong#work-rhythm"
+    },
+    {
+      "id": "event-hong-kong-office-week-two",
       "type": "event",
       "fixed": false,
       "start": "2027-11-22",
@@ -721,6 +664,19 @@
       "context": "Use Monday through Wednesday as the core office commitment; Thanksgiving is Thursday and the market closes early Friday.",
       "color": null,
       "href": "/asia/hong-kong#work-rhythm"
+    },
+    {
+      "id": "event-thanksgiving-hong-kong",
+      "type": "event",
+      "fixed": true,
+      "start": "2027-11-25",
+      "end": null,
+      "days": null,
+      "title": "Thanksgiving in Hong Kong",
+      "locationId": "hong-kong",
+      "context": "Principal family day; hike or cultural fallback.",
+      "color": null,
+      "href": "/asia/hong-kong#hong-kong-thanksgiving"
     },
     {
       "id": "travel-hong-kong-wanaka",

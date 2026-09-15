@@ -41,34 +41,23 @@ export type AustraliaCity = {
 
 export const australiaStops = [
   {
-    title: "Melbourne",
-    mapLabel: "Melb",
-    dates: "Aug 23–28",
-    days: 6,
-    color: "#76abc8",
-    mode: "Landing and work launch",
-    description:
-      "Recover from the weekend flight, establish the first work and homeschool rhythm, and target any available men's AFL match at the MCG.",
-    href: "/australia/melbourne",
-    image: "/images/australia/melbourne-skyline.jpg",
-    alt: "Melbourne skyline from Southbank",
-  },
-  {
     title: "Newtown, Geelong",
+    barLabel: "Geelong",
     mapLabel: "Geelong",
-    dates: "Aug 29–Sep 4",
-    days: 7,
+    dates: "Aug 30–Sep 4",
+    days: 6,
     color: "#397ca6",
-    mode: "Family-history work week",
+    mode: "Family-history Work & School week",
     description:
-      "Live in the neighborhood for a full week, work and homeschool normally, and preserve afternoons, evenings and Saturday for remembered places and Queenscliff.",
+      "Land in Melbourne Monday, continue to Newtown the same day, live in the neighborhood, and make one MCG trip from here.",
     href: "/australia/geelong",
     image: "/images/australia/geelong-waterfront.jpg",
     alt: "Geelong waterfront and Corio Bay",
   },
   {
     title: "Great Ocean Road Loop",
-    mapLabel: "Road",
+    barLabel: "Great Ocean Road",
+    mapLabel: "Ocean Rd",
     dates: "Sep 5–11",
     days: 7,
     color: "#5592b7",
@@ -81,6 +70,7 @@ export const australiaStops = [
   },
   {
     title: "Alice Springs",
+    barLabel: "Alice Springs",
     mapLabel: "Alice",
     dates: "Sep 12–25",
     days: 14,
@@ -107,7 +97,8 @@ export const australiaStops = [
   },
   {
     title: "Whitsundays",
-    mapLabel: "Whit",
+    barLabel: "Whitsundays",
+    mapLabel: "Whitsundays",
     dates: "Oct 10–16",
     days: 7,
     color: "#4f9eb3",
@@ -120,7 +111,8 @@ export const australiaStops = [
   },
   {
     title: "Brisbane",
-    mapLabel: "Bris",
+    barLabel: "Brisbane",
+    mapLabel: "Brisbane",
     dates: "Oct 17–22",
     days: 6,
     color: "#4f7fa2",
@@ -137,11 +129,11 @@ export const australiaCities: Record<AustraliaCity["slug"], AustraliaCity> = {
   geelong: {
     slug: "geelong",
     title: "Geelong",
-    eyebrow: "Australia · family-history Work & School base",
-    dates: "Aug 29–Sep 4, 2027",
-    facts: ["7 nights", "Work & School Mon–Fri", "Newtown preferred"],
+    eyebrow: "Australia · first Work & School base and family-history stay",
+    dates: "Aug 30–Sep 4, 2027",
+    facts: ["6 nights", "Land Monday Aug 30", "Newtown preferred"],
     summary:
-      "This is a week of ordinary life in the place Brian grew up, not a gateway stop. Move from Melbourne on Sunday, establish a dependable Work & School setup in Newtown, and leave enough unscheduled time for remembered places, follow-up visits and family stories.",
+      "This is the first real Australia stay, not a gateway stop after a Melbourne rental. Land Monday, continue to Newtown the same day, protect Tuesday through Friday, and use Saturday for a wildcard MCG match or local family-history time.",
     stayTitle: "Newtown, near the Barwon River",
     stayDescription:
       "Prioritize an actual work room, strong internet, laundry and parking over waterfront views. A Newtown base puts Balyang Sanctuary and the Barwon River close by while keeping central Geelong and the Bellarine Peninsula practical.",
@@ -153,22 +145,22 @@ export const australiaCities: Record<AustraliaCity["slug"], AustraliaCity> = {
     ],
     rhythmTitle: "One ordinary week in Newtown",
     rhythmSummary:
-      "The point is to live here long enough for family-history time to emerge around a normal week, not to compress remembered places into a Melbourne day trip.",
+      "Land Monday and live here long enough for family-history time to emerge around a normal week. The MCG match is one planned trip from Newtown, not a reason to rent in Melbourne.",
     rhythm: [
       {
-        label: "Move and settle",
-        mapLabel: "Settle",
-        dates: "Sun, Aug 29",
-        detail: "Melbourne to Newtown; groceries and work setup.",
+        label: "Land and settle",
+        mapLabel: "Land",
+        dates: "Mon, Aug 30",
+        detail: "Melbourne arrival, same-day transfer to Newtown, groceries and work setup.",
         days: 1,
         tone: "arrival",
       },
       {
         label: "Newtown Work & School week",
         mapLabel: "Week",
-        dates: "Aug 30–Sep 3",
+        dates: "Aug 31–Sep 3",
         detail: "Protected commitments with flexible family-history time.",
-        days: 5,
+        days: 4,
         tone: "work",
         highlights: [
           {
@@ -200,17 +192,21 @@ export const australiaCities: Record<AustraliaCity["slug"], AustraliaCity> = {
             url: "https://app.geelongcity.vic.gov.au/gbg/",
           },
         ],
+        featureLink: {
+          title: "See family-history plan",
+          href: "#geelong-family-history",
+        },
       },
       {
         label: "Local Saturday",
         mapLabel: "Sat",
         dates: "Sat, Sep 4",
-        detail: "Return visits, Queenscliff, or an MCG match if needed.",
+        detail: "Prefer a wildcard MCG match from Newtown; Queenscliff if no Victorian game.",
         days: 1,
         tone: "family",
         featureLink: {
-          title: "See family-history plan",
-          href: "#geelong-family-history",
+          title: "See MCG plan",
+          href: "#afl-at-the-mcg",
         },
       },
     ],
@@ -244,6 +240,28 @@ export const australiaCities: Record<AustraliaCity["slug"], AustraliaCity> = {
           {
             title: "Queenscliff visitor information",
             url: "https://www.visitgeelongbellarine.com.au/queenscliff-point-lonsdale/queenscliff",
+          },
+        ],
+      },
+      {
+        id: "afl-at-the-mcg",
+        eyebrow: "Fixture-led trip priority",
+        title: "AFL at the MCG",
+        description:
+          "Buy tickets for any available men’s AFL match at the MCG. The selected plan is a wildcard or early-finals game from Newtown, likely Friday September 3 or Saturday September 4. Geelong to the MCG is about a 70-minute V/Line trip, not a second lodging move.",
+        items: [
+          "Use the actual 2027 fixture before locking the match date. Home-and-away concludes 30 August; wildcard finals start the first week of September; the Grand Final is Saturday 2 October and is not the objective.",
+          "An MCG wildcard is likely if Victorian clubs finish 7–10, but it is not guaranteed. A Cats wildcard at GMHBA would be even better. Keep a Queenscliff or family-history Saturday if no suitable Melbourne game appears.",
+          "Leaving Thursday August 26 or Friday 27 remains an option for one or two Melbourne hotel nights and a last-round game on or around August 30. That inbound is not the selected stay.",
+        ],
+        links: [
+          {
+            title: "MCG events",
+            url: "https://www.mcg.org.au/events",
+          },
+          {
+            title: "AFL fixtures",
+            url: "https://www.afl.com.au/fixture",
           },
         ],
       },
@@ -325,48 +343,49 @@ export const australiaCities: Record<AustraliaCity["slug"], AustraliaCity> = {
       },
     ],
     planningNotes: [
-      "Move from Melbourne on Sunday, August 29 and protect the Monday-through-Friday routine.",
+      "Land in Melbourne Monday, August 30 and continue to Newtown the same day. Monday is landing, not a Work & School day.",
+      "Leaving Thursday, August 26 or Friday 27 remains an option for one or two Melbourne hotel nights and a last-round game on or around August 30. That inbound is not the selected stay.",
       "Do not prebook every evening; family-history time needs room for remembered places and spontaneous follow-up.",
-      "If the selected MCG match falls September 3–5, make one purposeful trip to Melbourne rather than moving the base.",
+      "The selected MCG window is the wildcard weekend from Newtown, likely Friday September 3 or Saturday September 4.",
       "Choose the Great Ocean Road rental-car handoff together with the Newtown lodging.",
     ],
   },
   melbourne: {
     slug: "melbourne",
     title: "Melbourne",
-    eyebrow: "Australia · landing and Work & School launch",
-    dates: "Aug 23–28, 2027",
-    facts: ["6 nights", "Soft Work & School launch", "MCG priority"],
+    eyebrow: "Australia · optional inbound, not the selected stay",
+    dates: "Aug 28–30 if leaving Thursday",
+    facts: ["Optional inbound", "1–2 hotel nights", "Last-round Aug 30"],
     summary:
-      "Melbourne absorbs the long-haul landing, the first Work & School setup, and the best early opportunity for an MCG match. Keep the first days light and avoid turning recovery into an ambitious sightseeing schedule.",
-    stayTitle: "Inner Melbourne with an easy MCG trip",
+      "The selected plan lands Monday, August 30 and continues to Newtown the same day. Use this page only if you leave a few days earlier for one or two hotel nights and a last-round home-and-away game on or around August 30.",
+    stayTitle: "A hotel near the MCG, not a rental",
     stayDescription:
-      "Prioritize a separate work room, groceries, laundry and straightforward transit to the MCG. Richmond, South Yarra, East Melbourne or the CBD can work; the exact match date should influence the final choice.",
+      "Do not take a Melbourne apartment for this window. One or two hotel nights near Southern Cross or the MCG are enough; the Work & School base is Newtown.",
     stayChecks: [
-      "Walkable access to the central city and a straightforward airport transfer",
-      "Enough room to absorb jet lag without disrupting work and school zones",
-      "A St Kilda evening plan that includes travel and dinner",
-      "A simple Sunday move to Newtown after the final home-and-away weekend",
+      "Easy airport transfer and a straightforward trip to the MCG",
+      "Luggage storage if the match ends close to the Geelong train",
+      "A St Kilda evening plan only if energy remains after landing",
+      "A same-day or next-morning move to Newtown after the match",
     ],
-    rhythmTitle: "Land softly, then build the Work & School routine",
+    rhythmTitle: "Hotel nights, then the last-round window",
     rhythmSummary:
-      "Melbourne is the buffer between the long-haul flight and the first normal week. Keep Work & School flexible around recovery and reserve the weekend edge for the best available MCG match.",
+      "This is a recovery-and-match inbound, not a Work & School launch. Keep city plans easy to cancel and continue to Newtown as soon as the match is done.",
     rhythm: [
       {
         label: "Land and recover",
         mapLabel: "Land",
-        dates: "Mon, Aug 23",
-        detail: "Apartment, groceries, sleep and only essential work.",
+        dates: "Sat, Aug 28",
+        detail: "Hotel, groceries if needed, sleep. No rental setup.",
         days: 1,
         tone: "arrival",
       },
       {
-        label: "Work & School launch",
-        mapLabel: "Launch",
-        dates: "Aug 24–27",
-        detail: "Protected commitments with flexible city outings.",
-        days: 4,
-        tone: "work",
+        label: "Easy city day",
+        mapLabel: "City",
+        dates: "Sun, Aug 29",
+        detail: "One loose outing if energy allows; keep the evening free.",
+        days: 1,
+        tone: "family",
         highlights: [
           {
             title: "St Kilda Little Penguins",
@@ -399,43 +418,42 @@ export const australiaCities: Record<AustraliaCity["slug"], AustraliaCity> = {
         ],
       },
       {
-        label: "MCG / city window",
+        label: "Last-round / Newtown",
         mapLabel: "MCG",
-        dates: "Sat, Aug 28",
-        detail: "Use the fixture first; keep a flexible city fallback.",
+        dates: "Mon, Aug 30",
+        detail: "Use the fixture first, then continue to Newtown.",
         days: 1,
         tone: "family",
         featureLink: {
-          title: "See MCG plan",
+          title: "See last-round MCG plan",
           href: "#afl-at-the-mcg",
         },
       },
     ],
     basePanel: {
-      id: "work-rhythm",
-      eyebrow: "Landing week",
-      title: "Work & School from Melbourne",
-      headerNote: "US Eastern → 11 p.m.–7 a.m. local",
+      id: "inbound-window",
+      eyebrow: "Optional inbound",
+      title: "Hotel nights before Newtown",
       description:
-        "Treat the first week as a stable landing base. Work and academic commitments remain real, while the surrounding city plans stay deliberately easy to rearrange.",
+        "Take this window only if a last-round game on or around August 30 is worth leaving New Hampshire a few days early. The selected stay still begins in Newtown.",
       items: [
-        "Recovery — Keep optional plans easy to cancel while the family adjusts after the long-haul flight.",
-        "Urban form — Use trams, laneways, the Yarra and Federation Square to understand central Melbourne.",
-        "Arts and culture — Choose one focused NGV or museum visit rather than stacking institutions.",
-        "Urban wildlife — Use the St Kilda penguin visit to examine habitat, conservation and responsible viewing.",
+        "Timing — Leave Thursday, August 26 or Friday 27 so Saturday landing is not the match day.",
+        "Lodging — Hotel nights only; do not rent a Melbourne work base for two days.",
+        "Match day — August 30 is a Monday in 2027. Confirm whether last-round includes that date or the preceding weekend.",
+        "Handoff — Continue to Newtown after the match so the family-history week still starts on time.",
       ],
     },
     featurePlans: [
       {
         id: "afl-at-the-mcg",
-        eyebrow: "Fixture-led trip priority",
+        eyebrow: "Optional last-round window",
         title: "AFL at the MCG",
         description:
-          "Buy tickets for any available men’s AFL match at the MCG. Prefer the final home-and-away weekend while based in Melbourne; if the better fixture is the following weekend, make one purposeful trip from Newtown instead of changing the route.",
+          "This page exists for a last-round home-and-away match on or around August 30. The selected AFL plan is a wildcard or early-finals MCG game from Newtown the following weekend. Do not organize the trip around Grand Final access.",
         items: [
-          "Use the actual 2027 fixture before locking the match date.",
+          "The AFL has the 2027 home-and-away season concluding 30 August; the exact fixture is unpublished.",
           "Choose seats and transit for a family match-day experience, not merely the cheapest entry.",
-          "Keep a flexible central-city fallback if no suitable MCG match is available in this window.",
+          "If no suitable last-round MCG match appears, keep the selected Saturday, August 28 departure and go straight to Newtown.",
         ],
         links: [
           {
@@ -478,9 +496,9 @@ export const australiaCities: Record<AustraliaCity["slug"], AustraliaCity> = {
     ideas: [
       {
         title: "AFL at the MCG",
-        timing: "One match · target Aug 27–Sep 5",
+        timing: "Optional last-round · on or around Aug 30",
         description:
-          "This is a specific trip objective, not a generic Melbourne possibility: buy tickets for any available men's AFL match at the MCG. Prefer the final home-and-away weekend while based in Melbourne; if the better fixture is the following weekend, make one purposeful trip from Newtown instead of changing the route.",
+          "Use this inbound only if a last-round home-and-away match is worth leaving a few days early. The selected AFL plan is a wildcard or early-finals game from Newtown.",
         links: [
           {
             title: "AFL fixtures",
@@ -520,12 +538,12 @@ export const australiaCities: Record<AustraliaCity["slug"], AustraliaCity> = {
         title: "Royal Botanic Gardens",
         timing: "Recovery-day option",
         description:
-          "Use the gardens and Shrine precinct as the calmer Sunday option before collecting luggage and heading to the airport.",
+          "Use the gardens and Shrine precinct as the calmer Sunday option before the match and the move to Newtown.",
       },
     ],
     planningNotes: [
-      "Target any men's AFL match at the MCG; do not organize the trip around Grand Final access.",
-      "If the best match falls after the August 29 move, travel from Newtown for that one scheduled event.",
+      "This page is not the selected Australia opening. The live route lands Monday, August 30 and continues to Newtown.",
+      "Leave Thursday, August 26 or Friday 27 only if a last-round game on or around August 30 is worth the weekday departure.",
       "The St Kilda penguin sessions are free but ticketed and capacity-limited.",
     ],
   },

@@ -9,7 +9,7 @@ import "../trips/australia.css";
 export const metadata: Metadata = {
   title: "Asia",
   description:
-    "The selected Asia sequence: Dehradun family time in India, a bounded Singapore office week, and Thanksgiving in Hong Kong.",
+    "The selected Asia sequence: three weeks in India, then a two-week Hong Kong office stay before New Zealand.",
 };
 
 export default function AsiaPage() {
@@ -22,24 +22,53 @@ export default function AsiaPage() {
           <h1>Asia</h1>
           <div className="aus-overview-facts">
             <span>Oct 24–Nov 27, 2027</span>
-            <span>India, Singapore and Hong Kong</span>
-            <span>Family + office weeks</span>
+            <span>India and Hong Kong</span>
+            <span>Family + two-week office stay</span>
           </div>
           <p className="aus-overview-summary">
-            Spend the longer block with family in Dehradun, then keep Singapore
-            and Hong Kong as compact office weeks with a real weekend attached.
-            India is not a sightseeing circuit; Hong Kong uses Thanksgiving as
-            the principal family day.
+            Spend the first India week with family in Dehradun through Diwali,
+            take one bounded north-India vacation week, then work from
+            Bangalore. Fly Sunday to Hong Kong for two weeks of office life,
+            a complete weekend and Thanksgiving.
           </p>
         </header>
 
         <RegionRhythm
           headingId="asia-route-title"
           label="Asia stay sequence"
-          title="Three pieces of the Asia plan"
-          summary="Each block is proportional to nights in that place. Singapore and Hong Kong open their detail plans; India still needs a location page."
+          title="Two pieces of the Asia plan"
+          summary="Each block is proportional to nights in that place. Linked stops open their detail plans."
           stops={asiaStops}
         />
+
+        <section
+          className="aus-planning-notes"
+          id="singapore"
+          aria-labelledby="singapore-note-title"
+        >
+          <p>Deliberate exclusion</p>
+          <h2 id="singapore-note-title">Singapore is not a family stay</h2>
+          <p>
+            Those nights are more valuable as a second week in Hong Kong and as
+            keeping Wānaka at three weeks than as another city setup between
+            India and New Zealand. A short Singapore hop can still be added
+            later if an office visit needs it.
+          </p>
+          <ul>
+            <li>
+              Two weeks in Hong Kong create a complete weekend and Thanksgiving
+              before the overnight flight, instead of a six-night office stop.
+            </li>
+            <li>
+              Wānaka stays the twenty-night late-spring work base rather than
+              shrinking to make room for a third Asian city.
+            </li>
+            <li>
+              A two-day, one-night or two-night Singapore trip remains available
+              for one parent or the whole family if it earns the extra flight.
+            </li>
+          </ul>
+        </section>
 
         <section className="aus-route-grid" aria-label="Asia trip sections">
           {asiaStops.map((stop) => {
@@ -89,7 +118,8 @@ export default function AsiaPage() {
 
         <p className="aus-overview-note">
           Dates remain controlled by <code>data/trip-plan.json</code>. India is
-          a Dehradun family-and-work base first; outside trips stay selective.
+          a Dehradun family-and-work week first; the Golden Triangle is a
+          bounded vacation, not an open circuit.
         </p>
       </main>
     </>

@@ -4,7 +4,7 @@
 
 ## Current itinerary concept
 
-Selected timing: **October 24 through November 13, 2027**, after Australia and before bounded Singapore and Hong Kong office stays followed by Wānaka. Arriving five days before Diwali is now an itinerary anchor.
+Selected timing: **October 24 through November 13, 2027**, after Australia and before a two-week Hong Kong office stay followed by Wānaka. Arriving five days before Diwali is now an itinerary anchor.
 
 Possible sequence:
 

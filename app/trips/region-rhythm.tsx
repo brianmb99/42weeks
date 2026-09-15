@@ -4,6 +4,7 @@ import "./region-rhythm.css";
 
 export type RegionRhythmStop = {
   title: string;
+  barLabel?: string;
   mapLabel: string;
   dates: string;
   days: number;
@@ -51,7 +52,12 @@ export default function RegionRhythm({
             "--rhythm-days": stop.days,
           } as CSSProperties;
           const className = stop.days / totalDays >= 0.18 ? "is-wide" : undefined;
-          const inner = <b>{stop.mapLabel}</b>;
+          const inner = (
+            <>
+              <b className="is-full">{stop.barLabel ?? stop.title}</b>
+              <b className="is-short">{stop.mapLabel}</b>
+            </>
+          );
 
           return stop.href ? (
             <a

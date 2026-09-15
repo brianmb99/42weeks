@@ -21,7 +21,7 @@ Act as a trusted expert advisor, not a passive executor.
 - Alice Springs / real outback time is required.
 - Newtown, Geelong is a family-history stay, not a Melbourne day trip.
 - India is primarily Dehradun family-and-work time, not a rushed sightseeing circuit.
-- Hong Kong and Singapore are short office weeks (about 2–5 office days) with a weekend attached.
+- Hong Kong is a two-week office stay (arrive Sunday from India, full first office week, complete weekend, Thanksgiving, Saturday-night departure). Singapore is not on the route.
 - Prefer weekend travel; do not spend vacation days on logistics unless necessary.
 - `data/trip-plan.json` owns dates. Location files must match it.
 - Draft itineraries live in `proposals/`. Do not promote them until the user selects one.

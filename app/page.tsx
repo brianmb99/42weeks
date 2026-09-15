@@ -29,16 +29,15 @@ const locations = tripPlan.timeline.filter(
 );
 
 const locationDetailPages: Record<string, string> = {
-  "location-melbourne-opening": "/australia/melbourne",
   "location-geelong": "/australia/geelong",
   "location-great-southern-touring-route":
     "/trips/great-southern-touring-route",
-  "location-melbourne-return": "/australia/melbourne",
+  "location-melbourne-return": "/trips/great-southern-touring-route",
   "location-alice-springs": "/australia/alice-springs",
   "location-sydney": "/australia/sydney",
   "location-hamilton-island": "/trips/hamilton-island-working-week",
   "location-brisbane": "/australia/brisbane",
-  "location-singapore": "/asia/singapore",
+  "location-india": "/asia/india",
   "location-hong-kong": "/asia/hong-kong",
   "location-wanaka": "/new-zealand/wanaka",
 };
@@ -121,7 +120,6 @@ const overviewRows: OverviewRow[] = [
     id: "australia",
     title: "Australia",
     blocks: [
-      makeOverviewBlock("location-melbourne-opening"),
       makeOverviewBlock("location-geelong"),
       makeOverviewBlock("location-great-southern-touring-route", {
         endLocationId: "location-melbourne-return",
@@ -139,7 +137,6 @@ const overviewRows: OverviewRow[] = [
     title: "Asia",
     blocks: [
       makeOverviewBlock("location-india"),
-      makeOverviewBlock("location-singapore"),
       makeOverviewBlock("location-hong-kong"),
     ],
   },
@@ -186,22 +183,12 @@ type PlaceCard = {
 
 const australiaCards: PlaceCard[] = [
   {
-    locationId: "location-melbourne-opening",
-    category: "Landing + work launch",
-    summary:
-      "Use six nights to absorb the long-haul arrival, establish work and homeschool, and target any available men's AFL match at the MCG.",
-    highlights: ["Soft work launch", "MCG match", "Melbourne afternoons"],
-    open: "Exact flight, rental, and 2027 AFL fixture",
-    href: "/australia/melbourne",
-    linkLabel: "Open Melbourne plan",
-  },
-  {
     locationId: "location-geelong",
     category: "Family history + work",
     summary:
-      "Live in Newtown for a full week, protect the weekday routine, and leave room for remembered places, ordinary neighborhood time, and Queenscliff.",
-    highlights: ["Newtown base", "Remembered places", "Queenscliff"],
-    open: "Apartment, internet, and personal family-history list",
+      "Land in Melbourne Monday, August 30, continue to Newtown the same day, protect the first Work & School week, and take one MCG trip from Geelong.",
+    highlights: ["Monday landing", "MCG from Newtown", "Family history"],
+    open: "Apartment, internet, AFL wildcard tickets, and personal family-history list",
     href: "/australia/geelong",
     linkLabel: "Open Geelong plan",
   },
@@ -261,30 +248,22 @@ const australiaCards: PlaceCard[] = [
 const asiaCards: PlaceCard[] = [
   {
     locationId: "location-india",
-    category: "Family base + work",
+    category: "Family, vacation and work",
     summary:
-      "The longer stay is primarily for family in Dehradun. Base there for at least a week with a credible work and homeschool routine, then fit only selective travel around family time, Diwali, and work.",
-    highlights: ["Dehradun family base", "Diwali", "Selective Taj or trek"],
-    open: "Dehradun housing, family calendar, work setup, and which outside trips genuinely fit",
+      "Week one is Dehradun with family through Diwali and a Work & School routine. Week two is a bounded Delhi–Agra–Jaipur vacation. Week three is Bangalore Work & School before Hong Kong.",
+    highlights: ["Dehradun family base", "Diwali", "Taj Mahal", "Bangalore week"],
+    open: "Family housing, Delhi air, Taj tickets, and the Bangalore apartment",
     anchor: "Diwali · Oct 29",
-  },
-  {
-    locationId: "location-singapore",
-    category: "One bounded office week",
-    summary:
-      "A compact, easy-to-navigate work base with strong food, gardens, transit, and family-friendly city days.",
-    highlights: ["Hawker food", "Gardens", "Easy transit"],
-    open: "Neighborhood, lodging, and weekday routine",
-    href: "/asia/singapore",
-    linkLabel: "Open Singapore plan",
+    href: "/asia/india",
+    linkLabel: "Open India plan",
   },
   {
     locationId: "location-hong-kong",
-    category: "Thanksgiving office week",
+    category: "Two-week office stay",
     summary:
-      "Keep the office commitment compact, use the Thanksgiving break intelligently, and preserve Saturday before the overnight flight.",
-    highlights: ["Harbor and ferries", "Three core office days", "Saturday in Hong Kong"],
-    open: "Neighborhood, office rhythm, and exact Auckland flight",
+      "Live near the office for two weeks: a full Work & School week, a complete weekend, Thanksgiving, and a Saturday-night flight to New Zealand.",
+    highlights: ["Harbor and ferries", "Cheung Chau weekend", "Thanksgiving"],
+    open: "Neighborhood, office commute, and exact Auckland flight",
     href: "/asia/hong-kong",
     linkLabel: "Open Hong Kong plan",
   },
@@ -580,9 +559,10 @@ export default function Home() {
                 <h2>Australia</h2>
               </div>
               <p>
-                Land gently in Melbourne, preserve Newtown family-history time,
-                take one concentrated road-trip week, then use two-week Alice
-                Springs and Sydney bases before the reef and Brisbane.
+                Land in Melbourne, continue to Newtown the same day, preserve
+                family-history time, take one concentrated road-trip week, then
+                use two-week Alice Springs and Sydney bases before the reef and
+                Brisbane.
               </p>
             </div>
             <PlaceGrid cards={australiaCards} ariaLabel="Australia places" />
@@ -595,10 +575,10 @@ export default function Home() {
                 <h2>Asia</h2>
               </div>
               <p>
-                India is primarily a Dehradun family-and-work stay, anchored by
-                Diwali, with only selective travel around it. Singapore and
-                Hong Kong remain intentionally short office stays connected on
-                weekends.
+                India starts with family in Dehradun through Diwali, then one
+                bounded north-India vacation week and a Bangalore Work &
+                School week. Hong Kong is the two-week office stay before
+                New Zealand.
               </p>
             </div>
             <PlaceGrid cards={asiaCards} ariaLabel="Asia places" />

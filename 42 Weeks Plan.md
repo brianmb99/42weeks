@@ -1,6 +1,6 @@
 # 42 Weeks
 
-> Living planning baseline — last updated September 13, 2026
+> Living planning baseline — last updated September 14, 2026
 > Family of four from Hanover, New Hampshire | Target: August 2027–June 2028
 
 ## At a glance
@@ -11,15 +11,15 @@ The goal is a year of **living elsewhere**, not continuous vacation: meaningful 
 
 | Period | Likely location | Status | Main purpose |
 |---|---|---|---|
-| Aug 21–Oct 23, 2027 | Australia | Selected working plan | Melbourne footy, Newtown, Victoria road trip, Alice Springs, Sydney, reef and Brisbane |
+| Aug 28–Oct 23, 2027 | Australia | Selected working plan | Newtown family history, MCG from Geelong, Victoria road trip, Alice Springs, Sydney, reef and Brisbane |
 | Oct 24–Nov 13, 2027 | India | Working plan | Diwali, extended family, cricket, Taj Mahal, trek, selective travel |
-| Nov 14–27, 2027 | Singapore and Hong Kong | Working plan | Two bounded office stays with family weekends |
+| Nov 14–27, 2027 | Hong Kong | Working plan | Two-week office stay with a family weekend and Thanksgiving |
 | Nov 28–Dec 17, 2027 | Wānaka, New Zealand | Selected working plan | Stable late-spring work base and four-day mini-vacation |
 | Dec 2027 | Snowbird, Utah | Working plan | Christmas and skiing |
 | Jan–Mar 2028 | Alps | Wide open | Stable winter base, serious children's skiing, ordinary community life |
 | Apr–Jun 2028 | Denmark | Working plan | Stable spring base, Danish life, sports and regional travel |
 
-The selected fall sequence is **Australia from August 21 through October 23, India through November 13, short Singapore and Hong Kong office stays, then Wānaka through December 17**. The family returns to New Hampshire December 19 before Snowbird and Christmas. This replaces both the older two-base Australia model and the later Longreach/Singapore/Hong Kong canonical route; that prior route is archived under `proposals/archive/`.
+The selected fall sequence is **Australia from August 28 through October 23, India through November 13, a two-week Hong Kong office stay, then Wānaka through December 17**. The family returns to New Hampshire December 19 before Snowbird and Christmas. This replaces both the older two-base Australia model and the later Longreach/Singapore/Hong Kong canonical route; that prior route is archived under `proposals/archive/`.
 
 ## What is decided—or close to it
 
@@ -37,8 +37,8 @@ The selected fall sequence is **Australia from August 21 through October 23, Ind
 
 Questions to resolve:
 
-- Confirm the exact August 21 long-haul itinerary and 2027 Sunday flight days within Australia
-- Secure work-grade family housing in Melbourne, Newtown, Alice Springs, Sydney and Wānaka
+- Confirm the exact August 28 long-haul itinerary and 2027 Sunday flight days within Australia
+- Secure work-grade family housing in Newtown, Alice Springs, Sydney and Wānaka
 - What routing minimizes backtracking, cost, and jet lag?
 - How much time should be reserved in or near Dehradun to spend with Brian's wife's extended family?
 - How should Dehradun family time connect to the principal tourist priorities, including the Taj Mahal?
@@ -46,11 +46,12 @@ Questions to resolve:
 - Can Brian reliably complete eight hours of work from India, given the time difference, connectivity, work environment, and family schedule?
 - Where will the children find routine and peers during the fall?
 
-#### Australia: August 21–October 23
+#### Australia: August 28–October 23
 
-- Leave New Hampshire Saturday, August 21 after roughly six days at home following camp; arrive in **Melbourne** around Monday, August 23.
-- Use six Melbourne nights for recovery, a soft work launch and the best available chance to see **any men's AFL match at the MCG**. The full fixture is not yet published, so the exact match remains open.
-- Move to **Newtown, Geelong** August 29–September 4. This is a personal family-history base, not a day trip from Melbourne.
+- Leave New Hampshire Saturday, **August 28** after roughly two weeks at home following camp; arrive in Melbourne around Monday, **August 30**, and continue to **Newtown, Geelong** the same day. Do not take a Melbourne rental for the selected stay.
+- Live in Newtown August 30–September 4. This is a personal family-history base, not a day trip from Melbourne. Monday is landing; protect Tuesday through Friday.
+- Target **any men's AFL match at the MCG**, not the Grand Final. The selected window is a wildcard or early-finals game from Newtown, likely Friday September 3 or Saturday September 4. Home-and-away concludes 30 August 2027; wildcard finals start the first week of September; the Grand Final is Saturday 2 October.
+- Leaving Thursday August 26 or Friday 27 remains an **unselected option** for one or two Melbourne hotel nights and a last-round home-and-away game on or around August 30.
 - Use September 5–11 for the Great Ocean Road, Otways, Gariwerd and Sovereign Hill. Labor Day plus four vacation weekdays makes this a real vacation road trip with no planned work.
 - Live and work in **Alice Springs September 12–25**. Two weeks create ordinary Red Centre life and a complete middle weekend for Tjoritja or another outback excursion.
 - Use **Sydney September 26–October 9** as a two-week beach work base with one complete city weekend.
@@ -69,14 +70,14 @@ India is both a family visit and a broader travel experience: part of Brian's wi
 
 A **short, family-appropriate Himalayan trek** is also a core objective. The likely approach is to place Dehradun and the trek near the beginning of the India leg—ideally in early November—then move into family time and lower-altitude tourism as winter advances. Nag Tibba is an early candidate because it starts near Dehradun, is officially described as a two-day, easy-to-moderate trek suitable for families and groups, and reaches roughly 3,000 m. Trek choice remains open pending exact dates, desired difficulty, road time, guide arrangements, and the children's comfort with altitude and camping.
 
-#### Singapore, Hong Kong and Wānaka: November 14–December 17
+#### Hong Kong and Wānaka: November 14–December 17
 
-- Cap Singapore at November 14–20: Sunday arrival, up to five office days and Saturday with the family.
-- Use Hong Kong November 21–27: a Sunday arrival, three to five office days, Thanksgiving on Thursday and the early market close Friday.
+- Use Hong Kong November 14–27: Sunday arrival from Bangalore, a full office week, a complete weekend, Thanksgiving on Thursday and the early market close Friday.
 - Prefer a Saturday-night Hong Kong departure when the eventual timetable permits, then connect through Auckland and Queenstown to Wānaka.
 - Keep one Wānaka rental from November 28 through December 17. Work fully November 29–December 3, use four-hour anchor blocks December 6–8, take December 9–10 as vacation, then work fully December 13–17.
 - A roughly 5 a.m.–1 p.m. New Zealand workday overlaps approximately 11 a.m.–7 p.m. New York or 10 a.m.–6 p.m. Chicago on the previous date and leaves the long late-spring afternoon available.
 - Keep Wānaka as the base for the four-day mini-vacation unless a two-night Aoraki or Te Anau excursion clearly earns the packing cost. Do not attempt Milford Sound as a day trip from Wānaka.
+- Singapore is not a family stay. A solo office hop remains optional and is not on the itinerary.
 
 ### 2. Winter: choose an Alpine base
 
@@ -216,7 +217,9 @@ The plan is working if:
 | Jul 2026 | A short, family-appropriate Himalayan trek added as a core India objective, preferably early in the India leg. |
 | Jul 2026 | Denmark retained as the preferred spring base; broader Schengen travel during the bilateral-waiver period flagged as an unresolved legal/risk issue. |
 | Sep 2026 | Selected the August 21 Australia departure and the Melbourne → Newtown → Victoria road trip → Alice Springs → Sydney → Whitsundays → Brisbane route. |
+| Sep 2026 | Dropped the six-night Melbourne landing stay. Selected Saturday, August 28 departure, Monday Newtown arrival, and an MCG trip from Geelong on the wildcard weekend. Optional earlier leave for Melbourne hotel nights and a last-round August 30 game remains documented, not canonical. |
 | Sep 2026 | Shortened Singapore and Hong Kong to bounded office stays and added a twenty-night Wānaka working base before the return home. |
+| Sep 2026 | Dropped Singapore from the family route and extended Hong Kong to a two-week office stay, keeping Wānaka. |
 | Sep 2026 | Archived the superseded September 18 / Longreach canonical route under `proposals/archive/` and an annotated Git tag. |
 
 ## Parking lot

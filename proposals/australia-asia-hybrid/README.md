@@ -1,14 +1,14 @@
 # Selected Australia, Asia and Wānaka Route
 
-> **Selected September 13, 2026 — this route is now canonical.**
+> **Selected September 13, 2026 — this route became canonical, then Singapore was dropped on September 14, 2026.**
 >
-> This directory preserves the proposal that led to the decision. The live implementation is in `data/trip-plan.json`; the superseded route is archived under `proposals/archive/canonical-before-alice-wanaka-2026-09-13/`.
+> This directory preserves the proposal that led to the Australia, India and Wānaka architecture. The live implementation is in `data/trip-plan.json`. Singapore is no longer a family stay; Hong Kong is the two-week office stop before Wānaka. The superseded pre-Alice Springs route is archived under `proposals/archive/canonical-before-alice-wanaka-2026-09-13/`.
 
 ## Selected route
 
-- August 21–23: Saturday departure and weekend travel from New Hampshire to Melbourne, after roughly six days at home following camp
-- August 23–28: six Melbourne nights for arrival recovery, a soft work launch, and the final home-and-away MCG window
-- August 29–September 4: seven nights in Newtown, Geelong; run a normal work and homeschool week while preserving local afternoons, evenings, and Saturday
+- August 28–30: Saturday departure and weekend travel from New Hampshire to Melbourne, after roughly two weeks at home following camp; continue to Newtown the same day as landing
+- August 30–September 4: six nights in Newtown, Geelong; Monday is landing, Tuesday–Friday are the Work & School week, and Saturday is the MCG or local family day
+- Optional, not selected: leave Thursday August 26 or Friday 27 for one or two Melbourne hotel nights and a last-round home-and-away game on or around August 30
 - September 5–11: seven-day Great Ocean Road, Otways, Gariwerd, and Sovereign Hill loop; Labor Day reduces the block to four vacation weekdays
 - September 12–25: fourteen nights in Alice Springs as a real outback work-and-life chapter
 - September 26–October 9: fourteen Sydney nights and two full work weeks
@@ -21,13 +21,13 @@
 - November 28–December 17: one stable Wānaka base, with two full work weeks around a reduced-hours week and a four-day mini-vacation
 - December 18–19: travel home to New Hampshire
 
-The full 2027 AFL fixture is not published. If the best MCG match falls September 3–5, make one purposeful Newtown → MCG trip. If it is Sunday, September 5, start the road loop on September 6 and compress or shift its first day rather than sacrificing the match.
+The 2027 AFL calendar is locked even though the fixture is unpublished: home-and-away concludes 30 August, wildcard finals start the first week of September, and the Grand Final is Saturday 2 October. The selected AFL plan is a Newtown → MCG trip on the wildcard weekend, likely Friday September 3 or Saturday September 4. If the match is Sunday, September 5, start the road loop on September 6 and compress or shift its first day rather than sacrificing the match. Leaving a few days earlier for a last-round game on or around August 30 remains documented, not canonical.
 
 ## Why this replaces the original hybrid recommendation
 
 - Newtown is not a tourism stop. A full week supports ordinary family-history time, spontaneous neighborhood walks, evening visits, and a useful work routine. Melbourne day trips would turn meaningful local time into scheduled excursions.
 - One Geelong → MCG trip is different: the football match is a single scheduled event, exactly the kind of objective that works as a day or evening trip.
-- The Saturday August 21 departure uses a weekend that would otherwise sit at home, avoids a Tuesday–Thursday long-haul itinerary, and still leaves roughly a week after camp.
+- The Saturday August 28 departure uses a weekend, avoids a Tuesday–Thursday long-haul itinerary, and still leaves roughly two weeks after camp.
 - Starting the Victoria loop over Labor Day saves one vacation day and opens enough calendar space to give both Alice Springs and Sydney two weeks.
 - Alice Springs is the leading outback candidate because current routes support a linear Melbourne → Alice Springs → Sydney path, and two weeks allow weekday life plus a full middle weekend in the Red Centre.
 - Longreach remains the default fallback, not a discarded idea. It offers the stronger small-town pastoral and aviation experience, but usually requires Brisbane connections and its headline attractions fit into roughly three touring days.
@@ -37,8 +37,8 @@ The full 2027 AFL fixture is not published. If the best MCG match falls Septembe
 
 ## Work and vacation rhythm
 
-- Melbourne: arrive Monday, recover, and build from reduced output to a credible workday by the end of the week
-- Newtown: work and homeschool August 30–September 3; use afternoons, evenings, and Saturday for family-history time and Queenscliff
+- Newtown: land Monday, August 30; Work & School August 31–September 3; use afternoons, evenings, and Saturday for family-history time, Queenscliff, and the MCG window
+- Melbourne inbound: optional only — one or two hotel nights and a last-round game on or around August 30 if leaving Thursday or Friday
 - Victoria road loop: start Sunday, use Labor Day on Monday, and take vacation September 7–10; assume no work from changing road-trip rentals
 - Alice Springs: work and homeschool September 13–24, with September 18–19 reserved for Tjoritja/West MacDonnell Ranges or another Red Centre excursion
 - Sydney: work and homeschool September 27–October 8, with a complete middle weekend
@@ -67,8 +67,9 @@ Broken Hill is a credible backup, especially for Silverton, mining history, art,
 
 ## Canonical website/data changes
 
-- The authoritative trip starts August 21.
-- The live route includes a six-night Melbourne landing base and seven nights in Newtown.
+- The authoritative trip starts August 28.
+- The live route lands in Melbourne Monday, August 30 and continues to Newtown the same day. There is no six-night Melbourne landing base.
+- Newtown is six nights (August 30–September 4), with the MCG match planned as a trip from Geelong.
 - The full seven-day Victoria road loop uses Labor Day and four vacation weekdays.
 - Alice Springs replaces the late Longreach week as the canonical outback block.
 - Sydney has two weeks, followed by the Whitsundays and a final Brisbane work week.
@@ -79,7 +80,7 @@ Broken Hill is a credible backup, especially for Silverton, mining history, art,
 ## Checks before booking
 
 - 2027 AFL fixture and official MCG ticket availability
-- Exact August 21 departure itinerary and Melbourne arrival date
+- Exact August 28 departure itinerary and Melbourne arrival date, or the Thursday/Friday earlier-leave variant if a last-round August 30 game is chosen
 - Exact 2027 Melbourne–Alice Springs–Sydney or Longreach flight days
 - Family rental with verified broadband and a separate work room in Newtown and the chosen outback base
 - October attraction and tour operating calendars

@@ -7,7 +7,7 @@ const hongKong = asiaLocationPages["hong-kong"];
 export const metadata: Metadata = {
   title: "Hong Kong",
   description:
-    "The six-night Hong Kong Thanksgiving office stay, family-day plan, practical base and Saturday departure rhythm.",
+    "The two-week Hong Kong office stay: a full Work & School week, a complete weekend, Thanksgiving and a Saturday-night departure to New Zealand.",
 };
 
 export default function HongKongPage() {

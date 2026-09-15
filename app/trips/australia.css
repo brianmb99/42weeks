@@ -206,9 +206,17 @@ body {
 }
 
 .aus-planning-notes {
-  margin: 24px 0 0 150px;
+  margin: 24px 0 22px 150px;
   padding: 26px 30px;
   background: var(--aus-pale-blue);
+}
+
+.aus-planning-notes h2 + p {
+  max-width: 720px;
+  margin: 12px 0 0;
+  color: #3f4b51;
+  font-size: 14px;
+  line-height: 1.55;
 }
 
 .aus-planning-notes ul {

@@ -11,7 +11,7 @@ export type AustraliaNavPage =
   | "whitsundays"
   | "brisbane"
   | "outback";
-export type AsiaNavPage = "overview" | "singapore" | "hong-kong";
+export type AsiaNavPage = "overview" | "india" | "hong-kong";
 
 const navItems: Array<{ id: NavPage; label: string; href: string }> = [
   { id: "home", label: "Home", href: "/" },
@@ -27,8 +27,8 @@ const australiaNavItems: Array<{
   href: string;
 }> = [
   { id: "overview", label: "Overview", href: "/australia" },
-  { id: "melbourne", label: "Melbourne", href: "/australia/melbourne" },
   { id: "geelong", label: "Geelong", href: "/australia/geelong" },
+  { id: "melbourne", label: "Melbourne", href: "/australia/melbourne" },
   {
     id: "great-ocean-road",
     label: "Great Ocean Road",
@@ -58,7 +58,7 @@ const asiaNavItems: Array<{
   href: string;
 }> = [
   { id: "overview", label: "Overview", href: "/asia" },
-  { id: "singapore", label: "Singapore", href: "/asia/singapore" },
+  { id: "india", label: "India", href: "/asia/india" },
   { id: "hong-kong", label: "Hong Kong", href: "/asia/hong-kong" },
 ];
 

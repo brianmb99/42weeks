@@ -14,7 +14,7 @@ New and updated location pages follow `docs/location-page-pattern.md`. Alice Spr
 
 Dates live in `data/trip-plan.json`. Location detail must match those dates. Public pages say **Work & School** and show only a concise `US Eastern → [local range] local` note, not a prescribed work schedule.
 
-Explored itineraries belong in `proposals/` until selected. Anchors: Alice Springs outback time, Newtown/Geelong family history, Dehradun family time in India, short Hong Kong and Singapore office weeks, an MCG match, and Thanksgiving in Hong Kong.
+Explored itineraries belong in `proposals/` until selected. Anchors: Alice Springs outback time, Newtown/Geelong family history, Dehradun family time in India, a two-week Hong Kong office stay, an MCG match, and Thanksgiving in Hong Kong.
 
 ## Site
 

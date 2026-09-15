@@ -5,7 +5,7 @@ import AustraliaCityPage from "../../trips/australia-city-page";
 export const metadata: Metadata = {
   title: "Melbourne",
   description:
-    "The six-night Melbourne landing, work-launch and MCG match plan.",
+    "The optional early Melbourne hotel nights and last-round MCG window, not the selected Australia opening.",
 };
 
 export default function MelbournePage() {
