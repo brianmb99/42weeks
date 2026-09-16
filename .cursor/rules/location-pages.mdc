@@ -1,17 +1,19 @@
 ---
 description: Location page template, vibe bar, and Work & School content rules
-globs: app/**/page.tsx,app/trips/location-*.tsx,app/trips/vibe-*.tsx,data/location-page-types.ts,data/australia-pages.ts,data/asia-pages.ts,docs/location-page-pattern.md
+globs: app/**/page.tsx,app/trips/location-*.tsx,app/trips/vibe-*.tsx,data/location-page-types.ts,data/australia-pages.ts,data/asia-pages.ts,data/alps.json,docs/location-page-pattern.md,docs/site.md
 alwaysApply: false
 ---
 
 # Location pages
 
-Use `LocationPlanPage` and follow `docs/location-page-pattern.md`.
+Use `LocationPlanPage`. Follow `docs/location-page-pattern.md`. Site hierarchy is `docs/site.md`.
 
 Alice Springs (`app/australia/alice-springs/page.tsx`) is the approved reference.
 
 - Desktop vibe bar: proportional chronological strip.
 - Mobile vibe bar: compact labeled map (`mapLabel`, horizontal) plus stacked cards. Do not use swipe-to-scroll blocks.
 - Work & School blocks: up to four linked weekday ideas. Hover/focus preview; touch opens the bottom sheet.
-- Pair Work & School and Where to Stay. Put special weekends in `featurePlans`, not a duplicate “What fits here” list.
+- Pair Work & School and Where to Stay. Vacation stops may replace Work & School with a logistics box.
+- Put special weekends in `featurePlans`, not a duplicate “What fits here” list.
+- Public pages show only `US Eastern → [local range] local`, never a prescribed clock.
 - One destination per link. Public copy stays tentative about 2027 hours, fixtures, and conditions.

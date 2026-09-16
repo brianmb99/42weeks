@@ -868,7 +868,8 @@
       "title": "Fly to the Alps",
       "locationId": "alps",
       "context": "Leave after a short stop at home to repack.",
-      "color": null
+      "color": null,
+      "href": "/alps"
     },
     {
       "id": "location-in-transit-alps",
@@ -892,8 +893,9 @@
       "days": 85,
       "title": "The Alps",
       "locationId": "alps",
-      "context": null,
-      "color": "#3f7b62"
+      "context": "One winter Work & School base chosen by the U12 ski program, not a resort circuit.",
+      "color": "#3f7b62",
+      "href": "/alps"
     },
     {
       "id": "event-allie-birthday-2028",

@@ -21,6 +21,7 @@ const routes = [
   "/asia/india",
   "/asia/hong-kong",
   "/new-zealand/wanaka",
+  "/alps",
   "/trips/great-southern-touring-route",
   "/trips/hamilton-island-working-week",
   "/trips/whitsundays-sea-kayaking/hook-island-reef",
@@ -28,7 +29,6 @@ const routes = [
   "/trips/whitsundays-sea-kayaking/whitehaven-chance-henning",
   "/trips/whitsundays-sea-kayaking/planning-booking",
   "/trips/longreach-outback-working-week",
-  "/ski-programs",
 ];
 
 await rm(outputDir, { recursive: true, force: true });

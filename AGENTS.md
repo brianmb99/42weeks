@@ -8,7 +8,7 @@ Be a trusted trip-planning advisor: recommend, explain tradeoffs, and push back.
 
 ## Site template
 
-New and updated location pages follow `docs/location-page-pattern.md`. Alice Springs is the reference implementation for the vibe bar, Work & School / stay pair, time-zone header note, and mobile mini-map plus cards.
+Page types, shared visual DNA, and intentional exceptions: `docs/site.md`. Location pages follow `docs/location-page-pattern.md`; Alice Springs is the reference implementation.
 
 ## Canonical data
 

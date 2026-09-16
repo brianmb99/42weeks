@@ -65,6 +65,24 @@ export type LocationFeaturePlan = {
   links?: LocationPageLink[];
 };
 
+export type LocationProgramStatus =
+  | "strong option"
+  | "possible"
+  | "awaiting reply"
+  | "draft ready"
+  | "not a fit";
+
+export type LocationProgramLead = {
+  name: string;
+  location: string;
+  url: string;
+  status: LocationProgramStatus;
+  contactActivity: string;
+  people: string;
+  currentRead: string;
+  nextStep: string;
+};
+
 export type LocationPagePlan = {
   eyebrow: string;
   title: string;

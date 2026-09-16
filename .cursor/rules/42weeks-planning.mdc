@@ -30,7 +30,7 @@ Act as a trusted expert advisor, not a passive executor.
 
 ## Where to look
 
+- Design entry: `docs/site.md`. Visual tokens: `docs/visual-system.md`.
 - Location UI: `docs/location-page-pattern.md`. Alice Springs is the reference implementation.
 - Do not copy the old horizontal-scroll mobile vibe bar.
 - Static GitHub Pages: `npm run build:pages`. Tests: `npm test` (`tests/rendered-html.test.mjs`).
-- Leave unrelated ski-program edits uncommitted unless asked.

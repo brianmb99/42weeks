@@ -406,6 +406,14 @@ body {
   background: rgb(20 31 27 / 92%);
 }
 
+a.home-trip-collage-alps {
+  text-decoration: none;
+}
+
+a.home-trip-collage-alps:hover {
+  background: rgb(20 31 27 / 92%);
+}
+
 .home-trip-collage-alps {
   top: 18px;
   right: 18px;

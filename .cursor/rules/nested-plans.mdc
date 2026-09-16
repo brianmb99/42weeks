@@ -1,0 +1,14 @@
+---
+description: Nested plans under a location — GOR, Queensland week, kayak routes
+globs: app/trips/**/*.tsx,app/trips/**/*.css,docs/nested-plan-pattern.md
+alwaysApply: false
+---
+
+# Nested plans
+
+Follow `docs/nested-plan-pattern.md`. A nested plan is a child of a location, not a peer of a hub.
+
+- Add one only when sequence, ranking, or a mixed week would swamp the parent.
+- Clone GOR, Queensland, or kayak visuals. Do not invent a fourth look.
+- Keep `SiteNav` on the parent region and link back to the parent location.
+- Do not copy Queensland’s on-page weekday clock onto `LocationPlanPage` stays.

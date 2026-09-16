@@ -1,0 +1,192 @@
+{
+  "schemaVersion": 1,
+  "lastReviewed": "2026-09-15",
+  "lastUpdated": "September 14, 2026",
+  "lastUpdatedIso": "2026-09-14",
+  "title": "The Alps",
+  "start": "2028-01-07",
+  "end": "2028-03-31",
+  "nights": 85,
+  "summary": "Use these eighty-five nights as one winter life, not a circuit of famous names. The town is still open because the children's U12 program has to win first: recurring peers, almost-daily training, a walkable place, dependable snow and a quiet work room. Silvaplana is the strongest current read; Tignes, Val d'Isère and Crans-Montana remain live. Stay inside ninety days, then hand off to Copenhagen on Saturday, April 1.",
+  "planning": {
+    "racers": ["Allie", "Charlie"],
+    "ageGroup": "U12",
+    "period": "January–March 2028"
+  },
+  "season": {
+    "summary": "This is a true high-Alpine winter: cold, snow-covered and short on daylight, which is the point of the stay if a race program is real.",
+    "meanMaximumC": -0.4,
+    "meanMinimumC": -8.9,
+    "meanRainfallMm": 81.2,
+    "notes": [
+      "Val d'Isère January normals are about 31°F by day and 16°F overnight, with about three inches of precipitation, mostly as snow. Recheck 2028 conditions for the valley that actually wins.",
+      "The Engadin runs colder than the French high resorts; Crans-Montana is a little milder. None of that replaces a local avalanche bulletin.",
+      "March warms and the light returns, but snow reliability still has to be a reason the base was chosen, not an afterthought.",
+      "Pack serious winter clothing, ski gear and indoor backups for storm days. Do not treat a sunny brochure photo as the daily forecast."
+    ]
+  },
+  "base": {
+    "recommendation": "One apartment in a real town, booked only after the ski program is real",
+    "reason": "The Alpine base has to win on Allie and Charlie's recurring U12 training, ordinary community life, dependable snow, a quiet work room and a stay inside ninety days. A famous name is useful only if it serves that daily life. Do not rent in Val d'Isère, Tignes, Crans-Montana or the Engadin until a program can actually take them.",
+    "requirements": [
+      "A confirmed U12 race-team or equivalent peer-group placement before the housing deposit",
+      "A walkable town with groceries, a bus or lift, and minimal daily driving",
+      "At least two bedrooms plus a closed-door workspace, or three bedrooms",
+      "Verified fibre or high-quality fixed broadband and strong mobile backup",
+      "Heating, laundry, a full kitchen, ski storage and blackout curtains",
+      "Written confirmation that the desk and internet can support repeated video calls",
+      "Flexible cancellation until 2027–28 program packages are published"
+    ]
+  },
+  "bookFirst": [
+    "Get the Apex 2100 admissions call with Britt on the calendar",
+    "Send ACM race history and current skiing video if Crans-Montana is still in play",
+    "Follow up Club des Sports de Val d'Isère, Ski Club Verbier and Ski Club de Bagnes if they have not replied",
+    "Reconnect with GR Ski Racing Team Silvaplana around July 2027 when 2027–28 packages are available",
+    "Book the winter apartment only after a program can take Allie and Charlie",
+    "Recheck 2028 lift calendars, school-holiday weeks and snow reports for the chosen valley"
+  ],
+  "planningNotes": [
+    "The calendar stay is eighty-five nights, and it must not exceed ninety days.",
+    "Ski Zenit and the Apex Les Crosets camps are backups, not a continuous U12 race-team placement.",
+    "Club des Sports de Tignes, PDS Racing and ESS Verbier are closed leads unless they produce a stronger club referral.",
+    "Allie's birthday is Tuesday, January 18; Brian's birthday is Sunday, March 12. Keep both inside ordinary family time, not travel days.",
+    "Copenhagen is the Saturday, April 1 handoff. Do not spend the last Alpine week adding a second valley."
+  ],
+  "links": [
+    {
+      "title": "Météo-France climate normals · Val d'Isère",
+      "url": "https://donneespubliques.meteofrance.fr/FichesClim/FICHECLIM_73304005.pdf"
+    },
+    {
+      "title": "MeteoSwiss climate",
+      "url": "https://www.meteoswiss.admin.ch/climate/the-climate-of-switzerland.html"
+    },
+    {
+      "title": "SLF avalanche bulletins",
+      "url": "https://www.slf.ch/en/avalanche-bulletin-and-snow-situation/"
+    }
+  ],
+  "programs": [
+    {
+      "name": "GR Ski Racing Team Silvaplana",
+      "location": "Engadin / St. Moritz, Switzerland",
+      "url": "https://stmoritz.gr-mountain.com/ski-club/",
+      "status": "strong option",
+      "contactActivity": "Active exchange — initial outreach, two detailed replies, a follow-up, a closing acknowledgement, and a July reconnect confirmation.",
+      "people": "Veronica; Valentina (Ski Team)",
+      "currentRead": "Program says a continuous January–March placement may work if level is appropriate; almost-daily training and possible local races.",
+      "nextStep": "Reconnect around July 2027 when 2027–28 packages are available."
+    },
+    {
+      "name": "Apex 2100 Academy",
+      "location": "Tignes, France",
+      "url": "https://www.apex2100.org",
+      "status": "awaiting reply",
+      "contactActivity": "Active exchange — initial outreach, a camps-to-academy handoff, an admissions reply, and a sent reply proposing call times.",
+      "people": "Cosmo Osmond (camps handoff); Britt Tilston (admissions)",
+      "currentRead": "Winter groups are usually full with full-term academy athletes; Britt is willing to talk about whether any day-athlete or custom January–March 2028 training is possible.",
+      "nextStep": "Get the admissions call with Britt on the calendar."
+    },
+    {
+      "name": "ACM Ski Team",
+      "location": "Crans-Montana, Switzerland",
+      "url": "https://www.acm-ski-team.ch/inscription",
+      "status": "possible",
+      "contactActivity": "Active exchange — one outreach email and one reply; we have not sent the requested materials yet.",
+      "people": "Nicolas Combe",
+      "currentRead": "They do not normally take non-season athletes, but Nicolas will take the case to the technical committee. If accepted, Team International would be the pathway and trains mainly in gates.",
+      "nextStep": "Send race history and current skiing video if this option is still in play."
+    },
+    {
+      "name": "Club des Sports de Val d'Isère",
+      "location": "Val d'Isère, France",
+      "url": "https://www.valsport.org/en/ski-section/",
+      "status": "awaiting reply",
+      "contactActivity": "One outreach email sent after Pascal’s referral; no reply yet.",
+      "people": "Lionel Fayolle; introduced by Pascal Arpin",
+      "currentRead": "Serious local U12 club. Pascal confirmed it as a relevant contact; cold outreach has now gone to Lionel.",
+      "nextStep": "Await reply, then follow up if needed."
+    },
+    {
+      "name": "Ski Zenit",
+      "location": "Zinal / Val d'Anniviers, Switzerland",
+      "url": "https://skiracingcamps.ch/",
+      "status": "possible",
+      "contactActivity": "Active exchange — initial reply, follow-up questions, a detailed second reply, a closing acknowledgement, and a later bookings confirmation.",
+      "people": "Lucia; Joyce (bookings)",
+      "currentRead": "Three-week January camp plus rolling private/shared training, but no fixed younger U12 group.",
+      "nextStep": "Keep as a flexible backup and revisit as 2028 plans firm up."
+    },
+    {
+      "name": "Apex Perform Better / Les Crosets camps",
+      "location": "Les Crosets, Switzerland",
+      "url": "https://www.apex2100.org",
+      "status": "possible",
+      "contactActivity": "Active exchange — separate from the academy thread; camps reply received and acknowledged.",
+      "people": "Cosmo Osmond",
+      "currentRead": "Weekly holiday-style camps for U10–U16, aiming to open partly in winter 2027 and fully in winter 2028. Not a continuous January–March race-team placement.",
+      "nextStep": "Wait for the November mailing-list update."
+    },
+    {
+      "name": "Ski Club Verbier",
+      "location": "Verbier, Switzerland",
+      "url": "https://www.skiclubverbier.ch/fr/",
+      "status": "awaiting reply",
+      "contactActivity": "One outreach email sent; no reply yet.",
+      "people": "Ski Club Verbier team inbox; no named respondent yet",
+      "currentRead": "Contacted after referral from ESS Verbier; no response yet.",
+      "nextStep": "Await reply, then follow up if needed."
+    },
+    {
+      "name": "Ski Club de Bagnes",
+      "location": "Verbier / Val de Bagnes, Switzerland",
+      "url": "https://www.skiclubbagnes.ch/",
+      "status": "awaiting reply",
+      "contactActivity": "One outreach email sent; no reply yet.",
+      "people": "Ski Club de Bagnes team inbox; no named respondent yet",
+      "currentRead": "Contacted after referral from ESS Verbier; no response yet.",
+      "nextStep": "Await reply, then follow up if needed."
+    },
+    {
+      "name": "Tignes / Val d'Isère warm referral",
+      "location": "Tignes / Val d'Isère, France",
+      "url": "https://www.tignes.net/",
+      "status": "possible",
+      "contactActivity": "Active exchange — outreach, a detailed referral reply, and a thank-you.",
+      "people": "Pascal Arpin; introduced by Sixtine Fleury",
+      "currentRead": "Pascal pointed to Club des Sports de Tignes, Valsport, Apex 2100, and local coach Marion Beltramo. Those club contacts have been used.",
+      "nextStep": "No further action with Pascal; consider a later note to Marion if a local-coach option is still useful."
+    },
+    {
+      "name": "Club des Sports de Tignes",
+      "location": "Tignes, France",
+      "url": "https://www.clubdessportsdetignes.com",
+      "status": "not a fit",
+      "contactActivity": "Brief exchange — they replied once and we acknowledged.",
+      "people": "Cyril",
+      "currentRead": "U12 is a full-season, multi-year development model; they do not offer January–March guest placements.",
+      "nextStep": "No further action."
+    },
+    {
+      "name": "PDS Racing / PDS Snowsport",
+      "location": "Portes du Soleil, France",
+      "url": "https://pdssnowsport.com/race-club/",
+      "status": "not a fit",
+      "contactActivity": "Brief exchange — they replied once and we responded with the peer-group requirement.",
+      "people": "Tom",
+      "currentRead": "Offered private coaching only, without the consistent peer group and race opportunities sought.",
+      "nextStep": "No action unless they provide a stronger club referral."
+    },
+    {
+      "name": "ESS Verbier",
+      "location": "Verbier, Switzerland",
+      "url": "https://essverbier.ch/",
+      "status": "not a fit",
+      "contactActivity": "Brief exchange — they replied with guidance and referrals, and we acknowledged.",
+      "people": "Elodie Crépin",
+      "currentRead": "Weekly groups change too much for continuous race-team development; they referred us to local clubs.",
+      "nextStep": "No further action."
+    }
+  ]
+}

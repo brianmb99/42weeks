@@ -1,6 +1,6 @@
 import { sitePath } from "../lib/site-path";
 
-type NavPage = "home" | "calendar" | "australia" | "asia" | "new-zealand";
+type NavPage = "home" | "calendar" | "australia" | "asia" | "new-zealand" | "alps";
 export type AustraliaNavPage =
   | "overview"
   | "melbourne"
@@ -19,6 +19,7 @@ const navItems: Array<{ id: NavPage; label: string; href: string }> = [
   { id: "australia", label: "Australia", href: "/australia" },
   { id: "asia", label: "Asia", href: "/asia" },
   { id: "new-zealand", label: "New Zealand", href: "/new-zealand/wanaka" },
+  { id: "alps", label: "Alps", href: "/alps" },
 ];
 
 const australiaNavItems: Array<{

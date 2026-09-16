@@ -40,6 +40,7 @@ const locationDetailPages: Record<string, string> = {
   "location-india": "/asia/india",
   "location-hong-kong": "/asia/hong-kong",
   "location-wanaka": "/new-zealand/wanaka",
+  "location-alps": "/alps",
 };
 
 function getLocation(id: string) {
@@ -301,9 +302,11 @@ const europeCards: PlaceCard[] = [
     locationId: "location-alps",
     category: `${getLocation("location-alps").days}-day base`,
     summary:
-      "The winter long stay: ski, work, and live in one Alpine base rather than moving from resort to resort.",
-    highlights: ["Ski season", "Village routine", "Weekend exploration"],
-    open: "Country, town, school/routine, and housing",
+      "The winter long stay: ski, work, and live in one Alpine base chosen by the U12 program, not a circuit of resorts.",
+    highlights: ["U12 program", "One mountain", "Town still open"],
+    open: "Program placement, town, and housing",
+    href: "/alps",
+    linkLabel: "Open Alps plan",
   },
   {
     locationId: "location-copenhagen",
@@ -419,7 +422,7 @@ export default function Home() {
 
         <section
           className="home-trip-collage"
-          aria-label="Australia, Val d'Isère, and Copenhagen"
+          aria-label="Australia, the Alps, and Copenhagen"
         >
           <figure>
             <img
@@ -435,7 +438,13 @@ export default function Home() {
             >
               <span>Australia →</span>
             </a>
-            <span className="home-trip-collage-alps">Val d&apos;Isère</span>
+            <a
+              className="home-trip-collage-alps"
+              href={sitePath("/alps")}
+              aria-label="Open Alps plan"
+            >
+              Alps →
+            </a>
             <span className="home-trip-collage-copenhagen">Copenhagen</span>
           </figure>
         </section>

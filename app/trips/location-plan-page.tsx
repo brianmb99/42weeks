@@ -22,7 +22,7 @@ const toneLabels: Record<LocationRhythmTone, string> = {
 
 type LocationPlanPageProps = {
   plan: LocationPagePlan;
-  current?: "australia" | "asia" | "new-zealand";
+  current?: "australia" | "asia" | "new-zealand" | "alps";
   australiaCurrent?: AustraliaNavPage;
   asiaCurrent?: AsiaNavPage;
   source: string;
@@ -222,7 +222,7 @@ export default function LocationPlanPage({
                           href={link.url}
                           rel="noreferrer"
                           target="_blank"
-                          key={link.url}
+                          key={`${link.title}-${link.url}`}
                         >
                           {link.title} ↗
                         </a>
@@ -259,7 +259,7 @@ export default function LocationPlanPage({
                             href={link.url}
                             rel="noreferrer"
                             target="_blank"
-                            key={link.url}
+                            key={`${link.title}-${link.url}`}
                           >
                             {link.title} ↗
                           </a>

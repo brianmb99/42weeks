@@ -84,7 +84,7 @@ test("server-renders the 42 Weeks overview", async () => {
   assert.equal(
     (html.match(/<a class="home-overview-item home-overview-link"/g) ?? [])
       .length,
-    9,
+    10,
   );
   assert.match(html, /href="\/australia\/geelong"/);
   assert.match(
@@ -98,7 +98,8 @@ test("server-renders the 42 Weeks overview", async () => {
     /\/trips\/great-southern-touring-route/,
   );
   assert.match(html, /href="\/australia\/brisbane" aria-label="Open Brisbane plan"/);
-  assert.match(html, /Val d&#x27;Isère/);
+  assert.match(html, /aria-label="Open Alps plan"/);
+  assert.match(html, /href="\/alps"/);
   assert.match(html, /class="home-trip-collage-image"/);
   assert.match(html, /src="\/og\.png"/);
   assert.ok(
@@ -338,7 +339,7 @@ test("server-renders Geelong, Melbourne and Sydney planning pages", async () => 
   }
 });
 
-test("server-renders Alice Springs, Brisbane and Wānaka glance-first plans", async () => {
+test("server-renders Alice Springs, Brisbane, Wānaka and Alps glance-first plans", async () => {
   const routes = [
     {
       path: "/australia/alice-springs",
@@ -435,6 +436,39 @@ test("server-renders Alice Springs, Brisbane and Wānaka glance-first plans", as
       highlightedSegments: 3,
       vibeActivities: 7,
       featurePlans: 2,
+    },
+    {
+      path: "/alps",
+      current: /aria-current="page">Alps</,
+      content: [
+        /<h1>The Alps<\/h1>/,
+        /Work &amp; School from the Alps/,
+        /US Eastern → 3–11 p\.m\. local/,
+        /One apartment in a real town/,
+        /class="location-rhythm-track"/,
+        /Work &amp; School · January/,
+        /class="location-rhythm has-mobile-overview-cards"/,
+        /class="location-rhythm-mobile-map"/,
+        /<b>January<\/b>/,
+        /<b>Arrive<\/b>/,
+        /href="#ski-programs"/,
+        /id="ski-programs"/,
+        /GR Ski Racing Team Silvaplana/,
+        /Apex 2100 Academy/,
+        /href="https:\/\/stmoritz\.gr-mountain\.com\/ski-club\/"/,
+        /Cold, snow and short daylight/,
+        /data\/alps\.json/,
+      ],
+      image: /\/images\/alps\/st-moritz-winter\.jpg/,
+      absent: [
+        /Work \+ school/,
+        /What fits here/,
+        /Swipe to see the whole stay/,
+        /local-morning work block/,
+      ],
+      highlightedSegments: 1,
+      vibeActivities: 4,
+      featurePlans: 3,
     },
   ];
 
@@ -1145,32 +1179,21 @@ test("server-renders the Great Ocean Road Loop detail", async () => {
   assert.match(sydneyPlan.eveningIdeas[0].status, /Likely/);
 });
 
-test("server-renders the unlisted U12 ski program status board", async () => {
-  const response = await render("/ski-programs");
+test("server-renders the Alps U12 ski program notes on the location page", async () => {
+  const response = await render("/alps");
   assert.equal(response.status, 200);
   const html = await response.text();
 
-  assert.match(html, /<title>U12 Ski Programs/);
-  assert.match(html, />U12 ski program search</);
+  assert.match(html, /<title>The Alps/);
+  assert.match(html, /href="\/alps" aria-current="page">Alps/);
   assert.match(html, /Allie and Charlie/);
   assert.match(html, /January–March 2028/);
-  assert.match(html, /Last updated <!-- -->September 14, 2026/);
-  assert.match(html, /dateTime="2026-09-14"/);
-  assert.match(html, /12<!-- --> programs tracked/);
-  assert.match(html, /class="ski-program-status is-strong"/);
-  assert.match(html, /class="ski-program-status is-possible"/);
-  assert.match(html, /class="ski-program-status is-awaiting"/);
-  assert.match(html, /class="ski-program-status is-not-fit"/);
-  assert.match(html, />Strong option</);
-  assert.match(html, />Awaiting reply</);
-  assert.match(html, />Not a fit</);
-  assert.doesNotMatch(html, />Draft ready</);
+  assert.match(html, /Last updated <!-- -->September 14, 2026|updated September 14, 2026/);
   assert.match(html, /GR Ski Racing Team Silvaplana/);
   assert.match(html, /Apex 2100 Academy/);
   assert.match(html, /Club des Sports de Tignes/);
-  assert.match(html, />Contact activity</);
-  assert.match(html, />People</);
-  assert.match(html, /Active exchange/);
+  assert.match(html, /ACM Ski Team/);
+  assert.match(html, /Club des Sports de Val d&#x27;Isère|Club des Sports de Val d'Isère/);
   assert.match(html, /Veronica/);
   assert.match(html, /Valentina \(Ski Team\)/);
   assert.match(html, /Lucia/);
@@ -1180,23 +1203,21 @@ test("server-renders the unlisted U12 ski program status board", async () => {
   assert.match(html, /Pascal Arpin/);
   assert.match(html, /Cyril/);
   assert.match(html, /Elodie Crépin/);
-  assert.match(html, /Get the admissions call with Britt on the calendar/);
-  assert.match(html, /Send race history and current skiing video/);
+  assert.match(html, /Get the Apex 2100 admissions call with Britt on the calendar/);
+  assert.match(html, /Send ACM race history and current skiing video/);
   assert.match(html, /One outreach email sent after Pascal/);
   assert.match(
     html,
     /https:\/\/stmoritz\.gr-mountain\.com\/ski-club\//,
   );
   assert.match(html, /ESS Verbier/);
-  assert.match(html, /data\/ski-programs\.json/);
+  assert.match(html, /Ski Zenit/);
+  assert.match(html, /Ski Club Verbier/);
+  assert.match(html, /Ski Club de Bagnes/);
+  assert.match(html, /data\/alps\.json/);
   assert.match(html, /class="site-nav"/);
   assert.doesNotMatch(html, /href="\/ski-programs"/);
   assert.doesNotMatch(html, /mailto:/i);
   assert.doesNotMatch(html, /@[a-z0-9.-]+\.[a-z]{2,}/i);
-  assert.equal((html.match(/class="ski-program-card"/g) ?? []).length, 12);
-  assert.equal((html.match(/class="ski-program-status is-strong"/g) ?? []).length, 1);
-  assert.equal((html.match(/class="ski-program-status is-possible"/g) ?? []).length, 4);
-  assert.equal((html.match(/class="ski-program-status is-awaiting"/g) ?? []).length, 4);
-  assert.equal((html.match(/class="ski-program-status is-draft"/g) ?? []).length, 0);
-  assert.equal((html.match(/class="ski-program-status is-not-fit"/g) ?? []).length, 3);
+  assert.equal((html.match(/class="location-feature-plan"/g) ?? []).length, 3);
 });

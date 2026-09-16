@@ -1,0 +1,14 @@
+---
+description: Australia and Asia hub pages — stop-sequence bar and cards
+globs: app/australia/page.tsx,app/asia/page.tsx,app/trips/region-rhythm.tsx,app/trips/australia.css,data/australia-pages.ts,data/asia-pages.ts,docs/region-hub-pattern.md
+alwaysApply: false
+---
+
+# Region hubs
+
+Follow `docs/region-hub-pattern.md`. Australia is the reference. Asia reuses the same CSS.
+
+- Use a hub only when the chapter has two or more stay pages.
+- New Zealand and the Alps skip the hub. Do not add a Europe hub until Copenhagen is a real location page.
+- `RegionRhythm` shows nights per stop, not weekday ideas.
+- Desktop labels name the place. Mobile keeps proportional widths plus a key; no horizontal scroll.

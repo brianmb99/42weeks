@@ -2,6 +2,8 @@
 
 Use `LocationPlanPage` for city and working-base pages. The page should let a reader understand the stay in under a minute, then provide enough detail to plan it. **Alice Springs is the reference implementation.**
 
+This is one page type. Start with `docs/site.md` for the overview → hub → location → nested-plan hierarchy and `docs/visual-system.md` for shared type, color, and layout.
+
 ## Required information order
 
 1. **Purpose and facts** — why this stop exists, exact dates, nights, and Work & School / vacation character.
@@ -30,7 +32,7 @@ Use `LocationPlanPage` for city and working-base pages. The page should let a re
 
 ## Regional overview bars
 
-Australia and Asia hub pages should include a location-only proportional bar (stop sequence, not weekday ideas), in the same family as “Where the weeks go” on the homepage. Desktop labels should name the place (`Great Ocean Road`, `Whitsundays`), not a cryptic stub. On mobile, keep true proportional widths, use a short `mapLabel` that still identifies the stop (`Ocean Rd`, not `Road`), and put full names and dates in a key under the bar rather than stacking every block to full width.
+Hub stop-sequence bars live on Australia and Asia, not on location pages. Follow `docs/region-hub-pattern.md`.
 
 ## Activity rules
 
