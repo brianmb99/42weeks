@@ -455,8 +455,10 @@ test("server-renders Alice Springs, Brisbane, Wānaka and Alps glance-first plan
         /id="ski-programs"/,
         /GR Ski Racing Team Silvaplana/,
         /Apex 2100 Academy/,
-        /Best-informed live option/,
+        /Very positive admissions call/,
         /Admissions Zoom with Britt Tilston/,
+        /English-language British-system academy/,
+        /Chilean family/,
         /href="https:\/\/stmoritz\.gr-mountain\.com\/ski-club\/"/,
         /Cold, snow and short daylight/,
         /data\/alps\.json/,
@@ -1195,6 +1197,10 @@ test("server-renders the Alps U12 ski program notes on the location page", async
   assert.match(html, /Apex 2100 Academy/);
   assert.match(html, /day-athlete/);
   assert.match(html, /OpenApply/);
+  assert.match(html, /generally a fit/);
+  assert.match(html, /English-language British-system academy/);
+  assert.match(html, /Chilean family/);
+  assert.match(html, /Free shuttle every 15 minutes/);
   assert.match(html, /Club des Sports de Tignes/);
   assert.match(html, /ACM Ski Team/);
   assert.match(html, /Club des Sports de Val d&#x27;Isère|Club des Sports de Val d'Isère/);

@@ -81,6 +81,7 @@ export type LocationProgramLead = {
   people: string;
   currentRead: string;
   nextStep: string;
+  callNotes?: string[];
 };
 
 export type LocationPagePlan = {

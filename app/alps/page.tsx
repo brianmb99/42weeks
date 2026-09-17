@@ -45,12 +45,14 @@ function strongPlan(
   program: LocationProgramLead,
   id: string,
 ): LocationFeaturePlan {
+  const callNotes = program.callNotes ?? [];
   return {
     id,
     eyebrow: `Strong option · updated ${alps.lastUpdated}`,
     title: program.name,
     description: `Allie and Charlie as U12 racers during January–March 2028. ${program.location}. ${program.currentRead}`,
     items: [
+      ...callNotes,
       program.contactActivity,
       `People: ${program.people}.`,
       `Next: ${program.nextStep}`,
@@ -155,9 +157,9 @@ export default function AlpsPage() {
             highlights: [
               {
                 title: "Apex 2100 Academy",
-                timing: "Best-informed live option",
+                timing: "Very positive admissions call",
                 description:
-                  "January–March day-athlete training is likely if U12 does not fill. Five half-days, local French races; apply with ski video. Not an offer yet.",
+                  "Britt treated Allie and Charlie as a likely U12 fit. January–March day-athlete winter in Tignes is the intended path; ski video is confirmation.",
                 url: "https://www.apex2100.org",
               },
               {

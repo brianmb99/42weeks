@@ -7,7 +7,7 @@
   "start": "2028-01-07",
   "end": "2028-03-31",
   "nights": 85,
-  "summary": "Use these eighty-five nights as one winter life, not a circuit of famous names. The town is still open because the children's U12 program has to win first: recurring peers, almost-daily training, a walkable place, dependable snow and a quiet work room. Apex 2100 in Tignes is the best-informed live option after a September 17 admissions call; a January–March day-athlete place is likely if U12 does not fill, but it is not an offer. Silvaplana remains a strong Swiss read. Val d'Isère and Crans-Montana are still live. Stay inside ninety days, then hand off to Copenhagen on Saturday, April 1.",
+  "summary": "Use these eighty-five nights as one winter life, not a circuit of famous names. The town is still open because the children's U12 program has to win first: recurring peers, almost-daily training, a walkable place, dependable snow and a quiet work room. Apex 2100 in Tignes is the leading live option after a very positive September 17 admissions call: Britt sounded like Allie and Charlie would be a U12 fit, and a January–March day-athlete winter is the intended path if the group does not fill. Ski video is confirmation, not a high bar. Silvaplana remains a strong Swiss read. Val d'Isère and Crans-Montana are still live. Stay inside ninety days, then hand off to Copenhagen on Saturday, April 1.",
   "planning": {
     "racers": ["Allie", "Charlie"],
     "ageGroup": "U12",
@@ -49,7 +49,7 @@
   ],
   "planningNotes": [
     "The calendar stay is eighty-five nights, and it must not exceed ninety days.",
-    "The Apex call is a strong path, not a place. A January–March day-athlete spot still depends on U12 not filling and on video review.",
+    "The Apex call was strongly positive. Video and OpenApply still have to happen, but Britt treated the kids as a likely U12 fit. Housing waits on a written offer.",
     "If Tignes wins, budget about two and a half weeks off academy snow in February unless they join the optional Italy camp.",
     "Ski Zenit and the Apex Les Crosets camps are backups, not a continuous U12 race-team placement.",
     "Club des Sports de Tignes, PDS Racing and ESS Verbier are closed leads unless they produce a stronger club referral.",
@@ -78,8 +78,18 @@
       "status": "strong option",
       "contactActivity": "Admissions Zoom with Britt Tilston on September 17, 2026. Earlier: camps-to-academy handoff and scheduling emails.",
       "people": "Britt Tilston (admissions); Cosmo Osmond (camps handoff)",
-      "currentRead": "U12 is the flexible group, usually 10–16 of 16 rather than full. The default is the full winter term, late November to mid-April, but a January–March day-athlete place on snow and afternoon strength-and-conditioning is likely if they do not fill. Five half-days a week, 9 a.m. lifts, local French GS and slalom; about two and a half weeks off in February unless they join the optional Italy camp. Homeschooling can stay off campus after lunch. This winter’s day-athlete fee is about €20,000; 2027–28 fees land in January. Applications are open on OpenApply; offers can go out as early as March 2027 after ski-video review. Not an offer yet.",
-      "nextStep": "Submit the OpenApply application and ski videos once Britt sends the link; use the late-November virtual open house."
+      "currentRead": "Very positive admissions call. From the Ford Sayre / race-suit description, Britt treated Allie and Charlie as a likely U12 fit; ski video is the usual confirmation, not a high bar. January–March as day athletes on snow and afternoon S&C is the intended path if the group does not fill. Applications for 2027–28 are already open.",
+      "nextStep": "Submit the OpenApply application and ski videos once Britt sends the link; use the late-November virtual open house.",
+      "callNotes": [
+        "Fit — After hearing Ford Sayre racing and Allie in a GS/SL suit, Britt said a technical base at U12 is generally a fit and not to worry about a slight backseat. The ability range at U12 is wide and still developing. Video is how they confirm.",
+        "Peers — U12 is the flexible group: cap 16, typically 10–16, about 12 this year. Younger groups stay small; the academy is larger higher up (about 24–28 U14s, 48 U16s, 80 FIS athletes). U12 boarders are mostly British families who live relatively nearby. Americans, Canadians and a Chilean family already use the same day-student model with parents in Tignes for the winter.",
+        "Language and school — English-language British-system academy. Most U12s join Apex classroom for the winter term, then return to a home school in April. Homeschoolers can sit in that classroom with other independent-education kids, or go home after lunch. Racing is the local French GS/SL series.",
+        "On snow — Five half-days a week, lifts at 9 a.m. Mondays mix free skiing, telemark and snowboard. Other days are mostly gates, with free-ski to the lift each lap. They race local French hills by team van; the furthest is about 1 hour 15 minutes to La Plagne. A racing license comes through the affiliated club.",
+        "Week shape — Monday afternoon ski; Tuesday full education plus strength and conditioning, sometimes cross-country or roller hockey. Wednesday–Friday: morning ski, lunch, school and S&C from 2:00–6:30 p.m. Saturday morning ski if there is no race; Sunday off. Homeschoolers can leave after lunch and come back for S&C. House parents are on duty for day students too.",
+        "February — The academy leaves Tignes after the first week for an optional Italy camp (across the Fréjus tunnel in recent winters), then a school break. Skip the camp and you have about two and a half weeks of free-skiing in a busy holiday period.",
+        "Town — Compact compared with a big valley like Whistler. Free shuttle every 15 minutes; groceries and restaurants in Tignes; bus to Val d'Isère about 30 minutes. A car is optional except for valley supermarket runs.",
+        "Money and timing — This winter a U12 day athlete is about €20,000 (10% below the ~€23,000 full package). 2027–28 fees come in January. A three-month stay can get an offer as early as March 2027. Shorter weekly-rate stays wait until summer, once full-term numbers are known."
+      ]
     },
     {
       "name": "GR Ski Racing Team Silvaplana",
