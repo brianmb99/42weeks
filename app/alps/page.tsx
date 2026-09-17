@@ -41,21 +41,32 @@ const awaiting = leadsWithStatus("awaiting reply");
 const possible = leadsWithStatus("possible");
 const closed = leadsWithStatus("not a fit");
 
-const programPlans: LocationFeaturePlan[] = [
-  {
-    id: "ski-programs",
+function strongPlan(
+  program: LocationProgramLead,
+  id: string,
+): LocationFeaturePlan {
+  return {
+    id,
     eyebrow: `Strong option · updated ${alps.lastUpdated}`,
-    title: featured.name,
-    description:
-      `Allie and Charlie as U12 racers during January–March 2028. ${featured.location}. ${featured.currentRead}`,
+    title: program.name,
+    description: `Allie and Charlie as U12 racers during January–March 2028. ${program.location}. ${program.currentRead}`,
     items: [
-      featured.contactActivity,
-      `People: ${featured.people}.`,
-      `Next: ${featured.nextStep}`,
-      ...otherStrong.map(leadItem),
+      program.contactActivity,
+      `People: ${program.people}.`,
+      `Next: ${program.nextStep}`,
     ],
-    links: leadLinks(strong),
-  },
+    links: leadLinks([program]),
+  };
+}
+
+function programAnchor(program: LocationProgramLead) {
+  if (program.name.toLowerCase().includes("silvaplana")) return "silvaplana";
+  return program.name.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+}
+
+const programPlans: LocationFeaturePlan[] = [
+  strongPlan(featured, "ski-programs"),
+  ...otherStrong.map((program) => strongPlan(program, programAnchor(program))),
   {
     id: "awaiting-reply",
     eyebrow: "Awaiting reply",

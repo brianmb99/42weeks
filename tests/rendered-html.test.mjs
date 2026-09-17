@@ -470,7 +470,7 @@ test("server-renders Alice Springs, Brisbane, Wānaka and Alps glance-first plan
       ],
       highlightedSegments: 1,
       vibeActivities: 4,
-      featurePlans: 3,
+      featurePlans: 4,
     },
   ];
 
@@ -1223,5 +1223,5 @@ test("server-renders the Alps U12 ski program notes on the location page", async
   assert.doesNotMatch(html, /href="\/ski-programs"/);
   assert.doesNotMatch(html, /mailto:/i);
   assert.doesNotMatch(html, /@[a-z0-9.-]+\.[a-z]{2,}/i);
-  assert.equal((html.match(/class="location-feature-plan"/g) ?? []).length, 3);
+  assert.equal((html.match(/class="location-feature-plan"/g) ?? []).length, 4);
 });
