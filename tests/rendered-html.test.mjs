@@ -455,6 +455,8 @@ test("server-renders Alice Springs, Brisbane, Wānaka and Alps glance-first plan
         /id="ski-programs"/,
         /GR Ski Racing Team Silvaplana/,
         /Apex 2100 Academy/,
+        /Best-informed live option/,
+        /Admissions Zoom with Britt Tilston/,
         /href="https:\/\/stmoritz\.gr-mountain\.com\/ski-club\/"/,
         /Cold, snow and short daylight/,
         /data\/alps\.json/,
@@ -1188,9 +1190,11 @@ test("server-renders the Alps U12 ski program notes on the location page", async
   assert.match(html, /href="\/alps" aria-current="page">Alps/);
   assert.match(html, /Allie and Charlie/);
   assert.match(html, /January–March 2028/);
-  assert.match(html, /Last updated <!-- -->September 14, 2026|updated September 14, 2026/);
+  assert.match(html, /updated September 17, 2026/);
   assert.match(html, /GR Ski Racing Team Silvaplana/);
   assert.match(html, /Apex 2100 Academy/);
+  assert.match(html, /day-athlete/);
+  assert.match(html, /OpenApply/);
   assert.match(html, /Club des Sports de Tignes/);
   assert.match(html, /ACM Ski Team/);
   assert.match(html, /Club des Sports de Val d&#x27;Isère|Club des Sports de Val d'Isère/);
@@ -1203,7 +1207,7 @@ test("server-renders the Alps U12 ski program notes on the location page", async
   assert.match(html, /Pascal Arpin/);
   assert.match(html, /Cyril/);
   assert.match(html, /Elodie Crépin/);
-  assert.match(html, /Get the Apex 2100 admissions call with Britt on the calendar/);
+  assert.match(html, /Submit the Apex OpenApply application and U12 ski videos/);
   assert.match(html, /Send ACM race history and current skiing video/);
   assert.match(html, /One outreach email sent after Pascal/);
   assert.match(

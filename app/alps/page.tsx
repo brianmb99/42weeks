@@ -29,11 +29,14 @@ function leadLinks(group: LocationProgramLead[]) {
   }));
 }
 
-const silvaplana = leadsWithStatus("strong option")[0];
+const strong = leadsWithStatus("strong option");
+const featured =
+  strong.find((program) => program.name.startsWith("Apex")) ?? strong[0];
 
-if (!silvaplana) {
+if (!featured) {
   throw new Error("Alps data is missing a strong-option ski program.");
 }
+const otherStrong = strong.filter((program) => program.name !== featured.name);
 const awaiting = leadsWithStatus("awaiting reply");
 const possible = leadsWithStatus("possible");
 const closed = leadsWithStatus("not a fit");
@@ -42,20 +45,21 @@ const programPlans: LocationFeaturePlan[] = [
   {
     id: "ski-programs",
     eyebrow: `Strong option · updated ${alps.lastUpdated}`,
-    title: silvaplana.name,
+    title: featured.name,
     description:
-      `Allie and Charlie as U12 racers during January–March 2028. ${silvaplana.location}. ${silvaplana.currentRead}`,
+      `Allie and Charlie as U12 racers during January–March 2028. ${featured.location}. ${featured.currentRead}`,
     items: [
-      silvaplana.contactActivity,
-      `People: ${silvaplana.people}.`,
-      `Next: ${silvaplana.nextStep}`,
+      featured.contactActivity,
+      `People: ${featured.people}.`,
+      `Next: ${featured.nextStep}`,
+      ...otherStrong.map(leadItem),
     ],
-    links: leadLinks([silvaplana]),
+    links: leadLinks(strong),
   },
   {
     id: "awaiting-reply",
     eyebrow: "Awaiting reply",
-    title: "Tignes, Val d'Isère and Verbier clubs",
+    title: "Val d'Isère and Verbier clubs",
     description:
       "These are live U12 contacts that have not yet produced a placement. They can still choose the town; they are not booked training.",
     items: awaiting.map(leadItem),
@@ -139,18 +143,18 @@ export default function AlpsPage() {
             },
             highlights: [
               {
+                title: "Apex 2100 Academy",
+                timing: "Best-informed live option",
+                description:
+                  "January–March day-athlete training is likely if U12 does not fill. Five half-days, local French races; apply with ski video. Not an offer yet.",
+                url: "https://www.apex2100.org",
+              },
+              {
                 title: "GR Ski Racing Team Silvaplana",
-                timing: "Current strongest read",
+                timing: "Strong Swiss option",
                 description:
                   "A continuous January–March placement may work if level is appropriate, with almost-daily training and possible local races.",
                 url: "https://stmoritz.gr-mountain.com/ski-club/",
-              },
-              {
-                title: "Apex 2100 Academy",
-                timing: "Admissions call still to book",
-                description:
-                  "Winter groups are usually full; admissions is willing to talk about whether any custom January–March 2028 training is possible.",
-                url: "https://www.apex2100.org",
               },
               {
                 title: "ACM Ski Team",
@@ -173,7 +177,7 @@ export default function AlpsPage() {
             mapLabel: "February",
             dates: "Feb 1–29",
             detail:
-              "The long middle: daily training, ordinary town life and protected work.",
+              "The long middle: daily training, ordinary town life and protected work. If Tignes wins, budget about two and a half weeks off academy snow in February unless they join the optional Italy camp.",
             days: 29,
             tone: "work",
           },

@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
-  "lastReviewed": "2026-09-15",
-  "lastUpdated": "September 14, 2026",
-  "lastUpdatedIso": "2026-09-14",
+  "lastReviewed": "2026-09-17",
+  "lastUpdated": "September 17, 2026",
+  "lastUpdatedIso": "2026-09-17",
   "title": "The Alps",
   "start": "2028-01-07",
   "end": "2028-03-31",
   "nights": 85,
-  "summary": "Use these eighty-five nights as one winter life, not a circuit of famous names. The town is still open because the children's U12 program has to win first: recurring peers, almost-daily training, a walkable place, dependable snow and a quiet work room. Silvaplana is the strongest current read; Tignes, Val d'Isère and Crans-Montana remain live. Stay inside ninety days, then hand off to Copenhagen on Saturday, April 1.",
+  "summary": "Use these eighty-five nights as one winter life, not a circuit of famous names. The town is still open because the children's U12 program has to win first: recurring peers, almost-daily training, a walkable place, dependable snow and a quiet work room. Apex 2100 in Tignes is the best-informed live option after a September 17 admissions call; a January–March day-athlete place is likely if U12 does not fill, but it is not an offer. Silvaplana remains a strong Swiss read. Val d'Isère and Crans-Montana are still live. Stay inside ninety days, then hand off to Copenhagen on Saturday, April 1.",
   "planning": {
     "racers": ["Allie", "Charlie"],
     "ageGroup": "U12",
@@ -39,7 +39,8 @@
     ]
   },
   "bookFirst": [
-    "Get the Apex 2100 admissions call with Britt on the calendar",
+    "Submit the Apex OpenApply application and U12 ski videos once Britt sends the link",
+    "Use the late-November / early-December Apex virtual open house",
     "Send ACM race history and current skiing video if Crans-Montana is still in play",
     "Follow up Club des Sports de Val d'Isère, Ski Club Verbier and Ski Club de Bagnes if they have not replied",
     "Reconnect with GR Ski Racing Team Silvaplana around July 2027 when 2027–28 packages are available",
@@ -48,6 +49,8 @@
   ],
   "planningNotes": [
     "The calendar stay is eighty-five nights, and it must not exceed ninety days.",
+    "The Apex call is a strong path, not a place. A January–March day-athlete spot still depends on U12 not filling and on video review.",
+    "If Tignes wins, budget about two and a half weeks off academy snow in February unless they join the optional Italy camp.",
     "Ski Zenit and the Apex Les Crosets camps are backups, not a continuous U12 race-team placement.",
     "Club des Sports de Tignes, PDS Racing and ESS Verbier are closed leads unless they produce a stronger club referral.",
     "Allie's birthday is Tuesday, January 18; Brian's birthday is Sunday, March 12. Keep both inside ordinary family time, not travel days.",
@@ -69,6 +72,16 @@
   ],
   "programs": [
     {
+      "name": "Apex 2100 Academy",
+      "location": "Tignes, France",
+      "url": "https://www.apex2100.org",
+      "status": "strong option",
+      "contactActivity": "Admissions Zoom with Britt Tilston on September 17, 2026. Earlier: camps-to-academy handoff and scheduling emails.",
+      "people": "Britt Tilston (admissions); Cosmo Osmond (camps handoff)",
+      "currentRead": "U12 is the flexible group, usually 10–16 of 16 rather than full. The default is the full winter term, late November to mid-April, but a January–March day-athlete place on snow and afternoon strength-and-conditioning is likely if they do not fill. Five half-days a week, 9 a.m. lifts, local French GS and slalom; about two and a half weeks off in February unless they join the optional Italy camp. Homeschooling can stay off campus after lunch. This winter’s day-athlete fee is about €20,000; 2027–28 fees land in January. Applications are open on OpenApply; offers can go out as early as March 2027 after ski-video review. Not an offer yet.",
+      "nextStep": "Submit the OpenApply application and ski videos once Britt sends the link; use the late-November virtual open house."
+    },
+    {
       "name": "GR Ski Racing Team Silvaplana",
       "location": "Engadin / St. Moritz, Switzerland",
       "url": "https://stmoritz.gr-mountain.com/ski-club/",
@@ -77,16 +90,6 @@
       "people": "Veronica; Valentina (Ski Team)",
       "currentRead": "Program says a continuous January–March placement may work if level is appropriate; almost-daily training and possible local races.",
       "nextStep": "Reconnect around July 2027 when 2027–28 packages are available."
-    },
-    {
-      "name": "Apex 2100 Academy",
-      "location": "Tignes, France",
-      "url": "https://www.apex2100.org",
-      "status": "awaiting reply",
-      "contactActivity": "Active exchange — initial outreach, a camps-to-academy handoff, an admissions reply, and a sent reply proposing call times.",
-      "people": "Cosmo Osmond (camps handoff); Britt Tilston (admissions)",
-      "currentRead": "Winter groups are usually full with full-term academy athletes; Britt is willing to talk about whether any day-athlete or custom January–March 2028 training is possible.",
-      "nextStep": "Get the admissions call with Britt on the calendar."
     },
     {
       "name": "ACM Ski Team",
