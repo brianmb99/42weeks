@@ -56,11 +56,21 @@ export type LocationPanel = {
   id?: string;
 };
 
+export type LocationFollowUpUrgency = "now" | "waiting" | "later" | "done";
+
+export type LocationFollowUp = {
+  urgency: LocationFollowUpUrgency;
+  label: string;
+  date?: string;
+  dateLabel?: string;
+};
+
 export type LocationFeaturePlan = {
   id: string;
   eyebrow: string;
   title: string;
   description: string;
+  followUp?: LocationFollowUp;
   items?: string[];
   links?: LocationPageLink[];
 };
@@ -82,6 +92,7 @@ export type LocationProgramLead = {
   currentRead: string;
   nextStep: string;
   callNotes?: string[];
+  followUp: LocationFollowUp;
 };
 
 export type LocationPagePlan = {
@@ -106,4 +117,5 @@ export type LocationPagePlan = {
   planningNotes: string[];
   bookFirst?: string[];
   links?: LocationPageLink[];
+  featurePlansLegend?: string;
 };

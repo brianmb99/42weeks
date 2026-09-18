@@ -455,10 +455,12 @@ test("server-renders Alice Springs, Brisbane, Wānaka and Alps glance-first plan
         /id="ski-programs"/,
         /GR Ski Racing Team Silvaplana/,
         /Apex 2100 Academy/,
-        /Very positive admissions call/,
+        /probably a good fit ability-wise/,
         /Admissions Zoom with Britt Tilston/,
-        /English-language British-system academy/,
+        /British school calendar/,
         /Chilean family/,
+        /class="location-follow-up is-now"/,
+        /Chase Sept 22 if no link/,
         /href="https:\/\/stmoritz\.gr-mountain\.com\/ski-club\/"/,
         /Cold, snow and short daylight/,
         /data\/alps\.json/,
@@ -472,7 +474,7 @@ test("server-renders Alice Springs, Brisbane, Wānaka and Alps glance-first plan
       ],
       highlightedSegments: 1,
       vibeActivities: 4,
-      featurePlans: 4,
+      featurePlans: 12,
     },
   ];
 
@@ -1191,16 +1193,23 @@ test("server-renders the Alps U12 ski program notes on the location page", async
   assert.match(html, /<title>The Alps/);
   assert.match(html, /href="\/alps" aria-current="page">Alps/);
   assert.match(html, /Allie and Charlie/);
-  assert.match(html, /January–March 2028/);
+  assert.match(html, /January–March/);
   assert.match(html, /updated September 17, 2026/);
   assert.match(html, /GR Ski Racing Team Silvaplana/);
   assert.match(html, /Apex 2100 Academy/);
   assert.match(html, /day-athlete/);
   assert.match(html, /OpenApply/);
-  assert.match(html, /generally a fit/);
-  assert.match(html, /English-language British-system academy/);
+  assert.match(html, /probably a good fit/);
+  assert.match(html, /British school calendar/);
   assert.match(html, /Chilean family/);
   assert.match(html, /Free shuttle every 15 minutes/);
+  assert.match(html, /class="location-follow-up is-now"/);
+  assert.match(html, /class="location-follow-up is-waiting"/);
+  assert.match(html, /class="location-follow-up is-later"/);
+  assert.match(html, /class="location-follow-up is-done"/);
+  assert.match(html, /Send race history and skiing video/);
+  assert.match(html, /Chase Sept 22 if no link/);
+  assert.match(html, /July 2027/);
   assert.match(html, /Club des Sports de Tignes/);
   assert.match(html, /ACM Ski Team/);
   assert.match(html, /Club des Sports de Val d&#x27;Isère|Club des Sports de Val d'Isère/);
@@ -1229,5 +1238,5 @@ test("server-renders the Alps U12 ski program notes on the location page", async
   assert.doesNotMatch(html, /href="\/ski-programs"/);
   assert.doesNotMatch(html, /mailto:/i);
   assert.doesNotMatch(html, /@[a-z0-9.-]+\.[a-z]{2,}/i);
-  assert.equal((html.match(/class="location-feature-plan"/g) ?? []).length, 4);
+  assert.equal((html.match(/class="location-feature-plan"/g) ?? []).length, 12);
 });

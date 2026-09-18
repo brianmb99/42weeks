@@ -202,12 +202,28 @@ export default function LocationPlanPage({
             className="location-feature-plans"
             aria-label="Dedicated experience plans"
           >
+            {plan.featurePlansLegend && (
+              <p className="location-follow-up-key">{plan.featurePlansLegend}</p>
+            )}
             {plan.featurePlans.map((feature) => (
               <article
                 className="location-feature-plan"
                 id={feature.id}
                 key={feature.id}
               >
+                {feature.followUp && (
+                  <p
+                    className={`location-follow-up is-${feature.followUp.urgency}`}
+                  >
+                    <span className="location-follow-up-rag" aria-hidden="true" />
+                    <strong>{feature.followUp.label}</strong>
+                    {feature.followUp.dateLabel && (
+                      <time dateTime={feature.followUp.date}>
+                        {feature.followUp.dateLabel}
+                      </time>
+                    )}
+                  </p>
+                )}
                 <header>
                   <p>{feature.eyebrow}</p>
                   <h2>{feature.title}</h2>

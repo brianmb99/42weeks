@@ -7,7 +7,7 @@
   "start": "2028-01-07",
   "end": "2028-03-31",
   "nights": 85,
-  "summary": "Use these eighty-five nights as one winter life, not a circuit of famous names. The town is still open because the children's U12 program has to win first: recurring peers, almost-daily training, a walkable place, dependable snow and a quiet work room. Apex 2100 in Tignes is the leading live option after a very positive September 17 admissions call: Britt sounded like Allie and Charlie would be a U12 fit, and a January–March day-athlete winter is the intended path if the group does not fill. Ski video is confirmation, not a high bar. Silvaplana remains a strong Swiss read. Val d'Isère and Crans-Montana are still live. Stay inside ninety days, then hand off to Copenhagen on Saturday, April 1.",
+  "summary": "Use these eighty-five nights as one winter life, not a circuit of famous names. The town is still open because the children's U12 program has to win first: recurring peers, almost-daily training, a walkable place, dependable snow and a quiet work room. Apex 2100 in Tignes is the leading live option after a very positive September 17 admissions call. From a brief conversation about their racing, Britt thought Allie and Charlie were probably a good fit ability-wise. A January–March day-athlete place is likely if U12 does not fill. Silvaplana remains a strong Swiss read. Val d'Isère and Crans-Montana are still live. Stay inside ninety days, then hand off to Copenhagen on Saturday, April 1.",
   "planning": {
     "racers": ["Allie", "Charlie"],
     "ageGroup": "U12",
@@ -49,7 +49,7 @@
   ],
   "planningNotes": [
     "The calendar stay is eighty-five nights, and it must not exceed ninety days.",
-    "The Apex call was strongly positive. Video and OpenApply still have to happen, but Britt treated the kids as a likely U12 fit. Housing waits on a written offer.",
+    "The Apex call was strongly positive. From a brief conversation about their racing, Britt thought Allie and Charlie were probably a good fit ability-wise. Apply once the OpenApply link arrives. Housing waits on a written offer.",
     "If Tignes wins, budget about two and a half weeks off academy snow in February unless they join the optional Italy camp.",
     "Ski Zenit and the Apex Les Crosets camps are backups, not a continuous U12 race-team placement.",
     "Club des Sports de Tignes, PDS Racing and ESS Verbier are closed leads unless they produce a stronger club referral.",
@@ -78,17 +78,23 @@
       "status": "strong option",
       "contactActivity": "Admissions Zoom with Britt Tilston on September 17, 2026. Earlier: camps-to-academy handoff and scheduling emails.",
       "people": "Britt Tilston (admissions); Cosmo Osmond (camps handoff)",
-      "currentRead": "Very positive admissions call. From the Ford Sayre / race-suit description, Britt treated Allie and Charlie as a likely U12 fit; ski video is the usual confirmation, not a high bar. January–March as day athletes on snow and afternoon S&C is the intended path if the group does not fill. Applications for 2027–28 are already open.",
+      "currentRead": "Very positive admissions call. From a brief conversation about their racing, Britt thought Allie and Charlie were probably a good fit ability-wise. She still wants ski videos, which is the usual next step. A January–March day-athlete place on snow and afternoon S&C is likely if U12 does not fill. Applications for 2027–28 are already open.",
       "nextStep": "Submit the OpenApply application and ski videos once Britt sends the link; use the late-November virtual open house.",
+      "followUp": {
+        "urgency": "waiting",
+        "label": "Waiting on the OpenApply link from Britt",
+        "date": "2026-09-22",
+        "dateLabel": "Chase Sept 22 if no link"
+      },
       "callNotes": [
-        "Fit — After hearing Ford Sayre racing and Allie in a GS/SL suit, Britt said a technical base at U12 is generally a fit and not to worry about a slight backseat. The ability range at U12 is wide and still developing. Video is how they confirm.",
+        "Ability — From a brief conversation about their racing, Britt thought Allie and Charlie were probably a good fit at U12. Ski videos are the usual confirmation; she said the ability range at that age is wide.",
         "Peers — U12 is the flexible group: cap 16, typically 10–16, about 12 this year. Younger groups stay small; the academy is larger higher up (about 24–28 U14s, 48 U16s, 80 FIS athletes). U12 boarders are mostly British families who live relatively nearby. Americans, Canadians and a Chilean family already use the same day-student model with parents in Tignes for the winter.",
-        "Language and school — English-language British-system academy. Most U12s join Apex classroom for the winter term, then return to a home school in April. Homeschoolers can sit in that classroom with other independent-education kids, or go home after lunch. Racing is the local French GS/SL series.",
+        "School — Winter term follows the British school calendar, late November to mid-April. Most U12s join the Apex classroom for that term, then return to a home school. Homeschoolers can work in that classroom with other independent-education kids, or go home after lunch. Racing is the local French GS/SL series.",
         "On snow — Five half-days a week, lifts at 9 a.m. Mondays mix free skiing, telemark and snowboard. Other days are mostly gates, with free-ski to the lift each lap. They race local French hills by team van; the furthest is about 1 hour 15 minutes to La Plagne. A racing license comes through the affiliated club.",
-        "Week shape — Monday afternoon ski; Tuesday full education plus strength and conditioning, sometimes cross-country or roller hockey. Wednesday–Friday: morning ski, lunch, school and S&C from 2:00–6:30 p.m. Saturday morning ski if there is no race; Sunday off. Homeschoolers can leave after lunch and come back for S&C. House parents are on duty for day students too.",
-        "February — The academy leaves Tignes after the first week for an optional Italy camp (across the Fréjus tunnel in recent winters), then a school break. Skip the camp and you have about two and a half weeks of free-skiing in a busy holiday period.",
+        "Week shape — Monday afternoon ski; Tuesday full education plus strength and conditioning, sometimes cross-country or roller hockey at Tignes Plage. Wednesday–Friday: morning ski, lunch, school and S&C from 2:00–6:30 p.m. Saturday morning ski if there is no race; Sunday off. Homeschoolers can leave after lunch and come back for S&C. House parents are on duty for day students too.",
+        "February — The academy skis Tignes until the end of the first week, then an optional Italy camp (across the Fréjus tunnel in recent winters), then a school break. Skip the camp and you have about two and a half weeks of free-skiing in a busy holiday period. Term runs to about April 11.",
         "Town — Compact compared with a big valley like Whistler. Free shuttle every 15 minutes; groceries and restaurants in Tignes; bus to Val d'Isère about 30 minutes. A car is optional except for valley supermarket runs.",
-        "Money and timing — This winter a U12 day athlete is about €20,000 (10% below the ~€23,000 full package). 2027–28 fees come in January. A three-month stay can get an offer as early as March 2027. Shorter weekly-rate stays wait until summer, once full-term numbers are known."
+        "Money and timing — This winter a U12 day athlete is about €20,000 (10% below the ~€23,000 full package). 2027–28 fees come in January. A three-month stay can get an offer as early as March 2027. A shorter weekly-rate stay waits until summer, once full-term numbers are known."
       ]
     },
     {
@@ -99,7 +105,13 @@
       "contactActivity": "Active exchange — initial outreach, two detailed replies, a follow-up, a closing acknowledgement, and a July reconnect confirmation.",
       "people": "Veronica; Valentina (Ski Team)",
       "currentRead": "Program says a continuous January–March placement may work if level is appropriate; almost-daily training and possible local races.",
-      "nextStep": "Reconnect around July 2027 when 2027–28 packages are available."
+      "nextStep": "Reconnect around July 2027 when 2027–28 packages are available.",
+      "followUp": {
+        "urgency": "later",
+        "label": "Reconnect when 2027–28 packages are out",
+        "date": "2027-07-01",
+        "dateLabel": "July 2027"
+      }
     },
     {
       "name": "ACM Ski Team",
@@ -109,7 +121,13 @@
       "contactActivity": "Active exchange — one outreach email and one reply; we have not sent the requested materials yet.",
       "people": "Nicolas Combe",
       "currentRead": "They do not normally take non-season athletes, but Nicolas will take the case to the technical committee. If accepted, Team International would be the pathway and trains mainly in gates.",
-      "nextStep": "Send race history and current skiing video if this option is still in play."
+      "nextStep": "Send race history and current skiing video if this option is still in play.",
+      "followUp": {
+        "urgency": "now",
+        "label": "Send race history and skiing video",
+        "date": "2026-09-17",
+        "dateLabel": "This week"
+      }
     },
     {
       "name": "Club des Sports de Val d'Isère",
@@ -119,7 +137,13 @@
       "contactActivity": "One outreach email sent after Pascal’s referral; no reply yet.",
       "people": "Lionel Fayolle; introduced by Pascal Arpin",
       "currentRead": "Serious local U12 club. Pascal confirmed it as a relevant contact; cold outreach has now gone to Lionel.",
-      "nextStep": "Await reply, then follow up if needed."
+      "nextStep": "Await reply, then follow up if needed.",
+      "followUp": {
+        "urgency": "waiting",
+        "label": "No reply yet after Pascal’s referral",
+        "date": "2026-09-24",
+        "dateLabel": "Chase Sept 24 if still silent"
+      }
     },
     {
       "name": "Ski Zenit",
@@ -129,7 +153,13 @@
       "contactActivity": "Active exchange — initial reply, follow-up questions, a detailed second reply, a closing acknowledgement, and a later bookings confirmation.",
       "people": "Lucia; Joyce (bookings)",
       "currentRead": "Three-week January camp plus rolling private/shared training, but no fixed younger U12 group.",
-      "nextStep": "Keep as a flexible backup and revisit as 2028 plans firm up."
+      "nextStep": "Keep as a flexible backup and revisit as 2028 plans firm up.",
+      "followUp": {
+        "urgency": "later",
+        "label": "Backup only — no chase until a town is shortlisted",
+        "date": "2027-01-15",
+        "dateLabel": "Early 2027"
+      }
     },
     {
       "name": "Apex Perform Better / Les Crosets camps",
@@ -139,7 +169,13 @@
       "contactActivity": "Active exchange — separate from the academy thread; camps reply received and acknowledged.",
       "people": "Cosmo Osmond",
       "currentRead": "Weekly holiday-style camps for U10–U16, aiming to open partly in winter 2027 and fully in winter 2028. Not a continuous January–March race-team placement.",
-      "nextStep": "Wait for the November mailing-list update."
+      "nextStep": "Wait for the November mailing-list update.",
+      "followUp": {
+        "urgency": "later",
+        "label": "Wait for the mailing-list update",
+        "date": "2026-11-01",
+        "dateLabel": "November 2026"
+      }
     },
     {
       "name": "Ski Club Verbier",
@@ -149,7 +185,13 @@
       "contactActivity": "One outreach email sent; no reply yet.",
       "people": "Ski Club Verbier team inbox; no named respondent yet",
       "currentRead": "Contacted after referral from ESS Verbier; no response yet.",
-      "nextStep": "Await reply, then follow up if needed."
+      "nextStep": "Await reply, then follow up if needed.",
+      "followUp": {
+        "urgency": "now",
+        "label": "Chase — no reply to outreach",
+        "date": "2026-09-17",
+        "dateLabel": "This week"
+      }
     },
     {
       "name": "Ski Club de Bagnes",
@@ -159,7 +201,13 @@
       "contactActivity": "One outreach email sent; no reply yet.",
       "people": "Ski Club de Bagnes team inbox; no named respondent yet",
       "currentRead": "Contacted after referral from ESS Verbier; no response yet.",
-      "nextStep": "Await reply, then follow up if needed."
+      "nextStep": "Await reply, then follow up if needed.",
+      "followUp": {
+        "urgency": "now",
+        "label": "Chase — no reply to outreach",
+        "date": "2026-09-17",
+        "dateLabel": "This week"
+      }
     },
     {
       "name": "Tignes / Val d'Isère warm referral",
@@ -169,7 +217,12 @@
       "contactActivity": "Active exchange — outreach, a detailed referral reply, and a thank-you.",
       "people": "Pascal Arpin; introduced by Sixtine Fleury",
       "currentRead": "Pascal pointed to Club des Sports de Tignes, Valsport, Apex 2100, and local coach Marion Beltramo. Those club contacts have been used.",
-      "nextStep": "No further action with Pascal; consider a later note to Marion if a local-coach option is still useful."
+      "nextStep": "No further action with Pascal; consider a later note to Marion if a local-coach option is still useful.",
+      "followUp": {
+        "urgency": "later",
+        "label": "No chase unless a Tignes local coach is still useful",
+        "dateLabel": "Only if needed"
+      }
     },
     {
       "name": "Club des Sports de Tignes",
@@ -179,7 +232,12 @@
       "contactActivity": "Brief exchange — they replied once and we acknowledged.",
       "people": "Cyril",
       "currentRead": "U12 is a full-season, multi-year development model; they do not offer January–March guest placements.",
-      "nextStep": "No further action."
+      "nextStep": "No further action.",
+      "followUp": {
+        "urgency": "done",
+        "label": "No further action",
+        "dateLabel": "Closed"
+      }
     },
     {
       "name": "PDS Racing / PDS Snowsport",
@@ -189,7 +247,12 @@
       "contactActivity": "Brief exchange — they replied once and we responded with the peer-group requirement.",
       "people": "Tom",
       "currentRead": "Offered private coaching only, without the consistent peer group and race opportunities sought.",
-      "nextStep": "No action unless they provide a stronger club referral."
+      "nextStep": "No action unless they provide a stronger club referral.",
+      "followUp": {
+        "urgency": "done",
+        "label": "No further action unless they send a club referral",
+        "dateLabel": "Closed"
+      }
     },
     {
       "name": "ESS Verbier",
@@ -199,7 +262,12 @@
       "contactActivity": "Brief exchange — they replied with guidance and referrals, and we acknowledged.",
       "people": "Elodie Crépin",
       "currentRead": "Weekly groups change too much for continuous race-team development; they referred us to local clubs.",
-      "nextStep": "No further action."
+      "nextStep": "No further action.",
+      "followUp": {
+        "urgency": "done",
+        "label": "No further action",
+        "dateLabel": "Closed"
+      }
     }
   ]
 }

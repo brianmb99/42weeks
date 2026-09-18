@@ -14,14 +14,6 @@ export const metadata: Metadata = {
 
 const programs = alps.programs as LocationProgramLead[];
 
-function leadsWithStatus(status: LocationProgramLead["status"]) {
-  return programs.filter((program) => program.status === status);
-}
-
-function leadItem(program: LocationProgramLead) {
-  return `${program.name} · ${program.location}. ${program.currentRead} ${program.contactActivity} People: ${program.people}. Next: ${program.nextStep}`;
-}
-
 function leadLinks(group: LocationProgramLead[]) {
   return group.map((program) => ({
     title: program.name,
@@ -29,65 +21,54 @@ function leadLinks(group: LocationProgramLead[]) {
   }));
 }
 
-const strong = leadsWithStatus("strong option");
-const featured =
-  strong.find((program) => program.name.startsWith("Apex")) ?? strong[0];
+const statusEyebrow: Record<LocationProgramLead["status"], string> = {
+  "strong option": "Strong option",
+  possible: "Possible",
+  "awaiting reply": "Awaiting reply",
+  "draft ready": "Draft ready",
+  "not a fit": "Not a fit",
+};
 
-if (!featured) {
-  throw new Error("Alps data is missing a strong-option ski program.");
+const followUpOrder: Record<LocationProgramLead["followUp"]["urgency"], number> =
+  {
+    now: 0,
+    waiting: 1,
+    later: 2,
+    done: 3,
+  };
+
+function programAnchor(program: LocationProgramLead) {
+  if (program.name === "Apex 2100 Academy") return "ski-programs";
+  if (program.name.toLowerCase().includes("silvaplana")) return "silvaplana";
+  return program.name.toLowerCase().replace(/[^a-z0-9]+/g, "-");
 }
-const otherStrong = strong.filter((program) => program.name !== featured.name);
-const awaiting = leadsWithStatus("awaiting reply");
-const possible = leadsWithStatus("possible");
-const closed = leadsWithStatus("not a fit");
 
-function strongPlan(
-  program: LocationProgramLead,
-  id: string,
-): LocationFeaturePlan {
+function programPlan(program: LocationProgramLead): LocationFeaturePlan {
   const callNotes = program.callNotes ?? [];
   return {
-    id,
-    eyebrow: `Strong option · updated ${alps.lastUpdated}`,
+    id: programAnchor(program),
+    eyebrow: `${statusEyebrow[program.status]} · updated ${alps.lastUpdated}`,
     title: program.name,
-    description: `Allie and Charlie as U12 racers during January–March 2028. ${program.location}. ${program.currentRead}`,
+    description: `${program.location}. ${program.currentRead}`,
+    followUp: program.followUp,
     items: [
       ...callNotes,
       program.contactActivity,
       `People: ${program.people}.`,
-      `Next: ${program.nextStep}`,
     ],
     links: leadLinks([program]),
   };
 }
 
-function programAnchor(program: LocationProgramLead) {
-  if (program.name.toLowerCase().includes("silvaplana")) return "silvaplana";
-  return program.name.toLowerCase().replace(/[^a-z0-9]+/g, "-");
-}
-
-const programPlans: LocationFeaturePlan[] = [
-  strongPlan(featured, "ski-programs"),
-  ...otherStrong.map((program) => strongPlan(program, programAnchor(program))),
-  {
-    id: "awaiting-reply",
-    eyebrow: "Awaiting reply",
-    title: "Val d'Isère and Verbier clubs",
-    description:
-      "These are live U12 contacts that have not yet produced a placement. They can still choose the town; they are not booked training.",
-    items: awaiting.map(leadItem),
-    links: leadLinks(awaiting),
-  },
-  {
-    id: "possible-programs",
-    eyebrow: "Possible",
-    title: "Crans-Montana, Anniviers and camp backups",
-    description:
-      "Keep these only if a continuous peer-group winter is still possible. Holiday camps are not a substitute for a race team.",
-    items: possible.map(leadItem),
-    links: leadLinks(possible),
-  },
-];
+const programPlans: LocationFeaturePlan[] = [...programs]
+  .sort((a, b) => {
+    const rank = followUpOrder[a.followUp.urgency] - followUpOrder[b.followUp.urgency];
+    if (rank !== 0) return rank;
+    if (a.name === "Apex 2100 Academy") return -1;
+    if (b.name === "Apex 2100 Academy") return 1;
+    return a.name.localeCompare(b.name);
+  })
+  .map(programPlan);
 
 export default function AlpsPage() {
   return (
@@ -159,7 +140,7 @@ export default function AlpsPage() {
                 title: "Apex 2100 Academy",
                 timing: "Very positive admissions call",
                 description:
-                  "Britt treated Allie and Charlie as a likely U12 fit. January–March day-athlete winter in Tignes is the intended path; ski video is confirmation.",
+                  "From a brief conversation about their racing, Britt thought they were probably a good fit ability-wise. A January–March day-athlete place is likely if U12 does not fill.",
                 url: "https://www.apex2100.org",
               },
               {
@@ -230,19 +211,14 @@ export default function AlpsPage() {
         stayDescription: alps.base.reason,
         stayChecks: alps.base.requirements,
         featurePlans: programPlans,
+        featurePlansLegend:
+          "Red: follow up this week. Amber: waiting, with a chase date. Green: parked until the date. Grey: no further action.",
         panels: [
           {
             eyebrow: "January–March conditions",
             title: "Cold, snow and short daylight",
             description: `${alps.season.summary} Val d'Isère January normals are about 31°F by day, 16°F overnight and three inches of precipitation, mostly as snow.`,
             items: alps.season.notes,
-          },
-          {
-            eyebrow: "Closed leads",
-            title: "Tignes club, PDS Racing and ESS Verbier are not a fit",
-            description:
-              "Keep these only as background. They already answered, and the answers do not give Allie and Charlie a consistent U12 peer group for January–March.",
-            items: closed.map(leadItem),
           },
         ],
         bookFirst: alps.bookFirst,
